@@ -1,5 +1,8 @@
+
+
 package com.fliplearn.flipapp.helper;
 
-public class Base {
+public class Base 
+{
 
 }
