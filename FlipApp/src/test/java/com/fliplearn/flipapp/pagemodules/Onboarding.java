@@ -12,5 +12,4 @@ public class Onboarding {
 	@AndroidFindBy(className="")
 	@iOSFindBy(className="")
 	RemoteWebElement skip_Btn;
-
 }
