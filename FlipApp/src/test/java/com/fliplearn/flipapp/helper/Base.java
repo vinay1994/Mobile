@@ -13,11 +13,14 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.internal.IResultListener;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.model.Test;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.fliplearn.flipapp.util.ConfigUtil;
 
@@ -35,17 +38,21 @@ public class Base implements IResultListener
 		
 	public static boolean isInitialized = false;
 	public static boolean isBrowserOpened = false;
-		
-	String platform = "Android";
-	String deviceName = "Galaxy J7 Prime";
-	String appPath = "D:\\Apps\\app-production-release.apk";
-	WebDriver driver;
+			
+	String server;
+	String platform;
+	String deviceName;
+	String browser;
+	String appPath;
+	String environment;
+	String url;
+	public static WebDriver driver;
 	
 	static String fileExtension = GenericFunctions.formatDateToString();
 	static String reportFileName = "AutomationReport" + "_" + fileExtension + ".html";
 	
 	// initialize the HtmlReporter
-	ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter("extent.html");
+	ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter("C:\\tomcat\\webapps\\fliplearn\\latestreport\\" + reportFileName);
 
 	// initialize ExtentReports and attach the HtmlReporter
 	public static ExtentReports extentReports = new ExtentReports();
@@ -60,7 +67,16 @@ public class Base implements IResultListener
 	 */
 	public void setDriver() throws MalformedURLException
 	{
-		if(platform.equals("Android"))
+		server = eConfig.getProperty("SERVER");
+		platform = eConfig.getProperty("PLATFORM");
+		browser = eConfig.getProperty("BROWSER");
+		deviceName = eConfig.getProperty("DEVICENAME");
+		environment = eConfig.getProperty("ENVIRONMENT");
+		url = aConfig.getProperty(platform+"_"+environment+"_URL");
+		
+		appPath = System.getProperty("user.dir") + "\\apps\\"+platform.toLowerCase()+"_"+environment.toLowerCase()+".apk";
+			
+		if(platform.equals("ANDROID"))
 		{
 			DesiredCapabilities cap = new DesiredCapabilities();
 			cap.setCapability(MobileCapabilityType.DEVICE_NAME, deviceName);
@@ -70,16 +86,18 @@ public class Base implements IResultListener
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		}
 		
-		else if(platform.equals("Web"))
+		else if(server.equals("WINDOWS") & platform.equals("DESKTOP") & browser.equals("CHROME"))
 		{
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("start-maximized");
 			
-            System.setProperty("webdriver.chrome.driver", "/Users/Tarun/eclipse-workspace/appiumtest/src/test/java/testing/appiumtest/chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", Constants.WINDOWS_CHROME_EXE);
             driver = new ChromeDriver();
-            driver.get("https://app.fliplearn.com/login");
+            
+            System.out.println("URL is****:"+url); 
+            driver.get(url);
 		
-
+            driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		}
 	}
@@ -115,28 +133,28 @@ public class Base implements IResultListener
 	@BeforeMethod
 	public void befo() throws MalformedURLException 
 	{
+	
 		Base base = new Base();
 		Base.Initialize();
 		base.setDriver();
-
-		// attach only HtmlReporter
-		extentReports.attachReporter(htmlReporter);
-		
+		extentReports.attachReporter(htmlReporter);	
 	}
 
-	public void onTestStart(ITestResult result) {
-		// TODO Auto-generated method stub
-		
+	public void onTestStart(ITestResult result) 
+	{
+		System.out.println("Inside on test start");
+		extentTest = extentReports.createTest(result.getMethod().getMethodName(), "Some description");
+		extentTest.log(Status.PASS, "Test Started");
 	}
 
-	public void onTestSuccess(ITestResult result) {
-		// TODO Auto-generated method stub
-		
+	public void onTestSuccess(ITestResult result) 
+	{
+		extentTest.log(Status.PASS, "Test Pass.");
 	}
 
-	public void onTestFailure(ITestResult result) {
-		// TODO Auto-generated method stub
-		
+	public void onTestFailure(ITestResult result)
+	{
+		extentTest.log(Status.FAIL, "Test Failed.");
 	}
 
 	public void onTestSkipped(ITestResult result) {
@@ -173,5 +191,12 @@ public class Base implements IResultListener
 	public void onConfigurationSkip(ITestResult itr) {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	@AfterMethod
+	public void getResult() throws IOException
+	{
+		driver.quit();
+		extentTest.log(Status.INFO, "Browser/Application Closed.");
 	}
 }
