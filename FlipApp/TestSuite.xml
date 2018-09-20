@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="suite of suites">
+
+<listeners>
+	<listener class-name="com.fliplearn.flipapp.helper.Base"/>
+</listeners>
+	
+	<test name="login" enabled="true">
+  		<classes>
+    		<class name="com.fliplearn.flipapp.testcases.UserRegistration">
+        		<methods>
+        			<include name="verifyAndroidAdminLogin" />  	
+        		</methods>
+        	</class>
+      	</classes> 
+	</test>  
+</suite>	 
+
