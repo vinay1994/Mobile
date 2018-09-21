@@ -11,7 +11,7 @@ public class Constants
 	public final static String WINDOWS_IE_EXE = System.getProperty("user.dir")+"//drivers//IEDriver.exe";
  
 	public final static String LINUX_CHROME_EXE = System.getProperty("user.dir")+"//drivers//chromedriver";
-	public final static String LINUX_FIREFOX_EXE = System.getProperty("user.dir")+"//drivers//firefoxdriver";
+	public final static String LINUX_FIREFOX_EXE = System.getProperty("user.dir")+"//drivers//geckodriver";
 	
 	public final static String MAC_CHROME_EXE = System.getProperty("user.dir")+"//drivers//chromedriver";
 	public final static String MAC_FIREFOX_EXE = System.getProperty("user.dir")+"//drivers//firefoxdriver";
