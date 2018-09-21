@@ -10,6 +10,8 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
@@ -100,7 +102,32 @@ public class Base implements IResultListener
             driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		}
-	}
+		
+		else if(server.equals("LINUX") & platform.equals("DESKTOP"))
+	    {
+				if(browser.equals("CHROME"))
+				{
+					ChromeOptions options = new ChromeOptions();
+					options.addArguments("start-maximized");
+			
+					System.setProperty("webdriver.chrome.driver", Constants.LINUX_CHROME_EXE);
+					driver = new ChromeDriver();
+				}
+				else if(browser.equals("FIREFOX")) 
+				{
+					FirefoxOptions options = new FirefoxOptions();
+					options.addArguments("start-maximized");
+			
+					System.setProperty("webdriver.gecko.driver", Constants.LINUX_FIREFOX_EXE);
+					driver = new FirefoxDriver();
+				}	
+		}		
+					driver.get(url);
+				
+            driver.manage().window().maximize();
+			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		}
+	
 	
 	/**
 	 * This will intialize config file
