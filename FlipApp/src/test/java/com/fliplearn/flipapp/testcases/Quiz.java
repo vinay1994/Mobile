@@ -1,5 +1,10 @@
 package com.fliplearn.flipapp.testcases;
 
+import java.util.List;
+
+import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import com.fliplearn.flipapp.helper.Base;
@@ -9,6 +14,7 @@ import com.fliplearn.flipapp.pagemodules.MenuModule;
 import com.fliplearn.flipapp.pagemodules.MobileNumberModule;
 import com.fliplearn.flipapp.pagemodules.OnboardingModule;
 import com.fliplearn.flipapp.pagemodules.QuizModule;
+import com.fliplearn.flipapp.pagemodules.SelectClassModule;
 import com.fliplearn.flipapp.pagemodules.SignInAsModule;
 
 import io.appium.java_client.android.AndroidDriver;
@@ -21,7 +27,21 @@ public class Quiz extends Base
 	MenuModule menuMod;
 	MobileNumberModule mobNumMod;
 	QuizModule quiMod;
-	SignInAsModule signinmod;
+	SignInAsModule signInMod;
+	SelectClassModule selClaMod;
+	
+	@BeforeMethod
+	public void befQuiz()
+	{
+		logMod = new LoginModule(driver);
+		onbMod = new OnboardingModule(driver);
+		menuMod = new MenuModule(driver);
+		signInMod = new SignInAsModule(driver);
+		mobNumMod = new MobileNumberModule(driver);
+		quiMod = new QuizModule(driver);
+		selClaMod = new SelectClassModule(driver);
+		onbMod.skipScreen();
+	}
 
 	/**
 	 * Verify Quiz on Android App
@@ -33,26 +53,21 @@ public class Quiz extends Base
 	@Test
 	public void verifyAndroidQuiz() throws InterruptedException
 	{
-		logMod = new LoginModule(driver);
-		onbMod = new OnboardingModule(driver);
-		menuMod = new MenuModule(driver);
-		
-		onbMod.skipScreen();
 		logMod.Login("admin");		
-		((AndroidDriver) driver).hideKeyboard();
-		logMod.loginBtn.click();
-		Thread.sleep(6000);
-
-		signinmod.adminLnk.click();
 		
+		signInMod.adminLnk.click();
 		mobNumMod.skipBtn.click();
 		quiMod.skipBtn.click();
+		
 		GenericFunctions.touchCordinates(driver, 10, 95);
 		GenericFunctions.touchCordinates(driver, 10, 95);
-		menuMod.menuBtn.click();
+		GenericFunctions.touchCordinates(driver, 5, 5);
+		
 		quiMod.quizgames.click();
 		
+		String expectedList = aConfig.getProperty("ADMIN_CLASSES") ;
 		
+		Assert.assertEquals(GenericFunctions.compareList(selClaMod.classList, expectedList), true);
 	}
 	
 }

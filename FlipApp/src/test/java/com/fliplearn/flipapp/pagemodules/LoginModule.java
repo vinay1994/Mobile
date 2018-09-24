@@ -7,6 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.fliplearn.flipapp.helper.Base;
 
+import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSFindBy;
@@ -40,5 +41,10 @@ public class LoginModule extends Base
 
     	usernameTxt.sendKeys(username);
     	passwordTxt.sendKeys((password));
+    	
+    	if(eConfig.getProperty("PLATFORM").equals("ANDROID"))
+    		((AndroidDriver) driver).hideKeyboard();
+
+    	loginBtn.click();
     }
 }
