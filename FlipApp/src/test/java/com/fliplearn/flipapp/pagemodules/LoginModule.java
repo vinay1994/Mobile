@@ -38,8 +38,6 @@ public class LoginModule extends Base
     	String username = aConfig.getProperty(userType.toUpperCase() + "_USERNAME");
     	String password =  aConfig.getProperty(userType.toUpperCase() +"_PASSWORD");
 
-    	System.out.println("Test user"+username);
-    	System.out.println("Test password"+password);
     	usernameTxt.sendKeys(username);
     	passwordTxt.sendKeys((password));
     }
