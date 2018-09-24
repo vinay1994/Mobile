@@ -121,10 +121,12 @@ public class Base implements IResultListener
 					System.setProperty("webdriver.gecko.driver", Constants.LINUX_FIREFOX_EXE);
 					driver = new FirefoxDriver();
 				}	
-		}		
-					driver.get(url);
 				
-            driver.manage().window().maximize();
+
+				driver.get(url);
+			
+        driver.manage().window().maximize();
+		}		
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		}
 	
@@ -201,7 +203,7 @@ public class Base implements IResultListener
 
 	public void onFinish(ITestContext context) 
 	{
-		extentReports.flush();
+		//extentReports.flush();
 		
 	}
 
@@ -224,6 +226,6 @@ public class Base implements IResultListener
 	public void getResult() throws IOException
 	{
 		//driver.quit();
-		extentTest.log(Status.INFO, "Browser/Application Closed.");
+//		extentTest.log(Status.INFO, "Browser/Application Closed.");
 	}
 }

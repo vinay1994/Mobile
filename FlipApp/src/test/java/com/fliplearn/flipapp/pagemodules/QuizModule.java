@@ -13,6 +13,9 @@ public class QuizModule
 	@AndroidFindBy(id="com.elss.educomp:id/skip_button")
 	public RemoteWebElement skipBtn;
 	
+	@AndroidFindBy(id="com.elss.educomp:id/title")
+	public RemoteWebElement quizgames;
+		
 	public QuizModule(WebDriver driver)
 	{
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);

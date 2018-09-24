@@ -13,7 +13,6 @@ import io.appium.java_client.android.AndroidDriver;
 
 public class UserRegistration extends Base 
 {
-
 	LoginModule logMod;
 	OnboardingModule onbMod;
 	MobileNumberModule mobNumMod;
@@ -177,9 +176,10 @@ public class UserRegistration extends Base
 	 * @author Durga
 	 * @since 2018-09-21
 	 * @version 1.0
+	 * @throws InterruptedException 
 	 */
 	@Test
-	public void verifyAndroidStudentLogin()
+	public void verifyAndroidStudentLogin() throws InterruptedException
 	{
 		logMod = new LoginModule(driver);
 		onbMod = new OnboardingModule(driver);
