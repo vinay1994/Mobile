@@ -3,11 +3,17 @@ package com.fliplearn.flipapp.helper;
 import java.io.File;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Date;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebElement;
 
 import io.appium.java_client.PerformsTouchActions;
 import io.appium.java_client.TouchAction;
@@ -62,6 +68,12 @@ public class GenericFunctions
 	    return lastModifiedFile;
 	}
 	
+	/**
+	 * To perform touch by percentage
+	 * @author Tarun Goswami
+	 * @since 2018-09-22
+	 * @version 1.0
+	 */
 	public static void touchCordinates(WebDriver driver, int x, int y) throws InterruptedException
 	{
 		Dimension size = driver.manage().window().getSize();
@@ -76,4 +88,36 @@ public class GenericFunctions
         Thread.sleep(3000);
 	}
 	
+	/**
+	 * To compare two lists
+	 * @author Tarun Goswami
+	 * @since 2018-09-25
+	 * @version 1.0
+	 */
+	public static boolean compareList(List<RemoteWebElement> webList, String expectedString)
+	{
+		List<String> expectedList =  Arrays.asList(expectedString.split("\\s*,\\s*"));
+		List<String> actualList = new ArrayList<String>();
+		
+		
+		boolean result = false;
+		
+		//To get text of web elements and store in array list
+		for(RemoteWebElement ele : webList ) 
+		{
+		    System.out.println("Expected is :"+ele.getText());
+		    actualList.add(ele.getText());
+		}
+		
+		//Return true if lists are equal
+		if(actualList.equals(expectedList))
+			result = true;
+		else
+			System.out.println("Lists are not equal");
+		
+		System.out.println(actualList);
+		System.out.println(expectedList);
+		
+		return result;
+	}
 }

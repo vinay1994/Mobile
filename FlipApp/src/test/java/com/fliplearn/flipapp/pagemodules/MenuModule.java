@@ -10,7 +10,7 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 public class MenuModule 
 {
 	
-	@AndroidFindBy(id="com.elss.educomp:id/btn_finish")
+	@AndroidFindBy(className="android.widget.ImageButton")
 	public RemoteWebElement menuBtn;
 	
 	public MenuModule(WebDriver driver)
