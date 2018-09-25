@@ -9,9 +9,9 @@
 	
 	<test name="login" enabled="true">
   		<classes>
-    		<class name="com.fliplearn.flipapp.testcases.Quiz">
+    		<class name="com.fliplearn.flipapp.testcases.UserRegistration">
         		<methods>
-        			<include name="verifyAndroidQuiz" />  	
+        			<include name="verifyDesktopPrincipalLogin" />  	
         		</methods>
         	</class>
       	</classes> 

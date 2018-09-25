@@ -49,8 +49,7 @@ public class UserRegistration extends Base
 		
 		onbMod.skipScreen();
 		logMod.Login("admin");		
-		((AndroidDriver) driver).hideKeyboard();
-		logMod.loginBtn.click();
+		
 		
 	}
 	
@@ -65,7 +64,6 @@ public class UserRegistration extends Base
 	{
 		logMod = new LoginModule(driver);
 		logMod.Login("principal");
-		logMod.loginBtn.click();
 	}
 	
 	/**
@@ -81,9 +79,7 @@ public class UserRegistration extends Base
 		onbMod = new OnboardingModule(driver);
 		
 		onbMod.skipScreen();
-		logMod.Login("principal");		
-		((AndroidDriver) driver).hideKeyboard();
-		logMod.loginBtn.click();
+		logMod.Login("principal");	
 		
 	}
 	
