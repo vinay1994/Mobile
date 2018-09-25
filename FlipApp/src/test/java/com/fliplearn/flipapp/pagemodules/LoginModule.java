@@ -35,40 +35,31 @@ public class LoginModule extends Base
 	}
 
 	public  void Login(String userType)
-	{   if(userType!=null) {
-		String username = aConfig.getProperty(userType.toUpperCase() + "_USERNAME");
-		String password =  aConfig.getProperty(userType.toUpperCase() +"_PASSWORD");
-		if(eConfig.getProperty("PLATFORM").equals("ANDROID")) {
-			((AndroidDriver) driver).hideKeyboard();
-		MenuModule menu= new MenuModule(driver);
-		menu.skipScreen();
+	{   
+		if(userType!=null) 
+		{
+			String username = aConfig.getProperty(userType.toUpperCase() + "_USERNAME");
+			String password =  aConfig.getProperty(userType.toUpperCase() +"_PASSWORD");
+		
+			if(eConfig.getProperty("PLATFORM").equals("ANDROID")) 
+			{
+				((AndroidDriver) driver).hideKeyboard();
+				MenuModule menu= new MenuModule(driver);
+				menu.skipScreen();
+			}
+			usernameTxt.sendKeys(username);
+			passwordTxt.sendKeys((password));
+			loginBtn.click();
+			
+			if(eConfig.getProperty("PLATFORM").equals("DESKTOP")) 
+			{
+				MenuModule menu= new MenuModule(driver);
+				menu.skipScreen();
+			}	
+		}
+		else 
+		{
+			System.out.println("userType is :"+userType);
+		}
 	}
-		usernameTxt.sendKeys(username);
-		passwordTxt.sendKeys((password));
-		loginBtn.click();
-		if(eConfig.getProperty("PLATFORM").equals("DESKTOP")) {
-			MenuModule menu= new MenuModule(driver);
-			menu.skipScreen();
-		}	
-	}
-	else {
-		System.out.println("userType is :"+userType);
-	}
-	}
-        PageFactory.initElements(new AppiumFieldDecorator(driver), this);
-    }
-	  
-    public void Login(String userType)
-    {
-    	String username = aConfig.getProperty(userType.toUpperCase() + "_USERNAME");
-    	String password =  aConfig.getProperty(userType.toUpperCase() +"_PASSWORD");
-
-    	usernameTxt.sendKeys(username);
-    	passwordTxt.sendKeys((password));
-    	
-    	if(eConfig.getProperty("PLATFORM").equals("ANDROID"))
-    		((AndroidDriver) driver).hideKeyboard();
-
-    	loginBtn.click();
-    }
 }
