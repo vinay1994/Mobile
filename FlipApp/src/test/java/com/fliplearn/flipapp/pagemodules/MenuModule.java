@@ -13,6 +13,7 @@ public class MenuModule
 {
 	@FindBy(xpath="//button[contains(text(),'Skip')]")
 	@AndroidFindBy(id="com.elss.educomp:id/btn_finish")
+	@AndroidFindBy(className="android.widget.ImageButton")
 	public RemoteWebElement menuBtn;
 	
 	public MenuModule(WebDriver driver)
