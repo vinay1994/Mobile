@@ -18,12 +18,12 @@ public class LoginModule extends Base
 	@AndroidFindBy(id="com.elss.educomp:id/user_id_til") 
 	@iOSFindBy(id="")
 	RemoteWebElement usernameTxt;
-	
+
 	@FindBy(id="password-lg1")
 	@AndroidFindBy(id="com.elss.educomp:id/password_edit")
 	@iOSFindBy(id="")
 	RemoteWebElement passwordTxt;
-	
+
 	@FindBy(xpath="//button[text()='Login']")
 	@AndroidFindBy(id="com.elss.educomp:id/login")
 	@iOSFindBy(id="")
@@ -31,6 +31,30 @@ public class LoginModule extends Base
 
 	public LoginModule(WebDriver driver)
 	{
+		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
+	}
+
+	public  void Login(String userType)
+	{   if(userType!=null) {
+		String username = aConfig.getProperty(userType.toUpperCase() + "_USERNAME");
+		String password =  aConfig.getProperty(userType.toUpperCase() +"_PASSWORD");
+		if(eConfig.getProperty("PLATFORM").equals("ANDROID")) {
+			((AndroidDriver) driver).hideKeyboard();
+		MenuModule menu= new MenuModule(driver);
+		menu.skipScreen();
+	}
+		usernameTxt.sendKeys(username);
+		passwordTxt.sendKeys((password));
+		loginBtn.click();
+		if(eConfig.getProperty("PLATFORM").equals("DESKTOP")) {
+			MenuModule menu= new MenuModule(driver);
+			menu.skipScreen();
+		}	
+	}
+	else {
+		System.out.println("userType is :"+userType);
+	}
+	}
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 	  
