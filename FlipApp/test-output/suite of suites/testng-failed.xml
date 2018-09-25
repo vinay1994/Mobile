@@ -8,8 +8,8 @@
     <classes>
       <class name="com.fliplearn.flipapp.testcases.UserRegistration">
         <methods>
+          <include name="verifyDesktopPrincipalLogin"/>
           <include name="befo"/>
-          <include name="verifyAndroidAdminLogin"/>
           <include name="getResult"/>
         </methods>
       </class> <!-- com.fliplearn.flipapp.testcases.UserRegistration -->

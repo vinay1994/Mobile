@@ -8,6 +8,9 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 
 import io.appium.java_client.PerformsTouchActions;
 import io.appium.java_client.TouchAction;
@@ -76,4 +79,38 @@ public class GenericFunctions
         Thread.sleep(3000);
 	}
 	
+	/**
+	 * This will get latest file from directory
+	 * @author vinay yadav
+	 * @since 2018-09-24
+	 * @version 1.0
+	 */
+	
+	public static void mouseOver(WebDriver driver, WebElement elm, WebElement target) {
+		Actions act=new Actions(driver);
+		act.moveToElement(elm).perform();
+		act.moveToElement(target).click().perform();
+	}
+	
+	/**
+	 * This will get latest file from directory
+	 * @author vinay yadav
+	 * @since 2018-09-24
+	 * @version 1.0
+	 */
+	public static void selectClassByValue(WebElement elm, String value) {
+		Select sc =new Select(elm);
+		sc.selectByValue(value);	
+	}
+	/**
+	 * This will get latest file from directory
+	 * @author vinay yadav
+	 * @since 2018-09-24
+	 * @version 1.0
+	 */
+	
+	public static void selectClassByIndex(WebElement elm, int index) {
+		Select sc =new Select(elm);
+		sc.selectByIndex(index);	
+	}
 }

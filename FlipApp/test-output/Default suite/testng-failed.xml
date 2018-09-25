@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.fliplearn.flipapp.testcases.UserRegistration">
+      <class name="com.fliplearn.flipapp.testcases.Announcements">
         <methods>
-          <include name="verifyDesktopAdminLogin"/>
           <include name="befo"/>
+          <include name="createAnn_Android_admin"/>
+          <include name="getResult"/>
         </methods>
-      </class> <!-- com.fliplearn.flipapp.testcases.UserRegistration -->
+      </class> <!-- com.fliplearn.flipapp.testcases.Announcements -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

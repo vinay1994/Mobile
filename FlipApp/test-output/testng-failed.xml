@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [suite of suites]" guice-stage="DEVELOPMENT">
-  <listeners>
-    <listener class-name="com.fliplearn.flipapp.helper.Base"/>
-  </listeners>
-  <test thread-count="5" name="login(failed)">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.fliplearn.flipapp.testcases.UserRegistration">
+      <class name="com.fliplearn.flipapp.testcases.Announcements">
         <methods>
           <include name="befo"/>
-          <include name="verifyAndroidAdminLogin"/>
+          <include name="createAnn_Android_admin"/>
           <include name="getResult"/>
         </methods>
-      </class> <!-- com.fliplearn.flipapp.testcases.UserRegistration -->
+      </class> <!-- com.fliplearn.flipapp.testcases.Announcements -->
     </classes>
-  </test> <!-- login(failed) -->
-</suite> <!-- Failed suite [suite of suites] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
