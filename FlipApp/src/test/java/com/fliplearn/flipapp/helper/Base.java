@@ -88,7 +88,7 @@ public class Base implements IResultListener
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		}
 		
-		else if(server.equals("WINDOWS") & platform.equals("DESKTOP") & browser.equals("CHROME"))
+		else if(server.equals("WINDOWS") & platform.equals("WEB") & browser.equals("CHROME"))
 		{
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("start-maximized");
@@ -103,7 +103,7 @@ public class Base implements IResultListener
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		}
 		
-		else if(server.equals("LINUX") & platform.equals("DESKTOP"))
+		else if(server.equals("LINUX") & platform.equals("WEB"))
 	    {
 				if(browser.equals("CHROME"))
 				{
