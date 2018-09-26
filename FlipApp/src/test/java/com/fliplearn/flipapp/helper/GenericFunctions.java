@@ -114,6 +114,7 @@ public class GenericFunctions
 		Select sc =new Select(elm);
 		sc.selectByValue(value);	
 	}
+
 	/**
 	 * This will get latest file from directory
 	 * @author vinay yadav
@@ -126,7 +127,7 @@ public class GenericFunctions
 		sc.selectByIndex(index);	
 	}
 
-	/** To compare two lists
+	/* To compare two lists
 	 * @author Tarun Goswami
 	 * @since 2018-09-25
 	 * @version 1.0
