@@ -11,7 +11,7 @@ import io.appium.java_client.pagefactory.iOSFindBy;
 
 public class MobileNumberModule 
 {
-	@FindBy(id="Fname")
+	@FindBy(xpath="//button[contains(text(),'Skip')]")
 	@AndroidFindBy(id="com.elss.educomp:id/skip_button") 
 	@iOSFindBy(id="")
 	public RemoteWebElement skipBtn;

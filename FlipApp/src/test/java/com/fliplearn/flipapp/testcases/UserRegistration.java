@@ -25,7 +25,6 @@ public class UserRegistration extends Base
 		onbMod = new OnboardingModule(driver);
 		mobNumMod = new MobileNumberModule(driver);
 		quiMod = new QuizModule(driver);
-		onbMod.skipScreen();
 	}
 	
 	/**
@@ -37,9 +36,7 @@ public class UserRegistration extends Base
 	@Test
 	public void verifyWebAdminLogin()
 	{
-		logMod = new LoginModule(driver);
 		logMod.Login("admin");
-		logMod.loginBtn.click();
 	}
 	
 	/**
@@ -52,7 +49,6 @@ public class UserRegistration extends Base
 	@Test
 	public void verifyAndroidAdminLogin() throws InterruptedException
 	{	
-		onbMod.skipScreen();
 		logMod.Login("admin");			
 	}
 	
@@ -77,7 +73,6 @@ public class UserRegistration extends Base
 	@Test
 	public void verifyAndroidPrincipalLogin()
 	{	
-		onbMod.skipScreen();
 		logMod.Login("principal");		
 	}
 	
@@ -92,7 +87,6 @@ public class UserRegistration extends Base
 	public void verifyWebTeacherLogin()
 	{
 		logMod.Login("teacher");
-		logMod.loginBtn.click();
 	}
 	
 	/**
@@ -104,11 +98,7 @@ public class UserRegistration extends Base
 	@Test
 	public void verifyAndroidTeacherLogin()
 	{		
-		onbMod.skipScreen();
-		logMod.Login("teacher");		
-		((AndroidDriver) driver).hideKeyboard();
-		logMod.loginBtn.click();
-		
+		logMod.Login("teacher");
 	}	
 	
 	
@@ -122,7 +112,6 @@ public class UserRegistration extends Base
 	public void verifyWebParentLogin()
 	{
 		logMod.Login("parent");
-		logMod.loginBtn.click();
 	}
 	
 	/**
@@ -134,15 +123,9 @@ public class UserRegistration extends Base
 	@Test
 	public void verifyAndroidParentLogin()
 	{		
-		onbMod.skipScreen();
 		logMod.Login("parent");		
-		((AndroidDriver) driver).hideKeyboard();
-		logMod.loginBtn.click();
-		
 	}
 
-	
-	
 	/**
 	 * Verify User Student Login on Desktop Web Browser
 	 * @author Durga
@@ -152,9 +135,7 @@ public class UserRegistration extends Base
 	@Test
 	public void verifyWebStudentLogin()
 	{
-		logMod = new LoginModule(driver);
 		logMod.Login("student");
-		logMod.loginBtn.click();
 	}
 	
 	/**
@@ -167,13 +148,11 @@ public class UserRegistration extends Base
 	@Test
 	public void verifyAndroidStudentLogin() throws InterruptedException
 	{		
-		onbMod.skipScreen();
+		
 		logMod.Login("student");		
-		((AndroidDriver) driver).hideKeyboard();
-		logMod.loginBtn.click();
-		mobNumMod.skipBtn.click();
-		quiMod.skipBtn.click();
-		GenericFunctions.touchCordinates(driver, 10, 95);
-		GenericFunctions.touchCordinates(driver, 10, 95);
+//		mobNumMod.skipBtn.click();
+//		quiMod.skipBtn.click();
+//		GenericFunctions.touchCordinates(driver, 10, 95);
+//		GenericFunctions.touchCordinates(driver, 10, 95);
 	}
 }
