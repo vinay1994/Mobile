@@ -13,7 +13,8 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSFindBy;
 
-public class AnnouncementModule extends Base {
+public class AnnouncementModule extends Base 
+{
 	
 	@FindBy(xpath="//button[contains(text(),'Post')]")
 	@AndroidFindBy(className="") 
