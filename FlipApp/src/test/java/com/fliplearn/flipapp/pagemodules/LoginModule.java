@@ -62,4 +62,7 @@ public class LoginModule extends Base
 			System.out.println("userType is :"+userType);
 		}
 	}
+
+	}
+
 }
