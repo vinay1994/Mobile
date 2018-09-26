@@ -53,22 +53,7 @@ public class LoginModule extends Base
 	}
 	else {
 		System.out.println("userType is :"+userType);
+
 	}
 	}
-        PageFactory.initElements(new AppiumFieldDecorator(driver), this);
-    }
-	  
-    public void Login(String userType)
-    {
-    	String username = aConfig.getProperty(userType.toUpperCase() + "_USERNAME");
-    	String password =  aConfig.getProperty(userType.toUpperCase() +"_PASSWORD");
-
-    	usernameTxt.sendKeys(username);
-    	passwordTxt.sendKeys((password));
-    	
-    	if(eConfig.getProperty("PLATFORM").equals("ANDROID"))
-    		((AndroidDriver) driver).hideKeyboard();
-
-    	loginBtn.click();
-    }
 }

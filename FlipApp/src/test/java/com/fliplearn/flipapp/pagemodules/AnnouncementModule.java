@@ -24,6 +24,40 @@ public class AnnouncementModule extends Base {
 	@AndroidFindBy(id="") 
 	@iOSFindBy(id="")
 	RemoteWebElement annBtn;
+	
+
+	@FindBy(id="title")
+	@AndroidFindBy(id="") 
+	@iOSFindBy(id="")
+	RemoteWebElement titleTXT;
+	
+	@FindBy(xpath="//span[contains(@class,'btn-co')]")
+	@AndroidFindBy(id="") 
+	@iOSFindBy(id="")
+	RemoteWebElement shareWithBtn;
+	
+	@FindBy(xpath="//label[(text()='No')]")
+	@AndroidFindBy(id="") 
+	@iOSFindBy(id="")
+	RemoteWebElement NoRd;
+	
+	
+	@FindBy(xpath="//textarea[contains(@class,'-touched')]")
+	@AndroidFindBy(id="") 
+	@iOSFindBy(id="")
+	RemoteWebElement adddescri;
+	
+	
+	@FindBy(xpath="//input[contains(@ng-click,'createFile()')]")
+	@AndroidFindBy(id="") 
+	@iOSFindBy(id="")
+	RemoteWebElement uploadImageBtn;
+	
+	@FindBy(xpath="//button[(text()='Create')]")
+	@AndroidFindBy(id="") 
+	@iOSFindBy(id="")
+	RemoteWebElement createBtn;
+	
 	public AnnouncementModule(WebDriver driver)
 	{
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);

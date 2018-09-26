@@ -125,8 +125,8 @@ public class GenericFunctions
 		Select sc =new Select(elm);
 		sc.selectByIndex(index);	
 	}
-}
-	 * To compare two lists
+
+	/** To compare two lists
 	 * @author Tarun Goswami
 	 * @since 2018-09-25
 	 * @version 1.0
