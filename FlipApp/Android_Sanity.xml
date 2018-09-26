@@ -7,11 +7,15 @@
 	<listener class-name="com.fliplearn.flipapp.helper.Base"/>
 </listeners>
 	
-	<test name="login" enabled="true">
+	<test name="Registration_Login" enabled="true">
   		<classes>
     		<class name="com.fliplearn.flipapp.testcases.UserRegistration">
         		<methods>
-        			<include name="verifyWebAdminLogin" />  	
+        			<include name="verifyAndroidAdminLogin" /> 
+        			<include name="verifyAndroidPrincipalLogin" />  
+        			<include name="verifyAndroidTeacherLogin" /> 
+        			<include name="verifyAndroidParentLogin" /> 
+        			<include name="verifyAndroidStudentLogin" /> 	
         		</methods>
         	</class>
       	</classes> 
