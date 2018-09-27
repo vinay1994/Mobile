@@ -9,29 +9,25 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSFindBy;
 
-public class LearnModule {
-	
-	public LearnModule(WebDriver driver) {
-		// TODO Auto-generated constructor stub
-	}
-
+public class LearnModule 
+{
 	@FindBy(id="learn-icon")
 	@AndroidFindBy(xpath="//*[@text='Learn']") 
 	@iOSFindBy(id="")
-	public RemoteWebElement learn;	
+	public RemoteWebElement learnImg;	
 	
 	@FindBy(xpath="//strong[text()='Fliplearn Prime']")
 	@AndroidFindBy(id="")
 	@iOSFindBy(id="")
-	public RemoteWebElement primeimg;
+	public RemoteWebElement primeImg;
 	
 	@FindBy(xpath="//a[text()='Pre Nursery']")
 	@AndroidFindBy(xpath="//a[text()='Pre Nursery']")
 	@iOSFindBy(id="")
-	public RemoteWebElement selectclass;
+	public RemoteWebElement selectClassLnk;
 		
-	public LearnModule(WebDriver driver) {
-		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
-		
+	public LearnModule(WebDriver driver) 
+	{
+		PageFactory.initElements(new AppiumFieldDecorator(driver), this);	
 	}
 }

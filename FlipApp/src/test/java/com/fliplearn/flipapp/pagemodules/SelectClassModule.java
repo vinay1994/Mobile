@@ -13,9 +13,10 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 public class SelectClassModule 
 {
-	
+	@FindBy(xpath="//div[@class='panel-heading']/h4/a")
 	@AndroidFindBy(id="com.elss.educomp:id/tv_content_class_model")
 	public List<RemoteWebElement> classList;
+
 	@FindBy(xpath="//*[text()='Quiz']")
 	public List<RemoteWebElement> quizHead;
 	

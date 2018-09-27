@@ -4,14 +4,12 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.fliplearn.flipapp.helper.Base;
-import com.fliplearn.flipapp.helper.GenericFunctions;
 import com.fliplearn.flipapp.pagemodules.LoginModule;
 import com.fliplearn.flipapp.pagemodules.MobileNumberModule;
 import com.fliplearn.flipapp.pagemodules.OnboardingModule;
 import com.fliplearn.flipapp.pagemodules.QuizModule;
-import io.appium.java_client.android.AndroidDriver;
 
-public class UserRegistration extends Base 
+public class Login extends Base 
 {
 	LoginModule logMod;
 	OnboardingModule onbMod;
@@ -29,9 +27,9 @@ public class UserRegistration extends Base
 	
 	/**
 	 * Verify User Admin Login on Desktop Web Browser
-	 * @author Tarun Goswami
+	 * @author Vinay Yadav
 	 * @since 2018-09-20
-	 * @version 1.0
+	 * @version 1.1
 	 */
 	@Test
 	public void verifyWebAdminLogin()
@@ -41,9 +39,9 @@ public class UserRegistration extends Base
 	
 	/**
 	 * Verify Admin User Login on Android App
-	 * @author Tarun Goswami
+	 * @author Vinay Yadav
 	 * @since 2018-09-20
-	 * @version 1.0
+	 * @version 1.1
 	 * @throws InterruptedException 
 	 */
 	@Test
@@ -142,17 +140,12 @@ public class UserRegistration extends Base
 	 * Verify Student User Login on Android App
 	 * @author Durga
 	 * @since 2018-09-21
-	 * @version 1.0
+	 * @version 1.1
 	 * @throws InterruptedException 
 	 */
 	@Test
 	public void verifyAndroidStudentLogin() throws InterruptedException
 	{		
-		
 		logMod.Login("student");		
-//		mobNumMod.skipBtn.click();
-//		quiMod.skipBtn.click();
-//		GenericFunctions.touchCordinates(driver, 10, 95);
-//		GenericFunctions.touchCordinates(driver, 10, 95);
 	}
 }

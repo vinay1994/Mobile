@@ -9,9 +9,9 @@
 	
 	<test name="login" enabled="true">
   		<classes>
-    		<class name="com.fliplearn.flipapp.testcases.UserRegistration">
+    		<class name="com.fliplearn.flipapp.testcases.FliplearnPrimeView">
         		<methods>
-        			<include name="verifyWebAdminLogin" />  	
+        			<include name="verifyPrimeAdminClasses" />  	
         		</methods>
         	</class>
       	</classes> 
