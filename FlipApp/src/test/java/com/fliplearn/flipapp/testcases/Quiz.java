@@ -4,9 +4,7 @@ import java.util.List;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
 import com.fliplearn.flipapp.helper.Base;
 import com.fliplearn.flipapp.helper.GenericFunctions;
 import com.fliplearn.flipapp.pagemodules.LoginModule;
@@ -17,7 +15,7 @@ import com.fliplearn.flipapp.pagemodules.QuizModule;
 import com.fliplearn.flipapp.pagemodules.SelectClassModule;
 import com.fliplearn.flipapp.pagemodules.SignInAsModule;
 
-import io.appium.java_client.android.AndroidDriver;
+
 
 public class Quiz extends Base 
 {
