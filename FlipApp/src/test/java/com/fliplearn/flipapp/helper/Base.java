@@ -16,18 +16,21 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.internal.IResultListener;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
-import com.aventstack.extentreports.model.Test;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.fliplearn.flipapp.util.ConfigUtil;
+import com.fliplearn.flipapp.util.SendReportUtil;
 
+import io.appium.java_client.android.Activity;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
+import io.appium.java_client.android.StartsActivity;
 import io.appium.java_client.remote.MobileCapabilityType;
 
 
@@ -42,13 +45,16 @@ public class Base implements IResultListener
 	public static boolean isBrowserOpened = false;
 			
 	String server;
-	String platform;
+	public static String platform;
 	String deviceName;
-	String browser;
+	public static String browser;
 	String appPath;
-	String environment;
-	String url;
+	public static String environment;
+	public static String url;
 	public static WebDriver driver;
+	public static String emailIds;
+	public static String suiteType;
+	public static String sendReport;
 	
 	static String fileExtension = GenericFunctions.formatDateToString();
 	static String reportFileName = "AutomationReport" + "_" + fileExtension + ".html";
@@ -74,6 +80,10 @@ public class Base implements IResultListener
 		browser = eConfig.getProperty("BROWSER");
 		deviceName = eConfig.getProperty("DEVICENAME");
 		environment = eConfig.getProperty("ENVIRONMENT");
+		emailIds = eConfig.getProperty("EMAIL");
+		suiteType = eConfig.getProperty("SUITETYPE");
+		sendReport = eConfig.getProperty("SENDREPORT");
+		
 		url = aConfig.getProperty(platform+"_"+environment+"_URL");
 		
 		appPath = System.getProperty("user.dir") + "\\apps\\"+platform.toLowerCase()+"_"+environment.toLowerCase()+".apk";
@@ -82,28 +92,32 @@ public class Base implements IResultListener
 		{
 			DesiredCapabilities cap = new DesiredCapabilities();
 			cap.setCapability(MobileCapabilityType.DEVICE_NAME, deviceName);
-			cap.setCapability(MobileCapabilityType.APP, appPath);
+//			cap.setCapability(MobileCapabilityType.APP, appPath);
 			
+			cap.setCapability("appPackage", "com.elss.educomp"); 
+		    cap.setCapability("appActivity","com.elss.educomp.prelogin.ui.SplashActivity"); 
+		    cap.setCapability("noSign", true);
+		    
 			driver = new AndroidDriver<AndroidElement>(new URL("http://0.0.0.0:4723/wd/hub"), cap);
+			 
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		}
 		
-		else if(server.equals("WINDOWS") & platform.equals("DESKTOP") & browser.equals("CHROME"))
+		else if(server.equals("WINDOWS") & platform.equals("WEB") & browser.equals("CHROME"))
 		{
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("start-maximized");
 			
             System.setProperty("webdriver.chrome.driver", Constants.WINDOWS_CHROME_EXE);
             driver = new ChromeDriver();
-            
-            System.out.println("URL is****:"+url); 
+        
             driver.get(url);
-		
+            
             driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		}
 		
-		else if(server.equals("LINUX") & platform.equals("DESKTOP"))
+		else if(server.equals("LINUX") & platform.equals("WEB"))
 	    {
 				if(browser.equals("CHROME"))
 				{
@@ -113,7 +127,7 @@ public class Base implements IResultListener
 					System.setProperty("webdriver.chrome.driver", Constants.LINUX_CHROME_EXE);
 					driver = new ChromeDriver();
 				}
-				else if(browser.equals("FIREFOX")) 
+				else if(browser.equals("Firefox")) 
 				{
 					FirefoxOptions options = new FirefoxOptions();
 					options.addArguments("start-maximized");
@@ -171,9 +185,14 @@ public class Base implements IResultListener
 
 	public void onTestStart(ITestResult result) 
 	{
-		System.out.println("Inside on test start");
 		extentTest = extentReports.createTest(result.getMethod().getMethodName(), "Some description");
-		extentTest.log(Status.PASS, "Test Started");
+		extentTest.log(Status.INFO, "Platform is:"+platform);
+		
+		if(platform.equals("WEB"))
+		{	
+			extentTest.log(Status.INFO, "Browser is:"+browser);
+			extentTest.log(Status.INFO, "URL is:"+url);
+		}
 	}
 
 	public void onTestSuccess(ITestResult result) 
@@ -203,7 +222,7 @@ public class Base implements IResultListener
 
 	public void onFinish(ITestContext context) 
 	{
-		//extentReports.flush();
+		extentReports.flush();
 		
 	}
 
@@ -225,7 +244,14 @@ public class Base implements IResultListener
 	@AfterMethod
 	public void getResult() throws IOException
 	{
-		//driver.quit();
-//		extentTest.log(Status.INFO, "Browser/Application Closed.");
+		driver.quit();
+		extentTest.log(Status.INFO, "Browser/Application Closed.");
+	}
+	
+	@AfterSuite
+	public void aftSuite() throws InterruptedException, IOException
+	{
+		if(sendReport.equals("TRUE"))
+			SendReportUtil.emailReport();
 	}
 }

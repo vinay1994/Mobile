@@ -127,7 +127,6 @@ public class GenericFunctions
 		sc.selectByIndex(index);	
 	}
 
-	
 	/* To compare two lists
 	 * @author Tarun Goswami
 	 * @since 2018-09-25

@@ -1,7 +1,5 @@
 package com.fliplearn.flipapp.testcases;
 
-import java.util.List;
-
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -17,7 +15,7 @@ import com.fliplearn.flipapp.pagemodules.SignInAsModule;
 
 
 
-public class Quiz extends Base 
+public class QuizGames extends Base 
 {
 
 	LoginModule logMod;

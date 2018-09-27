@@ -5,6 +5,7 @@ import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.aventstack.extentreports.Status;
 import com.fliplearn.flipapp.helper.Base;
 
 import io.appium.java_client.android.AndroidDriver;
@@ -41,25 +42,29 @@ public class LoginModule extends Base
 			String username = aConfig.getProperty(userType.toUpperCase() + "_USERNAME");
 			String password =  aConfig.getProperty(userType.toUpperCase() +"_PASSWORD");
 		
+		
+			if(eConfig.getProperty("PLATFORM").equals("ANDROID")) 
+			{
+				OnboardingModule onbMod= new OnboardingModule(driver);
+				onbMod.skipScreen();
+				extentTest.log(Status.PASS, "Click on Skip button.");
+			}
+			
+			usernameTxt.sendKeys(username);
+			extentTest.log(Status.PASS, "Enter Username: "+username);
+			passwordTxt.sendKeys((password));
+			extentTest.log(Status.PASS, "Enter Password");
+			
 			if(eConfig.getProperty("PLATFORM").equals("ANDROID")) 
 			{
 				((AndroidDriver) driver).hideKeyboard();
-				MenuModule menu= new MenuModule(driver);
-				menu.skipScreen();
+				extentTest.log(Status.PASS, "Hide Keyboard");
 			}
-			usernameTxt.sendKeys(username);
-			passwordTxt.sendKeys((password));
 			loginBtn.click();
+			extentTest.log(Status.PASS, "Click on Login button");
 			
-			if(eConfig.getProperty("PLATFORM").equals("DESKTOP")) 
-			{
-				MenuModule menu= new MenuModule(driver);
-				menu.skipScreen();
-			}	
-		}
-		else 
-		{
-			System.out.println("userType is :"+userType);
+			MobileNumberModule mobMod= new MobileNumberModule(driver);
+			mobMod.skipBtn.click();
 		}
 	}
 }
