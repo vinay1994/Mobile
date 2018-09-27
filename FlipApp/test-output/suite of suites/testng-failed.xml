@@ -6,13 +6,15 @@
   </listeners>
   <test thread-count="5" name="login(failed)">
     <classes>
-      <class name="com.fliplearn.flipapp.testcases.UserRegistration">
+      <class name="com.fliplearn.flipapp.testcases.QuizDashboard">
         <methods>
-          <include name="verifyDesktopPrincipalLogin"/>
+          <include name="verifyWebQuizDashBoard"/>
           <include name="befo"/>
+          <include name="befQuiz"/>
+          <include name="aftSuite"/>
           <include name="getResult"/>
         </methods>
-      </class> <!-- com.fliplearn.flipapp.testcases.UserRegistration -->
+      </class> <!-- com.fliplearn.flipapp.testcases.QuizDashboard -->
     </classes>
   </test> <!-- login(failed) -->
 </suite> <!-- Failed suite [suite of suites] -->
