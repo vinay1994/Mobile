@@ -11,6 +11,7 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 public class SelectClassModule 
 {
+	
 	@AndroidFindBy(id="com.elss.educomp:id/tv_content_class_model")
 	public List<RemoteWebElement> classList;
 	
