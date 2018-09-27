@@ -136,8 +136,7 @@ public class GenericFunctions
 	{
 		List<String> expectedList =  Arrays.asList(expectedString.split("\\s*,\\s*"));
 		List<String> actualList = new ArrayList<String>();
-		
-		
+				
 		boolean result = false;
 		
 		//To get text of web elements and store in array list
@@ -147,15 +146,15 @@ public class GenericFunctions
 		    actualList.add(ele.getText());
 		}
 		
+		System.out.println("Actual List:" +actualList);
+		System.out.println("Expected List:"+expectedList);
+		
 		//Return true if lists are equal
 		if(actualList.equals(expectedList))
 			result = true;
 		else
 			System.out.println("Lists are not equal");
-		
-		System.out.println(actualList);
-		System.out.println(expectedList);
-		
+			
 		return result;
 	}
 }
