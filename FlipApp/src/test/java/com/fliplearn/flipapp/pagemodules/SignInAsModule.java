@@ -11,7 +11,7 @@ import io.appium.java_client.pagefactory.iOSFindBy;
 
 public class SignInAsModule 
 {
-	@FindBy(id="")
+	@FindBy(xpath="//*[text()='admin']")
 	@AndroidFindBy(xpath="//*[@text='ADMIN']") 
 	@iOSFindBy(id="")
 	public RemoteWebElement adminLnk;
@@ -20,6 +20,11 @@ public class SignInAsModule
 	@AndroidFindBy(xpath="//*[@text='PARENT']") 
 	@iOSFindBy(id="")
 	RemoteWebElement parentLnk;
+	
+	@FindBy(xpath="//*[text()='Proceed']")
+	@AndroidFindBy(xpath="//*[@text='PARENT']") 
+	@iOSFindBy(id="")
+	public RemoteWebElement proceedBtn;
 	
 	public SignInAsModule(WebDriver driver)
 	{
