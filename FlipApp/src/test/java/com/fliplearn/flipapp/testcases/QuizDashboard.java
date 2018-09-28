@@ -11,6 +11,7 @@ import com.fliplearn.flipapp.pagemodules.LoginModule;
 import com.fliplearn.flipapp.pagemodules.MenuModule;
 import com.fliplearn.flipapp.pagemodules.MobileNumberModule;
 import com.fliplearn.flipapp.pagemodules.OnboardingModule;
+import com.fliplearn.flipapp.pagemodules.QuizDashBoardModule;
 import com.fliplearn.flipapp.pagemodules.QuizModule;
 import com.fliplearn.flipapp.pagemodules.SelectClassModule;
 import com.fliplearn.flipapp.pagemodules.SignInAsModule;
