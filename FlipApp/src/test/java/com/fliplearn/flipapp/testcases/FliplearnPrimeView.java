@@ -40,7 +40,7 @@ public class FliplearnPrimeView extends Base
 	 * @throws InterruptedException 
 	 * @version 1.1
 	 */
-     @Test
+     @Test(priority=1)
      public void verifyPrimeAdminClasses() 
      {
     	 logMod.Login("admin");
@@ -49,7 +49,35 @@ public class FliplearnPrimeView extends Base
     	 LearnMod.learnImg.click();
     	 LearnMod.primeImg.click();
         
-    	 String expectedList = aConfig.getProperty("ADMIN_PRIME_CLASSES");
+    	 String expectedList = aConfig.getProperty("PRIME_CLASSES");
     	 Assert.assertEquals(GenericFunctions.compareList(selClaMod.classList, expectedList), true);
      }
-}
+     @Test(priority=2)
+     public void verifyPrimePrincipalClasses()
+     {
+    	 logMod.Login("principal");
+    	 mobNumMod.skipBtn.click();
+    	 LearnMod.learnImg.click();
+    	 LearnMod.primeImg.click();
+    	 
+    	 String expectedList=aConfig.getProperty("PRIME_CLASSES");
+    	 Assert.assertEquals(GenericFunctions.compareList(selClaMod.classList, expectedList), true);
+    	 
+    	 }
+     @Test(priority=3)
+     public void verifyPrimeTeacherClasses()
+     {
+    	 logMod.Login("teacher");
+    	 mobNumMod.skipBtn.click();
+    	 LearnMod.learnImg.click();
+    	 LearnMod.primeImg.click();
+    	 
+    	 String expectedList=aConfig.getProperty("PRIME_CLASSES");
+    	 Assert.assertEquals(GenericFunctions.compareList(selClaMod.classList, expectedList), true);
+    	 
+     
+     
+     
+     
+     
+ }}
