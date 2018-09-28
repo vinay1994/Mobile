@@ -26,11 +26,10 @@ public class AnnouncementModule extends Base
 	@iOSFindBy(id="")
 	RemoteWebElement annBtn;
 	
-
 	@FindBy(id="title")
 	@AndroidFindBy(id="") 
 	@iOSFindBy(id="")
-	RemoteWebElement titleTXT;
+	RemoteWebElement titleTxt;
 	
 	@FindBy(xpath="//span[contains(@class,'btn-co')]")
 	@AndroidFindBy(id="") 
@@ -40,13 +39,13 @@ public class AnnouncementModule extends Base
 	@FindBy(xpath="//label[(text()='No')]")
 	@AndroidFindBy(id="") 
 	@iOSFindBy(id="")
-	RemoteWebElement NoRd;
+	RemoteWebElement NoRadBtn;
 	
 	
 	@FindBy(xpath="//textarea[contains(@class,'-touched')]")
 	@AndroidFindBy(id="") 
 	@iOSFindBy(id="")
-	RemoteWebElement adddescri;
+	RemoteWebElement addDescriptionTxt;
 	
 	
 	@FindBy(xpath="//input[contains(@ng-click,'createFile()')]")
@@ -69,5 +68,3 @@ public class AnnouncementModule extends Base
 		
 	}
 }
-
-

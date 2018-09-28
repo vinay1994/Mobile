@@ -18,76 +18,75 @@ import com.fliplearn.flipapp.pagemodules.SignInAsModule;
 
 public class QuizDashboard extends Base 
 {
-
 	LoginModule logMod;
 	OnboardingModule onbMod;
-	LearnModule learnMod;
-	MenuModule menuMod;
+	LearnModule leaMod;
 	MobileNumberModule mobNumMod;
 	QuizModule quiMod;
-	SignInAsModule signInMod;
+	SignInAsModule sigInMod;
 	SelectClassModule selClaMod;
-	QuizDashBoardModule quizdashMod;
+	QuizDashBoardModule quiDasMod;
 	
 	@BeforeMethod
 	public void befQuiz()
 	{
 		logMod = new LoginModule(driver);
 		onbMod = new OnboardingModule(driver);
-		menuMod = new MenuModule(driver);
-		signInMod = new SignInAsModule(driver);
+		sigInMod = new SignInAsModule(driver);
 		mobNumMod = new MobileNumberModule(driver);
 		quiMod = new QuizModule(driver);
 		selClaMod = new SelectClassModule(driver);
-		learnMod = new LearnModule(driver);
-		quizdashMod = new QuizDashBoardModule(driver); 
+		leaMod = new LearnModule(driver);
+		quiDasMod = new QuizDashBoardModule(driver); 
+		onbMod.skipScreen();
 	}
 
 	/**
 	 * Verify Quiz on Android App
 	 * @author Durga
 	 * @since 2018-09-21
-	 * @version 1.0
+	 * @version 1.1
 	 * @throws InterruptedException 
 	 */
 	@Test
-	public void verifyWebQuizDashBoard() throws InterruptedException
+	public void verifyWebQuizDashBoardAdmin() throws InterruptedException
 	{
 		logMod.Login("admin");		
 		mobNumMod.skipBtn.click();
-		signInMod.adminLnk.click();
-		signInMod.proceedBtn.click();
-		learnMod.learn.click();
-		quizdashMod.quizdashboardBtn.click();
+		sigInMod.adminLnk.click();
+		sigInMod.proceedBtn.click();
+		leaMod.learnImg.click();
+		quiDasMod.quizDashboardBtn.click();
 		
 		String expectedList = aConfig.getProperty("QUIZ_HEAD") ;
 		
 		Assert.assertEquals(GenericFunctions.compareList(selClaMod.quizHead, expectedList), true);
-				
 	}
 	
-	
-	// For Android Mobile
+	/**
+	 * Verify Quiz on Android App
+	 * @author Durga
+	 * @since 2018-09-21
+	 * @version 1.1
+	 * @throws InterruptedException 
+	 */
 	@Test
 	public void verifyAndroidQuizdashBoard() throws InterruptedException
 	{	
 		logMod.Login("admin");		
 		
-		signInMod.adminLnk.click();
+		sigInMod.adminLnk.click();
 		mobNumMod.skipBtn.click();
 		quiMod.skipBtn.click();
 		
 		GenericFunctions.touchCordinates(driver, 10, 95);
 		GenericFunctions.touchCordinates(driver, 10, 95);
 		
-		learnMod.learn.click();
-		quizdashMod.quizdashboardBtn.click();
-		quizdashMod.playQuizBtn.click();
+		leaMod.learnImg.click();
+		quiDasMod.quizdashboardBtn.click();
+		quiDasMod.playQuizBtn.click();
 		
 		String expectedList = aConfig.getProperty("ADMIN_QUIZ_CLASSES") ;
-		
 		Assert.assertEquals(GenericFunctions.compareList(selClaMod.classList, expectedList), true);
-		
-		
 	}
 }
