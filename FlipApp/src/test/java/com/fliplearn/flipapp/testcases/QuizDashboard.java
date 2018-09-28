@@ -41,7 +41,6 @@ public class QuizDashboard extends Base
 		selClaMod = new SelectClassModule(driver);
 		learnMod = new LearnModule(driver);
 		quizdashMod = new QuizDashBoardModule(driver); 
-		onbMod.skipScreen();
 	}
 
 	/**
