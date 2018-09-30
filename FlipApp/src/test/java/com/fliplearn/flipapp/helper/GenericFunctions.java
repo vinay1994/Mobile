@@ -16,13 +16,13 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.aventstack.extentreports.Status;
-
 import org.openqa.selenium.remote.RemoteWebElement;
 
 
@@ -104,12 +104,16 @@ public class GenericFunctions extends Base
 	 * @author vinay yadav
 	 * @since 2018-09-24
 	 * @version 1.0
+	 * @throws InterruptedException 
 	 */
 	
-	public static void mouseOver(WebDriver driver, WebElement elm, WebElement target) {
+	public static void mouseOver(WebDriver driver, WebElement elm, WebElement target) throws InterruptedException {
 		Actions act=new Actions(driver);
+		Thread.sleep(2000);
 		act.moveToElement(elm).perform();
+			Thread.sleep(2000);
 		act.moveToElement(target).click().perform();
+		Thread.sleep(2000);
 	}
 	
 	/**
@@ -124,7 +128,7 @@ public class GenericFunctions extends Base
 	}
 
 	/**
-	 * This will get latest file from directory
+	 * use select class 
 	 * @author vinay yadav
 	 * @since 2018-09-24
 	 * @version 1.0
@@ -134,9 +138,19 @@ public class GenericFunctions extends Base
 		Select sc =new Select(elm);
 		sc.selectByIndex(index);	
 	}
-
 	/**
-	 *  To compare two lists
+	 * This will wait for element
+	 * @author vinay yadav
+	 * @since 2018-09-24
+	 * @version 1.0
+	 */
+	
+	public static void WaitFor_visibility(WebDriver driver, WebElement element) {
+		(new WebDriverWait(driver, 60)).until(ExpectedConditions.visibilityOf(element));
+	}
+
+
+	/** To compare two lists
 	 * @author Tarun Goswami
 	 * @since 2018-09-25
 	 * @version 1.0

@@ -59,6 +59,11 @@ public class QuizDashboard extends Base
 		logMod.Login(role);
 		if(platform.equals("Web"))
 			leaMod.learnImg.click();
+
+		mobNumMod.skipBtn.click();
+		sigInMod.adminLnk.click();
+		sigInMod.proceedBtn.click();
+		leaMod.learnImg.click();
 		
 		quiDasMod.quizDashBoardBtn.click();	
 		GenericFunctions.waitForElementVisibility(driver, quiDasMod.classListBtn);

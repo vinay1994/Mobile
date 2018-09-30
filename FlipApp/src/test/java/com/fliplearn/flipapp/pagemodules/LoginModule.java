@@ -52,19 +52,19 @@ public class LoginModule extends Base
 		{
 			String username = aConfig.getProperty(role + "_Username");
 			String password =  aConfig.getProperty(role +"_Password");
-			
-			if(eConfig.getProperty("Platform").equals("Android")) 
+		
+			if(eConfig.getProperty("PLATFORM").equals("ANDROID")) 
 			{
 				OnboardingModule onbMod= new OnboardingModule(driver);
 				onbMod.skipScreen();
 				extentTest.log(Status.PASS, "Click on Skip button.");
 			}
-			
+
 			usernameTxt.sendKeys(username);
 			extentTest.log(Status.PASS, "Enter Username: "+username);
 			passwordTxt.sendKeys((password));
 			extentTest.log(Status.PASS, "Enter Password");
-			
+      
 			if(eConfig.getProperty("Platform").equals("Android")) 
 			{
 				((AndroidDriver) driver).hideKeyboard();
@@ -115,4 +115,4 @@ public class LoginModule extends Base
 			extentTest.log(Status.PASS, "Click on First Admin Link.");
 		} 
 	}
-}
+ }
