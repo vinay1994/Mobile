@@ -39,7 +39,7 @@ public class Announcements extends Base
 	 * @throws InterruptedException 
 	 */
 	@Test
-	public void createAnnoncementAdminWeb() throws InterruptedException
+	public void createAnnoncement() throws InterruptedException
 	{
 		logMod.Login("admin");
 		annMod.mouseOverOnpostBtn();	

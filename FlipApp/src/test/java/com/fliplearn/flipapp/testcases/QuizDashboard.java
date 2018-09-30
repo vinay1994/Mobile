@@ -1,7 +1,11 @@
 package com.fliplearn.flipapp.testcases;
 
+import java.io.IOException;
+
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.fliplearn.flipapp.helper.Base;
@@ -38,55 +42,34 @@ public class QuizDashboard extends Base
 		selClaMod = new SelectClassModule(driver);
 		leaMod = new LearnModule(driver);
 		quiDasMod = new QuizDashBoardModule(driver); 
-		onbMod.skipScreen();
 	}
 
 	/**
-	 * Verify Quiz on Android App
+	 * Verify Quiz Dashboard Classes for Admin, Principal and Teacher on Web, Android and iOS
 	 * @author Durga
 	 * @since 2018-09-21
-	 * @version 1.1
+	 * @version 1.2
 	 * @throws InterruptedException 
+	 * @throws IOException 
 	 */
+	@Parameters({ "platform", "role" })
 	@Test
-	public void verifyWebQuizDashBoardAdmin() throws InterruptedException
+	public void verifyQuizDashBoardClasses(String platform, String role) throws InterruptedException, IOException
 	{
-		logMod.Login("admin");		
+		logMod.Login(role);
+		if(platform.equals("Web"))
+			leaMod.learnImg.click();
+
 		mobNumMod.skipBtn.click();
 		sigInMod.adminLnk.click();
 		sigInMod.proceedBtn.click();
 		leaMod.learnImg.click();
-	//	quiDasMod.quizDashboardBtn.click();
 		
-		String expectedList = aConfig.getProperty("QUIZ_HEAD") ;
-		
-		Assert.assertEquals(GenericFunctions.compareList(selClaMod.quizHead, expectedList), true);
-	}
-	
-	/**
-	 * Verify Quiz on Android App
-	 * @author Durga
-	 * @since 2018-09-21
-	 * @version 1.1
-	 * @throws InterruptedException 
-	 */
-	@Test
-	public void verifyAndroidQuizdashBoard() throws InterruptedException
-	{	
-		logMod.Login("admin");		
-		
-		sigInMod.adminLnk.click();
-		mobNumMod.skipBtn.click();
-		quiMod.skipBtn.click();
-		
-		GenericFunctions.touchCordinates(driver, 10, 95);
-		GenericFunctions.touchCordinates(driver, 10, 95);
-		
-		leaMod.learnImg.click();
-		quiDasMod.quizdashboardBtn.click();
-		quiDasMod.playQuizBtn.click();
-		
-		String expectedList = aConfig.getProperty("ADMIN_QUIZ_CLASSES") ;
-		Assert.assertEquals(GenericFunctions.compareList(selClaMod.classList, expectedList), true);
+		quiDasMod.quizDashBoardBtn.click();	
+		GenericFunctions.waitForElementVisibility(driver, quiDasMod.classListBtn);
+		quiDasMod.classListBtn.click();
+
+		String expectedList = readData(platform, role, "Quiz Dashboard Classes");
+    	Assert.assertEquals(GenericFunctions.compareList(quiDasMod.dashboardClassList, expectedList), true);		
 	}
 }

@@ -1,6 +1,7 @@
 package com.fliplearn.flipapp.testcases;
 
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.fliplearn.flipapp.helper.Base;
@@ -26,126 +27,16 @@ public class Login extends Base
 	}
 	
 	/**
-	 * Verify User Admin Login on Desktop Web Browser
-	 * @author Vinay Yadav
+	 * Verify User User Login
+	 * @author Vinay Yadav, Durga
 	 * @since 2018-09-20
-	 * @version 1.1
-	 */
-	@Test
-	public void verifyWebAdminLogin()
-	{
-		logMod.Login("admin");
-	}
-	
-	/**
-	 * Verify Admin User Login on Android App
-	 * @author Vinay Yadav
-	 * @since 2018-09-20
-	 * @version 1.1
+	 * @version 1.2
 	 * @throws InterruptedException 
 	 */
+	@Parameters({ "platform", "role" })
 	@Test
-	public void verifyAndroidAdminLogin() throws InterruptedException
-	{	
-		logMod.Login("admin");			
-	}
-	
-	/**
-	 * Verify User Principal Login on Desktop Web Browser
-	 * @author Durga
-	 * @since 2018-09-21
-	 * @version 1.0
-	 */
-	@Test
-	public void verifyWebPrincipalLogin()
+	public void verifyLogin(String platform, String role) throws InterruptedException
 	{
-		logMod.Login("principal");
-	}
-	
-	/**
-	 * Verify Principal User Login on Android App
-	 * @author Durga
-	 * @since 2018-09-21
-	 * @version 1.0
-	 */
-	@Test
-	public void verifyAndroidPrincipalLogin()
-	{	
-		logMod.Login("principal");		
-	}
-	
-	
-	/**
-	 * Verify User Teacher Login on Desktop Web Browser
-	 * @author Durga
-	 * @since 2018-09-21
-	 * @version 1.0
-	 */
-	@Test
-	public void verifyWebTeacherLogin()
-	{
-		logMod.Login("teacher");
-	}
-	
-	/**
-	 * Verify Teacher User Login on Android App
-	 * @author Durga
-	 * @since 2018-09-21
-	 * @version 1.0
-	 */
-	@Test
-	public void verifyAndroidTeacherLogin()
-	{		
-		logMod.Login("teacher");
-	}	
-	
-	
-	/**
-	 * Verify User Parent Login on Desktop Web Browser
-	 * @author Durga
-	 * @since 2018-09-21
-	 * @version 1.0
-	 */
-	@Test
-	public void verifyWebParentLogin()
-	{
-		logMod.Login("parent");
-	}
-	
-	/**
-	 * Verify Parent User Login on Android App
-	 * @author Durga
-	 * @since 2018-09-21
-	 * @version 1.0
-	 */
-	@Test
-	public void verifyAndroidParentLogin()
-	{		
-		logMod.Login("parent");		
-	}
-
-	/**
-	 * Verify User Student Login on Desktop Web Browser
-	 * @author Durga
-	 * @since 2018-09-21
-	 * @version 1.0
-	 */
-	@Test
-	public void verifyWebStudentLogin()
-	{
-		logMod.Login("student");
-	}
-	
-	/**
-	 * Verify Student User Login on Android App
-	 * @author Durga
-	 * @since 2018-09-21
-	 * @version 1.1
-	 * @throws InterruptedException 
-	 */
-	@Test
-	public void verifyAndroidStudentLogin() throws InterruptedException
-	{		
-		logMod.Login("student");		
+		logMod.Login(role);
 	}
 }

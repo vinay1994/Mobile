@@ -1,7 +1,9 @@
 package com.fliplearn.flipapp.testcases;
 
+import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.fliplearn.flipapp.helper.Base;
@@ -34,50 +36,24 @@ public class FliplearnPrimeView extends Base
 	}
 	
 	/**
-	 * verify Prime classes on web when admin click on fliplearn prime tile on learn page
+	 * verify Prime classes on Web, Android, iOS when User click on fliplearn prime tile on learn page
 	 * @author Jagrati
 	 * @since 2018-09-25
 	 * @throws InterruptedException 
-	 * @version 1.1
+	 * @version 1.3
+	 * @throws IOException 
 	 */
-     @Test(priority=1)
-     public void verifyPrimeAdminClasses() 
+	 @Parameters({ "platform", "role" })
+     @Test
+     public void verifyPrimeClasses(String platform, String role) throws IOException, InterruptedException 
      {
-    	 logMod.Login("admin");
-    	 mobNumMod.skipBtn.click();
-    	 signInMod.adminLnk.click();
-    	 LearnMod.learnImg.click();
+    	 logMod.Login(role);
+    	 
+    	 if(platform.equals("Web"))
+    		 LearnMod.learnImg.click();
     	 LearnMod.primeImg.click();
-        
-    	 String expectedList = aConfig.getProperty("PRIME_CLASSES");
+ 
+    	 String expectedList = readData(platform, role, "Prime Classes");
     	 Assert.assertEquals(GenericFunctions.compareList(selClaMod.classList, expectedList), true);
      }
-     @Test(priority=2)
-     public void verifyPrimePrincipalClasses()
-     {
-    	 logMod.Login("principal");
-    	 mobNumMod.skipBtn.click();
-    	 LearnMod.learnImg.click();
-    	 LearnMod.primeImg.click();
-    	 
-    	 String expectedList=aConfig.getProperty("PRIME_CLASSES");
-    	 Assert.assertEquals(GenericFunctions.compareList(selClaMod.classList, expectedList), true);
-    	 
-    	 }
-     @Test(priority=3)
-     public void verifyPrimeTeacherClasses()
-     {
-    	 logMod.Login("teacher");
-    	 mobNumMod.skipBtn.click();
-    	 LearnMod.learnImg.click();
-    	 LearnMod.primeImg.click();
-    	 
-    	 String expectedList=aConfig.getProperty("PRIME_CLASSES");
-    	 Assert.assertEquals(GenericFunctions.compareList(selClaMod.classList, expectedList), true);
-    	 
-     
-     
-     
-     
-     
- }}
+ }

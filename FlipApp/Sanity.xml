@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="suite of suites">
+
+<listeners>
+	<listener class-name="com.fliplearn.flipapp.helper.Base"/>
+</listeners>
+	<parameter name="platform" value="Android"/>
+	<test name="Admin Login" enabled="true">
+  		<classes>
+    		<class name="com.fliplearn.flipapp.testcases.Login">
+			<parameter name="role" value="Admin"/>
+        		<methods>
+        			<include name="verifyLogin" />  	
+        		</methods>
+        	</class>
+      	</classes> 
+	</test> 
+	
+	<test name="Principal Login" enabled="true">
+  		<classes>
+    		<class name="com.fliplearn.flipapp.testcases.Login">
+			<parameter name="role" value="Principal"/>
+        		<methods>
+        			<include name="verifyLogin" />  	
+        		</methods>
+        	</class>
+      	</classes> 
+	</test> 
+	
+		<test name="Teacher Login" enabled="true">
+  		<classes>
+    		<class name="com.fliplearn.flipapp.testcases.Login">
+			<parameter name="role" value="Teacher"/>
+        		<methods>
+        			<include name="verifyLogin" />  	
+        		</methods>
+        	</class>
+      	</classes> 
+		</test> 
+		
+		<test name="Parent Login" enabled="true">
+  		<classes>
+    		<class name="com.fliplearn.flipapp.testcases.Login">
+			<parameter name="role" value="Parent"/>
+        		<methods>
+        			<include name="verifyLogin" />  	
+        		</methods>
+        	</class>
+      	</classes> 
+      	</test>
+      	
+      	<test name="Student Login" enabled="true">
+  		<classes>
+    		<class name="com.fliplearn.flipapp.testcases.Login">
+			<parameter name="role" value="Student"/>
+        		<methods>
+        			<include name="verifyLogin" />  	
+        		</methods>
+        	</class>
+      	</classes> 
+		</test>
+		
+	<test name="Admin Fliplearn Prime Classes" enabled="true">
+  		<classes>
+    		<class name="com.fliplearn.flipapp.testcases.FliplearnPrimeView">
+					<parameter name="role" value="Admin"/>
+        			<methods>
+        				<include name="verifyPrimeClasses" />  	
+        			</methods>
+        	</class>
+      	</classes> 
+	</test> 
+	
+	
+	<test name="Principal Fliplearn Prime Classes" enabled="true">
+  		<classes>
+    		<class name="com.fliplearn.flipapp.testcases.FliplearnPrimeView">
+				<parameter name="role" value="Principal"/>
+        		<methods>
+        			<include name="verifyPrimeClasses" />  	
+        		</methods>
+        	</class>
+      	</classes> 
+	</test>  
+	
+
+	<test name="Teacher Fliplearn Prime Classes" enabled="true">
+  		<classes>
+    		<class name="com.fliplearn.flipapp.testcases.FliplearnPrimeView">
+				<parameter name="role" value="Teacher"/>
+        		<methods>
+        			<include name="verifyPrimeClasses" />  	
+        		</methods>
+        	</class>
+      	</classes> 
+	</test>  
+	
+</suite>	

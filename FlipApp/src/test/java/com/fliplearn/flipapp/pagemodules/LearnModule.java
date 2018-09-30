@@ -17,7 +17,7 @@ public class LearnModule
 	public RemoteWebElement learnImg;	
 	
 	@FindBy(xpath="//strong[text()='Fliplearn Prime']")
-	@AndroidFindBy(id="")
+	@AndroidFindBy(xpath="//strong[text()='Fliplearn Prime']")
 	@iOSFindBy(id="")
 	public RemoteWebElement primeImg;
 	
