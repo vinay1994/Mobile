@@ -3,24 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.fliplearn.flipapp.testcases.UserRegistration">
+      <class name="com.fliplearn.flipapp.testcases.Announcements">
         <methods>
-          <include name="verifyWebStudentLogin"/>
-          <include name="verifyAndroidAdminLogin"/>
-          <include name="verifyAndroidStudentLogin"/>
-          <include name="aftSuite"/>
-          <include name="verifyAndroidTeacherLogin"/>
-          <include name="befMethod"/>
-          <include name="verifyAndroidParentLogin"/>
-          <include name="verifyAndroidPrincipalLogin"/>
-          <include name="verifyWebTeacherLogin"/>
-          <include name="verifyWebAdminLogin"/>
           <include name="befo"/>
-          <include name="verifyWebParentLogin"/>
+          <include name="canNotcreateAnnoncementStudentWeb"/>
+          <include name="aftSuite"/>
+          <include name="befMethod"/>
           <include name="getResult"/>
-          <include name="verifyWebPrincipalLogin"/>
         </methods>
-      </class> <!-- com.fliplearn.flipapp.testcases.UserRegistration -->
+      </class> <!-- com.fliplearn.flipapp.testcases.Announcements -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

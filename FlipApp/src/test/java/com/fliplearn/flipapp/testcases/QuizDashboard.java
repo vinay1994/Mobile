@@ -56,7 +56,7 @@ public class QuizDashboard extends Base
 		sigInMod.adminLnk.click();
 		sigInMod.proceedBtn.click();
 		leaMod.learnImg.click();
-		quiDasMod.quizDashboardBtn.click();
+	//	quiDasMod.quizDashboardBtn.click();
 		
 		String expectedList = aConfig.getProperty("QUIZ_HEAD") ;
 		
