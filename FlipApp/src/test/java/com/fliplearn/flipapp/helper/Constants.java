@@ -4,7 +4,7 @@ public class Constants
 {
 	public final static String PROP_FILE = System.getProperty("user.dir")+"//src//test//java//com//fliplearn//flipapp//configs//AllConfig.properties";
 	public final static String ENV_FILE = System.getProperty("user.dir")+"//src//test//java//com//fliplearn//flipapp//configs//Environment.properties";
-	public final static String EXCEL_FILE = System.getProperty("user.dir")+"//src//test//java//com//fliplearn//flipapp//resources//TestData.xlsx";
+	public final static String EXCEL_FILE = System.getProperty("user.dir")+"//testdata//TestData.xlsx";
 
 	public final static String WINDOWS_CHROME_EXE = System.getProperty("user.dir")+"//drivers//chromedriver.exe";
 	public final static String WINDOWS_FIREFOX_EXE = System.getProperty("user.dir")+"//drivers//firefoxdriver.exe";

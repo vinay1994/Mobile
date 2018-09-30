@@ -63,14 +63,12 @@ public class SendReportUtil extends Base
          System.out.println("email ids are:"+emailIds);
             
          message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(emailIds));
-            
-         message.setSubject("Automation Report: "+environment+" "+suiteType+" "+platform);
-            
+                   
          Multipart multipart = new MimeMultipart();
             
          String subject = platform + " " + environment + " " + suiteType;
         
-         message.setSubject("Automation Report: "+subject.toLowerCase());
+         message.setSubject("Automation Report: "+subject);
          BodyPart messageBodyPart = new MimeBodyPart();
          messageBodyPart.setText("Download attachement to view report.");
          multipart.addBodyPart(messageBodyPart);

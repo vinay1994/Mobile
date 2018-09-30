@@ -4,6 +4,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -13,7 +15,9 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.IInvokedMethod;
 import org.testng.ITestContext;
+import org.testng.ITestListener;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
@@ -25,6 +29,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.fliplearn.flipapp.util.ConfigUtil;
+import com.fliplearn.flipapp.util.ExcelUtil;
 import com.fliplearn.flipapp.util.SendReportUtil;
 
 import io.appium.java_client.android.Activity;
@@ -34,7 +39,7 @@ import io.appium.java_client.android.StartsActivity;
 import io.appium.java_client.remote.MobileCapabilityType;
 
 
-public class Base implements IResultListener
+public class Base implements ITestListener
 {
 	   
 	public static Properties aConfig = null;
@@ -55,6 +60,7 @@ public class Base implements IResultListener
 	public static String emailIds;
 	public static String suiteType;
 	public static String sendReport;
+	public static String testName;
 	
 	static String fileExtension = GenericFunctions.formatDateToString();
 	static String reportFileName = "AutomationReport" + "_" + fileExtension + ".html";
@@ -66,29 +72,30 @@ public class Base implements IResultListener
 	public static ExtentReports extentReports = new ExtentReports();
 	public static ExtentTest extentTest;
 	ITestResult result;
+	ITestContext iTestContext;
 
 	/**
 	 * This will set Driver based on capabilities and configuration
 	 * @author Tarun Goswami
 	 * @since 2018-09-20
-	 * @version 1.0
+	 * @version 1.2
 	 */
 	public void setDriver() throws MalformedURLException
 	{
-		server = eConfig.getProperty("SERVER");
-		platform = eConfig.getProperty("PLATFORM");
-		browser = eConfig.getProperty("BROWSER");
-		deviceName = eConfig.getProperty("DEVICENAME");
-		environment = eConfig.getProperty("ENVIRONMENT");
-		emailIds = eConfig.getProperty("EMAIL");
-		suiteType = eConfig.getProperty("SUITETYPE");
-		sendReport = eConfig.getProperty("SENDREPORT");
+		server = eConfig.getProperty("Server");
+		platform = eConfig.getProperty("Platform");
+		browser = eConfig.getProperty("Browser");
+		deviceName = eConfig.getProperty("DeviceName");
+		environment = eConfig.getProperty("Environment");
+		emailIds = eConfig.getProperty("Email");
+		suiteType = eConfig.getProperty("SuiteType");
+		sendReport = eConfig.getProperty("SendReport");
 		
-		url = aConfig.getProperty(platform+"_"+environment+"_URL");
+		url = aConfig.getProperty(platform+"_"+environment+"_Url");
 		
 		appPath = System.getProperty("user.dir") + "\\apps\\"+platform.toLowerCase()+"_"+environment.toLowerCase()+".apk";
 			
-		if(platform.equals("ANDROID"))
+		if(platform.equals("Android"))
 		{
 			DesiredCapabilities cap = new DesiredCapabilities();
 			cap.setCapability(MobileCapabilityType.DEVICE_NAME, deviceName);
@@ -103,7 +110,8 @@ public class Base implements IResultListener
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		}
 		
-		else if(server.equals("WINDOWS") & platform.equals("WEB") & browser.equals("CHROME"))
+		else if(server.equals("Windows") &
+				platform.equals("Web") & browser.equals("Chrome"))
 		{
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("start-maximized");
@@ -117,9 +125,9 @@ public class Base implements IResultListener
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		}
 		
-		else if(server.equals("LINUX") & platform.equals("WEB"))
+		else if(server.equals("Linux") & platform.equals("Web"))
 	    {
-				if(browser.equals("CHROME"))
+				if(browser.equals("Chrome"))
 				{
 					ChromeOptions options = new ChromeOptions();
 					options.addArguments("start-maximized");
@@ -149,7 +157,7 @@ public class Base implements IResultListener
 	 * This will intialize config file
 	 * @author Tarun Goswami
 	 * @since 2018-09-20
-	 * @version 1.0
+	 * @version 1.1
 	 */
 	public static void Initialize() 
 	{
@@ -166,26 +174,50 @@ public class Base implements IResultListener
 		}	
 	}
 	
-
+	/**
+	 * This read excel data
+	 * @author Tarun Goswami
+	 * @since 2018-09-20
+	 * @version 1.1
+	 */
+	public String readData(String platform, String role, String key) throws IOException
+	{
+		String methodName = new Exception().getStackTrace()[1].getMethodName();
+		System.out.println("Calling method name:"+methodName);
+		
+	 	 Map<String, String> testMap = new HashMap<String, String>();
+    	 ExcelUtil excUti = new ExcelUtil();
+    	 testMap = excUti.readKeyValue(platform, role, methodName);
+    	 
+    	 return testMap.get(key);
+	}
 	/**
 	 * Execute before any test method
 	 * @author Tarun Goswami
 	 * @since 2018-09-20
-	 * @version 1.0
+	 * @version 1.1
 	 */
 	@BeforeMethod
-	public void befo() throws MalformedURLException 
+	public void befo(ITestContext it) throws MalformedURLException 
 	{
-	
+		testName = it.getName();
+		System.out.println("TestName is:"+testName);
 		Base base = new Base();
 		Base.Initialize();
 		base.setDriver();
 		extentReports.attachReporter(htmlReporter);	
 	}
 
+	/**
+	 * Before any test method
+	 * @author Tarun Goswami
+	 * @since 2018-09-30
+	 * @version 1.2
+	 */
 	public void onTestStart(ITestResult result) 
 	{
-		extentTest = extentReports.createTest(result.getMethod().getMethodName(), "Some description");
+		extentTest = extentReports.createTest(testName, "Some Description");
+		
 		extentTest.log(Status.INFO, "Platform is:"+platform);
 		
 		if(platform.equals("WEB"))
@@ -195,63 +227,84 @@ public class Base implements IResultListener
 		}
 	}
 
-	public void onTestSuccess(ITestResult result) 
+	
+	/**
+	 * After any test method
+	 * @author Tarun Goswami
+	 * @since 2018-09-30
+	 * @version 1.2
+	 */
+	@AfterMethod
+	public void getResult() throws IOException
 	{
-		extentTest.log(Status.PASS, "Test Pass.");
+		driver.quit();
+		extentTest.log(Status.INFO, "Browser/Application Closed.");
 	}
-
-	public void onTestFailure(ITestResult result)
+	
+	/**
+	 * After Test Suite
+	 * @author Tarun Goswami
+	 * @since 2018-09-30
+	 * @version 1.2
+	 */
+	@AfterSuite
+	public void aftSuite() throws InterruptedException, IOException
 	{
-		extentTest.log(Status.FAIL, "Test Failed.");
+		if(sendReport.equals("True"))
+			SendReportUtil.emailReport();
 	}
 
-	public void onTestSkipped(ITestResult result) {
-		// TODO Auto-generated method stub
-		
+
+	/**
+	 * On Test Failure
+	 * @author Tarun Goswami
+	 * @since 2018-09-30
+	 * @version 1.2
+	 */
+	@Override
+	public void onTestFailure(ITestResult result) 
+	{
+		extentTest.log(Status.FAIL, "Test Failed");		
 	}
 
+
+	@Override
+	public void onTestSkipped(ITestResult result) 
+	{
+		// TODO Auto-generated method stub	
+	}
+
+
+	@Override
 	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	public void onStart(ITestContext context) {
-		// TODO Auto-generated method stub
-		
+	
+	@Override
+	public void onTestSuccess(ITestResult result) 
+	{
+		extentTest.log(Status.PASS, "Test Failed");	
 	}
 
+
+	@Override
+	public void onStart(ITestContext context) 
+	{
+		// TODO Auto-generated method stub	
+	}
+
+
+	/**
+	 * On Finish
+	 * @author Tarun Goswami
+	 * @since 2018-09-30
+	 * @version 1.2
+	 */
+	@Override
 	public void onFinish(ITestContext context) 
 	{
-		extentReports.flush();
-		
-	}
-
-	public void onConfigurationSuccess(ITestResult itr) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void onConfigurationFailure(ITestResult itr) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void onConfigurationSkip(ITestResult itr) {
-		// TODO Auto-generated method stub
-		
-	}
-	
-	@AfterMethod
-	public void getResult() throws IOException
-	{
-		driver.quit();
-		//extentTest.log(Status.INFO, "Browser/Application Closed.");
-	}
-	
-	@AfterSuite
-	public void aftSuite() throws InterruptedException, IOException
-	{
-		if(sendReport.equals("TRUE"))
-			SendReportUtil.emailReport();
+		extentReports.flush();		
 	}
 }

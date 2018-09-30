@@ -35,9 +35,10 @@ public class Announcements extends Base
 	 * @author vinay kumar 
 	 * @since 2018-09-25
 	 * @version 1.0
+	 * @throws InterruptedException 
 	 */
 	@Test
-	public void createAnn_Desktop_admin()
+	public void createAnn_Desktop_admin() throws InterruptedException
 	{
 		  logMod = new LoginModule(driver);
 		  logMod.Login("admin");
@@ -50,9 +51,10 @@ public class Announcements extends Base
 	 * @author vinay kumar 
 	 * @since 2018-09-20
 	 * @version 1.0
+	 * @throws InterruptedException 
 	 */
 	@Test
-	public void createAnn_Android_admin() 
+	public void createAnn_Android_admin() throws InterruptedException 
 	{
 		 logMod.Login("admin");
 	}

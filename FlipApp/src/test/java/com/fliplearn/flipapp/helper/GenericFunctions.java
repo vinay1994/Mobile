@@ -10,11 +10,19 @@ import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.aventstack.extentreports.Status;
+
 import org.openqa.selenium.remote.RemoteWebElement;
 
 
@@ -22,7 +30,7 @@ import io.appium.java_client.PerformsTouchActions;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.touch.offset.PointOption;
 
-public class GenericFunctions
+public class GenericFunctions extends Base
 {
 	/**
 	 * This will convert Date to String
@@ -127,7 +135,8 @@ public class GenericFunctions
 		sc.selectByIndex(index);	
 	}
 
-	/* To compare two lists
+	/**
+	 *  To compare two lists
 	 * @author Tarun Goswami
 	 * @since 2018-09-25
 	 * @version 1.0
@@ -142,13 +151,12 @@ public class GenericFunctions
 		//To get text of web elements and store in array list
 		for(RemoteWebElement ele : webList ) 
 		{
-		    System.out.println("Expected is :"+ele.getText());
 		    actualList.add(ele.getText());
 		}
 		
-		System.out.println("Actual List:" +actualList);
-		System.out.println("Expected List:"+expectedList);
-		
+		extentTest.log(Status.INFO, "Actual List:"+actualList);
+		extentTest.log(Status.INFO, "Expected List:"+expectedList);
+	
 		//Return true if lists are equal
 		if(actualList.equals(expectedList))
 			result = true;
@@ -156,6 +164,38 @@ public class GenericFunctions
 			System.out.println("Lists are not equal");
 			
 		return result;
+	}
+	
+	/**
+	 * Wait for Page load
+	 * @author Tarun Goswami
+	 * @since 2018-09-30
+	 * @version 1.0
+	 */
+	public static void waitForPageLoad(WebDriver driver) 
+	{
+		ExpectedCondition<Boolean> pageLoadCondition = new
+				ExpectedCondition<Boolean>() 
+				{
+	            	public Boolean apply(WebDriver driver) 
+	            	{
+	            		return ((JavascriptExecutor)driver).executeScript("return document.readyState").equals("complete");
+	                }
+	            };
+	    WebDriverWait wait = new WebDriverWait(driver, 30);
+	    wait.until(pageLoadCondition);
+	}
+	
+	/**
+	 *  Wait for Element Visibility
+	 * @author Tarun Goswami
+	 * @since 2018-09-30
+	 * @version 1.0
+	 */
+	public static void waitForElementVisibility(WebDriver driver, RemoteWebElement classListBtn)
+	{
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		WebElement ele = wait.until(ExpectedConditions.visibilityOf(classListBtn));	
 	}
 }
 

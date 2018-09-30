@@ -6,12 +6,13 @@
 <listeners>
 	<listener class-name="com.fliplearn.flipapp.helper.Base"/>
 </listeners>
-	
-	<test name="login" enabled="true">
+	<test name="Test Method" enabled="true">
   		<classes>
-    		<class name="com.fliplearn.flipapp.testcases.FliplearnPrimeView">
+    		<class name="com.fliplearn.flipapp.testcases.QuizDashboard">
+    		<parameter name="platform" value="Web"/>
+			<parameter name="role" value="Principal"/>
         		<methods>
-        			<include name="verifyPrimeAdminClasses" />  	
+        			<include name="verifyQuizDashBoardClasses" />  	
         		</methods>
         	</class>
       	</classes> 

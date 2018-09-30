@@ -1,5 +1,7 @@
 package com.fliplearn.flipapp.pagemodules;
 
+import java.io.IOException;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
@@ -7,6 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.aventstack.extentreports.Status;
 import com.fliplearn.flipapp.helper.Base;
+import com.fliplearn.flipapp.helper.GenericFunctions;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -35,15 +38,22 @@ public class LoginModule extends Base
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 	}
 
-	public  void Login(String userType)
+	/**
+	 * verify User Login
+	 * @author Vinay
+	 * @since 2018-09-25
+	 * @throws InterruptedException 
+	 * @version 1.4
+	 * @throws IOException 
+	 */
+	public  void Login(String role) throws InterruptedException
 	{   
-		if(userType!=null) 
+		if(role!=null) 
 		{
-			String username = aConfig.getProperty(userType.toUpperCase() + "_USERNAME");
-			String password =  aConfig.getProperty(userType.toUpperCase() +"_PASSWORD");
-		
-		
-			if(eConfig.getProperty("PLATFORM").equals("ANDROID")) 
+			String username = aConfig.getProperty(role + "_Username");
+			String password =  aConfig.getProperty(role +"_Password");
+			
+			if(eConfig.getProperty("Platform").equals("Android")) 
 			{
 				OnboardingModule onbMod= new OnboardingModule(driver);
 				onbMod.skipScreen();
@@ -55,7 +65,7 @@ public class LoginModule extends Base
 			passwordTxt.sendKeys((password));
 			extentTest.log(Status.PASS, "Enter Password");
 			
-			if(eConfig.getProperty("PLATFORM").equals("ANDROID")) 
+			if(eConfig.getProperty("Platform").equals("Android")) 
 			{
 				((AndroidDriver) driver).hideKeyboard();
 				extentTest.log(Status.PASS, "Hide Keyboard");
@@ -63,8 +73,46 @@ public class LoginModule extends Base
 			loginBtn.click();
 			extentTest.log(Status.PASS, "Click on Login button");
 			
-			MobileNumberModule mobMod= new MobileNumberModule(driver);
-			mobMod.skipBtn.click();
+			MobileNumberModule mobNumMod= new MobileNumberModule(driver);
+			SignInAsModule sigInMod = new SignInAsModule(driver);
+			QuizModule quiMod = new QuizModule(driver);
+			 
+			 if(role.equals("Parent"))
+			 { 
+	    		 sigInMod.parentLnk.click();
+	    		 extentTest.log(Status.PASS, "Click on First Parent Link.");
+			 }	 
+			 
+			 //Check for bug here why skip not showing for student
+			 if(!(role.equals("Student") && platform.equals("Web")))
+			 {	
+				mobNumMod.skipBtn.click();
+				extentTest.log(Status.PASS, "Click on Skip Button");
+			 }	
+			 
+			 if(!platform.equals("Web"))
+			 {
+				 System.out.println("Platform is****:"+platform);
+				 quiMod.skipBtn.click();
+				 extentTest.log(Status.PASS, "Click on Quiz Skip Button");
+				
+				 GenericFunctions.touchCordinates(driver, 10, 95);
+				 extentTest.log(Status.PASS, "Tap on Got it.");
+				 GenericFunctions.touchCordinates(driver, 10, 95);
+				 extentTest.log(Status.PASS, "Tap on Got it.");
+			 }		
 		}
+	}
+	
+	public void Login(String role, String roleType)
+	{
+		SignInAsModule sigInMod = new SignInAsModule(driver);
+		
+		//On web skip mobile screen comes before User selection? 
+		if(role.equals("Admin"))
+		{	 
+			sigInMod.adminLnk.click();
+			extentTest.log(Status.PASS, "Click on First Admin Link.");
+		} 
 	}
 }
