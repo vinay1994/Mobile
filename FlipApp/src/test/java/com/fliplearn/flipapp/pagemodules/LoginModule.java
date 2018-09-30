@@ -41,20 +41,20 @@ public class LoginModule extends Base
 		{
 			String username = aConfig.getProperty(userType.toUpperCase() + "_USERNAME");
 			String password =  aConfig.getProperty(userType.toUpperCase() +"_PASSWORD");
-		
-		
+
+
 			if(eConfig.getProperty("PLATFORM").equals("ANDROID")) 
 			{
 				OnboardingModule onbMod= new OnboardingModule(driver);
 				onbMod.skipScreen();
 				extentTest.log(Status.PASS, "Click on Skip button.");
 			}
-			
+
 			usernameTxt.sendKeys(username);
 			extentTest.log(Status.PASS, "Enter Username: "+username);
 			passwordTxt.sendKeys((password));
 			extentTest.log(Status.PASS, "Enter Password");
-			
+
 			if(eConfig.getProperty("PLATFORM").equals("ANDROID")) 
 			{
 				((AndroidDriver) driver).hideKeyboard();
@@ -62,9 +62,14 @@ public class LoginModule extends Base
 			}
 			loginBtn.click();
 			extentTest.log(Status.PASS, "Click on Login button");
-			
-			MobileNumberModule mobMod= new MobileNumberModule(driver);
-			mobMod.skipBtn.click();
+			if(eConfig.getProperty("PLATFORM").equals("WEB")& userType.equalsIgnoreCase("student"))
+				System.out.println("skip popUp is missing for userType "+userType);
+			else {
+				MobileNumberModule mobMod= new MobileNumberModule(driver);
+				mobMod.skipBtn.click();
+			}
 		}
 	}
+
+
 }
