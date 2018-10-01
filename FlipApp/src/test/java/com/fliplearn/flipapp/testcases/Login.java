@@ -33,9 +33,9 @@ public class Login extends Base
 	 * @version 1.2
 	 * @throws InterruptedException 
 	 */
-	@Parameters({ "platform", "role" })
+	@Parameters({ "role" })
 	@Test
-	public void verifyLogin(String platform, String role) throws InterruptedException
+	public void verifyLogin(String role) throws InterruptedException
 	{
 		logMod.Login(role);
 	}

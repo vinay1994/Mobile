@@ -52,21 +52,20 @@ public class QuizDashboard extends Base
 	 * @throws InterruptedException 
 	 * @throws IOException 
 	 */
-	@Parameters({ "role" })
+
+	@Parameters({"role" })
 	@Test
-	public void verifyQuizDashBoardClasses(String role) throws InterruptedException, IOException
-	{
+	public void verifyQuizDashboardClasses(String role) throws InterruptedException, IOException
+	{				
+
 		logMod.Login(role);
 		if(platform.equals("Web"))
 			leaMod.learnImg.click();
 
-		leaMod.learnImg.click();
 		quiDasMod.quizDashBoardBtn.click();	
 		GenericFunctions.waitForElementVisibility(driver, quiDasMod.classListBtn);
 		quiDasMod.classListBtn.click();
-		
-		
-
+    
 		String expectedList = readData(platform, role, "Quiz Dashboard Classes");
     	Assert.assertEquals(GenericFunctions.compareList(quiDasMod.dashboardClassList, expectedList), true);		
 	}

@@ -11,7 +11,7 @@
     		<class name="com.fliplearn.flipapp.testcases.QuizDashboard">
 			<parameter name="role" value="Principal"/>
         		<methods>
-        			<include name="verifyQuizDashBoardClasses" />  	
+        			<include name="verifyQuizDashboardClasses" />  	
         		</methods>
         	</class>
       	</classes> 
