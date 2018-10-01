@@ -43,7 +43,7 @@ public class LoginModule extends Base
 	 * @author Vinay
 	 * @since 2018-09-25
 	 * @throws InterruptedException 
-	 * @version 1.4
+	 * @version 1.5
 	 * @throws IOException 
 	 */
 	public  void Login(String role) throws InterruptedException
@@ -53,7 +53,7 @@ public class LoginModule extends Base
 			String username = aConfig.getProperty(role + "_Username");
 			String password =  aConfig.getProperty(role +"_Password");
 		
-			if(eConfig.getProperty("PLATFORM").equals("ANDROID")) 
+			if(eConfig.getProperty("Platform").equals("Android")) 
 			{
 				OnboardingModule onbMod= new OnboardingModule(driver);
 				onbMod.skipScreen();
