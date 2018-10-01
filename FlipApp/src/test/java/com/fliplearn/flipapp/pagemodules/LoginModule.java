@@ -53,7 +53,7 @@ public class LoginModule extends Base
 			String username = aConfig.getProperty(role + "_Username");
 			String password =  aConfig.getProperty(role +"_Password");
 		
-			if(eConfig.getProperty("PLATFORM").equals("ANDROID")) 
+			if(eConfig.getProperty("Platform").equals("Android")) 
 			{
 				OnboardingModule onbMod= new OnboardingModule(driver);
 				onbMod.skipScreen();
