@@ -4,11 +4,12 @@
   <listeners>
     <listener class-name="com.fliplearn.flipapp.helper.Base"/>
   </listeners>
-  <test thread-count="5" name="login(failed)">
+  <test thread-count="5" name="Test Method(failed)">
     <classes>
       <class name="com.fliplearn.flipapp.testcases.QuizDashboard">
+        <parameter name="role" value="Student"/>
         <methods>
-          <include name="verifyWebQuizDashBoard"/>
+          <include name="verifyQuizDashBoardClasses" invocation-numbers="0"/>
           <include name="befo"/>
           <include name="befQuiz"/>
           <include name="aftSuite"/>
@@ -16,5 +17,5 @@
         </methods>
       </class> <!-- com.fliplearn.flipapp.testcases.QuizDashboard -->
     </classes>
-  </test> <!-- login(failed) -->
+  </test> <!-- Test Method(failed) -->
 </suite> <!-- Failed suite [suite of suites] -->

@@ -13,7 +13,7 @@ import io.appium.java_client.pagefactory.iOSFindBy;
 
 public class QuizDashBoardModule {
 	
-	@FindBy(xpath="//*[text()='Quiz Dashboard']")
+	@FindBy(xpath="//h4//strong[text()='Quiz Dashboard']")
 	@AndroidFindBy(xpath="//*[@text='Test and Improve your learning']") 
 	@iOSFindBy(id="")
 	public RemoteWebElement quizDashBoardBtn;	
