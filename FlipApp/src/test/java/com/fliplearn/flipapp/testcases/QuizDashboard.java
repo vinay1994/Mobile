@@ -52,10 +52,10 @@ public class QuizDashboard extends Base
 	 * @throws InterruptedException 
 	 * @throws IOException 
 	 */
-	@Parameters({ "platform", "role" })
+	@Parameters({"role" })
 	@Test
-	public void verifyQuizDashBoardClasses(String platform, String role) throws InterruptedException, IOException
-	{
+	public void verifyQuizDashboardClasses(String role) throws InterruptedException, IOException
+	{				
 		logMod.Login(role);
 		if(platform.equals("Web"))
 			leaMod.learnImg.click();

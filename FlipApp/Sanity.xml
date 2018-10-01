@@ -6,7 +6,6 @@
 <listeners>
 	<listener class-name="com.fliplearn.flipapp.helper.Base"/>
 </listeners>
-	<parameter name="platform" value="Android"/>
 	<test name="Admin Login" enabled="true">
   		<classes>
     		<class name="com.fliplearn.flipapp.testcases.Login">
@@ -96,5 +95,38 @@
         	</class>
       	</classes> 
 	</test>  
+	
+	<test name="Admin Fliplearn Quiz Dasboard Classes" enabled="true">
+  		<classes>
+    		<class name="com.fliplearn.flipapp.testcases.QuizDashboard">
+					<parameter name="role" value="Admin"/>
+        			<methods>
+        				<include name="verifyQuizDashboardClasses" />  	
+        			</methods>
+        	</class>
+      	</classes> 
+	</test> 
+	
+	<test name="Principal Fliplearn Quiz Dasboard Classes" enabled="true">
+  		<classes>
+    		<class name="com.fliplearn.flipapp.testcases.QuizDashboard">
+					<parameter name="role" value="Principal"/>
+        			<methods>
+        				<include name="verifyQuizDashboardClasses" />  	
+        			</methods>
+        	</class>
+      	</classes> 
+	</test> 
+	
+	<test name="Teacher Fliplearn Quiz Dasboard Classes" enabled="true">
+  		<classes>
+    		<class name="com.fliplearn.flipapp.testcases.QuizDashboard">
+					<parameter name="role" value="Teacher"/>
+        			<methods>
+        				<include name="verifyQuizDashboardClasses" />  	
+        			</methods>
+        	</class>
+      	</classes> 
+	</test> 
 	
 </suite>	

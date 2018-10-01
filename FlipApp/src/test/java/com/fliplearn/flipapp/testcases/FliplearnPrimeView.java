@@ -43,9 +43,9 @@ public class FliplearnPrimeView extends Base
 	 * @version 1.3
 	 * @throws IOException 
 	 */
-	 @Parameters({ "platform", "role" })
+	 @Parameters({"role"})
      @Test
-     public void verifyPrimeClasses(String platform, String role) throws IOException, InterruptedException 
+     public void verifyPrimeClasses(String role) throws IOException, InterruptedException 
      {
     	 logMod.Login(role);
     	 
