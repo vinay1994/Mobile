@@ -27,4 +27,14 @@
       	</classes> 
 	</test> 
 	
+	<test name="Quiz Dashboard" enabled="true">
+  		<classes>
+    		<class name="com.fliplearn.flipapp.testcases.QuizDashboard">
+        		<methods>
+        			<include name="verifyQuizDashboardClasses" />  	
+        		</methods>
+        	</class>
+      	</classes> 
+	</test>  
+	
 </suite>	

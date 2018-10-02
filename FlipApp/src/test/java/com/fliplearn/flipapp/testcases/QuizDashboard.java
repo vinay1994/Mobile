@@ -48,25 +48,24 @@ public class QuizDashboard extends Base
 	 * Verify Quiz Dashboard Classes for Admin, Principal and Teacher on Web, Android and iOS
 	 * @author Durga
 	 * @since 2018-09-21
-	 * @version 1.2
+	 * @version 1.3
 	 * @throws InterruptedException 
 	 * @throws IOException 
 	 */
 
-	@Parameters({"role" })
-	@Test
+	@Test(dataProvider = "group2")
 	public void verifyQuizDashboardClasses(String role) throws InterruptedException, IOException
 	{				
-
 		logMod.Login(role);
 		if(platform.equals("Web"))
 			leaMod.learnImg.click();
 
-		quiDasMod.quizDashBoardBtn.click();	
+		quiDasMod.quizDashboardBtn.click();	
 		GenericFunctions.waitForElementVisibility(driver, quiDasMod.classListBtn);
 		quiDasMod.classListBtn.click();
     
 		String expectedList = readData(platform, role, "Quiz Dashboard Classes");
-    	Assert.assertEquals(GenericFunctions.compareList(quiDasMod.dashboardClassList, expectedList), true);		
+		System.out.println("Expected List is:"+expectedList);
+    	Assert.assertEquals(GenericFunctions.compareList(quiDasMod.quizDashboardClassList, expectedList), true);		
 	}
 }
