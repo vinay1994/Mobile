@@ -1,6 +1,7 @@
 package com.fliplearn.flipapp.testcases;
 
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -26,6 +27,7 @@ public class Login extends Base
 		quiMod = new QuizModule(driver);
 	}
 	
+	
 	/**
 	 * Verify User User Login
 	 * @author Vinay Yadav, Durga
@@ -33,8 +35,7 @@ public class Login extends Base
 	 * @version 1.2
 	 * @throws InterruptedException 
 	 */
-	@Parameters({ "role" })
-	@Test
+	@Test(dataProvider = "group1")
 	public void verifyLogin(String role) throws InterruptedException
 	{
 		logMod.Login(role);

@@ -1,6 +1,8 @@
 package com.fliplearn.flipapp.util;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 
@@ -45,8 +47,6 @@ public class SendReportUtil extends Base
 				}
 			});
 
-
-
      try 
      {
     	 String currentDir = System.getProperty("user.dir");
@@ -59,6 +59,7 @@ public class SendReportUtil extends Base
            
          Message message = new MimeMessage(session);
          message.setFrom(new InternetAddress("tarun.sage@gmail.com"));
+
            
          System.out.println("email ids are:"+emailIds);
             
@@ -70,7 +71,9 @@ public class SendReportUtil extends Base
         
          message.setSubject("Automation Report: "+subject);
          BodyPart messageBodyPart = new MimeBodyPart();
-         messageBodyPart.setText("Download attachement to view report.");
+         
+         String bodyMessage = "<font color='blue'>Download Attachment to View Test Case Report </a>";
+         messageBodyPart.setContent(bodyMessage, "text/html; charset=utf-8");
          multipart.addBodyPart(messageBodyPart);
          messageBodyPart = new MimeBodyPart();
          DataSource source = new FileDataSource(reportFilePath);
