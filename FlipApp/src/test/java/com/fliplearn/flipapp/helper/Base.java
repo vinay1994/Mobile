@@ -22,6 +22,7 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.internal.IResultListener;
 
 import com.aventstack.extentreports.ExtentReports;
@@ -216,7 +217,7 @@ public class Base implements ITestListener
 	 */
 	public void onTestStart(ITestResult result) 
 	{
-		extentTest = extentReports.createTest(testName, "Some Description");
+		extentTest = extentReports.createTest(result.getMethod().getMethodName(), "Some Description");
 		
 		extentTest.log(Status.INFO, "Platform is:"+platform);
 		
@@ -306,5 +307,24 @@ public class Base implements ITestListener
 	public void onFinish(ITestContext context) 
 	{
 		extentReports.flush();		
+	}
+	
+
+	@DataProvider(name = "group1")
+	public static Object[] group1() 
+	{
+		  return new Object[][]
+		  { 
+			  { "Admin" }, { "Principal" }, { "Teacher" }, { "Parent" }, { "Student" }
+		  }; 
+	}
+	
+	@DataProvider(name = "group2")
+	public static Object[] group2() 
+	{
+		  return new Object[][]
+		  { 
+			  { "Admin" }, { "Principal" }, { "Teacher" }
+		  }; 
 	}
 }

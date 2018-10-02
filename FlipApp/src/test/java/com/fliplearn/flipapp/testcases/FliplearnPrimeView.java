@@ -3,6 +3,7 @@ package com.fliplearn.flipapp.testcases;
 import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -35,6 +36,7 @@ public class FliplearnPrimeView extends Base
 	    selClaMod=	new SelectClassModule(driver);
 	}
 	
+	
 	/**
 	 * verify Prime classes on Web, Android, iOS when User click on fliplearn prime tile on learn page
 	 * @author Jagrati
@@ -43,8 +45,7 @@ public class FliplearnPrimeView extends Base
 	 * @version 1.3
 	 * @throws IOException 
 	 */
-	 @Parameters({"role"})
-     @Test
+	 @Test(dataProvider = "group2")
      public void verifyPrimeClasses(String role) throws IOException, InterruptedException 
      {
     	 logMod.Login(role);
