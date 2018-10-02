@@ -8,9 +8,9 @@
 </listeners>
 	<test name="Test Method" enabled="true">
   		<classes>
-    		<class name="com.fliplearn.flipapp.testcases.Login">
+    		<class name="com.fliplearn.flipapp.testcases.QuizDashboard">
         		<methods>
-        			<include name="verifyLogin" />  	
+        			<include name="verifyQuizDashboardClasses" />  	
         		</methods>
         	</class>
       	</classes> 
