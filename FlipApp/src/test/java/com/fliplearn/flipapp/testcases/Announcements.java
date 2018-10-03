@@ -1,7 +1,12 @@
 package com.fliplearn.flipapp.testcases;
 
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeMethod
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import com.fliplearn.flipapp.helper.Base;
+import com.fliplearn.flipapp.helper.GenericFunctions;
 import org.testng.annotations.Test;
 
 import com.fliplearn.flipapp.helper.Base;
@@ -28,12 +33,22 @@ public class Announcements extends Base
 		onbMod = new OnboardingModule(driver);
 		mobNumMod = new MobileNumberModule(driver);
 		annMod = new AnnouncementModule(driver);
-		//onbMod.skipScreen();
 	}
 
 	/**
 	 * Verify User Admin to create announcement on Browser
 	 * @author vinay kumar 
+	 * @since 2018-09-30
+	 * @version 1.1
+	 * @throws Throwable 
+	 */
+	@Parameters({ "role" })
+	@Test
+	public void createAnnoncement(String role) throws Throwable
+	{
+		logMod.Login(role);
+    }
+    /**
 	 * @since 2018-09-25
 	 * @version 1.0
 	 * @throws InterruptedException 
@@ -51,7 +66,7 @@ public class Announcements extends Base
 	 * @author vinay kumar 
 	 * @since 2018-09-20
 	 * @version 1.0
-	 * @throws InterruptedException 
+	 * @throws Throwable 
 	 */
 	@Test
 	public void createAnnoncementAdminAndroid() throws InterruptedException 
@@ -66,11 +81,11 @@ public class Announcements extends Base
 	 * @author vinay kumar 
 	 * @since 2018-09-25
 	 * @version 1.0
-	 * @throws InterruptedException 
+	 * @throws Throwable 
 	 */
 
 	@Test
-	public void createAnnoncementPrincipalWeb() throws InterruptedException
+	public void createAnnoncementPrincipalWeb() throws InterruptedExceptio
 	{
 		logMod.Login("principal");
 		annMod.mouseOverOnpostBtn();	
@@ -82,7 +97,7 @@ public class Announcements extends Base
 	 * @author vinay kumar 
 	 * @since 2018-09-25
 	 * @version 1.0
-	 * @throws InterruptedException 
+	 * @throws Throwable 
 	 */
 
 	@Test
@@ -98,7 +113,7 @@ public class Announcements extends Base
 	 * @author vinay kumar 
 	 * @since 2018-09-25
 	 * @version 1.0
-	 * @throws InterruptedException 
+	 * @throws Throwable 
 	 */
 	@Test
 	public void createAnnoncementTeacherWeb() throws InterruptedException
@@ -113,7 +128,7 @@ public class Announcements extends Base
 	 * @author vinay kumar 
 	 * @since 2018-09-25
 	 * @version 1.0
-	 * @throws InterruptedException 
+	 * @throws Throwable 
 	 */
 	@Test
 	public void createAnnoncementTeacherAndroid() throws InterruptedException
@@ -185,7 +200,7 @@ public class Announcements extends Base
 	 * @author vinay kumar 
 	 * @since 2018-09-25
 	 * @version 1.0
-	 * @throws InterruptedException 
+	 * @throws Throwable 
 	 */
 	@Test
 	public void canViewAnnoncementStudentWeb() throws InterruptedException
@@ -202,7 +217,7 @@ public class Announcements extends Base
 	 * @author vinay kumar 
 	 * @since 2018-09-25
 	 * @version 1.0
-	 * @throws InterruptedException 
+	 * @throws Throwable 
 	 */
 	@Test
 	public void canViewAnnoncementStudentAndroid() throws InterruptedException
@@ -219,8 +234,6 @@ public class Announcements extends Base
 	 * @author vinay kumar 
 	 * @since 2018-09-25
 	 * @version 1.0
-	 * @throws InterruptedException 
-	 */
 	@Test
 	public void canViewAnnoncementParentWeb() throws InterruptedException
 	{
@@ -236,8 +249,9 @@ public class Announcements extends Base
 	 * @author vinay kumar 
 	 * @since 2018-09-25
 	 * @version 1.0
-	 * @throws InterruptedException 
+	 * @throws Throwable 
 	 */
+	
 	@Test
 	public void canViewAnnoncementParentAndroid() throws InterruptedException
 	{

@@ -1,5 +1,9 @@
 package com.fliplearn.flipapp.helper;
 
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -50,7 +54,7 @@ public class GenericFunctions extends Base
 
 		return formatDate;
 	}
-	
+
 	/**
 	 * This will get latest file from directory
 	 * @author Tarun Goswami
@@ -59,26 +63,26 @@ public class GenericFunctions extends Base
 	 */
 	public static File getLatestFilefromDir(String dirPath)
 	{
-	    File dir = new File(dirPath);
-	    File[] files = dir.listFiles();
-	    
-	    if (files == null || files.length == 0) 
-	    {
-	        return null;
-	    }
+		File dir = new File(dirPath);
+		File[] files = dir.listFiles();
 
-	    File lastModifiedFile = files[0];
-	    
-	    for (int i = 1; i < files.length; i++) 
-	    {	    	
-	    	if (lastModifiedFile.lastModified() < files[i].lastModified()) 
-	    	{
-	           lastModifiedFile = files[i];
-	    	}
-	    }
-	    return lastModifiedFile;
+		if (files == null || files.length == 0) 
+		{
+			return null;
+		}
+
+		File lastModifiedFile = files[0];
+
+		for (int i = 1; i < files.length; i++) 
+		{	    	
+			if (lastModifiedFile.lastModified() < files[i].lastModified()) 
+			{
+				lastModifiedFile = files[i];
+			}
+		}
+		return lastModifiedFile;
 	}
-	
+
 	/**
 	 * To perform touch by percentage
 	 * @author Tarun Goswami
@@ -90,15 +94,15 @@ public class GenericFunctions extends Base
 		Dimension size = driver.manage().window().getSize();
 
 		int endX = (size.width * x)/100;
-        int endY = (size.height * y)/100;
-        
-        System.out.println("Values are"+endX+"..........."+endY);
-        
-        TouchAction touchAction = new TouchAction((PerformsTouchActions) driver);
-        touchAction.tap(PointOption.point(endX, endY)).perform() ;
-        Thread.sleep(3000);
+		int endY = (size.height * y)/100;
+
+		System.out.println("Values are"+endX+"..........."+endY);
+
+		TouchAction touchAction = new TouchAction((PerformsTouchActions) driver);
+		touchAction.tap(PointOption.point(endX, endY)).perform() ;
+		Thread.sleep(3000);
 	}
-	
+
 	/**
 	 * This will get latest file from directory
 	 * @author vinay yadav
@@ -106,16 +110,17 @@ public class GenericFunctions extends Base
 	 * @version 1.0
 	 * @throws InterruptedException 
 	 */
-	
-	public static void mouseOver(WebDriver driver, WebElement elm, WebElement target) throws InterruptedException {
+
+	public static void mouseOver(WebDriver driver, RemoteWebElement element, RemoteWebElement target) throws InterruptedException {
 		Actions act=new Actions(driver);
-		Thread.sleep(2000);
-		act.moveToElement(elm).perform();
-			Thread.sleep(2000);
+		waitForElementVisibility(driver, element);
+		Thread.sleep(3000);
+		act.moveToElement(element).perform();
+		waitForElementVisibility(driver, target);
 		act.moveToElement(target).click().perform();
 		Thread.sleep(2000);
 	}
-	
+
 	/**
 	 * This will get latest file from directory
 	 * @author vinay yadav
@@ -126,6 +131,24 @@ public class GenericFunctions extends Base
 		Select sc =new Select(elm);
 		sc.selectByValue(value);	
 	}
+	/**
+	 * This will get latest file from directory
+	 * @author vinay yadav
+	 * @since 2018-09-24
+	 * @version 1.0
+	 */
+	public static void UploadFile(String FilePath) throws Throwable{
+		StringSelection ss = new StringSelection(FilePath);
+		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
+		Robot robot = new Robot();
+		robot.keyPress(KeyEvent.VK_CONTROL);
+		robot.keyPress(KeyEvent.VK_V);
+		robot.keyRelease(KeyEvent.VK_CONTROL);
+		robot.keyRelease(KeyEvent.VK_V);
+		robot.setAutoDelay(3000);
+		robot.keyPress(KeyEvent.VK_ENTER);
+		robot.keyRelease(KeyEvent.VK_ENTER);
+	}
 
 	/**
 	 * use select class 
@@ -133,7 +156,7 @@ public class GenericFunctions extends Base
 	 * @since 2018-09-24
 	 * @version 1.0
 	 */
-	
+
 	public static void selectClassByIndex(WebElement elm, int index) {
 		Select sc =new Select(elm);
 		sc.selectByIndex(index);	
@@ -143,9 +166,10 @@ public class GenericFunctions extends Base
 	 * @author vinay yadav
 	 * @since 2018-09-24
 	 * @version 1.0
+	 * @param driver 
 	 */
-	
-	public static void WaitFor_visibility(WebDriver driver, WebElement element) {
+
+	public static void waitForElementVisibility(WebDriver driver, RemoteWebElement element) {
 		(new WebDriverWait(driver, 60)).until(ExpectedConditions.visibilityOf(element));
 	}
 
@@ -159,27 +183,27 @@ public class GenericFunctions extends Base
 	{
 		List<String> expectedList =  Arrays.asList(expectedString.split("\\s*,\\s*"));
 		List<String> actualList = new ArrayList<String>();
-				
+
 		boolean result = false;
-		
+
 		//To get text of web elements and store in array list
 		for(RemoteWebElement ele : webList ) 
 		{
-		    actualList.add(ele.getText());
+			actualList.add(ele.getText());
 		}
-		
+
 		extentTest.log(Status.INFO, "Actual List:"+actualList);
 		extentTest.log(Status.INFO, "Expected List:"+expectedList);
-	
+
 		//Return true if lists are equal
 		if(actualList.equals(expectedList))
 			result = true;
 		else
 			System.out.println("Lists are not equal");
-			
+
 		return result;
 	}
-	
+
 	/**
 	 * Wait for Page load
 	 * @author Tarun Goswami
@@ -190,26 +214,15 @@ public class GenericFunctions extends Base
 	{
 		ExpectedCondition<Boolean> pageLoadCondition = new
 				ExpectedCondition<Boolean>() 
-				{
-	            	public Boolean apply(WebDriver driver) 
-	            	{
-	            		return ((JavascriptExecutor)driver).executeScript("return document.readyState").equals("complete");
-	                }
-	            };
-	    WebDriverWait wait = new WebDriverWait(driver, 30);
-	    wait.until(pageLoadCondition);
-	}
-	
-	/**
-	 *  Wait for Element Visibility
-	 * @author Tarun Goswami
-	 * @since 2018-09-30
-	 * @version 1.0
-	 */
-	public static void waitForElementVisibility(WebDriver driver, RemoteWebElement classListBtn)
-	{
+		{
+			public Boolean apply(WebDriver driver) 
+			{
+				return ((JavascriptExecutor)driver).executeScript("return document.readyState").equals("complete");
+			}
+		};
 		WebDriverWait wait = new WebDriverWait(driver, 30);
-		WebElement ele = wait.until(ExpectedConditions.visibilityOf(classListBtn));	
+		wait.until(pageLoadCondition);
 	}
+
 }
 
