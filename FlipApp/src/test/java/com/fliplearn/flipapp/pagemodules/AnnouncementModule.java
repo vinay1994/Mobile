@@ -9,6 +9,7 @@ import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.aventstack.extentreports.Status;
 import com.fliplearn.flipapp.helper.Base;
 import com.fliplearn.flipapp.helper.GenericFunctions;
 
@@ -17,7 +18,9 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSFindBy;
 
 public class AnnouncementModule extends Base 
-{
+{     
+	
+	String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
 
 	@FindBy(xpath="//button[contains(text(),'Post')]")
 	@AndroidFindBy(className="") 
@@ -27,9 +30,9 @@ public class AnnouncementModule extends Base
 	@FindBy(xpath="//button[contains(@id,'announcement')]")
 	@AndroidFindBy(id="") 
 	@iOSFindBy(id="")
-	RemoteWebElement annBtn;
+	public RemoteWebElement annBtn;
 
-	@FindBy(id="title")
+	@FindBy(xpath="(//input[@id='title'])[2]")
 	@AndroidFindBy(id="") 
 	@iOSFindBy(id="")
 	RemoteWebElement titleTxt;
@@ -45,7 +48,8 @@ public class AnnouncementModule extends Base
 	RemoteWebElement noRdBtn;
 
 
-	@FindBy(xpath="//textarea[contains(@class,'-touched')]")
+	//	@FindBy(xpath="//textarea[contains(@class,'-touched')]")
+	@FindBy(xpath="(//textarea[@id='textboxIssuereport'])[2]")
 	@AndroidFindBy(id="") 
 	@iOSFindBy(id="")
 	RemoteWebElement addDescriptionTxt;
@@ -76,7 +80,7 @@ public class AnnouncementModule extends Base
 	@AndroidFindBy(id="") 
 	@iOSFindBy(id="")
 	RemoteWebElement getTitle;
-	
+
 
 	@FindBy(xpath="//img[contains(@class,'profilePic ng-scope')]")
 	@AndroidFindBy(id="") 
@@ -104,32 +108,39 @@ public class AnnouncementModule extends Base
 
 	}
 
-	public String fillTxt() throws InterruptedException {
-		String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
+	public String fillTxt() throws Throwable {
 		driver.switchTo().activeElement();
 		titleTxt.clear();
+		titleTxt.click();
 		titleTxt.sendKeys("Testing automation Title_"+timeStamp);
+		shareWithBtn.click();
 		select_class.click();
+		extentTest.log(Status.PASS, "Select Class");
 		save.click();
-		noRdBtn.click();
+		GenericFunctions.waitForElementVisibility(driver,addDescriptionTxt );
 		addDescriptionTxt.clear();
 		addDescriptionTxt.sendKeys("Qa add description for testing purpose on this time :"+timeStamp);
 		uploadImageBtn.click();
-		uploadImageBtn.sendKeys("user.dir"+"resources/images/Screenshot (13).png");
+		String Filepath = System.getProperty("user.dir")+"\\resources\\images\\vinay.png";
+		System.out.println(Filepath);
+		GenericFunctions.UploadFile(Filepath);
 		createBtn.click();
 		isTitleDisplayed("Testing automation Title_"+timeStamp);
 		return "Testing automation Title_"+timeStamp;
 	}
-	
-	
-	public boolean isTitleDisplayed(String Title) throws InterruptedException{
+
+
+	public boolean isTitleDisplayed(String Title) throws InterruptedException
+	{
 		int i=0;
 		String ActualTitle=getTitle();
-		while(!(ActualTitle.equalsIgnoreCase(Title)) && i<10){
+		while(!(ActualTitle.equalsIgnoreCase(Title)) && i<10)
+		{
 			driver.navigate().refresh();
 			ActualTitle=getTitle();
 			i++;
 		}
+
 		if(!(ActualTitle.equalsIgnoreCase(Title))){
 			return false;
 		}else{
@@ -137,14 +148,14 @@ public class AnnouncementModule extends Base
 		}
 	}
 	public String getTitle() throws InterruptedException{
-		
-		GenericFunctions.WaitFor_visibility(driver, getTitle);
+
+		GenericFunctions.waitForElementVisibility(driver, getTitle);
 		return getTitle.getText();
 	}
 	public boolean isPostBtndisplayed() {
 		try {
-		if(postBtn.getText().equalsIgnoreCase("Post"))
-			return false;
+			if(postBtn.getText().equalsIgnoreCase("Post"))
+				return false;
 		}
 		catch(Exception e){
 			return true;
