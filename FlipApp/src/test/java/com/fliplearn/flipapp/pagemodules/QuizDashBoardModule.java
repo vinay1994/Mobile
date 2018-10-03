@@ -15,6 +15,7 @@ public class QuizDashBoardModule {
 	
 	@FindBy(xpath="//h4//strong[text()='Quiz Dashboard']")
 	@AndroidFindBy(xpath="//*[@text='Test and Improve your learning']") 
+	
 	@iOSFindBy(id="")
 	public RemoteWebElement quizDashboardBtn;	
 	
