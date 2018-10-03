@@ -1,17 +1,21 @@
 package com.fliplearn.flipapp.testcases;
 
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeMethod
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.fliplearn.flipapp.helper.Base;
 import com.fliplearn.flipapp.helper.GenericFunctions;
+import org.testng.annotations.Test;
+
+import com.fliplearn.flipapp.helper.Base;
 import com.fliplearn.flipapp.pagemodules.AnnouncementModule;
 import com.fliplearn.flipapp.pagemodules.LoginModule;
 import com.fliplearn.flipapp.pagemodules.MenuModule;
 import com.fliplearn.flipapp.pagemodules.MobileNumberModule;
 import com.fliplearn.flipapp.pagemodules.OnboardingModule;
+import com.fliplearn.flipapp.pagemodules.QuizModule;
 
 public class Announcements extends Base 
 {
@@ -43,6 +47,16 @@ public class Announcements extends Base
 	public void createAnnoncement(String role) throws Throwable
 	{
 		logMod.Login(role);
+    }
+    /**
+	 * @since 2018-09-25
+	 * @version 1.0
+	 * @throws InterruptedException 
+	 */
+	@Test
+	public void createAnnoncement() throws InterruptedException
+	{
+		logMod.Login("admin");
 		annMod.mouseOverOnpostBtn();	
 		Assert.assertEquals(annMod.fillTxt(), annMod.getTitle());
 	}
@@ -55,7 +69,7 @@ public class Announcements extends Base
 	 * @throws Throwable 
 	 */
 	@Test
-	public void createAnnoncementAdminAndroid() throws Throwable 
+	public void createAnnoncementAdminAndroid() throws InterruptedException 
 	{
 		logMod.Login("admin");
 		annMod.mouseOverOnpostBtn();	
@@ -71,7 +85,7 @@ public class Announcements extends Base
 	 */
 
 	@Test
-	public void createAnnoncementPrincipalWeb() throws Throwable
+	public void createAnnoncementPrincipalWeb() throws InterruptedExceptio
 	{
 		logMod.Login("principal");
 		annMod.mouseOverOnpostBtn();	
@@ -87,7 +101,7 @@ public class Announcements extends Base
 	 */
 
 	@Test
-	public void createAnnoncementPrincipalAndroid() throws Throwable
+	public void createAnnoncementPrincipalAndroid() throws InterruptedException
 	{
 		logMod.Login("principal");
 		annMod.mouseOverOnpostBtn();	
@@ -102,7 +116,7 @@ public class Announcements extends Base
 	 * @throws Throwable 
 	 */
 	@Test
-	public void createAnnoncementTeacherWeb() throws Throwable
+	public void createAnnoncementTeacherWeb() throws InterruptedException
 	{
 		logMod.Login("teacher");
 		annMod.mouseOverOnpostBtn();	
@@ -117,7 +131,7 @@ public class Announcements extends Base
 	 * @throws Throwable 
 	 */
 	@Test
-	public void createAnnoncementTeacherAndroid() throws Throwable
+	public void createAnnoncementTeacherAndroid() throws InterruptedException
 	{
 		logMod.Login("teacher");
 		annMod.mouseOverOnpostBtn();	
@@ -189,7 +203,7 @@ public class Announcements extends Base
 	 * @throws Throwable 
 	 */
 	@Test
-	public void canViewAnnoncementStudentWeb() throws Throwable
+	public void canViewAnnoncementStudentWeb() throws InterruptedException
 	{
 		logMod.Login("admin");
 		String exepected = annMod.fillTxt();
@@ -206,7 +220,7 @@ public class Announcements extends Base
 	 * @throws Throwable 
 	 */
 	@Test
-	public void canViewAnnoncementStudentAndroid() throws Throwable
+	public void canViewAnnoncementStudentAndroid() throws InterruptedException
 	{
 		logMod.Login("admin");
 		String exepected = annMod.fillTxt();
@@ -220,10 +234,8 @@ public class Announcements extends Base
 	 * @author vinay kumar 
 	 * @since 2018-09-25
 	 * @version 1.0
-	 * @throws Throwable 
-	 */
 	@Test
-	public void canViewAnnoncementParentWeb() throws Throwable
+	public void canViewAnnoncementParentWeb() throws InterruptedException
 	{
 		logMod.Login("admin");
 		String exepected = annMod.fillTxt();
@@ -239,8 +251,9 @@ public class Announcements extends Base
 	 * @version 1.0
 	 * @throws Throwable 
 	 */
+	
 	@Test
-	public void canViewAnnoncementParentAndroid() throws Throwable
+	public void canViewAnnoncementParentAndroid() throws InterruptedException
 	{
 		logMod.Login("admin");
 		String exepected = annMod.fillTxt();

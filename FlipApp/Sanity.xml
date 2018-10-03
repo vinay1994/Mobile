@@ -1,132 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="suite of suites">
+<suite name="Fliplearn Automation Suite">
 
 <listeners>
 	<listener class-name="com.fliplearn.flipapp.helper.Base"/>
 </listeners>
-	<test name="Admin Login" enabled="true">
+ 
+ <test name="Login" enabled="true">
   		<classes>
     		<class name="com.fliplearn.flipapp.testcases.Login">
-			<parameter name="role" value="Admin"/>
         		<methods>
-        			<include name="verifyLogin" />  	
+        			<include name="verifyLogin"/>
         		</methods>
         	</class>
       	</classes> 
 	</test> 
 	
-	<test name="Principal Login" enabled="true">
-  		<classes>
-    		<class name="com.fliplearn.flipapp.testcases.Login">
-			<parameter name="role" value="Principal"/>
-        		<methods>
-        			<include name="verifyLogin" />  	
-        		</methods>
-        	</class>
-      	</classes> 
-	</test> 
-	
-		<test name="Teacher Login" enabled="true">
-  		<classes>
-    		<class name="com.fliplearn.flipapp.testcases.Login">
-			<parameter name="role" value="Teacher"/>
-        		<methods>
-        			<include name="verifyLogin" />  	
-        		</methods>
-        	</class>
-      	</classes> 
-		</test> 
-		
-		<test name="Parent Login" enabled="true">
-  		<classes>
-    		<class name="com.fliplearn.flipapp.testcases.Login">
-			<parameter name="role" value="Parent"/>
-        		<methods>
-        			<include name="verifyLogin" />  	
-        		</methods>
-        	</class>
-      	</classes> 
-      	</test>
-      	
-      	<test name="Student Login" enabled="true">
-  		<classes>
-    		<class name="com.fliplearn.flipapp.testcases.Login">
-			<parameter name="role" value="Student"/>
-        		<methods>
-        			<include name="verifyLogin" />  	
-        		</methods>
-        	</class>
-      	</classes> 
-		</test>
-		
-	<test name="Admin Fliplearn Prime Classes" enabled="true">
+	<test name="Fliplearn Prime View" enabled="true">
   		<classes>
     		<class name="com.fliplearn.flipapp.testcases.FliplearnPrimeView">
-					<parameter name="role" value="Admin"/>
-        			<methods>
-        				<include name="verifyPrimeClasses" />  	
-        			</methods>
+        		<methods>
+        			<include name="verifyPrimeClasses"/>
+        		</methods>
         	</class>
       	</classes> 
 	</test> 
 	
-	
-	<test name="Principal Fliplearn Prime Classes" enabled="true">
+	<test name="Quiz Dashboard" enabled="true">
   		<classes>
-    		<class name="com.fliplearn.flipapp.testcases.FliplearnPrimeView">
-				<parameter name="role" value="Principal"/>
+    		<class name="com.fliplearn.flipapp.testcases.QuizDashboard">
         		<methods>
-        			<include name="verifyPrimeClasses" />  	
+        			<include name="verifyQuizDashboardClasses" />  	
         		</methods>
         	</class>
       	</classes> 
 	</test>  
-	
-
-	<test name="Teacher Fliplearn Prime Classes" enabled="true">
-  		<classes>
-    		<class name="com.fliplearn.flipapp.testcases.FliplearnPrimeView">
-				<parameter name="role" value="Teacher"/>
-        		<methods>
-        			<include name="verifyPrimeClasses" />  	
-        		</methods>
-        	</class>
-      	</classes> 
-	</test>  
-	
-	<test name="Admin Fliplearn Quiz Dasboard Classes" enabled="true">
-  		<classes>
-    		<class name="com.fliplearn.flipapp.testcases.QuizDashboard">
-					<parameter name="role" value="Admin"/>
-        			<methods>
-        				<include name="verifyQuizDashboardClasses" />  	
-        			</methods>
-        	</class>
-      	</classes> 
-	</test> 
-	
-	<test name="Principal Fliplearn Quiz Dasboard Classes" enabled="true">
-  		<classes>
-    		<class name="com.fliplearn.flipapp.testcases.QuizDashboard">
-					<parameter name="role" value="Principal"/>
-        			<methods>
-        				<include name="verifyQuizDashboardClasses" />  	
-        			</methods>
-        	</class>
-      	</classes> 
-	</test> 
-	
-	<test name="Teacher Fliplearn Quiz Dasboard Classes" enabled="true">
-  		<classes>
-    		<class name="com.fliplearn.flipapp.testcases.QuizDashboard">
-					<parameter name="role" value="Teacher"/>
-        			<methods>
-        				<include name="verifyQuizDashboardClasses" />  	
-        			</methods>
-        	</class>
-      	</classes> 
-	</test> 
 	
 </suite>	

@@ -9,7 +9,6 @@
 	<test name="Test Method" enabled="true">
   		<classes>
     		<class name="com.fliplearn.flipapp.testcases.QuizDashboard">
-			<parameter name="role" value="Principal"/>
         		<methods>
         			<include name="verifyQuizDashboardClasses" />  	
         		</methods>

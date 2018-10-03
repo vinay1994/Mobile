@@ -16,13 +16,13 @@ public class QuizDashBoardModule {
 	@FindBy(xpath="//h4//strong[text()='Quiz Dashboard']")
 	@AndroidFindBy(xpath="//*[@text='Test and Improve your learning']") 
 	@iOSFindBy(id="")
-	public RemoteWebElement quizDashBoardBtn;	
+	public RemoteWebElement quizDashboardBtn;	
 	
 	@AndroidFindBy(id="//*[@text='Play Quiz']")
 	public RemoteWebElement playQuizBtn;
 	
 	@FindBy(xpath="//ul[@class='dropdown-menu quizMobileDropdown']/li/a")
-	public List<RemoteWebElement> dashboardClassList;
+	public List<RemoteWebElement> quizDashboardClassList;
 	
 	@FindBy(xpath="//div[@class='dropdown section-dropdown']/button")
 	public RemoteWebElement classListBtn;
