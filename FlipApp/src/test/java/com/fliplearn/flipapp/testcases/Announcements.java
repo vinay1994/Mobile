@@ -7,6 +7,14 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.Status;
 import com.fliplearn.flipapp.helper.Base;
 import com.fliplearn.flipapp.helper.GenericFunctions;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import com.fliplearn.flipapp.helper.Base;
+import com.fliplearn.flipapp.helper.GenericFunctions;
+import org.testng.annotations.Test;
+
+import com.fliplearn.flipapp.helper.Base;
 import com.fliplearn.flipapp.pagemodules.AnnouncementModule;
 import com.fliplearn.flipapp.pagemodules.LoginModule;
 import com.fliplearn.flipapp.pagemodules.MenuModule;
@@ -14,6 +22,7 @@ import com.fliplearn.flipapp.pagemodules.MobileNumberModule;
 import com.fliplearn.flipapp.pagemodules.OnboardingModule;
 import com.fliplearn.flipapp.pagemodules.QuizModule;
 import com.fliplearn.flipapp.pagemodules.SignInAsModule;
+
 
 public class Announcements extends Base 
 {
@@ -25,7 +34,6 @@ public class Announcements extends Base
 	MenuModule menMod;
 	SignInAsModule signInMod;
 	QuizModule quiMod;
-	
 	@BeforeMethod
 	public void befMethod()
 	{
@@ -51,8 +59,6 @@ public class Announcements extends Base
 		logMod.Login(role);
 		annMod.mouseOverOnpostBtn();	
 		extentTest.log(Status.PASS, "Mouse Hover on Post button");
-		
-		Assert.assertEquals(annMod.fillTxt(), annMod.getTitle());
 	}
 
 	/**
@@ -69,70 +75,6 @@ public class Announcements extends Base
 		logMod.Login(role);
 		Assert.assertTrue(annMod.isPostBtndisplayed(), "Post button is displaying for Parent");
 	}
-	/**
-	 * Verify User Admin Login on Android  App
-	 * @author vinay kumar 
-	 * @since 2018-09-20
-	 * @version 1.0
-	 * @throws Throwable 
-	 */
-	@Test
-	public void createAnnoncementAdminAndroid() throws Throwable 
-	{
-		logMod.Login("admin");
-		signInMod.adminLnk.click();
-		mobNumMod.skipBtn.click();
-		quiMod.skipBtn.click();
-		
-		GenericFunctions.touchCordinates(driver, 10, 95);
-		GenericFunctions.touchCordinates(driver, 10, 95);
-		GenericFunctions.touchCordinates(driver, 5, 5);
-		quiMod.quizgames.click();
-		annMod.mouseOverOnpostBtn();	
-		Assert.assertEquals(annMod.fillTxt(), annMod.getTitle());
-	}
-	/**
-	 * Verify User parent can not create announcement on Android App
-	 * @author vinay kumar 
-	 * @since 2018-09-25
-	 * @version 1.0
-	 * @throws InterruptedException 
-	 */
-	@Test
-	public void canNotcreateAnnoncementParentAndroid() throws InterruptedException
-	{
-		logMod.Login("parent");
-		Assert.assertTrue(annMod.isPostBtndisplayed(), "Post button is displaying for Parent");
-	}
-
-	/**
-	 * Verify User Student can not create announcement on Browser
-	 * @author vinay kumar 
-	 * @since 2018-09-25
-	 * @version 1.0
-	 * @throws InterruptedException 
-	 */
-	@Test
-	public void canNotcreateAnnoncementStudentWeb() throws InterruptedException
-	{
-		logMod.Login("student");
-		Assert.assertTrue(annMod.isPostBtndisplayed(), "Post button is displaying for Student");
-	}
-
-	/**
-	 * Verify User Student can not create announcement on Android App
-	 * @author vinay kumar 
-	 * @since 2018-09-25
-	 * @version 1.0
-	 * @throws InterruptedException 
-	 */
-	@Test
-	public void canNotcreateAnnoncementStudentAndroid() throws InterruptedException
-	{
-		logMod.Login("student");
-		Assert.assertTrue(annMod.isPostBtndisplayed(), "Post button is displaying for Student");
-	}
-
 	/**
 	 * Verify User Student can view  announcement on Browser
 	 * @author vinay kumar 

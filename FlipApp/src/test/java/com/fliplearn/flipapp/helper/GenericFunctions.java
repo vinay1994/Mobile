@@ -32,6 +32,7 @@ import org.openqa.selenium.remote.RemoteWebElement;
 
 import io.appium.java_client.PerformsTouchActions;
 import io.appium.java_client.TouchAction;
+import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.touch.offset.PointOption;
 
 public class GenericFunctions extends Base
@@ -93,16 +94,38 @@ public class GenericFunctions extends Base
 	{
 		Dimension size = driver.manage().window().getSize();
 
+		System.out.println("Accepted Value in percentage:"+x+"..........."+y);
+
 		int endX = (size.width * x)/100;
 		int endY = (size.height * y)/100;
 
-		System.out.println("Values are"+endX+"..........."+endY);
+		System.out.println("Coordinate value to tap:"+endX+"..........."+endY);
 
 		TouchAction touchAction = new TouchAction((PerformsTouchActions) driver);
 		touchAction.tap(PointOption.point(endX, endY)).perform() ;
 		Thread.sleep(3000);
 	}
 
+	public static void scrollAndTouchBy(WebDriver driver, int x, int y) throws InterruptedException
+	{
+		TouchAction action = new TouchAction((AndroidDriver)driver);
+	
+		Dimension size = driver.manage().window().getSize();
+		System.out.println("Accepted value to move:"+x+"..........."+y);
+		
+		int endX = (size.width * x)/100;
+		int endY = (size.height * y)/100;
+
+		System.out.println("Coordinate value to move:"+endX+"..........."+endY);
+		action.press(PointOption.point(endX, size.height-10));
+		action.moveTo(PointOption.point(endX, endY));
+		action.release();
+		action.perform();
+		Thread.sleep(2000);
+		int x1 = endX/10;
+		int y1 = endY/10;
+		GenericFunctions.touchCordinates(driver, x1, y1);
+	}
 	/**
 	 * This will get latest file from directory
 	 * @author vinay yadav
