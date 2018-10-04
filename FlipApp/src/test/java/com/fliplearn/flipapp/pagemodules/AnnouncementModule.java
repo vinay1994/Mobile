@@ -25,7 +25,7 @@ public class AnnouncementModule extends Base
 	@FindBy(xpath="//button[contains(text(),'Post')]")
 	@AndroidFindBy(className="") 
 	@iOSFindBy(id="")
-	RemoteWebElement postBtn;
+	public RemoteWebElement postBtn;
 
 	@FindBy(xpath="//button[contains(@id,'announcement')]")
 	@AndroidFindBy(id="") 
@@ -152,14 +152,18 @@ public class AnnouncementModule extends Base
 		GenericFunctions.waitForElementVisibility(driver, getTitle);
 		return getTitle.getText();
 	}
-	public boolean isPostBtndisplayed() {
-		try {
-			if(postBtn.getText().equalsIgnoreCase("Post"))
-				return false;
+	
+	public boolean isElementDisplayed(WebDriver driver, RemoteWebElement element) 
+	{
+		Boolean found = true;
+		try 
+		{
+			element.isDisplayed();
 		}
-		catch(Exception e){
-			return true;
+		catch(Exception e)
+		{
+			found = false;
 		}
-		return false;
+		return found;
 	}
 }
