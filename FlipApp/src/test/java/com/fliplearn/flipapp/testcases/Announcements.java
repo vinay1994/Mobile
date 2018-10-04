@@ -2,6 +2,11 @@ package com.fliplearn.flipapp.testcases;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import com.aventstack.extentreports.Status;
+import com.fliplearn.flipapp.helper.Base;
+import com.fliplearn.flipapp.helper.GenericFunctions;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -16,6 +21,8 @@ import com.fliplearn.flipapp.pagemodules.MenuModule;
 import com.fliplearn.flipapp.pagemodules.MobileNumberModule;
 import com.fliplearn.flipapp.pagemodules.OnboardingModule;
 import com.fliplearn.flipapp.pagemodules.QuizModule;
+import com.fliplearn.flipapp.pagemodules.SignInAsModule;
+
 
 public class Announcements extends Base 
 {
@@ -25,7 +32,8 @@ public class Announcements extends Base
 	MobileNumberModule mobNumMod;
 	AnnouncementModule annMod;
 	MenuModule menMod;
-
+	SignInAsModule signInMod;
+	QuizModule quiMod;
 	@BeforeMethod
 	public void befMethod()
 	{
@@ -33,157 +41,40 @@ public class Announcements extends Base
 		onbMod = new OnboardingModule(driver);
 		mobNumMod = new MobileNumberModule(driver);
 		annMod = new AnnouncementModule(driver);
+		signInMod=new SignInAsModule(driver);
+	    quiMod=new QuizModule(driver);
 	}
 
+	/**
+	 * Verify Admin, Principal and Teacher can create announcement on Web, Android and iOS
+	 * @author vinay kumar 
+	 * @since 2018-09-30
+	 * @version 1.1
+	 * @throws Throwable 
+	 */
 	
-    /**
-	 * @since 2018-09-25
-	 * @version 1.0
-     * @throws Throwable 
-	 */
-
-	@Test
-	public void createAnnoncement() throws Throwable
+	@Test(dataProvider = "group2")
+	public void createAnnoncement(String role) throws Throwable
 	{
-		logMod.Login("admin");
+		logMod.Login(role);
 		annMod.mouseOverOnpostBtn();	
-		Assert.assertEquals(annMod.fillTxt(), annMod.getTitle());
+		extentTest.log(Status.PASS, "Mouse Hover on Post button");
 	}
 
 	/**
-	 * Verify User Admin Login on Android Android App
-	 * @author vinay kumar 
-	 * @since 2018-09-20
-	 * @version 1.0
-	 * @throws Throwable 
-	 */
-	@Test
-	public void createAnnoncementAdminAndroid() throws Throwable 
-	{
-		logMod.Login("admin");
-		annMod.mouseOverOnpostBtn();	
-		Assert.assertEquals(annMod.fillTxt(), annMod.getTitle());
-	}
-
-	/**
-	 * Verify User principal to create announcement on Browser
-	 * @author vinay kumar 
-	 * @since 2018-09-25
-	 * @version 1.0
-	 * @throws Throwable 
-	 */
-
-	@Test
-	public void createAnnoncementPrincipalWeb() throws Throwable
-	{
-		logMod.Login("principal");
-		annMod.mouseOverOnpostBtn();	
-		Assert.assertEquals(annMod.fillTxt(), annMod.getTitle());
-	}
-
-	/**
-	 * Verify User principal to create announcement on Android App
-	 * @author vinay kumar 
-	 * @since 2018-09-25
-	 * @version 1.0
-	 * @throws Throwable 
-	 */
-
-	@Test
-	public void createAnnoncementPrincipalAndroid() throws Throwable
-	{
-		logMod.Login("principal");
-		annMod.mouseOverOnpostBtn();	
-		Assert.assertEquals(annMod.fillTxt(), annMod.getTitle());
-	}
-
-	/**
-	 * Verify User Teacher to create announcement on Browser
-	 * @author vinay kumar 
-	 * @since 2018-09-25
-	 * @version 1.0
-	 * @throws Throwable 
-	 */
-	@Test
-	public void createAnnoncementTeacherWeb() throws Throwable
-	{
-		logMod.Login("teacher");
-		annMod.mouseOverOnpostBtn();	
-		Assert.assertEquals(annMod.fillTxt(), annMod.getTitle());
-	}
-
-	/**
-	 * Verify User Teacher to create announcement on Android App
-	 * @author vinay kumar 
-	 * @since 2018-09-25
-	 * @version 1.0
-	 * @throws Throwable 
-	 */
-	@Test
-	public void createAnnoncementTeacherAndroid() throws Throwable
-	{
-		logMod.Login("teacher");
-		annMod.mouseOverOnpostBtn();	
-		Assert.assertEquals(annMod.fillTxt(), annMod.getTitle());
-	}
-
-
-	/**
-	 * Verify User parent can not create announcement on Browser
+	 * Verify User Student and parent can not create announcement on Browser
 	 * @author vinay kumar 
 	 * @since 2018-09-25
 	 * @version 1.0
 	 * @throws InterruptedException 
-	 */
-	@Test
-	public void canNotcreateAnnoncementParentWeb() throws InterruptedException
+	 **/
+
+	@Test(dataProvider = "group2")
+	public void canNotcreateAnnoncement(String role) throws InterruptedException
 	{
-		logMod.Login("parent");
+		logMod.Login(role);
 		Assert.assertTrue(annMod.isPostBtndisplayed(), "Post button is displaying for Parent");
 	}
-
-	/**
-	 * Verify User parent can not create announcement on Android App
-	 * @author vinay kumar 
-	 * @since 2018-09-25
-	 * @version 1.0
-	 * @throws InterruptedException 
-	 */
-	@Test
-	public void canNotcreateAnnoncementParentAndroid() throws InterruptedException
-	{
-		logMod.Login("parent");
-		Assert.assertTrue(annMod.isPostBtndisplayed(), "Post button is displaying for Parent");
-	}
-
-	/**
-	 * Verify User Student can not create announcement on Browser
-	 * @author vinay kumar 
-	 * @since 2018-09-25
-	 * @version 1.0
-	 * @throws InterruptedException 
-	 */
-	@Test
-	public void canNotcreateAnnoncementStudentWeb() throws InterruptedException
-	{
-		logMod.Login("student");
-		Assert.assertTrue(annMod.isPostBtndisplayed(), "Post button is displaying for Student");
-	}
-
-	/**
-	 * Verify User Student can not create announcement on Android App
-	 * @author vinay kumar 
-	 * @since 2018-09-25
-	 * @version 1.0
-	 * @throws InterruptedException 
-	 */
-	@Test
-	public void canNotcreateAnnoncementStudentAndroid() throws InterruptedException
-	{
-		logMod.Login("student");
-		Assert.assertTrue(annMod.isPostBtndisplayed(), "Post button is displaying for Student");
-	}
-
 	/**
 	 * Verify User Student can view  announcement on Browser
 	 * @author vinay kumar 
@@ -242,7 +133,6 @@ public class Announcements extends Base
 	 * @version 1.0
 	 * @throws Throwable 
 	 */
-	
 	@Test
 	public void canViewAnnoncementParentAndroid() throws Throwable
 	{
