@@ -16,7 +16,7 @@ public class SignInAsModule
 	@iOSFindBy(id="")
 	public RemoteWebElement adminLnk;
 	
-	@FindBy(id="")
+	@FindBy(xpath="(//div[@class='display-flex'])[1]")
 	@AndroidFindBy(xpath="//*[@text='PARENT']") 
 	@iOSFindBy(id="")
 	RemoteWebElement parentLnk;

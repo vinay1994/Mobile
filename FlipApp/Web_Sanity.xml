@@ -37,4 +37,15 @@
       	</classes> 
 	</test>  
 	
+	<test name="Announcement" enabled="true">
+  		<classes>
+    		<class name="com.fliplearn.flipapp.testcases.Announcement">
+        		<methods>
+        			<include name="createAnnoncement" />  
+        			<include name="canNotCreateAnnouncement" />	
+        		</methods>
+        	</class>
+      	</classes> 
+	</test>  
+	
 </suite>	

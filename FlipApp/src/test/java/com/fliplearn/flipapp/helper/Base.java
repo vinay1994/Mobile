@@ -327,4 +327,13 @@ public class Base implements ITestListener
 			  { "Admin" }, { "Principal" }, { "Teacher" }
 		  }; 
 	}
+	
+	@DataProvider(name = "group3")
+	public static Object[] group3() 
+	{
+		  return new Object[][]
+		  { 
+			  { "Parent" }, { "Student" }
+		  }; 
+	}
 }
