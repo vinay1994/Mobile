@@ -65,9 +65,9 @@ public class QuizDashboard extends Base
 	 * @throws IOException 
 	 */
 
-	@Test//(dataProvider = "group2")
-	public void verifyQuizDashboardClasses() throws InterruptedException, IOException
-	{	String role = "Admin";			
+	@Test(dataProvider = "group2")
+	public void verifyQuizDashboardClasses(String role) throws InterruptedException, IOException
+	{	
 		logMod.Login(role);
 	
 		if(platform.equals("Web"))
@@ -81,8 +81,6 @@ public class QuizDashboard extends Base
 //			new TouchAction((AndroidDriver)driver).press(PointOption.point(10, 10)).waitAction().moveTo(PointOption.point(150, 150)).release().perform();
 			
 			GenericFunctions.scrollAndTouchBy(driver, 20, 10);
-			
-
 
 		}
 								
@@ -90,7 +88,6 @@ public class QuizDashboard extends Base
 		quiDasMod.classListBtn.click();
     
 		String expectedList = readData(platform, role, "Quiz Dashboard Classes");
-		System.out.println("Expected List is:"+expectedList);
     	Assert.assertEquals(GenericFunctions.compareList(quiDasMod.quizDashboardClassList, expectedList), true);		
 	}
 }
