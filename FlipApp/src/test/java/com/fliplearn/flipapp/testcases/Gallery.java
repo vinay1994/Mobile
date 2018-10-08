@@ -14,7 +14,7 @@ import com.fliplearn.flipapp.pagemodules.OnboardingModule;
 import com.fliplearn.flipapp.pagemodules.QuizModule;
 import com.fliplearn.flipapp.pagemodules.SignInAsModule;
 
-public class Gallerys extends Base {
+public class Gallery extends Base {
 		LoginModule logMod;
 		OnboardingModule onbMod;
 		MobileNumberModule mobNumMod;
@@ -64,7 +64,7 @@ public class Gallerys extends Base {
 		public void canNotcreateAnnoncement(String role) throws InterruptedException
 		{
 			logMod.Login(role);
-			Assert.assertTrue(annMod.isPostBtndisplayed(), "Post button is displaying for Parent");
+			Assert.assertEquals(annMod.isPostBtndisplayed(), false);
 		}
 
 		/**

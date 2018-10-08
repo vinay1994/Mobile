@@ -16,6 +16,10 @@ public class SelectSubjectModule {
 	@AndroidFindBy(id="")
 	public List<RemoteWebElement> subjectList;
 	
+	@FindBy(xpath="//div[@class='col-md-9 col-sm-8 col-xs-9']/h3")
+	@AndroidFindBy(id="")
+	public List<RemoteWebElement> studentSubjectList;
+	
 	public SelectSubjectModule(WebDriver driver)
 	{
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);

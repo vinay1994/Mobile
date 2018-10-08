@@ -64,7 +64,7 @@ public class HomeWorks extends Base {
 		public void canNotcreateAnnoncement(String role) throws InterruptedException
 		{
 			logMod.Login(role);
-			Assert.assertTrue(annMod.isPostBtndisplayed(), "Post button is displaying for Parent");
+			Assert.assertEquals(annMod.isPostBtndisplayed(), false);
 		}
 
 		/**

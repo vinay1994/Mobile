@@ -52,15 +52,15 @@ public class FliplearnPrimeView extends Base
 	 * @version 1.3
 	 * @throws IOException 
 	 */
-	 //@Test( priority=1,dataProvider = "group2")
-	 
+	 @Test( priority=1,dataProvider = "group2")
      public void verifyPrimeClasses(String role) throws IOException, InterruptedException 
      {
     	 logMod.Login(role);
     	 
     	 if(platform.equals("Web"))
-    		 LearnMod.learnImg.click();
-    	 LearnMod.primeImg.click();
+    		 LearnMod.clickOnLearnImage();
+    	 
+    	 LearnMod.clickOnPrimeImage();
  
     	 String expectedList = readData(platform, role, "Prime Classes");
     	 Assert.assertEquals(generic.compareList(selClaMod.classList, expectedList), true);
@@ -76,13 +76,27 @@ public class FliplearnPrimeView extends Base
  	 * @throws IOException 
  	 */
  	 
-	@Test(priority=2,dataProvider ="group3")
-	public void verifyPrimeSubjects(String role) throws IOException  {
-	 
-	 LearnMod.selectSubjLnk.click();
+	@Test(priority=2,dataProvider ="group1")
+	public void verifyPrimeSubjects(String role) throws IOException, InterruptedException  
+	{ 
+		logMod.Login(role);
+		
+		 if(platform.equals("Web"))
+    		 LearnMod.clickOnLearnImage();
     	 
-    	 String expectedList = readData(platform, role, "Prime Subjects");
-    	 Assert.assertEquals(generic.compareList(selSubMod.subjectList, expectedList), true);
+    	LearnMod.clickOnPrimeImage();
+		String expectedList = readData(platform, role, "Prime Subjects");
+		
+		if(role.equals("Parent") || role.equals("Student"))
+		{
+	    	Assert.assertEquals(generic.compareList(selSubMod.studentSubjectList, expectedList), true);
+		}
+		
+		else
+		{
+			LearnMod.clickOnSubjectLink();
+			Assert.assertEquals(generic.compareList(selSubMod.subjectList, expectedList), true);
+		}
      }
 	 
 	
