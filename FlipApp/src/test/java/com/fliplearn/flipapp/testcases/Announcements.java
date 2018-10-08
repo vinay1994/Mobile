@@ -94,7 +94,7 @@ public class Announcements extends Base
 	 * @version 1.0
 	 * @throws Throwable 
 	 */
-	@Test
+/**	@Test
 	public void canViewAnnoncementStudentAndroid() throws Throwable
 	{
 		logMod.Login("admin");
@@ -103,7 +103,7 @@ public class Announcements extends Base
 		logMod.Login("student");
 		Assert.assertEquals(exepected, annMod.getTitle());
 	}
-
+**/
 	/**
 	 * Verify User parent can view  announcement on Browser
 	 * @author vinay kumar 

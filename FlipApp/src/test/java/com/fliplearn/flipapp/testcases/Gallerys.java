@@ -35,7 +35,7 @@ public class Gallerys extends Base {
 		}
 
 		/**
-		 * Verify Admin, Principal and Teacher can create announcement on Web, Android and iOS
+		 * Verify Admin, Principal and Teacher can create gallery on Web, Android and iOS
 		 * @author vinay kumar 
 		 * @since 2018-09-30
 		 * @version 1.1
@@ -68,7 +68,7 @@ public class Gallerys extends Base {
 		}
 
 		/**
-		 * Verify User Student and parent can view  announcement on Browser, android and ios
+		 * Verify User Student and parent can view  Gallery on Browser, android and ios
 		 * @author vinay kumar 
 		 * @since 2018-09-25
 		 * @version 1.0
