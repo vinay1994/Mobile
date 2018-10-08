@@ -18,6 +18,8 @@ import io.appium.java_client.pagefactory.iOSFindBy;
 
 public class LoginModule extends Base
 {	
+	GenericFunctions generic=new GenericFunctions();
+	
 	@FindBy(id="Fname")
 	@AndroidFindBy(id="com.elss.educomp:id/user_id_til") 
 	@iOSFindBy(id="")
@@ -100,9 +102,9 @@ public class LoginModule extends Base
 				 
 				 extentTest.log(Status.PASS, "Click on Quiz Skip Button");
 				
-				 GenericFunctions.touchCordinates(driver, 10, 95);
+				 generic.touchCordinates(driver, 10, 95);
 				 extentTest.log(Status.PASS, "Tap on Got it.");
-				 GenericFunctions.touchCordinates(driver, 10, 95);
+				 generic.touchCordinates(driver, 10, 95);
 				 extentTest.log(Status.PASS, "Tap on Got it.");
 			 }		
 		}

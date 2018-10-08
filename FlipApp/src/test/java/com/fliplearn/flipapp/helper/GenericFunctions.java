@@ -43,7 +43,7 @@ public class GenericFunctions extends Base
 	 * @since 2018-09-20
 	 * @version 1.0
 	 */
-	public static String formatDateToString()
+	public String formatDateToString()
 	{
 		DateFormat df = new SimpleDateFormat("dd/MM/yy kk:mm:ss aa");
 		Date dateObj = new Date();
@@ -62,7 +62,7 @@ public class GenericFunctions extends Base
 	 * @since 2018-09-20
 	 * @version 1.0
 	 */
-	public static File getLatestFilefromDir(String dirPath)
+	public File getLatestFilefromDir(String dirPath)
 	{
 		File dir = new File(dirPath);
 		File[] files = dir.listFiles();
@@ -90,7 +90,7 @@ public class GenericFunctions extends Base
 	 * @since 2018-09-22
 	 * @version 1.0
 	 */
-	public static void touchCordinates(WebDriver driver, int x, int y) throws InterruptedException
+	public void touchCordinates(WebDriver driver, int x, int y) throws InterruptedException
 	{
 		Dimension size = driver.manage().window().getSize();
 
@@ -106,7 +106,7 @@ public class GenericFunctions extends Base
 		Thread.sleep(3000);
 	}
 
-	public static void scrollAndTouchBy(WebDriver driver, int x, int y) throws InterruptedException
+	public  void scrollAndTouchBy(WebDriver driver, int x, int y) throws InterruptedException
 	{
 		TouchAction action = new TouchAction((AndroidDriver)driver);
 	
@@ -124,7 +124,7 @@ public class GenericFunctions extends Base
 		Thread.sleep(2000);
 		int x1 = endX/10;
 		int y1 = endY/10;
-		GenericFunctions.touchCordinates(driver, x1, y1);
+		touchCordinates(driver, x1, y1);
 	}
 	/**
 	 * This will get latest file from directory
@@ -134,7 +134,7 @@ public class GenericFunctions extends Base
 	 * @throws InterruptedException 
 	 */
 
-	public static void mouseOver(WebDriver driver, RemoteWebElement element, RemoteWebElement target) throws InterruptedException {
+	public  void mouseOver(WebDriver driver, RemoteWebElement element, RemoteWebElement target) throws InterruptedException {
 		Actions act=new Actions(driver);
 		waitForElementVisibility(driver, element);
 		Thread.sleep(3000);
@@ -150,7 +150,7 @@ public class GenericFunctions extends Base
 	 * @since 2018-09-24
 	 * @version 1.0
 	 */
-	public static void selectClassByValue(WebElement elm, String value) {
+	public void selectClassByValue(WebElement elm, String value) {
 		Select sc =new Select(elm);
 		sc.selectByValue(value);	
 	}
@@ -160,7 +160,7 @@ public class GenericFunctions extends Base
 	 * @since 2018-09-24
 	 * @version 1.0
 	 */
-	public static void UploadFile(String FilePath) throws Throwable{
+	public void UploadFile(String FilePath) throws Throwable{
 		StringSelection ss = new StringSelection(FilePath);
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
 		Robot robot = new Robot();
@@ -180,7 +180,7 @@ public class GenericFunctions extends Base
 	 * @version 1.0
 	 */
 
-	public static void selectClassByIndex(WebElement elm, int index) {
+	public void selectClassByIndex(WebElement elm, int index) {
 		Select sc =new Select(elm);
 		sc.selectByIndex(index);	
 	}
@@ -192,7 +192,7 @@ public class GenericFunctions extends Base
 	 * @param driver 
 	 */
 
-	public static void waitForElementVisibility(WebDriver driver, RemoteWebElement element) {
+	public  void waitForElementVisibility(WebDriver driver, RemoteWebElement element) {
 		(new WebDriverWait(driver, 60)).until(ExpectedConditions.visibilityOf(element));
 	}
 
@@ -202,7 +202,7 @@ public class GenericFunctions extends Base
 	 * @since 2018-09-25
 	 * @version 1.0
 	 */
-	public static boolean compareList(List<RemoteWebElement> webList, String expectedString)
+	public  boolean compareList(List<RemoteWebElement> webList, String expectedString)
 	{
 		List<String> expectedList =  Arrays.asList(expectedString.split("\\s*,\\s*"));
 		List<String> actualList = new ArrayList<String>();
@@ -233,7 +233,7 @@ public class GenericFunctions extends Base
 	 * @since 2018-09-30
 	 * @version 1.0
 	 */
-	public static void waitForPageLoad(WebDriver driver) 
+	public  void waitForPageLoad(WebDriver driver) 
 	{
 		ExpectedCondition<Boolean> pageLoadCondition = new
 				ExpectedCondition<Boolean>() 
@@ -247,5 +247,18 @@ public class GenericFunctions extends Base
 		wait.until(pageLoadCondition);
 	}
 
+	public  boolean isElementDisplayed(WebDriver driver, RemoteWebElement element) 
+	{
+		Boolean found = true;
+		try 
+		{
+			element.isDisplayed();
+		}
+		catch(Exception e)
+		{
+			found = false;
+		}
+		return found;
+	}
 }
 

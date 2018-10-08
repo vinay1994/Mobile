@@ -26,7 +26,7 @@ public class FliplearnPrimeView extends Base
 	SignInAsModule signInMod;
 	SelectClassModule selClaMod;
 	SelectSubjectModule selSubMod;
-	
+	GenericFunctions generic=new GenericFunctions();
 	
 
 	@BeforeMethod
@@ -63,7 +63,7 @@ public class FliplearnPrimeView extends Base
     	 LearnMod.primeImg.click();
  
     	 String expectedList = readData(platform, role, "Prime Classes");
-    	 Assert.assertEquals(GenericFunctions.compareList(selClaMod.classList, expectedList), true);
+    	 Assert.assertEquals(generic.compareList(selClaMod.classList, expectedList), true);
      }
     
      
@@ -82,7 +82,7 @@ public class FliplearnPrimeView extends Base
 	 LearnMod.selectSubjLnk.click();
     	 
     	 String expectedList = readData(platform, role, "Prime Subjects");
-    	 Assert.assertEquals(GenericFunctions.compareList(selSubMod.subjectList, expectedList), true);
+    	 Assert.assertEquals(generic.compareList(selSubMod.subjectList, expectedList), true);
      }
 	 
 	

@@ -59,6 +59,7 @@ public class Announcement extends Base
 		logMod.Login(role);
 		annMod.mouseOverOnpostBtn();	
 		extentTest.log(Status.PASS, "Mouse Hover on Post button");
+	Assert.assertEquals(annMod.fillTxt(), annMod.getTitle());;
 	}
 
 	/**
@@ -73,6 +74,11 @@ public class Announcement extends Base
 	public void canNotCreateAnnouncement(String role) throws InterruptedException
 	{
 		logMod.Login(role);
+		Assert.assertTrue(annMod.isPostBtndisplayed(), "Post button is displaying for Parent");
+	}
+
+	/**
+	 * Verify User Student and parent can view  announcement on Browser, android and ios
 		Assert.assertEquals(annMod.isElementDisplayed(driver, annMod.postBtn), false);
 	}
 	
@@ -84,7 +90,7 @@ public class Announcement extends Base
 	 * @throws Throwable 
 	 */
 	@Test
-	public void canViewAnnoncementStudentWeb() throws Throwable
+	public void canViewAnnoncement() throws Throwable
 	{
 		logMod.Login("admin");
 		String exepected = annMod.fillTxt();
@@ -100,7 +106,7 @@ public class Announcement extends Base
 	 * @version 1.0
 	 * @throws Throwable 
 	 */
-	@Test
+/**	@Test
 	public void canViewAnnoncementStudentAndroid() throws Throwable
 	{
 		logMod.Login("admin");
@@ -109,7 +115,7 @@ public class Announcement extends Base
 		logMod.Login("student");
 		Assert.assertEquals(exepected, annMod.getTitle());
 	}
-
+**/
 	/**
 	 * Verify User parent can view  announcement on Browser
 	 * @author vinay kumar 

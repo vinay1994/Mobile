@@ -41,7 +41,7 @@ public class QuizDashboard extends Base
 	SignInAsModule sigInMod;
 	SelectClassModule selClaMod;
 	QuizDashBoardModule quiDasMod;
-	
+	GenericFunctions generic;
 	@BeforeMethod
 	public void befQuiz()
 	{
@@ -53,6 +53,7 @@ public class QuizDashboard extends Base
 		selClaMod = new SelectClassModule(driver);
 		leaMod = new LearnModule(driver);
 		quiDasMod = new QuizDashBoardModule(driver); 
+		generic=new GenericFunctions();
 		
 	}
 
@@ -80,14 +81,14 @@ public class QuizDashboard extends Base
 			Thread.sleep(3000);
 //			new TouchAction((AndroidDriver)driver).press(PointOption.point(10, 10)).waitAction().moveTo(PointOption.point(150, 150)).release().perform();
 			
-			GenericFunctions.scrollAndTouchBy(driver, 20, 10);
+			generic.scrollAndTouchBy(driver, 20, 10);
 
 		}
 								
-		GenericFunctions.waitForElementVisibility(driver, quiDasMod.classListBtn);
+		generic.waitForElementVisibility(driver, quiDasMod.classListBtn);
 		quiDasMod.classListBtn.click();
     
 		String expectedList = readData(platform, role, "Quiz Dashboard Classes");
-    	Assert.assertEquals(GenericFunctions.compareList(quiDasMod.quizDashboardClassList, expectedList), true);		
+    	Assert.assertEquals(generic.compareList(quiDasMod.quizDashboardClassList, expectedList), true);		
 	}
 }
