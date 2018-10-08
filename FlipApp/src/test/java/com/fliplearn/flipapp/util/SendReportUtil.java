@@ -28,7 +28,7 @@ public class SendReportUtil extends Base
 {
 	public static void emailReport() throws InterruptedException, IOException
 	{
-
+		GenericFunctions generic=new GenericFunctions();
         final String username = "fliplearnqa@gmail.com";
         final String password = "flipqa@123";
 
@@ -50,7 +50,7 @@ public class SendReportUtil extends Base
      try 
      {
     	 String currentDir = System.getProperty("user.dir");
-    	 File getLastFileName = GenericFunctions.getLatestFilefromDir("C:\\tomcat\\webapps\\fliplearn\\latestreport");
+    	 File getLastFileName = generic.getLatestFilefromDir("C:\\tomcat\\webapps\\fliplearn\\latestreport");
 
 
     	 String reportFilePath = getLastFileName.toString();

@@ -18,6 +18,8 @@ import io.appium.java_client.pagefactory.iOSFindBy;
 
 public class LoginModule extends Base
 {	
+	GenericFunctions generic=new GenericFunctions();
+	
 	@FindBy(id="Fname")
 	@AndroidFindBy(id="com.elss.educomp:id/user_id_til") 
 	@iOSFindBy(id="")
@@ -77,11 +79,7 @@ public class LoginModule extends Base
 			SignInAsModule sigInMod = new SignInAsModule(driver);
 			QuizModule quiMod = new QuizModule(driver);
 			 
-			 if(role.equals("Parent"))
-			 { 
-	    		 sigInMod.parentLnk.click();
-	    		 extentTest.log(Status.PASS, "Click on First Parent Link.");
-			 }	 
+				 
 			 
 			 //Check for bug here why skip not showing for student
 			 if(!(role.equals("Student") && platform.equals("Web")))
@@ -90,15 +88,23 @@ public class LoginModule extends Base
 				extentTest.log(Status.PASS, "Click on Skip Button");
 			 }	
 			 
+			 if(role.equals("Parent"))
+			 { 
+	    		 sigInMod.parentLnk.click();
+	    		 extentTest.log(Status.PASS, "Click on First Parent Link.");
+	    		 sigInMod.proceedBtn.click();
+			 }
+			 
 			 if(!platform.equals("Web"))
 			 {
 				 System.out.println("Platform is****:"+platform);
 				 quiMod.skipBtn.click();
+				 
 				 extentTest.log(Status.PASS, "Click on Quiz Skip Button");
 				
-				 GenericFunctions.touchCordinates(driver, 10, 95);
+				 generic.touchCordinates(driver, 10, 95);
 				 extentTest.log(Status.PASS, "Tap on Got it.");
-				 GenericFunctions.touchCordinates(driver, 10, 95);
+				 generic.touchCordinates(driver, 10, 95);
 				 extentTest.log(Status.PASS, "Tap on Got it.");
 			 }		
 		}

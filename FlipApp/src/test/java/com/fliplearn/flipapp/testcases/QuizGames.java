@@ -25,10 +25,10 @@ public class QuizGames extends Base
 	QuizModule quiMod;
 	SignInAsModule signInMod;
 	SelectClassModule selClaMod;
-	
+	GenericFunctions generic;
 	@BeforeMethod
 	public void befQuiz()
-	{
+	{   generic=new GenericFunctions();
 		logMod = new LoginModule(driver);
 		onbMod = new OnboardingModule(driver);
 		menuMod = new MenuModule(driver);
@@ -55,15 +55,15 @@ public class QuizGames extends Base
 		mobNumMod.skipBtn.click();
 		quiMod.skipBtn.click();
 		
-		GenericFunctions.touchCordinates(driver, 10, 95);
-		GenericFunctions.touchCordinates(driver, 10, 95);
-		GenericFunctions.touchCordinates(driver, 5, 5);
+		generic.touchCordinates(driver, 10, 95);
+		generic.touchCordinates(driver, 10, 95);
+		generic.touchCordinates(driver, 5, 5);
 		
 		quiMod.quizgames.click();
 		
 		String expectedList = aConfig.getProperty("ADMIN_QUIZ_CLASSES") ;
 		
-		Assert.assertEquals(GenericFunctions.compareList(selClaMod.classList, expectedList), true);
+		Assert.assertEquals(generic.compareList(selClaMod.classList, expectedList), true);
 	}
 	
 }

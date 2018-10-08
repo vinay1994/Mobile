@@ -7,6 +7,14 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.Status;
 import com.fliplearn.flipapp.helper.Base;
 import com.fliplearn.flipapp.helper.GenericFunctions;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import com.fliplearn.flipapp.helper.Base;
+import com.fliplearn.flipapp.helper.GenericFunctions;
+import org.testng.annotations.Test;
+
+import com.fliplearn.flipapp.helper.Base;
 import com.fliplearn.flipapp.pagemodules.AnnouncementModule;
 import com.fliplearn.flipapp.pagemodules.LoginModule;
 import com.fliplearn.flipapp.pagemodules.MenuModule;
@@ -15,7 +23,8 @@ import com.fliplearn.flipapp.pagemodules.OnboardingModule;
 import com.fliplearn.flipapp.pagemodules.QuizModule;
 import com.fliplearn.flipapp.pagemodules.SignInAsModule;
 
-public class Announcements extends Base 
+
+public class Announcement extends Base 
 {
 
 	LoginModule logMod;
@@ -25,7 +34,6 @@ public class Announcements extends Base
 	MenuModule menMod;
 	SignInAsModule signInMod;
 	QuizModule quiMod;
-	
 	@BeforeMethod
 	public void befMethod()
 	{
@@ -51,8 +59,7 @@ public class Announcements extends Base
 		logMod.Login(role);
 		annMod.mouseOverOnpostBtn();	
 		extentTest.log(Status.PASS, "Mouse Hover on Post button");
-		
-		Assert.assertEquals(annMod.fillTxt(), annMod.getTitle());
+	Assert.assertEquals(annMod.fillTxt(), annMod.getTitle());;
 	}
 
 	/**
@@ -63,8 +70,8 @@ public class Announcements extends Base
 	 * @throws InterruptedException 
 	 **/
 
-	@Test(dataProvider = "group2")
-	public void canNotcreateAnnoncement(String role) throws InterruptedException
+	@Test(dataProvider = "group3")
+	public void canNotCreateAnnouncement(String role) throws InterruptedException
 	{
 		logMod.Login(role);
 		Assert.assertTrue(annMod.isPostBtndisplayed(), "Post button is displaying for Parent");
@@ -72,6 +79,11 @@ public class Announcements extends Base
 
 	/**
 	 * Verify User Student and parent can view  announcement on Browser, android and ios
+		Assert.assertEquals(annMod.isElementDisplayed(driver, annMod.postBtn), false);
+	}
+	
+	/**
+	 * Verify User Student can view  announcement on Browser
 	 * @author vinay kumar 
 	 * @since 2018-09-25
 	 * @version 1.0
