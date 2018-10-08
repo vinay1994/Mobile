@@ -8,9 +8,9 @@
 </listeners>
 	<test name="Test Method" enabled="true">
   		<classes>
-    		<class name="com.fliplearn.flipapp.testcases.Announcement">
+    		<class name="com.fliplearn.flipapp.testcases.ProfileRefresh">
         		<methods>
-        			<include name="canViewAnnoncement" />  	
+        			<include name="verifyPrimeClassOnProfileRefresh" />  	
         		</methods>
         	</class>
       	</classes> 

@@ -9,8 +9,10 @@ import org.openqa.selenium.support.PageFactory;
 
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import io.appium.java_client.pagefactory.iOSFindBy;
 
-public class SelectSubjectModule {
+public class SelectSubjectModule 
+{
 	
 	@FindBy(xpath="//div[@id='subjectsList3']//div[@class='col-sm-4 ng-scope']//h3")
 	@AndroidFindBy(id="")
@@ -24,6 +26,10 @@ public class SelectSubjectModule {
 	{
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
-	
+
+	@FindBy(xpath="//select[@id='selectTerm2']")
+	@AndroidFindBy(xpath="")
+	@iOSFindBy(id="")
+	public List<RemoteWebElement> classLst;
 
 }

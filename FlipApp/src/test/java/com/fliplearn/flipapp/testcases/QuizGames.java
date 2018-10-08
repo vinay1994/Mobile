@@ -62,8 +62,8 @@ public class QuizGames extends Base
 		quiMod.quizgames.click();
 		
 		String expectedList = aConfig.getProperty("ADMIN_QUIZ_CLASSES") ;
-		
-		Assert.assertEquals(generic.compareList(selClaMod.classList, expectedList), true);
+
+		Assert.assertEquals(generic.compareList(selClaMod.classLst, expectedList), true);
 	}
 	
 }

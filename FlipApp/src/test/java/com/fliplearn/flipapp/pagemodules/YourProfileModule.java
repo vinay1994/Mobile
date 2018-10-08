@@ -1,0 +1,64 @@
+package com.fliplearn.flipapp.pagemodules;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.RemoteWebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.aventstack.extentreports.Status;
+import com.fliplearn.flipapp.helper.Base;
+import com.fliplearn.flipapp.helper.GenericFunctions;
+
+import io.appium.java_client.pagefactory.AndroidFindBy;
+import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import io.appium.java_client.pagefactory.iOSFindBy;
+
+public class YourProfileModule extends Base
+{
+	GenericFunctions generic = new GenericFunctions();
+	
+	public YourProfileModule(WebDriver driver) 
+	{
+		PageFactory.initElements(new AppiumFieldDecorator(driver), this);	
+	}
+	
+	@FindBy(xpath="//a[@class='pull-right editclasssection ng-scope']/img[contains(@src,'edit-profile.png')]\r\n")
+	@AndroidFindBy(xpath="") 
+	@iOSFindBy(id="")
+	public RemoteWebElement classEditImg;	
+	
+	//Class/Section Popup
+	@FindBy(xpath="//form[@name='ClassSectionForm']//div[@class='registration-form'][1]//select")
+	@AndroidFindBy(xpath="") 
+	@iOSFindBy(id="")
+	public RemoteWebElement classLst;
+	
+	@FindBy(xpath="//form[@name='ClassSectionForm']//div[@class='registration-form'][2]//select")
+	@AndroidFindBy(xpath="") 
+	@iOSFindBy(id="")
+	public RemoteWebElement sectionLst;	
+
+	@FindBy(xpath="//button[text()='Change']")
+	@AndroidFindBy(xpath="") 
+	@iOSFindBy(id="")
+	public RemoteWebElement changeBtn;		
+	
+	public void updateClassAndSection(WebDriver driver, String className, String sectionName) throws InterruptedException
+	{
+		HeaderModule heaMod = new HeaderModule(driver);
+		generic.mouseHoverAndClick(driver, heaMod.profileImg, heaMod.myProfileLnk);
+		
+		generic.waitForElementVisibility(driver, classEditImg);
+		classEditImg.click();
+		extentTest.log(Status.PASS, "Click on Class Edit Image Icon.");
+		
+		generic.selectValueFromList(driver, classLst, className);
+		extentTest.log(Status.PASS, "Update Class to: "+className);
+
+		generic.selectValueFromList(driver, sectionLst, sectionName);
+		extentTest.log(Status.PASS, "Update Section to: "+sectionName);
+
+		changeBtn.click();
+
+	}
+}

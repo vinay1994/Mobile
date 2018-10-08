@@ -14,9 +14,10 @@ import io.appium.java_client.pagefactory.iOSFindBy;
 
 public class LearnModule extends Base
 {
+
 	GenericFunctions generic = new GenericFunctions();
 	
-	@FindBy(id="learn-icon")
+	@FindBy(xpath="//div[@id='navbar']//li[2]/div")
 	@AndroidFindBy(xpath="//*[@text='Learn']") 
 	@iOSFindBy(id="")
 	public RemoteWebElement learnImg;	
