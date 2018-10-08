@@ -44,7 +44,6 @@
         		<methods>
         			<include name="createAnnoncement" />  
         			<include name="canNotCreateAnnouncement" />	
-        			<include name="canViewAnnoncement" />
         		</methods>
         	</class>
       	</classes> 

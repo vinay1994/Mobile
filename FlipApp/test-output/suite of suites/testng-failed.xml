@@ -9,8 +9,8 @@
       <class name="com.fliplearn.flipapp.testcases.Announcement">
         <methods>
           <include name="befMethod"/>
+          <include name="canViewAnnouncement"/>
           <include name="befo"/>
-          <include name="createAnnouncement" invocation-numbers="2"/>
           <include name="aftSuite"/>
           <include name="getResult"/>
         </methods>

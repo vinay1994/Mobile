@@ -90,12 +90,12 @@ public class Announcement extends Base
 	 * @throws Throwable 
 	 */
 	@Test
-	public void canViewAnnoncement() throws Throwable
+	public void canViewAnnouncement() throws Throwable
 	{
-		logMod.Login("admin");
+		logMod.Login("Admin");
 		String exepected = annMod.fillTxt();
 		annMod.mouseOverOnProfile();
-		logMod.Login("student");
+		logMod.Login("Student");
 		Assert.assertEquals(exepected, annMod.getTitle());
 	}
 

@@ -47,9 +47,10 @@ public class LearnModule extends Base
 		learnImg.click();
 	}
 
-	public void clickOnPrimeImage()
+	public void clickOnPrimeImage() throws InterruptedException
 	{
 		generic.waitForElementVisibility(driver, primeImg);
+		Thread.sleep(1000);
 		primeImg.click();
 	}
 	
