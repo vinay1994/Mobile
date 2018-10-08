@@ -22,6 +22,7 @@
     		<class name="com.fliplearn.flipapp.testcases.FliplearnPrimeView">
         		<methods>
         			<include name="verifyPrimeClasses"/>
+        			<include name="verifyPrimeSubjects"/>
         		</methods>
         	</class>
       	</classes> 
@@ -43,9 +44,11 @@
         		<methods>
         			<include name="createAnnoncement" />  
         			<include name="canNotCreateAnnouncement" />	
+        			<include name="canViewAnnoncement" />
         		</methods>
         	</class>
       	</classes> 
 	</test>  
+
 	
 </suite>	

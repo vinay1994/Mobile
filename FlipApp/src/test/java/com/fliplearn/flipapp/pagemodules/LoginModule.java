@@ -82,14 +82,15 @@ public class LoginModule extends Base
 				 
 			 
 			 //Check for bug here why skip not showing for student
-			 if(!(role.equals("Student") && platform.equals("Web")))
-			 {	
-				mobNumMod.skipBtn.click();
-				extentTest.log(Status.PASS, "Click on Skip Button");
-			 }	
+//			 if(!(role.equals("Student") && platform.equals("Web")))
+//			 {	
+//				mobNumMod.skipBtn.click();
+//				extentTest.log(Status.PASS, "Click on Skip Button");
+//			 }	
 			 
 			 if(role.equals("Parent"))
 			 { 
+				 generic.waitForElementVisibility(driver, sigInMod.parentLnk);
 	    		 sigInMod.parentLnk.click();
 	    		 extentTest.log(Status.PASS, "Click on First Parent Link.");
 	    		 sigInMod.proceedBtn.click();

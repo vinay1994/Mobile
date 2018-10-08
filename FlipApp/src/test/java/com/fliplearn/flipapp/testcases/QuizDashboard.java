@@ -69,24 +69,23 @@ public class QuizDashboard extends Base
 	@Test(dataProvider = "group2")
 	public void verifyQuizDashboardClasses(String role) throws InterruptedException, IOException
 	{	
+		//String role = "Teacher";
 		logMod.Login(role);
 	
 		if(platform.equals("Web"))
 		{	
-			leaMod.learnImg.click();
-			quiDasMod.quizDashboardBtn.click();
+			leaMod.clickOnLearnImage();
+			quiDasMod.clickOnQuizDashboardTile();
 		}  
 		else if(!platform.equals("Web"))
 		{	
 			Thread.sleep(3000);
-//			new TouchAction((AndroidDriver)driver).press(PointOption.point(10, 10)).waitAction().moveTo(PointOption.point(150, 150)).release().perform();
-			
+//			new TouchAction((AndroidDriver)driver).press(PointOption.point(10, 10)).waitAction().moveTo(PointOption.point(150, 150)).release().perform();	
 			generic.scrollAndTouchBy(driver, 20, 10);
-
 		}
 								
 		generic.waitForElementVisibility(driver, quiDasMod.classListBtn);
-		quiDasMod.classListBtn.click();
+		quiDasMod.clickOnClassList();
     
 		String expectedList = readData(platform, role, "Quiz Dashboard Classes");
     	Assert.assertEquals(generic.compareList(quiDasMod.quizDashboardClassList, expectedList), true);		

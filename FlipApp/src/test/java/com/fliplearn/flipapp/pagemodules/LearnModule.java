@@ -5,13 +5,19 @@ import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.fliplearn.flipapp.helper.Base;
+import com.fliplearn.flipapp.helper.GenericFunctions;
+
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSFindBy;
 
-public class LearnModule 
+public class LearnModule extends Base
 {
-	@FindBy(id="learn-icon")
+
+	GenericFunctions generic = new GenericFunctions();
+	
+	@FindBy(xpath="//div[@id='navbar']//li[2]/div")
 	@AndroidFindBy(xpath="//*[@text='Learn']") 
 	@iOSFindBy(id="")
 	public RemoteWebElement learnImg;	
@@ -36,5 +42,20 @@ public class LearnModule
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);	
 	}
 	
+	public void clickOnLearnImage()
+	{
+		learnImg.click();
+	}
+
+	public void clickOnPrimeImage()
+	{
+		generic.waitForElementVisibility(driver, primeImg);
+		primeImg.click();
+	}
+	
+	public void clickOnSubjectLink()
+	{
+		selectSubjLnk.click();
+	}
 	
 }
