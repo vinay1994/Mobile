@@ -25,9 +25,16 @@ public class LearnModule
 	@AndroidFindBy(xpath="//a[text()='Pre Nursery']")
 	@iOSFindBy(id="")
 	public RemoteWebElement selectClassLnk;
+	
+	@FindBy(xpath="//a[text()='Class 1']")
+	@AndroidFindBy(xpath="//a[text()='Class 7']")
+	@iOSFindBy(id="")
+	public RemoteWebElement selectSubjLnk;
 		
 	public LearnModule(WebDriver driver) 
 	{
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);	
 	}
+	
+	
 }
