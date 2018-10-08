@@ -49,16 +49,6 @@
         	</class>
       	</classes> 
 	</test>  
-	
 
-	<test name="Profile Refresh" enabled="true">
-  		<classes>
-    		<class name="com.fliplearn.flipapp.testcases.ProfileRefresh">
-        		<methods>
-        			<include name="verifyPrimeClassOnProfileRefresh" />  	
-        		</methods>
-        	</class>
-      	</classes> 
-	</test> 
 	
 </suite>	
