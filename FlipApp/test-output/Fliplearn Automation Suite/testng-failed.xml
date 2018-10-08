@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Fliplearn Automation Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="com.fliplearn.flipapp.helper.Base"/>
+  </listeners>
+  <test thread-count="5" name="Login(failed)">
+    <classes>
+      <class name="com.fliplearn.flipapp.testcases.Login">
+        <methods>
+          <include name="verifyLogin" invocation-numbers="3"/>
+          <include name="befo"/>
+          <include name="aftSuite"/>
+          <include name="befMethod"/>
+          <include name="getResult"/>
+        </methods>
+      </class> <!-- com.fliplearn.flipapp.testcases.Login -->
+    </classes>
+  </test> <!-- Login(failed) -->
+  <test thread-count="5" name="Announcement(failed)">
+    <classes>
+      <class name="com.fliplearn.flipapp.testcases.Announcement">
+        <methods>
+          <include name="befMethod"/>
+          <include name="canViewAnnoncement"/>
+          <include name="befo"/>
+          <include name="aftSuite"/>
+          <include name="getResult"/>
+        </methods>
+      </class> <!-- com.fliplearn.flipapp.testcases.Announcement -->
+    </classes>
+  </test> <!-- Announcement(failed) -->
+</suite> <!-- Failed suite [Fliplearn Automation Suite] -->
