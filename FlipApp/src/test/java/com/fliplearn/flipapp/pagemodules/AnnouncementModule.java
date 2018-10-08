@@ -100,11 +100,11 @@ public class AnnouncementModule extends Base
 	}
 
 	public void mouseOverOnpostBtn() throws InterruptedException {
-		GenericFunctions.mouseOver(driver,postBtn, annBtn);
+		GenericFunctions.mouseHoverAndClick(driver,postBtn, annBtn);
 
 	}
 	public void mouseOverOnProfile() throws InterruptedException {
-		GenericFunctions.mouseOver(driver,profile, logout);
+		GenericFunctions.mouseHoverAndClick(driver,profile, logout);
 
 	}
 

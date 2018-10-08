@@ -63,7 +63,7 @@ public class QuizGames extends Base
 		
 		String expectedList = aConfig.getProperty("ADMIN_QUIZ_CLASSES") ;
 		
-		Assert.assertEquals(GenericFunctions.compareList(selClaMod.classList, expectedList), true);
+		Assert.assertEquals(GenericFunctions.compareList(selClaMod.classLst, expectedList), true);
 	}
 	
 }

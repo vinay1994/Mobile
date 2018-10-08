@@ -55,6 +55,6 @@ public class FliplearnPrimeView extends Base
     	 LearnMod.primeImg.click();
  
     	 String expectedList = readData(platform, role, "Prime Classes");
-    	 Assert.assertEquals(GenericFunctions.compareList(selClaMod.classList, expectedList), true);
+    	 Assert.assertEquals(GenericFunctions.compareList(selClaMod.classLst, expectedList), true);
      }
  }

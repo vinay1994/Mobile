@@ -238,7 +238,7 @@ public class Base implements ITestListener
 	@AfterMethod
 	public void getResult() throws IOException
 	{
-		driver.quit();
+		//driver.quit();
 		extentTest.log(Status.INFO, "Browser/Application Closed.");
 	}
 	
