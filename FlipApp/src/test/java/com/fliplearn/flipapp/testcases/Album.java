@@ -14,7 +14,7 @@ import com.fliplearn.flipapp.pagemodules.OnboardingModule;
 import com.fliplearn.flipapp.pagemodules.QuizModule;
 import com.fliplearn.flipapp.pagemodules.SignInAsModule;
 
-public class HomeWorks extends Base {
+public class Album extends Base {
 		LoginModule logMod;
 		OnboardingModule onbMod;
 		MobileNumberModule mobNumMod;
@@ -35,7 +35,7 @@ public class HomeWorks extends Base {
 		}
 
 		/**
-		 * Verify Admin, Principal and Teacher can create home works on Web, Android and iOS
+		 * Verify Admin, Principal and Teacher can create album on Web, Android and iOS
 		 * @author vinay kumar 
 		 * @since 2018-09-30
 		 * @version 1.1
@@ -43,7 +43,7 @@ public class HomeWorks extends Base {
 		 */
 		
 		@Test(dataProvider = "group2")
-		public void createHomework(String role) throws Throwable
+		public void createAlbum(String role) throws Throwable
 		{
 			logMod.Login(role);
 			annMod.mouseOverOnpostBtn();	
@@ -53,7 +53,7 @@ public class HomeWorks extends Base {
 		}
 
 		/**
-		 * Verify User Student and parent can not create home work on Browser
+		 * Verify User Student and parent can not create album on Browser
 		 * @author vinay kumar 
 		 * @since 2018-09-25
 		 * @version 1.0
@@ -61,21 +61,21 @@ public class HomeWorks extends Base {
 		 **/
 
 		@Test(dataProvider = "group2")
-		public void canNotcreateHomework(String role) throws InterruptedException
+		public void canNotcreateAlbum(String role) throws InterruptedException
 		{
 			logMod.Login(role);
 			Assert.assertTrue(annMod.isPostBtndisplayed(), "Post button is displaying for Parent");
 		}
 
 		/**
-		 * Verify User Student and parent can view  home work on Browser, android and ios
+		 * Verify User Student and parent can view  album on Browser, android and ios
 		 * @author vinay kumar 
 		 * @since 2018-09-25
 		 * @version 1.0
 		 * @throws Throwable 
 		 */
 		@Test
-		public void canViewHomework() throws Throwable
+		public void canViewAlbum() throws Throwable
 		{
 			logMod.Login("admin");
 			String exepected = annMod.fillTxt();
@@ -85,4 +85,5 @@ public class HomeWorks extends Base {
 		}
 
 		
+
 }
