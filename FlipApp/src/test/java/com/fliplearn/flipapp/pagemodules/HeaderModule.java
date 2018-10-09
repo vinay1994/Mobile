@@ -26,6 +26,14 @@ public class HeaderModule
 	@iOSFindBy(id="")
 	public RemoteWebElement myProfileLnk;
 	
+	public void clickOnProfileImg() {
+		profileImg.click();
+		
+	}
+	public void clickOnmyProfileLnk() {
+		myProfileLnk.click();
+		
+	}	
 
 	
 }
