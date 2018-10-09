@@ -78,10 +78,11 @@ public class VMC extends Base
 			}			
 		}
 		
-		@Test
+		@Test(dataProvider = "group2")
 		public void displayVMCSchool(String role) throws InterruptedException
 		{			
 			logMod.Login(role);
+			leaMod.clickOnLearnImage();
 			assertEquals(generic.isElementDisplayed(driver, leaMod.vmcImg), true);
 		}			
 		
