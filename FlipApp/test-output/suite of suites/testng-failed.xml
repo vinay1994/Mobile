@@ -6,15 +6,15 @@
   </listeners>
   <test thread-count="5" name="Test Method(failed)">
     <classes>
-      <class name="com.fliplearn.flipapp.testcases.Announcement">
+      <class name="com.fliplearn.flipapp.testcases.VMC">
         <methods>
-          <include name="befMethod"/>
-          <include name="canViewAnnouncement"/>
+          <include name="prePrime"/>
           <include name="befo"/>
           <include name="aftSuite"/>
           <include name="getResult"/>
+          <include name="displayVMC"/>
         </methods>
-      </class> <!-- com.fliplearn.flipapp.testcases.Announcement -->
+      </class> <!-- com.fliplearn.flipapp.testcases.VMC -->
     </classes>
   </test> <!-- Test Method(failed) -->
 </suite> <!-- Failed suite [suite of suites] -->

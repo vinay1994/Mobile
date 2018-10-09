@@ -8,9 +8,9 @@
 </listeners>
 	<test name="Test Method" enabled="true">
   		<classes>
-    		<class name="com.fliplearn.flipapp.testcases.Announcement">
+    		<class name="com.fliplearn.flipapp.testcases.VMC">
         		<methods>
-        			<include name="canViewAnnouncement" />  	
+        			<include name="displayVMC" />  	
         		</methods>
         	</class>
       	</classes> 
