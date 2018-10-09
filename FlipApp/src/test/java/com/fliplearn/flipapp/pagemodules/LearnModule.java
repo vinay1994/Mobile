@@ -27,6 +27,16 @@ public class LearnModule extends Base
 	@iOSFindBy(id="")
 	public RemoteWebElement primeImg;
 	
+	
+	@FindBy(xpath="//h4/strong[contains(text(),'VMC Live')]")
+	@AndroidFindBy(xpath="//strong[text()='Fliplearn Prime']")
+	@iOSFindBy(id="")
+	public RemoteWebElement vmcImg;
+	
+	
+	
+	
+	
 	@FindBy(xpath="//a[text()='Pre Nursery']")
 	@AndroidFindBy(xpath="//a[text()='Pre Nursery']")
 	@iOSFindBy(id="")
@@ -42,8 +52,9 @@ public class LearnModule extends Base
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);	
 	}
 	
-	public void clickOnLearnImage()
+	public void clickOnLearnImage() throws InterruptedException
 	{
+		Thread.sleep(2000);
 		learnImg.click();
 	}
 

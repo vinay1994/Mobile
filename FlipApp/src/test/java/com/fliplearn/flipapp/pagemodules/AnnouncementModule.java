@@ -155,7 +155,7 @@ public class AnnouncementModule extends Base
 		generic.waitForElementVisibility(driver, getTitle);
 		return getTitle.getText();
 	}
-	public boolean isPostBtndisplayed() {
+	public boolean isPostBtndisplayed() throws InterruptedException {
 		return generic.isElementDisplayed(driver, postBtn);
 	}
 

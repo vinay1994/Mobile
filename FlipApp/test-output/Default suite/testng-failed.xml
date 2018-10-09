@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.fliplearn.flipapp.testcases.QuizDashboard">
+      <class name="com.fliplearn.flipapp.testcases.VMC">
         <methods>
-          <include name="verifyQuizDashBoardClasses"/>
+          <include name="prePrime"/>
           <include name="befo"/>
-          <include name="befQuiz"/>
           <include name="aftSuite"/>
           <include name="getResult"/>
+          <include name="displayVMC"/>
         </methods>
-      </class> <!-- com.fliplearn.flipapp.testcases.QuizDashboard -->
+      </class> <!-- com.fliplearn.flipapp.testcases.VMC -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
