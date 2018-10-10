@@ -17,6 +17,16 @@
       	</classes> 
 	</test> 
 	
+	<test name="User Profile" enabled="true">
+  		<classes>
+    		<class name="com.fliplearn.flipapp.testcases.UserProfile">
+        		<methods>
+        			<include name="verifyUserRole" />  	
+        		</methods>
+        	</class>
+      	</classes> 
+	</test> 
+	
 	<test name="Fliplearn Prime View" enabled="true">
   		<classes>
     		<class name="com.fliplearn.flipapp.testcases.FliplearnPrimeView">
