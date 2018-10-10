@@ -8,6 +8,7 @@ import com.aventstack.extentreports.Status;
 import com.fliplearn.flipapp.helper.Base;
 import com.fliplearn.flipapp.pagemodules.AnnouncementModule;
 import com.fliplearn.flipapp.pagemodules.HeaderModule;
+import com.fliplearn.flipapp.pagemodules.HomeWorkModule;
 import com.fliplearn.flipapp.pagemodules.LoginModule;
 import com.fliplearn.flipapp.pagemodules.MenuModule;
 import com.fliplearn.flipapp.pagemodules.MobileNumberModule;
@@ -21,7 +22,7 @@ public class HomeWorks extends Base {
 		LoginModule logMod;
 		OnboardingModule onbMod;
 		MobileNumberModule mobNumMod;
-		AnnouncementModule annMod;
+		HomeWorkModule homeWoMod;
 		MenuModule menMod;
 		SignInAsModule signInMod;
 		QuizModule quiMod;
@@ -34,7 +35,7 @@ public class HomeWorks extends Base {
 			logMod = new LoginModule(driver);
 			onbMod = new OnboardingModule(driver);
 			mobNumMod = new MobileNumberModule(driver);
-			annMod = new AnnouncementModule(driver);
+			homeWoMod = new HomeWorkModule(driver);
 			signInMod=new SignInAsModule(driver);
 		    quiMod=new QuizModule(driver);
 		    youProMod = new YourProfileModule(driver);
@@ -53,10 +54,9 @@ public class HomeWorks extends Base {
 		public void createHomework(String role) throws Throwable
 		{
 			logMod.Login(role);
-			annMod.mouseOverOnpostBtn();	
+			homeWoMod.mouseOverOnpostBtn();	
 			extentTest.log(Status.PASS, "Mouse Hover on Post button");
-			
-			Assert.assertEquals(annMod.fillTxt(), annMod.getTitle());
+			Assert.assertEquals(homeWoMod.fillTxt(), homeWoMod.getTitle());
 		}
 
 		/**
@@ -67,11 +67,11 @@ public class HomeWorks extends Base {
 		 * @throws InterruptedException 
 		 **/
 
-		@Test(dataProvider = "group2")
+		@Test(dataProvider = "group3")
 		public void canNotcreateHomework(String role) throws InterruptedException
 		{
 			logMod.Login(role);
-			Assert.assertTrue(annMod.isPostBtndisplayed(), "Post button is displaying for Parent");
+			Assert.assertTrue(homeWoMod.isPostBtndisplayed(), "Post button is displaying for User:-"+role);
 		}
 
 	
@@ -87,14 +87,14 @@ public class HomeWorks extends Base {
 		public void canViewHomework(String role) throws Throwable
 		{
 			logMod.Login(role);
-			annMod.mouseOverOnpostBtn();
-			String exepected = annMod.fillTxt();
-			annMod.mouseOverOnProfileLogout();
+			homeWoMod.mouseOverOnpostBtn();
+			String exepected = homeWoMod.fillTxt();
+			homeWoMod.mouseOverOnProfileLogout();
 			logMod.Login("Student");
-			youProMod.updateClassAndSection(driver, "PreNussery", "A");
+			youProMod.updateClassAndSection(driver, "Pre-Nursery", "A");
 			heaMod.clickonHomeBtn();	
-			String actual = annMod.getTitle();
-			youProMod.updateClassAndSection(driver, "12", "A");
+			String actual = homeWoMod.getTitle();
+			youProMod.updateClassAndSection(driver, "Class 12", "A");
 			Assert.assertEquals(exepected, actual);
 		}
 

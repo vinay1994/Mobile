@@ -16,12 +16,14 @@ import org.testng.annotations.Test;
 
 import com.fliplearn.flipapp.helper.Base;
 import com.fliplearn.flipapp.pagemodules.AnnouncementModule;
+import com.fliplearn.flipapp.pagemodules.HeaderModule;
 import com.fliplearn.flipapp.pagemodules.LoginModule;
 import com.fliplearn.flipapp.pagemodules.MenuModule;
 import com.fliplearn.flipapp.pagemodules.MobileNumberModule;
 import com.fliplearn.flipapp.pagemodules.OnboardingModule;
 import com.fliplearn.flipapp.pagemodules.QuizModule;
 import com.fliplearn.flipapp.pagemodules.SignInAsModule;
+import com.fliplearn.flipapp.pagemodules.YourProfileModule;
 
 
 public class Announcement extends Base 
@@ -34,6 +36,11 @@ public class Announcement extends Base
 	MenuModule menMod;
 	SignInAsModule signInMod;
 	QuizModule quiMod;
+	YourProfileModule youProMod;
+	HeaderModule heaMod;
+	
+	
+	
 	@BeforeMethod
 	public void befMethod()
 	{
@@ -43,6 +50,8 @@ public class Announcement extends Base
 		annMod = new AnnouncementModule(driver);
 		signInMod=new SignInAsModule(driver);
 	    quiMod=new QuizModule(driver);
+	    youProMod=new YourProfileModule(driver);
+	    heaMod=new HeaderModule(driver);
 	}
 
 	/**
@@ -76,77 +85,27 @@ public class Announcement extends Base
 		logMod.Login(role);
 		Assert.assertEquals(annMod.isPostBtndisplayed(), false);
 	}
-
-	/**
-	 * Verify User Student and parent can view  announcement on Browser, android and ios
-		Assert.assertEquals(annMod.isElementDisplayed(driver, annMod.postBtn), false);
-	}
 	
 	/**
-	 * Verify User Student can view  announcement on Browser
+	 * Verify User Student and parent can view  album on Browser, android and ios
 	 * @author vinay kumar 
 	 * @since 2018-09-25
 	 * @version 1.0
 	 * @throws Throwable 
 	 */
-	@Test
-	public void canViewAnnouncement() throws Throwable
+	@Test(dataProvider="group2")
+	public void canViewAlbum(String role) throws Throwable
 	{
-		logMod.Login("Admin");
+		logMod.Login(role);
+		annMod.mouseOverOnpostBtn();
 		String exepected = annMod.fillTxt();
 		annMod.mouseOverOnProfileLogout();
 		logMod.Login("Student");
-		Assert.assertEquals(exepected, annMod.getTitle());
+		youProMod.updateClassAndSection(driver, "Pre-Nursery", "A");
+		heaMod.clickonHomeBtn();	
+		String actual = annMod.getTitle();
+		youProMod.updateClassAndSection(driver, "Class 12", "A");
+		Assert.assertEquals(exepected, actual);
 	}
 
-	/**
-	 * Verify User Student can view  announcement on Android App
-	 * @author vinay kumar 
-	 * @since 2018-09-25
-	 * @version 1.0
-	 * @throws Throwable 
-	 */
-/**	@Test
-	public void canViewAnnoncementStudentAndroid() throws Throwable
-	{
-		logMod.Login("admin");
-		String exepected = annMod.fillTxt();
-		annMod.mouseOverOnProfile();
-		logMod.Login("student");
-		Assert.assertEquals(exepected, annMod.getTitle());
-	}
-**/
-	/**
-	 * Verify User parent can view  announcement on Browser
-	 * @author vinay kumar 
-	 * @since 2018-09-25
-	 * @version 1.0
-	 * @throws Throwable 
-	 */
-	@Test
-	public void canViewAnnoncementParentWeb() throws Throwable
-	{
-		logMod.Login("admin");
-		String exepected = annMod.fillTxt();
-		annMod.mouseOverOnProfileLogout();
-		logMod.Login("parent");
-		Assert.assertEquals(exepected, annMod.getTitle());
-	}
-
-	/**
-	 * Verify User parent can view  announcement on Android App
-	 * @author vinay kumar 
-	 * @since 2018-09-25
-	 * @version 1.0
-	 * @throws Throwable 
-	 */
-	@Test
-	public void canViewAnnoncementParentAndroid() throws Throwable
-	{
-		logMod.Login("admin");
-		String exepected = annMod.fillTxt();
-		annMod.mouseOverOnProfileLogout();
-		logMod.Login("parent");
-		Assert.assertEquals(exepected, annMod.getTitle());
-	}
 }

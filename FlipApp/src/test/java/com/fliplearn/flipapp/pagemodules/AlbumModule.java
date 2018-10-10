@@ -99,10 +99,11 @@ public class AlbumModule extends Base {
 	}
 
 	public void mouseOverOnpostBtn() throws InterruptedException {
+		Thread.sleep(2000);
 		generic.mouseHoverAndClick(driver,postBtn, albBtn);
 
 	}
-	public void mouseOverOnProfile() throws InterruptedException {
+	public void mouseOverOnProfileLogout() throws InterruptedException {
 		generic.mouseHoverAndClick(driver,profile, logout);
 
 	}
