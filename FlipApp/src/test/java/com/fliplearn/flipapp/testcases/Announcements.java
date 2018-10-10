@@ -6,10 +6,6 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.fliplearn.flipapp.helper.Base;
-import com.fliplearn.flipapp.helper.GenericFunctions;
-import org.testng.annotations.Test;
-
-import com.fliplearn.flipapp.helper.Base;
 import com.fliplearn.flipapp.pagemodules.AnnouncementModule;
 import com.fliplearn.flipapp.pagemodules.LoginModule;
 import com.fliplearn.flipapp.pagemodules.MenuModule;
@@ -25,7 +21,8 @@ public class Announcements extends Base
 	MobileNumberModule mobNumMod;
 	AnnouncementModule annMod;
 	MenuModule menMod;
-
+	
+	
 	@BeforeMethod
 	public void befMethod()
 	{
@@ -35,15 +32,15 @@ public class Announcements extends Base
 		annMod = new AnnouncementModule(driver);
 	}
 
-	
-    /**
+	/**
+	 * Verify User Admin to create announcement on Web, Android and iOS
+	 * @author vinay kumar 
 	 * @since 2018-09-25
-	 * @version 1.0
-     * @throws Throwable 
+	 * @version 1.1
+	 * @throws Throwable 
 	 */
-
 	@Test
-	public void createAnnoncement() throws Throwable
+	public void createAnnouncement() throws Throwable
 	{
 		logMod.Login("admin");
 		annMod.mouseOverOnpostBtn();	
@@ -196,7 +193,7 @@ public class Announcements extends Base
 	{
 		logMod.Login("admin");
 		String exepected = annMod.fillTxt();
-		annMod.mouseOverOnProfile();
+		annMod.mouseOverOnProfileLogout();
 		logMod.Login("student");
 		Assert.assertEquals(exepected, annMod.getTitle());
 	}
@@ -213,7 +210,7 @@ public class Announcements extends Base
 	{
 		logMod.Login("admin");
 		String exepected = annMod.fillTxt();
-		annMod.mouseOverOnProfile();
+		annMod.mouseOverOnProfileLogout();
 		logMod.Login("student");
 		Assert.assertEquals(exepected, annMod.getTitle());
 	}
@@ -230,7 +227,7 @@ public class Announcements extends Base
 	{
 		logMod.Login("admin");
 		String exepected = annMod.fillTxt();
-		annMod.mouseOverOnProfile();
+		annMod.mouseOverOnProfileLogout();
 		logMod.Login("parent");
 		Assert.assertEquals(exepected, annMod.getTitle());
 	}
@@ -242,13 +239,12 @@ public class Announcements extends Base
 	 * @version 1.0
 	 * @throws Throwable 
 	 */
-	
 	@Test
 	public void canViewAnnoncementParentAndroid() throws Throwable
 	{
 		logMod.Login("admin");
 		String exepected = annMod.fillTxt();
-		annMod.mouseOverOnProfile();
+		annMod.mouseOverOnProfileLogout();
 		logMod.Login("parent");
 		Assert.assertEquals(exepected, annMod.getTitle());
 	}

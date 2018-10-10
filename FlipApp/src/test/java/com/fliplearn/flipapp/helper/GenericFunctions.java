@@ -43,7 +43,7 @@ public class GenericFunctions extends Base
 	 * @since 2018-09-20
 	 * @version 1.0
 	 */
-	public static String formatDateToString()
+	public String formatDateToString()
 	{
 		DateFormat df = new SimpleDateFormat("dd/MM/yy kk:mm:ss aa");
 		Date dateObj = new Date();
@@ -62,7 +62,7 @@ public class GenericFunctions extends Base
 	 * @since 2018-09-20
 	 * @version 1.0
 	 */
-	public static File getLatestFilefromDir(String dirPath)
+	public File getLatestFilefromDir(String dirPath)
 	{
 		File dir = new File(dirPath);
 		File[] files = dir.listFiles();
@@ -90,7 +90,7 @@ public class GenericFunctions extends Base
 	 * @since 2018-09-22
 	 * @version 1.0
 	 */
-	public static void touchCordinates(WebDriver driver, int x, int y) throws InterruptedException
+	public void touchCordinates(WebDriver driver, int x, int y) throws InterruptedException
 	{
 		Dimension size = driver.manage().window().getSize();
 
@@ -106,7 +106,7 @@ public class GenericFunctions extends Base
 		Thread.sleep(3000);
 	}
 
-	public static void scrollAndTouchBy(WebDriver driver, int x, int y) throws InterruptedException
+	public void scrollAndTouchBy(WebDriver driver, int x, int y) throws InterruptedException
 	{
 		TouchAction action = new TouchAction((AndroidDriver)driver);
 	
@@ -124,24 +124,33 @@ public class GenericFunctions extends Base
 		Thread.sleep(2000);
 		int x1 = endX/10;
 		int y1 = endY/10;
-		GenericFunctions.touchCordinates(driver, x1, y1);
+		touchCordinates(driver, x1, y1);
 	}
 	/**
-	 * This will get latest file from directory
-	 * @author vinay yadav
-	 * @since 2018-09-24
-	 * @version 1.0
+	 * This will mouse hove and click on given element
+	 * @author Vinay Yadav, Tarun Goswami
+	 * @since 2018-10-06
+	 * @version 1.1
 	 * @throws InterruptedException 
 	 */
-
-	public static void mouseOver(WebDriver driver, RemoteWebElement element, RemoteWebElement target) throws InterruptedException {
+	
+	public void mouseHoverAndClick(WebDriver driver, RemoteWebElement element, RemoteWebElement target) throws InterruptedException 
+	{
 		Actions act=new Actions(driver);
-		waitForElementVisibility(driver, element);
-		Thread.sleep(3000);
+		
+		generic.waitForElementVisibility(driver, element);
+		extentTest.log(Status.PASS, "Wait for element visibility.");
+
 		act.moveToElement(element).perform();
-		waitForElementVisibility(driver, target);
-		act.moveToElement(target).click().perform();
+		extentTest.log(Status.PASS, "Mouse hover on element");
+		
 		Thread.sleep(2000);
+		
+		generic.waitForElementVisibility(driver, target);
+		extentTest.log(Status.PASS, "Wait for element visibility.");
+
+		act.moveToElement(target).click().perform();
+		extentTest.log(Status.PASS, "Click on element");
 	}
 
 	/**
@@ -150,7 +159,7 @@ public class GenericFunctions extends Base
 	 * @since 2018-09-24
 	 * @version 1.0
 	 */
-	public static void selectClassByValue(WebElement elm, String value) {
+	public void selectClassByValue(WebElement elm, String value) {
 		Select sc =new Select(elm);
 		sc.selectByValue(value);	
 	}
@@ -160,7 +169,7 @@ public class GenericFunctions extends Base
 	 * @since 2018-09-24
 	 * @version 1.0
 	 */
-	public static void UploadFile(String FilePath) throws Throwable{
+	public void UploadFile(String FilePath) throws Throwable{
 		StringSelection ss = new StringSelection(FilePath);
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
 		Robot robot = new Robot();
@@ -180,7 +189,7 @@ public class GenericFunctions extends Base
 	 * @version 1.0
 	 */
 
-	public static void selectClassByIndex(WebElement elm, int index) {
+	public void selectClassByIndex(WebElement elm, int index) {
 		Select sc =new Select(elm);
 		sc.selectByIndex(index);	
 	}
@@ -192,7 +201,7 @@ public class GenericFunctions extends Base
 	 * @param driver 
 	 */
 
-	public static void waitForElementVisibility(WebDriver driver, RemoteWebElement element) {
+	public  void waitForElementVisibility(WebDriver driver, RemoteWebElement element) {
 		(new WebDriverWait(driver, 60)).until(ExpectedConditions.visibilityOf(element));
 	}
 
@@ -201,9 +210,11 @@ public class GenericFunctions extends Base
 	 * @author Tarun Goswami
 	 * @since 2018-09-25
 	 * @version 1.0
+	 * @throws InterruptedException 
 	 */
-	public static boolean compareList(List<RemoteWebElement> webList, String expectedString)
+	public boolean compareList(List<RemoteWebElement> webList, String expectedString) throws InterruptedException
 	{
+		Thread.sleep(2000);
 		List<String> expectedList =  Arrays.asList(expectedString.split("\\s*,\\s*"));
 		List<String> actualList = new ArrayList<String>();
 
@@ -212,17 +223,25 @@ public class GenericFunctions extends Base
 		//To get text of web elements and store in array list
 		for(RemoteWebElement ele : webList ) 
 		{
-			actualList.add(ele.getText());
+			actualList.add(ele.getText().toString().replaceAll("\n", " "));
 		}
 
 		extentTest.log(Status.INFO, "Actual List:"+actualList);
 		extentTest.log(Status.INFO, "Expected List:"+expectedList);
+		System.out.println("Actual List:"+actualList);
+		System.out.println("Expected List:"+expectedList);
+		
 
 		//Return true if lists are equal
 		if(actualList.equals(expectedList))
+		{	
 			result = true;
+			extentTest.log(Status.PASS, "List are equal.");
+		}	
 		else
-			System.out.println("Lists are not equal");
+		{	
+			extentTest.log(Status.FAIL, "List are not equal.");
+		}	
 
 		return result;
 	}
@@ -233,7 +252,7 @@ public class GenericFunctions extends Base
 	 * @since 2018-09-30
 	 * @version 1.0
 	 */
-	public static void waitForPageLoad(WebDriver driver) 
+	public void waitForPageLoad(WebDriver driver) 
 	{
 		ExpectedCondition<Boolean> pageLoadCondition = new
 				ExpectedCondition<Boolean>() 
@@ -245,6 +264,66 @@ public class GenericFunctions extends Base
 		};
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(pageLoadCondition);
+	}
+
+
+	public boolean isElementDisplayed(WebDriver driver, RemoteWebElement element) throws InterruptedException 
+	{
+		Thread.sleep(2000);
+		Boolean found = true;
+		try 
+		{
+			element.isDisplayed();
+		}
+		catch(Exception e)
+		{
+			found = false;
+		}
+		return found;
+	}
+
+	/**
+	 * Get Currently selected option from dropdown
+	 * @author Tarun Goswami
+	 * @since 2018-10-06
+	 * @version 1.0
+	 * @throws InterruptedException 
+	 */
+	public String getCurrentlySelectedOption(WebDriver driver, RemoteWebElement element) throws InterruptedException
+	{
+		Thread.sleep(2000);
+		Select sel = new Select(element);
+		String strCurrentValue = sel.getFirstSelectedOption().getText();
+		return strCurrentValue;
+	}
+	
+	/**
+	 * Select desired value from dropdown
+	 * @author Tarun Goswami
+	 * @since 2018-10-06
+	 * @version 1.0
+	 * @return 
+	 * @throws InterruptedException 
+	 */
+	public void selectValueFromList(WebDriver driver, RemoteWebElement element, String value) throws InterruptedException
+	{
+		Thread.sleep(2000);
+		Select sel = new Select(element);
+		sel.selectByVisibleText(value);
+	}
+	
+	/**
+	 * Click using Action Class
+	 * @author Tarun Goswami
+	 * @since 2018-10-06
+	 * @version 1.0
+	 * @throws InterruptedException 
+	 */
+	public void actionClick(WebDriver driver, RemoteWebElement element) throws InterruptedException
+	{
+		Thread.sleep(2000);
+		Actions actions = new Actions(driver);
+		actions.moveToElement(element).click().perform();
 	}
 
 }

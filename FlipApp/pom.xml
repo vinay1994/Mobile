@@ -31,7 +31,7 @@
         <version>2.19.1</version>
         <configuration>
           <suiteXmlFiles>
-            <suiteXmlFile>Sanity.xml</suiteXmlFile>
+            <suiteXmlFile>Web_Sanity.xml</suiteXmlFile>
           </suiteXmlFiles>
         </configuration>
       </plugin>

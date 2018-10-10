@@ -4,7 +4,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -18,14 +17,14 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSFindBy;
 
 public class AnnouncementModule extends Base 
-{     
+{     GenericFunctions generic=new GenericFunctions();
 	
 	String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
 
 	@FindBy(xpath="//button[contains(text(),'Post')]")
-	@AndroidFindBy(className="") 
+	@AndroidFindBy(id="com.elss.educomp:id/post_layout") 
 	@iOSFindBy(id="")
-	RemoteWebElement postBtn;
+	public  RemoteWebElement postBtn;
 
 	@FindBy(xpath="//button[contains(@id,'announcement')]")
 	@AndroidFindBy(id="") 
@@ -99,12 +98,17 @@ public class AnnouncementModule extends Base
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 	}
 
-	public void mouseOverOnpostBtn() throws InterruptedException {
-		GenericFunctions.mouseOver(driver,postBtn, annBtn);
+	public void mouseOverOnpostBtn() throws InterruptedException 
+	{
+		generic.waitForElementVisibility(driver, postBtn);
+		Thread.sleep(3000);
+		generic.mouseHoverAndClick(driver,postBtn, annBtn);
 
 	}
-	public void mouseOverOnProfile() throws InterruptedException {
-		GenericFunctions.mouseOver(driver,profile, logout);
+
+	public void mouseOverOnProfileLogout() throws InterruptedException {
+		generic.mouseHoverAndClick(driver,profile, logout);
+
 
 	}
 
@@ -117,13 +121,13 @@ public class AnnouncementModule extends Base
 		select_class.click();
 		extentTest.log(Status.PASS, "Select Class");
 		save.click();
-		GenericFunctions.waitForElementVisibility(driver,addDescriptionTxt );
+		generic.waitForElementVisibility(driver,addDescriptionTxt );
 		addDescriptionTxt.clear();
 		addDescriptionTxt.sendKeys("Qa add description for testing purpose on this time :"+timeStamp);
 		uploadImageBtn.click();
 		String Filepath = System.getProperty("user.dir")+"\\resources\\images\\vinay.png";
 		System.out.println(Filepath);
-		GenericFunctions.UploadFile(Filepath);
+		generic.UploadFile(Filepath);
 		createBtn.click();
 		isTitleDisplayed("Testing automation Title_"+timeStamp);
 		return "Testing automation Title_"+timeStamp;
@@ -149,17 +153,11 @@ public class AnnouncementModule extends Base
 	}
 	public String getTitle() throws InterruptedException{
 
-		GenericFunctions.waitForElementVisibility(driver, getTitle);
+		generic.waitForElementVisibility(driver, getTitle);
 		return getTitle.getText();
 	}
-	public boolean isPostBtndisplayed() {
-		try {
-			if(postBtn.getText().equalsIgnoreCase("Post"))
-				return false;
-		}
-		catch(Exception e){
-			return true;
-		}
-		return false;
+	public boolean isPostBtndisplayed() throws InterruptedException {
+		return generic.isElementDisplayed(driver, postBtn);
 	}
+
 }

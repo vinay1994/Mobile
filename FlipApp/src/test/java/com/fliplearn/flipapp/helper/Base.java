@@ -63,7 +63,9 @@ public class Base implements ITestListener
 	public static String sendReport;
 	public static String testName;
 	
-	static String fileExtension = GenericFunctions.formatDateToString();
+	static GenericFunctions generic=new GenericFunctions();
+	
+	static String fileExtension = generic.formatDateToString();
 	static String reportFileName = "AutomationReport" + "_" + fileExtension + ".html";
 	
 	// initialize the HtmlReporter
@@ -325,6 +327,15 @@ public class Base implements ITestListener
 		  return new Object[][]
 		  { 
 			  { "Admin" }, { "Principal" }, { "Teacher" }
+		  }; 
+	}
+	
+	@DataProvider(name = "group3")
+	public static Object[] group3() 
+	{
+		  return new Object[][]
+		  { 
+			  { "Parent" }, { "Student" }
 		  }; 
 	}
 }

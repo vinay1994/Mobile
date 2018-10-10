@@ -41,7 +41,7 @@ public class QuizDashboard extends Base
 	SignInAsModule sigInMod;
 	SelectClassModule selClaMod;
 	QuizDashBoardModule quiDasMod;
-	
+	GenericFunctions generic;
 	@BeforeMethod
 	public void befQuiz()
 	{
@@ -53,6 +53,7 @@ public class QuizDashboard extends Base
 		selClaMod = new SelectClassModule(driver);
 		leaMod = new LearnModule(driver);
 		quiDasMod = new QuizDashBoardModule(driver); 
+		generic=new GenericFunctions();
 		
 	}
 
@@ -65,32 +66,28 @@ public class QuizDashboard extends Base
 	 * @throws IOException 
 	 */
 
-	@Test//(dataProvider = "group2")
-	public void verifyQuizDashboardClasses() throws InterruptedException, IOException
-	{	String role = "Admin";			
+	@Test(dataProvider = "group2")
+	public void verifyQuizDashboardClasses(String role) throws InterruptedException, IOException
+	{	
+		//String role = "Teacher";
 		logMod.Login(role);
 	
 		if(platform.equals("Web"))
 		{	
-			leaMod.learnImg.click();
-			quiDasMod.quizDashboardBtn.click();
+			leaMod.clickOnLearnImage();
+			quiDasMod.clickOnQuizDashboardTile();
 		}  
 		else if(!platform.equals("Web"))
 		{	
 			Thread.sleep(3000);
-//			new TouchAction((AndroidDriver)driver).press(PointOption.point(10, 10)).waitAction().moveTo(PointOption.point(150, 150)).release().perform();
-			
-			GenericFunctions.scrollAndTouchBy(driver, 20, 10);
-			
-
-
+//			new TouchAction((AndroidDriver)driver).press(PointOption.point(10, 10)).waitAction().moveTo(PointOption.point(150, 150)).release().perform();	
+			generic.scrollAndTouchBy(driver, 20, 10);
 		}
 								
-		GenericFunctions.waitForElementVisibility(driver, quiDasMod.classListBtn);
-		quiDasMod.classListBtn.click();
+		generic.waitForElementVisibility(driver, quiDasMod.classListBtn);
+		quiDasMod.clickOnClassList();
     
 		String expectedList = readData(platform, role, "Quiz Dashboard Classes");
-		System.out.println("Expected List is:"+expectedList);
-    	Assert.assertEquals(GenericFunctions.compareList(quiDasMod.quizDashboardClassList, expectedList), true);		
+    	Assert.assertEquals(generic.compareList(quiDasMod.quizDashboardClassList, expectedList), true);		
 	}
 }
