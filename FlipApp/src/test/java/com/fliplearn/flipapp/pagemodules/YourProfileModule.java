@@ -43,6 +43,11 @@ public class YourProfileModule extends Base
 	@iOSFindBy(id="")
 	public RemoteWebElement changeBtn;		
 	
+	@FindBy(xpath="(//div[@class='col-sm-4 userInfo ng-scope'])[1]/p")
+	@AndroidFindBy(xpath="") 
+	@iOSFindBy(id="")
+	public RemoteWebElement usernameLbl;	
+	
 	public void updateClassAndSection(WebDriver driver, String className, String sectionName) throws InterruptedException
 	{
 		HeaderModule heaMod = new HeaderModule(driver);
@@ -60,5 +65,13 @@ public class YourProfileModule extends Base
 
 		changeBtn.click();
 
+	}
+	
+	public String getUsernameLabel() throws InterruptedException
+	{
+		Thread.sleep(3000);
+		String roleName = usernameLbl.getText();
+		System.out.println("Role Name is: "+roleName);
+		return roleName;
 	}
 }
