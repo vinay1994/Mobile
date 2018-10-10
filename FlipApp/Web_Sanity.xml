@@ -48,6 +48,18 @@
         	</class>
       	</classes> 
 	</test>  
+	
+	<test name="VMC" enabled="true">
+  		<classes>
+    		<class name="com.fliplearn.flipapp.testcases.VMC">
+        		<methods>
+        			<include name="displayVMCStudent" />  
+        			<include name="doNotDisplayVMCStudent" />	
+        			<include name="displayVMCSchool" />
+        		</methods>
+        	</class>
+      	</classes> 
+	</test>  
 
 	
 </suite>	

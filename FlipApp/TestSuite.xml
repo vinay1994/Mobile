@@ -11,6 +11,7 @@
     		<class name="com.fliplearn.flipapp.testcases.VMC">
         		<methods>
         			<include name="displayVMC" />  	
+       			<include name="displayVMCSchool" />  	
         		</methods>
         	</class>
       	</classes> 
