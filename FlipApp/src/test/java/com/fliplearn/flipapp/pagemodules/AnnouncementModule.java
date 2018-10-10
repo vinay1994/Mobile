@@ -99,11 +99,14 @@ public class AnnouncementModule extends Base
 	}
 
 	public void mouseOverOnpostBtn() throws InterruptedException {
-		generic.mouseOver(driver,postBtn, annBtn);
+
+		generic.mouseHoverAndClick(driver,postBtn, annBtn);
 
 	}
+
 	public void mouseOverOnProfile() throws InterruptedException {
-		generic.mouseOver(driver,profile, logout);
+		generic.mouseHoverAndClick(driver,profile, logout);
+
 
 	}
 
@@ -151,7 +154,7 @@ public class AnnouncementModule extends Base
 		generic.waitForElementVisibility(driver, getTitle);
 		return getTitle.getText();
 	}
-	public boolean isPostBtndisplayed() {
+	public boolean isPostBtndisplayed() throws InterruptedException {
 		return generic.isElementDisplayed(driver, postBtn);
 	}
 

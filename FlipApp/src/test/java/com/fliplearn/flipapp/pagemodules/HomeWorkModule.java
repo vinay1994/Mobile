@@ -109,11 +109,11 @@ public class HomeWorkModule extends Base {
 	}
 
 	public void mouseOverOnpostBtn() throws InterruptedException {
-		generic.mouseOver(driver,postBtn, albBtn);
+		generic.mouseHoverAndClick(driver,postBtn, albBtn);
 
 	}
 	public void mouseOverOnProfile() throws InterruptedException {
-		generic.mouseOver(driver,profile, logout);
+		generic.mouseHoverAndClick(driver,profile, logout);
 
 	}
 
@@ -162,7 +162,7 @@ public class HomeWorkModule extends Base {
 		generic.waitForElementVisibility(driver, getTitle);
 		return getTitle.getText();
 	}
-	public boolean isPostBtndisplayed() {
+	public boolean isPostBtndisplayed() throws InterruptedException {
 		return generic.isElementDisplayed(driver, postBtn);
 	}
 	public void selectsubject() {

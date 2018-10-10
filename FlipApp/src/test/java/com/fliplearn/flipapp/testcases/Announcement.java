@@ -54,7 +54,7 @@ public class Announcement extends Base
 	 */
 	
 	@Test(dataProvider = "group2")
-	public void createAnnoncement(String role) throws Throwable
+	public void createAnnouncement(String role) throws Throwable
 	{
 		logMod.Login(role);
 		annMod.mouseOverOnpostBtn();	
@@ -74,7 +74,7 @@ public class Announcement extends Base
 	public void canNotCreateAnnouncement(String role) throws InterruptedException
 	{
 		logMod.Login(role);
-		Assert.assertTrue(annMod.isPostBtndisplayed(), "Post button is displaying for Parent");
+		Assert.assertEquals(annMod.isPostBtndisplayed(), false);
 	}
 
 	/**
@@ -90,12 +90,12 @@ public class Announcement extends Base
 	 * @throws Throwable 
 	 */
 	@Test
-	public void canViewAnnoncement() throws Throwable
+	public void canViewAnnouncement() throws Throwable
 	{
-		logMod.Login("admin");
+		logMod.Login("Admin");
 		String exepected = annMod.fillTxt();
 		annMod.mouseOverOnProfile();
-		logMod.Login("student");
+		logMod.Login("Student");
 		Assert.assertEquals(exepected, annMod.getTitle());
 	}
 

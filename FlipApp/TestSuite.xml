@@ -8,9 +8,9 @@
 </listeners>
 	<test name="Test Method" enabled="true">
   		<classes>
-    		<class name="com.fliplearn.flipapp.testcases.QuizDashboard">
+    		<class name="com.fliplearn.flipapp.testcases.VMC">
         		<methods>
-        			<include name="verifyQuizDashboardClasses" />  	
+        			<include name="displayVMCSchool" />  	
         		</methods>
         	</class>
       	</classes> 

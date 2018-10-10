@@ -15,6 +15,7 @@ import com.fliplearn.flipapp.pagemodules.QuizModule;
 import com.fliplearn.flipapp.pagemodules.SignInAsModule;
 
 public class HomeWorks extends Base {
+	
 		LoginModule logMod;
 		OnboardingModule onbMod;
 		MobileNumberModule mobNumMod;
@@ -67,6 +68,8 @@ public class HomeWorks extends Base {
 			Assert.assertTrue(annMod.isPostBtndisplayed(), "Post button is displaying for Parent");
 		}
 
+	
+
 		/**
 		 * Verify User Student and parent can view  home work on Browser, android and ios
 		 * @author vinay kumar 
@@ -75,9 +78,9 @@ public class HomeWorks extends Base {
 		 * @throws Throwable 
 		 */
 		@Test
-		public void canViewHomework() throws Throwable
+		public void canViewHomework(String role) throws Throwable
 		{
-			logMod.Login("admin");
+			logMod.Login(role);
 			String exepected = annMod.fillTxt();
 			annMod.mouseOverOnProfile();
 			logMod.Login("student");
