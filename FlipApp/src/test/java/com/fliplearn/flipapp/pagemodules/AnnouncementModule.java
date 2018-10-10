@@ -98,13 +98,15 @@ public class AnnouncementModule extends Base
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 	}
 
-	public void mouseOverOnpostBtn() throws InterruptedException {
-
+	public void mouseOverOnpostBtn() throws InterruptedException 
+	{
+		generic.waitForElementVisibility(driver, postBtn);
+		Thread.sleep(3000);
 		generic.mouseHoverAndClick(driver,postBtn, annBtn);
 
 	}
 
-	public void mouseOverOnProfile() throws InterruptedException {
+	public void mouseOverOnProfileLogout() throws InterruptedException {
 		generic.mouseHoverAndClick(driver,profile, logout);
 
 

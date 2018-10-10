@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 3 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-suite_of_suites" class="navigator-link">
-              <span class="suite-name border-passed">suite of suites</span>
+              <span class="suite-name border-failed">suite of suites</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-suite_of_suites" class="navigator-link ">
-                    <span>TestSuite.xml</span>
+                    <span>C:\Users\Dell\git\flip-app\FlipApp\TestSuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,21 +91,31 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">3 methods, 3 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-suite_of_suites" class="hide-methods passed suite-suite_of_suites"> (hide)</a> <!-- hide-methods passed suite-suite_of_suites -->
-                      <a href="#" panel-name="suite-suite_of_suites" class="show-methods passed suite-suite_of_suites"> (show)</a> <!-- show-methods passed suite-suite_of_suites -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-suite_of_suites" class="hide-methods failed suite-suite_of_suites"> (hide)</a> <!-- hide-methods failed suite-suite_of_suites -->
+                      <a href="#" panel-name="suite-suite_of_suites" class="show-methods failed suite-suite_of_suites"> (show)</a> <!-- show-methods failed suite-suite_of_suites -->
                     </span>
-                    <div class="method-list-content passed suite-suite_of_suites">
+                    <div class="method-list-content failed suite-suite_of_suites">
                       <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-suite_of_suites" title="com.fliplearn.flipapp.testcases.VMC" class="method navigator-link" hash-for-method="displayVMC">displayVMC</a> <!-- method navigator-link -->
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-suite_of_suites" title="com.fliplearn.flipapp.testcases.HomeWorks" class="method navigator-link" hash-for-method="canViewHomework(Admin)">canViewHomework(Admin)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-suite_of_suites -->
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-suite_of_suites" title="com.fliplearn.flipapp.testcases.HomeWorks" class="method navigator-link" hash-for-method="canViewHomework(Teacher)">canViewHomework(Teacher)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-suite_of_suites" title="com.fliplearn.flipapp.testcases.HomeWorks" class="method navigator-link" hash-for-method="canViewHomework(Principal)">canViewHomework(Principal)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-suite_of_suites -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -117,25 +127,90 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-suite_of_suites" class="panel suite_of_suites">
-          <div class="suite-suite_of_suites-class-passed">
+          <div class="suite-suite_of_suites-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.fliplearn.flipapp.testcases.VMC</span>
+              <img src="failed.png"/>
+              <span class="class-name">com.fliplearn.flipapp.testcases.HomeWorks</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="displayVMC">
-                  </a> <!-- displayVMC -->
-                  <span class="method-name">displayVMC</span>
+                  <a name="canViewHomework(Admin)">
+                  </a> <!-- canViewHomework(Admin) -->
+                  <span class="method-name">canViewHomework</span>
+                  <span class="parameters">(Admin)</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: Cannot locate element with text: PreNussery
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.13.0&apos;, revision: &apos;2f0d292&apos;, time: &apos;2018-06-25T15:24:21.231Z&apos;
+System info: host: &apos;DESKTOP-CVORON1&apos;, ip: &apos;10.8.0.122&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:151)
+	at com.fliplearn.flipapp.helper.GenericFunctions.selectValueFromList(GenericFunctions.java:312)
+	at com.fliplearn.flipapp.pagemodules.YourProfileModule.updateClassAndSection(YourProfileModule.java:55)
+	at com.fliplearn.flipapp.testcases.HomeWorks.canViewHomework(HomeWorks.java:94)
+... Removed 25 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="canViewHomework(Teacher)">
+                  </a> <!-- canViewHomework(Teacher) -->
+                  <span class="method-name">canViewHomework</span>
+                  <span class="parameters">(Teacher)</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: Cannot locate element with text: PreNussery
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.13.0&apos;, revision: &apos;2f0d292&apos;, time: &apos;2018-06-25T15:24:21.231Z&apos;
+System info: host: &apos;DESKTOP-CVORON1&apos;, ip: &apos;10.8.0.122&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:151)
+	at com.fliplearn.flipapp.helper.GenericFunctions.selectValueFromList(GenericFunctions.java:312)
+	at com.fliplearn.flipapp.pagemodules.YourProfileModule.updateClassAndSection(YourProfileModule.java:55)
+	at com.fliplearn.flipapp.testcases.HomeWorks.canViewHomework(HomeWorks.java:94)
+... Removed 25 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="canViewHomework(Principal)">
+                  </a> <!-- canViewHomework(Principal) -->
+                  <span class="method-name">canViewHomework</span>
+                  <span class="parameters">(Principal)</span>
+                  <div class="stack-trace">org.openqa.selenium.InvalidElementStateException: invalid element state: Element is not currently interactable and may not be manipulated
+  (Session info: chrome=69.0.3497.100)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: &apos;3.13.0&apos;, revision: &apos;2f0d292&apos;, time: &apos;2018-06-25T15:24:21.231Z&apos;
+System info: host: &apos;DESKTOP-CVORON1&apos;, ip: &apos;10.8.0.122&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\Users\Dell\AppData\Local...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:62394}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
+Session ID: baed02680839cc147a92182c94c26b3d
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:276)
+	at org.openqa.selenium.remote.RemoteWebElement.clear(RemoteWebElement.java:118)
+	at io.appium.java_client.pagefactory.ElementInterceptor.getObject(ElementInterceptor.java:40)
+	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:61)
+	at org.openqa.selenium.remote.RemoteWebElement$$EnhancerByCGLIB$$d27c0df4.clear(&lt;generated&gt;)
+	at com.fliplearn.flipapp.pagemodules.AnnouncementModule.fillTxt(AnnouncementModule.java:117)
+	at com.fliplearn.flipapp.testcases.HomeWorks.canViewHomework(HomeWorks.java:91)
+... Removed 33 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-suite_of_suites-class-passed -->
+          </div> <!-- suite-suite_of_suites-class-failed -->
         </div> <!-- panel suite_of_suites -->
         <div panel-name="test-xml-suite_of_suites" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/home/maninder/workspace/flip-app/FlipApp/TestSuite.xml</span>
+            <span class="header-content">C:\Users\Dell\git\flip-app\FlipApp\TestSuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -147,11 +222,11 @@
   &lt;/listeners&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Test Method&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.fliplearn.flipapp.testcases.VMC&quot;&gt;
+      &lt;class name=&quot;com.fliplearn.flipapp.testcases.HomeWorks&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;displayVMC&quot;/&gt;
+          &lt;include name=&quot;canViewHomework&quot;/&gt;
         &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- com.fliplearn.flipapp.testcases.VMC --&gt;
+      &lt;/class&gt; &lt;!-- com.fliplearn.flipapp.testcases.HomeWorks --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test Method --&gt;
 &lt;/suite&gt; &lt;!-- suite of suites --&gt;
@@ -191,16 +266,24 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(3);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'displayVMC')
-data.setCell(0, 2, 'com.fliplearn.flipapp.testcases.VMC')
-data.setCell(0, 3, 28551);
+data.setCell(0, 1, 'canViewHomework')
+data.setCell(0, 2, 'com.fliplearn.flipapp.testcases.HomeWorks')
+data.setCell(0, 3, 72678);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'canViewHomework')
+data.setCell(1, 2, 'com.fliplearn.flipapp.testcases.HomeWorks')
+data.setCell(1, 3, 71707);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'canViewHomework')
+data.setCell(2, 2, 'com.fliplearn.flipapp.testcases.HomeWorks')
+data.setCell(2, 3, 10086);
 window.suiteTableData['suite_of_suites']= { tableData: data, tableDiv: 'times-div-suite_of_suites'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 28 seconds</span>
+              <span class="suite-total-time">Total running time: 2 minutes</span>
               <div id="times-div-suite_of_suites">
               </div> <!-- times-div-suite_of_suites -->
             </div> <!-- times-div -->
@@ -215,9 +298,18 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-suite_of_suites" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">2 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.fliplearn.flipapp.testcases.HomeWorks</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">createHomework</span>
+                <br/>
+                <span class="ignored-method-name">canNotcreateHomework</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-suite_of_suites" class="panel">
@@ -226,26 +318,64 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.fliplearn.flipapp.testcases.VMC</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.fliplearn.flipapp.testcases.HomeWorks</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
-                <span class="method-name">befo(org.testng.TestRunner@69796bd0)</span>
+                <span class="method-name">befo(org.testng.TestRunner@5169db2f)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
-                <span class="method-name">prePrime</span>
-                <span class="method-start">17402 ms</span>
+                <span class="method-name">befMethod</span>
+                <span class="method-start">10915 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">displayVMC</span>
-                <span class="method-start">17700 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">canViewHomework(Admin)</span>
+                <span class="method-start">11434 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">getResult</span>
-                <span class="method-start">46309 ms</span>
+                <span class="method-start">84120 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">befo(org.testng.TestRunner@5169db2f)</span>
+                <span class="method-start">84997 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">befMethod</span>
+                <span class="method-start">97809 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">canViewHomework(Principal)</span>
+                <span class="method-start">97817 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult</span>
+                <span class="method-start">107907 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">befo(org.testng.TestRunner@5169db2f)</span>
+                <span class="method-start">109358 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">befMethod</span>
+                <span class="method-start">117578 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">canViewHomework(Teacher)</span>
+                <span class="method-start">117585 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult</span>
+                <span class="method-start">189297 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-suite after">
                 <span class="method-name">aftSuite</span>
-                <span class="method-start">48728 ms</span>
+                <span class="method-start">190899 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

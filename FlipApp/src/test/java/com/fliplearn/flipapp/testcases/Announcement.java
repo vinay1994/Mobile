@@ -94,7 +94,7 @@ public class Announcement extends Base
 	{
 		logMod.Login("Admin");
 		String exepected = annMod.fillTxt();
-		annMod.mouseOverOnProfile();
+		annMod.mouseOverOnProfileLogout();
 		logMod.Login("Student");
 		Assert.assertEquals(exepected, annMod.getTitle());
 	}
@@ -128,7 +128,7 @@ public class Announcement extends Base
 	{
 		logMod.Login("admin");
 		String exepected = annMod.fillTxt();
-		annMod.mouseOverOnProfile();
+		annMod.mouseOverOnProfileLogout();
 		logMod.Login("parent");
 		Assert.assertEquals(exepected, annMod.getTitle());
 	}
@@ -145,7 +145,7 @@ public class Announcement extends Base
 	{
 		logMod.Login("admin");
 		String exepected = annMod.fillTxt();
-		annMod.mouseOverOnProfile();
+		annMod.mouseOverOnProfileLogout();
 		logMod.Login("parent");
 		Assert.assertEquals(exepected, annMod.getTitle());
 	}

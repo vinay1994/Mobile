@@ -79,7 +79,7 @@ public class Album extends Base {
 		{
 			logMod.Login("admin");
 			String exepected = annMod.fillTxt();
-			annMod.mouseOverOnProfile();
+			annMod.mouseOverOnProfileLogout();
 			logMod.Login("student");
 			Assert.assertEquals(exepected, annMod.getTitle());
 		}

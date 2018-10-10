@@ -7,12 +7,14 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.Status;
 import com.fliplearn.flipapp.helper.Base;
 import com.fliplearn.flipapp.pagemodules.AnnouncementModule;
+import com.fliplearn.flipapp.pagemodules.HeaderModule;
 import com.fliplearn.flipapp.pagemodules.LoginModule;
 import com.fliplearn.flipapp.pagemodules.MenuModule;
 import com.fliplearn.flipapp.pagemodules.MobileNumberModule;
 import com.fliplearn.flipapp.pagemodules.OnboardingModule;
 import com.fliplearn.flipapp.pagemodules.QuizModule;
 import com.fliplearn.flipapp.pagemodules.SignInAsModule;
+import com.fliplearn.flipapp.pagemodules.YourProfileModule;
 
 public class HomeWorks extends Base {
 	
@@ -23,6 +25,8 @@ public class HomeWorks extends Base {
 		MenuModule menMod;
 		SignInAsModule signInMod;
 		QuizModule quiMod;
+		YourProfileModule youProMod;
+		HeaderModule heaMod;
 		
 		@BeforeMethod
 		public void befMethod()
@@ -33,6 +37,8 @@ public class HomeWorks extends Base {
 			annMod = new AnnouncementModule(driver);
 			signInMod=new SignInAsModule(driver);
 		    quiMod=new QuizModule(driver);
+		    youProMod = new YourProfileModule(driver);
+		    heaMod = new HeaderModule(driver);
 		}
 
 		/**
@@ -77,14 +83,19 @@ public class HomeWorks extends Base {
 		 * @version 1.0
 		 * @throws Throwable 
 		 */
-		@Test
+		@Test(dataProvider = "group2")
 		public void canViewHomework(String role) throws Throwable
 		{
 			logMod.Login(role);
+			annMod.mouseOverOnpostBtn();
 			String exepected = annMod.fillTxt();
-			annMod.mouseOverOnProfile();
-			logMod.Login("student");
-			Assert.assertEquals(exepected, annMod.getTitle());
+			annMod.mouseOverOnProfileLogout();
+			logMod.Login("Student");
+			youProMod.updateClassAndSection(driver, "PreNussery", "A");
+			heaMod.clickonHomeBtn();	
+			String actual = annMod.getTitle();
+			youProMod.updateClassAndSection(driver, "12", "A");
+			Assert.assertEquals(exepected, actual);
 		}
 
 		
