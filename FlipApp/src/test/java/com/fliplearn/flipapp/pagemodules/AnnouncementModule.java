@@ -100,7 +100,7 @@ public class AnnouncementModule extends Base
 
 	public void mouseOverOnpostBtn() throws InterruptedException 
 	{
-		generic.waitForElementVisibility(driver, postBtn);
+		//generic.waitForElementVisibility(driver, postBtn);
 		Thread.sleep(3000);
 		generic.mouseHoverAndClick(driver,postBtn, annBtn);
 
