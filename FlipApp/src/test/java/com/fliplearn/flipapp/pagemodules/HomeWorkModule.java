@@ -2,6 +2,7 @@ package com.fliplearn.flipapp.pagemodules;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebElement;
@@ -29,7 +30,7 @@ public class HomeWorkModule extends Base {
 	@FindBy(xpath="//button[contains(@id,'homework')]")
 	@AndroidFindBy(id="") 
 	@iOSFindBy(id="")
-	public RemoteWebElement albBtn;
+	public RemoteWebElement homeWorkBtn;
 
 	@FindBy(xpath="(//input[@id='title'])[2]")
 	@AndroidFindBy(id="") 
@@ -109,7 +110,7 @@ public class HomeWorkModule extends Base {
 	}
 
 	public void mouseOverOnpostBtn() throws InterruptedException {
-		generic.mouseHoverAndClick(driver,postBtn, albBtn);
+		generic.mouseHoverAndClick(driver, postBtn, homeWorkBtn);
 
 	}
 	public void mouseOverOnProfileLogout() throws InterruptedException {
@@ -124,12 +125,13 @@ public class HomeWorkModule extends Base {
 		titleTxt.sendKeys("Testing automation Title_"+timeStamp);
 		shareWithBtn.click();
 		select_class.click();
-		selectsubject();
 		extentTest.log(Status.PASS, "Select Class");
 		save.click();
+		selectsubject();
 		generic.waitForElementVisibility(driver,addDescriptionTxt );
 		addDescriptionTxt.clear();
 		addDescriptionTxt.sendKeys("Qa add description for testing purpose on this time :"+timeStamp);
+		generic.scrollPage(createBtn);;
 		uploadImageBtn.click();
 		String Filepath = System.getProperty("user.dir")+"\\resources\\images\\vinay.png";
 		System.out.println(Filepath);
@@ -166,6 +168,6 @@ public class HomeWorkModule extends Base {
 		return generic.isElementDisplayed(driver, postBtn);
 	}
 	public void selectsubject() {
-		generic.selectClassByIndex(selectsubj, 1);
+		generic.selectElementByIndex(selectsubj,5);
 	}
 }
