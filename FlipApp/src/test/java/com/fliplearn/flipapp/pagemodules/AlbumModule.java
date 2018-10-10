@@ -120,6 +120,7 @@ public class AlbumModule extends Base {
 		generic.waitForElementVisibility(driver,addDescriptionTxt );
 		addDescriptionTxt.clear();
 		addDescriptionTxt.sendKeys("Qa add description for testing purpose on this time :"+timeStamp);
+		generic.scrollPageToBottom();
 		uploadImageBtn.click();
 		String Filepath = System.getProperty("user.dir")+"\\resources\\images\\vinay.png";
 		System.out.println(Filepath);

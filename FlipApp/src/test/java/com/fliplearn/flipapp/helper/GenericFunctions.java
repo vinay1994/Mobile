@@ -136,19 +136,13 @@ public class GenericFunctions extends Base
 	
 	public void mouseHoverAndClick(WebDriver driver, RemoteWebElement element, RemoteWebElement target) throws InterruptedException 
 	{
-		Actions act=new Actions(driver);
-		
 		generic.waitForElementVisibility(driver, element);
 		extentTest.log(Status.PASS, "Wait for element visibility.");
-
+		Actions act=new Actions(driver);
 		act.moveToElement(element).perform();
 		extentTest.log(Status.PASS, "Mouse hover on element");
-		
-		Thread.sleep(2000);
-		
 		generic.waitForElementVisibility(driver, target);
 		extentTest.log(Status.PASS, "Wait for element visibility.");
-
 		act.moveToElement(target).click().perform();
 		extentTest.log(Status.PASS, "Click on element");
 	}
@@ -189,7 +183,7 @@ public class GenericFunctions extends Base
 	 * @version 1.0
 	 */
 
-	public void selectClassByIndex(WebElement elm, int index) {
+	public void selectElementByIndex(RemoteWebElement elm, int index) {
 		Select sc =new Select(elm);
 		sc.selectByIndex(index);	
 	}
@@ -325,6 +319,18 @@ public class GenericFunctions extends Base
 		Actions actions = new Actions(driver);
 		actions.moveToElement(element).click().perform();
 	}
-
+	/**
+	 * Click using Action Class
+	 * @author vinay 
+	 * @since 2018-10-06
+	 * @version 1.0
+	 * @throws InterruptedException 
+	 */
+	public void scrollPageToBottom(){
+		((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
+	}
+	public void scrollPage(RemoteWebElement element){
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+	}
 }
 
