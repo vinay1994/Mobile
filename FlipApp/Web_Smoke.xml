@@ -6,7 +6,7 @@
 <listeners>
 	<listener class-name="com.fliplearn.flipapp.helper.Base"/>
 </listeners>
-	<test name="Test Method" enabled="true">
+	<test name="User Profile" enabled="true">
   		<classes>
     		<class name="com.fliplearn.flipapp.testcases.UserProfile">
         		<methods>
