@@ -62,7 +62,7 @@
 	
 	<test name="Album" enabled="true">
   		<classes>
-    		<class name="com.fliplearn.flipapp.testcases.Announcement">
+    		<class name="com.fliplearn.flipapp.testcases.Album">
         		<methods>
         			<include name="createAlbum" />  
         			<include name="canNotcreateAlbum" />	
@@ -72,9 +72,9 @@
       	</classes> 
 	</test>
 	
-	<test name="HomeWork" enabled="true">
+	<test name="Homework" enabled="true">
   		<classes>
-    		<class name="com.fliplearn.flipapp.testcases.Announcement">
+    		<class name="com.fliplearn.flipapp.testcases.Homework">
         		<methods>
         			<include name="createHomework" />  
         			<include name="canNotcreateHomework" />	

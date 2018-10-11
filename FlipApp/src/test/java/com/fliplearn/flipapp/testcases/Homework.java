@@ -17,7 +17,7 @@ import com.fliplearn.flipapp.pagemodules.QuizModule;
 import com.fliplearn.flipapp.pagemodules.SignInAsModule;
 import com.fliplearn.flipapp.pagemodules.YourProfileModule;
 
-public class HomeWork extends Base {
+public class Homework extends Base {
 	
 		LoginModule logMod;
 		OnboardingModule onbMod;
