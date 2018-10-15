@@ -129,7 +129,7 @@ public class AlbumModule extends Base {
 		generic.UploadFile(Filepath);
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("document.getElementById('btn-next').focus();");
-		createBtn.click();
+		jse.executeScript("arguments[0].click();", createBtn);
 		Thread.sleep(2000);
 		isTitleDisplayed("Testing automation Title_"+timeStamp);
 		return "Testing automation Title_"+timeStamp;

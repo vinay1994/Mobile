@@ -10,9 +10,9 @@
 	
 	<test name="Announcement" enabled="true">
   		<classes>
-    		<class name="com.fliplearn.flipapp.testcases.Album">
+    		<class name="com.fliplearn.flipapp.testcases.Announcement">
         		<methods>
-        			<include name="createAlbum" />  
+        			<include name="createAnnouncement" />  
         			
         		</methods>
         	</class>
