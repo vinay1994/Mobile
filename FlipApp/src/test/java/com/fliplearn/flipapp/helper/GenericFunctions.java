@@ -140,11 +140,6 @@ public class GenericFunctions extends Base
 		extentTest.log(Status.PASS, "Wait for element visibility.");
 		Actions act=new Actions(driver);
 		act.moveToElement(element).moveToElement(target).click().perform();
-		//	extentTest.log(Status.PASS, "Mouse hover on element");
-		//	generic.waitForElementVisibility(driver, target);
-		//  extentTest.log(Status.PASS, "Wait for element visibility.");
-		//	act.moveToElement(target).click().perform();
-		//  extentTest.log(Status.PASS, "Click on element");
 	}
 
 	/**
