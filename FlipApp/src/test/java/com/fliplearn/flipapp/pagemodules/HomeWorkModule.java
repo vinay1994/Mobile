@@ -27,7 +27,7 @@ public class HomeWorkModule extends Base {
 	@iOSFindBy(id="")
 	public  RemoteWebElement postBtn;
 
-	@FindBy(xpath="//button[contains(@id,'homework')]")
+	@FindBy(css="button[id='homework']")
 	@AndroidFindBy(id="") 
 	@iOSFindBy(id="")
 	public RemoteWebElement homeWorkBtn;
@@ -149,6 +149,7 @@ public class HomeWorkModule extends Base {
 		while(!(ActualTitle.equalsIgnoreCase(Title)) && i<10)
 		{
 			driver.navigate().refresh();
+			Thread.sleep(1000);
 			ActualTitle=getTitle();
 			i++;
 		}

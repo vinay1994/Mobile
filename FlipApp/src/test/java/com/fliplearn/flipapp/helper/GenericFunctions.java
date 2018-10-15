@@ -109,10 +109,10 @@ public class GenericFunctions extends Base
 	public void scrollAndTouchBy(WebDriver driver, int x, int y) throws InterruptedException
 	{
 		TouchAction action = new TouchAction((AndroidDriver)driver);
-	
+
 		Dimension size = driver.manage().window().getSize();
 		System.out.println("Accepted value to move:"+x+"..........."+y);
-		
+
 		int endX = (size.width * x)/100;
 		int endY = (size.height * y)/100;
 
@@ -128,23 +128,23 @@ public class GenericFunctions extends Base
 	}
 	/**
 	 * This will mouse hove and click on given element
-	 * @author Vinay Yadav, Tarun Goswami
+	 * @author Vinay Yadav
 	 * @since 2018-10-06
 	 * @version 1.1
 	 * @throws InterruptedException 
 	 */
-	
+
 	public void mouseHoverAndClick(WebDriver driver, RemoteWebElement element, RemoteWebElement target) throws InterruptedException 
 	{
 		generic.waitForElementVisibility(driver, element);
 		extentTest.log(Status.PASS, "Wait for element visibility.");
 		Actions act=new Actions(driver);
-		act.moveToElement(element).perform();
-		extentTest.log(Status.PASS, "Mouse hover on element");
-		generic.waitForElementVisibility(driver, target);
-		extentTest.log(Status.PASS, "Wait for element visibility.");
-		act.moveToElement(target).click().perform();
-		extentTest.log(Status.PASS, "Click on element");
+		act.moveToElement(element).moveToElement(target).click().perform();
+		//	extentTest.log(Status.PASS, "Mouse hover on element");
+		//	generic.waitForElementVisibility(driver, target);
+		//  extentTest.log(Status.PASS, "Wait for element visibility.");
+		//	act.moveToElement(target).click().perform();
+		//  extentTest.log(Status.PASS, "Click on element");
 	}
 
 	/**
@@ -224,7 +224,7 @@ public class GenericFunctions extends Base
 		extentTest.log(Status.INFO, "Expected List:"+expectedList);
 		System.out.println("Actual List:"+actualList);
 		System.out.println("Expected List:"+expectedList);
-		
+
 
 		//Return true if lists are equal
 		if(actualList.equals(expectedList))
@@ -290,7 +290,7 @@ public class GenericFunctions extends Base
 		String strCurrentValue = sel.getFirstSelectedOption().getText();
 		return strCurrentValue;
 	}
-	
+
 	/**
 	 * Select desired value from dropdown
 	 * @author Tarun Goswami
@@ -305,7 +305,7 @@ public class GenericFunctions extends Base
 		Select sel = new Select(element);
 		sel.selectByVisibleText(value);
 	}
-	
+
 	/**
 	 * Click using Action Class
 	 * @author Tarun Goswami

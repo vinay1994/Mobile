@@ -10,6 +10,7 @@
   		<classes>
     		<class name="com.fliplearn.flipapp.testcases.UserProfile">
         		<methods>
+        			<include name="createHomework" />  
         			<include name="verifyUserRole" />  	
         		</methods>
         	</class>
