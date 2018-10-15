@@ -5,12 +5,17 @@ import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.fliplearn.flipapp.helper.Base;
+import com.fliplearn.flipapp.helper.GenericFunctions;
+
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSFindBy;
 
-public class HeaderModule 
+public class HeaderModule extends Base
 {
+	GenericFunctions generic = new GenericFunctions();
+	
 	public HeaderModule(WebDriver driver) 
 	{
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);	
@@ -26,6 +31,13 @@ public class HeaderModule
 	@iOSFindBy(id="")
 	public RemoteWebElement myProfileLnk;
 	
+	
+	@FindBy(id="home-icon")
+	@AndroidFindBy(xpath="") 
+	@iOSFindBy(id="")
+	public RemoteWebElement homeBtn;
+	
+	
 	public void clickOnProfileImg() {
 		profileImg.click();
 		
@@ -34,6 +46,12 @@ public class HeaderModule
 		myProfileLnk.click();
 		
 	}	
+	
+	public void clickonHomeBtn() throws InterruptedException
+	{
+		homeBtn.click();	
+		Thread.sleep(2000);
+	}
 
 	
 }

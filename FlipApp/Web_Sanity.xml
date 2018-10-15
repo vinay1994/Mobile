@@ -17,6 +17,16 @@
       	</classes> 
 	</test> 
 	
+	<test name="User Profile" enabled="true">
+  		<classes>
+    		<class name="com.fliplearn.flipapp.testcases.UserProfile">
+        		<methods>
+        			<include name="verifyUserRole" />  	
+        		</methods>
+        	</class>
+      	</classes> 
+	</test> 
+	
 	<test name="Fliplearn Prime View" enabled="true">
   		<classes>
     		<class name="com.fliplearn.flipapp.testcases.FliplearnPrimeView">
@@ -44,10 +54,35 @@
         		<methods>
         			<include name="createAnnoncement" />  
         			<include name="canNotCreateAnnouncement" />	
+        			<include name="canViewAnnouncement" />
         		</methods>
         	</class>
       	</classes> 
 	</test>  
+	
+	<test name="Album" enabled="true">
+  		<classes>
+    		<class name="com.fliplearn.flipapp.testcases.Album">
+        		<methods>
+        			<include name="createAlbum" />  
+        			<include name="canNotcreateAlbum" />	
+        			<include name="canViewAlbum" />
+        		</methods>
+        	</class>
+      	</classes> 
+	</test>
+	
+	<test name="Homework" enabled="true">
+  		<classes>
+    		<class name="com.fliplearn.flipapp.testcases.Homework">
+        		<methods>
+        			<include name="createHomework" />  
+        			<include name="canNotcreateHomework" />	
+        			<include name="canViewHomework" />
+        		</methods>
+        	</class>
+      	</classes> 
+	</test>
 	
 	<test name="VMC" enabled="true">
   		<classes>

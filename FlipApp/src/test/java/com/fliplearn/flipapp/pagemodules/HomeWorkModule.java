@@ -2,6 +2,7 @@ package com.fliplearn.flipapp.pagemodules;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebElement;
@@ -16,9 +17,9 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSFindBy;
 
-public class AnnouncementModule extends Base 
-{     GenericFunctions generic=new GenericFunctions();
-	
+public class HomeWorkModule extends Base {
+	GenericFunctions generic=new GenericFunctions();
+
 	String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
 
 	@FindBy(xpath="//button[contains(text(),'Post')]")
@@ -26,10 +27,10 @@ public class AnnouncementModule extends Base
 	@iOSFindBy(id="")
 	public  RemoteWebElement postBtn;
 
-	@FindBy(xpath="//button[contains(@id,'announcement')]")
+	@FindBy(xpath="//button[contains(@id,'homework')]")
 	@AndroidFindBy(id="") 
 	@iOSFindBy(id="")
-	public RemoteWebElement annBtn;
+	public RemoteWebElement homeWorkBtn;
 
 	@FindBy(xpath="(//input[@id='title'])[2]")
 	@AndroidFindBy(id="") 
@@ -67,7 +68,13 @@ public class AnnouncementModule extends Base
 	@FindBy(xpath="(//label[contains(@ng-class,'checkleft')])[2]")
 	@AndroidFindBy(id="") 
 	@iOSFindBy(id="")
-	RemoteWebElement select_class;   
+	RemoteWebElement select_class; 
+
+
+	@FindBy(xpath="//select[@name='subject']")
+	@AndroidFindBy(id="") 
+	@iOSFindBy(id="")
+	RemoteWebElement selectsubj;
 
 
 	@FindBy(xpath="//button[contains(@id,'close')]")
@@ -93,22 +100,21 @@ public class AnnouncementModule extends Base
 	RemoteWebElement logout;
 
 
-	public AnnouncementModule(WebDriver driver)
+
+
+
+
+	public HomeWorkModule(WebDriver driver)
 	{
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 	}
 
-	public void mouseOverOnpostBtn() throws InterruptedException 
-	{
-		//generic.waitForElementVisibility(driver, postBtn);
-		Thread.sleep(3000);
-		generic.mouseHoverAndClick(driver,postBtn, annBtn);
+	public void mouseOverOnpostBtn() throws InterruptedException {
+		generic.mouseHoverAndClick(driver, postBtn, homeWorkBtn);
 
 	}
-
 	public void mouseOverOnProfileLogout() throws InterruptedException {
 		generic.mouseHoverAndClick(driver,profile, logout);
-
 
 	}
 
@@ -121,9 +127,11 @@ public class AnnouncementModule extends Base
 		select_class.click();
 		extentTest.log(Status.PASS, "Select Class");
 		save.click();
+		selectsubject();
 		generic.waitForElementVisibility(driver,addDescriptionTxt );
 		addDescriptionTxt.clear();
 		addDescriptionTxt.sendKeys("Qa add description for testing purpose on this time :"+timeStamp);
+		generic.scrollPage(createBtn);;
 		uploadImageBtn.click();
 		String Filepath = System.getProperty("user.dir")+"\\resources\\images\\vinay.png";
 		System.out.println(Filepath);
@@ -159,5 +167,7 @@ public class AnnouncementModule extends Base
 	public boolean isPostBtndisplayed() throws InterruptedException {
 		return generic.isElementDisplayed(driver, postBtn);
 	}
-
+	public void selectsubject() {
+		generic.selectElementByIndex(selectsubj,5);
+	}
 }
