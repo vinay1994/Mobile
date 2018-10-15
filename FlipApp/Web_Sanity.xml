@@ -52,7 +52,7 @@
   		<classes>
     		<class name="com.fliplearn.flipapp.testcases.Announcement">
         		<methods>
-        			<include name="createAnnoncement" />  
+        			<include name="createAnnouncement" />  
         			<include name="canNotCreateAnnouncement" />	
         			<include name="canViewAnnouncement" />
         		</methods>
