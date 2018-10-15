@@ -103,6 +103,8 @@ public class AnnouncementModule extends Base
 		//generic.waitForElementVisibility(driver, postBtn);
 		Thread.sleep(3000);
 		generic.mouseHoverAndClick(driver,postBtn, annBtn);
+		Thread.sleep(3000);
+
 
 	}
 

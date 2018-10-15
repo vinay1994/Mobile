@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [suite of suites]" guice-stage="DEVELOPMENT">
+<suite name="Failed suite [Fliplearn Automation Suite]" guice-stage="DEVELOPMENT">
   <listeners>
     <listener class-name="com.fliplearn.flipapp.helper.Base"/>
   </listeners>
-  <test thread-count="5" name="Test Method(failed)">
+  <test thread-count="5" name="Announcement(failed)">
     <classes>
-      <class name="com.fliplearn.flipapp.testcases.HomeWorks">
+      <class name="com.fliplearn.flipapp.testcases.Announcement">
         <methods>
           <include name="befMethod"/>
           <include name="befo"/>
+          <include name="createAnnouncement" invocation-numbers="0 2"/>
           <include name="aftSuite"/>
-          <include name="canViewHomework" invocation-numbers="0 1 2"/>
           <include name="getResult"/>
         </methods>
-      </class> <!-- com.fliplearn.flipapp.testcases.HomeWorks -->
+      </class> <!-- com.fliplearn.flipapp.testcases.Announcement -->
     </classes>
-  </test> <!-- Test Method(failed) -->
-</suite> <!-- Failed suite [suite of suites] -->
+  </test> <!-- Announcement(failed) -->
+</suite> <!-- Failed suite [Fliplearn Automation Suite] -->

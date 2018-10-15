@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="suite of suites">
+<suite name="Fliplearn Automation Suite">
 
 <listeners>
 	<listener class-name="com.fliplearn.flipapp.helper.Base"/>
 </listeners>
-	<test name="Test Method" enabled="true">
+ 
+	
+	<test name="Announcement" enabled="true">
   		<classes>
-    		<class name="com.fliplearn.flipapp.testcases.UserProfile">
+    		<class name="com.fliplearn.flipapp.testcases.Announcement">
         		<methods>
-        			<include name="verifyUserRole" />  	
+        			<include name="createAnnouncement" />  
+        			
         		</methods>
         	</class>
       	</classes> 
 	</test>  
+	
+
+	
 </suite>	
