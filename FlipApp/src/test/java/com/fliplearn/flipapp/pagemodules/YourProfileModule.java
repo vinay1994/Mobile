@@ -50,6 +50,7 @@ public class YourProfileModule extends Base
 	
 	public void updateClassAndSection(WebDriver driver, String className, String sectionName) throws InterruptedException
 	{
+		Thread.sleep(3000);
 		HeaderModule heaMod = new HeaderModule(driver);
 		generic.mouseHoverAndClick(driver, heaMod.profileImg, heaMod.myProfileLnk);
 		

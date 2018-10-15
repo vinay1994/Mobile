@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
@@ -119,6 +120,7 @@ public class HomeWorkModule extends Base {
 	}
 
 	public String fillTxt() throws Throwable {
+		Thread.sleep(2000);
 		driver.switchTo().activeElement();
 		titleTxt.clear();
 		titleTxt.click();
@@ -136,7 +138,10 @@ public class HomeWorkModule extends Base {
 		String Filepath = System.getProperty("user.dir")+"\\resources\\images\\vinay.png";
 		System.out.println(Filepath);
 		generic.UploadFile(Filepath);
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("document.getElementById('btn-next').focus();");
 		createBtn.click();
+		Thread.sleep(2000);
 		isTitleDisplayed("Testing automation Title_"+timeStamp);
 		return "Testing automation Title_"+timeStamp;
 	}

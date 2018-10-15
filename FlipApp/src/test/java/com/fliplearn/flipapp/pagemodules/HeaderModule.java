@@ -49,6 +49,8 @@ public class HeaderModule extends Base
 	
 	public void clickonHomeBtn() throws InterruptedException
 	{
+		Thread.sleep(2000);
+
 		homeBtn.click();	
 		Thread.sleep(2000);
 	}
