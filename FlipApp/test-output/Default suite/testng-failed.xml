@@ -3,15 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.fliplearn.flipapp.testcases.VMC">
+      <class name="com.fliplearn.flipapp.testcases.HomeWorks">
         <methods>
-          <include name="prePrime"/>
+          <include name="befMethod"/>
+          <include name="createHomework"/>
           <include name="befo"/>
+          <include name="canNotcreateHomework" invocation-numbers="0"/>
           <include name="aftSuite"/>
+          <include name="canViewHomework"/>
           <include name="getResult"/>
-          <include name="displayVMC"/>
         </methods>
-      </class> <!-- com.fliplearn.flipapp.testcases.VMC -->
+      </class> <!-- com.fliplearn.flipapp.testcases.HomeWorks -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

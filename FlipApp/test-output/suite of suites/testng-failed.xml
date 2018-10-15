@@ -9,9 +9,9 @@
       <class name="com.fliplearn.flipapp.testcases.HomeWorks">
         <methods>
           <include name="befMethod"/>
+          <include name="createHomework" invocation-numbers="1"/>
           <include name="befo"/>
           <include name="aftSuite"/>
-          <include name="canViewHomework" invocation-numbers="0 1 2"/>
           <include name="getResult"/>
         </methods>
       </class> <!-- com.fliplearn.flipapp.testcases.HomeWorks -->

@@ -10,7 +10,7 @@
   		<classes>
     		<class name="com.fliplearn.flipapp.testcases.HomeWorks">
         		<methods>
-        			<include name="canViewHomework" />  	
+        			<include name="createHomework" />  	
         		</methods>
         	</class>
       	</classes> 
