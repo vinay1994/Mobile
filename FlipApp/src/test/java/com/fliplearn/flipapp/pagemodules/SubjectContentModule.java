@@ -15,12 +15,7 @@ public class SubjectContentModule {
 	@AndroidFindBy(id="")
 	@iOSFindBy(id="")
 	public List<RemoteWebElement> claConMod;
-	
-//	@FindBy(xpath="//h3[text()='Biology']")
-//	@AndroidFindBy(id="")
-//	@iOSFindBy(id="")
-//	public List<RemoteWebElement> subConMod;
-	
+
 	
 	
 	
