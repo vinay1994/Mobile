@@ -15,17 +15,17 @@ import io.appium.java_client.pagefactory.iOSFindBy;
 public class LearnModule extends Base
 {
 
-	GenericFunctions generic = new GenericFunctions();
+	 GenericFunctions generic = new GenericFunctions();
 	
 	@FindBy(xpath="//div[@id='navbar']//li[2]/div")
 	@AndroidFindBy(xpath="//*[@text='Learn']") 
 	@iOSFindBy(id="")
-	public RemoteWebElement learnImg;	
+	public static RemoteWebElement learnImg;	
 	
 	@FindBy(xpath="//strong[text()='Fliplearn Prime']")
 	@AndroidFindBy(xpath="//strong[text()='Fliplearn Prime']")
 	@iOSFindBy(id="")
-	public RemoteWebElement primeImg;
+	public static RemoteWebElement primeImg;
 	
 	
 	@FindBy(xpath="//h4/strong[contains(text(),'VMC Live')]")

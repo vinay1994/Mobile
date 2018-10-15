@@ -94,7 +94,7 @@ public class Announcement extends Base
 	 * @throws Throwable 
 	 */
 	@Test(dataProvider="group2")
-	public void canViewAlbum(String role) throws Throwable
+	public void canViewAnnouncement(String role) throws Throwable
 	{
 		logMod.Login(role);
 		annMod.mouseOverOnpostBtn();

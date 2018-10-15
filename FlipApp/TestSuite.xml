@@ -8,9 +8,10 @@
 </listeners>
 	<test name="Test Method" enabled="true">
   		<classes>
-    		<class name="com.fliplearn.flipapp.testcases.HomeWorks">
+    		<class name="com.fliplearn.flipapp.testcases.UserProfile">
         		<methods>
-        			<include name="createHomework" />  	
+        			<include name="createHomework" />  
+        			<include name="verifyUserRole" />  	
         		</methods>
         	</class>
       	</classes> 
