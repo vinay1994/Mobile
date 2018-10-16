@@ -29,7 +29,7 @@ public class Album extends Base {
 	   HeaderModule heaMod;
 		
 		@BeforeMethod
-		public void befMethod()
+		public void befAlbum()
 		{
 			logMod = new LoginModule(driver);
 			onbMod = new OnboardingModule(driver);

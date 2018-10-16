@@ -30,7 +30,7 @@ public class Homework extends Base {
 		HeaderModule heaMod;
 		
 		@BeforeMethod
-		public void befMethod()
+		public void befHomework()
 		{
 			logMod = new LoginModule(driver);
 			onbMod = new OnboardingModule(driver);
