@@ -71,7 +71,7 @@ public class Homework extends Base {
 		public void canNotcreateHomework(String role) throws InterruptedException
 		{
 			logMod.Login(role);
-			Assert.assertTrue(homeWoMod.isPostBtndisplayed(), "Post button is displaying for User:-"+role);
+			Assert.assertEquals(homeWoMod.isPostBtndisplayed(), false);
 		}
 
 	
@@ -94,7 +94,7 @@ public class Homework extends Base {
 			youProMod.updateClassAndSection(driver, "Pre-Nursery", "A");
 			heaMod.clickonHomeBtn();	
 			String actual = homeWoMod.getTitle();
-			youProMod.updateClassAndSection(driver, "Class 12", "A");
+			youProMod.updateClassAndSection(driver, "Class 6", "A");
 			Assert.assertEquals(exepected, actual);
 		}
 

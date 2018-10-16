@@ -104,7 +104,7 @@ public class Announcement extends Base
 		youProMod.updateClassAndSection(driver, "Pre-Nursery", "A");
 		heaMod.clickonHomeBtn();	
 		String actual = annMod.getTitle();
-		youProMod.updateClassAndSection(driver, "Class 12", "A");
+		youProMod.updateClassAndSection(driver, "Class 6", "A");
 		Assert.assertEquals(exepected, actual);
 	}
 

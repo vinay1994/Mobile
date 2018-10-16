@@ -71,7 +71,7 @@ public class Album extends Base {
 		public void canNotcreateAlbum(String role) throws InterruptedException
 		{
 			logMod.Login(role);
-			Assert.assertTrue(albMod.isPostBtndisplayed(), "Post button is displaying for User:-"+role);
+			Assert.assertEquals(albMod.isPostBtndisplayed(), false);
 		}
 
 		/**
