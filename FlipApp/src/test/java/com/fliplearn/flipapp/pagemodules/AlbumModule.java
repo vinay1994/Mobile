@@ -110,6 +110,7 @@ public class AlbumModule extends Base {
 	}
 
 	public String fillTxt() throws Throwable {
+		mouseOverOnpostBtn();
 		Thread.sleep(2000);
 		driver.switchTo().activeElement();
 		titleTxt.clear();

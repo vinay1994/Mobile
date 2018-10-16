@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 
 import com.fliplearn.flipapp.helper.Base;
 import com.fliplearn.flipapp.helper.GenericFunctions;
+import com.fliplearn.flipapp.pagemodules.HeaderModule;
 import com.fliplearn.flipapp.pagemodules.LearnModule;
 import com.fliplearn.flipapp.pagemodules.LoginModule;
 import com.fliplearn.flipapp.pagemodules.MenuModule;
@@ -16,6 +17,7 @@ import com.fliplearn.flipapp.pagemodules.MobileNumberModule;
 import com.fliplearn.flipapp.pagemodules.SelectClassModule;
 import com.fliplearn.flipapp.pagemodules.SelectSubjectModule;
 import com.fliplearn.flipapp.pagemodules.SignInAsModule;
+import com.fliplearn.flipapp.pagemodules.YourProfileModule;
 
 public class FliplearnPrimeView extends Base
 {
@@ -27,6 +29,8 @@ public class FliplearnPrimeView extends Base
 	SelectClassModule selClaMod;
 	SelectSubjectModule selSubMod;
 	GenericFunctions generic;
+	YourProfileModule youProMod;
+	HeaderModule heaMod;
 	
 
 	@BeforeMethod
@@ -40,6 +44,8 @@ public class FliplearnPrimeView extends Base
 	    selClaMod=	new SelectClassModule(driver);
 	    selSubMod= new SelectSubjectModule(driver);   
 	    generic=new GenericFunctions();
+	    youProMod = new YourProfileModule(driver);
+	    heaMod = new HeaderModule(driver);
 	}
 	
 	
@@ -90,6 +96,12 @@ public class FliplearnPrimeView extends Base
 		
 		if(role.equals("Parent") || role.equals("Student"))
 		{
+			if(role.equals("Student"))
+			{	
+				youProMod.updateClassAndSection(driver, "Class 6", "A");
+				heaMod.clickonHomeBtn();	
+			}
+
 	    	Assert.assertEquals(generic.compareList(selSubMod.studentSubjectList, expectedList), true);
 		}
 		

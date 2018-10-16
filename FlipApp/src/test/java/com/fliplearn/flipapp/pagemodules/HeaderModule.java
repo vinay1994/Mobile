@@ -1,5 +1,6 @@
 package com.fliplearn.flipapp.pagemodules;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
@@ -51,7 +52,10 @@ public class HeaderModule extends Base
 	{
 		Thread.sleep(2000);
 
-		homeBtn.click();	
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("document.getElementById('home-icon').focus();");
+		jse.executeScript("arguments[0].click();", homeBtn);
+		
 		Thread.sleep(2000);
 	}
 

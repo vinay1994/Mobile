@@ -54,8 +54,7 @@ public class Homework extends Base {
 		public void createHomework(String role) throws Throwable
 		{
 			logMod.Login(role);
-			homeWoMod.mouseOverOnpostBtn();	
-			Thread.sleep(4000);
+			Thread.sleep(3000);
 			extentTest.log(Status.PASS, "Mouse Hover on Post button");
 			Assert.assertEquals(homeWoMod.fillTxt(), homeWoMod.getTitle());
 		}
@@ -88,8 +87,7 @@ public class Homework extends Base {
 		public void canViewHomework(String role) throws Throwable
 		{
 			logMod.Login(role);
-			homeWoMod.mouseOverOnpostBtn();
-			Thread.sleep(4000);
+			Thread.sleep(3000);
 			String exepected = homeWoMod.fillTxt();
 			homeWoMod.mouseOverOnProfileLogout();
 			logMod.Login("Student");

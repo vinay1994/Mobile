@@ -53,7 +53,7 @@ public class YourProfileModule extends Base
 		Thread.sleep(3000);
 		HeaderModule heaMod = new HeaderModule(driver);
 		generic.mouseHoverAndClick(driver, heaMod.profileImg, heaMod.myProfileLnk);
-		
+		Thread.sleep(3000);
 		generic.waitForElementVisibility(driver, classEditImg);
 		classEditImg.click();
 		extentTest.log(Status.PASS, "Click on Class Edit Image Icon.");
