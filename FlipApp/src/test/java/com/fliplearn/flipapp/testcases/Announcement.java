@@ -68,6 +68,8 @@ public class Announcement extends Base
 		logMod.Login(role);
 		annMod.mouseOverOnpostBtn();	
 		extentTest.log(Status.PASS, "Mouse Hover on Post button");
+		Thread.sleep(4000);
+
 	Assert.assertEquals(annMod.fillTxt(), annMod.getTitle());;
 	}
 
@@ -98,6 +100,8 @@ public class Announcement extends Base
 	{
 		logMod.Login(role);
 		annMod.mouseOverOnpostBtn();
+		Thread.sleep(4000);
+
 		String exepected = annMod.fillTxt();
 		annMod.mouseOverOnProfileLogout();
 		logMod.Login("Student");

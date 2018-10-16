@@ -55,7 +55,8 @@ public class Album extends Base {
 			logMod.Login(role);
 			albMod.mouseOverOnpostBtn();	
 			extentTest.log(Status.PASS, "Mouse Hover on Post button");
-			
+			Thread.sleep(4000);
+
 			Assert.assertEquals(albMod.fillTxt(), albMod.getTitle());
 		}
 
@@ -86,6 +87,8 @@ public class Album extends Base {
 		{
 			logMod.Login(role);
 			albMod.mouseOverOnpostBtn();
+			Thread.sleep(4000);
+
 			String exepected = albMod.fillTxt();
 			albMod.mouseOverOnProfileLogout();
 			logMod.Login("Student");
