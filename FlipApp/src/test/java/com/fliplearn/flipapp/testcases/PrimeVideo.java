@@ -2,7 +2,10 @@
 	
      package com.fliplearn.flipapp.testcases;
 	 import java.io.IOException;
-	 import org.testng.annotations.BeforeMethod;
+
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.BeforeMethod;
 	import org.testng.annotations.Test;
 	 import com.fliplearn.flipapp.helper.Base;
 	import com.fliplearn.flipapp.helper.GenericFunctions;
@@ -14,7 +17,8 @@
 	import com.fliplearn.flipapp.pagemodules.SelectClassModule;
 	import com.fliplearn.flipapp.pagemodules.SelectSubjectModule;
 	import com.fliplearn.flipapp.pagemodules.SignInAsModule;
-	import com.fliplearn.flipapp.pagemodules.YourProfileModule;
+import com.fliplearn.flipapp.pagemodules.SubjectContentModule;
+import com.fliplearn.flipapp.pagemodules.YourProfileModule;
 	 public class PrimeVideo extends Base{
 		
 			LoginModule logMod;
@@ -27,6 +31,16 @@
 			GenericFunctions generic;
 			YourProfileModule youProMod;
 			HeaderModule heaMod;
+			SubjectContentModule subConMod;
+			
+			 /**
+		 	 * verify PrimeVideo on Web, Android, iOS when User click on prime content
+		 	 * @author Jagrati
+		 	 * @since 2018-10-14
+		 	 * @throws InterruptedException 
+		 	 * @version 1.0
+		 	 * @throws IOException 
+		 	 */
 			
 		  @BeforeMethod
 			public void preSubjectContent()
@@ -41,19 +55,41 @@
 			    generic=new GenericFunctions();
 			    youProMod=new YourProfileModule(driver);
 			    heaMod=new HeaderModule(driver);
+			   subConMod=new SubjectContentModule(driver);
 			
 			}
-	           @Test
+		  
+		 
+	           @Test(dataProvider ="group2")
 	           public void verifySubjectContent(String role) throws IOException, InterruptedException
 	           {
 	        		logMod.Login(role);
 	        		leaMod.clickOnLearnImage();
 	        		leaMod.clickOnPrimeImage();
 	        		
-	       		String expectedList = readData(platform, role, "Prime Subjects");
-	 
-	        	   
-	           }}
+	        		Actions actions = new Actions(driver);
+	        		actions.keyDown(Keys.CONTROL).sendKeys(Keys.END).perform();
+	        		
+	            subConMod.clickOnClassContent();
+	            subConMod.clickOnSubjectContent();
+	        	subConMod.clickOnBookContent();
+	        	subConMod.clickOnBookTopicContent();
+	        	subConMod.clickOnVideoContent();
+	        	
+	        	
+	       		}
+	           
+	           /**
+			 	 * verify PrimeVideo on Web, Android, iOS when User click on prime content
+			 	 * @author Jagrati
+			 	 * @since 2018-10-14
+			 	 * @throws InterruptedException 
+			 	 * @version 1.0
+			 	 * @throws IOException 
+			 	 */
+	          
+	           
+	 }
 
 	
 
