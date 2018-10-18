@@ -12,7 +12,7 @@
           <include name="aftSuite"/>
           <include name="getResult"/>
           <include name="befMethod"/>
-          <include name="canViewHomework" invocation-numbers="0 2"/>
+          <include name="canViewHomework" invocation-numbers="1"/>
         </methods>
       </class> <!-- com.fliplearn.flipapp.testcases.Homework -->
     </classes>

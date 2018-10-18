@@ -50,7 +50,7 @@ public class HeaderModule extends Base
 	
 	public void clickonHomeBtn() throws InterruptedException
 	{
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("document.getElementById('home-icon').focus();");

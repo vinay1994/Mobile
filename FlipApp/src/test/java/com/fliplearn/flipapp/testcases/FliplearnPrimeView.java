@@ -87,11 +87,6 @@ public class FliplearnPrimeView extends Base
 	public void verifyPrimeSubjects(String role) throws IOException, InterruptedException  
 	{ 
 		logMod.Login(role);
-		
-		 if(platform.equals("Web"))
-    		 LearnMod.clickOnLearnImage();
-    	 
-    	LearnMod.clickOnPrimeImage();
 		String expectedList = readData(platform, role, "Prime Subjects");
 		
 		if(role.equals("Parent") || role.equals("Student"))
@@ -99,19 +94,21 @@ public class FliplearnPrimeView extends Base
 			if(role.equals("Student"))
 			{	
 				youProMod.updateClassAndSection(driver, "Class 6", "A");
-				heaMod.clickonHomeBtn();	
 			}
+		}		
+		 if(platform.equals("Web"))
+    		 LearnMod.clickOnLearnImage();
+		 
+		LearnMod.clickOnPrimeImage();			
 
+		if(role.equals("Parent") || role.equals("Student"))
+		{	
 	    	Assert.assertEquals(generic.compareList(selSubMod.studentSubjectList, expectedList), true);
 		}
-		
 		else
 		{
 			LearnMod.clickOnSubjectLink();
-			Assert.assertEquals(generic.compareList(selSubMod.subjectList, expectedList), true);
+	    	Assert.assertEquals(generic.compareList(selSubMod.subjectList, expectedList), true);
 		}
      }
-	 
-	
-	 
  }

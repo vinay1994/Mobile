@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">8 methods, 2 failed,   6 passed</span>
+                    <span class="method-stats">3 methods, 1 failed,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -102,12 +102,7 @@
                     <div class="method-list-content failed suite-Fliplearn_Automation_Suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Fliplearn_Automation_Suite" title="com.fliplearn.flipapp.testcases.Homework" class="method navigator-link" hash-for-method="canViewHomework(Admin)">canViewHomework(Admin)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Fliplearn_Automation_Suite" title="com.fliplearn.flipapp.testcases.Homework" class="method navigator-link" hash-for-method="canViewHomework(Teacher)">canViewHomework(Teacher)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Fliplearn_Automation_Suite" title="com.fliplearn.flipapp.testcases.Homework" class="method navigator-link" hash-for-method="canViewHomework(Principal)">canViewHomework(Principal)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Fliplearn_Automation_Suite -->
@@ -121,32 +116,12 @@
                     <div class="method-list-content passed suite-Fliplearn_Automation_Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Fliplearn_Automation_Suite" title="com.fliplearn.flipapp.testcases.Homework" class="method navigator-link" hash-for-method="canNotcreateHomework(Student)">canNotcreateHomework(Student)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Fliplearn_Automation_Suite" title="com.fliplearn.flipapp.testcases.Homework" class="method navigator-link" hash-for-method="canViewHomework(Teacher)">canViewHomework(Teacher)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Fliplearn_Automation_Suite" title="com.fliplearn.flipapp.testcases.Homework" class="method navigator-link" hash-for-method="canNotcreateHomework(Parent)">canNotcreateHomework(Parent)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Fliplearn_Automation_Suite" title="com.fliplearn.flipapp.testcases.Homework" class="method navigator-link" hash-for-method="canViewHomework(Principal)">canViewHomework(Principal)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Fliplearn_Automation_Suite" title="com.fliplearn.flipapp.testcases.Homework" class="method navigator-link" hash-for-method="createHomework(Admin)">createHomework(Admin)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Fliplearn_Automation_Suite" title="com.fliplearn.flipapp.testcases.Homework" class="method navigator-link" hash-for-method="createHomework(Teacher)">createHomework(Teacher)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Fliplearn_Automation_Suite" title="com.fliplearn.flipapp.testcases.Homework" class="method navigator-link" hash-for-method="createHomework(Principal)">createHomework(Principal)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Fliplearn_Automation_Suite" title="com.fliplearn.flipapp.testcases.Homework" class="method navigator-link" hash-for-method="canViewHomework(Admin)">canViewHomework(Admin)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Fliplearn_Automation_Suite -->
@@ -169,10 +144,10 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="canViewHomework(Admin)">
-                  </a> <!-- canViewHomework(Admin) -->
+                  <a name="canViewHomework(Principal)">
+                  </a> <!-- canViewHomework(Principal) -->
                   <span class="method-name">canViewHomework</span>
-                  <span class="parameters">(Admin)</span>
+                  <span class="parameters">(Principal)</span>
                   <div class="stack-trace">org.openqa.selenium.InvalidElementStateException: invalid element state: Element is not currently interactable and may not be manipulated
   (Session info: chrome=69.0.3497.100)
   (Driver info: chromedriver=2.42.591088 (7b2b2dca23cca0862f674758c9a3933e685c27d5),platform=Windows NT 6.2.9200 x86_64) (WARNING: The server did not provide any stacktrace information)
@@ -180,8 +155,8 @@ Command duration or timeout: 0 milliseconds
 Build info: version: &apos;3.13.0&apos;, revision: &apos;2f0d292&apos;, time: &apos;2018-06-25T15:24:21.231Z&apos;
 System info: host: &apos;WIN-JH7TCQLIT5A&apos;, ip: &apos;192.168.109.2&apos;, os.name: &apos;Windows Server 2012&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.2&apos;, java.version: &apos;11&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.42.591088 (7b2b2dca23cca0..., userDataDir: C:\Users\ADMINI~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:55513}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
-Session ID: e83c1d7edf9bac868bd15124931213dd
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.42.591088 (7b2b2dca23cca0..., userDataDir: C:\Users\ADMINI~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:54308}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
+Session ID: 533b6a397a815e19d11c1fb2db2fac88
 	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
 	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
 	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
@@ -195,28 +170,9 @@ Session ID: e83c1d7edf9bac868bd15124931213dd
 	at io.appium.java_client.pagefactory.ElementInterceptor.getObject(ElementInterceptor.java:40)
 	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:61)
 	at org.openqa.selenium.remote.RemoteWebElement$$EnhancerByCGLIB$$d27c0df4.clear(&lt;generated&gt;)
-	at com.fliplearn.flipapp.pagemodules.HomeWorkModule.fillTxt(HomeWorkModule.java:125)
-	at com.fliplearn.flipapp.testcases.Homework.canViewHomework(Homework.java:92)
+	at com.fliplearn.flipapp.pagemodules.HomeWorkModule.fillTxt(HomeWorkModule.java:127)
+	at com.fliplearn.flipapp.testcases.Homework.canViewHomework(Homework.java:91)
 ... Removed 33 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="canViewHomework(Teacher)">
-                  </a> <!-- canViewHomework(Teacher) -->
-                  <span class="method-name">canViewHomework</span>
-                  <span class="parameters">(Teacher)</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: Cannot locate element with text: Pre-Nursery
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.13.0&apos;, revision: &apos;2f0d292&apos;, time: &apos;2018-06-25T15:24:21.231Z&apos;
-System info: host: &apos;WIN-JH7TCQLIT5A&apos;, ip: &apos;192.168.109.2&apos;, os.name: &apos;Windows Server 2012&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.2&apos;, java.version: &apos;11&apos;
-Driver info: driver.version: unknown
-	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:151)
-	at com.fliplearn.flipapp.helper.GenericFunctions.selectValueFromList(GenericFunctions.java:302)
-	at com.fliplearn.flipapp.pagemodules.YourProfileModule.updateClassAndSection(YourProfileModule.java:61)
-	at com.fliplearn.flipapp.testcases.Homework.canViewHomework(Homework.java:95)
-... Removed 25 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -230,50 +186,18 @@ Driver info: driver.version: unknown
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="canNotcreateHomework(Student)">
-                  </a> <!-- canNotcreateHomework(Student) -->
-                  <span class="method-name">canNotcreateHomework</span>
-                  <span class="parameters">(Student)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="canNotcreateHomework(Parent)">
-                  </a> <!-- canNotcreateHomework(Parent) -->
-                  <span class="method-name">canNotcreateHomework</span>
-                  <span class="parameters">(Parent)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="canViewHomework(Principal)">
-                  </a> <!-- canViewHomework(Principal) -->
+                  <a name="canViewHomework(Teacher)">
+                  </a> <!-- canViewHomework(Teacher) -->
                   <span class="method-name">canViewHomework</span>
-                  <span class="parameters">(Principal)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="createHomework(Admin)">
-                  </a> <!-- createHomework(Admin) -->
-                  <span class="method-name">createHomework</span>
-                  <span class="parameters">(Admin)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="createHomework(Teacher)">
-                  </a> <!-- createHomework(Teacher) -->
-                  <span class="method-name">createHomework</span>
                   <span class="parameters">(Teacher)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="createHomework(Principal)">
-                  </a> <!-- createHomework(Principal) -->
-                  <span class="method-name">createHomework</span>
-                  <span class="parameters">(Principal)</span>
+                  <a name="canViewHomework(Admin)">
+                  </a> <!-- canViewHomework(Admin) -->
+                  <span class="method-name">canViewHomework</span>
+                  <span class="parameters">(Admin)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -295,8 +219,6 @@ Driver info: driver.version: unknown
     &lt;classes&gt;
       &lt;class name=&quot;com.fliplearn.flipapp.testcases.Homework&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;createHomework&quot;/&gt;
-          &lt;include name=&quot;canNotcreateHomework&quot;/&gt;
           &lt;include name=&quot;canViewHomework&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- com.fliplearn.flipapp.testcases.Homework --&gt;
@@ -339,44 +261,24 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(8);
+data.addRows(3);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'canViewHomework')
 data.setCell(0, 2, 'com.fliplearn.flipapp.testcases.Homework')
-data.setCell(0, 3, 54575);
+data.setCell(0, 3, 53350);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'canViewHomework')
 data.setCell(1, 2, 'com.fliplearn.flipapp.testcases.Homework')
-data.setCell(1, 3, 42003);
+data.setCell(1, 3, 48983);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'canNotcreateHomework')
+data.setCell(2, 1, 'canViewHomework')
 data.setCell(2, 2, 'com.fliplearn.flipapp.testcases.Homework')
-data.setCell(2, 3, 33683);
-data.setCell(3, 0, 3)
-data.setCell(3, 1, 'canNotcreateHomework')
-data.setCell(3, 2, 'com.fliplearn.flipapp.testcases.Homework')
-data.setCell(3, 3, 32390);
-data.setCell(4, 0, 4)
-data.setCell(4, 1, 'createHomework')
-data.setCell(4, 2, 'com.fliplearn.flipapp.testcases.Homework')
-data.setCell(4, 3, 22310);
-data.setCell(5, 0, 5)
-data.setCell(5, 1, 'createHomework')
-data.setCell(5, 2, 'com.fliplearn.flipapp.testcases.Homework')
-data.setCell(5, 3, 21781);
-data.setCell(6, 0, 6)
-data.setCell(6, 1, 'createHomework')
-data.setCell(6, 2, 'com.fliplearn.flipapp.testcases.Homework')
-data.setCell(6, 3, 21396);
-data.setCell(7, 0, 7)
-data.setCell(7, 1, 'canViewHomework')
-data.setCell(7, 2, 'com.fliplearn.flipapp.testcases.Homework')
-data.setCell(7, 3, 6641);
+data.setCell(2, 3, 5763);
 window.suiteTableData['Fliplearn_Automation_Suite']= { tableData: data, tableDiv: 'times-div-Fliplearn_Automation_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 3 minutes</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Fliplearn_Automation_Suite">
               </div> <!-- times-div-Fliplearn_Automation_Suite -->
             </div> <!-- times-div -->
@@ -391,9 +293,18 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Fliplearn_Automation_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">2 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.fliplearn.flipapp.testcases.Homework</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">canNotcreateHomework</span>
+                <br/>
+                <span class="ignored-method-name">createHomework</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Fliplearn_Automation_Suite" class="panel">
@@ -404,140 +315,58 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">com.fliplearn.flipapp.testcases.Homework</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
-                <span class="method-name">befo(org.testng.TestRunner@2ec9bd88)</span>
+                <span class="method-name">befo(org.testng.TestRunner@40fd9358)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
                 <span class="method-name">befMethod</span>
-                <span class="method-start">4840 ms</span>
+                <span class="method-start">4711 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">createHomework(Admin)</span>
-                <span class="method-start">5051 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">getResult</span>
-                <span class="method-start">27363 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">befo(org.testng.TestRunner@2ec9bd88)</span>
-                <span class="method-start">28002 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="configuration-method before">
-                <span class="method-name">befMethod</span>
-                <span class="method-start">32011 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">createHomework(Principal)</span>
-                <span class="method-start">32022 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">getResult</span>
-                <span class="method-start">53806 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">befo(org.testng.TestRunner@2ec9bd88)</span>
-                <span class="method-start">54428 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="configuration-method before">
-                <span class="method-name">befMethod</span>
-                <span class="method-start">58556 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">createHomework(Teacher)</span>
-                <span class="method-start">58563 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">getResult</span>
-                <span class="method-start">79961 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">befo(org.testng.TestRunner@2ec9bd88)</span>
-                <span class="method-start">80604 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="configuration-method before">
-                <span class="method-name">befMethod</span>
-                <span class="method-start">84727 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">canNotcreateHomework(Parent)</span>
-                <span class="method-start">84735 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">getResult</span>
-                <span class="method-start">118418 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">befo(org.testng.TestRunner@2ec9bd88)</span>
-                <span class="method-start">119042 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="configuration-method before">
-                <span class="method-name">befMethod</span>
-                <span class="method-start">122978 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">canNotcreateHomework(Student)</span>
-                <span class="method-start">122985 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">getResult</span>
-                <span class="method-start">155375 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">befo(org.testng.TestRunner@2ec9bd88)</span>
-                <span class="method-start">156014 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="configuration-method before">
-                <span class="method-name">befMethod</span>
-                <span class="method-start">160012 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">canViewHomework(Admin)</span>
-                <span class="method-start">160019 ms</span>
+                <span class="method-start">4894 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">getResult</span>
-                <span class="method-start">166664 ms</span>
+                <span class="method-start">58246 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
-                <span class="method-name">befo(org.testng.TestRunner@2ec9bd88)</span>
-                <span class="method-start">167293 ms</span>
+                <span class="method-name">befo(org.testng.TestRunner@40fd9358)</span>
+                <span class="method-start">58937 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
                 <span class="method-name">befMethod</span>
-                <span class="method-start">171240 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">canViewHomework(Principal)</span>
-                <span class="method-start">171265 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">getResult</span>
-                <span class="method-start">213269 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">befo(org.testng.TestRunner@2ec9bd88)</span>
-                <span class="method-start">213905 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="configuration-method before">
-                <span class="method-name">befMethod</span>
-                <span class="method-start">217917 ms</span>
+                <span class="method-start">62880 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">canViewHomework(Teacher)</span>
-                <span class="method-start">217923 ms</span>
+                <span class="method-name">canViewHomework(Principal)</span>
+                <span class="method-start">62897 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">getResult</span>
-                <span class="method-start">272498 ms</span>
+                <span class="method-start">68666 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">befo(org.testng.TestRunner@40fd9358)</span>
+                <span class="method-start">69326 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">befMethod</span>
+                <span class="method-start">73161 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">canViewHomework(Teacher)</span>
+                <span class="method-start">73172 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult</span>
+                <span class="method-start">122156 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-suite after">
                 <span class="method-name">aftSuite</span>
-                <span class="method-start">273894 ms</span>
+                <span class="method-start">123364 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

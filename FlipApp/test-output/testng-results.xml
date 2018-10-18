@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="8" passed="6" failed="2" skipped="0">
+<testng-results ignored="2" total="5" passed="2" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2018-10-16T13:47:45Z" name="Fliplearn Automation Suite" finished-at="2018-10-16T13:52:18Z" duration-ms="273154">
+  <suite started-at="2018-10-17T19:36:25Z" name="Fliplearn Automation Suite" finished-at="2018-10-17T19:38:28Z" duration-ms="122860">
     <groups>
     </groups>
-    <test started-at="2018-10-16T13:47:45Z" name="Announcement" finished-at="2018-10-16T13:52:18Z" duration-ms="273154">
+    <test started-at="2018-10-17T19:36:25Z" name="Announcement" finished-at="2018-10-17T19:38:28Z" duration-ms="122860">
       <class name="com.fliplearn.flipapp.testcases.Homework">
-        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.Homework@6c4906d3]" started-at="2018-10-16T13:47:45Z" name="befo" finished-at="2018-10-16T13:47:50Z" duration-ms="4840" status="PASS">
+        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.Homework@4bdeaabb]" started-at="2018-10-17T19:36:25Z" name="befo" finished-at="2018-10-17T19:36:30Z" duration-ms="4711" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@2ec9bd88]]>
+                <![CDATA[org.testng.TestRunner@40fd9358]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- befo -->
-        <test-method is-config="true" signature="befMethod()[pri:0, instance:com.fliplearn.flipapp.testcases.Homework@6c4906d3]" started-at="2018-10-16T13:47:50Z" name="befMethod" finished-at="2018-10-16T13:47:50Z" duration-ms="211" status="PASS">
+        <test-method is-config="true" signature="befMethod()[pri:0, instance:com.fliplearn.flipapp.testcases.Homework@4bdeaabb]" started-at="2018-10-17T19:36:30Z" name="befMethod" finished-at="2018-10-17T19:36:30Z" duration-ms="183" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- befMethod -->
-        <test-method signature="createHomework(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.Homework@6c4906d3]" started-at="2018-10-16T13:47:50Z" name="createHomework" data-provider="group2" finished-at="2018-10-16T13:48:12Z" duration-ms="22310" status="PASS">
+        <test-method signature="canViewHomework(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.Homework@4bdeaabb]" started-at="2018-10-17T19:36:30Z" name="canViewHomework" data-provider="group2" finished-at="2018-10-17T19:37:23Z" duration-ms="53350" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -32,151 +32,31 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createHomework -->
-        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.Homework@6c4906d3]" started-at="2018-10-16T13:48:12Z" name="getResult" finished-at="2018-10-16T13:48:13Z" duration-ms="639" status="PASS">
+        </test-method> <!-- canViewHomework -->
+        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.Homework@4bdeaabb]" started-at="2018-10-17T19:37:23Z" name="getResult" finished-at="2018-10-17T19:37:24Z" duration-ms="691" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.Homework@6c4906d3]" started-at="2018-10-16T13:48:13Z" name="befo" finished-at="2018-10-16T13:48:17Z" duration-ms="4009" status="PASS">
+        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.Homework@4bdeaabb]" started-at="2018-10-17T19:37:24Z" name="befo" finished-at="2018-10-17T19:37:28Z" duration-ms="3943" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@2ec9bd88]]>
+                <![CDATA[org.testng.TestRunner@40fd9358]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- befo -->
-        <test-method is-config="true" signature="befMethod()[pri:0, instance:com.fliplearn.flipapp.testcases.Homework@6c4906d3]" started-at="2018-10-16T13:48:17Z" name="befMethod" finished-at="2018-10-16T13:48:17Z" duration-ms="11" status="PASS">
+        <test-method is-config="true" signature="befMethod()[pri:0, instance:com.fliplearn.flipapp.testcases.Homework@4bdeaabb]" started-at="2018-10-17T19:37:28Z" name="befMethod" finished-at="2018-10-17T19:37:28Z" duration-ms="17" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- befMethod -->
-        <test-method signature="createHomework(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.Homework@6c4906d3]" started-at="2018-10-16T13:48:17Z" name="createHomework" data-provider="group2" finished-at="2018-10-16T13:48:39Z" duration-ms="21781" status="PASS">
+        <test-method signature="canViewHomework(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.Homework@4bdeaabb]" started-at="2018-10-17T19:37:28Z" name="canViewHomework" data-provider="group2" finished-at="2018-10-17T19:37:33Z" duration-ms="5763" status="FAIL">
           <params>
             <param index="0">
               <value>
                 <![CDATA[Principal]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createHomework -->
-        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.Homework@6c4906d3]" started-at="2018-10-16T13:48:39Z" name="getResult" finished-at="2018-10-16T13:48:39Z" duration-ms="622" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getResult -->
-        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.Homework@6c4906d3]" started-at="2018-10-16T13:48:39Z" name="befo" finished-at="2018-10-16T13:48:44Z" duration-ms="4128" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@2ec9bd88]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- befo -->
-        <test-method is-config="true" signature="befMethod()[pri:0, instance:com.fliplearn.flipapp.testcases.Homework@6c4906d3]" started-at="2018-10-16T13:48:44Z" name="befMethod" finished-at="2018-10-16T13:48:44Z" duration-ms="7" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- befMethod -->
-        <test-method signature="createHomework(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.Homework@6c4906d3]" started-at="2018-10-16T13:48:44Z" name="createHomework" data-provider="group2" finished-at="2018-10-16T13:49:05Z" duration-ms="21396" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Teacher]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createHomework -->
-        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.Homework@6c4906d3]" started-at="2018-10-16T13:49:05Z" name="getResult" finished-at="2018-10-16T13:49:06Z" duration-ms="643" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getResult -->
-        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.Homework@6c4906d3]" started-at="2018-10-16T13:49:06Z" name="befo" finished-at="2018-10-16T13:49:10Z" duration-ms="4123" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@2ec9bd88]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- befo -->
-        <test-method is-config="true" signature="befMethod()[pri:0, instance:com.fliplearn.flipapp.testcases.Homework@6c4906d3]" started-at="2018-10-16T13:49:10Z" name="befMethod" finished-at="2018-10-16T13:49:10Z" duration-ms="8" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- befMethod -->
-        <test-method signature="canNotcreateHomework(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.Homework@6c4906d3]" started-at="2018-10-16T13:49:10Z" name="canNotcreateHomework" data-provider="group3" finished-at="2018-10-16T13:49:43Z" duration-ms="33683" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Parent]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- canNotcreateHomework -->
-        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.Homework@6c4906d3]" started-at="2018-10-16T13:49:43Z" name="getResult" finished-at="2018-10-16T13:49:44Z" duration-ms="624" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getResult -->
-        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.Homework@6c4906d3]" started-at="2018-10-16T13:49:44Z" name="befo" finished-at="2018-10-16T13:49:48Z" duration-ms="3936" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@2ec9bd88]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- befo -->
-        <test-method is-config="true" signature="befMethod()[pri:0, instance:com.fliplearn.flipapp.testcases.Homework@6c4906d3]" started-at="2018-10-16T13:49:48Z" name="befMethod" finished-at="2018-10-16T13:49:48Z" duration-ms="7" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- befMethod -->
-        <test-method signature="canNotcreateHomework(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.Homework@6c4906d3]" started-at="2018-10-16T13:49:48Z" name="canNotcreateHomework" data-provider="group3" finished-at="2018-10-16T13:50:20Z" duration-ms="32390" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Student]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- canNotcreateHomework -->
-        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.Homework@6c4906d3]" started-at="2018-10-16T13:50:20Z" name="getResult" finished-at="2018-10-16T13:50:21Z" duration-ms="639" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getResult -->
-        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.Homework@6c4906d3]" started-at="2018-10-16T13:50:21Z" name="befo" finished-at="2018-10-16T13:50:25Z" duration-ms="3998" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@2ec9bd88]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- befo -->
-        <test-method is-config="true" signature="befMethod()[pri:0, instance:com.fliplearn.flipapp.testcases.Homework@6c4906d3]" started-at="2018-10-16T13:50:25Z" name="befMethod" finished-at="2018-10-16T13:50:25Z" duration-ms="7" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- befMethod -->
-        <test-method signature="canViewHomework(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.Homework@6c4906d3]" started-at="2018-10-16T13:50:25Z" name="canViewHomework" data-provider="group2" finished-at="2018-10-16T13:50:32Z" duration-ms="6641" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Admin]]>
               </value>
             </param>
           </params>
@@ -189,8 +69,8 @@ Command duration or timeout: 0 milliseconds
 Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
 System info: host: 'WIN-JH7TCQLIT5A', ip: '192.168.109.2', os.name: 'Windows Server 2012', os.arch: 'amd64', os.version: '6.2', java.version: '11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.42.591088 (7b2b2dca23cca0..., userDataDir: C:\Users\ADMINI~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:55513}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
-Session ID: e83c1d7edf9bac868bd15124931213dd]]>
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.42.591088 (7b2b2dca23cca0..., userDataDir: C:\Users\ADMINI~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:54308}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
+Session ID: 533b6a397a815e19d11c1fb2db2fac88]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.InvalidElementStateException: invalid element state: Element is not currently interactable and may not be manipulated
@@ -200,8 +80,8 @@ Command duration or timeout: 0 milliseconds
 Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
 System info: host: 'WIN-JH7TCQLIT5A', ip: '192.168.109.2', os.name: 'Windows Server 2012', os.arch: 'amd64', os.version: '6.2', java.version: '11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.42.591088 (7b2b2dca23cca0..., userDataDir: C:\Users\ADMINI~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:55513}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
-Session ID: e83c1d7edf9bac868bd15124931213dd
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.42.591088 (7b2b2dca23cca0..., userDataDir: C:\Users\ADMINI~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:54308}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
+Session ID: 533b6a397a815e19d11c1fb2db2fac88
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -223,8 +103,8 @@ at java.base/java.lang.reflect.Method.invoke(Method.java:566)
 at io.appium.java_client.pagefactory.ElementInterceptor.getObject(ElementInterceptor.java:40)
 at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:61)
 at org.openqa.selenium.remote.RemoteWebElement$$EnhancerByCGLIB$$d27c0df4.clear(<generated>)
-at com.fliplearn.flipapp.pagemodules.HomeWorkModule.fillTxt(HomeWorkModule.java:125)
-at com.fliplearn.flipapp.testcases.Homework.canViewHomework(Homework.java:92)
+at com.fliplearn.flipapp.pagemodules.HomeWorkModule.fillTxt(HomeWorkModule.java:127)
+at com.fliplearn.flipapp.testcases.Homework.canViewHomework(Homework.java:91)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -256,56 +136,26 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- canViewHomework -->
-        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.Homework@6c4906d3]" started-at="2018-10-16T13:50:32Z" name="getResult" finished-at="2018-10-16T13:50:32Z" duration-ms="629" status="PASS">
+        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.Homework@4bdeaabb]" started-at="2018-10-17T19:37:33Z" name="getResult" finished-at="2018-10-17T19:37:34Z" duration-ms="660" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.Homework@6c4906d3]" started-at="2018-10-16T13:50:32Z" name="befo" finished-at="2018-10-16T13:50:36Z" duration-ms="3947" status="PASS">
+        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.Homework@4bdeaabb]" started-at="2018-10-17T19:37:34Z" name="befo" finished-at="2018-10-17T19:37:38Z" duration-ms="3835" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@2ec9bd88]]>
+                <![CDATA[org.testng.TestRunner@40fd9358]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- befo -->
-        <test-method is-config="true" signature="befMethod()[pri:0, instance:com.fliplearn.flipapp.testcases.Homework@6c4906d3]" started-at="2018-10-16T13:50:36Z" name="befMethod" finished-at="2018-10-16T13:50:36Z" duration-ms="25" status="PASS">
+        <test-method is-config="true" signature="befMethod()[pri:0, instance:com.fliplearn.flipapp.testcases.Homework@4bdeaabb]" started-at="2018-10-17T19:37:38Z" name="befMethod" finished-at="2018-10-17T19:37:38Z" duration-ms="11" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- befMethod -->
-        <test-method signature="canViewHomework(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.Homework@6c4906d3]" started-at="2018-10-16T13:50:36Z" name="canViewHomework" data-provider="group2" finished-at="2018-10-16T13:51:18Z" duration-ms="42003" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Principal]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- canViewHomework -->
-        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.Homework@6c4906d3]" started-at="2018-10-16T13:51:18Z" name="getResult" finished-at="2018-10-16T13:51:19Z" duration-ms="636" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getResult -->
-        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.Homework@6c4906d3]" started-at="2018-10-16T13:51:19Z" name="befo" finished-at="2018-10-16T13:51:23Z" duration-ms="4012" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@2ec9bd88]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- befo -->
-        <test-method is-config="true" signature="befMethod()[pri:0, instance:com.fliplearn.flipapp.testcases.Homework@6c4906d3]" started-at="2018-10-16T13:51:23Z" name="befMethod" finished-at="2018-10-16T13:51:23Z" duration-ms="6" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- befMethod -->
-        <test-method signature="canViewHomework(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.Homework@6c4906d3]" started-at="2018-10-16T13:51:23Z" name="canViewHomework" data-provider="group2" finished-at="2018-10-16T13:52:17Z" duration-ms="54575" status="FAIL">
+        <test-method signature="canViewHomework(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.Homework@4bdeaabb]" started-at="2018-10-17T19:37:38Z" name="canViewHomework" data-provider="group2" finished-at="2018-10-17T19:38:27Z" duration-ms="48983" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -313,60 +163,14 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[Cannot locate element with text: Pre-Nursery
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
-System info: host: 'WIN-JH7TCQLIT5A', ip: '192.168.109.2', os.name: 'Windows Server 2012', os.arch: 'amd64', os.version: '6.2', java.version: '11'
-Driver info: driver.version: unknown]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Cannot locate element with text: Pre-Nursery
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
-System info: host: 'WIN-JH7TCQLIT5A', ip: '192.168.109.2', os.name: 'Windows Server 2012', os.arch: 'amd64', os.version: '6.2', java.version: '11'
-Driver info: driver.version: unknown
-at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:151)
-at com.fliplearn.flipapp.helper.GenericFunctions.selectValueFromList(GenericFunctions.java:302)
-at com.fliplearn.flipapp.pagemodules.YourProfileModule.updateClassAndSection(YourProfileModule.java:61)
-at com.fliplearn.flipapp.testcases.Homework.canViewHomework(Homework.java:95)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- canViewHomework -->
-        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.Homework@6c4906d3]" started-at="2018-10-16T13:52:17Z" name="getResult" finished-at="2018-10-16T13:52:18Z" duration-ms="640" status="PASS">
+        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.Homework@4bdeaabb]" started-at="2018-10-17T19:38:27Z" name="getResult" finished-at="2018-10-17T19:38:28Z" duration-ms="678" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method is-config="true" signature="aftSuite()[pri:0, instance:com.fliplearn.flipapp.testcases.Homework@6c4906d3]" started-at="2018-10-16T13:52:19Z" name="aftSuite" finished-at="2018-10-16T13:52:19Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="aftSuite()[pri:0, instance:com.fliplearn.flipapp.testcases.Homework@4bdeaabb]" started-at="2018-10-17T19:38:28Z" name="aftSuite" finished-at="2018-10-17T19:38:28Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- aftSuite -->
