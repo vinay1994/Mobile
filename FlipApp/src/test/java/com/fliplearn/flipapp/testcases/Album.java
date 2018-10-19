@@ -53,9 +53,10 @@ public class Album extends Base {
 		public void createAlbum(String role) throws Throwable
 		{
 			logMod.Login(role);
-			albMod.mouseOverOnpostBtn();	
+			//albMod.mouseOverOnpostBtn();	
 			extentTest.log(Status.PASS, "Mouse Hover on Post button");
-			
+			Thread.sleep(3000);
+
 			Assert.assertEquals(albMod.fillTxt(), albMod.getTitle());
 		}
 
@@ -85,7 +86,8 @@ public class Album extends Base {
 		public void canViewAlbum(String role) throws Throwable
 		{
 			logMod.Login(role);
-			albMod.mouseOverOnpostBtn();
+			Thread.sleep(3000);
+
 			String exepected = albMod.fillTxt();
 			albMod.mouseOverOnProfileLogout();
 			logMod.Login("Student");

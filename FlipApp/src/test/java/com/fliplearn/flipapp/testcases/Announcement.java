@@ -66,8 +66,9 @@ public class Announcement extends Base
 	public void createAnnouncement(String role) throws Throwable
 	{
 		logMod.Login(role);
-		annMod.mouseOverOnpostBtn();	
 		extentTest.log(Status.PASS, "Mouse Hover on Post button");
+		Thread.sleep(3000);
+
 	Assert.assertEquals(annMod.fillTxt(), annMod.getTitle());;
 	}
 
@@ -97,7 +98,8 @@ public class Announcement extends Base
 	public void canViewAnnouncement(String role) throws Throwable
 	{
 		logMod.Login(role);
-		annMod.mouseOverOnpostBtn();
+		Thread.sleep(3000);
+
 		String exepected = annMod.fillTxt();
 		annMod.mouseOverOnProfileLogout();
 		logMod.Login("Student");

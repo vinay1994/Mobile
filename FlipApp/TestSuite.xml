@@ -10,13 +10,12 @@
 	
 	<test name="Announcement" enabled="true">
   		<classes>
-    		<class name="com.fliplearn.flipapp.testcases.Homework">
+		<class name="com.fliplearn.flipapp.testcases.Homework">
         		<methods>
-        			<include name="canNotcreateHomework" />  
-        			
+        			<include name="canViewHomework" />
         		</methods>
         	</class>
-      	</classes> 
+        	</classes>
 	</test>  
 	
 

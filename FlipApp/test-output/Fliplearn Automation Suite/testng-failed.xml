@@ -6,15 +6,15 @@
   </listeners>
   <test thread-count="5" name="Announcement(failed)">
     <classes>
-      <class name="com.fliplearn.flipapp.testcases.Announcement">
+      <class name="com.fliplearn.flipapp.testcases.Homework">
         <methods>
-          <include name="befMethod"/>
           <include name="befo"/>
-          <include name="createAnnouncement" invocation-numbers="0 2"/>
           <include name="aftSuite"/>
           <include name="getResult"/>
+          <include name="befMethod"/>
+          <include name="canViewHomework" invocation-numbers="1"/>
         </methods>
-      </class> <!-- com.fliplearn.flipapp.testcases.Announcement -->
+      </class> <!-- com.fliplearn.flipapp.testcases.Homework -->
     </classes>
   </test> <!-- Announcement(failed) -->
 </suite> <!-- Failed suite [Fliplearn Automation Suite] -->

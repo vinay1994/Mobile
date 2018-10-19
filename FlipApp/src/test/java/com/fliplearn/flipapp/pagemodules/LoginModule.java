@@ -88,14 +88,14 @@ public class LoginModule extends Base
 //				extentTest.log(Status.PASS, "Click on Skip Button");
 //			 }	
 			 
-			 if(role.equals("Parent"))
-			 { 
-				 generic.waitForElementVisibility(driver, sigInMod.parentLnk);
-	    		 sigInMod.parentLnk.click();
-	    		 extentTest.log(Status.PASS, "Click on First Parent Link.");
-	    		 sigInMod.proceedBtn.click();
-			 }
-			 
+//			 if(role.equals("Parent"))
+//			 { 
+//				 generic.waitForElementVisibility(driver, sigInMod.parentLnk);
+//	    		 sigInMod.parentLnk.click();
+//	    		 extentTest.log(Status.PASS, "Click on First Parent Link.");
+//	    		 sigInMod.proceedBtn.click();
+//			 }
+//			 
 			 if(!platform.equals("Web"))
 			 {
 				 System.out.println("Platform is****:"+platform);

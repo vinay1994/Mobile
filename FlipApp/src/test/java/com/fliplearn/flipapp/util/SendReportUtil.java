@@ -62,8 +62,8 @@ public class SendReportUtil extends Base
 
            
          System.out.println("email ids are:"+emailIds);
-            
-         message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(emailIds));
+         String emailIds_New = "tarun.goswami@fliplearn.com," + emailIds;   
+         message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(emailIds_New));
                    
          Multipart multipart = new MimeMultipart();
             
