@@ -23,29 +23,30 @@ public class HeaderModule extends Base
 	}
 	
 	@FindBy(css="button[class='dropbtn_nav btn-dd dropbtn']")
-	@AndroidFindBy(xpath="") 
-	@iOSFindBy(id="")
+//	@AndroidFindBy(xpath="") 
+//	@iOSFindBy(id="")
 	public RemoteWebElement profileImg;	
 
 	@FindBy(xpath="(//ul[@class='b-t-1 header-dd']//a)[1]")
-	@AndroidFindBy(xpath="") 
-	@iOSFindBy(id="")
+//	@AndroidFindBy(xpath="") 
+//	@iOSFindBy(id="")
 	public RemoteWebElement myProfileLnk;
 	
 	
 	@FindBy(id="home-icon")
-	@AndroidFindBy(xpath="") 
-	@iOSFindBy(id="")
+//	@AndroidFindBy(xpath="") 
+//	@iOSFindBy(id="")
 	public RemoteWebElement homeBtn;
 	
 	
-	public void clickOnProfileImg() {
+	public void clickOnProfileImg() 
+	{
 		profileImg.click();
-		
 	}
-	public void clickOnmyProfileLnk() {
-		myProfileLnk.click();
-		
+	
+	public void clickOnmyProfileLnk() 
+	{
+		myProfileLnk.click();	
 	}	
 	
 	public void clickonHomeBtn() throws InterruptedException
@@ -58,6 +59,4 @@ public class HeaderModule extends Base
 		
 		Thread.sleep(2000);
 	}
-
-	
 }

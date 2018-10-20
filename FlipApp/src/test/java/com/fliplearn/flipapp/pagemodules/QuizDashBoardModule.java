@@ -19,17 +19,19 @@ public class QuizDashBoardModule extends Base
 	GenericFunctions generic = new GenericFunctions();
 	
 	@FindBy(xpath="//h4//strong[text()='Quiz Dashboard']")
-	@AndroidFindBy(xpath="//*[@text='Test and Improve your learning']") 
+	@AndroidFindBy(xpath="//*[@text='Quiz Dashboard']") 
 	@iOSFindBy(id="")
-	public RemoteWebElement quizDashboardBtn;	
+	public RemoteWebElement quizDashboardTile;	
 	
 	@AndroidFindBy(id="//*[@text='Play Quiz']")
 	public RemoteWebElement playQuizBtn;
 	
 	@FindBy(xpath="//ul[@class='dropdown-menu quizMobileDropdown']/li/a")
-	public List<RemoteWebElement> quizDashboardClassList;
+	@AndroidFindBy(xpath="//android.view.View[2]/android.view.View/android.widget.ListView/android.view.View/android.view.View")
+	public List<RemoteWebElement> quizDashboardClassLst;
 	
 	@FindBy(xpath="//div[@class='dropdown section-dropdown']/button")
+	@AndroidFindBy(xpath="(//*[@class='android.widget.Button'])[2]")
 	public RemoteWebElement classListBtn;
 	
 	public QuizDashBoardModule(WebDriver driver) 
@@ -40,10 +42,10 @@ public class QuizDashBoardModule extends Base
 	public void clickOnQuizDashboardTile() throws InterruptedException
 	{
 		Thread.sleep(2000);
-		quizDashboardBtn.click();
+		quizDashboardTile.click();
 	}
 
-	public void clickOnClassList()
+	public void clickOnClassLst()
 	{
 		classListBtn.click();
 	}

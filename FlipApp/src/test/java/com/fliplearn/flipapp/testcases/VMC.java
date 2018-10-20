@@ -46,12 +46,30 @@ public class VMC extends Base
 		    heaMod=new HeaderModule(driver);
 		}
 		
+		/**
+		 * Verify VMC Tile displayed for School Staff on Web, 
+		 * @author Jagrati Mishra
+		 * @since 2018-10-20
+		 * @version 1.2
+		 * @throws InterruptedException 
+		 */
+		@Test(dataProvider = "group2")
+		public void displayVMCSchool(String role) throws InterruptedException
+		{			
+			logMod.Login(role, "Single", "None", "Yes");
+			
+			if(platform.equals("Web"))
+				leaMod.clickOnLearnImage();
+			
+			assertEquals(generic.isElementDisplayed(driver, leaMod.vmcImg), true);
+		}	
+		
 		@Test
 		public void displayVMCStudent() throws InterruptedException
 		{
 			String role="Student";
 			
-			logMod.Login(role);
+			logMod.Login(role, "Single", "None", "Yes");
 			if(role.equals("Student"))
 			{	
 				youProMod.updateClassAndSection(driver, "Class 12", "A");	
@@ -67,7 +85,7 @@ public class VMC extends Base
 		{
 			String role="Student";
 			
-			logMod.Login(role);
+			logMod.Login(role, "Single", "None", "Yes");
 			if(role.equals("Student"))
 			{	
 				youProMod.updateClassAndSection(driver, "Class 6", "A");	
@@ -76,14 +94,5 @@ public class VMC extends Base
 				youProMod.updateClassAndSection(driver, "Class 12", "A");	
 
 			}			
-		}
-		
-		@Test(dataProvider = "group2")
-		public void displayVMCSchool(String role) throws InterruptedException
-		{			
-			logMod.Login(role);
-			leaMod.clickOnLearnImage();
-			assertEquals(generic.isElementDisplayed(driver, leaMod.vmcImg), true);
-		}			
-		
+		}		
 }

@@ -26,6 +26,7 @@
   		<classes>
     		<class name="com.fliplearn.flipapp.testcases.FliplearnPrimeView">
         		<methods>
+        		    <include name="verifyPrimeTileDisplayed" />
         			<include name="verifyPrimeClasses"/>
         			<include name="verifyPrimeSubjects"/>
         		</methods>
