@@ -48,7 +48,7 @@ public class UserProfile extends Base
 	@Test(dataProvider = "group1")
 	public void verifyUserRole(String role) throws InterruptedException
 	{
-		logMod.Login(role);
+		logMod.Login(role, "Single", "None", "Yes");
 		generic.mouseHoverAndClick(driver, heaMod.profileImg, heaMod.myProfileLnk);
 		Assert.assertEquals(youProMod.getUsernameLabel(), role+" Name");
 		heaMod.clickonHomeBtn();

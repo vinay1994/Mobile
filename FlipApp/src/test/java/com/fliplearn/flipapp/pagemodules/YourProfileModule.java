@@ -23,29 +23,29 @@ public class YourProfileModule extends Base
 	}
 	
 	@FindBy(xpath="//a[@class='pull-right editclasssection ng-scope']/img[contains(@src,'edit-profile.png')]\r\n")
-	@AndroidFindBy(xpath="") 
-	@iOSFindBy(id="")
+//	@AndroidFindBy(xpath="") 
+//	@iOSFindBy(id="")
 	public RemoteWebElement classEditImg;	
 	
 	//Class/Section Popup
 	@FindBy(xpath="//form[@name='ClassSectionForm']//div[@class='registration-form'][1]//select")
-	@AndroidFindBy(xpath="") 
-	@iOSFindBy(id="")
+//	@AndroidFindBy(xpath="") 
+//	@iOSFindBy(id="")
 	public RemoteWebElement classLst;
 	
 	@FindBy(xpath="//form[@name='ClassSectionForm']//div[@class='registration-form'][2]//select")
-	@AndroidFindBy(xpath="") 
-	@iOSFindBy(id="")
+//	@AndroidFindBy(xpath="") 
+//	@iOSFindBy(id="")
 	public RemoteWebElement sectionLst;	
 
 	@FindBy(xpath="//button[text()='Change']")
-	@AndroidFindBy(xpath="") 
-	@iOSFindBy(id="")
+//	@AndroidFindBy(xpath="") 
+//	@iOSFindBy(id="")
 	public RemoteWebElement changeBtn;		
 	
 	@FindBy(xpath="(//div[@class='col-sm-4 userInfo ng-scope'])[1]/p")
-	@AndroidFindBy(xpath="") 
-	@iOSFindBy(id="")
+//	@AndroidFindBy(xpath="") 
+//	@iOSFindBy(id="")
 	public RemoteWebElement usernameLbl;	
 	
 	public void updateClassAndSection(WebDriver driver, String className, String sectionName) throws InterruptedException

@@ -42,6 +42,7 @@ public class QuizDashboard extends Base
 	SelectClassModule selClaMod;
 	QuizDashBoardModule quiDasMod;
 	GenericFunctions generic;
+	
 	@BeforeMethod
 	public void befQuiz()
 	{
@@ -53,15 +54,44 @@ public class QuizDashboard extends Base
 		selClaMod = new SelectClassModule(driver);
 		leaMod = new LearnModule(driver);
 		quiDasMod = new QuizDashBoardModule(driver); 
-		generic=new GenericFunctions();
+		generic=new GenericFunctions();	
+	}
+	
+	/**
+	 * Verify Quiz Dashboard Classes for Admin, Principal and Teacher on Web, Android and iOS
+	 * @author Durga
+	 * @since 2018-10-30
+	 * @version 1.1
+	 * @throws InterruptedException 
+	 * @throws IOException 
+	 */
+
+	@Test(dataProvider = "group1")
+	public void verifyQuizDashboardTileDisplayed(String role) throws InterruptedException, IOException
+	{	
+		logMod.Login(role, "Single", "None", "Yes");
+	
+		if(platform.equals("Web"))
+		{	
+			leaMod.clickOnLearnImage();
+		}  
+		else if(!platform.equals("Web"))
+		{	
+			generic.scrollBy(driver, 50, 95);
+		}
 		
+		if(role.equals("Parent") || role.equals("Student"))
+			Assert.assertEquals(generic.isElementDisplayed(driver, quiDasMod.quizDashboardTile), false);
+		else
+			Assert.assertEquals(generic.isElementDisplayed(driver, quiDasMod.quizDashboardTile), true);
+			
 	}
 
 	/**
 	 * Verify Quiz Dashboard Classes for Admin, Principal and Teacher on Web, Android and iOS
 	 * @author Durga
 	 * @since 2018-09-21
-	 * @version 1.3
+	 * @version 1.4
 	 * @throws InterruptedException 
 	 * @throws IOException 
 	 */
@@ -70,24 +100,23 @@ public class QuizDashboard extends Base
 	public void verifyQuizDashboardClasses(String role) throws InterruptedException, IOException
 	{	
 		//String role = "Teacher";
-		logMod.Login(role);
+		logMod.Login(role, "Single", "None", "Yes");
 	
 		if(platform.equals("Web"))
 		{	
 			leaMod.clickOnLearnImage();
-			quiDasMod.clickOnQuizDashboardTile();
 		}  
 		else if(!platform.equals("Web"))
 		{	
-			Thread.sleep(3000);
-//			new TouchAction((AndroidDriver)driver).press(PointOption.point(10, 10)).waitAction().moveTo(PointOption.point(150, 150)).release().perform();	
-			generic.scrollAndTouchBy(driver, 20, 10);
+			generic.scrollBy(driver, 50, 95);
 		}
-								
+		
+		quiDasMod.clickOnQuizDashboardTile();
+							
 		generic.waitForElementVisibility(driver, quiDasMod.classListBtn);
-		quiDasMod.clickOnClassList();
+		quiDasMod.clickOnClassLst();
     
 		String expectedList = readData(platform, role, "Quiz Dashboard Classes");
-    	Assert.assertEquals(generic.compareList(quiDasMod.quizDashboardClassList, expectedList), true);		
+    	Assert.assertEquals(generic.compareList(quiDasMod.quizDashboardClassLst, expectedList), true);		
 	}
 }

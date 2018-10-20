@@ -63,20 +63,18 @@ import com.fliplearn.flipapp.pagemodules.YourProfileModule;
 	           @Test(dataProvider ="group2")
 	           public void verifySubjectContent(String role) throws IOException, InterruptedException
 	           {
-	        		logMod.Login(role);
+	       			logMod.Login(role, "Single", "None", "Yes");
 	        		leaMod.clickOnLearnImage();
 	        		leaMod.clickOnPrimeImage();
 	        		
 	        		Actions actions = new Actions(driver);
 	        		actions.keyDown(Keys.CONTROL).sendKeys(Keys.END).perform();
 	        		
-	            subConMod.clickOnClassContent();
-	            subConMod.clickOnSubjectContent();
-	        	subConMod.clickOnBookContent();
-	        	subConMod.clickOnBookTopicContent();
-	        	subConMod.clickOnVideoContent();
-	        	
-	        	
+	        		subConMod.clickOnClassContent();
+	        		subConMod.clickOnSubjectContent();
+	        		subConMod.clickOnBookContent();
+	        		subConMod.clickOnBookTopicContent();
+	        		subConMod.clickOnVideoContent();
 	       		}
 	           
 	           /**

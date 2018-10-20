@@ -14,37 +14,31 @@ import io.appium.java_client.pagefactory.iOSFindBy;
 
 public class LearnModule extends Base
 {
-
 	GenericFunctions generic = new GenericFunctions();
 	
 	@FindBy(xpath="//div[@id='navbar']//li[2]/div")
-	@AndroidFindBy(xpath="//*[@text='Learn']") 
-	@iOSFindBy(id="")
+//	@AndroidFindBy(xpath="") 
+//	@iOSFindBy(id="")
 	public RemoteWebElement learnImg;	
 	
 	@FindBy(xpath="//strong[text()='Fliplearn Prime']")
-	@AndroidFindBy(xpath="//strong[text()='Fliplearn Prime']")
-	@iOSFindBy(id="")
+	@AndroidFindBy(xpath="//*[@text='Fliplearn Prime']")
+//	@iOSFindBy(id="")
 	public RemoteWebElement primeImg;
-	
-	
+		
 	@FindBy(xpath="//h4/strong[contains(text(),'VMC Live')]")
-	@AndroidFindBy(xpath="//strong[text()='Fliplearn Prime']")
-	@iOSFindBy(id="")
+	@AndroidFindBy(xpath="//*[@text='VMC Live @ Fliplearn']")
+//	@iOSFindBy(id="")
 	public RemoteWebElement vmcImg;
-	
-	
-	
-	
 	
 	@FindBy(xpath="//a[text()='Pre Nursery']")
 	@AndroidFindBy(xpath="//a[text()='Pre Nursery']")
-	@iOSFindBy(id="")
+//	@iOSFindBy(id="")
 	public RemoteWebElement selectClassLnk;
 	
 	@FindBy(xpath="//a[text()='Class 1']")
 	@AndroidFindBy(xpath="//a[text()='Class 7']")
-	@iOSFindBy(id="")
+//	@iOSFindBy(id="")
 	public RemoteWebElement selectSubjLnk;
 		
 	public LearnModule(WebDriver driver) 
@@ -69,5 +63,4 @@ public class LearnModule extends Base
 	{
 		selectSubjLnk.click();
 	}
-	
 }
