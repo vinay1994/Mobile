@@ -153,6 +153,17 @@ public class GenericFunctions extends Base
 		Select sc =new Select(elm);
 		sc.selectByValue(value);	
 	}
+	
+	/**
+	 * This will get latest file from directory
+	 * @author vinay yadav
+	 * @since 2018-09-24
+	 * @version 1.0
+	 */
+	public void selectByVisibleText(WebElement elm, String value) {
+		Select sc =new Select(elm);
+		sc.selectByVisibleText(value);	
+	}
 	/**
 	 * This will get latest file from directory
 	 * @author vinay yadav

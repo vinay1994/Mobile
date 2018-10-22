@@ -10,9 +10,9 @@
 	
 	<test name="Announcement" enabled="true">
   		<classes>
-    		<class name="com.fliplearn.flipapp.testcases.Homework">
+    		<class name="com.fliplearn.flipapp.testcases.Fee">
         		<methods>
-        			<include name="canNotcreateHomework" />  
+        			<include name="payLoginWithStudentSelectedByAmex" />  
         			
         		</methods>
         	</class>
