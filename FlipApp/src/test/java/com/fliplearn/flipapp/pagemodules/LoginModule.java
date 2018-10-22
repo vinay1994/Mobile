@@ -48,12 +48,12 @@ public class LoginModule extends Base
 	 * @version 1.5
 	 * @throws IOException 
 	 */
-	public  void Login(String role) throws InterruptedException
+	public  void Login(String role, String profile, String subscription, String mobile) throws InterruptedException
 	{   
 		if(role!=null) 
 		{
-			String username = aConfig.getProperty(role + "_Username");
-			String password =  aConfig.getProperty(role +"_Password");
+			String username = aConfig.getProperty(role + "_Username"+"_"+profile+"_"+subscription+"_"+mobile);
+			String password =  aConfig.getProperty(role +"_Password"+"_"+profile+"_"+subscription+"_"+mobile);
 		
 			if(eConfig.getProperty("Platform").equals("Android")) 
 			{
@@ -79,26 +79,9 @@ public class LoginModule extends Base
 			SignInAsModule sigInMod = new SignInAsModule(driver);
 			QuizModule quiMod = new QuizModule(driver);
 			 
-				 
-			 
-			 //Check for bug here why skip not showing for student
-//			 if(!(role.equals("Student") && platform.equals("Web")))
-//			 {	
-//				mobNumMod.skipBtn.click();
-//				extentTest.log(Status.PASS, "Click on Skip Button");
-//			 }	
-			 
-			 if(role.equals("Parent"))
-			 { 
-				 generic.waitForElementVisibility(driver, sigInMod.parentLnk);
-	    		 sigInMod.parentLnk.click();
-	    		 extentTest.log(Status.PASS, "Click on First Parent Link.");
-	    		 sigInMod.proceedBtn.click();
-			 }
-			 
+	 
 			 if(!platform.equals("Web"))
 			 {
-				 System.out.println("Platform is****:"+platform);
 				 quiMod.skipBtn.click();
 				 
 				 extentTest.log(Status.PASS, "Click on Quiz Skip Button");
@@ -111,15 +94,22 @@ public class LoginModule extends Base
 		}
 	}
 	
-	public void Login(String role, String roleType)
-	{
-		SignInAsModule sigInMod = new SignInAsModule(driver);
-		
-		//On web skip mobile screen comes before User selection? 
-		if(role.equals("Admin"))
-		{	 
-			sigInMod.adminLnk.click();
-			extentTest.log(Status.PASS, "Click on First Admin Link.");
-		} 
-	}
+
+		 
+	 //Check for bug here why skip not showing for student
+//	 if(!(role.equals("Student") && platform.equals("Web")))
+//	 {	
+//		mobNumMod.skipBtn.click();
+//		extentTest.log(Status.PASS, "Click on Skip Button");
+//	 }	
+	 
+//	 if(role.equals("Parent"))
+//	 { 
+//		 generic.waitForElementVisibility(driver, sigInMod.parentLnk);
+//		 sigInMod.parentLnk.click();
+//		 extentTest.log(Status.PASS, "Click on First Parent Link.");
+//		 sigInMod.proceedBtn.click();
+//	 }
+//
+
  }

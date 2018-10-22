@@ -30,7 +30,7 @@ public class Homework extends Base {
 		HeaderModule heaMod;
 		
 		@BeforeMethod
-		public void befMethod()
+		public void befHomework()
 		{
 			logMod = new LoginModule(driver);
 			onbMod = new OnboardingModule(driver);
@@ -53,8 +53,8 @@ public class Homework extends Base {
 		@Test(dataProvider = "group2")
 		public void createHomework(String role) throws Throwable
 		{
-			logMod.Login(role);
-			homeWoMod.mouseOverOnpostBtn();	
+			logMod.Login(role, "Single", "None", "Yes");
+			Thread.sleep(3000);
 			extentTest.log(Status.PASS, "Mouse Hover on Post button");
 			Assert.assertEquals(homeWoMod.fillTxt(), homeWoMod.getTitle());
 		}
@@ -70,7 +70,7 @@ public class Homework extends Base {
 		@Test(dataProvider = "group3")
 		public void canNotcreateHomework(String role) throws InterruptedException
 		{
-			logMod.Login(role);
+			logMod.Login(role, "Single", "None", "Yes");
 			Assert.assertEquals(homeWoMod.isPostBtndisplayed(), false);
 		}
 
@@ -86,11 +86,11 @@ public class Homework extends Base {
 		@Test(dataProvider = "group2")
 		public void canViewHomework(String role) throws Throwable
 		{
-			logMod.Login(role);
-			homeWoMod.mouseOverOnpostBtn();
+			logMod.Login(role, "Single", "None", "Yes");
+			Thread.sleep(3000);
 			String exepected = homeWoMod.fillTxt();
 			homeWoMod.mouseOverOnProfileLogout();
-			logMod.Login("Student");
+			logMod.Login("Student", "Single", "None", "Yes");
 			youProMod.updateClassAndSection(driver, "Pre-Nursery", "A");
 			heaMod.clickonHomeBtn();	
 			String actual = homeWoMod.getTitle();

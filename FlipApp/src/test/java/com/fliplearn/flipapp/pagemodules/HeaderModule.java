@@ -1,5 +1,6 @@
 package com.fliplearn.flipapp.pagemodules;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
@@ -22,38 +23,40 @@ public class HeaderModule extends Base
 	}
 	
 	@FindBy(css="button[class='dropbtn_nav btn-dd dropbtn']")
-	@AndroidFindBy(xpath="") 
-	@iOSFindBy(id="")
+//	@AndroidFindBy(xpath="") 
+//	@iOSFindBy(id="")
 	public RemoteWebElement profileImg;	
 
 	@FindBy(xpath="(//ul[@class='b-t-1 header-dd']//a)[1]")
-	@AndroidFindBy(xpath="") 
-	@iOSFindBy(id="")
+//	@AndroidFindBy(xpath="") 
+//	@iOSFindBy(id="")
 	public RemoteWebElement myProfileLnk;
 	
 	
 	@FindBy(id="home-icon")
-	@AndroidFindBy(xpath="") 
-	@iOSFindBy(id="")
+//	@AndroidFindBy(xpath="") 
+//	@iOSFindBy(id="")
 	public RemoteWebElement homeBtn;
 	
 	
-	public void clickOnProfileImg() {
+	public void clickOnProfileImg() 
+	{
 		profileImg.click();
-		
 	}
-	public void clickOnmyProfileLnk() {
-		myProfileLnk.click();
-		
+	
+	public void clickOnmyProfileLnk() 
+	{
+		myProfileLnk.click();	
 	}	
 	
 	public void clickonHomeBtn() throws InterruptedException
 	{
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 
-		homeBtn.click();	
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("document.getElementById('home-icon').focus();");
+		jse.executeScript("arguments[0].click();", homeBtn);
+		
 		Thread.sleep(2000);
 	}
-
-	
 }

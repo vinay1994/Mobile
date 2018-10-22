@@ -46,10 +46,10 @@ public class QuizGames extends Base
 	 * @version 1.0
 	 * @throws InterruptedException 
 	 */
-	@Test
-	public void verifyAndroidQuiz() throws InterruptedException
+	@Test(dataProvider = "group2")
+	public void verifyAndroidQuiz(String role) throws InterruptedException
 	{
-		logMod.Login("admin");		
+		logMod.Login(role, "Single", "None", "Yes");
 		
 		signInMod.adminLnk.click();
 		mobNumMod.skipBtn.click();

@@ -65,9 +65,10 @@ public class Announcement extends Base
 	@Test(dataProvider = "group2")
 	public void createAnnouncement(String role) throws Throwable
 	{
-		logMod.Login(role);
-		annMod.mouseOverOnpostBtn();	
+		logMod.Login(role, "Single", "None", "Yes");
 		extentTest.log(Status.PASS, "Mouse Hover on Post button");
+		Thread.sleep(3000);
+
 	Assert.assertEquals(annMod.fillTxt(), annMod.getTitle());;
 	}
 
@@ -82,7 +83,7 @@ public class Announcement extends Base
 	@Test(dataProvider = "group3")
 	public void canNotCreateAnnouncement(String role) throws InterruptedException
 	{
-		logMod.Login(role);
+		logMod.Login(role, "Single", "None", "Yes");
 		Assert.assertEquals(annMod.isPostBtndisplayed(), false);
 	}
 	
@@ -96,11 +97,12 @@ public class Announcement extends Base
 	@Test(dataProvider="group2")
 	public void canViewAnnouncement(String role) throws Throwable
 	{
-		logMod.Login(role);
-		annMod.mouseOverOnpostBtn();
+		logMod.Login(role, "Single", "None", "Yes");
+		Thread.sleep(3000);
+
 		String exepected = annMod.fillTxt();
 		annMod.mouseOverOnProfileLogout();
-		logMod.Login("Student");
+		logMod.Login("Student", "Single", "None", "Yes");
 		youProMod.updateClassAndSection(driver, "Pre-Nursery", "A");
 		heaMod.clickonHomeBtn();	
 		String actual = annMod.getTitle();

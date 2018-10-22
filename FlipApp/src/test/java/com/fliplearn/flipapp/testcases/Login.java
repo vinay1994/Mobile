@@ -1,13 +1,16 @@
 package com.fliplearn.flipapp.testcases;
 
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.fliplearn.flipapp.helper.Base;
+import com.fliplearn.flipapp.helper.GenericFunctions;
 import com.fliplearn.flipapp.pagemodules.LoginModule;
 import com.fliplearn.flipapp.pagemodules.MobileNumberModule;
+import com.fliplearn.flipapp.pagemodules.MyWallModule;
 import com.fliplearn.flipapp.pagemodules.OnboardingModule;
 import com.fliplearn.flipapp.pagemodules.QuizModule;
 
@@ -17,27 +20,34 @@ public class Login extends Base
 	OnboardingModule onbMod;
 	MobileNumberModule mobNumMod;
 	QuizModule quiMod;
+	GenericFunctions generic;
+	MyWallModule myWalMod;
 	
 	@BeforeMethod
 	public void befMethod()
 	{
+		generic = new GenericFunctions();
 		logMod = new LoginModule(driver);
 		onbMod = new OnboardingModule(driver);
 		mobNumMod = new MobileNumberModule(driver);
 		quiMod = new QuizModule(driver);
+		myWalMod = new MyWallModule(driver);
 	}
 	
 	
 	/**
 	 * Verify User User Login
 	 * @author Vinay Yadav, Durga
-	 * @since 2018-09-20
+	 * @since 2018-10-20
 	 * @version 1.2
 	 * @throws InterruptedException 
 	 */
 	@Test(dataProvider = "group1")
 	public void verifyLogin(String role) throws InterruptedException
 	{
-		logMod.Login(role);
+		logMod.Login(role, "Single", "None", "Yes");
+		
+		if(platform.equals("Web"))
+			Assert.assertEquals(generic.isElementDisplayed(driver, myWalMod.myWallTab), true);
 	}
 }

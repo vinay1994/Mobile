@@ -10,13 +10,14 @@
 	
 	<test name="Announcement" enabled="true">
   		<classes>
+
     		<class name="com.fliplearn.flipapp.testcases.Fee">
         		<methods>
         			<include name="payLoginWithStudentSelectedByAmex" />  
-        			
+
         		</methods>
         	</class>
-      	</classes> 
+        	</classes>
 	</test>  
 	
 

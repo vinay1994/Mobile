@@ -157,7 +157,7 @@ public class Fee extends Base {
 	@Test(dataProvider = "group3")
 	public void payLoginWithStudentSelectedByAmex(String role) throws IOException, InterruptedException {
 		base.readData(platform, "Guest", schoolName);
-		logMod.Login(role);
+		logMod.Login(role, "Single", "None", "Yes");
 		feeMod.clickOnPayfeeMod();
 		feeMod.selectSchoolToPayFee("Qa dashboard testing");
 		feeMod.enterAdmission("1994");

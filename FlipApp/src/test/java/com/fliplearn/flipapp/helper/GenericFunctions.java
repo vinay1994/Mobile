@@ -7,6 +7,7 @@ import java.awt.event.KeyEvent;
 import java.io.File;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -106,10 +107,10 @@ public class GenericFunctions extends Base
 		Thread.sleep(3000);
 	}
 
-	public void scrollAndTouchBy(WebDriver driver, int x, int y) throws InterruptedException
+	public void scrollBy(WebDriver driver, int x, int y) throws InterruptedException
 	{
 		TouchAction action = new TouchAction((AndroidDriver)driver);
-	
+		
 		Dimension size = driver.manage().window().getSize();
 		System.out.println("Accepted value to move:"+x+"..........."+y);
 		
@@ -121,10 +122,7 @@ public class GenericFunctions extends Base
 		action.moveTo(PointOption.point(endX, endY));
 		action.release();
 		action.perform();
-		Thread.sleep(2000);
-		int x1 = endX/10;
-		int y1 = endY/10;
-		touchCordinates(driver, x1, y1);
+		Thread.sleep(3000);
 	}
 	/**
 	 * This will mouse hove and click on given element
@@ -139,8 +137,7 @@ public class GenericFunctions extends Base
 		generic.waitForElementVisibility(driver, element);
 		extentTest.log(Status.PASS, "Wait for element visibility.");
 		Actions act=new Actions(driver);
-
-		act.moveToElement(element).moveToElement(target).click().perform();
+		act.moveToElement(element).click(target).build().perform();
 	}
 
 	/**

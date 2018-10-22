@@ -26,6 +26,7 @@
   		<classes>
     		<class name="com.fliplearn.flipapp.testcases.FliplearnPrimeView">
         		<methods>
+        		    <include name="verifyPrimeTileDisplayed" />
         			<include name="verifyPrimeClasses"/>
         			<include name="verifyPrimeSubjects"/>
         		</methods>
@@ -39,6 +40,7 @@
         	</class>
         	<class name="com.fliplearn.flipapp.testcases.QuizDashboard">
         		<methods>
+        		    <include name="verifyQuizDashboardTileDisplayed" />  	
         			<include name="verifyQuizDashboardClasses" />  	
         		</methods>
         	</class>
@@ -61,15 +63,13 @@
         			<include name="canViewAlbum" />
         		</methods>
         	</class>
-        			<class name="com.fliplearn.flipapp.testcases.Homework">
+        	<class name="com.fliplearn.flipapp.testcases.Homework">
         		<methods>
         			<include name="createHomework" />  
         			<include name="canNotcreateHomework" />	
         			<include name="canViewHomework" />
         		</methods>
         	</class>
-    
-    
       	</classes> 
 	</test>  
 	

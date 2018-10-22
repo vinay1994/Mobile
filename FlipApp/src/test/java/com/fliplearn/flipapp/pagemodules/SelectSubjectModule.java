@@ -15,11 +15,11 @@ public class SelectSubjectModule
 {
 	
 	@FindBy(xpath="//div[@id='subjectsList3']//div[@class='col-sm-4 ng-scope']//h3")
-	@AndroidFindBy(id="")
+//	@AndroidFindBy(id="")
 	public List<RemoteWebElement> subjectList;
 	
 	@FindBy(xpath="//div[@class='col-md-9 col-sm-8 col-xs-9']/h3")
-	@AndroidFindBy(id="")
+//	@AndroidFindBy(id="")
 	public List<RemoteWebElement> studentSubjectList;
 	
 	public SelectSubjectModule(WebDriver driver)
@@ -28,8 +28,8 @@ public class SelectSubjectModule
     }
 
 	@FindBy(xpath="//select[@id='selectTerm2']")
-	@AndroidFindBy(xpath="")
-	@iOSFindBy(id="")
+//	@AndroidFindBy(xpath="")
+//	@iOSFindBy(id="")
 	public List<RemoteWebElement> classLst;
 
 }

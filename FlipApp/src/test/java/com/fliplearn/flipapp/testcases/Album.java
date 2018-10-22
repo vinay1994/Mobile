@@ -29,7 +29,7 @@ public class Album extends Base {
 	   HeaderModule heaMod;
 		
 		@BeforeMethod
-		public void befMethod()
+		public void befAlbum()
 		{
 			logMod = new LoginModule(driver);
 			onbMod = new OnboardingModule(driver);
@@ -52,10 +52,11 @@ public class Album extends Base {
 		@Test(dataProvider = "group2")
 		public void createAlbum(String role) throws Throwable
 		{
-			logMod.Login(role);
-			albMod.mouseOverOnpostBtn();	
+			logMod.Login(role, "Single", "None", "Yes");
+			//albMod.mouseOverOnpostBtn();	
 			extentTest.log(Status.PASS, "Mouse Hover on Post button");
-			
+			Thread.sleep(3000);
+
 			Assert.assertEquals(albMod.fillTxt(), albMod.getTitle());
 		}
 
@@ -70,7 +71,7 @@ public class Album extends Base {
 		@Test(dataProvider = "group3")
 		public void canNotcreateAlbum(String role) throws InterruptedException
 		{
-			logMod.Login(role);
+			logMod.Login(role, "Single", "None", "Yes");
 			Assert.assertEquals(albMod.isPostBtndisplayed(), false);
 		}
 
@@ -84,11 +85,12 @@ public class Album extends Base {
 		@Test(dataProvider="group2")
 		public void canViewAlbum(String role) throws Throwable
 		{
-			logMod.Login(role);
-			albMod.mouseOverOnpostBtn();
+			logMod.Login(role, "Single", "None", "Yes");
+			Thread.sleep(3000);
+
 			String exepected = albMod.fillTxt();
 			albMod.mouseOverOnProfileLogout();
-			logMod.Login("Student");
+			logMod.Login("Student", "Single", "None", "Yes");
 			youProMod.updateClassAndSection(driver, "Pre-Nursery", "A");
 			heaMod.clickonHomeBtn();	
 			String actual = albMod.getTitle();

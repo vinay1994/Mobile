@@ -116,6 +116,10 @@ public class AnnouncementModule extends Base
 	}
 
 	public String fillTxt() throws Throwable {
+		Thread.sleep(3000);
+
+		mouseOverOnpostBtn();	
+
 		Thread.sleep(2000);
 		driver.switchTo().activeElement();
 		titleTxt.clear();
