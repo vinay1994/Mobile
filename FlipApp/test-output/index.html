@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Fliplearn_Automation_Suite" class="navigator-link ">
-                    <span>C:\Users\Tarun\git\flip-app\FlipApp\TestSuite.xml</span>
+                    <span>C:\Users\Dell\git\flip-app\FlipApp\TestSuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods, 1 failed,   2 passed</span>
+                    <span class="method-stats">2 methods, 2 failed,   </span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -102,29 +102,15 @@
                     <div class="method-list-content failed suite-Fliplearn_Automation_Suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Fliplearn_Automation_Suite" title="com.fliplearn.flipapp.testcases.QuizDashboard" class="method navigator-link" hash-for-method="verifyQuizDashboardClasses(Teacher)">verifyQuizDashboardClasses(Teacher)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Fliplearn_Automation_Suite" title="com.fliplearn.flipapp.testcases.Fee" class="method navigator-link" hash-for-method="payLoginWithStudentSelectedByAmex(Parent)">payLoginWithStudentSelectedByAmex(Parent)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Fliplearn_Automation_Suite" title="com.fliplearn.flipapp.testcases.Fee" class="method navigator-link" hash-for-method="payLoginWithStudentSelectedByAmex(Student)">payLoginWithStudentSelectedByAmex(Student)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Fliplearn_Automation_Suite -->
-                  </li>
-                  <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Fliplearn_Automation_Suite" class="hide-methods passed suite-Fliplearn_Automation_Suite"> (hide)</a> <!-- hide-methods passed suite-Fliplearn_Automation_Suite -->
-                      <a href="#" panel-name="suite-Fliplearn_Automation_Suite" class="show-methods passed suite-Fliplearn_Automation_Suite"> (show)</a> <!-- show-methods passed suite-Fliplearn_Automation_Suite -->
-                    </span>
-                    <div class="method-list-content passed suite-Fliplearn_Automation_Suite">
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Fliplearn_Automation_Suite" title="com.fliplearn.flipapp.testcases.QuizDashboard" class="method navigator-link" hash-for-method="verifyQuizDashboardClasses(Admin)">verifyQuizDashboardClasses(Admin)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Fliplearn_Automation_Suite" title="com.fliplearn.flipapp.testcases.QuizDashboard" class="method navigator-link" hash-for-method="verifyQuizDashboardClasses(Principal)">verifyQuizDashboardClasses(Principal)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content passed suite-Fliplearn_Automation_Suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -139,90 +125,43 @@
           <div class="suite-Fliplearn_Automation_Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">com.fliplearn.flipapp.testcases.QuizDashboard</span>
+              <span class="class-name">com.fliplearn.flipapp.testcases.Fee</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyQuizDashboardClasses(Teacher)">
-                  </a> <!-- verifyQuizDashboardClasses(Teacher) -->
-                  <span class="method-name">verifyQuizDashboardClasses</span>
-                  <span class="parameters">(Teacher)</span>
-                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Located by By.chained({By.xpath: (//*[@class=&apos;android.widget.Button&apos;])[2]}) (tried for 60 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:81)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:271)
-	at com.fliplearn.flipapp.helper.GenericFunctions.waitForElementVisibility(GenericFunctions.java:192)
-	at com.fliplearn.flipapp.testcases.QuizDashboard.verifyQuizDashboardClasses(QuizDashboard.java:116)
-Caused by: org.openqa.selenium.NoSuchElementException: Can&apos;t locate an element by this strategy: By.chained({By.xpath: (//*[@class=&apos;android.widget.Button&apos;])[2]})
-	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:126)
-	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:60)
-	at io.appium.java_client.android.AndroidElement$$EnhancerByCGLIB$$b598166c.isDisplayed(&lt;generated&gt;)
-	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:315)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$100(ExpectedConditions.java:44)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:301)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:298)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
-	... 27 more
-Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@7fdf7359 (tried for 1 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:303)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:271)
-	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:99)
-	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:119)
-	... 34 more
-Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({By.xpath: (//*[@class=&apos;android.widget.Button&apos;])[2]})
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.13.0&apos;, revision: &apos;2f0d292&apos;, time: &apos;2018-06-25T15:24:21.231Z&apos;
-System info: host: &apos;DESKTOP-NR7JDHG&apos;, ip: &apos;192.168.1.100&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11&apos;
-Driver info: driver.version: AndroidDriver
-	at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:74)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:50)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$0(AppiumElementLocator.java:120)
-	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:172)
-	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:1)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
-	... 36 more
+                  <a name="payLoginWithStudentSelectedByAmex(Parent)">
+                  </a> <!-- payLoginWithStudentSelectedByAmex(Parent) -->
+                  <span class="method-name">payLoginWithStudentSelectedByAmex</span>
+                  <span class="parameters">(Parent)</span>
+                  <div class="stack-trace">java.lang.StringIndexOutOfBoundsException: String index out of range: -1
+	at java.base/java.lang.String.substring(String.java:1841)
+	at com.fliplearn.flipapp.pagemodules.FeeModule.getTotalFeeOnPopUp(FeeModule.java:169)
+	at com.fliplearn.flipapp.testcases.Fee.payLoginWithStudentSelectedByAmex(Fee.java:165)
+... Removed 25 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="payLoginWithStudentSelectedByAmex(Student)">
+                  </a> <!-- payLoginWithStudentSelectedByAmex(Student) -->
+                  <span class="method-name">payLoginWithStudentSelectedByAmex</span>
+                  <span class="parameters">(Student)</span>
+                  <div class="stack-trace">java.lang.StringIndexOutOfBoundsException: String index out of range: -1
+	at java.base/java.lang.String.substring(String.java:1841)
+	at com.fliplearn.flipapp.pagemodules.FeeModule.getTotalFeeOnPopUp(FeeModule.java:169)
+	at com.fliplearn.flipapp.testcases.Fee.payLoginWithStudentSelectedByAmex(Fee.java:165)
 ... Removed 25 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Fliplearn_Automation_Suite-class-failed -->
-          <div class="suite-Fliplearn_Automation_Suite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.fliplearn.flipapp.testcases.QuizDashboard</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifyQuizDashboardClasses(Admin)">
-                  </a> <!-- verifyQuizDashboardClasses(Admin) -->
-                  <span class="method-name">verifyQuizDashboardClasses</span>
-                  <span class="parameters">(Admin)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifyQuizDashboardClasses(Principal)">
-                  </a> <!-- verifyQuizDashboardClasses(Principal) -->
-                  <span class="method-name">verifyQuizDashboardClasses</span>
-                  <span class="parameters">(Principal)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Fliplearn_Automation_Suite-class-passed -->
         </div> <!-- panel Fliplearn_Automation_Suite -->
         <div panel-name="test-xml-Fliplearn_Automation_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Tarun\git\flip-app\FlipApp\TestSuite.xml</span>
+            <span class="header-content">C:\Users\Dell\git\flip-app\FlipApp\TestSuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -234,11 +173,11 @@ Driver info: driver.version: AndroidDriver
   &lt;/listeners&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Announcement&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.fliplearn.flipapp.testcases.QuizDashboard&quot;&gt;
+      &lt;class name=&quot;com.fliplearn.flipapp.testcases.Fee&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;verifyQuizDashboardClasses&quot;/&gt;
+          &lt;include name=&quot;payLoginWithStudentSelectedByAmex&quot;/&gt;
         &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- com.fliplearn.flipapp.testcases.QuizDashboard --&gt;
+      &lt;/class&gt; &lt;!-- com.fliplearn.flipapp.testcases.Fee --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Announcement --&gt;
 &lt;/suite&gt; &lt;!-- Fliplearn Automation Suite --&gt;
@@ -278,24 +217,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(3);
+data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'verifyQuizDashboardClasses')
-data.setCell(0, 2, 'com.fliplearn.flipapp.testcases.QuizDashboard')
-data.setCell(0, 3, 105829);
+data.setCell(0, 1, 'payLoginWithStudentSelectedByAmex')
+data.setCell(0, 2, 'com.fliplearn.flipapp.testcases.Fee')
+data.setCell(0, 3, 15609);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'verifyQuizDashboardClasses')
-data.setCell(1, 2, 'com.fliplearn.flipapp.testcases.QuizDashboard')
-data.setCell(1, 3, 64559);
-data.setCell(2, 0, 2)
-data.setCell(2, 1, 'verifyQuizDashboardClasses')
-data.setCell(2, 2, 'com.fliplearn.flipapp.testcases.QuizDashboard')
-data.setCell(2, 3, 59845);
+data.setCell(1, 1, 'payLoginWithStudentSelectedByAmex')
+data.setCell(1, 2, 'com.fliplearn.flipapp.testcases.Fee')
+data.setCell(1, 3, 14447);
 window.suiteTableData['Fliplearn_Automation_Suite']= { tableData: data, tableDiv: 'times-div-Fliplearn_Automation_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 3 minutes</span>
+              <span class="suite-total-time">Total running time: 30 seconds</span>
               <div id="times-div-Fliplearn_Automation_Suite">
               </div> <!-- times-div-Fliplearn_Automation_Suite -->
             </div> <!-- times-div -->
@@ -310,13 +245,21 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Fliplearn_Automation_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">1 ignored method</span>
+            <span class="header-content">5 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
-              <span class="ignored-class-name">com.fliplearn.flipapp.testcases.QuizDashboard</span>
+              <span class="ignored-class-name">com.fliplearn.flipapp.testcases.Fee</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">verifyQuizDashboardTileDisplayed</span>
+                <span class="ignored-method-name">payFeeWithoutLoginSelectedByUpi</span>
+                <br/>
+                <span class="ignored-method-name">payFeeWithoutLoginSelectedByNetBnking</span>
+                <br/>
+                <span class="ignored-method-name">payFeeWithoutLoginSelectedByDebitCard</span>
+                <br/>
+                <span class="ignored-method-name">payFeeWithoutLoginSelectedByVisa</span>
+                <br/>
+                <span class="ignored-method-name">payFeeWithoutLoginSelectedByAmex</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -328,60 +271,46 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.fliplearn.flipapp.testcases.QuizDashboard</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.fliplearn.flipapp.testcases.Fee</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
-                <span class="method-name">befo(org.testng.TestRunner@1dbfbd94)</span>
+                <span class="method-name">befo(org.testng.TestRunner@1b31af02)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
-                <span class="method-name">befQuiz</span>
-                <span class="method-start">13624 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">verifyQuizDashboardClasses(Admin)</span>
-                <span class="method-start">13994 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">getResult</span>
-                <span class="method-start">73842 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">befo(org.testng.TestRunner@1dbfbd94)</span>
-                <span class="method-start">76045 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="configuration-method before">
-                <span class="method-name">befQuiz</span>
-                <span class="method-start">88166 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">verifyQuizDashboardClasses(Principal)</span>
-                <span class="method-start">88260 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">getResult</span>
-                <span class="method-start">152821 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">befo(org.testng.TestRunner@1dbfbd94)</span>
-                <span class="method-start">154893 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="configuration-method before">
-                <span class="method-name">befQuiz</span>
-                <span class="method-start">167182 ms</span>
+                <span class="method-name">beforMethodFee</span>
+                <span class="method-start">6602 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">verifyQuizDashboardClasses(Teacher)</span>
-                <span class="method-start">167288 ms</span>
+                <span class="method-name">payLoginWithStudentSelectedByAmex(Parent)</span>
+                <span class="method-start">6868 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">getResult</span>
-                <span class="method-start">273132 ms</span>
+                <span class="method-start">22481 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">befo(org.testng.TestRunner@1b31af02)</span>
+                <span class="method-start">23264 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">beforMethodFee</span>
+                <span class="method-start">28646 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">payLoginWithStudentSelectedByAmex(Student)</span>
+                <span class="method-start">28650 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult</span>
+                <span class="method-start">43099 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-suite after">
                 <span class="method-name">aftSuite</span>
-                <span class="method-start">275982 ms</span>
+                <span class="method-start">44491 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
