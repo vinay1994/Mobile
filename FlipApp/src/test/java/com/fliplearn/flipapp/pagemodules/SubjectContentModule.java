@@ -38,11 +38,6 @@ public class SubjectContentModule {
 	@iOSFindBy(id="")
 	public RemoteWebElement cliOnVidCon;
 	
-	@FindBy(xpath="//video[@class='jw-video jw-reset']")
-	@AndroidFindBy(id="")
-	@iOSFindBy(id="")
-	public RemoteWebElement verJwPlayer;
-	
 	
 	public SubjectContentModule(WebDriver driver)
 	{
@@ -65,7 +60,7 @@ public class SubjectContentModule {
          public void clickOnBookTopicContent() {
         	 cliOnBookTopCon.click();
          }
-         public void clickOnVideoContentandverifyJWPlayer(WebDriver driver) throws InterruptedException {
+         public void clickOnVideoContentandverJWPlayer(WebDriver driver) throws InterruptedException {
         	 cliOnVidCon.click();
         	 
         JavascriptExecutor jse = (JavascriptExecutor) driver;
@@ -93,6 +88,7 @@ public class SubjectContentModule {
         	Thread.sleep(2000);
         	
         	driver.quit();
+        	
 
         	
         	 
