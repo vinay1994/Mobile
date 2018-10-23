@@ -12,7 +12,7 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSFindBy;
 
-public class SubjectContentModule {
+public class VideoContentModule {
 	@FindBy(xpath="//a[contains(text(),'Class 10')]")
 	@AndroidFindBy(id="")
 	@iOSFindBy(id="")
@@ -39,7 +39,7 @@ public class SubjectContentModule {
 	public RemoteWebElement cliOnVidCon;
 	
 	
-	public SubjectContentModule(WebDriver driver)
+	public VideoContentModule(WebDriver driver)
 	{
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
