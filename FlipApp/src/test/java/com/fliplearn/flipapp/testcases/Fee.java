@@ -2,7 +2,7 @@ package com.fliplearn.flipapp.testcases;
 
 import java.io.IOException;
 
-import org.junit.Assert;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
