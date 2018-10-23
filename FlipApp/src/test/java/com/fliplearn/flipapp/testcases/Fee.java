@@ -24,6 +24,7 @@ public class Fee extends Base {
 	}
 	
 	/**
+
 	 * Verify fee  login Student And Parent by selecting debit card on Web, Android and iOS
 	 * @author vinay kumar 
 	 * @since 2018-09-30
@@ -74,6 +75,7 @@ public class Fee extends Base {
 		feeMod.clickOncancelBtn();
 
 	}
+
 	
 	
 	/**
@@ -102,6 +104,7 @@ public class Fee extends Base {
 		feeMod.clickOncancelBtn();
 
 	}
+
 	/**
 	 * Verify fee without login by selecting net banking  on Web, Android and iOS
 	 * @author vinay kumar 
@@ -128,6 +131,7 @@ public class Fee extends Base {
 
 	}
 	
+
 	
 	/**
 	 * Verify fee  login with student and parent by selecting upi  on Web, Android and iOS
@@ -154,6 +158,7 @@ public class Fee extends Base {
 		feeMod.clickOncancelBtn();
 
 	}
+
 	/**
 	 * Verify fee without login by selecting upi  on Web, Android and iOS
 	 * @author vinay kumar 
@@ -178,6 +183,7 @@ public class Fee extends Base {
 		feeMod.clickOncancelBtn();
 
 	}
+
 	
 	
 	
@@ -207,6 +213,7 @@ public class Fee extends Base {
 		feeMod.clickOncancelBtn();
 
 	}
+
 	/**
 	 * Verify fee without login by selecting visa/master card on Web, Android and iOS
 	 * @author vinay kumar 
@@ -214,7 +221,7 @@ public class Fee extends Base {
 	 * @version 1.2
 	 * @throws Throwable 
 	 */
-	
+
 	@Test
 	public void payFeeWithoutLoginSelectedByVisa() throws IOException, InterruptedException {
 		base.readData(platform, "Guest", schoolName);
@@ -232,6 +239,7 @@ public class Fee extends Base {
 		feeMod.clickOncancelBtn();
 
 	}
+
 	
 	
 	/**
@@ -260,6 +268,7 @@ public class Fee extends Base {
 		feeMod.clickOncancelBtn();
 
 	}
+
 	/**
 	 * Verify fee without login by selecting Amex card on Web, Android and iOS
 	 * @author vinay kumar 
@@ -267,7 +276,7 @@ public class Fee extends Base {
 	 * @version 1.2
 	 * @throws Throwable 
 	 */
-	
+
 	@Test
 	public void payFeeWithoutLoginSelectedByAmex() throws IOException, InterruptedException {
 		base.readData(platform, "Guest", schoolName);
@@ -287,13 +296,17 @@ public class Fee extends Base {
 	}
 	
 	/**
+
 	 * Verify fee pay fee Login With Student amd parent  Selected By Amex login by selecting Amex card on Web, Android and iOS
+=======
+	 * Verify fee pay fee Login With Student amd parent  SelectedByAmex login by selecting Amex card on Web, Android and iOS
+
 	 * @author vinay kumar 
 	 * @since 2018-09-30
 	 * @version 1.2
 	 * @throws Throwable 
 	 */
-	
+
 	@Test(dataProvider = "group3")
 	public void payLoginWithStudentSelectedByAmex(String role) throws IOException, InterruptedException {
 		base.readData(platform, "Guest", schoolName);
