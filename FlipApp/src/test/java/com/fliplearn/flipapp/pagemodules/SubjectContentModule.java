@@ -2,6 +2,7 @@ package com.fliplearn.flipapp.pagemodules;
 
 import java.util.List;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
@@ -37,6 +38,7 @@ public class SubjectContentModule {
 	@iOSFindBy(id="")
 	public RemoteWebElement cliOnVidCon;
 	
+	
 	public SubjectContentModule(WebDriver driver)
 	{
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
@@ -58,11 +60,34 @@ public class SubjectContentModule {
          public void clickOnBookTopicContent() {
         	 cliOnBookTopCon.click();
          }
-         public void clickOnVideoContent() {
+         public void clickOnVideoContentandverJWPlayer(WebDriver driver) throws InterruptedException {
         	 cliOnVidCon.click();
         	 
-        	 }
-         
-         
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        	//Click on play button
+        	jse.executeScript("jwplayer().play();");
+        	Thread.sleep(2000);
+        	//Pause
+        	jse.executeScript("jwplayer().pause()");
+        	Thread.sleep(2000);
+        	//Play
+        	jse.executeScript("jwplayer().play();");
+        	Thread.sleep(2000);
+        	// Set Volume
+        	Thread.sleep(2000);
+        	jse.executeScript("jwplayer().setVolume(50);");
+        	Thread.sleep(2000);
+        	//Mute Player
+        	jse.executeScript("jwplayer().setMute(true);");
+        	Thread.sleep(2000);
+        	//UnMute Player
+        	jse.executeScript("jwplayer().setMute(false);");
+        	Thread.sleep(2000);
+        	//Stop the player
+        	jse.executeScript("jwplayer().stop()");
+        	Thread.sleep(2000);
+        	
+        	driver.quit();        	 
+         }
          
 }
