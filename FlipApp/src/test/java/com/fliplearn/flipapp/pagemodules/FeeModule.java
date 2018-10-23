@@ -22,7 +22,14 @@ public class FeeModule extends Base {
 	@FindBy(css="a[ui-sref='feePayment']")
 	@AndroidFindBy(id="") 
 	@iOSFindBy(id="")
-	public  RemoteWebElement feeModuleBtn;
+	public  RemoteWebElement feeModuleBtn; 
+	
+	
+	@FindBy(css="a[id='feePay_icon']")
+	@AndroidFindBy(id="") 
+	@iOSFindBy(id="")
+	public  RemoteWebElement feeModule1Btn;
+	//a[id='feePay_icon']
 	
 	@FindBy(css="select[name='schoolName']")
 	@AndroidFindBy(id="") 
@@ -150,6 +157,9 @@ public class FeeModule extends Base {
 		jse.executeScript("arguments[0].click();", feeModuleBtn);*/
 		feeModuleBtn.click();
 	}
+	public void clickOnPayfeeModForSchool() {
+			feeModule1Btn.click();
+			}
 	public void selectSchoolToPayFee(String schoolName) {
 		generic.waitForElementVisibility(driver, selectSchooldropDwn);
 		System.out.println(schoolName);
@@ -157,7 +167,8 @@ public class FeeModule extends Base {
 		
 	}
 	
-	public void enterAdmission(String admNum) {
+	public void enterAdmission(String admNum) throws InterruptedException {
+		Thread.sleep(2000);
 		admissionNum.sendKeys(admNum);
 	}
 	public void clickOnProceedbtn() {
