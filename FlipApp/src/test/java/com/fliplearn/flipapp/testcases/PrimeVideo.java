@@ -17,7 +17,8 @@ import org.testng.annotations.BeforeMethod;
 	import com.fliplearn.flipapp.pagemodules.SelectClassModule;
 	import com.fliplearn.flipapp.pagemodules.SelectSubjectModule;
 	import com.fliplearn.flipapp.pagemodules.SignInAsModule;
-import com.fliplearn.flipapp.pagemodules.SubjectContentModule;
+
+import com.fliplearn.flipapp.pagemodules.VideoContentModule;
 import com.fliplearn.flipapp.pagemodules.YourProfileModule;
 	 public class PrimeVideo extends Base{
 		
@@ -31,7 +32,7 @@ import com.fliplearn.flipapp.pagemodules.YourProfileModule;
 			GenericFunctions generic;
 			YourProfileModule youProMod;
 			HeaderModule heaMod;
-			SubjectContentModule subConMod;
+			VideoContentModule vidConMod;
 			
 			 /**
 		 	 * verify PrimeVideo on Web, Android, iOS when User click on prime content
@@ -55,7 +56,7 @@ import com.fliplearn.flipapp.pagemodules.YourProfileModule;
 			    generic=new GenericFunctions();
 			    youProMod=new YourProfileModule(driver);
 			    heaMod=new HeaderModule(driver);
-			   subConMod=new SubjectContentModule(driver);
+			   vidConMod=new VideoContentModule(driver);
 			
 			}
 		  
@@ -69,12 +70,13 @@ import com.fliplearn.flipapp.pagemodules.YourProfileModule;
 	        		
 	        		Actions actions = new Actions(driver);
 	        		actions.keyDown(Keys.CONTROL).sendKeys(Keys.END).perform();
-	        		
-	        		subConMod.clickOnClassContent();
-	        		subConMod.clickOnSubjectContent();
-	        		subConMod.clickOnBookContent();
-	        		subConMod.clickOnBookTopicContent();
-	        		subConMod.clickOnVideoContent();
+
+	        		vidConMod.clickOnClassContent();
+	        		vidConMod.clickOnSubjectContent();
+	        		vidConMod.clickOnBookContent();
+	        		vidConMod.clickOnBookTopicContent();
+	        		vidConMod.clickOnVideoContentandverJWPlayer(driver);
+
 	       		}
 	           
 	           /**
@@ -88,10 +90,3 @@ import com.fliplearn.flipapp.pagemodules.YourProfileModule;
 	          
 	           
 	 }
-
-	
-
-
-	
-
-
