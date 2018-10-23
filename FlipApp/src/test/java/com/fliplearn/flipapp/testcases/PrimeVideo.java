@@ -74,7 +74,7 @@ import com.fliplearn.flipapp.pagemodules.YourProfileModule;
 	        		subConMod.clickOnSubjectContent();
 	        		subConMod.clickOnBookContent();
 	        		subConMod.clickOnBookTopicContent();
-	        		subConMod.clickOnVideoContent();
+	        		subConMod.clickOnVideoContentandverJWPlayer(driver);
 	       		}
 	           
 	           /**
