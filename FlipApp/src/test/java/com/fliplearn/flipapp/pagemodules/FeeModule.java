@@ -151,10 +151,11 @@ public class FeeModule extends Base {
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 	}
 	
-	public void clickOnPayfeeMod() {
+	public void clickOnPayfeeMod() throws InterruptedException {
 	/*	JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("document.getElementById('btn-next').focus();");
 		jse.executeScript("arguments[0].click();", feeModuleBtn);*/
+		Thread.sleep(2000);
 		feeModuleBtn.click();
 	}
 	public void clickOnPayfeeModForSchool() {

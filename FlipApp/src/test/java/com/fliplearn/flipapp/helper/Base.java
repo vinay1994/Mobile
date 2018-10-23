@@ -338,4 +338,12 @@ public class Base implements ITestListener
 			  { "Parent" }, { "Student" }
 		  }; 
 	}
+	@DataProvider(name = "group4")
+	public static Object[] group4() 
+	{
+		  return new Object[][]
+		  { 
+			  { "Guest" }
+		  }; 
+	}
 }
