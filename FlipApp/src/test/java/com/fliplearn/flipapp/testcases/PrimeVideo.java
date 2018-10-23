@@ -70,12 +70,13 @@ import com.fliplearn.flipapp.pagemodules.YourProfileModule;
 	        		
 	        		Actions actions = new Actions(driver);
 	        		actions.keyDown(Keys.CONTROL).sendKeys(Keys.END).perform();
-	        		
+
 	        		vidConMod.clickOnClassContent();
 	        		vidConMod.clickOnSubjectContent();
 	        		vidConMod.clickOnBookContent();
 	        		vidConMod.clickOnBookTopicContent();
 	        		vidConMod.clickOnVideoContentandverJWPlayer(driver);
+
 	       		}
 	           
 	           /**
@@ -89,10 +90,3 @@ import com.fliplearn.flipapp.pagemodules.YourProfileModule;
 	          
 	           
 	 }
-
-	
-
-
-	
-
-
