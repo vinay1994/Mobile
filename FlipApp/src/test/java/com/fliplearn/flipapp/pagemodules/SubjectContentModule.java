@@ -2,7 +2,9 @@ package com.fliplearn.flipapp.pagemodules;
 
 import java.util.List;
 
+
 import org.openqa.selenium.JavascriptExecutor;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
@@ -38,7 +40,7 @@ public class SubjectContentModule {
 	@iOSFindBy(id="")
 	public RemoteWebElement cliOnVidCon;
 	
-	
+
 	public SubjectContentModule(WebDriver driver)
 	{
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
@@ -60,6 +62,16 @@ public class SubjectContentModule {
          public void clickOnBookTopicContent() {
         	 cliOnBookTopCon.click();
          }
+
+         public void clickOnVideoContent() {
+        	 cliOnVidCon.click();
+        	 
+        	 }
+         
+         
+         
+}
+
          public void clickOnVideoContentandverJWPlayer(WebDriver driver) throws InterruptedException {
         	 cliOnVidCon.click();
         	 
@@ -91,3 +103,4 @@ public class SubjectContentModule {
          }
          
 }
+
