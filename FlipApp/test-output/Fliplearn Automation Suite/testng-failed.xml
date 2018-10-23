@@ -8,7 +8,7 @@
     <classes>
       <class name="com.fliplearn.flipapp.testcases.Fee">
         <methods>
-          <include name="payLoginWithStudentSelectedByAmex" invocation-numbers="0 1"/>
+          <include name="payFeeLoginWithGuestSelectedByDebitCard" invocation-numbers="0"/>
           <include name="befo"/>
           <include name="beforMethodFee"/>
           <include name="aftSuite"/>

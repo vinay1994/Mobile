@@ -13,7 +13,7 @@
 
     		<class name="com.fliplearn.flipapp.testcases.Fee">
         		<methods>
-        			<include name="payLoginWithStudentSelectedByAmex" />  
+        			<include name="payFeeLoginWithGuestSelectedByAmex" />  
 
         		</methods>
         	</class>

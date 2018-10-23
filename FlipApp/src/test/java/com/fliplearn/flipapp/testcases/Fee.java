@@ -448,13 +448,6 @@ public class Fee extends Base {
 		feeMod.clickOncancelBtn();
 
 	}
-
-
-
-	
-	
-	
-	
 	
 	
 }
