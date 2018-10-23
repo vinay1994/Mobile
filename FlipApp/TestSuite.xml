@@ -8,12 +8,12 @@
 </listeners>
  
 	
-	<test name="Announcement" enabled="true">
+	<test name="PrimeContent" enabled="true">
   		<classes>
 
-    		<class name="com.fliplearn.flipapp.testcases.Fee">
+    		<class name="com.fliplearn.flipapp.testcases.PrimeVideo">
         		<methods>
-        			<include name="payLoginWithStudentSelectedByAmex" />  
+        			<include name="verifySubjectContent" />  
 
         		</methods>
         	</class>
