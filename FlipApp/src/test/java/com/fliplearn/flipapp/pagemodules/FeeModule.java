@@ -22,14 +22,7 @@ public class FeeModule extends Base {
 	@FindBy(css="a[ui-sref='feePayment']")
 	@AndroidFindBy(id="") 
 	@iOSFindBy(id="")
-	public  RemoteWebElement feeModuleBtn; 
-	
-	
-	@FindBy(css="a[id='feePay_icon']")
-	@AndroidFindBy(id="") 
-	@iOSFindBy(id="")
-	public  RemoteWebElement feeModule1Btn;
-	//a[id='feePay_icon']
+	public  RemoteWebElement feeModuleBtn;
 	
 	@FindBy(css="select[name='schoolName']")
 	@AndroidFindBy(id="") 
@@ -151,16 +144,12 @@ public class FeeModule extends Base {
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 	}
 	
-	public void clickOnPayfeeMod() throws InterruptedException {
+	public void clickOnPayfeeMod() {
 	/*	JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("document.getElementById('btn-next').focus();");
 		jse.executeScript("arguments[0].click();", feeModuleBtn);*/
-		Thread.sleep(2000);
 		feeModuleBtn.click();
 	}
-	public void clickOnPayfeeModForSchool() {
-			feeModule1Btn.click();
-			}
 	public void selectSchoolToPayFee(String schoolName) {
 		generic.waitForElementVisibility(driver, selectSchooldropDwn);
 		System.out.println(schoolName);
@@ -168,8 +157,7 @@ public class FeeModule extends Base {
 		
 	}
 	
-	public void enterAdmission(String admNum) throws InterruptedException {
-		Thread.sleep(2000);
+	public void enterAdmission(String admNum) {
 		admissionNum.sendKeys(admNum);
 	}
 	public void clickOnProceedbtn() {
