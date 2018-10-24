@@ -21,6 +21,7 @@
   		<classes>
     		<class name="com.fliplearn.flipapp.testcases.FliplearnPrimeView">
         		<methods>
+        			<include name="verifyPrimeTileDisplayed"/>
         			<include name="verifyPrimeClasses"/>
         		</methods>
         	</class>
@@ -31,12 +32,20 @@
         		</methods>
         	</class>
         	
-        			<class name="com.fliplearn.flipapp.testcases.QuizDashboard">
+        	<class name="com.fliplearn.flipapp.testcases.QuizGames">
+        		<methods>
+        			<include name="verifyQuizTileDisplayed"/>
+        		</methods>
+        	</class>
+        	
+        	<class name="com.fliplearn.flipapp.testcases.QuizDashboard">
         		<methods>
         			<include name="verifyQuizDashboardTileDisplayed"/>
         			<include name="verifyQuizDashboardClasses"/>
         		</methods>
         	</class>
+        	
+        	
         	<class name="com.fliplearn.flipapp.testcases.VMC">
         		<methods>
         			<include name="displayVMCSchool" />

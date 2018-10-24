@@ -97,7 +97,7 @@ public class FliplearnPrimeView extends Base
  	 * @throws IOException 
  	 */
  	 
-	@Test(priority=2,dataProvider ="group1")
+	@Test(priority=2,dataProvider ="group3")
 	public void verifyPrimeSubjects(String role) throws IOException, InterruptedException  
 	{ 
 		logMod.Login(role, "Single", "None", "Yes");
