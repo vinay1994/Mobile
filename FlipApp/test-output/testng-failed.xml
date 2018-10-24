@@ -4,17 +4,17 @@
   <listeners>
     <listener class-name="com.fliplearn.flipapp.helper.Base"/>
   </listeners>
-  <test thread-count="5" name="Announcement(failed)">
+  <test thread-count="5" name="Onboarding(failed)">
     <classes>
-      <class name="com.fliplearn.flipapp.testcases.Fee">
+      <class name="com.fliplearn.flipapp.testcases.QuizGames">
         <methods>
-          <include name="payFeeLoginWithGuestSelectedByDebitCard" invocation-numbers="0"/>
+          <include name="verifyQuizTileDisplayed"/>
           <include name="befo"/>
-          <include name="beforMethodFee"/>
           <include name="aftSuite"/>
           <include name="getResult"/>
+          <include name="befQuiz"/>
         </methods>
-      </class> <!-- com.fliplearn.flipapp.testcases.Fee -->
+      </class> <!-- com.fliplearn.flipapp.testcases.QuizGames -->
     </classes>
-  </test> <!-- Announcement(failed) -->
+  </test> <!-- Onboarding(failed) -->
 </suite> <!-- Failed suite [Fliplearn Automation Suite] -->

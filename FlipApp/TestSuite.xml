@@ -9,15 +9,9 @@
  
  <test name="Onboarding" enabled="true">
   		<classes>
-    		<class name="com.fliplearn.flipapp.testcases.QuizDashboard">
+    		<class name="com.fliplearn.flipapp.testcases.QuizGames">
         		<methods>
-        			<include name="verifyQuizDashboardTileDisplayed"/>
-        			<include name="verifyQuizDashboardClasses"/>
-        		</methods>
-        	</class>
-        	<class name="com.fliplearn.flipapp.testcases.VMC">
-        		<methods>
-        			<include name="displayVMCSchool" />
+        			<include name="verifyQuizTileDisplayed"/>
         		</methods>
         	</class>
      </classes>

@@ -13,8 +13,8 @@ public class QuizModule
 	@AndroidFindBy(id="com.elss.educomp:id/skip_button")
 	public RemoteWebElement skipBtn;
 	
-	@AndroidFindBy(id="com.elss.educomp:id/title")
-	public RemoteWebElement quizgames;
+	@AndroidFindBy(xpath="//*[@text='Test and Improve your learning']")
+	public RemoteWebElement quizGamesTile;
 		
 	public QuizModule(WebDriver driver)
 	{

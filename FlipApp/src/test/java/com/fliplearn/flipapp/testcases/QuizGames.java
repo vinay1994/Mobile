@@ -13,11 +13,8 @@ import com.fliplearn.flipapp.pagemodules.QuizModule;
 import com.fliplearn.flipapp.pagemodules.SelectClassModule;
 import com.fliplearn.flipapp.pagemodules.SignInAsModule;
 
-
-
 public class QuizGames extends Base 
 {
-
 	LoginModule logMod;
 	OnboardingModule onbMod;
 	MenuModule menuMod;
@@ -26,6 +23,7 @@ public class QuizGames extends Base
 	SignInAsModule signInMod;
 	SelectClassModule selClaMod;
 	GenericFunctions generic;
+	
 	@BeforeMethod
 	public void befQuiz()
 	{   generic=new GenericFunctions();
@@ -36,7 +34,6 @@ public class QuizGames extends Base
 		mobNumMod = new MobileNumberModule(driver);
 		quiMod = new QuizModule(driver);
 		selClaMod = new SelectClassModule(driver);
-		onbMod.skipScreen();
 	}
 
 	/**
@@ -46,24 +43,17 @@ public class QuizGames extends Base
 	 * @version 1.0
 	 * @throws InterruptedException 
 	 */
-	@Test(dataProvider = "group2")
-	public void verifyAndroidQuiz(String role) throws InterruptedException
+	@Test(dataProvider = "group1")
+	public void verifyQuizTileDisplayed(String role) throws InterruptedException
 	{
 		logMod.Login(role, "Single", "None", "Yes");
 		
-		signInMod.adminLnk.click();
-		mobNumMod.skipBtn.click();
-		quiMod.skipBtn.click();
-		
-		generic.touchCordinates(driver, 10, 95);
-		generic.touchCordinates(driver, 10, 95);
-		generic.touchCordinates(driver, 5, 5);
-		
-		quiMod.quizgames.click();
-		
-		String expectedList = aConfig.getProperty("ADMIN_QUIZ_CLASSES") ;
-
-		Assert.assertEquals(generic.compareList(selClaMod.classLst, expectedList), true);
+		generic.scrollBy(driver, 50, 95);
+	
+		if(role.equals("Parent") || role.equals("Student"))
+			Assert.assertEquals(generic.isElementDisplayed(driver, quiMod.quizGamesTile), true);
+		else
+		Assert.assertEquals(generic.isElementDisplayed(driver, quiMod.quizGamesTile), false);
 	}
 	
 }
