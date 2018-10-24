@@ -14,11 +14,6 @@
         			<include name="verifyLogin"/>
         		</methods>
         	</class>
-        	<class name="com.fliplearn.flipapp.testcases.UserProfile">
-        		<methods>
-        			<include name="verifyUserRole" />  	
-        		</methods>
-        	</class>
       	</classes> 
 	</test> 
 	
@@ -27,7 +22,6 @@
     		<class name="com.fliplearn.flipapp.testcases.FliplearnPrimeView">
         		<methods>
         			<include name="verifyPrimeClasses"/>
-        			<include name="verifyPrimeSubjects"/>
         		</methods>
         	</class>
         	
@@ -36,11 +30,20 @@
         			<include name="displayVMCSchool" />
         		</methods>
         	</class>
+        	
+        			<class name="com.fliplearn.flipapp.testcases.QuizDashboard">
+        		<methods>
+        			<include name="verifyQuizDashboardTileDisplayed"/>
+        			<include name="verifyQuizDashboardClasses"/>
+        		</methods>
+        	</class>
+        	<class name="com.fliplearn.flipapp.testcases.VMC">
+        		<methods>
+        			<include name="displayVMCSchool" />
+        		</methods>
+        	</class>
+    
       	</classes> 
 	</test> 
-	
-	<test name="Communication" enabled="true">
-  
-	</test>  
-	
+		
 </suite>	
