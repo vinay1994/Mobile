@@ -27,9 +27,9 @@ public class Screenshots extends Base
 		
 		String filePath;
 		
-		if(Inet4Address.getLocalHost().getHostAddress().equals("10.9.1.53"))
+		if(Inet4Address.getLocalHost().getHostAddress().equals("10.0.14.202"))
 		{
-		filePath = "C:\\tomcat9\\webapps\\fliplearn\\screenshots\\" + reportFileFolderName + "\\";
+		filePath = "C:\\tomcat\\webapps\\fliplearn\\screenshots\\" + reportFileFolderName + "\\";
 		}
 		else
 		{
