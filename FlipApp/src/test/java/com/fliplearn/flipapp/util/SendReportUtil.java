@@ -58,7 +58,7 @@ public class SendReportUtil extends Base
     	 System.out.println("Report File Path:" +reportFilePath);
            
          Message message = new MimeMessage(session);
-         message.setFrom(new InternetAddress("tarun.sage@gmail.com"));
+         message.setFrom(new InternetAddress("fliplearnqa@gmail.com"));
 
            
          System.out.println("email ids are:"+emailIds);

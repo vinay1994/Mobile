@@ -4,6 +4,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
@@ -31,6 +33,7 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.fliplearn.flipapp.util.ConfigUtil;
 import com.fliplearn.flipapp.util.ExcelUtil;
+import com.fliplearn.flipapp.util.Screenshots;
 import com.fliplearn.flipapp.util.SendReportUtil;
 
 import io.appium.java_client.android.Activity;
@@ -267,7 +270,21 @@ public class Base implements ITestListener
 	@Override
 	public void onTestFailure(ITestResult result) 
 	{
-		extentTest.log(Status.FAIL, "Test Failed");		
+		extentTest.log(Status.FAIL, "Test Failed");	
+        String captureScreenshot;
+     	
+        try 
+        {
+        	String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
+			captureScreenshot = Screenshots.captureScreenshot(driver,result.getName() + timeStamp);
+			extentTest.log(Status.FAIL, result.getThrowable());
+			extentTest.log(Status.FAIL, "Snapshot"+extentTest.addScreenCaptureFromPath(captureScreenshot));
+		} 
+        catch (IOException e) 
+        {
+			e.printStackTrace();
+		}
+
 	}
 
 
@@ -289,6 +306,18 @@ public class Base implements ITestListener
 	public void onTestSuccess(ITestResult result) 
 	{
 		extentTest.log(Status.PASS, "Test Failed");	
+		String captureScreenshot;
+     	
+        try 
+        {
+        	String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
+        	captureScreenshot = Screenshots.captureScreenshot(driver,result.getName() + timeStamp);
+			extentTest.log(Status.PASS, "Snapshot"+extentTest.addScreenCaptureFromPath(captureScreenshot));
+		} 
+        catch (IOException e) 
+        {
+			e.printStackTrace();
+		}
 	}
 
 
