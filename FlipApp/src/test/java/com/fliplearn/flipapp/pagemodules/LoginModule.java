@@ -19,6 +19,11 @@ import io.appium.java_client.pagefactory.iOSFindBy;
 public class LoginModule extends Base
 {	
 	GenericFunctions generic=new GenericFunctions();
+	OnboardingModule onbMod= new OnboardingModule(driver);
+	MobileNumberModule mobNumMod= new MobileNumberModule(driver);
+	SignInAsModule sigInMod = new SignInAsModule(driver);
+	QuizModule quiMod = new QuizModule(driver);
+
 	
 	@FindBy(id="Fname")
 	@AndroidFindBy(id="com.elss.educomp:id/user_id_til") 
@@ -57,7 +62,6 @@ public class LoginModule extends Base
 		
 			if(eConfig.getProperty("Platform").equals("Android")) 
 			{
-				OnboardingModule onbMod= new OnboardingModule(driver);
 				onbMod.skipScreen();
 				extentTest.log(Status.PASS, "Click on Skip button.");
 			}
@@ -74,12 +78,7 @@ public class LoginModule extends Base
 			}
 			loginBtn.click();
 			extentTest.log(Status.PASS, "Click on Login button");
-			
-			MobileNumberModule mobNumMod= new MobileNumberModule(driver);
-			SignInAsModule sigInMod = new SignInAsModule(driver);
-			QuizModule quiMod = new QuizModule(driver);
-			 
-	 
+				 
 			 if(!platform.equals("Web"))
 			 {
 				 quiMod.skipBtn.click();

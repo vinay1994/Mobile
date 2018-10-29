@@ -78,8 +78,8 @@
     		<class name="com.fliplearn.flipapp.testcases.Fee">
         		<methods>
         			<include name="payFeeWithoutLoginSelectedByDebitCard" />
-					<include name="payFeeLoginStudentParentSelectedByNetBnking" />
-					<include name="payFeeWithoutLoginSelectedByNetBnking" />
+					<include name="payFeeLoginStudentParentSelectedByNetBanking" />
+					<include name="payFeeWithoutLoginSelectedByNetBanking" />
 					<include name="payFeeLoginStudentParentSelectedByUpi" />
 					<include name="payFeeWithoutLoginSelectedByUpi" />
 					<include name="payFeeLoginWithStudentParentSelectedByVisa" />
@@ -90,7 +90,7 @@
 					<include name="payFeeLoginWithGuestSelectedByAmex" />
 					<include name="payFeeLoginWithGuestSelectedByVisa" />
 					<include name="payFeeLoginWithGuestSelectedByUpi" />
-					<include name="payFeeLoginWithGuestSelectedByNetBnking" />
+					<include name="payFeeLoginWithGuestSelectedByNetBanking" />
 					<include name="payFeeLoginWithGuestSelectedByDebitCard" />
         		</methods>
         	</class>

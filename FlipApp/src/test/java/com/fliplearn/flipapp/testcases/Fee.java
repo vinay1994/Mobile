@@ -86,7 +86,7 @@ public class Fee extends Base {
 	 */
 	
 	@Test(dataProvider="group3")
-	public void payFeeLoginStudentParentSelectedByNetBnking(String role) throws IOException, InterruptedException {
+	public void payFeeLoginStudentParentSelectedByNetBanking(String role) throws IOException, InterruptedException {
 		base.readData(platform, "Guest", schoolName);
 		logMod.Login(role, "Single", "None", "Yes");
 		feeMod.clickOnPayfeeModForSchool();
@@ -405,7 +405,7 @@ public class Fee extends Base {
 	 */
 
 	@Test(dataProvider="group4")
-	public void payFeeLoginWithGuestSelectedByNetBnking(String role) throws IOException, InterruptedException {
+	public void payFeeLoginWithGuestSelectedByNetBanking(String role) throws IOException, InterruptedException {
 		base.readData(platform, "Guest", schoolName);
 		logMod.Login(role, "Single", "None", "Yes");
 		feeMod.clickOnPayfeeMod();

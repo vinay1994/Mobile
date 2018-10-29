@@ -5,11 +5,11 @@
     <classes>
       <class name="com.fliplearn.flipapp.testcases.Fee">
         <methods>
-          <include name="payLoginWithStudentSelectedByAmex"/>
           <include name="befo"/>
           <include name="beforMethodFee"/>
           <include name="aftSuite"/>
           <include name="getResult"/>
+          <include name="payFeeWithoutLogin"/>
         </methods>
       </class> <!-- com.fliplearn.flipapp.testcases.Fee -->
     </classes>
