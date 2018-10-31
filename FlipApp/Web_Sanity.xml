@@ -73,4 +73,28 @@
       	</classes> 
 	</test>  
 	
+	<test name="Marketplace" enabled="true">
+  		<classes>
+    		<class name="com.fliplearn.flipapp.testcases.Fee">
+        		<methods>
+        			<include name="payFeeLoginStudentParentSelectedByDebitCard"/>
+        			<include name="payFeeWithoutLoginSelectedByDebitCard"/>
+        			<include name="payFeeLoginStudentParentSelectedByNetBanking"/>
+        			<include name="payFeeWithoutLoginSelectedByNetBnking"/>
+        			<include name="payFeeLoginStudentParentSelectedByUpi"/>
+        			<include name="payFeeWithoutLoginSelectedByUpi"/>
+        			<include name="payFeeLoginWithStudentParentSelectedByVisa"/>
+        			<include name="payFeeWithoutLoginSelectedByVisa"/>
+        			<include name="payFeeLoginWithSelectedByVisa"/>
+        			<include name="payFeeWithoutLoginSelectedByAmex"/>
+        			<include name="payLoginWithStudentSelectedByAmex"/>
+        			<include name="payFeeLoginWithGuestSelectedByAmex"/>
+        			<include name="payFeeLoginWithGuestSelectedByVisa"/>
+        			<include name="payFeeLoginWithGuestSelectedByUpi"/>
+        			<include name="payFeeLoginWithGuestSelectedByNetBanking"/>
+        			<include name="payFeeLoginWithGuestSelectedByDebitCard"/>
+        		</methods>
+        	</class>
+	</classes>
+	</test>
 </suite>	
