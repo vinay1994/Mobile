@@ -2,6 +2,7 @@ package com.fliplearn.flipapp.pagemodules;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
@@ -31,5 +32,13 @@ public class SelectSubjectModule
 //	@AndroidFindBy(xpath="")
 //	@iOSFindBy(id="")
 	public List<RemoteWebElement> classLst;
+	
+	public void clickOnSubject(WebDriver driver, String role, String subjectName)
+    {
+		if(role.equals("Student")||role.equals("Parent"))
+			driver.findElement(By.xpath("//h3[text()='"+subjectName+"']")).click();
+		else
+			driver.findElement(By.xpath("//div[@class='panel-collapse collapse in']//h3[text()='"+subjectName+"']")).click();
+    }
 
 }
