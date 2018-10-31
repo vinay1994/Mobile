@@ -1,5 +1,7 @@
 
+
 package com.fliplearn.flipapp.testcases;
+
 
 import java.io.IOException;
 
@@ -73,7 +75,6 @@ public class Fee extends Base {
 		feeMod.clickOnPayBtn();
 		Assert.assertEquals(feeMod.getTotalFeeOnPayBtn(),feeMod.getTotalFeeOnPaymentGat());
 		feeMod.clickOncancelBtn();
-
 	}
 	
 	
@@ -452,3 +453,4 @@ public class Fee extends Base {
 	
 	
 }
+

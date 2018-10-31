@@ -1,3 +1,4 @@
+
 package com.fliplearn.flipapp.pagemodules;
 
 import java.text.DecimalFormat;
@@ -29,7 +30,6 @@ public class FeeModule extends Base {
 	@AndroidFindBy(id="") 
 	@iOSFindBy(id="")
 	public  RemoteWebElement feeModule1Btn;
-	//a[id='feePay_icon']
 	
 	@FindBy(css="select[name='schoolName']")
 	@AndroidFindBy(id="") 
@@ -151,16 +151,18 @@ public class FeeModule extends Base {
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 	}
 	
-	public void clickOnPayfeeMod() throws InterruptedException {
+	public void clickOnPayfeeMod() {
 	/*	JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("document.getElementById('btn-next').focus();");
 		jse.executeScript("arguments[0].click();", feeModuleBtn);*/
-		Thread.sleep(2000);
 		feeModuleBtn.click();
 	}
+
 	public void clickOnPayfeeModForSchool() {
 			feeModule1Btn.click();
 			}
+
+
 	public void selectSchoolToPayFee(String schoolName) {
 		generic.waitForElementVisibility(driver, selectSchooldropDwn);
 		System.out.println(schoolName);
@@ -168,8 +170,11 @@ public class FeeModule extends Base {
 		
 	}
 	
+
 	public void enterAdmission(String admNum) throws InterruptedException {
 		Thread.sleep(2000);
+
+
 		admissionNum.sendKeys(admNum);
 	}
 	public void clickOnProceedbtn() {
@@ -205,7 +210,8 @@ public class FeeModule extends Base {
 		return getTotalPayableFee.getText().substring(1);
 		
 	}
-	public void fillAddress() {
+	public void fillAddress() throws InterruptedException {
+		Thread.sleep(3000);
 		parentNameTxt.clear();
 		parentNameTxt.sendKeys("vinay");
 		parentMobNumTxt.clear();
@@ -213,7 +219,6 @@ public class FeeModule extends Base {
 		parentEmailIdTxt.sendKeys("vinay.yadav@fliplearn.com");
 		addressTxt.sendKeys("Udyog vihar");
 		generic.selectByVisibleText(stateNameTxt, "Delhi");
-		
 	}
 	public void selectDebitCard() {
 		debitcartRd.click();

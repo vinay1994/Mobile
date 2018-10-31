@@ -7,11 +7,15 @@
 	<listener class-name="com.fliplearn.flipapp.helper.Base"/>
 </listeners>
  
- <test name="Onboarding" enabled="true">
+
+	
+	<test name="PrimeContent" enabled="true">
   		<classes>
-    		<class name="com.fliplearn.flipapp.testcases.Fee">
-        		<methods>
-        			<include name="payFeeLoginStudentParentSelectedByDebitCard"/>
+
+    		<class name="com.fliplearn.flipapp.testcases.PrimeVideo">
+        		<methods> 
+        			<include name="playPrimeVideoSchool" /> 
+        			<include name="playPrimeVideoStudent" /> 
         		</methods>
         	</class>
         </classes>

@@ -27,7 +27,7 @@ public class Screenshots extends Base
 		
 		String filePath;
 		
-		if(Inet4Address.getLocalHost().getHostAddress().equals("10.0.14.202"))
+		if(Inet4Address.getLocalHost().getHostAddress().equals("192.168.109.2"))
 		{
 		filePath = "C:\\tomcat\\webapps\\fliplearn\\screenshots\\" + reportFileFolderName + "\\";
 		}
@@ -47,11 +47,10 @@ public class Screenshots extends Base
 		
 		File dest=new File(property);
 		FileUtils.copyFile(source, dest);
-		if(Inet4Address.getLocalHost().getHostAddress().equals("10.0.14.202"))
+		if(Inet4Address.getLocalHost().getHostAddress().equals("192.168.109.2"))
 		{
 		          property = "http://10.0.14.202:8080/fliplearn/screenshots/"+reportFileFolderName+"/"+imageName+".png";
 		}
 		return property;
 	}
 }
-

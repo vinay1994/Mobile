@@ -44,6 +44,23 @@
         			<include name="verifyQuizDashboardClasses" />  	
         		</methods>
         	</class>
+        	
+    		<class name="com.fliplearn.flipapp.testcases.PrimeSynopsis">
+        		<methods>
+        			<include name="verifyRealLifeSchool" />  
+        			<include name="verifyRealLifeStudent" />  
+        			<include name="verifyTopicSynopsisSchool" /> 
+        			<include name="verifyTopicSynopsisStudent" /> 
+        			<include name="verifyMindMapsSchool" /> 
+        			<include name="verifyMindMapsStudent" /> 
+        		</methods>
+        	</class>
+        	<class name="com.fliplearn.flipapp.testcases.PrimeVideo">
+        		<methods> 
+        			<include name="playPrimeVideoSchool" /> 
+        			<include name="playPrimeVideoStudent" /> 
+        		</methods>
+        	</class>
       	</classes> 
 	</test> 
 	

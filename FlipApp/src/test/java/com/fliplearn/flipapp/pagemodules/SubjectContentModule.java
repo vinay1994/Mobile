@@ -1,7 +1,8 @@
+
 package com.fliplearn.flipapp.pagemodules;
 
-import java.util.List;
-
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,7 +12,8 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSFindBy;
 
-public class SubjectContentModule {
+public class SubjectContentModule 
+{
 	@FindBy(xpath="//a[contains(text(),'Class 10')]")
 	@AndroidFindBy(id="")
 	@iOSFindBy(id="")
@@ -37,6 +39,21 @@ public class SubjectContentModule {
 	@iOSFindBy(id="")
 	public RemoteWebElement cliOnVidCon;
 	
+	@FindBy(xpath="//div[@class='row learnResourcesInner']//h6[text()='Real Life Application']")
+	@AndroidFindBy(id="")
+	@iOSFindBy(id="")
+	public RemoteWebElement realLife;
+	
+	@FindBy(xpath="//div[@class='row learnResourcesInner']//h6[text()='Topic Synopsis']")
+	@AndroidFindBy(id="")
+	@iOSFindBy(id="")
+	public RemoteWebElement topicSynopsis;
+	
+	@FindBy(xpath="//div[@class='row learnResourcesInner']//h6[text()='Mind Maps']")
+	@AndroidFindBy(id="")
+	@iOSFindBy(id="")
+	public RemoteWebElement mindMaps;
+
 	public SubjectContentModule(WebDriver driver)
 	{
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
@@ -58,11 +75,34 @@ public class SubjectContentModule {
          public void clickOnBookTopicContent() {
         	 cliOnBookTopCon.click();
          }
+
          public void clickOnVideoContent() {
         	 cliOnVidCon.click();
         	 
         	 }
          
+         public void clickOnRealLife()
+         {
+        	 realLife.click();
+         }
          
+         public void clickOnTopicSynopsis()
+         {
+        	 topicSynopsis.click();
+         }
+       
+         public void clickOnMindMaps()
+         {
+        	 mindMaps.click();
+         }
          
+         public void clickOnViewAllSample(WebDriver driver)
+         {
+        	 driver.findElement(By.linkText("View all sample content")).click();
+         }
+         
+   
+              
+                  
 }
+
