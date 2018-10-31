@@ -1,29 +1,28 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2018-10-23T05:01:08Z" name="Fliplearn Automation Suite" finished-at="2018-10-23T05:03:39Z" duration-ms="151374">
+  <suite started-at="2018-10-31T20:59:57Z" name="Fliplearn Automation Suite" finished-at="2018-10-31T21:03:32Z" duration-ms="215101">
     <groups>
     </groups>
-    <test started-at="2018-10-23T05:01:08Z" name="PrimeContent" finished-at="2018-10-23T05:03:39Z" duration-ms="151374">
+    <test started-at="2018-10-31T20:59:57Z" name="PrimeContent" finished-at="2018-10-31T21:03:32Z" duration-ms="215101">
       <class name="com.fliplearn.flipapp.testcases.PrimeVideo">
-        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeVideo@5b7a7f33]" started-at="2018-10-23T05:01:08Z" name="befo" finished-at="2018-10-23T05:01:34Z" duration-ms="26393" status="PASS">
+        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeVideo@1a245833]" started-at="2018-10-31T20:59:57Z" name="befo" finished-at="2018-10-31T21:00:03Z" duration-ms="6503" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@74d22ddd]]>
+                <![CDATA[org.testng.TestRunner@3a589eed]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- befo -->
-        <test-method is-config="true" signature="preSubjectContent()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeVideo@5b7a7f33]" started-at="2018-10-23T05:01:34Z" name="preSubjectContent" finished-at="2018-10-23T05:01:34Z" duration-ms="316" status="PASS">
+        <test-method is-config="true" signature="prePrimeVideo()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeVideo@1a245833]" started-at="2018-10-31T21:00:03Z" name="prePrimeVideo" finished-at="2018-10-31T21:00:04Z" duration-ms="231" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- preSubjectContent -->
-        <test-method signature="verifySubjectContent(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeVideo@5b7a7f33]" started-at="2018-10-23T05:01:34Z" name="verifySubjectContent" data-provider="group2" finished-at="2018-10-23T05:02:03Z" duration-ms="28619" status="PASS">
+        </test-method> <!-- prePrimeVideo -->
+        <test-method signature="playPrimeVideoSchool(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeVideo@1a245833]" started-at="2018-10-31T21:00:04Z" name="playPrimeVideoSchool" data-provider="group2" finished-at="2018-10-31T21:00:41Z" duration-ms="37731" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -33,27 +32,27 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifySubjectContent -->
-        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeVideo@5b7a7f33]" started-at="2018-10-23T05:02:03Z" name="getResult" finished-at="2018-10-23T05:02:03Z" duration-ms="0" status="PASS">
+        </test-method> <!-- playPrimeVideoSchool -->
+        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeVideo@1a245833]" started-at="2018-10-31T21:00:42Z" name="getResult" finished-at="2018-10-31T21:00:43Z" duration-ms="865" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeVideo@5b7a7f33]" started-at="2018-10-23T05:02:03Z" name="befo" finished-at="2018-10-23T05:02:19Z" duration-ms="16063" status="PASS">
+        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeVideo@1a245833]" started-at="2018-10-31T21:00:43Z" name="befo" finished-at="2018-10-31T21:00:52Z" duration-ms="8943" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@74d22ddd]]>
+                <![CDATA[org.testng.TestRunner@3a589eed]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- befo -->
-        <test-method is-config="true" signature="preSubjectContent()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeVideo@5b7a7f33]" started-at="2018-10-23T05:02:19Z" name="preSubjectContent" finished-at="2018-10-23T05:02:19Z" duration-ms="34" status="PASS">
+        <test-method is-config="true" signature="prePrimeVideo()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeVideo@1a245833]" started-at="2018-10-31T21:00:52Z" name="prePrimeVideo" finished-at="2018-10-31T21:00:52Z" duration-ms="16" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- preSubjectContent -->
-        <test-method signature="verifySubjectContent(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeVideo@5b7a7f33]" started-at="2018-10-23T05:02:19Z" name="verifySubjectContent" data-provider="group2" finished-at="2018-10-23T05:02:47Z" duration-ms="28432" status="PASS">
+        </test-method> <!-- prePrimeVideo -->
+        <test-method signature="playPrimeVideoSchool(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeVideo@1a245833]" started-at="2018-10-31T21:00:52Z" name="playPrimeVideoSchool" data-provider="group2" finished-at="2018-10-31T21:01:25Z" duration-ms="33679" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -63,27 +62,27 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifySubjectContent -->
-        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeVideo@5b7a7f33]" started-at="2018-10-23T05:02:47Z" name="getResult" finished-at="2018-10-23T05:02:47Z" duration-ms="0" status="PASS">
+        </test-method> <!-- playPrimeVideoSchool -->
+        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeVideo@1a245833]" started-at="2018-10-31T21:01:26Z" name="getResult" finished-at="2018-10-31T21:01:27Z" duration-ms="924" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeVideo@5b7a7f33]" started-at="2018-10-23T05:02:47Z" name="befo" finished-at="2018-10-23T05:03:03Z" duration-ms="15101" status="PASS">
+        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeVideo@1a245833]" started-at="2018-10-31T21:01:27Z" name="befo" finished-at="2018-10-31T21:01:32Z" duration-ms="5652" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@74d22ddd]]>
+                <![CDATA[org.testng.TestRunner@3a589eed]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- befo -->
-        <test-method is-config="true" signature="preSubjectContent()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeVideo@5b7a7f33]" started-at="2018-10-23T05:03:03Z" name="preSubjectContent" finished-at="2018-10-23T05:03:03Z" duration-ms="45" status="PASS">
+        <test-method is-config="true" signature="prePrimeVideo()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeVideo@1a245833]" started-at="2018-10-31T21:01:32Z" name="prePrimeVideo" finished-at="2018-10-31T21:01:32Z" duration-ms="16" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- preSubjectContent -->
-        <test-method signature="verifySubjectContent(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeVideo@5b7a7f33]" started-at="2018-10-23T05:03:03Z" name="verifySubjectContent" data-provider="group2" finished-at="2018-10-23T05:03:39Z" duration-ms="36325" status="PASS">
+        </test-method> <!-- prePrimeVideo -->
+        <test-method signature="playPrimeVideoSchool(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeVideo@1a245833]" started-at="2018-10-31T21:01:32Z" name="playPrimeVideoSchool" data-provider="group2" finished-at="2018-10-31T21:02:09Z" duration-ms="36320" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -93,12 +92,72 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifySubjectContent -->
-        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeVideo@5b7a7f33]" started-at="2018-10-23T05:03:39Z" name="getResult" finished-at="2018-10-23T05:03:39Z" duration-ms="0" status="PASS">
+        </test-method> <!-- playPrimeVideoSchool -->
+        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeVideo@1a245833]" started-at="2018-10-31T21:02:09Z" name="getResult" finished-at="2018-10-31T21:02:10Z" duration-ms="888" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method is-config="true" signature="aftSuite()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeVideo@5b7a7f33]" started-at="2018-10-23T05:03:40Z" name="aftSuite" finished-at="2018-10-23T05:03:40Z" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeVideo@1a245833]" started-at="2018-10-31T21:02:10Z" name="befo" finished-at="2018-10-31T21:02:16Z" duration-ms="6361" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@3a589eed]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- befo -->
+        <test-method is-config="true" signature="prePrimeVideo()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeVideo@1a245833]" started-at="2018-10-31T21:02:16Z" name="prePrimeVideo" finished-at="2018-10-31T21:02:16Z" duration-ms="19" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- prePrimeVideo -->
+        <test-method signature="playPrimeVideoStudent(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeVideo@1a245833]" started-at="2018-10-31T21:02:16Z" name="playPrimeVideoStudent" data-provider="group3" finished-at="2018-10-31T21:02:49Z" duration-ms="32991" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Parent]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- playPrimeVideoStudent -->
+        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeVideo@1a245833]" started-at="2018-10-31T21:02:50Z" name="getResult" finished-at="2018-10-31T21:02:50Z" duration-ms="834" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeVideo@1a245833]" started-at="2018-10-31T21:02:50Z" name="befo" finished-at="2018-10-31T21:02:56Z" duration-ms="5613" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@3a589eed]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- befo -->
+        <test-method is-config="true" signature="prePrimeVideo()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeVideo@1a245833]" started-at="2018-10-31T21:02:56Z" name="prePrimeVideo" finished-at="2018-10-31T21:02:56Z" duration-ms="9" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- prePrimeVideo -->
+        <test-method signature="playPrimeVideoStudent(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeVideo@1a245833]" started-at="2018-10-31T21:02:56Z" name="playPrimeVideoStudent" data-provider="group3" finished-at="2018-10-31T21:03:31Z" duration-ms="34731" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Student]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- playPrimeVideoStudent -->
+        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeVideo@1a245833]" started-at="2018-10-31T21:03:31Z" name="getResult" finished-at="2018-10-31T21:03:32Z" duration-ms="808" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method is-config="true" signature="aftSuite()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeVideo@1a245833]" started-at="2018-10-31T21:03:33Z" name="aftSuite" finished-at="2018-10-31T21:03:33Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- aftSuite -->
@@ -106,4 +165,3 @@
     </test> <!-- PrimeContent -->
   </suite> <!-- Fliplearn Automation Suite -->
 </testng-results>
-

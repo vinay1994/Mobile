@@ -2,6 +2,7 @@ package com.fliplearn.flipapp.pagemodules;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
@@ -24,4 +25,10 @@ public class SelectClassModule
 	{
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
+	
+	public void clickOnClassContent(WebDriver driver, String className) 
+    {
+		driver.findElement(By.xpath("//a[contains(text(),'"+className+"')]")).click();
+	}
 }
+

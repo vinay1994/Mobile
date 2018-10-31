@@ -13,11 +13,9 @@
   		<classes>
 
     		<class name="com.fliplearn.flipapp.testcases.PrimeVideo">
-        		<methods>
-        			<include name="verifySubjectContent" />  
-
-
-
+        		<methods> 
+        			<include name="playPrimeVideoSchool" /> 
+        			<include name="playPrimeVideoStudent" /> 
         		</methods>
         	</class>
         </classes>
