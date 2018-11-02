@@ -45,14 +45,21 @@ public class UserProfile extends Base
 	 * @version 1.1
 	 * @throws InterruptedException 
 	 */
-	@Test(dataProvider = "group1")
+	@Test(dataProvider = "group0")
 	public void verifyUserRole(String role) throws InterruptedException
 	{
-		logMod.Login(role, "Single", "None", "Yes");
-		generic.mouseHoverAndClick(driver, heaMod.profileImg, heaMod.myProfileLnk);
-		Assert.assertEquals(youProMod.getUsernameLabel(), role+" Name");
-		heaMod.clickonHomeBtn();
-		Thread.sleep(3000);
-		Assert.assertEquals(generic.isElementDisplayed(driver, proHomMod.noticeboardTab), true);
+		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
+		
+		if(platform.equals("Web"))
+		{
+			if(!role.equals("Guest"))
+			{
+				generic.mouseHoverAndClick(driver, heaMod.profileImg, heaMod.myProfileLnk);
+				Assert.assertEquals(youProMod.getUsernameLabel(), role+" Name");
+				heaMod.clickonHomeBtn();
+				Thread.sleep(3000);
+				Assert.assertEquals(generic.isElementDisplayed(driver, proHomMod.noticeboardTab), true);
+			}	
+		}
 	}
 }

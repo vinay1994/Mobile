@@ -53,12 +53,12 @@ public class LoginModule extends Base
 	 * @version 1.5
 	 * @throws IOException 
 	 */
-	public  void Login(String role, String profile, String subscription, String mobile) throws InterruptedException
+	public  void Login(String role, String board, String className, String profile, String subscription, String mobile) throws InterruptedException
 	{   
 		if(role!=null) 
 		{
-			String username = aConfig.getProperty(role + "_Username"+"_"+profile+"_"+subscription+"_"+mobile);
-			String password =  aConfig.getProperty(role +"_Password"+"_"+profile+"_"+subscription+"_"+mobile);
+			String username = aConfig.getProperty(role + "_Username"+"_"+board+"_"+className+"_"+profile+"_"+subscription+"_"+mobile);
+			String password =  aConfig.getProperty(role +"_Password"+"_"+board+"_"+className+"_"+profile+"_"+subscription+"_"+mobile);
 		
 			if(eConfig.getProperty("Platform").equals("Android")) 
 			{

@@ -56,7 +56,7 @@ public class VMC extends Base
 		@Test(dataProvider = "group2")
 		public void displayVMCSchool(String role) throws InterruptedException
 		{			
-			logMod.Login(role, "Single", "None", "Yes");
+			logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 			
 			if(platform.equals("Web"))
 				leaMod.clickOnLearnImage();
@@ -64,35 +64,30 @@ public class VMC extends Base
 			assertEquals(generic.isElementDisplayed(driver, leaMod.vmcImg), true);
 		}	
 		
-		@Test
-		public void displayVMCStudent() throws InterruptedException
+		@Test(dataProvider = "group3")
+		public void displayVMCStudent(String role) throws InterruptedException
 		{
-			String role="Student";
 			
-			logMod.Login(role, "Single", "None", "Yes");
-			if(role.equals("Student"))
-			{	
-				youProMod.updateClassAndSection(driver, "Class 12", "A");	
-				leaMod.clickOnLearnImage();
-				assertEquals(generic.isElementDisplayed(driver, leaMod.vmcImg), true);
-				youProMod.updateClassAndSection(driver, "Class 6", "A");	
-			}
+			logMod.Login(role, "CBSE", "12", "Single", "None", "Yes");
+
+			assertEquals(generic.isElementDisplayed(driver, leaMod.vmcImg), true);
+
+//			if(role.equals("Student"))
+//			{	
+//				youProMod.updateClassAndSection(driver, "Class 12", "A");	
+//				leaMod.clickOnLearnImage();
+//				assertEquals(generic.isElementDisplayed(driver, leaMod.vmcImg), true);
+//				youProMod.updateClassAndSection(driver, "Class 6", "A");	
+//			}
 			
 		}
 
-		@Test
-		public void doNotDisplayVMCStudent() throws InterruptedException
+		@Test(dataProvider = "group3")
+		public void doNotDisplayVMCStudent(String role) throws InterruptedException
 		{
-			String role="Student";
-			
-			logMod.Login(role, "Single", "None", "Yes");
-			if(role.equals("Student"))
-			{	
-				youProMod.updateClassAndSection(driver, "Class 6", "A");	
-				leaMod.clickOnLearnImage();
-				assertEquals(generic.isElementDisplayed(driver, leaMod.vmcImg), false);
-				youProMod.updateClassAndSection(driver, "Class 12", "A");	
-
-			}			
+			logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
+		    if(!role.equals("Guest"))
+		    	leaMod.clickOnLearnImage();
+			assertEquals(generic.isElementDisplayed(driver, leaMod.vmcImg), false);			
 		}		
 }

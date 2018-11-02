@@ -66,15 +66,15 @@ public class PrimeSynopsis extends Base
 	@Test(dataProvider="group2")
 	public void verifyRealLifeSchool(String role) throws InterruptedException
 	{
-		logMod.Login(role, "Single", "None", "Yes");
+		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		leaMod.clickOnLearnImage();
 		leaMod.clickOnPrimeImage();
 		        		
 		Thread.sleep(3000);
 		selClaMod.clickOnClassContent(driver, "Class 10");
 		selSubMod.clickOnSubject(driver, role, "Biology");
-		subConMod.clickOnBookContent();
-		subConMod.clickOnBookTopicContent();
+		subConMod.clickOnBookChapter(driver, role, "1. Life Processes");
+		subConMod.clickOnBookTopicContent(driver, role, "Nutrition in Human Beings");
 		Thread.sleep(2000);
 		subConMod.clickOnRealLife();
 		Thread.sleep(3000);
@@ -93,20 +93,32 @@ public class PrimeSynopsis extends Base
 	@Test(dataProvider="group3")
 	public void verifyRealLifeStudent(String role) throws InterruptedException
 	{
-		logMod.Login(role, "Single", "None", "Yes");
-		leaMod.clickOnLearnImage();
+		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
+		
+		if(!role.equals("Guest"))
+	    	leaMod.clickOnLearnImage();
+
 		leaMod.clickOnPrimeImage();
 		        		
 		Thread.sleep(3000);
 
-		selSubMod.clickOnSubject(driver, role, "English");
-
+		selSubMod.clickOnSubject(driver, role, "Social Studies");
 		Thread.sleep(2000);
-		subConMod.clickOnViewAllSample(driver);
-		  
-		subConMod.clickOnRealLife();
-		Thread.sleep(3000);
-	    Assert.assertEquals(synMod.synopsisHeadingStudent.getText(), "Past: Simple Usage");
+		subConMod.clickOnBookChapter(driver, role, "1. What, Where, How and When");
+		
+		subConMod.clickOnBookTopicContent(driver, role, "Where did people live and origin of the word India?");
+		
+		if(role.equals("Parent"))
+		{	
+			Thread.sleep(3000);
+			Assert.assertEquals(subConMod.childAccessMsg.getText(), "Please access the content from your child's account.");
+		}
+		else if(!role.equals("Parent"))
+		{	
+			subConMod.clickOnRealLife();
+			Thread.sleep(3000);
+		    Assert.assertEquals(synMod.synopsisHeading.getText(), "Garo Hills, Indus River");
+		}
 	} 
 	
 	/**
@@ -120,20 +132,21 @@ public class PrimeSynopsis extends Base
 	@Test(dataProvider="group2")
 	public void verifyTopicSynopsisSchool(String role) throws InterruptedException
 	{
-		logMod.Login(role, "Single", "None", "Yes");
+		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		leaMod.clickOnLearnImage();
 		leaMod.clickOnPrimeImage();
 		        		
 		Thread.sleep(3000);
 		selClaMod.clickOnClassContent(driver, "Class 10");
 		selSubMod.clickOnSubject(driver, role, "Biology");
-		subConMod.clickOnBookContent();
-		subConMod.clickOnBookTopicContent();
+		subConMod.clickOnBookChapter(driver, role, "1. Life Processes");
+		subConMod.clickOnBookTopicContent(driver, role, "Nutrition in Human Beings");
 		Thread.sleep(2000);
 		subConMod.clickOnTopicSynopsis();
 		Thread.sleep(3000);
 		
 	    Assert.assertEquals(synMod.synopsisHeading.getText(), "Nutrition In Human Being");
+	
 	}
 	
 	/**
@@ -147,21 +160,32 @@ public class PrimeSynopsis extends Base
 	@Test(dataProvider="group3")
 	public void verifyTopicSynopsisStudent(String role) throws InterruptedException
 	{
-		  logMod.Login(role, "Single", "None", "Yes");
-		  leaMod.clickOnLearnImage();
-		  leaMod.clickOnPrimeImage();
+		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
+		
+		if(!role.equals("Guest"))
+	    	leaMod.clickOnLearnImage();
+
+		leaMod.clickOnPrimeImage();
 		        		
-		 Thread.sleep(3000);
+		Thread.sleep(3000);
 
-		  selSubMod.clickOnSubject(driver, role, "English");
-
-		  Thread.sleep(2000);
-		  subConMod.clickOnViewAllSample(driver);
-		  
-		  subConMod.clickOnTopicSynopsis();
-		  Thread.sleep(3000);
-
-	      Assert.assertEquals(synMod.synopsisHeadingStudent.getText(), "Past: Simple Usage");
+		selSubMod.clickOnSubject(driver, role, "Social Studies");
+		Thread.sleep(2000);
+		subConMod.clickOnBookChapter(driver, role, "1. What, Where, How and When");
+		
+		subConMod.clickOnBookTopicContent(driver, role, "Where did people live and origin of the word India?");
+		
+		if(role.equals("Parent"))
+		{	
+			Thread.sleep(3000);
+			Assert.assertEquals(subConMod.childAccessMsg.getText(), "Please access the content from your child's account.");
+		}
+		else if(!role.equals("Parent"))
+		{	
+			subConMod.clickOnTopicSynopsis();
+			Thread.sleep(3000);
+		    Assert.assertEquals(synMod.synopsisHeading.getText(), "Where Did People Live And Origin Of The Word India..");
+		}
 	} 
 	
 	/**
@@ -175,20 +199,20 @@ public class PrimeSynopsis extends Base
 	@Test(dataProvider="group2")
 	public void verifyMindMapsSchool(String role) throws InterruptedException
 	{
-		logMod.Login(role, "Single", "None", "Yes");
+		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		leaMod.clickOnLearnImage();
 		leaMod.clickOnPrimeImage();
 		        		
 		Thread.sleep(3000);
 		selClaMod.clickOnClassContent(driver, "Class 10");
 		selSubMod.clickOnSubject(driver, role, "Biology");
-		subConMod.clickOnBookContent();
-		subConMod.clickOnBookTopicContent();
+		subConMod.clickOnBookChapter(driver, role, "1. Life Processes");
+		subConMod.clickOnBookTopicContent(driver, role, "Nutrition in Human Beings");
 		Thread.sleep(2000);
-		subConMod.clickOnTopicSynopsis();
+		subConMod.clickOnMindMaps();
 		Thread.sleep(3000);
 		
-	    Assert.assertEquals(synMod.synopsisHeading.getText(), "Nutrition In Human Being");
+	    Assert.assertEquals(synMod.synopsisHeading.getText(), "Nutrition in Human Beings");	
 	}
 	
 	/**
@@ -202,20 +226,31 @@ public class PrimeSynopsis extends Base
 	@Test(dataProvider="group3")
 	public void verifyMindMapsStudent(String role) throws InterruptedException
 	{
-		  logMod.Login(role, "Single", "None", "Yes");
-		  leaMod.clickOnLearnImage();
-		  leaMod.clickOnPrimeImage();
+		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
+		
+		if(!role.equals("Guest"))
+	    	leaMod.clickOnLearnImage();
+
+		leaMod.clickOnPrimeImage();
 		        		
-		 Thread.sleep(3000);
+		Thread.sleep(3000);
 
-		  selSubMod.clickOnSubject(driver, role, "English");
-
-		  Thread.sleep(2000);
-		  subConMod.clickOnViewAllSample(driver);
-		  
-		  subConMod.clickOnMindMaps();
-		  Thread.sleep(3000);
-
-	      Assert.assertEquals(synMod.synopsisHeadingStudent.getText(), "Past- simple usage");
+		selSubMod.clickOnSubject(driver, role, "Social Studies");
+		Thread.sleep(2000);
+		subConMod.clickOnBookChapter(driver, role, "1. What, Where, How and When");
+		
+		subConMod.clickOnBookTopicContent(driver, role, "Where did people live and origin of the word India?");
+		
+		if(role.equals("Parent"))
+		{	
+			Thread.sleep(3000);
+			Assert.assertEquals(subConMod.childAccessMsg.getText(), "Please access the content from your child's account.");
+		}
+		else if(!role.equals("Parent"))
+		{	
+			subConMod.clickOnMindMaps();
+			Thread.sleep(3000);
+		    Assert.assertEquals(synMod.synopsisHeading.getText(), "Where did people live and origin of the word India..");
+		}
 	} 
 }
