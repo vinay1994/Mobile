@@ -29,7 +29,7 @@ public class Event extends Base
 	HeaderModule heaMod;
 	
 	@BeforeMethod
-	public void befAlbum()
+	public void beforeEvent()
 	{
 		logMod = new LoginModule(driver);
 		onbMod = new OnboardingModule(driver);
