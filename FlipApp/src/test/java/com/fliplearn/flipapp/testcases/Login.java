@@ -42,12 +42,15 @@ public class Login extends Base
 	 * @version 1.2
 	 * @throws InterruptedException 
 	 */
-	@Test(dataProvider = "group1")
+	@Test(dataProvider = "group0")
 	public void verifyLogin(String role) throws InterruptedException
 	{
-		logMod.Login(role, "Single", "None", "Yes");
+		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		
 		if(platform.equals("Web"))
-			Assert.assertEquals(generic.isElementDisplayed(driver, myWalMod.myWallTab), true);
+		{
+			if(!role.equals("Guest"))
+				Assert.assertEquals(generic.isElementDisplayed(driver, myWalMod.myWallTab), true);
+		}	
 	}
 }

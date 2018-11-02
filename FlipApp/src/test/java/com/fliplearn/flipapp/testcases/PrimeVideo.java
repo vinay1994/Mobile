@@ -3,6 +3,8 @@ package com.fliplearn.flipapp.testcases;
 import java.io.IOException;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.RemoteWebElement;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import com.fliplearn.flipapp.helper.Base;
@@ -66,14 +68,14 @@ public class PrimeVideo extends Base
 	* @author Jagrati
 	* @since 2018-10-14
 	* @throws InterruptedException 
-	* @version 1.1
+	* @version 1.2
 	* @throws IOException 
 	*/
 
 	@Test(dataProvider ="group2")
 	public void playPrimeVideoSchool(String role) throws IOException, InterruptedException
 	{
-		logMod.Login(role, "Single", "None", "Yes");
+		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 	    leaMod.clickOnLearnImage();
 	    leaMod.clickOnPrimeImage();
 	        		
@@ -81,8 +83,8 @@ public class PrimeVideo extends Base
 
 	    selClaMod.clickOnClassContent(driver, "Class 10");
 	    selSubMod.clickOnSubject(driver, role, "Biology");
-	    subConMod.clickOnBookContent();
-	    subConMod.clickOnBookTopicContent();
+	    subConMod.clickOnBookChapter(driver, role, "1. Life Processes");
+	    subConMod.clickOnBookTopicContent(driver, role, "Nutrition in Human Beings");
 	    vidConMod.clickOnVideoContent(driver, "Digestion");
 	    vidConMod.clickOnVideoContentandverJWPlayer(driver);
 	}
@@ -98,12 +100,29 @@ public class PrimeVideo extends Base
 	@Test(dataProvider ="group3")
 	public void playPrimeVideoStudent(String role) throws IOException, InterruptedException
 	{
-		logMod.Login(role, "Single", "None", "Yes");
-	    leaMod.clickOnLearnImage();
-	    leaMod.clickOnPrimeImage();
+		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
+	    
+		if(!role.equals("Guest"))
+	    	leaMod.clickOnLearnImage();
+	    
+		leaMod.clickOnPrimeImage();
 	        		
-	    selSubMod.clickOnSubject(driver, role, "English");
-	    vidConMod.clickOnVideoContent(driver, "Countable and Uncountable Nouns");
-	    vidConMod.clickOnVideoContentandverJWPlayer(driver);
+	    selSubMod.clickOnSubject(driver, role, "Social Studies");
+	    Thread.sleep(2000);
+	    subConMod.clickOnBookChapter(driver, role, "1. What, Where, How and When");
+	  
+	    
+	    subConMod.clickOnBookTopicContent(driver, role, "Where did people live and origin of the word India?");
+	    
+	    if(role.equals("Parent"))
+	    {	
+	    	Thread.sleep(3000);
+	    	Assert.assertEquals(subConMod.childAccessMsg.getText(), "Please access the content from your child's account.");
+	    }
+	    if(!role.equals("Parent"))
+	    {	
+	    	vidConMod.clickOnVideoContent(driver, "Introduction to Indian History");
+	    	vidConMod.clickOnVideoContentandverJWPlayer(driver);
+	    }	
 	}
 }

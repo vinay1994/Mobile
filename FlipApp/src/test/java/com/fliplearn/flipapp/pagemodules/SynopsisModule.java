@@ -44,7 +44,7 @@ public class SynopsisModule {
 	@FindBy(xpath="//div[@id='demo-html']//h3")
 	public RemoteWebElement synopsisHeading;
 	
-	@FindBy(xpath="//div[@id='demo-html']//h4")
+	@FindBy(xpath="//div[@id='demo-html']//h3")
 	public RemoteWebElement synopsisHeadingStudent;
 
 	
