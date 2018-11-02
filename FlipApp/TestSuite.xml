@@ -12,10 +12,9 @@
 	<test name="PrimeContent" enabled="true">
   		<classes>
 
-    		<class name="com.fliplearn.flipapp.testcases.PrimeVideo">
+    		<class name="com.fliplearn.flipapp.testcases.Event">
         		<methods> 
-        			<include name="playPrimeVideoSchool" /> 
-        			<include name="playPrimeVideoStudent" /> 
+        			<include name="parentCanViewHomework" />
         		</methods>
         	</class>
         </classes>

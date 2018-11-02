@@ -31,7 +31,7 @@ public class VideoUtil extends Base
 	{
 		String role = "Admin";
 		
-		logMod.Login(role, "Single", "None", "Yes");
+		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		leaMod.clickOnLearnImage();
 		leaMod.clickOnPrimeImage();
 	

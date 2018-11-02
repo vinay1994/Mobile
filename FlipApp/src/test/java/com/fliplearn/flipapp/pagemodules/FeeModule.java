@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 import com.fliplearn.flipapp.helper.Base;
 import com.fliplearn.flipapp.helper.GenericFunctions;
@@ -20,7 +21,7 @@ import io.appium.java_client.pagefactory.iOSFindBy;
 public class FeeModule extends Base {
 	GenericFunctions generic=new GenericFunctions();
 	
-	@FindBy(css="a[ui-sref='feePayment']")
+	@FindBy(xpath="//li/a[text()='Pay Fee']")
 	@AndroidFindBy(id="") 
 	@iOSFindBy(id="")
 	public  RemoteWebElement feeModuleBtn; 
@@ -151,10 +152,9 @@ public class FeeModule extends Base {
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 	}
 	
-	public void clickOnPayfeeMod() {
-	/*	JavascriptExecutor jse = (JavascriptExecutor) driver;
-		jse.executeScript("document.getElementById('btn-next').focus();");
-		jse.executeScript("arguments[0].click();", feeModuleBtn);*/
+	public void clickOnPayfeeMod() throws InterruptedException 
+	{
+		Thread.sleep(2000);
 		feeModuleBtn.click();
 	}
 
@@ -227,7 +227,7 @@ public class FeeModule extends Base {
 	public void selectNetbanking() {
 		NetBnkingRd.click();
 	}
-	public void selectUpi() {
+	public void selectUPI() {
 		upiRd.click();
 	}
 	public void selectVisa() {
@@ -257,4 +257,50 @@ public class FeeModule extends Base {
 	}
 	
 	
+	public void selectCardType(String cardType)
+	{
+		switch(cardType)
+		{
+			case "Debit Card": 
+				selectDebitCard();
+				break;
+			case "Net Banking": 
+				selectNetbanking();	
+				break;
+			case "UPI": 
+				selectUPI();	
+				break;	
+			case "VISA": 
+				creditCardRd.click();
+				selectVisa();	
+				break;	
+			case "Amex":
+				creditCardRd.click();
+				selectAmex();
+				break;	
+			default:
+				break;
+		}
+	}
+	
+	public void payFee(String role, String cardType) throws InterruptedException
+	{
+		
+		if(role.equals("Guest") || role.equals("Logout"))
+			clickOnPayfeeMod();
+		else
+			clickOnPayfeeModForSchool();
+		
+		selectSchoolToPayFee("Qa dashboard testing");
+		enterAdmission("1994");
+		clickOnProceedbtn();
+		Assert.assertEquals(getTotalFeeOnPopUp(),getActualFeeOnPopUp());
+		fillAddress();
+		selectCardType(cardType);
+		Assert.assertEquals(getInternetPlusTotalOnAddressPage(), gettotalFeeOnAddressPage());
+		Assert.assertEquals(gettotalFeeOnAddressPage(),getTotalFeeOnPayBtn());
+		clickOnPayBtn();
+		Assert.assertEquals(getTotalFeeOnPayBtn(), getTotalFeeOnPaymentGat());
+		clickOncancelBtn();
+	}
 }

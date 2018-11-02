@@ -35,7 +35,7 @@ public class SelectSubjectModule
 	
 	public void clickOnSubject(WebDriver driver, String role, String subjectName)
     {
-		if(role.equals("Student")||role.equals("Parent"))
+		if(role.equals("Student")||role.equals("Parent")||role.equals("Guest"))
 			driver.findElement(By.xpath("//h3[text()='"+subjectName+"']")).click();
 		else
 			driver.findElement(By.xpath("//div[@class='panel-collapse collapse in']//h3[text()='"+subjectName+"']")).click();

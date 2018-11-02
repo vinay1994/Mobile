@@ -1,57 +1,43 @@
-
-
 package com.fliplearn.flipapp.testcases;
 
-
 import java.io.IOException;
-
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 import com.fliplearn.flipapp.helper.Base;
 import com.fliplearn.flipapp.pagemodules.FeeModule;
 import com.fliplearn.flipapp.pagemodules.LoginModule;
 
-public class Fee extends Base {
+public class Fee extends Base 
+{
 	FeeModule feeMod;
 	LoginModule logMod;
 	Base base;
 	String schoolName;
+
 	@BeforeMethod
-	public void beforMethodFee() {
+	public void beforMethodFee() 
+	{
 		feeMod=new FeeModule(driver);
 		logMod = new LoginModule(driver);
 		base=new Base();
-		
 	}
 	
 	/**
-	 * Verify fee  login Student And Parent by selecting debit card on Web, Android and iOS
+	 * Verify fee login Student And Parent by selecting debit card on Web, Android and iOS
 	 * @author vinay kumar 
 	 * @since 2018-09-30
-	 * @version 1.2
+	 * @version 1.3
 	 * @throws Throwable 
 	 */
 	
 	@Test(dataProvider="group3")
-	public void payFeeLoginStudentParentSelectedByDebitCard(String role) throws IOException, InterruptedException {
-		base.readData(platform, "Guest", schoolName);
-		logMod.Login(role, "Single", "None", "Yes");
-		feeMod.clickOnPayfeeModForSchool();
-		feeMod.selectSchoolToPayFee("Qa dashboard testing");
-		feeMod.enterAdmission("1994");
-		feeMod.clickOnProceedbtn();
-		Assert.assertEquals(feeMod.getTotalFeeOnPopUp(),feeMod.getActualFeeOnPopUp());
-		feeMod.fillAddress();
-		feeMod.selectDebitCard();
-		Assert.assertEquals(feeMod.getInternetPlusTotalOnAddressPage(), feeMod.gettotalFeeOnAddressPage());
-		Assert.assertEquals(feeMod.gettotalFeeOnAddressPage(),feeMod.getTotalFeeOnPayBtn());
-		feeMod.clickOnPayBtn();
-		Assert.assertEquals(feeMod.getTotalFeeOnPayBtn(),feeMod.getTotalFeeOnPaymentGat());
-		feeMod.clickOncancelBtn();
-
+	public void payFeeLoginDebitCard(String role) throws IOException, InterruptedException 
+	{
+		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
+		feeMod.payFee(role, "Debit Card");
 	}
+	
 	/**
 	 * Verify fee without login  by selecting debit card on Web, Android and iOS
 	 * @author vinay kumar 
@@ -61,20 +47,10 @@ public class Fee extends Base {
 	 */
 	
 	@Test
-	public void payFeeWithoutLoginSelectedByDebitCard() throws IOException, InterruptedException {
-		base.readData(platform, "Guest", schoolName);
-		feeMod.clickOnPayfeeMod();
-		feeMod.selectSchoolToPayFee("Qa dashboard testing");
-		feeMod.enterAdmission("1994");
-		feeMod.clickOnProceedbtn();
-		Assert.assertEquals(feeMod.getTotalFeeOnPopUp(),feeMod.getActualFeeOnPopUp());
-		feeMod.fillAddress();
-		feeMod.selectDebitCard();
-		Assert.assertEquals(feeMod.getInternetPlusTotalOnAddressPage(), feeMod.gettotalFeeOnAddressPage());
-		Assert.assertEquals(feeMod.gettotalFeeOnAddressPage(),feeMod.getTotalFeeOnPayBtn());
-		feeMod.clickOnPayBtn();
-		Assert.assertEquals(feeMod.getTotalFeeOnPayBtn(),feeMod.getTotalFeeOnPaymentGat());
-		feeMod.clickOncancelBtn();
+	public void payFeeLogoutDebitCard() throws IOException, InterruptedException 
+	{
+		String role = "Logout";
+		feeMod.payFee(role, "Debit Card");
 	}
 	
 	
@@ -87,22 +63,10 @@ public class Fee extends Base {
 	 */
 	
 	@Test(dataProvider="group3")
-	public void payFeeLoginStudentParentSelectedByNetBanking(String role) throws IOException, InterruptedException {
-		base.readData(platform, "Guest", schoolName);
-		logMod.Login(role, "Single", "None", "Yes");
-		feeMod.clickOnPayfeeModForSchool();
-		feeMod.selectSchoolToPayFee("Qa dashboard testing");
-		feeMod.enterAdmission("1994");
-		feeMod.clickOnProceedbtn();
-		Assert.assertEquals(feeMod.getTotalFeeOnPopUp(),feeMod.getActualFeeOnPopUp());
-		feeMod.fillAddress();
-		feeMod.selectNetbanking();
-		Assert.assertEquals(feeMod.getInternetPlusTotalOnAddressPage(), feeMod.gettotalFeeOnAddressPage());
-		Assert.assertEquals(feeMod.gettotalFeeOnAddressPage(),feeMod.getTotalFeeOnPayBtn());
-		feeMod.clickOnPayBtn();
-		Assert.assertEquals(feeMod.getTotalFeeOnPayBtn(),feeMod.getTotalFeeOnPaymentGat());
-		feeMod.clickOncancelBtn();
-
+	public void payFeeLoginNetBanking(String role) throws IOException, InterruptedException 
+	{
+		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
+		feeMod.payFee(role, "Net Banking");
 	}
 	/**
 	 * Verify fee without login by selecting net banking  on Web, Android and iOS
@@ -113,49 +77,27 @@ public class Fee extends Base {
 	 */
 	
 	@Test
-	public void payFeeWithoutLoginSelectedByNetBnking() throws IOException, InterruptedException {
-		base.readData(platform, "Guest", schoolName);
-		feeMod.clickOnPayfeeMod();
-		feeMod.selectSchoolToPayFee("Qa dashboard testing");
-		feeMod.enterAdmission("1994");
-		feeMod.clickOnProceedbtn();
-		Assert.assertEquals(feeMod.getTotalFeeOnPopUp(),feeMod.getActualFeeOnPopUp());
-		feeMod.fillAddress();
-		feeMod.selectNetbanking();
-		Assert.assertEquals(feeMod.getInternetPlusTotalOnAddressPage(), feeMod.gettotalFeeOnAddressPage());
-		Assert.assertEquals(feeMod.gettotalFeeOnAddressPage(),feeMod.getTotalFeeOnPayBtn());
-		feeMod.clickOnPayBtn();
-		Assert.assertEquals(feeMod.getTotalFeeOnPayBtn(),feeMod.getTotalFeeOnPaymentGat());
-		feeMod.clickOncancelBtn();
-
-	}
+	public void payFeeLogoutNetBanking() throws IOException, InterruptedException 
+	{
+		String role = "Logout";
+		feeMod.payFee(role, "Debit Card");
+	}		
 	
 	
 	/**
 	 * Verify fee  login with student and parent by selecting upi  on Web, Android and iOS
 	 * @author vinay kumar 
 	 * @since 2018-09-30
-	 * @version 1.2
+	 * @version 1.3
 	 * @throws Throwable 
 	 */
 	@Test(dataProvider="group3")
-	public void payFeeLoginStudentParentSelectedByUpi(String role) throws IOException, InterruptedException {
-		base.readData(platform, "Guest", schoolName);
-		logMod.Login(role, "Single", "None", "Yes");
-		feeMod.clickOnPayfeeModForSchool();
-		feeMod.selectSchoolToPayFee("Qa dashboard testing");
-		feeMod.enterAdmission("1994");
-		feeMod.clickOnProceedbtn();
-		Assert.assertEquals(feeMod.getTotalFeeOnPopUp(),feeMod.getActualFeeOnPopUp());
-		feeMod.fillAddress();
-		feeMod.selectUpi();
-		Assert.assertEquals(feeMod.getInternetPlusTotalOnAddressPage(), feeMod.gettotalFeeOnAddressPage());
-		Assert.assertEquals(feeMod.gettotalFeeOnAddressPage(),feeMod.getTotalFeeOnPayBtn());
-		feeMod.clickOnPayBtn();
-		Assert.assertEquals(feeMod.getTotalFeeOnPayBtn(),feeMod.getTotalFeeOnPaymentGat());
-		feeMod.clickOncancelBtn();
-
+	public void payFeeLoginUPI(String role) throws IOException, InterruptedException
+	{
+		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
+		feeMod.payFee(role, "UPI");
 	}
+	
 	/**
 	 * Verify fee without login by selecting upi  on Web, Android and iOS
 	 * @author vinay kumar 
@@ -164,51 +106,27 @@ public class Fee extends Base {
 	 * @throws Throwable 
 	 */
 	@Test
-	public void payFeeWithoutLoginSelectedByUpi() throws IOException, InterruptedException {
-		base.readData(platform, "Guest", schoolName);
-		feeMod.clickOnPayfeeMod();
-		feeMod.selectSchoolToPayFee("Qa dashboard testing");
-		feeMod.enterAdmission("1994");
-		feeMod.clickOnProceedbtn();
-		Assert.assertEquals(feeMod.getTotalFeeOnPopUp(),feeMod.getActualFeeOnPopUp());
-		feeMod.fillAddress();
-		feeMod.selectUpi();
-		Assert.assertEquals(feeMod.getInternetPlusTotalOnAddressPage(), feeMod.gettotalFeeOnAddressPage());
-		Assert.assertEquals(feeMod.gettotalFeeOnAddressPage(),feeMod.getTotalFeeOnPayBtn());
-		feeMod.clickOnPayBtn();
-		Assert.assertEquals(feeMod.getTotalFeeOnPayBtn(),feeMod.getTotalFeeOnPaymentGat());
-		feeMod.clickOncancelBtn();
-
+	public void payFeeLogoutUPI() throws IOException, InterruptedException 
+	{
+		String role = "Logout";
+		feeMod.payFee(role, "UPI");
 	}
-	
-	
 	
 	/**
 	 * Verify fee  login with student parent by selecting visa/master card on Web, Android and iOS
 	 * @author vinay kumar 
 	 * @since 2018-09-30
-	 * @version 1.2
+	 * @version 1.3
 	 * @throws Throwable 
 	 */
 	
 	@Test(dataProvider="group3")
-	public void payFeeLoginWithStudentParentSelectedByVisa(String role) throws IOException, InterruptedException {
-		base.readData(platform, "Guest", schoolName);
-		logMod.Login(role, "Single", "None", "Yes");
-		feeMod.clickOnPayfeeModForSchool();
-		feeMod.selectSchoolToPayFee("Qa dashboard testing");
-		feeMod.enterAdmission("1994");
-		feeMod.clickOnProceedbtn();
-		Assert.assertEquals(feeMod.getTotalFeeOnPopUp(),feeMod.getActualFeeOnPopUp());
-		feeMod.fillAddress();
-		feeMod.selectVisa();
-		Assert.assertEquals(feeMod.getInternetPlusTotalOnAddressPage(), feeMod.gettotalFeeOnAddressPage());
-		Assert.assertEquals(feeMod.gettotalFeeOnAddressPage(),feeMod.getTotalFeeOnPayBtn());
-		feeMod.clickOnPayBtn();
-		Assert.assertEquals(feeMod.getTotalFeeOnPayBtn(),feeMod.getTotalFeeOnPaymentGat());
-		feeMod.clickOncancelBtn();
-
+	public void payFeeLoginVISA(String role) throws IOException, InterruptedException 
+	{
+		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
+		feeMod.payFee(role, "VISA");
 	}
+	
 	/**
 	 * Verify fee without login by selecting visa/master card on Web, Android and iOS
 	 * @author vinay kumar 
@@ -218,75 +136,12 @@ public class Fee extends Base {
 	 */
 	
 	@Test
-	public void payFeeWithoutLoginSelectedByVisa() throws IOException, InterruptedException {
-		base.readData(platform, "Guest", schoolName);
-		feeMod.clickOnPayfeeMod();
-		feeMod.selectSchoolToPayFee("Qa dashboard testing");
-		feeMod.enterAdmission("1994");
-		feeMod.clickOnProceedbtn();
-		Assert.assertEquals(feeMod.getTotalFeeOnPopUp(),feeMod.getActualFeeOnPopUp());
-		feeMod.fillAddress();
-		feeMod.selectVisa();
-		Assert.assertEquals(feeMod.getInternetPlusTotalOnAddressPage(), feeMod.gettotalFeeOnAddressPage());
-		Assert.assertEquals(feeMod.gettotalFeeOnAddressPage(),feeMod.getTotalFeeOnPayBtn());
-		feeMod.clickOnPayBtn();
-		Assert.assertEquals(feeMod.getTotalFeeOnPayBtn(),feeMod.getTotalFeeOnPaymentGat());
-		feeMod.clickOncancelBtn();
-
+	public void payFeeLogoutVISA() throws IOException, InterruptedException 
+	{
+		String role = "Logout";
+		feeMod.payFee(role, "VISA");
 	}
 	
-	
-	/**
-	 * Verify fee login with Student parent by selecting visa/master card on Web, Android and iOS
-	 * @author vinay kumar 
-	 * @since 2018-09-30
-	 * @version 1.2
-	 * @throws Throwable 
-	 */
-	
-	@Test(dataProvider="group3")
-	public void payFeeLoginWithSelectedByVisa(String role) throws IOException, InterruptedException {
-		base.readData(platform, "Guest", schoolName);
-		logMod.Login(role, "Single", "None", "Yes");
-		feeMod.clickOnPayfeeModForSchool();
-		feeMod.selectSchoolToPayFee("Qa dashboard testing");
-		feeMod.enterAdmission("1994");
-		feeMod.clickOnProceedbtn();
-		Assert.assertEquals(feeMod.getTotalFeeOnPopUp(),feeMod.getActualFeeOnPopUp());
-		feeMod.fillAddress();
-		feeMod.selectVisa();
-		Assert.assertEquals(feeMod.getInternetPlusTotalOnAddressPage(), feeMod.gettotalFeeOnAddressPage());
-		Assert.assertEquals(feeMod.gettotalFeeOnAddressPage(),feeMod.getTotalFeeOnPayBtn());
-		feeMod.clickOnPayBtn();
-		Assert.assertEquals(feeMod.getTotalFeeOnPayBtn(),feeMod.getTotalFeeOnPaymentGat());
-		feeMod.clickOncancelBtn();
-
-	}
-	/**
-	 * Verify fee without login by selecting Amex card on Web, Android and iOS
-	 * @author vinay kumar 
-	 * @since 2018-09-30
-	 * @version 1.2
-	 * @throws Throwable 
-	 */
-	
-	@Test
-	public void payFeeWithoutLoginSelectedByAmex() throws IOException, InterruptedException {
-		base.readData(platform, "Guest", schoolName);
-		feeMod.clickOnPayfeeMod();
-		feeMod.selectSchoolToPayFee("Qa dashboard testing");
-		feeMod.enterAdmission("1994");
-		feeMod.clickOnProceedbtn();
-		Assert.assertEquals(feeMod.getTotalFeeOnPopUp(),feeMod.getActualFeeOnPopUp());
-		feeMod.fillAddress();
-		feeMod.selectAmex();
-		Assert.assertEquals(feeMod.getInternetPlusTotalOnAddressPage(), feeMod.gettotalFeeOnAddressPage());
-		Assert.assertEquals(feeMod.gettotalFeeOnAddressPage(),feeMod.getTotalFeeOnPayBtn());
-		feeMod.clickOnPayBtn();
-		Assert.assertEquals(feeMod.getTotalFeeOnPayBtn(),feeMod.getTotalFeeOnPaymentGat());
-		feeMod.clickOncancelBtn();
-
-	}
 	
 	/**
 	 * Verify fee pay fee Login With Student amd parent  Selected By Amex login by selecting Amex card on Web, Android and iOS
@@ -297,160 +152,26 @@ public class Fee extends Base {
 	 */
 	
 	@Test(dataProvider = "group3")
-	public void payLoginWithStudentSelectedByAmex(String role) throws IOException, InterruptedException {
-		base.readData(platform, "Guest", schoolName);
-		logMod.Login(role, "Single", "None", "Yes");
-		feeMod.clickOnPayfeeModForSchool();
-		feeMod.selectSchoolToPayFee("Qa dashboard testing");
-		feeMod.enterAdmission("1994");
-		feeMod.clickOnProceedbtn();
-		Assert.assertEquals(feeMod.getTotalFeeOnPopUp(),feeMod.getActualFeeOnPopUp());
-		feeMod.fillAddress();
-		feeMod.selectAmex();
-		Assert.assertEquals(feeMod.getInternetPlusTotalOnAddressPage(), feeMod.gettotalFeeOnAddressPage());
-		Assert.assertEquals(feeMod.gettotalFeeOnAddressPage(),feeMod.getTotalFeeOnPayBtn());
-		feeMod.clickOnPayBtn();
-		Assert.assertEquals(feeMod.getTotalFeeOnPayBtn(),feeMod.getTotalFeeOnPaymentGat());
-		feeMod.clickOncancelBtn();
-
+	public void payFeeLoginAmex(String role) throws IOException, InterruptedException 
+	{
+		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
+		feeMod.payFee(role, "Amex");
 	}
-	
+
 	
 	/**
-	 * Verify fee  login with guest by selecting debit card on Web, Android and iOS
+	 * Verify fee without login by selecting Amex card on Web, Android and iOS
 	 * @author vinay kumar 
 	 * @since 2018-09-30
-	 * @version 1.2
+	 * @version 1.3
 	 * @throws Throwable 
 	 */
-
-	@Test(dataProvider="group4")
-	public void payFeeLoginWithGuestSelectedByAmex(String role) throws IOException, InterruptedException {
-		base.readData(platform, "Guest", schoolName);
-		logMod.Login(role, "Single", "None", "Yes");
-		feeMod.clickOnPayfeeMod();
-		feeMod.selectSchoolToPayFee("Qa dashboard testing");
-		feeMod.enterAdmission("1994");
-		feeMod.clickOnProceedbtn();
-		Assert.assertEquals(feeMod.getTotalFeeOnPopUp(),feeMod.getActualFeeOnPopUp());
-		feeMod.fillAddress();
-		feeMod.selectAmex();
-		Assert.assertEquals(feeMod.getInternetPlusTotalOnAddressPage(), feeMod.gettotalFeeOnAddressPage());
-		Assert.assertEquals(feeMod.gettotalFeeOnAddressPage(),feeMod.getTotalFeeOnPayBtn());
-		feeMod.clickOnPayBtn();
-		Assert.assertEquals(feeMod.getTotalFeeOnPayBtn(),feeMod.getTotalFeeOnPaymentGat());
-		feeMod.clickOncancelBtn();
-
-	}
-	/**
-	 * Verify fee  login with guest by selecting debit card on Web, Android and iOS
-	 * @author vinay kumar 
-	 * @since 2018-09-30
-	 * @version 1.2
-	 * @throws Throwable 
-	 */
-
-	@Test(dataProvider="group4")
-	public void payFeeLoginWithGuestSelectedByVisa(String role) throws IOException, InterruptedException {
-		base.readData(platform, "Guest", schoolName);
-		logMod.Login(role, "Single", "None", "Yes");
-		feeMod.clickOnPayfeeMod();
-		feeMod.selectSchoolToPayFee("Qa dashboard testing");
-		feeMod.enterAdmission("1994");
-		feeMod.clickOnProceedbtn();
-		Assert.assertEquals(feeMod.getTotalFeeOnPopUp(),feeMod.getActualFeeOnPopUp());
-		feeMod.fillAddress();
-		feeMod.selectVisa();
-		Assert.assertEquals(feeMod.getInternetPlusTotalOnAddressPage(), feeMod.gettotalFeeOnAddressPage());
-		Assert.assertEquals(feeMod.gettotalFeeOnAddressPage(),feeMod.getTotalFeeOnPayBtn());
-		feeMod.clickOnPayBtn();
-		Assert.assertEquals(feeMod.getTotalFeeOnPayBtn(),feeMod.getTotalFeeOnPaymentGat());
-		feeMod.clickOncancelBtn();
-
-	}
-	/**
-	 * Verify fee  login with guest by selecting debit card on Web, Android and iOS
-	 * @author vinay kumar 
-	 * @since 2018-09-30
-	 * @version 1.2
-	 * @throws Throwable 
-	 */
-
-	@Test(dataProvider="group4")
-	public void payFeeLoginWithGuestSelectedByUpi(String role) throws IOException, InterruptedException {
-		base.readData(platform, "Guest", schoolName);
-		logMod.Login(role, "Single", "None", "Yes");
-		feeMod.clickOnPayfeeMod();
-		feeMod.selectSchoolToPayFee("Qa dashboard testing");
-		feeMod.enterAdmission("1994");
-		feeMod.clickOnProceedbtn();
-		Assert.assertEquals(feeMod.getTotalFeeOnPopUp(),feeMod.getActualFeeOnPopUp());
-		feeMod.fillAddress();
-		feeMod.selectUpi();
-		Assert.assertEquals(feeMod.getInternetPlusTotalOnAddressPage(), feeMod.gettotalFeeOnAddressPage());
-		Assert.assertEquals(feeMod.gettotalFeeOnAddressPage(),feeMod.getTotalFeeOnPayBtn());
-		feeMod.clickOnPayBtn();
-		Assert.assertEquals(feeMod.getTotalFeeOnPayBtn(),feeMod.getTotalFeeOnPaymentGat());
-		feeMod.clickOncancelBtn();
-
-	}
 	
-
-
-	/**
-	 * Verify fee  login with guest by selecting debit card on Web, Android and iOS
-	 * @author vinay kumar 
-	 * @since 2018-09-30
-	 * @version 1.2
-	 * @throws Throwable 
-	 */
-
-	@Test(dataProvider="group4")
-	public void payFeeLoginWithGuestSelectedByNetBanking(String role) throws IOException, InterruptedException {
-		base.readData(platform, "Guest", schoolName);
-		logMod.Login(role, "Single", "None", "Yes");
-		feeMod.clickOnPayfeeMod();
-		feeMod.selectSchoolToPayFee("Qa dashboard testing");
-		feeMod.enterAdmission("1994");
-		feeMod.clickOnProceedbtn();
-		Assert.assertEquals(feeMod.getTotalFeeOnPopUp(),feeMod.getActualFeeOnPopUp());
-		feeMod.fillAddress();
-		feeMod.selectNetbanking();
-		Assert.assertEquals(feeMod.getInternetPlusTotalOnAddressPage(), feeMod.gettotalFeeOnAddressPage());
-		Assert.assertEquals(feeMod.gettotalFeeOnAddressPage(),feeMod.getTotalFeeOnPayBtn());
-		feeMod.clickOnPayBtn();
-		Assert.assertEquals(feeMod.getTotalFeeOnPayBtn(),feeMod.getTotalFeeOnPaymentGat());
-		feeMod.clickOncancelBtn();
-
-	}
-	
-	/**
-	 * Verify fee  login with guest by selecting debit card on Web, Android and iOS
-	 * @author vinay kumar 
-	 * @since 2018-09-30
-	 * @version 1.2
-	 * @throws Throwable 
-	 */
-
-	@Test(dataProvider="group4")
-	public void payFeeLoginWithGuestSelectedByDebitCard(String role) throws IOException, InterruptedException {
-		base.readData(platform, "Guest", schoolName);
-		logMod.Login(role, "Single", "None", "Yes");
-		feeMod.clickOnPayfeeMod();
-		feeMod.selectSchoolToPayFee("Qa dashboard testing");
-		feeMod.enterAdmission("1994");
-		feeMod.clickOnProceedbtn();
-		Assert.assertEquals(feeMod.getTotalFeeOnPopUp(),feeMod.getActualFeeOnPopUp());
-		feeMod.fillAddress();
-		feeMod.selectDebitCard();
-		Assert.assertEquals(feeMod.getInternetPlusTotalOnAddressPage(), feeMod.gettotalFeeOnAddressPage());
-		Assert.assertEquals(feeMod.gettotalFeeOnAddressPage(),feeMod.getTotalFeeOnPayBtn());
-		feeMod.clickOnPayBtn();
-		Assert.assertEquals(feeMod.getTotalFeeOnPayBtn(),feeMod.getTotalFeeOnPaymentGat());
-		feeMod.clickOncancelBtn();
-
-	}
-	
-	
+	@Test
+	public void payFeeLogoutAmex() throws IOException, InterruptedException 
+	{
+		String role = "Logout";
+		feeMod.payFee(role, "Amex");
+	}	
 }
 

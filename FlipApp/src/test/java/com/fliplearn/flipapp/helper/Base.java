@@ -341,6 +341,15 @@ public class Base implements ITestListener
 	}
 	
 
+	@DataProvider(name = "group0")
+	public static Object[] group0() 
+	{
+		  return new Object[][]
+		  { 
+			  { "Admin" }, { "Principal" }, { "Teacher" }, { "Parent" }, { "Student" }, { "Guest" }
+		  }; 
+	}
+	
 	@DataProvider(name = "group1")
 	public static Object[] group1() 
 	{
@@ -364,15 +373,8 @@ public class Base implements ITestListener
 	{
 		  return new Object[][]
 		  { 
-			  { "Parent" }, { "Student" }
+			  { "Parent" }, { "Student" }, { "Guest" }
 		  }; 
 	}
-	@DataProvider(name = "group4")
-	public static Object[] group4() 
-	{
-		  return new Object[][]
-		  { 
-			  { "Guest" }
-		  }; 
-	}
+
 }

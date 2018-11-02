@@ -54,6 +54,9 @@ public class SubjectContentModule
 	@iOSFindBy(id="")
 	public RemoteWebElement mindMaps;
 
+	@FindBy(xpath="(//div[@class='modal-body head_bottom'])[4]//h4")
+	public RemoteWebElement childAccessMsg;
+	
 	public SubjectContentModule(WebDriver driver)
 	{
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
@@ -67,13 +70,13 @@ public class SubjectContentModule
         	 cliOnSubCon.click();
         	 
          }
-         public void clickOnBookContent() {
-        	 
-        	 cliOnBook.click();
-        	 
+         public void clickOnBookChapter(WebDriver driver, String role, String chapterName) 
+         {	 
+        	 driver.findElement(By.xpath("//a[text()='"+chapterName+"']")).click();      
          }
-         public void clickOnBookTopicContent() {
-        	 cliOnBookTopCon.click();
+         
+         public void clickOnBookTopicContent(WebDriver driver, String role, String topicName) {
+        	 driver.findElement(By.xpath("//li[text()='"+topicName+"']")).click(); 
          }
 
          public void clickOnVideoContent() {
