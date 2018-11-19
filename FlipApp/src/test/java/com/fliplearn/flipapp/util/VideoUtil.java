@@ -10,6 +10,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.Status;
 import com.fliplearn.flipapp.helper.Base;
 import com.fliplearn.flipapp.pagemodules.LearnModule;
 import com.fliplearn.flipapp.pagemodules.LoginModule;
@@ -35,58 +36,96 @@ public class VideoUtil extends Base
 		leaMod.clickOnLearnImage();
 		leaMod.clickOnPrimeImage();
 	
+		
 		List<WebElement> className = driver.findElements(By.xpath("//div[@class='panel-heading']//a"));
 		
 		  //elementName.size()
-		  for (int i = 1; i < 2; i++) 
+		int count = 0; 
+		
+		for (int cla = 6; cla < 7; cla++) 
 		  {
-	            System.out.println("Class Name:" + className.get(i).getText());
+	            System.out.println("Class Name:" + className.get(cla).getText());
 	            
-	            className.get(i).click();
-	            String subjectPath = "(//div[@id='subjectsList"+i+"']/div/div/div/div/div)["+(i+1)+"]"; 
+	            className.get(cla).click();
+	            String subjectPath = "//div[@id='subjectsList"+cla+"']/div/div/div/div/div"; 
 	            System.out.println("Subject path is:"+subjectPath);
 	    		
 	            List<WebElement> subjectName = driver.findElements(By.xpath(subjectPath));
-	    		for (int j = 0; j < 1; j++) 
-	  		  	{
-	    			subjectName.get(j).click();
+	          
+	    		for (int sub = 0; sub < subjectName.size(); sub++) 
+	    		{
+	    			Thread.sleep(3000);
+		            List<WebElement> subjectName1 = driver.findElements(By.xpath(subjectPath));
+	    			System.out.println("Number of subjects are:"+subjectName.size());
+	    			subjectName1.get(sub).click();
 	    		
 	    			String contentPath = "(//a[@class='collapsed ng-binding tab-closed'])";
 		            System.out.println("Content path is:"+contentPath);
 
 		    		List<WebElement> chapterContent = driver.findElements(By.xpath(contentPath));	
-		    		for (int k = 0; k < chapterContent.size(); k++) 
+		    		for (int chap = 0; chap < chapterContent.size(); chap++) 
 		  		  	{
 		    	   		List<WebElement> chapterContent0 = driver.findElements(By.xpath(contentPath));
 		    			System.out.println("Size of chapter content list is:"+chapterContent.size());
-		    			chapterContent0.get(k).click();
+		    			chapterContent0.get(chap).click();
 			    		List<WebElement> listContent = driver.findElements(By.xpath("//div[@id='collapseOne']//div[@class='col-sm-12 ng-scope']"));	
-		    			chapterContent0.get(k).click();
+		    			chapterContent0.get(chap).click();
 
 			    		for (int l = 0; l < listContent.size(); l++) 
 			  		  	{
-				    		List<WebElement> chapterContent1 = driver.findElements(By.xpath(contentPath));	
-			    			chapterContent1.get(k).click();
-				    		List<WebElement> listContent1 = driver.findElements(By.xpath("//div[@id='collapseOne']//div[@class='col-sm-12 ng-scope']"));	
-
-			    			System.out.println("Value of K:"+k);
-			    	        JavascriptExecutor js = (JavascriptExecutor) driver;
-			    	       // ((JavascriptExecutor)driver).executeScript("window.scrollBy(200,200)");
+				    		//Getting chapter again to avoid stale element exception
+			    			List<WebElement> chapterContent1 = driver.findElements(By.xpath(contentPath));	
+			    			
+			    			//Click on nth chapter content
+			    			chapterContent1.get(chap).click();
+				    		
+			    			//Getting list content again to avoid stale element exception
+			    			List<WebElement> listContent1 = driver.findElements(By.xpath("//div[@id='collapseOne']//div[@class='col-sm-12 ng-scope']"));	
 			    	        Thread.sleep(3000);
+			    	        
+			    	        //Click on nth topic
 			    			listContent1.get(l).click();
-			    			System.out.println("Value of L:"+l);
-				    		driver.findElement(By.xpath("//div[@class='row learnResourcesInner']//h6[text()='Animation']")).click();
-				    		Thread.sleep(5000);
-				    		driver.findElement(By.xpath("(//div[@class='modal-content']//button[@class='close'])[2]")).click();
-				    		driver.navigate().back();
-				    		Thread.sleep(3000);
-			  		  	}	
-			    	
-		  		  	}
-	  		  	}
-	      }
-
+			    			
+			    			List<WebElement> videoList = driver.findElements(By.xpath("//div[@class='row learnResourcesInner']//h6[text()='Animation']"));
+			    			
+			    			if(videoList.size() > 0)
+			    			{	
+			    				for(int v = 0; v < 1; v++)
+			    				{	
+			    					System.out.println("Size of video list:"+videoList.size());
+			    					videoList.get(v).click();
+				    		
+			    					//Wait for seconds after clicking on Animation
+			    					Thread.sleep(8000);
+				    		
+			    					//Close Video Popup
+			    					driver.findElement(By.xpath("(//div[@class='modal-content']//button[@class='close'])[2]")).click();
+			    					
+			    					//Increase video played counter
+						    		count = count + 1;
+						    		
+						    		//Write to extent report
+						    		extentTest.log(Status.INFO, Integer.toString(count));
+			    				}
+			    				//Back to previous page
+					    		driver.navigate().back();
+					    		Thread.sleep(3000);
+			    			}
+			    			else
+			    			{	
+			    				driver.navigate().back();
+			    				Thread.sleep(3000);
+			    			}	
+			    		}
+			    					
+				    	//Wait for content to load
+				    	Thread.sleep(3000);
+				    }	
+		    		driver.navigate().back();
+		    		Thread.sleep(3000);
+		    		List<WebElement> className1 = driver.findElements(By.xpath("//div[@class='panel-heading']//a"));
+		            className1.get(cla).click();
+			    }
+		    }
+		}		
 	}
-	
-
-}

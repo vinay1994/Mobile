@@ -8,11 +8,11 @@
     <classes>
       <class name="com.fliplearn.flipapp.testcases.Event">
         <methods>
-          <include name="befAlbum"/>
+          <include name="parentCanViewAnnouncement" invocation-numbers="0 1 2"/>
           <include name="befo"/>
           <include name="aftSuite"/>
+          <include name="beforeEvent"/>
           <include name="getResult"/>
-          <include name="createHomework" invocation-numbers="0"/>
         </methods>
       </class> <!-- com.fliplearn.flipapp.testcases.Event -->
     </classes>
