@@ -12,9 +12,9 @@
 	<test name="PrimeContent" enabled="true">
   		<classes>
 
-    		<class name="com.fliplearn.flipapp.testcases.Event">
+    		<class name="com.fliplearn.flipapp.testcases.Fee">
         		<methods> 
-        			<include name="parentCanViewHomework" />
+        			<include name="payFeeLoginDebitCard" />
         		</methods>
         	</class>
         </classes>
