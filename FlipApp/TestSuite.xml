@@ -12,9 +12,9 @@
 	<test name="PrimeContent" enabled="true">
   		<classes>
 
-    		<class name="com.fliplearn.flipapp.testcases.Fee">
-        		<methods> 
-        			<include name="payFeeLoginDebitCard" />
+    		<class name="com.fliplearn.flipapp.testcases.QuizDashboard">
+        		<methods>
+        			<include name="verifyQuizDashboardTileDisplayed"/>
         		</methods>
         	</class>
         </classes>

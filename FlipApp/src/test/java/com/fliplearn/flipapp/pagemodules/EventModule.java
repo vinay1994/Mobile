@@ -23,22 +23,22 @@ public class EventModule extends Base
 	
 	String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
 
-	@FindBy(xpath="//button[contains(text(),'Post')]")
+	@FindBy(xpath="//button[@class='btn btn-primary dropdown-toggle']")
 	@AndroidFindBy(id="com.elss.educomp:id/post_layout") 
 	@iOSFindBy(id="")
 	public  RemoteWebElement postBtn;
 
-	@FindBy(xpath="//button[contains(@id,'announcement')]")
+	@FindBy(xpath="(//button[@id='announcement'])[2]")
 	@AndroidFindBy(id="") 
 	@iOSFindBy(id="")
 	public RemoteWebElement annBtn;
 	
-	@FindBy(xpath="//button[contains(@id,'homework')]")
+	@FindBy(xpath="(//button[@id='homework'])[2]")
 	@AndroidFindBy(id="") 
 	@iOSFindBy(id="")
 	public RemoteWebElement homeWorkBtn;
 	
-	@FindBy(xpath="//button[contains(@id,'album')]")
+	@FindBy(xpath="(//button[@id='album'])[2]")
 	@AndroidFindBy(id="") 
 	@iOSFindBy(id="")
 	public RemoteWebElement albBtn;
