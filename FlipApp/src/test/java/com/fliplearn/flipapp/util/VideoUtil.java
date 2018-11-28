@@ -54,7 +54,7 @@ public class VideoUtil extends Base
 	          
 	    		for (int sub = 0; sub < subjectName.size(); sub++) 
 	    		{
-	    			Thread.sleep(3000);
+	    			Thread.sleep(2000);
 		            List<WebElement> subjectName1 = driver.findElements(By.xpath(subjectPath));
 	    			System.out.println("Number of subjects are:"+subjectName.size());
 	    			subjectName1.get(sub).click();
@@ -81,7 +81,7 @@ public class VideoUtil extends Base
 				    		
 			    			//Getting list content again to avoid stale element exception
 			    			List<WebElement> listContent1 = driver.findElements(By.xpath("//div[@id='collapseOne']//div[@class='col-sm-12 ng-scope']"));	
-			    	        Thread.sleep(3000);
+			    	        Thread.sleep(2000);
 			    	        
 			    	        //Click on nth topic
 			    			listContent1.get(l).click();
@@ -96,7 +96,7 @@ public class VideoUtil extends Base
 			    					videoList.get(v).click();
 				    		
 			    					//Wait for seconds after clicking on Animation
-			    					Thread.sleep(8000);
+			    					Thread.sleep(12000);
 				    		
 			    					//Close Video Popup
 			    					driver.findElement(By.xpath("(//div[@class='modal-content']//button[@class='close'])[2]")).click();

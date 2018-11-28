@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="11" total="14" passed="3" failed="0" skipped="0">
+<testng-results ignored="1" total="7" passed="6" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2018-11-17T18:51:23Z" name="Fliplearn Automation Suite" finished-at="2018-11-17T18:53:51Z" duration-ms="148198">
+  <suite started-at="2018-11-28T07:53:05Z" name="Fliplearn Automation Suite" finished-at="2018-11-28T07:56:35Z" duration-ms="209737">
     <groups>
     </groups>
-    <test started-at="2018-11-17T18:51:23Z" name="PrimeContent" finished-at="2018-11-17T18:53:51Z" duration-ms="148198">
-      <class name="com.fliplearn.flipapp.testcases.Event">
-        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.Event@7bd7d6d6]" started-at="2018-11-17T18:51:23Z" name="befo" finished-at="2018-11-17T18:51:34Z" duration-ms="11500" status="PASS">
+    <test started-at="2018-11-28T07:53:05Z" name="PrimeContent" finished-at="2018-11-28T07:56:35Z" duration-ms="209737">
+      <class name="com.fliplearn.flipapp.testcases.QuizDashboard">
+        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@673fdbce]" started-at="2018-11-28T07:53:05Z" name="befo" finished-at="2018-11-28T07:53:16Z" duration-ms="11129" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@170b27a7]]>
+                <![CDATA[org.testng.TestRunner@14b5752f]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- befo -->
-        <test-method is-config="true" signature="beforeEvent()[pri:0, instance:com.fliplearn.flipapp.testcases.Event@7bd7d6d6]" started-at="2018-11-17T18:51:34Z" name="beforeEvent" finished-at="2018-11-17T18:51:34Z" duration-ms="292" status="PASS">
+        <test-method is-config="true" signature="befQuiz()[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@673fdbce]" started-at="2018-11-28T07:53:16Z" name="befQuiz" finished-at="2018-11-28T07:53:16Z" duration-ms="494" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeEvent -->
-        <test-method signature="parentCanViewHomework(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.Event@7bd7d6d6]" started-at="2018-11-17T18:51:34Z" name="parentCanViewHomework" data-provider="group2" finished-at="2018-11-17T18:52:11Z" duration-ms="36555" status="PASS">
+        </test-method> <!-- befQuiz -->
+        <test-method signature="verifyQuizDashboardTileDisplayed(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@673fdbce]" started-at="2018-11-28T07:53:16Z" name="verifyQuizDashboardTileDisplayed" data-provider="group0" finished-at="2018-11-28T07:53:26Z" duration-ms="9178" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -32,27 +32,27 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- parentCanViewHomework -->
-        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.Event@7bd7d6d6]" started-at="2018-11-17T18:52:11Z" name="getResult" finished-at="2018-11-17T18:52:12Z" duration-ms="850" status="PASS">
+        </test-method> <!-- verifyQuizDashboardTileDisplayed -->
+        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@673fdbce]" started-at="2018-11-28T07:53:26Z" name="getResult" finished-at="2018-11-28T07:53:27Z" duration-ms="920" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.Event@7bd7d6d6]" started-at="2018-11-17T18:52:12Z" name="befo" finished-at="2018-11-17T18:52:24Z" duration-ms="12229" status="PASS">
+        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@673fdbce]" started-at="2018-11-28T07:53:27Z" name="befo" finished-at="2018-11-28T07:53:45Z" duration-ms="17825" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@170b27a7]]>
+                <![CDATA[org.testng.TestRunner@14b5752f]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- befo -->
-        <test-method is-config="true" signature="beforeEvent()[pri:0, instance:com.fliplearn.flipapp.testcases.Event@7bd7d6d6]" started-at="2018-11-17T18:52:24Z" name="beforeEvent" finished-at="2018-11-17T18:52:24Z" duration-ms="16" status="PASS">
+        <test-method is-config="true" signature="befQuiz()[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@673fdbce]" started-at="2018-11-28T07:53:45Z" name="befQuiz" finished-at="2018-11-28T07:53:45Z" duration-ms="8" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeEvent -->
-        <test-method signature="parentCanViewHomework(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.Event@7bd7d6d6]" started-at="2018-11-17T18:52:24Z" name="parentCanViewHomework" data-provider="group2" finished-at="2018-11-17T18:53:00Z" duration-ms="35735" status="PASS">
+        </test-method> <!-- befQuiz -->
+        <test-method signature="verifyQuizDashboardTileDisplayed(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@673fdbce]" started-at="2018-11-28T07:53:45Z" name="verifyQuizDashboardTileDisplayed" data-provider="group0" finished-at="2018-11-28T07:53:55Z" duration-ms="9727" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -62,27 +62,27 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- parentCanViewHomework -->
-        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.Event@7bd7d6d6]" started-at="2018-11-17T18:53:01Z" name="getResult" finished-at="2018-11-17T18:53:02Z" duration-ms="1171" status="PASS">
+        </test-method> <!-- verifyQuizDashboardTileDisplayed -->
+        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@673fdbce]" started-at="2018-11-28T07:53:55Z" name="getResult" finished-at="2018-11-28T07:53:56Z" duration-ms="1065" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.Event@7bd7d6d6]" started-at="2018-11-17T18:53:02Z" name="befo" finished-at="2018-11-17T18:53:15Z" duration-ms="13661" status="PASS">
+        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@673fdbce]" started-at="2018-11-28T07:53:56Z" name="befo" finished-at="2018-11-28T07:54:03Z" duration-ms="6606" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@170b27a7]]>
+                <![CDATA[org.testng.TestRunner@14b5752f]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- befo -->
-        <test-method is-config="true" signature="beforeEvent()[pri:0, instance:com.fliplearn.flipapp.testcases.Event@7bd7d6d6]" started-at="2018-11-17T18:53:15Z" name="beforeEvent" finished-at="2018-11-17T18:53:15Z" duration-ms="14" status="PASS">
+        <test-method is-config="true" signature="befQuiz()[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@673fdbce]" started-at="2018-11-28T07:54:03Z" name="befQuiz" finished-at="2018-11-28T07:54:03Z" duration-ms="20" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeEvent -->
-        <test-method signature="parentCanViewHomework(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.Event@7bd7d6d6]" started-at="2018-11-17T18:53:15Z" name="parentCanViewHomework" data-provider="group2" finished-at="2018-11-17T18:53:50Z" duration-ms="34168" status="PASS">
+        </test-method> <!-- befQuiz -->
+        <test-method signature="verifyQuizDashboardTileDisplayed(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@673fdbce]" started-at="2018-11-28T07:54:03Z" name="verifyQuizDashboardTileDisplayed" data-provider="group0" finished-at="2018-11-28T07:54:11Z" duration-ms="8523" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -92,16 +92,106 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- parentCanViewHomework -->
-        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.Event@7bd7d6d6]" started-at="2018-11-17T18:53:50Z" name="getResult" finished-at="2018-11-17T18:53:51Z" duration-ms="838" status="PASS">
+        </test-method> <!-- verifyQuizDashboardTileDisplayed -->
+        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@673fdbce]" started-at="2018-11-28T07:54:12Z" name="getResult" finished-at="2018-11-28T07:54:13Z" duration-ms="941" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method is-config="true" signature="aftSuite()[pri:0, instance:com.fliplearn.flipapp.testcases.Event@7bd7d6d6]" started-at="2018-11-17T18:53:51Z" name="aftSuite" finished-at="2018-11-17T18:53:51Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@673fdbce]" started-at="2018-11-28T07:54:13Z" name="befo" finished-at="2018-11-28T07:54:20Z" duration-ms="7169" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@14b5752f]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- befo -->
+        <test-method is-config="true" signature="befQuiz()[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@673fdbce]" started-at="2018-11-28T07:54:20Z" name="befQuiz" finished-at="2018-11-28T07:54:20Z" duration-ms="20" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- befQuiz -->
+        <test-method signature="verifyQuizDashboardTileDisplayed(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@673fdbce]" started-at="2018-11-28T07:54:20Z" name="verifyQuizDashboardTileDisplayed" data-provider="group0" finished-at="2018-11-28T07:54:59Z" duration-ms="39106" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Parent]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyQuizDashboardTileDisplayed -->
+        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@673fdbce]" started-at="2018-11-28T07:54:59Z" name="getResult" finished-at="2018-11-28T07:55:00Z" duration-ms="907" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@673fdbce]" started-at="2018-11-28T07:55:00Z" name="befo" finished-at="2018-11-28T07:55:08Z" duration-ms="7179" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@14b5752f]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- befo -->
+        <test-method is-config="true" signature="befQuiz()[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@673fdbce]" started-at="2018-11-28T07:55:08Z" name="befQuiz" finished-at="2018-11-28T07:55:08Z" duration-ms="12" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- befQuiz -->
+        <test-method signature="verifyQuizDashboardTileDisplayed(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@673fdbce]" started-at="2018-11-28T07:55:08Z" name="verifyQuizDashboardTileDisplayed" data-provider="group0" finished-at="2018-11-28T07:55:48Z" duration-ms="40947" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Student]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyQuizDashboardTileDisplayed -->
+        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@673fdbce]" started-at="2018-11-28T07:55:49Z" name="getResult" finished-at="2018-11-28T07:55:50Z" duration-ms="843" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@673fdbce]" started-at="2018-11-28T07:55:50Z" name="befo" finished-at="2018-11-28T07:55:58Z" duration-ms="7670" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@14b5752f]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- befo -->
+        <test-method is-config="true" signature="befQuiz()[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@673fdbce]" started-at="2018-11-28T07:55:58Z" name="befQuiz" finished-at="2018-11-28T07:55:58Z" duration-ms="8" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- befQuiz -->
+        <test-method signature="verifyQuizDashboardTileDisplayed(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@673fdbce]" started-at="2018-11-28T07:55:58Z" name="verifyQuizDashboardTileDisplayed" data-provider="group0" finished-at="2018-11-28T07:56:33Z" duration-ms="35518" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Guest]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyQuizDashboardTileDisplayed -->
+        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@673fdbce]" started-at="2018-11-28T07:56:34Z" name="getResult" finished-at="2018-11-28T07:56:35Z" duration-ms="954" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method is-config="true" signature="aftSuite()[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@673fdbce]" started-at="2018-11-28T07:56:35Z" name="aftSuite" finished-at="2018-11-28T07:56:35Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- aftSuite -->
-      </class> <!-- com.fliplearn.flipapp.testcases.Event -->
+      </class> <!-- com.fliplearn.flipapp.testcases.QuizDashboard -->
     </test> <!-- PrimeContent -->
   </suite> <!-- Fliplearn Automation Suite -->
 </testng-results>
