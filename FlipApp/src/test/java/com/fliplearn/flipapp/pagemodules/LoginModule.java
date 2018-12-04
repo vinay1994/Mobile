@@ -28,11 +28,13 @@ public class LoginModule extends Base
 	@FindBy(id="Fname")
 	@AndroidFindBy(id="com.elss.educomp:id/user_id_til") 
 	@iOSFindBy(id="")
+	public
 	RemoteWebElement usernameTxt;
 
 	@FindBy(id="password-lg1")
 	@AndroidFindBy(id="com.elss.educomp:id/password_edit")
 	@iOSFindBy(id="")
+	public
 	RemoteWebElement passwordTxt;
 
 	@FindBy(xpath="//button[text()='Login']")

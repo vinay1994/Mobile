@@ -12,9 +12,9 @@
 	<test name="PrimeContent" enabled="true">
   		<classes>
 
-    		<class name="com.fliplearn.flipapp.testcases.QuizDashboard">
+    		<class name="com.fliplearn.flipapp.util.ScreenLoadUtil">
         		<methods>
-        			<include name="verifyQuizDashboardTileDisplayed"/>
+        			<include name="loadTestOnAndroid"/>
         		</methods>
         	</class>
         </classes>
