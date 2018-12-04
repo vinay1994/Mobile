@@ -1,10 +1,13 @@
 package com.fliplearn.flipapp.pagemodules;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.aventstack.extentreports.Status;
 import com.fliplearn.flipapp.helper.Base;
 import com.fliplearn.flipapp.helper.GenericFunctions;
 
@@ -37,9 +40,21 @@ public class LearnModule extends Base
 	public RemoteWebElement selectClassLnk;
 	
 	@FindBy(xpath="//a[text()='Class 1']")
-	@AndroidFindBy(xpath="//a[text()='Class 7']")
+	@AndroidFindBy(xpath="//*[@text='Biology']")
 //	@iOSFindBy(id="")
-	public RemoteWebElement selectSubjLnk;
+	public RemoteWebElement selectSubjectLnk;
+	
+	
+	@FindBy(xpath="//a[@id='learn-icon']")
+	@AndroidFindBy(id="com.elss.educomp:id/ll_mm") 
+//	@iOSFindBy(id="")
+	public List<RemoteWebElement> selectTOpic;
+	
+	@FindBy(xpath="//a[@id='learn-icon']")
+	@AndroidFindBy(id="com.elss.educomp:id/rowThirdText") 
+//	@iOSFindBy(id="")
+	public List<RemoteWebElement> Selectresource;
+	
 		
 	public LearnModule(WebDriver driver) 
 	{
@@ -54,13 +69,12 @@ public class LearnModule extends Base
 
 	public void clickOnPrimeImage() throws InterruptedException
 	{
+		extentTest.log(Status.INFO, "Before checking visibility");
 		generic.waitForElementVisibility(driver, primeImg);
+		extentTest.log(Status.INFO, "Waiting for element visibility");
 		Thread.sleep(1000);
 		primeImg.click();
 	}
 	
-	public void clickOnSubjectLink()
-	{
-		selectSubjLnk.click();
-	}
+	
 }

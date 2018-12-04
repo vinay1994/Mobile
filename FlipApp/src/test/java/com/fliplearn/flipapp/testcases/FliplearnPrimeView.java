@@ -120,7 +120,7 @@ public class FliplearnPrimeView extends Base
 		}
 		else
 		{
-			leaMod.clickOnSubjectLink();
+		   //leaMod.clickOnSubjectLink();
 	    	Assert.assertEquals(generic.compareList(selSubMod.subjectList, expectedList), true);
 		}
      }
