@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Dec 04 19:22:11 IST 2018</td>
+<td>Started on:</td><td>Wed Dec 05 20:53:01 IST 2018</td>
 </tr>
-<tr><td>Total time:</td><td>139 seconds (139232 ms)</td>
+<tr><td>Total time:</td><td>74 seconds (74230 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,63 +76,43 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='com.fliplearn.flipapp.util.ScreenLoadUtil.loadTestOnAndroid()'><b>loadTestOnAndroid</b><br>Test class: com.fliplearn.flipapp.util.ScreenLoadUtil</td>
-<td><div><pre>org.openqa.selenium.NoSuchSessionException: A session is either terminated or not started
+<td><div><pre>org.openqa.selenium.NoSuchElementException: Can&apos;t locate an element by this strategy: By.chained({By.id: com.elss.educomp:id/skip_button})
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:126)
+	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:60)
+	at io.appium.java_client.android.AndroidElement$$EnhancerByCGLIB$$b598166c.isDisplayed(&lt;generated&gt;)
+	at com.fliplearn.flipapp.util.ScreenLoadUtil.loadTestOnAndroid(ScreenLoadUtil.java:78)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@e57e5d6 (tried for 1 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:303)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:271)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:99)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:119)
+	... 28 more
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({By.id: com.elss.educomp:id/skip_button})
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.13.0&apos;, revision: &apos;2f0d292&apos;, time: &apos;2018-06-25T15:24:21.231Z&apos;
 System info: host: &apos;DESKTOP-CVORON1&apos;, ip: &apos;10.8.0.122&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appActivity: com.elss.educomp.prelogin.u..., appPackage: com.elss.educomp, databaseEnabled: false, desired: {appActivity: com.elss.educomp.prelogin.u..., appPackage: com.elss.educomp, deviceName: Galaxy J7, noSign: true, platformName: android}, deviceManufacturer: samsung, deviceModel: SM-G610F, deviceName: 5203e634ea059329, deviceScreenSize: 1080x1920, deviceUDID: 5203e634ea059329, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, noSign: true, platform: LINUX, platformName: Android, platformVersion: 8.1.0, takesScreenshot: true, warnings: {}, webStorageEnabled: false}
-Session ID: 484eb31d-655f-4a33-82cc-0b41b13c6afe
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:231)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
-	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:42)
-	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:276)
-	at io.appium.java_client.DefaultGenericMobileElement.execute(DefaultGenericMobileElement.java:45)
-	at io.appium.java_client.MobileElement.execute(MobileElement.java:1)
-	at io.appium.java_client.android.AndroidElement.execute(AndroidElement.java:1)
-	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:100)
-	at io.appium.java_client.pagefactory.ElementInterceptor.getObject(ElementInterceptor.java:40)
-	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:61)
-	at io.appium.java_client.android.AndroidElement$$EnhancerByCGLIB$$b598166c.sendKeys(&lt;generated&gt;)
-	at com.fliplearn.flipapp.util.ScreenLoadUtil.loadTestOnAndroid(ScreenLoadUtil.java:68)
-... Removed 33 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1960031800", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1960031800'><pre>org.openqa.selenium.NoSuchSessionException: A session is either terminated or not started
-Build info: version: &apos;3.13.0&apos;, revision: &apos;2f0d292&apos;, time: &apos;2018-06-25T15:24:21.231Z&apos;
-System info: host: &apos;DESKTOP-CVORON1&apos;, ip: &apos;10.8.0.122&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appActivity: com.elss.educomp.prelogin.u..., appPackage: com.elss.educomp, databaseEnabled: false, desired: {appActivity: com.elss.educomp.prelogin.u..., appPackage: com.elss.educomp, deviceName: Galaxy J7, noSign: true, platformName: android}, deviceManufacturer: samsung, deviceModel: SM-G610F, deviceName: 5203e634ea059329, deviceScreenSize: 1080x1920, deviceUDID: 5203e634ea059329, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, noSign: true, platform: LINUX, platformName: Android, platformVersion: 8.1.0, takesScreenshot: true, warnings: {}, webStorageEnabled: false}
-Session ID: 484eb31d-655f-4a33-82cc-0b41b13c6afe
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:231)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
-	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:42)
-	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:276)
-	at io.appium.java_client.DefaultGenericMobileElement.execute(DefaultGenericMobileElement.java:45)
-	at io.appium.java_client.MobileElement.execute(MobileElement.java:1)
-	at io.appium.java_client.android.AndroidElement.execute(AndroidElement.java:1)
-	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:100)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at io.appium.java_client.pagefactory.ElementInterceptor.getObject(ElementInterceptor.java:40)
-	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:61)
-	at io.appium.java_client.android.AndroidElement$$EnhancerByCGLIB$$b598166c.sendKeys(&lt;generated&gt;)
-	at com.fliplearn.flipapp.util.ScreenLoadUtil.loadTestOnAndroid(ScreenLoadUtil.java:68)
+Driver info: driver.version: AndroidDriver
+	at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:74)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:50)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$0(AppiumElementLocator.java:120)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:172)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:1)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
+	... 30 more
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace505756829", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace505756829'><pre>org.openqa.selenium.NoSuchElementException: Can&apos;t locate an element by this strategy: By.chained({By.id: com.elss.educomp:id/skip_button})
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:126)
+	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:60)
+	at io.appium.java_client.android.AndroidElement$$EnhancerByCGLIB$$b598166c.isDisplayed(&lt;generated&gt;)
+	at com.fliplearn.flipapp.util.ScreenLoadUtil.loadTestOnAndroid(ScreenLoadUtil.java:78)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -158,51 +138,48 @@ Session ID: 484eb31d-655f-4a33-82cc-0b41b13c6afe
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@e57e5d6 (tried for 1 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:303)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:271)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:99)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:119)
+	... 28 more
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({By.id: com.elss.educomp:id/skip_button})
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.13.0&apos;, revision: &apos;2f0d292&apos;, time: &apos;2018-06-25T15:24:21.231Z&apos;
+System info: host: &apos;DESKTOP-CVORON1&apos;, ip: &apos;10.8.0.122&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11&apos;
+Driver info: driver.version: AndroidDriver
+	at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:74)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:50)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$0(AppiumElementLocator.java:120)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:172)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:1)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
+	... 30 more
 </pre></div></td>
-<td>125</td>
+<td>57</td>
 <td>com.fliplearn.flipapp.util.ScreenLoadUtil@5745ca0e</td></tr>
 <tr>
 <td title='com.fliplearn.flipapp.util.ScreenLoadUtil.loadTestOnAndroid()'><b>loadTestOnAndroid</b><br>Test class: com.fliplearn.flipapp.util.ScreenLoadUtil</td>
-<td><div><pre>org.openqa.selenium.NoSuchSessionException: A session is either terminated or not started
-Build info: version: &apos;3.13.0&apos;, revision: &apos;2f0d292&apos;, time: &apos;2018-06-25T15:24:21.231Z&apos;
-System info: host: &apos;DESKTOP-CVORON1&apos;, ip: &apos;10.8.0.122&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appActivity: com.elss.educomp.prelogin.u..., appPackage: com.elss.educomp, databaseEnabled: false, desired: {appActivity: com.elss.educomp.prelogin.u..., appPackage: com.elss.educomp, deviceName: Galaxy J7, noSign: true, platformName: android}, deviceManufacturer: samsung, deviceModel: SM-G610F, deviceName: 5203e634ea059329, deviceScreenSize: 1080x1920, deviceUDID: 5203e634ea059329, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, noSign: true, platform: LINUX, platformName: Android, platformVersion: 8.1.0, takesScreenshot: true, warnings: {}, webStorageEnabled: false}
-Session ID: 484eb31d-655f-4a33-82cc-0b41b13c6afe
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:231)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
-	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:46)
-	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:294)
-	at com.fliplearn.flipapp.util.Screenshots.captureScreenshot(Screenshots.java:26)
+<td><div><pre>java.lang.NoClassDefFoundError: org/apache/commons/io/FileUtils
+	at com.fliplearn.flipapp.util.Screenshots.captureScreenshot(Screenshots.java:49)
 	at com.fliplearn.flipapp.helper.Base.onTestFailure(Base.java:279)
-... Removed 26 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1401095299", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1401095299'><pre>org.openqa.selenium.NoSuchSessionException: A session is either terminated or not started
-Build info: version: &apos;3.13.0&apos;, revision: &apos;2f0d292&apos;, time: &apos;2018-06-25T15:24:21.231Z&apos;
-System info: host: &apos;DESKTOP-CVORON1&apos;, ip: &apos;10.8.0.122&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appActivity: com.elss.educomp.prelogin.u..., appPackage: com.elss.educomp, databaseEnabled: false, desired: {appActivity: com.elss.educomp.prelogin.u..., appPackage: com.elss.educomp, deviceName: Galaxy J7, noSign: true, platformName: android}, deviceManufacturer: samsung, deviceModel: SM-G610F, deviceName: 5203e634ea059329, deviceScreenSize: 1080x1920, deviceUDID: 5203e634ea059329, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, noSign: true, platform: LINUX, platformName: Android, platformVersion: 8.1.0, takesScreenshot: true, warnings: {}, webStorageEnabled: false}
-Session ID: 484eb31d-655f-4a33-82cc-0b41b13c6afe
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:231)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
-	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:46)
-	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:294)
-	at com.fliplearn.flipapp.util.Screenshots.captureScreenshot(Screenshots.java:26)
+Caused by: java.lang.ClassNotFoundException: org.apache.commons.io.FileUtils
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:582)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	... 24 more
+... Removed 22 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1156729376", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1156729376'><pre>java.lang.NoClassDefFoundError: org/apache/commons/io/FileUtils
+	at com.fliplearn.flipapp.util.Screenshots.captureScreenshot(Screenshots.java:49)
 	at com.fliplearn.flipapp.helper.Base.onTestFailure(Base.java:279)
 	at org.testng.internal.TestListenerHelper.runTestListeners(TestListenerHelper.java:67)
 	at org.testng.internal.Invoker.runTestListeners(Invoker.java:1389)
@@ -226,8 +203,13 @@ Session ID: 484eb31d-655f-4a33-82cc-0b41b13c6afe
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.lang.ClassNotFoundException: org.apache.commons.io.FileUtils
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:582)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	... 24 more
 </pre></div></td>
-<td>139</td>
+<td>72</td>
 <td>com.fliplearn.flipapp.util.ScreenLoadUtil@5745ca0e</td></tr>
 </table><p>
 </body>

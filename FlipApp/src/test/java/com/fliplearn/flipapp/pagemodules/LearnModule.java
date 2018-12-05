@@ -18,49 +18,55 @@ import io.appium.java_client.pagefactory.iOSFindBy;
 public class LearnModule extends Base
 {
 	GenericFunctions generic = new GenericFunctions();
-	
+
 	@FindBy(xpath="//a[@id='learn-icon']")
-//	@AndroidFindBy(xpath="") 
-//	@iOSFindBy(id="")
+	//	@AndroidFindBy(xpath="") 
+	//	@iOSFindBy(id="")
 	public RemoteWebElement learnImg;	
-	
+
 	@FindBy(xpath="//strong[text()='Fliplearn Prime']")
 	@AndroidFindBy(xpath="//*[@text='Fliplearn Prime']")
-//	@iOSFindBy(id="")
+	//	@iOSFindBy(id="")
 	public RemoteWebElement primeImg;
-		
+
 	@FindBy(xpath="//h4/strong[contains(text(),'VMC Live')]")
 	@AndroidFindBy(xpath="//*[@text='VMC Live @ Fliplearn']")
-//	@iOSFindBy(id="")
+	//	@iOSFindBy(id="")
 	public RemoteWebElement vmcImg;
-	
+
 	@FindBy(xpath="//a[text()='Pre Nursery']")
 	@AndroidFindBy(xpath="//a[text()='Pre Nursery']")
-//	@iOSFindBy(id="")
+	//	@iOSFindBy(id="")
 	public RemoteWebElement selectClassLnk;
-	
+
 	@FindBy(xpath="//a[text()='Class 1']")
 	@AndroidFindBy(xpath="//*[@text='Biology']")
-//	@iOSFindBy(id="")
+	//	@iOSFindBy(id="")
 	public RemoteWebElement selectSubjectLnk;
-	
-	
+
+
 	@FindBy(xpath="//a[@id='learn-icon']")
 	@AndroidFindBy(id="com.elss.educomp:id/ll_mm") 
-//	@iOSFindBy(id="")
+	//	@iOSFindBy(id="")
 	public List<RemoteWebElement> selectTOpic;
-	
+
 	@FindBy(xpath="//a[@id='learn-icon']")
 	@AndroidFindBy(id="com.elss.educomp:id/rowThirdText") 
-//	@iOSFindBy(id="")
+	//	@iOSFindBy(id="")
 	public List<RemoteWebElement> Selectresource;
-	
-		
+
+
+
+	@FindBy(xpath="//a[@id='learn-icon']")
+	@AndroidFindBy(xpath="(//*[@resource-id='com.elss.educomp:id/subject_text'])[1]") 
+	//			@iOSFindBy(id="")
+	public RemoteWebElement resource;		
+
 	public LearnModule(WebDriver driver) 
 	{
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);	
 	}
-	
+
 	public void clickOnLearnImage() throws InterruptedException
 	{
 		Thread.sleep(2000);
@@ -75,6 +81,6 @@ public class LearnModule extends Base
 		Thread.sleep(1000);
 		primeImg.click();
 	}
-	
-	
+
+
 }
