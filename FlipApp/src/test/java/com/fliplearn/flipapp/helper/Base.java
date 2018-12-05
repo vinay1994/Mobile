@@ -70,7 +70,7 @@ public class Base implements ITestListener
 	
 	static String fileExtension = generic.formatDateToString();
 	static String reportFileName = "AutomationReport" + "_" + fileExtension + ".html";
-	
+	static String reportPath = generic.reportPath();
 	// initialize the HtmlReporter
 	ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter("C:\\tomcat\\webapps\\fliplearn\\latestreport\\" + reportFileName);
 
@@ -80,6 +80,13 @@ public class Base implements ITestListener
 	ITestResult result;
 	ITestContext iTestContext;
 
+	public static String reportPath()
+	{
+		if(System.getProperty("os.name").equals("Linux"))
+				return System.getProperty("user.dir") + "\\reports\\";
+		else
+				return "C:\\tomcat\\webapps\\fliplearn\\latestreport\\";
+	}
 	/**
 	 * This will set Driver based on capabilities and configuration
 	 * @author Tarun Goswami
@@ -377,12 +384,4 @@ public class Base implements ITestListener
 		  }; 
 	}
 
-	@DataProvider(name = "group4")
-	public static Object[] group4() 
-	{
-		  return new Object[][]
-		  { 
-			 { "Student" }
-		  }; 
-	}
 }
