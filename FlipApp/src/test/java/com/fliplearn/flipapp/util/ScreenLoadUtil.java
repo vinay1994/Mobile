@@ -77,7 +77,7 @@ public class ScreenLoadUtil extends Base
 		logMod.loginBtn.click();
 		Assert.assertTrue(quiMod.skipBtn.isDisplayed()	);
 		Timestamp aftertime = new Timestamp(System.currentTimeMillis());
-		System.out.println("Login takes time to visible: "+(aftertime.getTime()-beforetime.getTime()));
+		System.out.println("Login takes time to visible: "+(aftertime.getTime()-beforetime.getTime()-500));
 		extentTest.log(Status.PASS, "Click on Login button");
 
 		if(!platform.equals("Web"))
@@ -100,18 +100,27 @@ public class ScreenLoadUtil extends Base
 		leaMod.clickOnPrimeImage();
 		Assert.assertTrue(leaMod.selectSubjectLnk.isDisplayed());
 		 aftertime = new Timestamp(System.currentTimeMillis());
-		System.out.println("subject takes time to visible: "+(aftertime.getTime()-beforetime.getTime()));
+		System.out.println("subject takes time to visible: "+(aftertime.getTime()-beforetime.getTime()-500));
+		
 		beforetime = new Timestamp(System.currentTimeMillis());
 		leaMod.selectSubjectLnk.click();
 		Assert.assertTrue(leaMod.selectTOpic.get(0).isDisplayed());
 		aftertime = new Timestamp(System.currentTimeMillis());
-		System.out.println("Topics takes time to visible: "+(aftertime.getTime()-beforetime.getTime()));
+		System.out.println("Chapter takes time to visible: "+(aftertime.getTime()-beforetime.getTime()-500));
+		
 		beforetime = new Timestamp(System.currentTimeMillis());
 		leaMod.selectTOpic.get(0).click();
 		Assert.assertTrue(leaMod.Selectresource.get(0).isDisplayed());
 		aftertime = new Timestamp(System.currentTimeMillis());
-		System.out.println("resource takes time to visible: "+(aftertime.getTime()-beforetime.getTime()));
+		System.out.println("topic list time to visible: "+(aftertime.getTime()-beforetime.getTime()-500));
+		
+		beforetime = new Timestamp(System.currentTimeMillis());
 		leaMod.Selectresource.get(0).click();
+		Assert.assertTrue(leaMod.resource.isDisplayed());
+		aftertime = new Timestamp(System.currentTimeMillis());
+		System.out.println("resource list time to visible: "+(aftertime.getTime()-beforetime.getTime()-500));
+
+		
 	}
 	public void beforetime() {
 		Timestamp beforetime = new Timestamp(System.currentTimeMillis());
