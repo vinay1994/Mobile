@@ -34,6 +34,29 @@ public class QuizDashBoardModule extends Base
 	@AndroidFindBy(xpath="(//*[@class='android.widget.Button'])[2]")
 	public RemoteWebElement classListBtn;
 	
+	
+	@AndroidFindBy(xpath="//*[@text='Play Quiz']")
+	public RemoteWebElement playQuizBtn1;
+	
+	
+	@AndroidFindBy(xpath="//*[@text='3']")
+	public RemoteWebElement class3;
+	
+	
+	@AndroidFindBy(xpath="//*[@text='Next']")
+	public RemoteWebElement Next;
+	
+	@AndroidFindBy(xpath="//*[@text='Next']")
+	public RemoteWebElement Next1;
+	
+	
+	@AndroidFindBy(xpath="//*[@text='ok']")
+	public RemoteWebElement ok;
+	
+	
+	@AndroidFindBy(xpath="//*[@text='Maths']")
+	public RemoteWebElement Maths;
+	
 	public QuizDashBoardModule(WebDriver driver) 
 	{
 		 PageFactory.initElements(new AppiumFieldDecorator(driver), this);
