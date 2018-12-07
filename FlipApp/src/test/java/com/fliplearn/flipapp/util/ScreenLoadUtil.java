@@ -73,8 +73,9 @@ public class ScreenLoadUtil extends Base
 			((AndroidDriver) driver).hideKeyboard();
 			extentTest.log(Status.PASS, "Hide Keyboard");
 		}
-		Timestamp beforetime = new Timestamp(System.currentTimeMillis());
+		
 		logMod.loginBtn.click();
+		Timestamp beforetime = new Timestamp(System.currentTimeMillis());
 		Assert.assertTrue(quiMod.skipBtn.isDisplayed()	);
 		Timestamp aftertime = new Timestamp(System.currentTimeMillis());
 		System.out.println("Login takes time to visible: "+(aftertime.getTime()-beforetime.getTime()-500));
@@ -96,39 +97,33 @@ public class ScreenLoadUtil extends Base
 
 		}	
 
-		 beforetime = new Timestamp(System.currentTimeMillis());
+		 
 		leaMod.clickOnPrimeImage();
+		beforetime = new Timestamp(System.currentTimeMillis());
 		Assert.assertTrue(leaMod.selectSubjectLnk.isDisplayed());
 		 aftertime = new Timestamp(System.currentTimeMillis());
 		System.out.println("subject takes time to visible: "+(aftertime.getTime()-beforetime.getTime()-500));
 		
-		beforetime = new Timestamp(System.currentTimeMillis());
 		leaMod.selectSubjectLnk.click();
+		beforetime = new Timestamp(System.currentTimeMillis());
 		Assert.assertTrue(leaMod.selectTOpic.get(0).isDisplayed());
 		aftertime = new Timestamp(System.currentTimeMillis());
 		System.out.println("Chapter takes time to visible: "+(aftertime.getTime()-beforetime.getTime()-500));
 		
-		beforetime = new Timestamp(System.currentTimeMillis());
+		
 		leaMod.selectTOpic.get(0).click();
+		beforetime = new Timestamp(System.currentTimeMillis());
 		Assert.assertTrue(leaMod.Selectresource.get(0).isDisplayed());
 		aftertime = new Timestamp(System.currentTimeMillis());
 		System.out.println("topic list time to visible: "+(aftertime.getTime()-beforetime.getTime()-500));
 		
-		beforetime = new Timestamp(System.currentTimeMillis());
+		
 		leaMod.Selectresource.get(0).click();
+		beforetime = new Timestamp(System.currentTimeMillis());
 		Assert.assertTrue(leaMod.resource.isDisplayed());
 		aftertime = new Timestamp(System.currentTimeMillis());
 		System.out.println("resource list time to visible: "+(aftertime.getTime()-beforetime.getTime()-500));
 
 		
 	}
-	public void beforetime() {
-		Timestamp beforetime = new Timestamp(System.currentTimeMillis());
-	}
-	public void aftertime() {
-		Timestamp beforetime = new Timestamp(System.currentTimeMillis());
-	}
-//	public void timedifference() {
-//		System.out.println(aftertime.getTime()-beforetime.getTime());
-//	}
 }
