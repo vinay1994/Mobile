@@ -22,7 +22,7 @@ public class HeaderModule extends Base
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);	
 	}
 	
-	@FindBy(css="button[class='dropbtn_nav btn-dd dropbtn']")
+	@FindBy(css="button[class='dropbtn_nav btn-dd dropbtn dropdown-toggle']")
 //	@AndroidFindBy(xpath="") 
 //	@iOSFindBy(id="")
 	public RemoteWebElement profileImg;	

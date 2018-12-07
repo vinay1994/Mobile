@@ -53,14 +53,16 @@ public class FliplearnPrimeView extends Base
 	 * @version 1.1
 	 * @throws IOException 
 	 */
-	 @Test( priority=1,dataProvider = "group1")
+	 @Test( priority=1,dataProvider = "group0")
      public void verifyPrimeTileDisplayed(String role) throws IOException, InterruptedException 
      {
-		logMod.Login(role, "Single", "None", "Yes");
+		 logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
     	 
     	 if(platform.equals("Web"))
-    		 leaMod.clickOnLearnImage();
-    	 
+    	 {	 
+    		 if(!role.equals("Guest"))
+    			 leaMod.clickOnLearnImage();
+    	 }
     	 Assert.assertEquals(generic.isElementDisplayed(driver, leaMod.primeImg), true);
      }
     
@@ -75,8 +77,8 @@ public class FliplearnPrimeView extends Base
 	 @Test( priority=1,dataProvider = "group2")
      public void verifyPrimeClasses(String role) throws IOException, InterruptedException 
      {
-		logMod.Login(role, "Single", "None", "Yes");
-    	 
+		 logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
+    	   	 
     	 if(platform.equals("Web"))
     		 leaMod.clickOnLearnImage();
     	 
@@ -97,31 +99,28 @@ public class FliplearnPrimeView extends Base
  	 * @throws IOException 
  	 */
  	 
-	@Test(priority=2,dataProvider ="group3")
+	@Test(priority=2,dataProvider ="group0")
 	public void verifyPrimeSubjects(String role) throws IOException, InterruptedException  
 	{ 
-		logMod.Login(role, "Single", "None", "Yes");
-		String expectedList = readData(platform, role, "Prime Subjects");
+		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
+    	 
+    	 if(platform.equals("Web"))
+    	 {	 
+    		 if(!role.equals("Guest"))
+    			 leaMod.clickOnLearnImage();
+    	 }
 		
-		if(role.equals("Parent") || role.equals("Student"))
-		{
-			if(role.equals("Student"))
-			{	
-				youProMod.updateClassAndSection(driver, "Class 6", "A");
-			}
-		}		
-		 if(platform.equals("Web"))
-			 leaMod.clickOnLearnImage();
-		 
+    	 String expectedList = readData(platform, role, "Prime Subjects");
+	 
 		 leaMod.clickOnPrimeImage();			
 
-		if(role.equals("Parent") || role.equals("Student"))
+		if(role.equals("Parent") || role.equals("Student") || role.equals("Guest"))
 		{	
 	    	Assert.assertEquals(generic.compareList(selSubMod.studentSubjectList, expectedList), true);
 		}
 		else
 		{
-			leaMod.clickOnSubjectLink();
+		   //leaMod.clickOnSubjectLink();
 	    	Assert.assertEquals(generic.compareList(selSubMod.subjectList, expectedList), true);
 		}
      }

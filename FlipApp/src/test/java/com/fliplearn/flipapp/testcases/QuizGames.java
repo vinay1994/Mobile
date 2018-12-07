@@ -43,14 +43,14 @@ public class QuizGames extends Base
 	 * @version 1.0
 	 * @throws InterruptedException 
 	 */
-	@Test(dataProvider = "group1")
+	@Test(dataProvider = "group0")
 	public void verifyQuizTileDisplayed(String role) throws InterruptedException
 	{
-		logMod.Login(role, "Single", "None", "Yes");
+		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		
 		generic.scrollBy(driver, 50, 95);
 	
-		if(role.equals("Parent") || role.equals("Student"))
+		if(role.equals("Parent") || role.equals("Student") || role.equals("Guest"))
 			Assert.assertEquals(generic.isElementDisplayed(driver, quiMod.quizGamesTile), true);
 		else
 		Assert.assertEquals(generic.isElementDisplayed(driver, quiMod.quizGamesTile), false);

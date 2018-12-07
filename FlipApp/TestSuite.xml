@@ -9,13 +9,12 @@
  
 
 	
-	<test name="PrimeContent" enabled="true">
+	<test name="Quiz" enabled="true">
   		<classes>
 
-    		<class name="com.fliplearn.flipapp.testcases.PrimeVideo">
-        		<methods> 
-        			<include name="playPrimeVideoSchool" /> 
-        			<include name="playPrimeVideoStudent" /> 
+    		<class name="com.fliplearn.flipapp.testcases.QuizDashboard">
+        		<methods>
+        			<include name="verifyQuizDashboardClasses"/>
         		</methods>
         	</class>
         </classes>

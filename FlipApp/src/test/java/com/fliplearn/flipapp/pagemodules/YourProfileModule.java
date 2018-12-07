@@ -27,6 +27,17 @@ public class YourProfileModule extends Base
 //	@iOSFindBy(id="")
 	public RemoteWebElement classEditImg;	
 	
+	@FindBy(xpath="//img[contains(@class,'profilePic ng-scope')]")
+	@AndroidFindBy(id="") 
+	@iOSFindBy(id="")
+	RemoteWebElement profile;
+
+
+	@FindBy(xpath="//a[contains(@ng-click,'logout()')]")
+	@AndroidFindBy(id="") 
+	@iOSFindBy(id="")
+	RemoteWebElement logout;
+	
 	//Class/Section Popup
 	@FindBy(xpath="//form[@name='ClassSectionForm']//div[@class='registration-form'][1]//select")
 //	@AndroidFindBy(xpath="") 
@@ -74,5 +85,10 @@ public class YourProfileModule extends Base
 		String roleName = usernameLbl.getText();
 		System.out.println("Role Name is: "+roleName);
 		return roleName;
+	}
+	
+	public void mouseOverOnProfileLogout() throws InterruptedException 
+	{
+		generic.mouseHoverAndClick(driver, profile, logout);
 	}
 }
