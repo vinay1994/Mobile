@@ -14,6 +14,8 @@ import org.openqa.selenium.remote.RemoteWebElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import com.aventstack.extentreports.Status;
 import com.fliplearn.flipapp.helper.Base;
 import com.fliplearn.flipapp.helper.GenericFunctions;
 import com.fliplearn.flipapp.pagemodules.LearnModule;
@@ -110,15 +112,29 @@ public class QuizDashboard extends Base
 		}  
 		else if(!platform.equals("Web"))
 		{	
+			leaMod.clickOnLearnImage();
 			generic.scrollBy(driver, 50, 95);
 		}
 		
 		quiDasMod.clickOnQuizDashboardTile();
+		
+		generic.touchCordinates(driver, 10, 95);
+		 extentTest.log(Status.PASS, "Tap on Got it.");
+		 generic.touchCordinates(driver, 10, 95);
+		 extentTest.log(Status.PASS, "Tap on Got it.");
 							
 		generic.waitForElementVisibility(driver, quiDasMod.classListBtn);
-		quiDasMod.clickOnClassLst();
+		//quiDasMod.clickOnClassLst();
     
-		String expectedList = readData(platform, role, "Quiz Dashboard Classes");
-    	Assert.assertEquals(generic.compareList(quiDasMod.quizDashboardClassLst, expectedList), true);		
+		//String expectedList = readData(platform, role, "Quiz Dashboard Classes");
+    	//Assert.assertEquals(generic.compareList(quiDasMod.quizDashboardClassLst, expectedList), true);	
+    	
+    	quiDasMod.playQuizBtn1.click();
+    	quiDasMod.playQuizBtn1.click();
+    	quiDasMod.Next.click();
+    	quiDasMod.Next1.click();
+    	quiDasMod.ok.click();
+    	quiDasMod.Maths.click();
+    	
 	}
 }
