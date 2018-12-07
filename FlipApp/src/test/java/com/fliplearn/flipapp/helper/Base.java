@@ -371,7 +371,7 @@ public class Base implements ITestListener
 	{
 		  return new Object[][]
 		  { 
-			  { "Admin" }, { "Principal" }, { "Teacher" }
+			  { "Admin" }
 		  }; 
 	}
 	
