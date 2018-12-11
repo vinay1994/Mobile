@@ -82,5 +82,9 @@ public class LearnModule extends Base
 		primeImg.click();
 	}
 
+	public void clickOnSubjectLink()
+	{
+		selectSubjectLnk.click();
+	}
 
 }

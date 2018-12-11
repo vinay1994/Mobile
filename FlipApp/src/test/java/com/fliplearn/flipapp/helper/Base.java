@@ -72,7 +72,7 @@ public class Base implements ITestListener
 	static String reportFileName = "AutomationReport" + "_" + fileExtension + ".html";
 	static String reportPath = generic.reportPath();
 	// initialize the HtmlReporter
-	ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter("C:\\tomcat\\webapps\\fliplearn\\latestreport\\" + reportFileName);
+	ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(reportPath() + reportFileName);
 
 	// initialize ExtentReports and attach the HtmlReporter
 	public static ExtentReports extentReports = new ExtentReports();
@@ -83,7 +83,7 @@ public class Base implements ITestListener
 	public static String reportPath()
 	{
 		if(System.getProperty("os.name").equals("Linux"))
-				return System.getProperty("user.dir") + "\\reports\\";
+				return System.getProperty("user.dir") + "/reports/";
 		else
 				return "C:\\tomcat\\webapps\\fliplearn\\latestreport\\";
 	}
@@ -371,7 +371,7 @@ public class Base implements ITestListener
 	{
 		  return new Object[][]
 		  { 
-			  { "Admin" }
+			  { "Admin" }, { "Principal" }, { "Teacher" }
 		  }; 
 	}
 	

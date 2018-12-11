@@ -12,9 +12,9 @@
 	<test name="Quiz" enabled="true">
   		<classes>
 
-    		<class name="com.fliplearn.flipapp.testcases.QuizDashboard">
+    		<class name="com.fliplearn.flipapp.testcases.PrimeResources">
         		<methods>
-        			<include name="verifyQuizDashboardClasses"/>
+        			<include name="verifyTopicSynopsisStudent"/>
         		</methods>
         	</class>
         </classes>
