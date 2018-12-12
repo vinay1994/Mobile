@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.fliplearn.flipapp.util.VideoUtil">
+      <class name="com.fliplearn.flipapp.util.ScreenLoadUtil">
         <methods>
           <include name="befo"/>
-          <include name="preSubjectContent"/>
+          <include name="loadTestOnAndroid"/>
           <include name="aftSuite"/>
           <include name="getResult"/>
-          <include name="playVideo"/>
+          <include name="befMethod"/>
         </methods>
-      </class> <!-- com.fliplearn.flipapp.util.VideoUtil -->
+      </class> <!-- com.fliplearn.flipapp.util.ScreenLoadUtil -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

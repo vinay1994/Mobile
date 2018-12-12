@@ -14,32 +14,32 @@ import io.appium.java_client.pagefactory.iOSFindBy;
 public class VideoContentModule 
 {
 	@FindBy(xpath="//a[contains(text(),'Class 10')]")
-	@AndroidFindBy(id="")
+	@AndroidFindBy(xpath="//*[@text='Class 10']")
 	@iOSFindBy(id="")
 	public RemoteWebElement claConMod;
 	
 	@FindBy(xpath="(//div[@class='col-md-9 col-sm-8 col-xs-8']//h3[text()='Biology'])[2]")
-	@AndroidFindBy(id="")
+	@AndroidFindBy(xpath="//*[@text='Biology']")
 	@iOSFindBy(id="")
 	public RemoteWebElement schoolSubName;
 	
 	@FindBy(xpath="//div[@class='col-md-9 col-sm-8 col-xs-9']//h3[text()='English']")
-	@AndroidFindBy(id="")
+	@AndroidFindBy(xpath="//*[@text='Life Processes']")
 	@iOSFindBy(id="")
 	public RemoteWebElement studentSubName;
-	
+ 	
 	@FindBy(xpath="//a[text()='1. Life Processes']")
-	@AndroidFindBy(id="")
+	@AndroidFindBy(xpath="//*[@text='Life Processes']")
 	@iOSFindBy(id="")
 	public RemoteWebElement cliOnBook;
 	
 	@FindBy(xpath="//li[text()='Nutrition in Human Beings']")
-	@AndroidFindBy(id="")
+	@AndroidFindBy(id="//*[@text='Nutrition in Human Beings']")
 	@iOSFindBy(id="")
 	public RemoteWebElement cliOnBookTopCon;
 	
 	@FindBy(xpath="//h4[text()='Digestion']")
-	@AndroidFindBy(id="")
+	@AndroidFindBy(id="//*[@text='Biology']")
 	@iOSFindBy(id="")
 	public RemoteWebElement schoolVideoContent;
 	

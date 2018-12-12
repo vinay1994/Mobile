@@ -17,7 +17,7 @@ import com.fliplearn.flipapp.pagemodules.SelectSubjectModule;
 import com.fliplearn.flipapp.pagemodules.SignInAsModule;
 import com.fliplearn.flipapp.pagemodules.YourProfileModule;
 
-public class FliplearnPrimeView extends Base
+public class PrimeView extends Base
 {
 	LoginModule logMod;
 	MobileNumberModule mobNumMod;
@@ -95,7 +95,7 @@ public class FliplearnPrimeView extends Base
  	 * @author Jagrati
  	 * @since 2018-10-05
  	 * @throws InterruptedException 
- 	 * @version 1.0
+ 	 * @version 1.1
  	 * @throws IOException 
  	 */
  	 
@@ -120,7 +120,7 @@ public class FliplearnPrimeView extends Base
 		}
 		else
 		{
-			leaMod.clickOnSubjectLink();
+		   leaMod.clickOnSubjectLink();
 	    	Assert.assertEquals(generic.compareList(selSubMod.subjectList, expectedList), true);
 		}
      }

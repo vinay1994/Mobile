@@ -15,42 +15,42 @@ import io.appium.java_client.pagefactory.iOSFindBy;
 public class SubjectContentModule 
 {
 	@FindBy(xpath="//a[contains(text(),'Class 10')]")
-	@AndroidFindBy(id="")
+	@AndroidFindBy(xpath="//*[@text='Class 7']")
 	@iOSFindBy(id="")
 	public RemoteWebElement claConMod;
 	
 	@FindBy(xpath="(//div[@class='col-md-9 col-sm-8 col-xs-8']//h3[text()='Biology'])[2]")
-	@AndroidFindBy(id="")
+	@AndroidFindBy(xpath="//*[@text='Mathematics']")
 	@iOSFindBy(id="")
 	public RemoteWebElement cliOnSubCon;
 	
 	@FindBy(xpath="//a[text()='1. Life Processes']")
-	@AndroidFindBy(id="")
+	@AndroidFindBy(xpath="//*[@text='Integers']")
 	@iOSFindBy(id="")
 	public RemoteWebElement cliOnBook;
 	
 	@FindBy(xpath="//li[text()='Nutrition in Human Beings']")
-	@AndroidFindBy(id="")
+	@AndroidFindBy(xpath="//*[@text='Integers']")
 	@iOSFindBy(id="")
 	public RemoteWebElement cliOnBookTopCon;
 	
 	@FindBy(xpath="//h4[text()='Digestion']")
-	@AndroidFindBy(id="")
+	@AndroidFindBy(xpath="(//*[@text='Animation'])[1]")
 	@iOSFindBy(id="")
 	public RemoteWebElement cliOnVidCon;
 	
 	@FindBy(xpath="//div[@class='row learnResourcesInner']//h6[text()='Real Life Application']")
-	@AndroidFindBy(id="")
+	@AndroidFindBy(xpath="//*[@text='English']")
 	@iOSFindBy(id="")
 	public RemoteWebElement realLife;
 	
 	@FindBy(xpath="//div[@class='row learnResourcesInner']//h6[text()='Topic Synopsis']")
-	@AndroidFindBy(id="")
+	@AndroidFindBy(xpath="//*[@text='Topic Synopsis']")
 	@iOSFindBy(id="")
 	public RemoteWebElement topicSynopsis;
 	
 	@FindBy(xpath="//div[@class='row learnResourcesInner']//h6[text()='Mind Maps']")
-	@AndroidFindBy(id="")
+	@AndroidFindBy(id="//*[@text='Mind Maps']")
 	@iOSFindBy(id="")
 	public RemoteWebElement mindMaps;
 

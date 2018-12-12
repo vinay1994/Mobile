@@ -24,7 +24,7 @@
 	
 	<test name="Learning" enabled="true">
   		<classes>
-    		<class name="com.fliplearn.flipapp.testcases.FliplearnPrimeView">
+    		<class name="com.fliplearn.flipapp.testcases.PrimeContent">
         		<methods>
         		    <include name="verifyPrimeTileDisplayed" />
         			<include name="verifyPrimeClasses"/>
@@ -45,20 +45,17 @@
         		</methods>
         	</class>
         	
-    		<class name="com.fliplearn.flipapp.testcases.PrimeSynopsis">
+    		<class name="com.fliplearn.flipapp.testcases.PrimeResources">
         		<methods>
-        			<include name="verifyRealLifeSchool" />  
-        			<include name="verifyRealLifeStudent" />  
+        			<include name="playPrimeVideoSchool" /> 
+        			<include name="playPrimeVideoStudent" />  
         			<include name="verifyTopicSynopsisSchool" /> 
         			<include name="verifyTopicSynopsisStudent" /> 
         			<include name="verifyMindMapsSchool" /> 
         			<include name="verifyMindMapsStudent" /> 
-        		</methods>
-        	</class>
-        	<class name="com.fliplearn.flipapp.testcases.PrimeVideo">
-        		<methods> 
-        			<include name="playPrimeVideoSchool" /> 
-        			<include name="playPrimeVideoStudent" /> 
+        			<include name="verifyRealLifeSchool" />  
+        			<include name="verifyRealLifeStudent" /> 
+       
         		</methods>
         	</class>
       	</classes> 

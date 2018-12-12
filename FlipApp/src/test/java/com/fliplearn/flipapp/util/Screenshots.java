@@ -33,7 +33,7 @@ public class Screenshots extends Base
 		}
 		else
 		{
-			filePath = System.getProperty("user.dir")+ "\\screenshots\\" + reportFileFolderName + "\\";
+			filePath = System.getProperty("user.dir")+ "/screenshots/" + reportFileFolderName + "/";
 		}	
 			
         File file = new File(filePath);
