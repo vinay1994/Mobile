@@ -14,7 +14,7 @@
 
     		<class name="com.fliplearn.flipapp.testcases.QuizDashboard">
         		<methods>
-        			<include name="verifyQuizDashboardClasses"/>
+        			<include name="verifyQuizDashboardTileDisplayed"/>
         		</methods>
         	</class>
         </classes>

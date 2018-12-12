@@ -8,10 +8,10 @@
     <classes>
       <class name="com.fliplearn.flipapp.testcases.QuizDashboard">
         <methods>
+          <include name="verifyQuizDashboardTileDisplayed" invocation-numbers="0 1 2 5"/>
           <include name="befo"/>
           <include name="befQuiz"/>
           <include name="aftSuite"/>
-          <include name="verifyQuizDashboardClasses" invocation-numbers="0"/>
           <include name="getResult"/>
         </methods>
       </class> <!-- com.fliplearn.flipapp.testcases.QuizDashboard -->

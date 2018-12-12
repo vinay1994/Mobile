@@ -65,8 +65,8 @@ public class ScreenLoadUtil extends Base
 			onbMod.skipScreen();
 		}
 
-		logMod.usernameTxt.sendKeys("class9.demo");
-		logMod.passwordTxt.sendKeys(("156523"));
+		logMod.usernameTxt.sendKeys("vinay2.student");
+		logMod.passwordTxt.sendKeys(("123456"));
 
 		if(eConfig.getProperty("Platform").equals("Android")) 
 		{
@@ -83,13 +83,27 @@ public class ScreenLoadUtil extends Base
 
 		if(!platform.equals("Web"))
 		{
+			Thread.sleep(2000);
 			quiMod.skipBtn.click();
-
+			
 			extentTest.log(Status.PASS, "Click on Quiz Skip Button");
-
+			
 			generic.touchCordinates(driver, 10, 95);
 			 beforetime = new Timestamp(System.currentTimeMillis());
-			extentTest.log(Status.PASS, "Tap on Got it."); 
+			extentTest.log(Status.PASS, "Tap on Got it.");
+			
+			generic.touchCordinates(driver, 10, 95);
+			extentTest.log(Status.PASS, "Tap on Got it.");
+			
+			generic.touchCordinates(driver, 10, 95);
+			extentTest.log(Status.PASS, "Tap on Got it.");
+							
+			generic.touchCordinates(driver, 10, 95);
+			 beforetime = new Timestamp(System.currentTimeMillis());
+			extentTest.log(Status.PASS, "Tap on Got it.");
+			
+			leaMod.clickOnLearnImage();
+			
 			Assert.assertTrue(leaMod.primeImg.isDisplayed()	);
 			 aftertime = new Timestamp(System.currentTimeMillis());
 			System.out.println(aftertime);
