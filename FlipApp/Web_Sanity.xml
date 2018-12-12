@@ -24,13 +24,6 @@
 	
 	<test name="Learning" enabled="true">
   		<classes>
-    		<class name="com.fliplearn.flipapp.testcases.PrimeContent">
-        		<methods>
-        		    <include name="verifyPrimeTileDisplayed" />
-        			<include name="verifyPrimeClasses"/>
-        			<include name="verifyPrimeSubjects"/>
-        		</methods>
-        	</class>
         		<class name="com.fliplearn.flipapp.testcases.VMC">
         		<methods>
         			<include name="displayVMCStudent" />  
@@ -42,6 +35,14 @@
         		<methods>
         		    <include name="verifyQuizDashboardTileDisplayed" />  	
         			<include name="verifyQuizDashboardClasses" />  	
+        		</methods>
+        	</class>
+        	
+        	<class name="com.fliplearn.flipapp.testcases.PrimeContent">
+        		<methods>
+        		    <include name="verifyPrimeTileDisplayed" />
+        			<include name="verifyPrimeClasses"/>
+        			<include name="verifyPrimeSubjects"/>
         		</methods>
         	</class>
         	

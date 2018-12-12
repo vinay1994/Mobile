@@ -9,15 +9,13 @@
  
 
 	
-	<test name="Quiz" enabled="true">
+	<test name="TestCases" enabled="true">
   		<classes>
 
-    		<class name="com.fliplearn.flipapp.testcases.PrimeResources">
+    		<class name="com.fliplearn.flipapp.testcases.VMC">
         		<methods>
  
-        			<include name="verifyQuizDashboardTileDisplayed"/>
-
-        			<include name="verifyTopicSynopsisStudent"/>
+        			<include name="displayVMCStudent"/>
 
         		</methods>
         	</class>
