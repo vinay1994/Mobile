@@ -69,16 +69,8 @@ public class VMC extends Base
 		{
 			
 			logMod.Login(role, "CBSE", "12", "Single", "None", "Yes");
-
+			Thread.sleep(5000);
 			assertEquals(generic.isElementDisplayed(driver, leaMod.vmcImg), true);
-
-//			if(role.equals("Student"))
-//			{	
-//				youProMod.updateClassAndSection(driver, "Class 12", "A");	
-//				leaMod.clickOnLearnImage();
-//				assertEquals(generic.isElementDisplayed(driver, leaMod.vmcImg), true);
-//				youProMod.updateClassAndSection(driver, "Class 6", "A");	
-//			}
 			
 		}
 
