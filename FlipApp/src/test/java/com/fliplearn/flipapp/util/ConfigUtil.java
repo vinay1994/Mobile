@@ -2,6 +2,7 @@ package com.fliplearn.flipapp.util;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.Inet4Address;
 import java.util.Properties;
 
 import com.fliplearn.flipapp.helper.Base;
@@ -22,7 +23,12 @@ public class ConfigUtil extends Base
 		aConfig.load(input);
 		
 		eConfig = new Properties();
-		input =new FileInputStream(Constants.ENV_FILE);
+		if(Inet4Address.getLocalHost().getHostAddress().equals("192.168.109.2"))
+		{
+			input = new FileInputStream("C:\\tomcat\\webapps\\fliplearn\\Environment.properties");
+		}
+		else
+			input =new FileInputStream(Constants.ENV_FILE);
 		eConfig.load(input);
 	}
 }
