@@ -10,14 +10,8 @@
  <test name="Onboarding" enabled="true">
   		<classes>
     		<class name="com.fliplearn.flipapp.testcases.Login">
-        		<methods>
-        			<include name="verifyLogin"/>
-        		</methods>
         	</class>
         	<class name="com.fliplearn.flipapp.testcases.UserProfile">
-        		<methods>
-        			<include name="verifyUserRole" />  	
-        		</methods>
         	</class>
       	</classes> 
 	</test> 
@@ -25,39 +19,16 @@
 	<test name="Learning" enabled="true">
   		<classes>
         		<class name="com.fliplearn.flipapp.testcases.VMC">
-        		<methods>
-        			<include name="displayVMCStudent" />  
-        			<include name="doNotDisplayVMCStudent" />	
-        			<include name="displayVMCSchool" />
-        		</methods>
-        	</class>
-        	<class name="com.fliplearn.flipapp.testcases.QuizDashboard">
-        		<methods>
-        		    <include name="verifyQuizDashboardTileDisplayed" />  	
-        			<include name="verifyQuizDashboardClasses" />  	
-        		</methods>
+     	   	</class>
+        	<class name="com.fliplearn.flipapp.testcases.QuizDashboard">        	
         	</class>
         	
-        	<class name="com.fliplearn.flipapp.testcases.PrimeContent">
-        		<methods>
-        		    <include name="verifyPrimeTileDisplayed" />
-        			<include name="verifyPrimeClasses"/>
-        			<include name="verifyPrimeSubjects"/>
-        		</methods>
+        	<class name="com.fliplearn.flipapp.testcases.PrimeContent">        	
         	</class>
         	
     		<class name="com.fliplearn.flipapp.testcases.PrimeResources">
-        		<methods>
-        			<include name="playPrimeVideoSchool" /> 
-        			<include name="playPrimeVideoStudent" />  
-        			<include name="verifyTopicSynopsisSchool" /> 
-        			<include name="verifyTopicSynopsisStudent" /> 
-        			<include name="verifyMindMapsSchool" /> 
-        			<include name="verifyMindMapsStudent" /> 
-        			<include name="verifyRealLifeSchool" />  
-        			<include name="verifyRealLifeStudent" /> 
-       
-        		</methods>
+        	</class>
+        	<class name="com.fliplearn.flipapp.testcases.PrimeSearch">
         	</class>
       	</classes> 
 	</test> 
@@ -65,20 +36,6 @@
 	<test name="Communication" enabled="true">
   		<classes>
     		<class name="com.fliplearn.flipapp.testcases.Event">
-        		<methods>
-        			<include name="createAnnouncement" />  
-        			<include name="createAlbum" />	
-        			<include name="createHomework" />
-        			<include name="canNotCreateAnnouncement" />	
-        			<include name="canNotCreateAlbum" />
-        			<include name="canNotCreateHomework" />	
-        			<include name="studentCanViewAnnouncement" />
-        			<include name="studentCanViewAlbum" />	
-        			<include name="studentCanViewHomework" />
-        			<include name="parentCanViewAnnouncement" />	
-        			<include name="parentCanViewAlbum" />
-        			<include name="parentCanViewHomework" />
-        		</methods>
         	</class>
          	</classes> 
 	</test>  
@@ -86,18 +43,6 @@
 	<test name="Marketplace" enabled="true">
   		<classes>
     		<class name="com.fliplearn.flipapp.testcases.Fee">
-        		<methods>
-        			<include name="payFeeLoginDebitCard"/>
-        			<include name="payFeeLogoutDebitCard"/>
-        			<include name="payFeeLoginNetBanking"/>
-        			<include name="payFeeLogoutNetBanking"/>
-        			<include name="payFeeLoginUPI"/>
-        			<include name="payFeeLogoutUPI"/>
-        			<include name="payFeeLoginVISA"/>
-        			<include name="payFeeLogoutVISA"/>
-        			<include name="payFeeLoginAmex"/>
-        			<include name="payFeeLogoutAmex"/>
-        		</methods>
         	</class>
 	</classes>
 	</test>

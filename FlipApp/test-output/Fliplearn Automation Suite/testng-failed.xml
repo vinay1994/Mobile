@@ -1,43 +1,20 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Fliplearn Automation Suite]" guice-stage="DEVELOPMENT">
   <listeners>
     <listener class-name="com.fliplearn.flipapp.helper.Base"/>
   </listeners>
-  <test thread-count="5" name="Quiz(failed)">
+  <test thread-count="5" name="TestCases(failed)">
     <classes>
-      <class name="com.fliplearn.flipapp.testcases.QuizDashboard">
+      <class name="com.fliplearn.flipapp.testcases.PrimeSearch">
         <methods>
-          <include name="verifyQuizDashboardTileDisplayed" invocation-numbers="0 1 2 5"/>
+          <include name="searchAndViewContentStudent"/>
           <include name="befo"/>
-          <include name="befQuiz"/>
           <include name="aftSuite"/>
+          <include name="prePrimeSearch"/>
           <include name="getResult"/>
         </methods>
-      </class> <!-- com.fliplearn.flipapp.testcases.QuizDashboard -->
+      </class> <!-- com.fliplearn.flipapp.testcases.PrimeSearch -->
     </classes>
-  </test> <!-- Quiz(failed) -->
+  </test> <!-- TestCases(failed) -->
 </suite> <!-- Failed suite [Fliplearn Automation Suite] -->
-
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Fliplearn Automation Suite]" guice-stage="DEVELOPMENT">
-  <listeners>
-    <listener class-name="com.fliplearn.flipapp.helper.Base"/>
-  </listeners>
-  <test thread-count="5" name="Quiz(failed)">
-    <classes>
-      <class name="com.fliplearn.flipapp.testcases.FliplearnPrimeView">
-        <methods>
-          <include name="verifyPrimeSubjects" invocation-numbers="0 1 2"/>
-          <include name="befo"/>
-          <include name="prePrime"/>
-          <include name="aftSuite"/>
-          <include name="getResult"/>
-        </methods>
-      </class> <!-- com.fliplearn.flipapp.testcases.FliplearnPrimeView -->
-    </classes>
-  </test> <!-- Quiz(failed) -->
-</suite> <!-- Failed suite [Fliplearn Automation Suite] -->
-
