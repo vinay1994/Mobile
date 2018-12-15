@@ -12,10 +12,10 @@
 	<test name="TestCases" enabled="true">
   		<classes>
 
-    		<class name="com.fliplearn.flipapp.testcases.VMC">
+    		<class name="com.fliplearn.flipapp.testcases.PrimeResources">
         		<methods>
  
-        			<include name="displayVMCStudent"/>
+        			<include name="verifyAccessFromChildMessage" />  
 
         		</methods>
         	</class>

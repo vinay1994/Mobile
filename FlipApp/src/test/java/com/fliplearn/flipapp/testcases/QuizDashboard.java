@@ -24,7 +24,7 @@ import com.fliplearn.flipapp.pagemodules.MobileNumberModule;
 import com.fliplearn.flipapp.pagemodules.OnboardingModule;
 import com.fliplearn.flipapp.pagemodules.QuizDashBoardModule;
 import com.fliplearn.flipapp.pagemodules.QuizModule;
-import com.fliplearn.flipapp.pagemodules.SelectClassModule;
+import com.fliplearn.flipapp.pagemodules.PrimeClassModule;
 import com.fliplearn.flipapp.pagemodules.SignInAsModule;
 
 import io.appium.java_client.AppiumDriver;
@@ -41,7 +41,7 @@ public class QuizDashboard extends Base
 	MobileNumberModule mobNumMod;
 	QuizModule quiMod;
 	SignInAsModule sigInMod;
-	SelectClassModule selClaMod;
+	PrimeClassModule selClaMod;
 	QuizDashBoardModule quiDasMod;
 	GenericFunctions generic;
 	
@@ -53,7 +53,7 @@ public class QuizDashboard extends Base
 		sigInMod = new SignInAsModule(driver);
 		mobNumMod = new MobileNumberModule(driver);
 		quiMod = new QuizModule(driver);
-		selClaMod = new SelectClassModule(driver);
+		selClaMod = new PrimeClassModule(driver);
 		leaMod = new LearnModule(driver);
 		quiDasMod = new QuizDashBoardModule(driver); 
 		generic=new GenericFunctions();	
@@ -96,7 +96,8 @@ public class QuizDashboard extends Base
 	 * Verify Quiz Dashboard Classes for Admin, Principal and Teacher on Web, Android and iOS
 	 * @author Durga
 	 * @since 2018-09-21
-	 * @version 1.4
+	 * Modified By: Tarun Goswami Date: 15 Dec 2018
+	 * @version 1.5
 	 * @throws InterruptedException 
 	 * @throws IOException 
 	 */
@@ -117,24 +118,17 @@ public class QuizDashboard extends Base
 		}
 		
 		quiDasMod.clickOnQuizDashboardTile();
-		
-		generic.touchCordinates(driver, 10, 95);
-		 extentTest.log(Status.PASS, "Tap on Got it.");
-		 generic.touchCordinates(driver, 10, 95);
-		 extentTest.log(Status.PASS, "Tap on Got it.");
-							
+								
 		generic.waitForElementVisibility(driver, quiDasMod.classListBtn);
-		//quiDasMod.clickOnClassLst();
-    
-		//String expectedList = readData(platform, role, "Quiz Dashboard Classes");
-    	//Assert.assertEquals(generic.compareList(quiDasMod.quizDashboardClassLst, expectedList), true);	
-    	
-    	quiDasMod.playQuizBtn1.click();
-    	quiDasMod.playQuizBtn1.click();
-    	quiDasMod.Next.click();
-    	quiDasMod.Next1.click();
-    	quiDasMod.ok.click();
-    	quiDasMod.Maths.click();
-    	
+		quiDasMod.clickOnClassLst();	
+
+		String expectedList = readData(platform, role, "Quiz Dashboard Classes");
+		Assert.assertEquals(generic.compareList(quiDasMod.quizDashboardClassLst, expectedList), true);	
 	}
+//	quiDasMod.playQuizBtn1.click();
+//	quiDasMod.playQuizBtn1.click();
+//	quiDasMod.Next.click();
+//	quiDasMod.Next1.click();
+//	quiDasMod.ok.click();
+//	quiDasMod.Maths.click();
 }

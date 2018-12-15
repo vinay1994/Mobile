@@ -82,7 +82,7 @@ public class Base implements ITestListener
 
 	public static String reportPath()
 	{
-		if(System.getProperty("os.name").equals("Linux"))
+		if(System.getProperty("os.name").equals("Linux") || System.getProperty("os.name").equals("Mac") )
 				return System.getProperty("user.dir") + "/reports/";
 		else
 				return "C:\\tomcat\\webapps\\fliplearn\\latestreport\\";
@@ -91,7 +91,7 @@ public class Base implements ITestListener
 	 * This will set Driver based on capabilities and configuration
 	 * @author Tarun Goswami
 	 * @since 2018-09-20
-	 * @version 1.2
+	 * @version 1.3
 	 */
 	public void setDriver() throws MalformedURLException
 	{
@@ -161,9 +161,36 @@ public class Base implements ITestListener
 				driver.get(url);
 			
         driver.manage().window().maximize();
+		}	
+		
+		else if(server.equals("Mac") & platform.equals("Web"))
+	    {
+				if(browser.equals("Chrome"))
+				{
+					ChromeOptions options = new ChromeOptions();
+					options.addArguments("start-maximized");
+			
+					System.setProperty("webdriver.chrome.driver", Constants.MAC_CHROME_EXE);
+					driver = new ChromeDriver();
+				}
+				else if(browser.equals("Firefox")) 
+				{
+					FirefoxOptions options = new FirefoxOptions();
+					options.addArguments("start-maximized");
+			
+					System.setProperty("webdriver.gecko.driver", Constants.MAC_FIREFOX_EXE);
+					driver = new FirefoxDriver();
+				}	
+				
+
+				driver.get(url);
+			
+        driver.manage().window().maximize();
 		}		
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		}
+	}
+	
+	
 	
 	
 	/**
@@ -250,7 +277,7 @@ public class Base implements ITestListener
 	@AfterMethod
 	public void getResult() throws IOException
 	{
-		driver.quit();
+		//driver.quit();
 		extentTest.log(Status.INFO, "Browser/Application Closed.");
 	}
 	

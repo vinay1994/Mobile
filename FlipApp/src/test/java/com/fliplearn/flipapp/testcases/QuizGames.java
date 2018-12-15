@@ -10,7 +10,7 @@ import com.fliplearn.flipapp.pagemodules.MenuModule;
 import com.fliplearn.flipapp.pagemodules.MobileNumberModule;
 import com.fliplearn.flipapp.pagemodules.OnboardingModule;
 import com.fliplearn.flipapp.pagemodules.QuizModule;
-import com.fliplearn.flipapp.pagemodules.SelectClassModule;
+import com.fliplearn.flipapp.pagemodules.PrimeClassModule;
 import com.fliplearn.flipapp.pagemodules.SignInAsModule;
 
 public class QuizGames extends Base 
@@ -21,7 +21,7 @@ public class QuizGames extends Base
 	MobileNumberModule mobNumMod;
 	QuizModule quiMod;
 	SignInAsModule signInMod;
-	SelectClassModule selClaMod;
+	PrimeClassModule selClaMod;
 	GenericFunctions generic;
 	
 	@BeforeMethod
@@ -33,7 +33,7 @@ public class QuizGames extends Base
 		signInMod = new SignInAsModule(driver);
 		mobNumMod = new MobileNumberModule(driver);
 		quiMod = new QuizModule(driver);
-		selClaMod = new SelectClassModule(driver);
+		selClaMod = new PrimeClassModule(driver);
 	}
 
 	/**
