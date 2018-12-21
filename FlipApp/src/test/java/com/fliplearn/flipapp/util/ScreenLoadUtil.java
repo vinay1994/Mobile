@@ -58,15 +58,15 @@ public class ScreenLoadUtil extends Base
 	 * @throws InterruptedException 
 	 */
 	@Test
-	public void loadTestOnAndroid() throws InterruptedException
+	public void loadTestOnScreens() throws InterruptedException
 	{
 		if(eConfig.getProperty("Platform").equals("Android")) 
 		{
 			onbMod.skipScreen();
 		}
 
-		logMod.usernameTxt.sendKeys("vinay2.student");
-		logMod.passwordTxt.sendKeys(("123456"));
+		logMod.usernameTxt.sendKeys("class9.demo");
+		logMod.passwordTxt.sendKeys(("156523"));
 
 		if(eConfig.getProperty("Platform").equals("Android")) 
 		{
@@ -87,26 +87,19 @@ public class ScreenLoadUtil extends Base
 			quiMod.skipBtn.click();
 			
 			extentTest.log(Status.PASS, "Click on Quiz Skip Button");
+			System.out.println("Click on Quiz Skip Button");
 			
 			generic.touchCordinates(driver, 10, 95);
-			 beforetime = new Timestamp(System.currentTimeMillis());
-			extentTest.log(Status.PASS, "Tap on Got it.");
+			System.out.println("Click on Got it");
+
 			
-			generic.touchCordinates(driver, 10, 95);
-			extentTest.log(Status.PASS, "Tap on Got it.");
-			
-			generic.touchCordinates(driver, 10, 95);
-			extentTest.log(Status.PASS, "Tap on Got it.");
-							
-			generic.touchCordinates(driver, 10, 95);
-			 beforetime = new Timestamp(System.currentTimeMillis());
-			extentTest.log(Status.PASS, "Tap on Got it.");
-			
-			leaMod.clickOnLearnImage();
-			
+//			extentTest.log(Status.PASS, "Tap on Got it.");
+//			generic.touchCordinates(driver, 10, 95);
+//			System.out.println("Click on Got it");
+
+			beforetime = new Timestamp(System.currentTimeMillis());
 			Assert.assertTrue(leaMod.primeImg.isDisplayed()	);
 			 aftertime = new Timestamp(System.currentTimeMillis());
-			System.out.println(aftertime);
 			System.out.println("Prime image takes time to visible: "+(aftertime.getTime()-beforetime.getTime()));
 
 		}	

@@ -36,10 +36,12 @@ import com.fliplearn.flipapp.util.ExcelUtil;
 import com.fliplearn.flipapp.util.Screenshots;
 import com.fliplearn.flipapp.util.SendReportUtil;
 
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.Activity;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.android.StartsActivity;
+import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 
 
@@ -48,6 +50,7 @@ public class Base implements ITestListener
 	   
 	public static Properties aConfig = null;
 	public static Properties eConfig = null;
+	public static Properties vConfig = null;
 	public static FileInputStream input = null;
 		
 	public static boolean isInitialized = false;
@@ -118,9 +121,33 @@ public class Base implements ITestListener
 		    cap.setCapability("appActivity","com.elss.educomp.prelogin.ui.SplashActivity"); 
 		    cap.setCapability("noSign", true);
 		    
+		    
 			driver = new AndroidDriver<AndroidElement>(new URL("http://0.0.0.0:4723/wd/hub"), cap);
 			 
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		}
+		
+		else if(platform.equals("iOS"))
+		{
+			
+			DesiredCapabilities cap = new DesiredCapabilities();
+//			cap.setCapability("platformVersion", "10.3");
+
+		    cap.setCapability("deviceName", "Fliplearn Iphone (12.1)");
+		    cap.setCapability("platformName", "iOS");
+		    cap.setCapability("udid", "af9f8cec090145c64e092f3339fe2f59d832c722");
+		    cap.setCapability("bundleId", "com.educomp.smartclassonline");
+		   // cap.setCapability(MobileCapabilityType.APP, "/Users/tarungoswami/Downloads/testapp/Fliplearn.app");
+
+		    cap.setCapability("automationName", "XCUITest");
+		    cap.setCapability("xcodeOrgId","47M3CKSC66");	
+		    cap.setCapability("xcodeSigningId","iPhone Developer");
+		    cap.setCapability("noReset", false);
+
+			driver = new IOSDriver(new URL("http://127.0.0.1:4723/wd/hub"), cap);
+
+			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
 		}
 		
 		else if(server.equals("Windows") &
@@ -246,6 +273,12 @@ public class Base implements ITestListener
 		Base.Initialize();
 		base.setDriver();
 		extentReports.attachReporter(htmlReporter);	
+		if(eConfig.getProperty("Platform").equals("iOS"))
+		{	
+			((IOSDriver) driver).resetApp();
+			System.out.println("App is reset");
+		}	
+
 	}
 
 	/**

@@ -13,17 +13,17 @@ public class SignInAsModule
 {
 	@FindBy(xpath="//*[text()='admin']")
 	@AndroidFindBy(xpath="//*[@text='ADMIN']") 
-	@iOSFindBy(id="")
+	//@iOSFindBy(id="")
 	public RemoteWebElement adminLnk;
 	
 	@FindBy(xpath="(//div[@class='display-flex'])[1]")
 	@AndroidFindBy(xpath="//*[@text='PARENT']") 
-	@iOSFindBy(id="")
+	//@iOSFindBy(id="")
 	RemoteWebElement parentLnk;
 	
 	@FindBy(xpath="//*[text()='Proceed']")
 	@AndroidFindBy(xpath="//*[@text='PARENT']") 
-	@iOSFindBy(id="")
+	//@iOSFindBy(id="")
 	public RemoteWebElement proceedBtn;
 	
 	public SignInAsModule(WebDriver driver)

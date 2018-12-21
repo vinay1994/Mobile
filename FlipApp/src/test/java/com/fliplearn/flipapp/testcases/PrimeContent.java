@@ -27,7 +27,6 @@ public class PrimeContent extends Base
 	PrimeClassModule selClaMod;
 	PrimeSubjectModule selSubMod;
 	GenericFunctions generic;
-	YourProfileModule youProMod;
 	HeaderModule heaMod;
 	
 	@BeforeMethod
@@ -41,7 +40,6 @@ public class PrimeContent extends Base
 		leaMod = new LearnModule(driver);
 	    selClaMod=	new PrimeClassModule(driver);
 	    selSubMod= new PrimeSubjectModule(driver);   
-	    youProMod = new YourProfileModule(driver);
 	    heaMod = new HeaderModule(driver);
 	}
 
@@ -53,7 +51,7 @@ public class PrimeContent extends Base
 	 * @version 1.1
 	 * @throws IOException 
 	 */
-	 @Test( priority=1,dataProvider = "group0")
+     @Test(dataProvider = "group0")
      public void verifyPrimeTileDisplayed(String role) throws IOException, InterruptedException 
      {
 		 logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");

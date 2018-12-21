@@ -28,7 +28,11 @@ public class ConfigUtil extends Base
 			input = new FileInputStream("C:\\tomcat\\webapps\\fliplearn\\Environment.properties");
 		}
 		else
-			input =new FileInputStream(Constants.ENV_FILE);
+		input =new FileInputStream(Constants.ENV_FILE);
 		eConfig.load(input);
+		
+		vConfig = new Properties();
+		input =new FileInputStream(Constants.VIDEO_FILE);
+		vConfig.load(input);
 	}
 }

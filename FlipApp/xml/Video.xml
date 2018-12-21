@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Fliplearn Video Suite">
+
+<listeners>
+	<listener class-name="com.fliplearn.flipapp.helper.Base"/>
+</listeners>
+ 
+
+	
+	<test name="TestCases" enabled="true">
+  		<classes>
+
+    		<class name="com.fliplearn.flipapp.util.VideoUtil">
+        		<methods>
+ 
+        			<include name="playVideo" />  
+
+        		</methods>
+        	</class>
+        </classes>
+ </test>       	
+ </suite>
+ 
