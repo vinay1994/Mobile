@@ -21,17 +21,17 @@ public class LearnModule extends Base
 
 	@FindBy(xpath="//a[@id='learn-icon']")
 	@AndroidFindBy(xpath="//*[@text='Learn']") 
-	//	@iOSFindBy(id="")
+	@iOSFindBy(xpath="//XCUIElementTypeStaticText[@name='Learn']")
 	public RemoteWebElement learnImg;	
 
 	@FindBy(xpath="//strong[text()='Fliplearn Prime']")
 	@AndroidFindBy(xpath="//*[@text='Fliplearn Prime']")
-	//	@iOSFindBy(id="")
+	@iOSFindBy(id="//XCUIElementTypeStaticText[@name='Fliplearn Prime']")
 	public RemoteWebElement primeImg;
 
 	@FindBy(xpath="//h4/strong[contains(text(),'VMC Live')]")
 	@AndroidFindBy(xpath="//*[@text='VMC Live @ Fliplearn']")
-	//	@iOSFindBy(id="")
+	@iOSFindBy(xpath="//XCUIElementTypeStaticText[@name='VMC Live @ Fliplearn']")
 	public RemoteWebElement vmcImg;
 
 	@FindBy(xpath="//a[text()='Pre Nursery']")
@@ -41,14 +41,14 @@ public class LearnModule extends Base
 
 	@FindBy(xpath="//a[text()='Class 1']")
 	@AndroidFindBy(xpath="//*[@text='Biology']")
-	//	@iOSFindBy(id="")
+	@iOSFindBy(id="(//XCUIElementTypeButton[@name='Learn >'])[1]")
 	public RemoteWebElement selectSubjectLnk;
 
 
 	@FindBy(xpath="//a[@id='learn-icon']")
 	@AndroidFindBy(id="com.elss.educomp:id/ll_mm") 
 	//	@iOSFindBy(id="")
-	public List<RemoteWebElement> selectTOpic;
+	public List<RemoteWebElement> selectTopic;
 
 	@FindBy(xpath="//a[@id='learn-icon']")
 	@AndroidFindBy(id="com.elss.educomp:id/rowThirdText") 

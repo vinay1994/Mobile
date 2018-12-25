@@ -65,8 +65,8 @@ public class ScreenLoadUtil extends Base
 			onbMod.skipScreen();
 		}
 
-		logMod.usernameTxt.sendKeys("class9.demo");
-		logMod.passwordTxt.sendKeys(("156523"));
+		logMod.usernameTxt.sendKeys("vinay2.student");
+		logMod.passwordTxt.sendKeys(("123456"));
 
 		if(eConfig.getProperty("Platform").equals("Android")) 
 		{
@@ -76,12 +76,15 @@ public class ScreenLoadUtil extends Base
 		
 		logMod.loginBtn.click();
 		Timestamp beforetime = new Timestamp(System.currentTimeMillis());
-		Assert.assertTrue(quiMod.skipBtn.isDisplayed()	);
+		if(platform.equals("Android"))
+			Assert.assertTrue(quiMod.skipBtn.isDisplayed());
+		else if(platform.equals("iOS"))
+			leaMod.clickOnLearnImage();
+
 		Timestamp aftertime = new Timestamp(System.currentTimeMillis());
 		System.out.println("Login takes time to visible: "+(aftertime.getTime()-beforetime.getTime()-500));
-		extentTest.log(Status.PASS, "Click on Login button");
 
-		if(!platform.equals("Web"))
+		if(!platform.equals("Web") && !platform.equals("iOS"))
 		{
 			Thread.sleep(2000);
 			quiMod.skipBtn.click();
@@ -92,10 +95,6 @@ public class ScreenLoadUtil extends Base
 			generic.touchCordinates(driver, 10, 95);
 			System.out.println("Click on Got it");
 
-			
-//			extentTest.log(Status.PASS, "Tap on Got it.");
-//			generic.touchCordinates(driver, 10, 95);
-//			System.out.println("Click on Got it");
 
 			beforetime = new Timestamp(System.currentTimeMillis());
 			Assert.assertTrue(leaMod.primeImg.isDisplayed()	);
@@ -113,12 +112,12 @@ public class ScreenLoadUtil extends Base
 		
 		leaMod.selectSubjectLnk.click();
 		beforetime = new Timestamp(System.currentTimeMillis());
-		Assert.assertTrue(leaMod.selectTOpic.get(0).isDisplayed());
+		Assert.assertTrue(leaMod.selectTopic.get(0).isDisplayed());
 		aftertime = new Timestamp(System.currentTimeMillis());
 		System.out.println("Chapter takes time to visible: "+(aftertime.getTime()-beforetime.getTime()-500));
 		
 		
-		leaMod.selectTOpic.get(0).click();
+		leaMod.selectTopic.get(0).click();
 		beforetime = new Timestamp(System.currentTimeMillis());
 		Assert.assertTrue(leaMod.Selectresource.get(0).isDisplayed());
 		aftertime = new Timestamp(System.currentTimeMillis());

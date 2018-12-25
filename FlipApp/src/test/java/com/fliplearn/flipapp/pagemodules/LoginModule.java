@@ -66,8 +66,10 @@ public class LoginModule extends Base
 				extentTest.log(Status.PASS, "Click on Skip button.");
 			}
 
+			usernameTxt.clear();
 			usernameTxt.sendKeys(username);
 			extentTest.log(Status.PASS, "Enter Username: "+username);
+			passwordTxt.clear();
 			passwordTxt.sendKeys((password));
 			extentTest.log(Status.PASS, "Enter Password");
       
@@ -79,7 +81,7 @@ public class LoginModule extends Base
 			loginBtn.click();
 			extentTest.log(Status.PASS, "Click on Login button");
 				 
-			 if(!platform.equals("Web"))
+			 if(platform.equals("Android"))
 			 {
 				 quiMod.skipBtn.click();
 				 

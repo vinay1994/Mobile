@@ -8,11 +8,13 @@ import org.testng.annotations.Test;
 
 import com.fliplearn.flipapp.helper.Base;
 import com.fliplearn.flipapp.helper.GenericFunctions;
+import com.fliplearn.flipapp.pagemodules.HeaderModule;
 import com.fliplearn.flipapp.pagemodules.LoginModule;
 import com.fliplearn.flipapp.pagemodules.MobileNumberModule;
 import com.fliplearn.flipapp.pagemodules.MyWallModule;
 import com.fliplearn.flipapp.pagemodules.OnboardingModule;
 import com.fliplearn.flipapp.pagemodules.QuizModule;
+import com.fliplearn.flipapp.pagemodules.YourProfileModule;
 
 public class Login extends Base 
 {
@@ -22,6 +24,8 @@ public class Login extends Base
 	QuizModule quiMod;
 	GenericFunctions generic;
 	MyWallModule myWalMod;
+	HeaderModule heaMod;
+	YourProfileModule youProMod;
 	
 	@BeforeMethod
 	public void befMethod()
@@ -32,6 +36,8 @@ public class Login extends Base
 		mobNumMod = new MobileNumberModule(driver);
 		quiMod = new QuizModule(driver);
 		myWalMod = new MyWallModule(driver);
+		heaMod = new HeaderModule(driver);
+		youProMod = new YourProfileModule(driver);
 	}
 	
 	
@@ -51,6 +57,37 @@ public class Login extends Base
 		{
 			if(!role.equals("Guest"))
 				Assert.assertEquals(generic.isElementDisplayed(driver, myWalMod.myWallTab), true);
+		}	
+		else
+		{
+			heaMod.clickonLogoutBtn();
+		}
+	}
+	
+	/**
+	 * Verify User User Login
+	 * @author Durga
+	 * @since 2018-10-20
+	 * @version 1.2
+	 * @throws InterruptedException 
+	 */
+	@Test(dataProvider = "group0")
+	public void verifyLogout(String role) throws InterruptedException
+	{
+		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
+		
+		if(platform.equals("Web"))
+		{
+			if(!role.equals("Guest"))
+				generic.mouseHoverAndClick(driver, heaMod.profileImg, heaMod.logoutLnk);
+			else
+				generic.mouseHoverAndClick(driver, heaMod.guestProfileImg, heaMod.logoutLnk);
+				
+			Assert.assertTrue(logMod.usernameTxt.isDisplayed());
+		}
+		else
+		{
+			heaMod.clickonLogoutBtn();
 		}	
 	}
 }
