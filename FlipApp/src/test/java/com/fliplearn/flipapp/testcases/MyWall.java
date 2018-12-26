@@ -5,27 +5,23 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-
 import com.fliplearn.flipapp.helper.Base;
 import com.fliplearn.flipapp.helper.GenericFunctions;
-import com.fliplearn.flipapp.pagemodules.HeaderModule;
 import com.fliplearn.flipapp.pagemodules.LoginModule;
 import com.fliplearn.flipapp.pagemodules.MobileNumberModule;
 import com.fliplearn.flipapp.pagemodules.MyWallModule;
 import com.fliplearn.flipapp.pagemodules.OnboardingModule;
 import com.fliplearn.flipapp.pagemodules.QuizModule;
-import com.fliplearn.flipapp.pagemodules.YourProfileModule;
 
-public class Login extends Base 
+public class MyWall extends Base 
 {
 	LoginModule logMod;
+	MyWallModule mywallMod;
 	OnboardingModule onbMod;
 	MobileNumberModule mobNumMod;
 	QuizModule quiMod;
 	GenericFunctions generic;
 	MyWallModule myWalMod;
-	HeaderModule heaMod;
-	YourProfileModule youProMod;
 	
 	@BeforeMethod
 	public void befMethod()
@@ -36,11 +32,9 @@ public class Login extends Base
 		mobNumMod = new MobileNumberModule(driver);
 		quiMod = new QuizModule(driver);
 		myWalMod = new MyWallModule(driver);
-		heaMod = new HeaderModule(driver);
-		youProMod = new YourProfileModule(driver);
+		
 	}
-	
-	
+		
 	/**
 	 * Verify User User Login
 	 * @author Vinay Yadav, Durga
@@ -49,45 +43,34 @@ public class Login extends Base
 	 * @throws InterruptedException 
 	 */
 	@Test(dataProvider = "group0")
-	public void verifyLogin(String role) throws InterruptedException
+	public void verifyMywall(String role) throws InterruptedException
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		
 		if(platform.equals("Web"))
 		{
-			if(!role.equals("Guest"))
+			if(role.equals("Guest"))
+				MyWallModule.guestWall();
 				Assert.assertEquals(generic.isElementDisplayed(driver, myWalMod.myWall), true);
-		}	
-		else
-		{
-			heaMod.clickonLogoutBtn();
 		}
-	}
-	
-	/**
-	 * Verify User User Login
-	 * @author Durga
-	 * @since 2018-10-20
-	 * @version 1.2
-	 * @throws InterruptedException 
-	 */
-	@Test(dataProvider = "group0")
-	public void verifyLogout(String role) throws InterruptedException
-	{
-		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		
-		if(platform.equals("Web"))
-		{
-			if(!role.equals("Guest"))
-				generic.mouseHoverAndClick(driver, heaMod.profileImg, heaMod.logoutLnk);
-			else
-				generic.mouseHoverAndClick(driver, heaMod.guestProfileImg, heaMod.logoutLnk);
-				
-			Assert.assertTrue(logMod.usernameTxt.isDisplayed());
-		}
-		else
-		{
-			heaMod.clickonLogoutBtn();
-		}	
+		MyWallModule.myWall.click();
+		String x= MyWallModule.likeComment.getText();
+		System.out.println(x);		
+		MyWallModule.comment.click();
+		MyWallModule.clickonLike();
+		System.out.println("Post was liked");
+		
+		String y=MyWallModule.clickonLike.getAttribute("class");
+		System.out.println(y);
+		
+		
+		MyWallModule.clickForDisLike(driver, y);
+		System.out.println("Post was Disliked");
+		
+		Assert.assertEquals(generic.isElementDisplayed(driver, MyWallModule.likeComment), true);
+		Assert.assertEquals(generic.isElementDisplayed(driver, MyWallModule.comment), true);
+		Assert.assertEquals(generic.isElementDisplayed(driver, MyWallModule.clickonLike), true);
+			
 	}
 }
