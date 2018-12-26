@@ -56,7 +56,7 @@ public class Login extends Base
 		if(platform.equals("Web"))
 		{
 			if(!role.equals("Guest"))
-				Assert.assertEquals(generic.isElementDisplayed(driver, myWalMod.myWallTab), true);
+				Assert.assertEquals(generic.isElementDisplayed(driver, myWalMod.myWall), true);
 		}	
 		else
 		{

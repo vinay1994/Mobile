@@ -12,10 +12,10 @@
 	<test name="TestCases" enabled="true">
   		<classes>
 
-    		<class name="com.fliplearn.flipapp.testcases.PrimeResources">
+    		<class name="com.fliplearn.flipapp.testcases.MyWall">
         		<methods>
  
-        			<include name="verifyAccessFromChildMessage" />  
+        			<include name="verifyMywall" />  
 
         		</methods>
         	</class>

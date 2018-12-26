@@ -5,7 +5,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-
 import com.fliplearn.flipapp.helper.Base;
 import com.fliplearn.flipapp.helper.GenericFunctions;
 import com.fliplearn.flipapp.pagemodules.LoginModule;
@@ -50,17 +49,28 @@ public class MyWall extends Base
 		
 		if(platform.equals("Web"))
 		{
-			if(!role.equals("Guest"))
+			if(role.equals("Guest"))
+				MyWallModule.guestWall();
 				Assert.assertEquals(generic.isElementDisplayed(driver, myWalMod.myWall), true);
 		}
 		
 		MyWallModule.myWall.click();
-		MyWallModule.likeComment.click();
+		String x= MyWallModule.likeComment.getText();
+		System.out.println(x);		
 		MyWallModule.comment.click();
+		MyWallModule.clickonLike();
+		System.out.println("Post was liked");
+		
+		String y=MyWallModule.clickonLike.getAttribute("class");
+		System.out.println(y);
+		
+		
+		MyWallModule.clickForDisLike(driver, y);
+		System.out.println("Post was Disliked");
 		
 		Assert.assertEquals(generic.isElementDisplayed(driver, MyWallModule.likeComment), true);
 		Assert.assertEquals(generic.isElementDisplayed(driver, MyWallModule.comment), true);
+		Assert.assertEquals(generic.isElementDisplayed(driver, MyWallModule.clickonLike), true);
 			
-		
 	}
 }
