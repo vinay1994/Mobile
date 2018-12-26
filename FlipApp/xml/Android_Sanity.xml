@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Fliplearn Automation Suite">
+
+<listeners>
+	<listener class-name="com.fliplearn.flipapp.helper.Base"/>
+</listeners>
+ 
+ <test name="Onboarding" enabled="true">
+  		<classes>
+    		<class name="com.fliplearn.flipapp.testcases.Login">
+        		<methods>
+        			<include name="verifyLogin"/>
+        		</methods>
+        	</class>
+      	</classes> 
+	</test> 
+	
+	<test name="Learning" enabled="true">
+  		<classes>
+    		<class name="com.fliplearn.flipapp.testcases.FliplearnPrimeView">
+        		<methods>
+        			<include name="verifyPrimeTileDisplayed"/>
+        			<include name="verifyPrimeClasses"/>
+        		</methods>
+        	</class>
+        	
+        	<class name="com.fliplearn.flipapp.testcases.VMC">
+        		<methods>
+        			<include name="displayVMCSchool" />
+        		</methods>
+        	</class>
+        	
+        	<class name="com.fliplearn.flipapp.testcases.QuizGames">
+        		<methods>
+        			<include name="verifyQuizTileDisplayed"/>
+        		</methods>
+        	</class>
+        	
+        	<class name="com.fliplearn.flipapp.testcases.QuizDashboard">
+        		<methods>
+        			<include name="verifyQuizDashboardTileDisplayed"/>
+        			<include name="verifyQuizDashboardClasses"/>
+        		</methods>
+        	</class>
+        	
+        	
+        	<class name="com.fliplearn.flipapp.testcases.VMC">
+        		<methods>
+        			<include name="displayVMCSchool" />
+        		</methods>
+        	</class>
+    
+      	</classes> 
+	</test> 
+		
+</suite>	

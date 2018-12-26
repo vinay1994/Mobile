@@ -4,17 +4,17 @@
   <listeners>
     <listener class-name="com.fliplearn.flipapp.helper.Base"/>
   </listeners>
-  <test thread-count="5" name="Quiz(failed)">
+  <test thread-count="5" name="TestCases(failed)">
     <classes>
-      <class name="com.fliplearn.flipapp.testcases.QuizDashboard">
+      <class name="com.fliplearn.flipapp.testcases.PrimeSearch">
         <methods>
-          <include name="verifyQuizDashboardTileDisplayed" invocation-numbers="0 1 2 5"/>
+          <include name="searchAndViewContentStudent"/>
           <include name="befo"/>
-          <include name="befQuiz"/>
           <include name="aftSuite"/>
+          <include name="prePrimeSearch"/>
           <include name="getResult"/>
         </methods>
-      </class> <!-- com.fliplearn.flipapp.testcases.QuizDashboard -->
+      </class> <!-- com.fliplearn.flipapp.testcases.PrimeSearch -->
     </classes>
-  </test> <!-- Quiz(failed) -->
+  </test> <!-- TestCases(failed) -->
 </suite> <!-- Failed suite [Fliplearn Automation Suite] -->

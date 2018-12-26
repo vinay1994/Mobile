@@ -13,7 +13,7 @@ public class MobileNumberModule
 {
 	@FindBy(xpath="//button[contains(text(),'Skip')]")
 	@AndroidFindBy(id="com.elss.educomp:id/skip_button") 
-	@iOSFindBy(id="")
+	@iOSFindBy(xpath="//XCUIElementTypeSecureTextField")
 	public RemoteWebElement skipBtn;
 	
 	public MobileNumberModule(WebDriver driver)

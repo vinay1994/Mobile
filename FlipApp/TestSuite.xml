@@ -9,12 +9,14 @@
  
 
 	
-	<test name="Quiz" enabled="true">
+	<test name="TestCases" enabled="true">
   		<classes>
 
-    		<class name="com.fliplearn.flipapp.testcases.QuizDashboard">
+    		<class name="com.fliplearn.flipapp.testcases.PrimeResources">
         		<methods>
-        			<include name="verifyQuizDashboardTileDisplayed"/>
+ 
+        			<include name="verifyAccessFromChildMessage" />  
+
         		</methods>
         	</class>
         </classes>

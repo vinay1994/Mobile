@@ -18,28 +18,26 @@ import io.appium.java_client.pagefactory.iOSFindBy;
 
 public class LoginModule extends Base
 {	
-	GenericFunctions generic=new GenericFunctions();
-	OnboardingModule onbMod= new OnboardingModule(driver);
-	MobileNumberModule mobNumMod= new MobileNumberModule(driver);
+	GenericFunctions generic = new GenericFunctions();
+	OnboardingModule onbMod = new OnboardingModule(driver);
+	MobileNumberModule mobNumMod = new MobileNumberModule(driver);
 	SignInAsModule sigInMod = new SignInAsModule(driver);
 	QuizModule quiMod = new QuizModule(driver);
 
 	
 	@FindBy(id="Fname")
 	@AndroidFindBy(id="com.elss.educomp:id/user_id_til") 
-	@iOSFindBy(id="")
-	public
-	RemoteWebElement usernameTxt;
+	@iOSFindBy(xpath="//XCUIElementTypeTextField")
+	public RemoteWebElement usernameTxt;
 
 	@FindBy(id="password-lg1")
 	@AndroidFindBy(id="com.elss.educomp:id/password_edit")
-	@iOSFindBy(id="")
-	public
-	RemoteWebElement passwordTxt;
+	@iOSFindBy(xpath="//XCUIElementTypeSecureTextField")
+	public RemoteWebElement passwordTxt;
 
 	@FindBy(xpath="//button[text()='Login']")
 	@AndroidFindBy(id="com.elss.educomp:id/login")
-	@iOSFindBy(id="")
+	@iOSFindBy(xpath="//XCUIElementTypeButton[@name='Login']")
 	public RemoteWebElement loginBtn;
 
 	public LoginModule(WebDriver driver)
@@ -68,8 +66,10 @@ public class LoginModule extends Base
 				extentTest.log(Status.PASS, "Click on Skip button.");
 			}
 
+			usernameTxt.clear();
 			usernameTxt.sendKeys(username);
 			extentTest.log(Status.PASS, "Enter Username: "+username);
+			passwordTxt.clear();
 			passwordTxt.sendKeys((password));
 			extentTest.log(Status.PASS, "Enter Password");
       
@@ -81,7 +81,7 @@ public class LoginModule extends Base
 			loginBtn.click();
 			extentTest.log(Status.PASS, "Click on Login button");
 				 
-			 if(!platform.equals("Web"))
+			 if(platform.equals("Android"))
 			 {
 				 quiMod.skipBtn.click();
 				 
@@ -89,8 +89,11 @@ public class LoginModule extends Base
 				
 				 generic.touchCordinates(driver, 10, 95);
 				 extentTest.log(Status.PASS, "Tap on Got it.");
-				 generic.touchCordinates(driver, 10, 95);
-				 extentTest.log(Status.PASS, "Tap on Got it.");
+				 if(!role.equals("Guest"))
+				 { 	 
+					 generic.touchCordinates(driver, 10, 95);
+				 	extentTest.log(Status.PASS, "Tap on Got it.");
+				 }	
 			 }		
 		}
 	}

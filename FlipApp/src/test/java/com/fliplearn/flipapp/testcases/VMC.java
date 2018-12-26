@@ -12,8 +12,8 @@ import com.fliplearn.flipapp.pagemodules.LearnModule;
 import com.fliplearn.flipapp.pagemodules.LoginModule;
 import com.fliplearn.flipapp.pagemodules.MenuModule;
 import com.fliplearn.flipapp.pagemodules.MobileNumberModule;
-import com.fliplearn.flipapp.pagemodules.SelectClassModule;
-import com.fliplearn.flipapp.pagemodules.SelectSubjectModule;
+import com.fliplearn.flipapp.pagemodules.PrimeClassModule;
+import com.fliplearn.flipapp.pagemodules.PrimeSubjectModule;
 import com.fliplearn.flipapp.pagemodules.SignInAsModule;
 import com.fliplearn.flipapp.pagemodules.YourProfileModule;
 
@@ -24,8 +24,8 @@ public class VMC extends Base
 		MenuModule menMod;
 		LearnModule leaMod;
 		SignInAsModule signInMod;
-		SelectClassModule selClaMod;
-		SelectSubjectModule selSubMod;
+		PrimeClassModule selClaMod;
+		PrimeSubjectModule selSubMod;
 		GenericFunctions generic;
 		YourProfileModule youProMod;
 		HeaderModule heaMod;
@@ -39,8 +39,8 @@ public class VMC extends Base
 			menMod = new MenuModule(driver);
 			signInMod = new SignInAsModule(driver);
 			leaMod = new LearnModule(driver);
-		    selClaMod=	new SelectClassModule(driver);
-		    selSubMod= new SelectSubjectModule(driver);   
+		    selClaMod=	new PrimeClassModule(driver);
+		    selSubMod= new PrimeSubjectModule(driver);   
 		    generic=new GenericFunctions();
 		    youProMod=new YourProfileModule(driver);
 		    heaMod=new HeaderModule(driver);
@@ -69,16 +69,8 @@ public class VMC extends Base
 		{
 			
 			logMod.Login(role, "CBSE", "12", "Single", "None", "Yes");
-
+			Thread.sleep(5000);
 			assertEquals(generic.isElementDisplayed(driver, leaMod.vmcImg), true);
-
-//			if(role.equals("Student"))
-//			{	
-//				youProMod.updateClassAndSection(driver, "Class 12", "A");	
-//				leaMod.clickOnLearnImage();
-//				assertEquals(generic.isElementDisplayed(driver, leaMod.vmcImg), true);
-//				youProMod.updateClassAndSection(driver, "Class 6", "A");	
-//			}
 			
 		}
 

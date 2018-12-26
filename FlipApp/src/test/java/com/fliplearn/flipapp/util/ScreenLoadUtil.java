@@ -58,7 +58,7 @@ public class ScreenLoadUtil extends Base
 	 * @throws InterruptedException 
 	 */
 	@Test
-	public void loadTestOnAndroid() throws InterruptedException
+	public void loadTestOnScreens() throws InterruptedException
 	{
 		if(eConfig.getProperty("Platform").equals("Android")) 
 		{
@@ -76,37 +76,29 @@ public class ScreenLoadUtil extends Base
 		
 		logMod.loginBtn.click();
 		Timestamp beforetime = new Timestamp(System.currentTimeMillis());
-		Assert.assertTrue(quiMod.skipBtn.isDisplayed()	);
+		if(platform.equals("Android"))
+			Assert.assertTrue(quiMod.skipBtn.isDisplayed());
+		else if(platform.equals("iOS"))
+			leaMod.clickOnLearnImage();
+
 		Timestamp aftertime = new Timestamp(System.currentTimeMillis());
 		System.out.println("Login takes time to visible: "+(aftertime.getTime()-beforetime.getTime()-500));
-		extentTest.log(Status.PASS, "Click on Login button");
 
-		if(!platform.equals("Web"))
+		if(!platform.equals("Web") && !platform.equals("iOS"))
 		{
 			Thread.sleep(2000);
 			quiMod.skipBtn.click();
 			
 			extentTest.log(Status.PASS, "Click on Quiz Skip Button");
+			System.out.println("Click on Quiz Skip Button");
 			
 			generic.touchCordinates(driver, 10, 95);
-			 beforetime = new Timestamp(System.currentTimeMillis());
-			extentTest.log(Status.PASS, "Tap on Got it.");
-			
-			generic.touchCordinates(driver, 10, 95);
-			extentTest.log(Status.PASS, "Tap on Got it.");
-			
-			generic.touchCordinates(driver, 10, 95);
-			extentTest.log(Status.PASS, "Tap on Got it.");
-							
-			generic.touchCordinates(driver, 10, 95);
-			 beforetime = new Timestamp(System.currentTimeMillis());
-			extentTest.log(Status.PASS, "Tap on Got it.");
-			
-			leaMod.clickOnLearnImage();
-			
+			System.out.println("Click on Got it");
+
+
+			beforetime = new Timestamp(System.currentTimeMillis());
 			Assert.assertTrue(leaMod.primeImg.isDisplayed()	);
 			 aftertime = new Timestamp(System.currentTimeMillis());
-			System.out.println(aftertime);
 			System.out.println("Prime image takes time to visible: "+(aftertime.getTime()-beforetime.getTime()));
 
 		}	
@@ -120,12 +112,12 @@ public class ScreenLoadUtil extends Base
 		
 		leaMod.selectSubjectLnk.click();
 		beforetime = new Timestamp(System.currentTimeMillis());
-		Assert.assertTrue(leaMod.selectTOpic.get(0).isDisplayed());
+		Assert.assertTrue(leaMod.selectTopic.get(0).isDisplayed());
 		aftertime = new Timestamp(System.currentTimeMillis());
 		System.out.println("Chapter takes time to visible: "+(aftertime.getTime()-beforetime.getTime()-500));
 		
 		
-		leaMod.selectTOpic.get(0).click();
+		leaMod.selectTopic.get(0).click();
 		beforetime = new Timestamp(System.currentTimeMillis());
 		Assert.assertTrue(leaMod.Selectresource.get(0).isDisplayed());
 		aftertime = new Timestamp(System.currentTimeMillis());
