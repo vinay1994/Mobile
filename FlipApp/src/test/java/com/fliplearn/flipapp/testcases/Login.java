@@ -58,7 +58,7 @@ public class Login extends Base
 			if(!role.equals("Guest"))
 				Assert.assertEquals(generic.isElementDisplayed(driver, myWalMod.myWallTab), true);
 		}	
-		else
+		else if(platform.equals("iOS"))
 		{
 			heaMod.clickonLogoutBtn();
 		}
@@ -71,7 +71,7 @@ public class Login extends Base
 	 * @version 1.2
 	 * @throws InterruptedException 
 	 */
-	@Test(dataProvider = "group0")
+	@Test(dataProvider = "group3")
 	public void verifyLogout(String role) throws InterruptedException
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
@@ -81,13 +81,12 @@ public class Login extends Base
 			if(!role.equals("Guest"))
 				generic.mouseHoverAndClick(driver, heaMod.profileImg, heaMod.logoutLnk);
 			else
-				generic.mouseHoverAndClick(driver, heaMod.guestProfileImg, heaMod.logoutLnk);
-				
-			Assert.assertTrue(logMod.usernameTxt.isDisplayed());
+				generic.mouseHoverAndClick(driver, heaMod.guestProfileImg, heaMod.logoutLnk);				
 		}
 		else
 		{
 			heaMod.clickonLogoutBtn();
 		}	
+		Assert.assertTrue(logMod.usernameTxt.isDisplayed());
 	}
 }
