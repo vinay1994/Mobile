@@ -25,9 +25,11 @@ public class HeaderModule extends Base
 	@FindBy(id="home-icon")
 	public RemoteWebElement homeBtn;
 	
+	@AndroidFindBy(xpath="//android.widget.ImageButton[@content-desc='Open navigation drawer']")
 	@iOSFindBy(xpath="//XCUIElementTypeButton[@name='MenuIcon']")
 	public RemoteWebElement burgerMenu;
 	
+	@AndroidFindBy(xpath="//*[@text='Settings']")
 	@iOSFindBy(xpath="//XCUIElementTypeStaticText[@name='Settings']")
 	public RemoteWebElement userMenuSettings;
 	
@@ -41,9 +43,11 @@ public class HeaderModule extends Base
 	public RemoteWebElement myProfileLnk;
 	
 	@FindBy(linkText="Logout")
+	@AndroidFindBy(id="com.elss.educomp:id/logout")
 	@iOSFindBy(xpath="//XCUIElementTypeStaticText[@name='Logout']")
 	public RemoteWebElement logoutLnk;	
 	
+	@AndroidFindBy(id="android:id/button1")
 	@iOSFindBy(xpath="//XCUIElementTypeButton[@name='Yes']")
 	public RemoteWebElement yesLogoutLnk;	
 	
@@ -70,11 +74,15 @@ public class HeaderModule extends Base
 	
 	public void clickonLogoutBtn() throws InterruptedException
 	{
-		if(!platform.equals("Web"))
-		{	
-			burgerMenu.click();
-			userMenuSettings.click();
-		}	
+		burgerMenu.click();
+		
+		if(platform.equals("Android"))
+		{
+			generic.scrollBy(driver, 50, 95);
+		}
+		
+		userMenuSettings.click();
+			
 		logoutLnk.click();
 		yesLogoutLnk.click();
 		Thread.sleep(3000);
