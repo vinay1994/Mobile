@@ -2,6 +2,7 @@ package com.fliplearn.flipapp.pagemodules;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
@@ -35,8 +36,7 @@ public class LearnModule extends Base
 	public RemoteWebElement vmcImg;
 
 	@FindBy(xpath="//a[text()='Pre Nursery']")
-	@AndroidFindBy(xpath="//a[text()='Pre Nursery']")
-	//	@iOSFindBy(id="")
+	@AndroidFindBy(xpath="//*[@text='Pre Nursery']")
 	public RemoteWebElement selectClassLnk;
 
 	@FindBy(xpath="//a[text()='Class 1']")
@@ -47,19 +47,14 @@ public class LearnModule extends Base
 
 	@FindBy(xpath="//a[@id='learn-icon']")
 	@AndroidFindBy(id="com.elss.educomp:id/ll_mm") 
-	//	@iOSFindBy(id="")
 	public List<RemoteWebElement> selectTopic;
 
 	@FindBy(xpath="//a[@id='learn-icon']")
 	@AndroidFindBy(id="com.elss.educomp:id/rowThirdText") 
-	//	@iOSFindBy(id="")
 	public List<RemoteWebElement> Selectresource;
-
-
 
 	@FindBy(xpath="//a[@id='learn-icon']")
 	@AndroidFindBy(xpath="(//*[@resource-id='com.elss.educomp:id/subject_text'])[1]") 
-	//			@iOSFindBy(id="")
 	public RemoteWebElement resource;		
 
 	public LearnModule(WebDriver driver) 
@@ -86,5 +81,7 @@ public class LearnModule extends Base
 	{
 		selectSubjectLnk.click();
 	}
+	
+	
 
 }

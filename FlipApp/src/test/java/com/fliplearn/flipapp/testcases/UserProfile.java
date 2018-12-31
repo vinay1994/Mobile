@@ -45,7 +45,7 @@ public class UserProfile extends Base
 	 * @version 1.1
 	 * @throws InterruptedException 
 	 */
-	@Test(dataProvider = "group0")
+	@Test(dataProvider = "allusers")
 	public void verifyUserRole(String role) throws InterruptedException
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");

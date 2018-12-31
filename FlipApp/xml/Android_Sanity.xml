@@ -12,6 +12,7 @@
     		<class name="com.fliplearn.flipapp.testcases.Login">
         		<methods>
         			<include name="verifyLogin"/>
+        			<include name="verifyLogout"/>
         		</methods>
         	</class>
       	</classes> 
@@ -45,12 +46,7 @@
         		</methods>
         	</class>
         	
-        	
-        	<class name="com.fliplearn.flipapp.testcases.VMC">
-        		<methods>
-        			<include name="displayVMCSchool" />
-        		</methods>
-        	</class>
+        
     
       	</classes> 
 	</test> 

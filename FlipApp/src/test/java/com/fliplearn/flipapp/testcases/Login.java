@@ -48,7 +48,7 @@ public class Login extends Base
 	 * @version 1.2
 	 * @throws InterruptedException 
 	 */
-	@Test(dataProvider = "group0")
+	@Test(dataProvider = "allusers")
 	public void verifyLogin(String role) throws InterruptedException
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
@@ -60,7 +60,7 @@ public class Login extends Base
 		}	
 		else if(platform.equals("iOS"))
 		{
-			heaMod.clickonLogoutBtn();
+			heaMod.clickOnLogoutBtn();
 		}
 	}
 	
@@ -71,7 +71,7 @@ public class Login extends Base
 	 * @version 1.2
 	 * @throws InterruptedException 
 	 */
-	@Test(dataProvider = "group3")
+	@Test(dataProvider = "allusers")
 	public void verifyLogout(String role) throws InterruptedException
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
@@ -85,7 +85,7 @@ public class Login extends Base
 		}
 		else
 		{
-			heaMod.clickonLogoutBtn();
+			heaMod.clickOnLogoutBtn();
 		}	
 		Assert.assertTrue(logMod.usernameTxt.isDisplayed());
 	}

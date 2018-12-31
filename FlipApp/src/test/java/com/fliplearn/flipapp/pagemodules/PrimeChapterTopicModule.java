@@ -21,18 +21,12 @@ public class PrimeChapterTopicModule extends Base
     }
 	
 	@FindBy(css="input[name='schoolName']")
-	@AndroidFindBy(xpath="") 
-	@iOSFindBy(id="")
 	public RemoteWebElement searchTxt;
 	
 	@FindBy(xpath="(//h4[contains(text(),'Please access the content from your child')])[1]")
-	@AndroidFindBy(xpath="") 
-	@iOSFindBy(id="")
 	public RemoteWebElement childAccessTxt;
 	
 	@FindBy(xpath="(//h4[contains(text(),'Please access the content from your child')])[2]")
-	@AndroidFindBy(xpath="") 
-	@iOSFindBy(id="")
 	public RemoteWebElement childAccessPopup;
 	
 	//Search for prime content

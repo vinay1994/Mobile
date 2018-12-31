@@ -2,6 +2,7 @@ package com.fliplearn.flipapp.testcases;
 
 import java.io.IOException;
 
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -29,7 +30,7 @@ public class PrimeResources extends Base
 	MenuModule menMod;
 	LearnModule leaMod;
 	SignInAsModule signInMod;
-	PrimeClassModule oriClaMod;
+	PrimeClassModule priClaMod;
 	PrimeSubjectModule priSubMod;
 	PrimeChapterTopicModule priChaTopMod;
 	YourProfileModule youProMod;
@@ -47,7 +48,7 @@ public class PrimeResources extends Base
 		priResVieMod = new PrimeResourceViewModule(driver);
 		signInMod = new SignInAsModule(driver);
 		leaMod = new LearnModule(driver);
-		oriClaMod =	new PrimeClassModule(driver);
+		priClaMod =	new PrimeClassModule(driver);
 		priSubMod = new PrimeSubjectModule(driver);  
 		priResLisMod = new PrimeResourceListModule(driver);
 		priChaTopMod = new PrimeChapterTopicModule(driver);
@@ -56,66 +57,55 @@ public class PrimeResources extends Base
 	}
 	
 	/**
-	* verify PrimeVideo on Web, Android, iOS when Admin, Principal, Teacher click on Video Content
+	* verify PrimeVideo on Web, Android, iOS when Admin, Principal, Teacher, Parent, Student and Guest click on Video Content
 	* @author Jagrati
 	* @since 2018-10-14
 	* @throws InterruptedException 
 	* @version 1.2
 	* @throws IOException 
+	* @modifiedBy Tarun Goswami on 2018-12-31
 	*/
 
-	@Test(dataProvider ="group2")
-	public void playPrimeVideoSchool(String role) throws IOException, InterruptedException
-	{
-		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
-	    leaMod.clickOnLearnImage();
-	    leaMod.clickOnPrimeImage();
-	        		
-	    Thread.sleep(3000);
-
-	    oriClaMod.clickOnClassContent(driver, "Class 10");
-	    priSubMod.clickOnSubject(driver, role, "Biology");
-	    priResLisMod.clickOnBookChapter(driver, role, "1. Life Processes");
-	    priResLisMod.clickOnBookTopicContent(driver, role, "Nutrition in Human Beings");
-	    priResVieMod.clickOnVideoContent(driver, "Digestion");
-	    priResVieMod.clickOnVideoContentandverJWPlayer(driver);
-	}
-	
-	/**
-	* verify PrimeVideo on Web, Android, iOS when Parent, Student click on Video Content
-	* @author Jagrati
-	* @since 2018-10-14
-	* @throws InterruptedException 
-	* @version 1.1
-	* @throws IOException 
-	*/
-	@Test(dataProvider ="group3")
-	public void playPrimeVideoStudent(String role) throws IOException, InterruptedException
+	@Test(dataProvider ="allusers")
+	public void playPrimeVideo(String role) throws IOException, InterruptedException
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 	    
-		if(!role.equals("Guest"))
-	    	leaMod.clickOnLearnImage();
+		if(platform.equals("Web"))
+		{	
+			if(!role.equals("Guest"))
+		    	leaMod.clickOnLearnImage();
+		}	
 	    
 		leaMod.clickOnPrimeImage();
 	        		
-	    priSubMod.clickOnSubject(driver, role, "Social Studies");
-	    Thread.sleep(2000);
-	    priResLisMod.clickOnBookChapter(driver, role, "1. What, Where, How and When");
-	  
+	    Thread.sleep(3000);
 	    
-	    priResLisMod.clickOnBookTopicContent(driver, role, "Where did people live and origin of the word India?");
+		if(role.equals("Admin") || role.equals("Principal") || role.equals("Teacher"))
+			priClaMod.selectUserClass("Class 6");
+	   
+		priSubMod.clickOnSubject(driver, role, "Mathematics");
 	    
+		priResLisMod.clickOnBookChapter(driver, "Knowing Our Numbers");
+	    priResLisMod.clickOnChapterTopic(driver, "Roman Numerals");
+	   	    
 	    if(role.equals("Parent"))
 	    {	
-	    	Thread.sleep(3000);
-	    	Assert.assertEquals(priResLisMod.childAccessMsg.getText(), "Please access the content from your child's account.");
+	    	if(platform.equals("Web"))
+	    	{
+	    		Thread.sleep(3000);
+	    		Assert.assertEquals(priResLisMod.childAccessMsg.getText(), "Please access the content from your child's account.");
+	    	}
+	    	else
+	    	{
+	    		Assert.assertEquals(0, driver.findElements(By.xpath("//*[@text='Animation']")).size());
+	    	}
 	    }
-	    if(!role.equals("Parent"))
-	    {	
-	    	priResVieMod.clickOnVideoContent(driver, "Introduction to Indian History");
-	    	priResVieMod.clickOnVideoContentandverJWPlayer(driver);
-	    }	
+	    else
+	    {
+		    priResVieMod.clickOnVideoContent(driver, "Roman Numerals");
+	    	priResVieMod.verifyVideoContent(driver, "Roman Numerals");
+	    }
 	}
 	
 	/**
@@ -125,65 +115,55 @@ public class PrimeResources extends Base
 	* @throws InterruptedException 
 	* @version 1.1
 	* @throws IOException 
+	* @modifiedBy Tarun Goswami on 2018-12-31
 	*/
-	@Test(dataProvider="group2")
-	public void verifyTopicSynopsisSchool(String role) throws InterruptedException
+	@Test(dataProvider="allusers")
+	public void verifyTopicSynopsis(String role) throws InterruptedException
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
-		leaMod.clickOnLearnImage();
+	    
+		if(platform.equals("Web"))
+		{	
+			if(!role.equals("Guest"))
+		    	leaMod.clickOnLearnImage();
+		}	
+	    
 		leaMod.clickOnPrimeImage();
-		        		
-		Thread.sleep(3000);
-		oriClaMod.clickOnClassContent(driver, "Class 10");
-		priSubMod.clickOnSubject(driver, role, "Biology");
-		priResLisMod.clickOnBookChapter(driver, role, "1. Life Processes");
-		priResLisMod.clickOnBookTopicContent(driver, role, "Nutrition in Human Beings");
-		Thread.sleep(2000);
-		priResLisMod.clickOnTopicSynopsis();
-		Thread.sleep(3000);
-		
-	    Assert.assertEquals(priResVieMod.synopsisHeading.getText(), "Nutrition In Human Being");
-	
+	        		
+	    Thread.sleep(3000);
+	    
+		if(role.equals("Admin") || role.equals("Principal") || role.equals("Teacher"))
+			priClaMod.selectUserClass("Class 6");
+	   
+		priSubMod.clickOnSubject(driver, role, "Mathematics");
+	    
+		priResLisMod.clickOnBookChapter(driver, "Knowing Our Numbers");
+	    priResLisMod.clickOnChapterTopic(driver, "Roman Numerals");
+	   	    
+	    if(role.equals("Parent"))
+	    {	
+	    	if(platform.equals("Web"))
+	    	{
+	    		Thread.sleep(3000);
+	    		Assert.assertEquals(priResLisMod.childAccessMsg.getText(), "Please access the content from your child's account.");
+	    	}
+	    	else
+	    	{
+	    		Assert.assertEquals(0, driver.findElements(By.xpath("//*[@text='Topic Synopsis']")).size());
+	    	}
+	    }
+	    else
+	    {
+			priResLisMod.clickOnTopicSynopsis();	
+	    	Assert.assertEquals(priResVieMod.synopsisHeading.getText(), "Roman Numerals");
+	    	
+	    	if(platform.equals("Web"))
+	    	{
+	    		driver.switchTo().frame("myFrame");
+	    		Assert.assertTrue(priResVieMod.synopsisTitle.isDisplayed());
+	    	}	
+	    }	
 	}
-	
-	/**
-	* verify Topic Synopsis on Web, Android, iOS for Parent, Student
-	* @author Jagrati
-	* @since 2018-10-14
-	* @throws InterruptedException 
-	* @version 1.1
-	* @throws IOException 
-	*/
-	@Test(dataProvider="group3")
-	public void verifyTopicSynopsisStudent(String role) throws InterruptedException
-	{
-		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
-		
-		if(!role.equals("Guest"))
-	    	leaMod.clickOnLearnImage();
-
-		leaMod.clickOnPrimeImage();
-		        		
-		Thread.sleep(3000);
-
-		priSubMod.clickOnSubject(driver, role, "Social Studies");
-		Thread.sleep(2000);
-		priResLisMod.clickOnBookChapter(driver, role, "1. What, Where, How and When");
-		
-		priResLisMod.clickOnBookTopicContent(driver, role, "Where did people live and origin of the word India?");
-		
-		if(role.equals("Parent"))
-		{	
-			Thread.sleep(3000);
-			Assert.assertEquals(priResLisMod.childAccessMsg.getText(), "Please access the content from your child's account.");
-		}
-		else if(!role.equals("Parent"))
-		{	
-			priResLisMod.clickOnTopicSynopsis();
-			Thread.sleep(3000);
-		    Assert.assertEquals(priResVieMod.synopsisHeading.getText(), "Where Did People Live And Origin Of The Word India..");
-		}
-	} 
 	
 	/**
 	* verify Mind Maps on Web, Android, iOS for Admin, Principal, Teacher
@@ -192,64 +172,56 @@ public class PrimeResources extends Base
 	* @throws InterruptedException 
 	* @version 1.1
 	* @throws IOException 
+	* @modifiedBy Tarun Goswami on 2018-12-31
 	*/
-	@Test(dataProvider="group2")
-	public void verifyMindMapsSchool(String role) throws InterruptedException
+	@Test(dataProvider="allusers")
+	public void verifyMindMaps(String role) throws InterruptedException
 	{
-		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
-		leaMod.clickOnLearnImage();
-		leaMod.clickOnPrimeImage();
-		        		
-		Thread.sleep(3000);
-		oriClaMod.clickOnClassContent(driver, "Class 10");
-		priSubMod.clickOnSubject(driver, role, "Biology");
-		priResLisMod.clickOnBookChapter(driver, role, "1. Life Processes");
-		priResLisMod.clickOnBookTopicContent(driver, role, "Nutrition in Human Beings");
-		Thread.sleep(2000);
-		priResLisMod.clickOnMindMaps();
-		Thread.sleep(3000);
-		
-	    Assert.assertEquals(priResVieMod.synopsisHeading.getText(), "Nutrition in Human Beings");	
-	}
-	
-	/**
-	* verify Mind Maps on Web, Android, iOS for Parent, Student
-	* @author Jagrati
-	* @since 2018-10-14
-	* @throws InterruptedException 
-	* @version 1.1
-	* @throws IOException 
-	*/
-	@Test(dataProvider="group3")
-	public void verifyMindMapsStudent(String role) throws InterruptedException
-	{
-		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
-		
-		if(!role.equals("Guest"))
-	    	leaMod.clickOnLearnImage();
-
-		leaMod.clickOnPrimeImage();
-		        		
-		Thread.sleep(3000);
-
-		priSubMod.clickOnSubject(driver, role, "Social Studies");
-		Thread.sleep(2000);
-		priResLisMod.clickOnBookChapter(driver, role, "1. What, Where, How and When");
-		
-		priResLisMod.clickOnBookTopicContent(driver, role, "Where did people live and origin of the word India?");
-		
-		if(role.equals("Parent"))
+	logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
+	    
+		if(platform.equals("Web"))
 		{	
-			Thread.sleep(3000);
-			Assert.assertEquals(priResLisMod.childAccessMsg.getText(), "Please access the content from your child's account.");
-		}
-		else if(!role.equals("Parent"))
-		{	
-			priResLisMod.clickOnMindMaps();
-			Thread.sleep(3000);
-		    Assert.assertEquals(priResVieMod.synopsisHeading.getText(), "Where did people live and origin of the word India..");
-		}
+			if(!role.equals("Guest"))
+		    	leaMod.clickOnLearnImage();
+		}	
+	    
+		leaMod.clickOnPrimeImage();
+	        		
+	    Thread.sleep(3000);
+	    
+		if(role.equals("Admin") || role.equals("Principal") || role.equals("Teacher"))
+			priClaMod.selectUserClass("Class 6");
+	   
+		priSubMod.clickOnSubject(driver, role, "Mathematics");
+	    
+		priResLisMod.clickOnBookChapter(driver, "Knowing Our Numbers");
+	    priResLisMod.clickOnChapterTopic(driver, "Roman Numerals");
+	   	    
+	    if(role.equals("Parent"))
+	    {	
+	    	if(platform.equals("Web"))
+	    	{
+	    		Thread.sleep(3000);
+	    		Assert.assertEquals(priResLisMod.childAccessMsg.getText(), "Please access the content from your child's account.");
+	    	}
+	    	else
+	    	{
+	    		Assert.assertEquals(0, driver.findElements(By.xpath("//*[@text='Mind Maps']")).size());
+	    	}
+	    }
+	    else
+	    {
+			priResLisMod.clickOnMindMaps();	
+	    	Assert.assertEquals(priResVieMod.synopsisHeading.getText(), "Roman Numerals");
+	    	
+	    	if(platform.equals("Web"))
+	    	{
+	    		driver.switchTo().frame("myFrame");
+	    		Assert.assertTrue(priResVieMod.mindMapsTitle.isDisplayed());
+	    	}	
+	    }
 	}
+
 	
 	/**
 	* verify Real Life Cotent on Web, Android, iOS for Admin, Principal, Teacher
@@ -258,64 +230,56 @@ public class PrimeResources extends Base
 	* @throws InterruptedException 
 	* @version 1.1
 	* @throws IOException 
+	* @modifiedBy Tarun Goswami on 2018-12-31
 	*/
-	@Test(dataProvider="group2")
-	public void verifyRealLifeSchool(String role) throws InterruptedException
+	@Test(dataProvider="allusers")
+	public void verifyRealLifeApplication(String role) throws InterruptedException
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
-		leaMod.clickOnLearnImage();
+	    
+		if(platform.equals("Web"))
+		{	
+			if(!role.equals("Guest"))
+		    	leaMod.clickOnLearnImage();
+		}	
+	    
 		leaMod.clickOnPrimeImage();
-		        		
-		Thread.sleep(3000);
-		oriClaMod.clickOnClassContent(driver, "Class 10");
-		priSubMod.clickOnSubject(driver, role, "Biology");
-		priResLisMod.clickOnBookChapter(driver, role, "1. Life Processes");
-		priResLisMod.clickOnBookTopicContent(driver, role, "Nutrition in Human Beings");
-		Thread.sleep(2000);
-		priResLisMod.clickOnRealLife();
-		Thread.sleep(3000);
-		
-	    Assert.assertEquals(priResVieMod.synopsisHeading.getText(), "Nutrition in Human Being");
+	        		
+	    Thread.sleep(3000);
+	    
+		if(role.equals("Admin") || role.equals("Principal") || role.equals("Teacher"))
+			priClaMod.selectUserClass("Class 6");
+	   
+		priSubMod.clickOnSubject(driver, role, "Mathematics");
+	    
+		priResLisMod.clickOnBookChapter(driver, "Knowing Our Numbers");
+	    priResLisMod.clickOnChapterTopic(driver, "Roman Numerals");
+	   	    
+	    if(role.equals("Parent"))
+	    {	
+	    	if(platform.equals("Web"))
+	    	{
+	    		Thread.sleep(3000);
+	    		Assert.assertEquals(priResLisMod.childAccessMsg.getText(), "Please access the content from your child's account.");
+	    	}
+	    	else
+	    	{
+	    		Assert.assertEquals(0, driver.findElements(By.xpath("//*[@text='Real Life Application']")).size());
+	    	}
+	    }
+	    else
+	    {
+			priResLisMod.clickOnRealLifeApplication();	
+	    	Assert.assertEquals(priResVieMod.synopsisHeading.getText(), "Roman Numerals");
+	    	
+	    	if(platform.equals("Web"))
+	    	{
+	    		driver.switchTo().frame("myFrame");
+	    		Assert.assertTrue(priResVieMod.realLifeApplicationTitle.isDisplayed());
+	    	}	
+	    }
 	}
-	
-	/**
-	* verify Real Life Cotent on Web, Android, iOS for Parent, Student
-	* @author Jagrati
-	* @since 2018-10-14
-	* @throws InterruptedException 
-	* @version 1.1
-	* @throws IOException 
-	*/
-	@Test(dataProvider="group3")
-	public void verifyRealLifeStudent(String role) throws InterruptedException
-	{
-		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
-		
-		if(!role.equals("Guest"))
-	    	leaMod.clickOnLearnImage();
-
-		leaMod.clickOnPrimeImage();
-		        		
-		Thread.sleep(3000);
-
-		priSubMod.clickOnSubject(driver, role, "Social Studies");
-		Thread.sleep(2000);
-		priResLisMod.clickOnBookChapter(driver, role, "1. What, Where, How and When");
-		
-		priResLisMod.clickOnBookTopicContent(driver, role, "Where did people live and origin of the word India?");
-		
-		if(role.equals("Parent"))
-		{	
-			Thread.sleep(3000);
-			Assert.assertEquals(priResLisMod.childAccessMsg.getText(), "Please access the content from your child's account.");
-		}
-		else if(!role.equals("Parent"))
-		{	
-			priResLisMod.clickOnRealLife();
-			Thread.sleep(3000);
-		    Assert.assertEquals(priResVieMod.synopsisHeading.getText(), "Garo Hills, Indus River");
-		}
-	} 
+	 
 	
 	/**
 	* verify Content Access message displayed to parent on Web, Android, iOS

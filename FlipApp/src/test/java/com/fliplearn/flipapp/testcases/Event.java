@@ -48,7 +48,7 @@ public class Event extends Base
 	 * @version 1.2
 	 * @throws Throwable 
 	 */
-	@Test(dataProvider = "group2")
+	@Test(dataProvider = "staff")
 	public void createAnnouncement(String role) throws Throwable
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
@@ -62,7 +62,7 @@ public class Event extends Base
 	 * @version 1.2
 	 * @throws Throwable 
 	 */
-	@Test(dataProvider = "group2")
+	@Test(dataProvider = "staff")
 	public void createAlbum(String role) throws Throwable
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
@@ -76,7 +76,7 @@ public class Event extends Base
 	 * @version 1.2
 	 * @throws Throwable 
 	 */
-	@Test(dataProvider = "group2")
+	@Test(dataProvider = "staff")
 	public void createHomework(String role) throws Throwable
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
@@ -90,7 +90,7 @@ public class Event extends Base
 	 * @version 1.2
 	 * @throws Throwable 
 	 */
-	@Test(dataProvider = "group3")
+	@Test(dataProvider = "nostaff")
 	public void canNotCreateAnnouncement(String role) throws InterruptedException
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
@@ -104,7 +104,7 @@ public class Event extends Base
 	 * @version 1.2
 	 * @throws Throwable 
 	 */
-	@Test(dataProvider = "group3")
+	@Test(dataProvider = "nostaff")
 	public void canNotCreateAlbum(String role) throws InterruptedException
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
@@ -118,7 +118,7 @@ public class Event extends Base
 	 * @version 1.2
 	 * @throws Throwable 
 	 */
-	@Test(dataProvider = "group3")
+	@Test(dataProvider = "nostaff")
 	public void canNotCreateHomework(String role) throws InterruptedException
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
@@ -132,7 +132,7 @@ public class Event extends Base
 	 * @version 1.0
 	 * @throws Throwable 
 	 */
-	@Test(dataProvider = "group2")
+	@Test(dataProvider = "staff")
 	public void studentCanViewAnnouncement(String role) throws Throwable
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
@@ -152,7 +152,7 @@ public class Event extends Base
 	 * @version 1.0
 	 * @throws Throwable 
 	 */
-	@Test(dataProvider = "group2")
+	@Test(dataProvider = "staff")
 	public void studentCanViewAlbum(String role) throws Throwable
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
@@ -172,7 +172,7 @@ public class Event extends Base
 	 * @version 1.0
 	 * @throws Throwable 
 	 */
-	@Test(dataProvider = "group2")
+	@Test(dataProvider = "staff")
 	public void studentCanViewHomework(String role) throws Throwable
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
@@ -192,7 +192,7 @@ public class Event extends Base
 	 * @version 1.0
 	 * @throws Throwable 
 	 */
-	@Test(dataProvider = "group2")
+	@Test(dataProvider = "staff")
 	public void parentCanViewAnnouncement(String role) throws Throwable
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
@@ -212,7 +212,7 @@ public class Event extends Base
 	 * @version 1.0
 	 * @throws Throwable 
 	 */
-	@Test(dataProvider = "group2")
+	@Test(dataProvider = "staff")
 	public void parentCanViewAlbum(String role) throws Throwable
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
@@ -232,7 +232,7 @@ public class Event extends Base
 	 * @version 1.0
 	 * @throws Throwable 
 	 */
-	@Test(dataProvider = "group2")
+	@Test(dataProvider = "staff")
 	public void parentCanViewHomework(String role) throws Throwable
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");

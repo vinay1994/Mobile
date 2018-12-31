@@ -24,8 +24,8 @@ public class PrimeContent extends Base
 	MenuModule menMod;
 	LearnModule leaMod;
 	SignInAsModule signInMod;
-	PrimeClassModule selClaMod;
-	PrimeSubjectModule selSubMod;
+	PrimeClassModule priClaMod;
+	PrimeSubjectModule priSubMod;
 	GenericFunctions generic;
 	HeaderModule heaMod;
 	
@@ -38,8 +38,8 @@ public class PrimeContent extends Base
 		menMod = new MenuModule(driver);
 		signInMod = new SignInAsModule(driver);
 		leaMod = new LearnModule(driver);
-	    selClaMod=	new PrimeClassModule(driver);
-	    selSubMod= new PrimeSubjectModule(driver);   
+	    priClaMod =	new PrimeClassModule(driver);
+	    priSubMod = new PrimeSubjectModule(driver);   
 	    heaMod = new HeaderModule(driver);
 	}
 
@@ -51,7 +51,7 @@ public class PrimeContent extends Base
 	 * @version 1.1
 	 * @throws IOException 
 	 */
-     @Test(dataProvider = "group0")
+     @Test(dataProvider = "allusers")
      public void verifyPrimeTileDisplayed(String role) throws IOException, InterruptedException 
      {
 		 logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
@@ -72,7 +72,7 @@ public class PrimeContent extends Base
 	 * @version 1.3
 	 * @throws IOException 
 	 */
-	 @Test( priority=1,dataProvider = "group2")
+	 @Test(dataProvider = "staff")
      public void verifyPrimeClasses(String role) throws IOException, InterruptedException 
      {
 		 logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
@@ -84,7 +84,7 @@ public class PrimeContent extends Base
  
     	 String expectedList = readData(platform, role, "Prime Classes");
 
-    	 Assert.assertEquals(generic.compareList(selClaMod.classLst, expectedList), true);
+    	 Assert.assertEquals(generic.compareList(priClaMod.classLst, expectedList), true);
      }
     
      
@@ -97,10 +97,10 @@ public class PrimeContent extends Base
  	 * @throws IOException 
  	 */
  	 
-	@Test(priority=2,dataProvider ="group0")
+	@Test(dataProvider ="allusers")
 	public void verifyPrimeSubjects(String role) throws IOException, InterruptedException  
 	{ 
-		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
+		logMod.Login(role, "CBSE", "Pre", "Single", "None", "Yes");
     	 
     	 if(platform.equals("Web"))
     	 {	 
@@ -114,12 +114,13 @@ public class PrimeContent extends Base
 
 		if(role.equals("Parent") || role.equals("Student") || role.equals("Guest"))
 		{	
-	    	Assert.assertEquals(generic.compareList(selSubMod.studentSubjectList, expectedList), true);
+	    	Assert.assertEquals(generic.compareList(priSubMod.studentSubjectList, expectedList), true);
 		}
 		else
 		{
-		   leaMod.clickOnSubjectLink();
-	    	Assert.assertEquals(generic.compareList(selSubMod.subjectList, expectedList), true);
+		   priClaMod.selectUserClass("Pre Nursery");
+		   Thread.sleep(3000);
+		   Assert.assertEquals(generic.compareList(priSubMod.subjectList, expectedList), true);
 		}
      }
  }

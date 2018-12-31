@@ -12,10 +12,10 @@
 	<test name="TestCases" enabled="true">
   		<classes>
 
-    		<class name="com.fliplearn.flipapp.testcases.Login">
+    		<class name="com.fliplearn.flipapp.testcases.PrimeResources">
         		<methods>
  
-        			<include name="verifyLogin" />  
+        			<include name="verifyMindMaps" />  
 
         		</methods>
         	</class>
