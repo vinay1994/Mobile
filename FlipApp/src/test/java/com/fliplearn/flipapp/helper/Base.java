@@ -17,6 +17,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.IInvokedMethod;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
@@ -63,11 +64,12 @@ public class Base implements ITestListener
 	String appPath;
 	public static String environment;
 	public static String url;
-	public static WebDriver driver;
+	public static RemoteWebDriver driver;
 	public static String emailIds;
 	public static String suiteType;
 	public static String sendReport;
 	public static String testName;
+	public static DesiredCapabilities cap;
 	
 	static GenericFunctions generic=new GenericFunctions();
 	
@@ -113,10 +115,10 @@ public class Base implements ITestListener
 			
 		if(platform.equals("Android"))
 		{
-			DesiredCapabilities cap = new DesiredCapabilities();
+			cap = new DesiredCapabilities();
+			cap.setCapability("automationName", "UiAutomator2");
+
 			cap.setCapability(MobileCapabilityType.DEVICE_NAME, deviceName);
-//			cap.setCapability(MobileCapabilityType.APP, appPath);
-			
 			cap.setCapability("appPackage", "com.elss.educomp"); 
 		    cap.setCapability("appActivity","com.elss.educomp.prelogin.ui.SplashActivity"); 
 		    cap.setCapability("noSign", true);
@@ -408,7 +410,7 @@ public class Base implements ITestListener
 	}
 	
 
-	@DataProvider(name = "group0")
+	@DataProvider(name = "allusers")
 	public static Object[] group0() 
 	{
 		  return new Object[][]
@@ -416,17 +418,8 @@ public class Base implements ITestListener
 			  { "Admin" }, { "Principal" }, { "Teacher" }, { "Parent" }, { "Student" }, { "Guest" }
 		  }; 
 	}
-	
-	@DataProvider(name = "group1")
-	public static Object[] group1() 
-	{
-		  return new Object[][]
-		  { 
-			  { "Admin" }, { "Principal" }, { "Teacher" }, { "Parent" }, { "Student" }
-		  }; 
-	}
-	
-	@DataProvider(name = "group2")
+		
+	@DataProvider(name = "staff")
 	public static Object[] group2() 
 	{
 		  return new Object[][]
@@ -435,7 +428,7 @@ public class Base implements ITestListener
 		  }; 
 	}
 	
-	@DataProvider(name = "group3")
+	@DataProvider(name = "nostaff")
 	public static Object[] group3() 
 	{
 		  return new Object[][]

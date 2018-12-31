@@ -20,10 +20,9 @@ public class QuizDashBoardModule extends Base
 	
 	@FindBy(xpath="//h4//strong[text()='Quiz Dashboard']")
 	@AndroidFindBy(xpath="//*[@text='Quiz Dashboard']") 
-	@iOSFindBy(id="")
 	public RemoteWebElement quizDashboardTile;	
 	
-	@AndroidFindBy(id="//*[@text='Play Quiz']")
+	@AndroidFindBy(id="com.elss.educomp:id/buy_btn")
 	public RemoteWebElement playQuizBtn;
 	
 	@FindBy(xpath="//ul[@class='dropdown-menu quizMobileDropdown']/li/a")
@@ -52,7 +51,6 @@ public class QuizDashBoardModule extends Base
 	
 	@AndroidFindBy(xpath="//*[@text='ok']")
 	public RemoteWebElement ok;
-	
 	
 	@AndroidFindBy(xpath="//*[@text='Maths']")
 	public RemoteWebElement Maths;

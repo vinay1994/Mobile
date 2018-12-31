@@ -8,23 +8,21 @@ import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.fliplearn.flipapp.helper.Base;
+
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSFindBy;
 
-public class PrimeSubjectModule 
+public class PrimeSubjectModule extends Base
 {
 	
-	//Get Subject List
 	@FindBy(xpath="//div[@id='subjectsList3']//div[@class='col-sm-4 ng-scope']//h3")
-	@AndroidFindBy(xpath="//*[@text='Class 3']")
-//	@iOSFindBy(id="")
+	@AndroidFindBy(xpath="//android.widget.LinearLayout[1]/android.widget.RelativeLayout/android.widget.TextView")
 	public List<RemoteWebElement> subjectList;
 	
-	//Student Subject list
 	@FindBy(xpath="//div[@class='col-md-9 col-sm-8 col-xs-9']/h3")
-	@AndroidFindBy(xpath="//*[@text='Mathematics']")
-//	@iOSFindBy(id="")
+	@AndroidFindBy(xpath="//android.widget.LinearLayout[1]/android.widget.RelativeLayout/android.widget.TextView")
 	public List<RemoteWebElement> studentSubjectList;
 	
 	public PrimeSubjectModule(WebDriver driver)
@@ -32,20 +30,24 @@ public class PrimeSubjectModule
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 
-	//Class List, check for duplicate
 	@FindBy(xpath="//select[@id='selectTerm2']")
 	@AndroidFindBy(xpath="//*[@text='Long and Short']")
-//	@iOSFindBy(id="")
 	public List<RemoteWebElement> classLst;
-	
-	
-	//Click on Subject by name
-	public void clickOnSubject(WebDriver driver, String role, String subjectName)
+		
+	public void clickOnSubject(WebDriver driver, String role, String subjectName) throws InterruptedException
     {
-		if(role.equals("Student")||role.equals("Parent")||role.equals("Guest"))
-			driver.findElement(By.xpath("//h3[text()='"+subjectName+"']")).click();
+		if(platform.equals("Web"))
+		{	
+			if(role.equals("Student")||role.equals("Parent")||role.equals("Guest"))
+				driver.findElement(By.xpath("//h3[text()='"+subjectName+"']")).click();
+			else
+				driver.findElement(By.xpath("//div[@class='panel-collapse collapse in']//h3[text()='"+subjectName+"']")).click();
+		}
 		else
-			driver.findElement(By.xpath("//div[@class='panel-collapse collapse in']//h3[text()='"+subjectName+"']")).click();
+		{
+			driver.findElement(By.xpath("(//*[@text='Learn'])[3]")).click();
+		}
+		Thread.sleep(2000);
     }
 
 }

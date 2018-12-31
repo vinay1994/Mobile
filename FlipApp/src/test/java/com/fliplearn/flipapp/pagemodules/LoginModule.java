@@ -2,6 +2,7 @@ package com.fliplearn.flipapp.pagemodules;
 
 import java.io.IOException;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
@@ -26,7 +27,7 @@ public class LoginModule extends Base
 
 	
 	@FindBy(id="Fname")
-	@AndroidFindBy(id="com.elss.educomp:id/user_id_til") 
+	@AndroidFindBy(id="com.elss.educomp:id/userId") 
 	@iOSFindBy(xpath="//XCUIElementTypeTextField")
 	public RemoteWebElement usernameTxt;
 
@@ -60,6 +61,7 @@ public class LoginModule extends Base
 			String username = aConfig.getProperty(role + "_Username"+"_"+board+"_"+className+"_"+profile+"_"+subscription+"_"+mobile);
 			String password =  aConfig.getProperty(role +"_Password"+"_"+board+"_"+className+"_"+profile+"_"+subscription+"_"+mobile);
 		
+			System.out.println("Username is"+username);
 			if(eConfig.getProperty("Platform").equals("Android")) 
 			{
 				onbMod.skipScreen();
@@ -83,15 +85,21 @@ public class LoginModule extends Base
 				 
 			 if(platform.equals("Android"))
 			 {
-				 quiMod.skipBtn.click();
-				 
-				 extentTest.log(Status.PASS, "Click on Quiz Skip Button");
-				
-				 generic.touchCordinates(driver, 10, 95);
+				 System.out.println("Inside Android");
+
+				 if(!username.contains("automationp"))
+				 {	 
+					 quiMod.skipBtn.click();
+					 extentTest.log(Status.PASS, "Click on Quiz Skip Button");
+				 }	 
+				 Thread.sleep(2000);
+				 driver.findElement(By.xpath("//*[@text='GOT IT']")).click();
 				 extentTest.log(Status.PASS, "Tap on Got it.");
 				 if(!role.equals("Guest"))
 				 { 	 
-					 generic.touchCordinates(driver, 10, 95);
+					 Thread.sleep(2000);
+					 driver.findElement(By.xpath("//*[@text='GOT IT']")).click();
+
 				 	extentTest.log(Status.PASS, "Tap on Got it.");
 				 }	
 			 }		

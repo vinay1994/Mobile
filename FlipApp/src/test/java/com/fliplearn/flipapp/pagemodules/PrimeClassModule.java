@@ -9,10 +9,12 @@ import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.fliplearn.flipapp.helper.Base;
+
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
-public class PrimeClassModule 
+public class PrimeClassModule extends Base
 {
     //Class List
 	@FindBy(xpath="//div[@class='panel-heading']/h4/a")
@@ -24,10 +26,15 @@ public class PrimeClassModule
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 	
-	//Select particular class by name
-	public void clickOnClassContent(WebDriver driver, String className) 
-    {
-		driver.findElement(By.xpath("//a[contains(text(),'"+className+"')]")).click();
+	public void selectUserClass(String className)
+	{
+		if(platform.equals("Web"))
+			driver.findElement(By.xpath("//a[text()='"+className+"']")).click();
+		else if(platform.equals("Android"))
+			driver.findElement(By.xpath("//*[@text='"+className+"']")).click();
+		else if(platform.equals("iOS"))
+			driver.findElement(By.xpath("//*[@text='"+className+"']")).click();		
 	}
+	
 }
 

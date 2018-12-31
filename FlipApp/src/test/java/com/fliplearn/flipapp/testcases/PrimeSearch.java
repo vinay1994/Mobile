@@ -64,7 +64,7 @@ public class PrimeSearch extends Base
 	* @version 1.0
 	* @throws IOException 
 	*/
-	@Test(dataProvider ="group2")
+	@Test(dataProvider ="staff")
 	public void searchAndViewContentSchool(String role) throws IOException, InterruptedException
 	{		
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
@@ -75,7 +75,7 @@ public class PrimeSearch extends Base
 	    
 	    String title = readData(platform, role, "Search String");
 	    
-	    priClaMod.clickOnClassContent(driver, "Class 10");
+	    priClaMod.selectUserClass("Class 10");
 	    priSubMod.clickOnSubject(driver, role, "Biology");
 	    priChaTopMod.searchContent(title);
 	    priChaTopMod.selectFirstSearchedContent(title);
@@ -92,7 +92,7 @@ public class PrimeSearch extends Base
 	* @version 1.0
 	* @throws IOException 
 	*/
-	@Test(dataProvider ="group3")
+	@Test(dataProvider ="nostaff")
 	public void searchAndViewContentStudent(String role) throws IOException, InterruptedException
 	{		
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");

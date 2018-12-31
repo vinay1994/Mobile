@@ -53,7 +53,7 @@ public class VMC extends Base
 		 * @version 1.2
 		 * @throws InterruptedException 
 		 */
-		@Test(dataProvider = "group2")
+		@Test(dataProvider = "staff")
 		public void displayVMCSchool(String role) throws InterruptedException
 		{			
 			logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
@@ -64,17 +64,16 @@ public class VMC extends Base
 			assertEquals(generic.isElementDisplayed(driver, leaMod.vmcImg), true);
 		}	
 		
-		@Test(dataProvider = "group3")
+		@Test(dataProvider = "nostaff")
 		public void displayVMCStudent(String role) throws InterruptedException
 		{
 			
 			logMod.Login(role, "CBSE", "12", "Single", "None", "Yes");
-			Thread.sleep(5000);
 			assertEquals(generic.isElementDisplayed(driver, leaMod.vmcImg), true);
 			
 		}
 
-		@Test(dataProvider = "group3")
+		@Test(dataProvider = "nostaff")
 		public void doNotDisplayVMCStudent(String role) throws InterruptedException
 		{
 			logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");

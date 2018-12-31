@@ -1,5 +1,6 @@
 package com.fliplearn.flipapp.pagemodules;
 
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebElement;
@@ -12,7 +13,6 @@ import com.fliplearn.flipapp.helper.GenericFunctions;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSFindBy;
-
 public class HeaderModule extends Base
 {
 	GenericFunctions generic = new GenericFunctions();
@@ -28,6 +28,10 @@ public class HeaderModule extends Base
 	@AndroidFindBy(xpath="//android.widget.ImageButton[@content-desc='Open navigation drawer']")
 	@iOSFindBy(xpath="//XCUIElementTypeButton[@name='MenuIcon']")
 	public RemoteWebElement burgerMenu;
+	
+	@AndroidFindBy(xpath="//*[@text='Quiz Games']")
+	public RemoteWebElement quizGamesMnu;
+	
 	
 	@AndroidFindBy(xpath="//*[@text='Settings']")
 	@iOSFindBy(xpath="//XCUIElementTypeStaticText[@name='Settings']")
@@ -72,19 +76,25 @@ public class HeaderModule extends Base
 		Thread.sleep(2000);
 	}
 	
-	public void clickonLogoutBtn() throws InterruptedException
+	public void clickOnLogoutBtn() throws InterruptedException
 	{
 		burgerMenu.click();
-		
-		if(platform.equals("Android"))
-		{
-			generic.scrollBy(driver, 50, 95);
-		}
-		
+		Thread.sleep(3000);
+	
 		userMenuSettings.click();
 			
 		logoutLnk.click();
 		yesLogoutLnk.click();
 		Thread.sleep(3000);
+	}
+	
+	public void clickOnQuizGamesMnu() throws InterruptedException
+	{
+		burgerMenu.click();
+		Thread.sleep(2000);
+	
+		quizGamesMnu.click();
+			
+		Thread.sleep(5000);
 	}
 }

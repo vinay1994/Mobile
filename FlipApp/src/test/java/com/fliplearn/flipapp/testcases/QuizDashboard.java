@@ -68,7 +68,7 @@ public class QuizDashboard extends Base
 	 * @throws IOException 
 	 */
 
-	@Test(dataProvider = "group0")
+	@Test(dataProvider = "allusers")
 	public void verifyQuizDashboardTileDisplayed(String role) throws InterruptedException, IOException
 	{	
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
@@ -102,7 +102,7 @@ public class QuizDashboard extends Base
 	 * @throws IOException 
 	 */
 
-	@Test(dataProvider = "group2")
+	@Test(dataProvider = "staff")
 	public void verifyQuizDashboardClasses(String role) throws InterruptedException, IOException
 	{	
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
@@ -113,7 +113,6 @@ public class QuizDashboard extends Base
 		}  
 		else if(!platform.equals("Web"))
 		{	
-			leaMod.clickOnLearnImage();
 			generic.scrollBy(driver, 50, 95);
 		}
 		
@@ -125,10 +124,4 @@ public class QuizDashboard extends Base
 		String expectedList = readData(platform, role, "Quiz Dashboard Classes");
 		Assert.assertEquals(generic.compareList(quiDasMod.quizDashboardClassLst, expectedList), true);	
 	}
-//	quiDasMod.playQuizBtn1.click();
-//	quiDasMod.playQuizBtn1.click();
-//	quiDasMod.Next.click();
-//	quiDasMod.Next1.click();
-//	quiDasMod.ok.click();
-//	quiDasMod.Maths.click();
 }

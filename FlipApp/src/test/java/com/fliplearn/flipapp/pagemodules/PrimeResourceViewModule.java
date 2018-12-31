@@ -8,70 +8,64 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
+
+import com.fliplearn.flipapp.helper.Base;
 
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSFindBy;
 
-public class PrimeResourceViewModule 
+public class PrimeResourceViewModule  extends Base
 {
-	//@FindBy(xpath="//a[text()='Class 12']")
 	@FindBy(xpath="//a[contains(@class,'ng-binding collapsed')]")
-	@AndroidFindBy()
-	@iOSFindBy()
 	public List<RemoteWebElement> cliOncla12;
-	//public RemoteWebElement cliOncla12;
 	
 	@FindBy(xpath="(//div[@class='col-md-9 col-sm-8 col-xs-8']//h3[text()='Chemistry'])[4]")
-	@AndroidFindBy()
-	@iOSFindBy()
 	public RemoteWebElement clickOnChemSubj;
 	
 	@FindBy(xpath="//a[text()='1. The Solid State")
-	@AndroidFindBy()
-	@iOSFindBy()
 	public RemoteWebElement clickOnsolidchapter;
 	
 	@FindBy(xpath="//li[text()='Crystal Lattices and Unit Cells']")
-	@AndroidFindBy()
-	@iOSFindBy()
 	public RemoteWebElement clickOntopic;
 	
 	@FindBy(xpath="//h6[text()='Real Life Application']")
-	@AndroidFindBy()
-	@iOSFindBy()
 	public RemoteWebElement clickOnRealLifApp;
 	
 	@FindBy(xpath="//div[@id='demo-html']//h3")
+	@AndroidFindBy(id="com.elss.educomp:id/title_name")
 	public RemoteWebElement synopsisHeading;
+	
+	@FindBy(xpath="//h1[text()='Topic Synopsis']")
+	@AndroidFindBy(xpath="//*[@text='Topic Synopsis']")
+	public RemoteWebElement synopsisTitle;
+	
+	@FindBy(xpath="//h1[text()='Mind Maps']")
+	@AndroidFindBy(xpath="//*[@text='Mind Maps']")
+	public RemoteWebElement mindMapsTitle;
+	
+	@FindBy(xpath="//h1[text()='Real Life Application']")
+	@AndroidFindBy(xpath="//*[@text='Real Life Application']")
+	public RemoteWebElement realLifeApplicationTitle;
 	
 	@FindBy(xpath="//div[@id='demo-html']//h3")
 	public RemoteWebElement synopsisHeadingStudent;
 
 	
 	@FindBy(xpath="//button[@type='button'])[4]")
-	@AndroidFindBy()
-	@iOSFindBy()
 	public RemoteWebElement closeRealLifeSyn;
 	
 	@FindBy(xpath="//h6[text()='Topic Synopsis']")
-	@AndroidFindBy()
-	@iOSFindBy()
 	public RemoteWebElement clickOnTopicSynop;
 	
 	@FindBy(xpath="(//button[@class='close'])[3]")
-	@AndroidFindBy()
-	@iOSFindBy()
 	public RemoteWebElement closeTopSyn;
 	
 	@FindBy(xpath="//h6[text()='Web Links']")
-	@AndroidFindBy()
-	@iOSFindBy()
 	public RemoteWebElement clickOnWebLink;
 	
 	@FindBy(xpath="//button[@class='close']")
-	@AndroidFindBy()
-	@iOSFindBy()
 	public RemoteWebElement closeWebLink;
 	
 	
@@ -113,17 +107,14 @@ public class PrimeResourceViewModule
 		
 	@FindBy(xpath="//a[contains(text(),'Class 10')]")
 	@AndroidFindBy(xpath="//*[@text='Class 10']")
-	@iOSFindBy(id="")
 	public RemoteWebElement claConMod;
 	
 	@FindBy(xpath="(//div[@class='col-md-9 col-sm-8 col-xs-8']//h3[text()='Biology'])[2]")
 	@AndroidFindBy(xpath="//*[@text='Biology']")
-	@iOSFindBy(id="")
 	public RemoteWebElement schoolSubName;
 	
 	@FindBy(xpath="//div[@class='col-md-9 col-sm-8 col-xs-9']//h3[text()='English']")
 	@AndroidFindBy(xpath="//*[@text='Life Processes']")
-	@iOSFindBy(id="")
 	public RemoteWebElement studentSubName;
  	
 	@FindBy(xpath="//a[text()='1. Life Processes']")
@@ -133,17 +124,14 @@ public class PrimeResourceViewModule
 	
 	@FindBy(xpath="//li[text()='Nutrition in Human Beings']")
 	@AndroidFindBy(id="//*[@text='Nutrition in Human Beings']")
-	@iOSFindBy(id="")
 	public RemoteWebElement cliOnBookTopCon;
 	
 	@FindBy(xpath="//h4[text()='Digestion']")
 	@AndroidFindBy(id="//*[@text='Biology']")
-	@iOSFindBy(id="")
 	public RemoteWebElement schoolVideoContent;
 	
 	@FindBy(xpath="//h4[text()='Countable and Uncountable Nouns']")
-	@AndroidFindBy(id="")
-	@iOSFindBy(id="")
+
 	public RemoteWebElement studentVideoContent;
 	
 	public PrimeResourceViewModule(WebDriver driver)
@@ -151,39 +139,48 @@ public class PrimeResourceViewModule
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
     
-    public void clickOnVideoContent(WebDriver driver, String videoContentName)
+    public void clickOnVideoContent(WebDriver driver, String videoContentName) throws InterruptedException
     {
-    	driver.findElement(By.xpath("//h4[text()='"+videoContentName+"']")).click();	
+    	Thread.sleep(2000);
+    	if(platform.equals("Web"))
+    		driver.findElement(By.xpath("//h4[text()='"+videoContentName+"']")).click();
+    	else
+    		driver.findElement(By.xpath("//*[@text='Animation']")).click();
     }
     
-    public void clickOnVideoContentandverJWPlayer(WebDriver driver) throws InterruptedException 
+    public void verifyVideoContent(WebDriver driver, String videoTitle) throws InterruptedException 
     {
-    	Thread.sleep(5000);
-        JavascriptExecutor jse = (JavascriptExecutor) driver;
+    	if(platform.equals("Web"))
+    	{	
+    		Thread.sleep(5000);
+    		JavascriptExecutor jse = (JavascriptExecutor) driver;
      
-        jse.executeScript("jwplayer().pause()");
-        Thread.sleep(2000);
+    		jse.executeScript("jwplayer().pause()");
+    		Thread.sleep(2000);
         
-        //Play
-        jse.executeScript("jwplayer().play();");
-        Thread.sleep(2000);
+    		//Play
+    		jse.executeScript("jwplayer().play();");
+    		Thread.sleep(2000);
         
-        // Set Volume
-        Thread.sleep(2000);
+    		// Set Volume
+    		Thread.sleep(2000);
         
-        jse.executeScript("jwplayer().setVolume(50);");
-        Thread.sleep(2000);
+    		jse.executeScript("jwplayer().setVolume(50);");
+    		Thread.sleep(2000);
         
-        //Mute Player
-        jse.executeScript("jwplayer().setMute(true);");
-        Thread.sleep(2000);
+    		//Mute Player
+    		jse.executeScript("jwplayer().setMute(true);");
+    		Thread.sleep(2000);
         
-        //UnMute Player
-        jse.executeScript("jwplayer().setMute(false);");
+    		//UnMute Player
+    		jse.executeScript("jwplayer().setMute(false);");
         
-        Thread.sleep(2000);
-        //Stop the player
-        jse.executeScript("jwplayer().stop()");
-        Thread.sleep(2000);
+    		Thread.sleep(2000);
+    		//Stop the player
+    		jse.executeScript("jwplayer().stop()");
+    		Thread.sleep(2000);
+    	}
+    	else
+    		Assert.assertTrue(driver.findElement(By.xpath("//*[@text='"+videoTitle+"']")).isDisplayed());
     }
 }
