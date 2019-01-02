@@ -10,6 +10,7 @@ import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver.Window;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.touch.TouchActions;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -81,7 +82,10 @@ public class QuizDashboard extends Base
 			}	  
 			else if(!platform.equals("Web"))
 			{	
-				generic.scrollBy(driver, 50, 95);
+				//generic.scrollBy(driver, 50, 99);
+				TouchActions action = new TouchActions(driver);
+				action.scroll(50, 95);
+				
 			}
 		}	
 		

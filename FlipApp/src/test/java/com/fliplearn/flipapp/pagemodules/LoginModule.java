@@ -92,12 +92,12 @@ public class LoginModule extends Base
 					 quiMod.skipBtn.click();
 					 extentTest.log(Status.PASS, "Click on Quiz Skip Button");
 				 }	 
-				 Thread.sleep(2000);
+				 Thread.sleep(3000);
 				 driver.findElement(By.xpath("//*[@text='GOT IT']")).click();
 				 extentTest.log(Status.PASS, "Tap on Got it.");
 				 if(!role.equals("Guest"))
 				 { 	 
-					 Thread.sleep(2000);
+					 Thread.sleep(3000);
 					 driver.findElement(By.xpath("//*[@text='GOT IT']")).click();
 
 				 	extentTest.log(Status.PASS, "Tap on Got it.");

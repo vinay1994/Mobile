@@ -181,6 +181,9 @@ public class PrimeResourceViewModule  extends Base
     		Thread.sleep(2000);
     	}
     	else
+    	{
+    		Thread.sleep(6000);
     		Assert.assertTrue(driver.findElement(By.xpath("//*[@text='"+videoTitle+"']")).isDisplayed());
+    	}	
     }
 }
