@@ -154,7 +154,8 @@ public class PrimeResources extends Base
 	    }
 	    else
 	    {
-			priResLisMod.clickOnTopicSynopsis();	
+			priResLisMod.clickOnTopicSynopsis();
+			Thread.sleep(5000);
 	    	Assert.assertEquals(priResVieMod.synopsisHeading.getText(), "Roman Numerals");
 	    	
 	    	if(platform.equals("Web"))
@@ -212,6 +213,7 @@ public class PrimeResources extends Base
 	    else
 	    {
 			priResLisMod.clickOnMindMaps();	
+			Thread.sleep(5000);
 	    	Assert.assertEquals(priResVieMod.synopsisHeading.getText(), "Roman Numerals");
 	    	
 	    	if(platform.equals("Web"))

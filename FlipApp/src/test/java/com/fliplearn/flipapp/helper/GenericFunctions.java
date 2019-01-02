@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -21,7 +22,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-
+import org.openqa.selenium.interactions.touch.TouchActions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -109,6 +110,7 @@ public class GenericFunctions extends Base
 
 	public void scrollBy(WebDriver driver, int x, int y) throws InterruptedException
 	{
+		Thread.sleep(3000);
 		TouchAction action = new TouchAction((AndroidDriver)driver);
 		
 		Dimension size = driver.manage().window().getSize();
@@ -123,6 +125,8 @@ public class GenericFunctions extends Base
 		action.release();
 		action.perform();
 		Thread.sleep(3000);
+		
+		
 	}
 	/**
 	 * This will mouse hove and click on given element

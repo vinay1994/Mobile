@@ -22,8 +22,18 @@
   		<classes>
     		<class name="com.fliplearn.flipapp.testcases.FliplearnPrimeView">
         		<methods>
+        			<include name="playPrimeVideo"/>
+        			<include name="verifyTopicSynopsis"/>
+        			<include name="verifyMindMaps"/>
+        			<include name="verifyRealLifeApplication"/>
+        		</methods>
+        	</class>
+        	
+    		<class name="com.fliplearn.flipapp.testcases.FliplearnPrimeView">
+        		<methods>
         			<include name="verifyPrimeTileDisplayed"/>
         			<include name="verifyPrimeClasses"/>
+        			<include name="verifyPrimeSubjects"/>
         		</methods>
         	</class>
         	
