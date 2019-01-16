@@ -23,6 +23,7 @@ public class LoginModule extends Base
 	MobileNumberModule mobNumMod= new MobileNumberModule(driver);
 	SignInAsModule sigInMod = new SignInAsModule(driver);
 	QuizModule quiMod = new QuizModule(driver);
+	
 
 	
 	@FindBy(id="Fname")
@@ -91,8 +92,13 @@ public class LoginModule extends Base
 				 extentTest.log(Status.PASS, "Tap on Got it.");
 				 generic.touchCordinates(driver, 10, 95);
 				 extentTest.log(Status.PASS, "Tap on Got it.");
-			 }		
+			 }	
+			 
+			 if(role.equals("Admin")||role.equals("Principal")||role.equals("Teacher")||role.equals("Guest"))
+				 onbMod.skipScreen();
 		}
+		
+		
 	}
 	
 

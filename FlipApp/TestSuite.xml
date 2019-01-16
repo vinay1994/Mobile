@@ -7,17 +7,15 @@
 	<listener class-name="com.fliplearn.flipapp.helper.Base"/>
 </listeners>
  
-
-	
-	<test name="Quiz" enabled="true">
+  <test name="Fee" enabled="true">
   		<classes>
 
-    		<class name="com.fliplearn.flipapp.testcases.PrimeResources">
+    		<class name="com.fliplearn.flipapp.testcases.PrimePurchaseFlow">
         		<methods>
  
-        			<include name="verifyQuizDashboardTileDisplayed"/>
+        			<include name="verifyPrimePurchaseFlowWithoutCoupon"/>
 
-        			<include name="verifyTopicSynopsisStudent"/>
+        			
 
         		</methods>
         	</class>

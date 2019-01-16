@@ -19,7 +19,7 @@ public class LearnModule extends Base
 {
 	GenericFunctions generic = new GenericFunctions();
 
-	@FindBy(xpath="//a[@id='learn-icon']")
+	@FindBy(xpath="(//*[text()='Learn'])[1]")
 	@AndroidFindBy(xpath="//*[@text='Learn']") 
 	//	@iOSFindBy(id="")
 	public RemoteWebElement learnImg;	
