@@ -32,6 +32,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import com.fliplearn.flipapp.pagemodules.HeaderModule;
 import com.fliplearn.flipapp.util.ConfigUtil;
 import com.fliplearn.flipapp.util.ExcelUtil;
 import com.fliplearn.flipapp.util.Screenshots;
@@ -132,6 +133,7 @@ public class Base implements ITestListener
 		else if(platform.equals("iOS"))
 		{
 			
+			System.out.println("testing*********************");
 			DesiredCapabilities cap = new DesiredCapabilities();
 //			cap.setCapability("platformVersion", "10.3");
 
@@ -300,6 +302,17 @@ public class Base implements ITestListener
 			extentTest.log(Status.INFO, "Browser is:"+browser);
 			extentTest.log(Status.INFO, "URL is:"+url);
 		}
+		
+		if(platform.equals("iOS"))
+		{	
+		HeaderModule heaMod = new HeaderModule(driver);
+		try {
+			heaMod.clickOnLogoutBtn();
+		} catch (InterruptedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		}
 	}
 
 	
@@ -339,6 +352,8 @@ public class Base implements ITestListener
 	@Override
 	public void onTestFailure(ITestResult result) 
 	{
+	
+		
 		extentTest.log(Status.FAIL, "Test Failed");	
         String captureScreenshot;
      	
@@ -406,6 +421,7 @@ public class Base implements ITestListener
 	@Override
 	public void onFinish(ITestContext context) 
 	{
+
 		extentReports.flush();		
 	}
 	

@@ -16,6 +16,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSFindBy;
+import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 
 public class LoginModule extends Base
 {	
@@ -29,17 +30,17 @@ public class LoginModule extends Base
 	
 	@FindBy(id="Fname")
 	@AndroidFindBy(id="com.elss.educomp:id/userId") 
-	@iOSFindBy(xpath="//XCUIElementTypeTextField")
+	@iOSXCUITFindBy(xpath="//XCUIElementTypeTextField")
 	public RemoteWebElement usernameTxt;
 
 	@FindBy(id="password-lg1")
 	@AndroidFindBy(id="com.elss.educomp:id/password_edit")
-	@iOSFindBy(xpath="//XCUIElementTypeSecureTextField")
+	@iOSXCUITFindBy(xpath="//XCUIElementTypeSecureTextField")
 	public RemoteWebElement passwordTxt;
 
 	@FindBy(xpath="//button[text()='Login']")
 	@AndroidFindBy(id="com.elss.educomp:id/login")
-	@iOSFindBy(xpath="//XCUIElementTypeButton[@name='Login']")
+	@iOSXCUITFindBy(xpath="//XCUIElementTypeButton[@name='Login']")
 	public RemoteWebElement loginBtn;
 
 	public LoginModule(WebDriver driver)

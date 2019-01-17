@@ -20,7 +20,7 @@
 	
 	<test name="Learning" enabled="true">
   		<classes>
-    		<class name="com.fliplearn.flipapp.testcases.FliplearnPrimeView">
+    		<class name="com.fliplearn.flipapp.testcases.PrimeResources">
         		<methods>
         			<include name="playPrimeVideo"/>
         			<include name="verifyTopicSynopsis"/>
@@ -29,7 +29,7 @@
         		</methods>
         	</class>
         	
-    		<class name="com.fliplearn.flipapp.testcases.FliplearnPrimeView">
+    		<class name="com.fliplearn.flipapp.testcases.PrimeContent">
         		<methods>
         			<include name="verifyPrimeTileDisplayed"/>
         			<include name="verifyPrimeClasses"/>
@@ -40,12 +40,14 @@
         	<class name="com.fliplearn.flipapp.testcases.VMC">
         		<methods>
         			<include name="displayVMCSchool" />
+        			<include name="doNotDisplayVMCStudent" />
+        			<include name="displayVMCStudent" />
         		</methods>
         	</class>
         	
         	<class name="com.fliplearn.flipapp.testcases.QuizGames">
         		<methods>
-        			<include name="verifyQuizTileDisplayed"/>
+        			<include name="verifyQuizGamesMenu"/>
         		</methods>
         	</class>
         	
