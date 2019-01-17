@@ -13,13 +13,13 @@ import com.fliplearn.flipapp.pagemodules.LearnModule;
 import com.fliplearn.flipapp.pagemodules.LoginModule;
 import com.fliplearn.flipapp.pagemodules.MenuModule;
 import com.fliplearn.flipapp.pagemodules.MobileNumberModule;
+import com.fliplearn.flipapp.pagemodules.PrimeChapterTopicModule;
+import com.fliplearn.flipapp.pagemodules.PrimeClassModule;
 import com.fliplearn.flipapp.pagemodules.PrimePurchaseFlowModule;
-import com.fliplearn.flipapp.pagemodules.SelectClassModule;
-import com.fliplearn.flipapp.pagemodules.SelectSubjectModule;
+import com.fliplearn.flipapp.pagemodules.PrimeSubjectModule;
+
 import com.fliplearn.flipapp.pagemodules.SignInAsModule;
-import com.fliplearn.flipapp.pagemodules.SubjectContentModule;
-import com.fliplearn.flipapp.pagemodules.SynopsisModule;
-import com.fliplearn.flipapp.pagemodules.VideoContentModule;
+
 import com.fliplearn.flipapp.pagemodules.YourProfileModule;
 
 public class PrimePurchaseFlow extends Base{
@@ -28,11 +28,11 @@ public class PrimePurchaseFlow extends Base{
 	MobileNumberModule mobNumMod;
 	MenuModule menMod;
 	LearnModule leaMod;
-	SelectClassModule selClaMod;
-	SelectSubjectModule selSubMod;
+	PrimeClassModule priClaMod;
+	PrimeSubjectModule priSubMod;
 	PrimePurchaseFlowModule priPurFloMod;
 	GenericFunctions generic;
-	SubjectContentModule subConMod;
+	PrimeChapterTopicModule priChaTopMod;
 	
 	
 	@BeforeMethod
@@ -43,8 +43,8 @@ public class PrimePurchaseFlow extends Base{
 		mobNumMod = new MobileNumberModule(driver);
 		menMod = new MenuModule(driver);
 		leaMod = new LearnModule(driver);
-		selClaMod =	new SelectClassModule(driver);
-		selSubMod = new SelectSubjectModule(driver); 
+		priClaMod =	new PrimeClassModule(driver);
+		priSubMod = new PrimeSubjectModule(driver); 
 		priPurFloMod= new PrimePurchaseFlowModule(driver);
 		 generic=new GenericFunctions();
 		 
@@ -57,9 +57,9 @@ public class PrimePurchaseFlow extends Base{
 		leaMod.clickOnLearnImage();
 		leaMod.clickOnPrimeImage();
 		if(role.equals("Admin") || role.equals("Teacher") || role.equals("Principal")) {
-		selClaMod.clickOnClassContent(driver, "Class 6");}
+		priClaMod.selectUserClass("Class 6");}
 		
-		selSubMod.clickOnSubject(driver, role, "English");
+		priSubMod.clickOnSubject(driver, role, "English");
 		assertEquals(generic.isElementDisplayed(driver, priPurFloMod.cliOnBuySubs), true);
 		priPurFloMod.clickOnBuySubs();
 		
