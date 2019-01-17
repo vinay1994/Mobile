@@ -13,6 +13,7 @@ import com.fliplearn.flipapp.helper.GenericFunctions;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSFindBy;
+import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 public class HeaderModule extends Base
 {
 	GenericFunctions generic = new GenericFunctions();
@@ -25,8 +26,11 @@ public class HeaderModule extends Base
 	@FindBy(id="home-icon")
 	public RemoteWebElement homeBtn;
 	
+	@iOSXCUITFindBy(xpath="//XCUIElementTypeStaticText[@name='Fliplearn']")
+	public RemoteWebElement fliplearnText;
+	
 	@AndroidFindBy(xpath="//android.widget.ImageButton[@content-desc='Open navigation drawer']")
-	@iOSFindBy(xpath="//XCUIElementTypeButton[@name='MenuIcon']")
+	@iOSXCUITFindBy(xpath="//XCUIElementTypeButton[@name='MenuIcon']")
 	public RemoteWebElement burgerMenu;
 	
 	@AndroidFindBy(xpath="//*[@text='Quiz Games']")
@@ -34,7 +38,7 @@ public class HeaderModule extends Base
 	
 	
 	@AndroidFindBy(xpath="//*[@text='Settings']")
-	@iOSFindBy(xpath="//XCUIElementTypeStaticText[@name='Settings']")
+	@iOSXCUITFindBy(xpath="//XCUIElementTypeStaticText[@name='Settings']")
 	public RemoteWebElement userMenuSettings;
 	
 	@FindBy(css="button[class='dropbtn_nav btn-dd dropbtn dropdown-toggle']")
@@ -48,7 +52,7 @@ public class HeaderModule extends Base
 	
 	@FindBy(linkText="Logout")
 	@AndroidFindBy(id="com.elss.educomp:id/logout")
-	@iOSFindBy(xpath="//XCUIElementTypeStaticText[@name='Logout']")
+	@iOSXCUITFindBy(xpath="//XCUIElementTypeStaticText[@name='Logout']")
 	public RemoteWebElement logoutLnk;	
 	
 	@AndroidFindBy(id="android:id/button1")
