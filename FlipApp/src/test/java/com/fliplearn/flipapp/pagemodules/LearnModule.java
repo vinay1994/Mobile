@@ -15,6 +15,7 @@ import com.fliplearn.flipapp.helper.GenericFunctions;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSFindBy;
+import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 
 public class LearnModule extends Base
 {
@@ -22,17 +23,17 @@ public class LearnModule extends Base
 
 	@FindBy(xpath="//a[@id='learn-icon']")
 	@AndroidFindBy(xpath="//*[@text='Learn']") 
-	@iOSFindBy(xpath="//XCUIElementTypeStaticText[@name='Learn']")
+	@iOSXCUITFindBy(id="Learn")
 	public RemoteWebElement learnImg;	
 
 	@FindBy(xpath="//strong[text()='Fliplearn Prime']")
 	@AndroidFindBy(xpath="//*[@text='Fliplearn Prime']")
-	@iOSFindBy(id="//XCUIElementTypeStaticText[@name='Fliplearn Prime']")
+	@iOSXCUITFindBy(xpath="//XCUIElementTypeStaticText[@name='Fliplearn Prime']")
 	public RemoteWebElement primeImg;
 
 	@FindBy(xpath="//h4/strong[contains(text(),'VMC Live')]")
 	@AndroidFindBy(xpath="//*[@text='VMC Live @ Fliplearn']")
-	@iOSFindBy(xpath="//XCUIElementTypeStaticText[@name='VMC Live @ Fliplearn']")
+	@iOSXCUITFindBy(xpath="//XCUIElementTypeStaticText[@name='VMC Live @ Fliplearn']")
 	public RemoteWebElement vmcImg;
 
 	@FindBy(xpath="//a[text()='Pre Nursery']")
@@ -40,9 +41,9 @@ public class LearnModule extends Base
 	public RemoteWebElement selectClassLnk;
 
 	@FindBy(xpath="//a[text()='Class 1']")
-	@AndroidFindBy(xpath="//*[@text='Biology']")
+	@AndroidFindBy(xpath="//*[@resource-id='com.elss.educomp:id/tv_learn']")
 	@iOSFindBy(id="(//XCUIElementTypeButton[@name='Learn >'])[1]")
-	public RemoteWebElement selectSubjectLnk;
+	public List<RemoteWebElement> selectSubjectLnk;
 
 
 	@FindBy(xpath="//a[@id='learn-icon']")
@@ -65,7 +66,13 @@ public class LearnModule extends Base
 	public void clickOnLearnImage() throws InterruptedException
 	{
 		Thread.sleep(2000);
-		learnImg.click();
+		if(platform.equals("iOS"))
+		{
+			generic.touchCordinates(driver, 80, 15);
+		}
+		else
+			learnImg.click();
+		System.out.println("Clicked on learn");
 	}
 
 	public void clickOnPrimeImage() throws InterruptedException
@@ -79,7 +86,7 @@ public class LearnModule extends Base
 
 	public void clickOnSubjectLink()
 	{
-		selectSubjectLnk.click();
+		selectSubjectLnk.get(0).click();
 	}
 	
 	
