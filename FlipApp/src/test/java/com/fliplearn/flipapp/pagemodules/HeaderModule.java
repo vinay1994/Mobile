@@ -1,5 +1,6 @@
 package com.fliplearn.flipapp.pagemodules;
 
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebElement;
@@ -12,7 +13,6 @@ import com.fliplearn.flipapp.helper.GenericFunctions;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSFindBy;
-
 public class HeaderModule extends Base
 {
 	GenericFunctions generic = new GenericFunctions();
@@ -22,22 +22,38 @@ public class HeaderModule extends Base
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);	
 	}
 	
-	@FindBy(css="button[class='dropbtn_nav btn-dd dropbtn dropdown-toggle']")
-//	@AndroidFindBy(xpath="") 
-//	@iOSFindBy(id="")
-	public RemoteWebElement profileImg;	
-
-	@FindBy(xpath="(//ul[@class='b-t-1 header-dd']//a)[1]")
-//	@AndroidFindBy(xpath="") 
-//	@iOSFindBy(id="")
-	public RemoteWebElement myProfileLnk;
-	
-	
 	@FindBy(id="home-icon")
-//	@AndroidFindBy(xpath="") 
-//	@iOSFindBy(id="")
 	public RemoteWebElement homeBtn;
 	
+	@AndroidFindBy(xpath="//android.widget.ImageButton[@content-desc='Open navigation drawer']")
+	@iOSFindBy(xpath="//XCUIElementTypeButton[@name='MenuIcon']")
+	public RemoteWebElement burgerMenu;
+	
+	@AndroidFindBy(xpath="//*[@text='Quiz Games']")
+	public RemoteWebElement quizGamesMnu;
+	
+	
+	@AndroidFindBy(xpath="//*[@text='Settings']")
+	@iOSFindBy(xpath="//XCUIElementTypeStaticText[@name='Settings']")
+	public RemoteWebElement userMenuSettings;
+	
+	@FindBy(css="button[class='dropbtn_nav btn-dd dropbtn dropdown-toggle']")
+	public RemoteWebElement profileImg;	
+	
+	@FindBy(css="a[class='wraptext ng-binding']")
+	public RemoteWebElement guestProfileImg;
+
+	@FindBy(xpath="(//ul[@class='b-t-1 header-dd']//a)[1]")
+	public RemoteWebElement myProfileLnk;
+	
+	@FindBy(linkText="Logout")
+	@AndroidFindBy(id="com.elss.educomp:id/logout")
+	@iOSFindBy(xpath="//XCUIElementTypeStaticText[@name='Logout']")
+	public RemoteWebElement logoutLnk;	
+	
+	@AndroidFindBy(id="android:id/button1")
+	@iOSFindBy(xpath="//XCUIElementTypeButton[@name='Yes']")
+	public RemoteWebElement yesLogoutLnk;	
 	
 	public void clickOnProfileImg() 
 	{
@@ -58,5 +74,27 @@ public class HeaderModule extends Base
 		jse.executeScript("arguments[0].click();", homeBtn);
 		
 		Thread.sleep(2000);
+	}
+	
+	public void clickOnLogoutBtn() throws InterruptedException
+	{
+		burgerMenu.click();
+		Thread.sleep(3000);
+	
+		userMenuSettings.click();
+			
+		logoutLnk.click();
+		yesLogoutLnk.click();
+		Thread.sleep(3000);
+	}
+	
+	public void clickOnQuizGamesMnu() throws InterruptedException
+	{
+		burgerMenu.click();
+		Thread.sleep(2000);
+	
+		quizGamesMnu.click();
+			
+		Thread.sleep(5000);
 	}
 }

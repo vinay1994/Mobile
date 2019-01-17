@@ -2,6 +2,7 @@ package com.fliplearn.flipapp.pagemodules;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
@@ -21,45 +22,39 @@ public class LearnModule extends Base
 
 	@FindBy(xpath="(//*[text()='Learn'])[1]")
 	@AndroidFindBy(xpath="//*[@text='Learn']") 
-	//	@iOSFindBy(id="")
+	@iOSFindBy(xpath="//XCUIElementTypeStaticText[@name='Learn']")
 	public RemoteWebElement learnImg;	
 
 	@FindBy(xpath="//strong[text()='Fliplearn Prime']")
 	@AndroidFindBy(xpath="//*[@text='Fliplearn Prime']")
-	//	@iOSFindBy(id="")
+	@iOSFindBy(id="//XCUIElementTypeStaticText[@name='Fliplearn Prime']")
 	public RemoteWebElement primeImg;
 
 	@FindBy(xpath="//h4/strong[contains(text(),'VMC Live')]")
 	@AndroidFindBy(xpath="//*[@text='VMC Live @ Fliplearn']")
-	//	@iOSFindBy(id="")
+	@iOSFindBy(xpath="//XCUIElementTypeStaticText[@name='VMC Live @ Fliplearn']")
 	public RemoteWebElement vmcImg;
 
 	@FindBy(xpath="//a[text()='Pre Nursery']")
-	@AndroidFindBy(xpath="//a[text()='Pre Nursery']")
-	//	@iOSFindBy(id="")
+	@AndroidFindBy(xpath="//*[@text='Pre Nursery']")
 	public RemoteWebElement selectClassLnk;
 
 	@FindBy(xpath="//a[text()='Class 1']")
 	@AndroidFindBy(xpath="//*[@text='Biology']")
-	//	@iOSFindBy(id="")
+	@iOSFindBy(id="(//XCUIElementTypeButton[@name='Learn >'])[1]")
 	public RemoteWebElement selectSubjectLnk;
 
 
 	@FindBy(xpath="//a[@id='learn-icon']")
 	@AndroidFindBy(id="com.elss.educomp:id/ll_mm") 
-	//	@iOSFindBy(id="")
-	public List<RemoteWebElement> selectTOpic;
+	public List<RemoteWebElement> selectTopic;
 
 	@FindBy(xpath="//a[@id='learn-icon']")
 	@AndroidFindBy(id="com.elss.educomp:id/rowThirdText") 
-	//	@iOSFindBy(id="")
 	public List<RemoteWebElement> Selectresource;
-
-
 
 	@FindBy(xpath="//a[@id='learn-icon']")
 	@AndroidFindBy(xpath="(//*[@resource-id='com.elss.educomp:id/subject_text'])[1]") 
-	//			@iOSFindBy(id="")
 	public RemoteWebElement resource;		
 
 	public LearnModule(WebDriver driver) 
@@ -86,5 +81,7 @@ public class LearnModule extends Base
 	{
 		selectSubjectLnk.click();
 	}
+	
+	
 
 }

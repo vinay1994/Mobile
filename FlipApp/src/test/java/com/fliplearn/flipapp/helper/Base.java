@@ -17,6 +17,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.IInvokedMethod;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
@@ -36,10 +37,12 @@ import com.fliplearn.flipapp.util.ExcelUtil;
 import com.fliplearn.flipapp.util.Screenshots;
 import com.fliplearn.flipapp.util.SendReportUtil;
 
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.Activity;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.android.StartsActivity;
+import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 
 
@@ -48,6 +51,7 @@ public class Base implements ITestListener
 	   
 	public static Properties aConfig = null;
 	public static Properties eConfig = null;
+	public static Properties vConfig = null;
 	public static FileInputStream input = null;
 		
 	public static boolean isInitialized = false;
@@ -60,11 +64,12 @@ public class Base implements ITestListener
 	String appPath;
 	public static String environment;
 	public static String url;
-	public static WebDriver driver;
+	public static RemoteWebDriver driver;
 	public static String emailIds;
 	public static String suiteType;
 	public static String sendReport;
 	public static String testName;
+	public static DesiredCapabilities cap;
 	
 	static GenericFunctions generic=new GenericFunctions();
 	
@@ -82,7 +87,7 @@ public class Base implements ITestListener
 
 	public static String reportPath()
 	{
-		if(System.getProperty("os.name").equals("Linux"))
+		if(System.getProperty("os.name").equals("Linux") || System.getProperty("os.name").equals("Mac") )
 				return System.getProperty("user.dir") + "/reports/";
 		else
 				return "C:\\tomcat\\webapps\\fliplearn\\latestreport\\";
@@ -91,7 +96,7 @@ public class Base implements ITestListener
 	 * This will set Driver based on capabilities and configuration
 	 * @author Tarun Goswami
 	 * @since 2018-09-20
-	 * @version 1.2
+	 * @version 1.3
 	 */
 	public void setDriver() throws MalformedURLException
 	{
@@ -110,17 +115,41 @@ public class Base implements ITestListener
 			
 		if(platform.equals("Android"))
 		{
-			DesiredCapabilities cap = new DesiredCapabilities();
+			cap = new DesiredCapabilities();
+			cap.setCapability("automationName", "UiAutomator2");
+
 			cap.setCapability(MobileCapabilityType.DEVICE_NAME, deviceName);
-//			cap.setCapability(MobileCapabilityType.APP, appPath);
-			
 			cap.setCapability("appPackage", "com.elss.educomp"); 
 		    cap.setCapability("appActivity","com.elss.educomp.prelogin.ui.SplashActivity"); 
 		    cap.setCapability("noSign", true);
 		    
+		    
 			driver = new AndroidDriver<AndroidElement>(new URL("http://0.0.0.0:4723/wd/hub"), cap);
 			 
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		}
+		
+		else if(platform.equals("iOS"))
+		{
+			
+			DesiredCapabilities cap = new DesiredCapabilities();
+//			cap.setCapability("platformVersion", "10.3");
+
+		    cap.setCapability("deviceName", "Fliplearn Iphone (12.1)");
+		    cap.setCapability("platformName", "iOS");
+		    cap.setCapability("udid", "af9f8cec090145c64e092f3339fe2f59d832c722");
+		    cap.setCapability("bundleId", "com.educomp.smartclassonline");
+		   // cap.setCapability(MobileCapabilityType.APP, "/Users/tarungoswami/Downloads/testapp/Fliplearn.app");
+
+		    cap.setCapability("automationName", "XCUITest");
+		    cap.setCapability("xcodeOrgId","47M3CKSC66");	
+		    cap.setCapability("xcodeSigningId","iPhone Developer");
+		    cap.setCapability("noReset", false);
+
+			driver = new IOSDriver(new URL("http://127.0.0.1:4723/wd/hub"), cap);
+
+			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
 		}
 		
 		else if(server.equals("Windows") &
@@ -161,9 +190,36 @@ public class Base implements ITestListener
 				driver.get(url);
 			
         driver.manage().window().maximize();
+		}	
+		
+		else if(server.equals("Mac") & platform.equals("Web"))
+	    {
+				if(browser.equals("Chrome"))
+				{
+					ChromeOptions options = new ChromeOptions();
+					options.addArguments("start-maximized");
+			
+					System.setProperty("webdriver.chrome.driver", Constants.MAC_CHROME_EXE);
+					driver = new ChromeDriver();
+				}
+				else if(browser.equals("Firefox")) 
+				{
+					FirefoxOptions options = new FirefoxOptions();
+					options.addArguments("start-maximized");
+			
+					System.setProperty("webdriver.gecko.driver", Constants.MAC_FIREFOX_EXE);
+					driver = new FirefoxDriver();
+				}	
+				
+
+				driver.get(url);
+			
+        driver.manage().window().maximize();
 		}		
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		}
+	}
+	
+	
 	
 	
 	/**
@@ -219,6 +275,12 @@ public class Base implements ITestListener
 		Base.Initialize();
 		base.setDriver();
 		extentReports.attachReporter(htmlReporter);	
+		if(eConfig.getProperty("Platform").equals("iOS"))
+		{	
+			((IOSDriver) driver).resetApp();
+			System.out.println("App is reset");
+		}	
+
 	}
 
 	/**
@@ -348,7 +410,7 @@ public class Base implements ITestListener
 	}
 	
 
-	@DataProvider(name = "group0")
+	@DataProvider(name = "allusers")
 	public static Object[] group0() 
 	{
 		  return new Object[][]
@@ -356,30 +418,17 @@ public class Base implements ITestListener
 			  { "Admin" }, { "Principal" }, { "Teacher" }, { "Parent" }, { "Student" }, { "Guest" }
 		  }; 
 	}
-	
-	@DataProvider(name = "group1")
-	public static Object[] group1() 
-	{
-		  return new Object[][]
-		  { 
-			  { "Admin" }, { "Principal" }, { "Teacher" }, { "Parent" }, { "Student" }
-		  }; 
-	}
-	
-	@DataProvider(name = "group2")
+		
+	@DataProvider(name = "staff")
 	public static Object[] group2() 
 	{
 		  return new Object[][]
 		  { 
-
-			  { "guest" },
-
 			  { "Admin" }, { "Principal" }, { "Teacher" }
-
 		  }; 
 	}
 	
-	@DataProvider(name = "group3")
+	@DataProvider(name = "nostaff")
 	public static Object[] group3() 
 	{
 		  return new Object[][]

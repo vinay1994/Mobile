@@ -10,12 +10,14 @@ import io.appium.java_client.PerformsTouchActions;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import io.appium.java_client.pagefactory.iOSFindBy;
 import io.appium.java_client.touch.offset.PointOption;
 
 public class OnboardingModule 
 {
 	@FindBy(xpath="//button[text()='Skip']")
 	@AndroidFindBy(id="com.elss.educomp:id/btn_finish")
+	@iOSFindBy(xpath="//XCUIElementTypeButton[@name='SKIP']")
 	RemoteWebElement skipBtn;
 	
 	@AndroidFindBy(xpath="//*[@text='GOT IT']")
