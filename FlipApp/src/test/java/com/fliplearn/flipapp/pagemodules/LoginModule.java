@@ -58,64 +58,55 @@ public class LoginModule extends Base
 	 */
 	public  void Login(String role, String board, String className, String profile, String subscription, String mobile) throws InterruptedException
 	{   
-		if(role!=null) 
-		{
-			String username = aConfig.getProperty(role + "_Username"+"_"+board+"_"+className+"_"+profile+"_"+subscription+"_"+mobile);
-			String password =  aConfig.getProperty(role +"_Password"+"_"+board+"_"+className+"_"+profile+"_"+subscription+"_"+mobile);
+		String username = aConfig.getProperty(role + "_Username"+"_"+board+"_"+className+"_"+profile+"_"+subscription+"_"+mobile);
+		String password =  aConfig.getProperty(role +"_Password"+"_"+board+"_"+className+"_"+profile+"_"+subscription+"_"+mobile);
 		
-			System.out.println("Username is"+username);
-			if(eConfig.getProperty("Platform").equals("Android")) 
-			{
-				onbMod.skipScreen();
-				extentTest.log(Status.PASS, "Click on Skip button.");
-			}
+		if(eConfig.getProperty("Platform").equals("Android")) 
+		{
+			onbMod.skipScreen();
+			extentTest.log(Status.PASS, "Click on Skip button.");
+		}
 
-			usernameTxt.clear();
-			usernameTxt.sendKeys(username);
-			extentTest.log(Status.PASS, "Enter Username: "+username);
-			passwordTxt.clear();
-			passwordTxt.sendKeys((password));
-			extentTest.log(Status.PASS, "Enter Password");
+		usernameTxt.clear();
+		usernameTxt.sendKeys(username);
+		extentTest.log(Status.PASS, "Enter Username: "+username);
+		
+		passwordTxt.clear();
+		passwordTxt.sendKeys((password));
+		extentTest.log(Status.PASS, "Enter Password");
       
-			if(eConfig.getProperty("Platform").equals("Android")) 
-			{
-				((AndroidDriver) driver).hideKeyboard();
-				extentTest.log(Status.PASS, "Hide Keyboard");
-			}
-			loginBtn.click();
-			extentTest.log(Status.PASS, "Click on Login button");
-				 
-			 if(platform.equals("Android"))
-			 {
-				 System.out.println("Inside Android");
-
-				 if(!username.contains("automationp"))
-				 {	 
-					 quiMod.skipBtn.click();
-					 extentTest.log(Status.PASS, "Click on Quiz Skip Button");
-				 }	 
-				 Thread.sleep(3000);
-				 driver.findElement(By.xpath("//*[@text='GOT IT']")).click();
-				 extentTest.log(Status.PASS, "Tap on Got it.");
-
-			 }	
-			 
-			 if(role.equals("Admin")||role.equals("Principal")||role.equals("Teacher")||role.equals("Guest"))
-				 onbMod.skipScreen();
-
-				 if(!role.equals("Guest"))
-				 { 	 
-					 Thread.sleep(3000);
-					 driver.findElement(By.xpath("//*[@text='GOT IT']")).click();
-
-				 	extentTest.log(Status.PASS, "Tap on Got it.");
-				 }	
-			 }		
-
+		if(eConfig.getProperty("Platform").equals("Android")) 
+		{
+			((AndroidDriver) driver).hideKeyboard();
+			extentTest.log(Status.PASS, "Hide Keyboard");
 		}
 		
+		loginBtn.click();
+		extentTest.log(Status.PASS, "Click on Login button");
 		
-	}
+		if(eConfig.getProperty("Platform").equals("Android")) 
+		{
+			 quiMod.skipBtn.click();
+			 extentTest.log(Status.PASS, "Click on Quiz Skip Button");
+	 
+			 Thread.sleep(3000);
+			 driver.findElement(By.xpath("//*[@text='GOT IT']")).click();
+			 extentTest.log(Status.PASS, "Tap on Got it.");	
+			
+			 if(!role.equals("Guest"))
+			 { 	 
+				 Thread.sleep(3000);
+				 driver.findElement(By.xpath("//*[@text='GOT IT']")).click();
+
+			 	extentTest.log(Status.PASS, "Tap on Got it.");
+			 }
+		}
+				 
+	}		
+}			 
+//			 if(role.equals("Admin")||role.equals("Principal")||role.equals("Teacher")||role.equals("Guest"))
+//				 onbMod.skipScreen();
+
 	
 
 		 

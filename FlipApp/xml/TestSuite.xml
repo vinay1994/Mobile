@@ -7,29 +7,17 @@
 	<listener class-name="com.fliplearn.flipapp.helper.Base"/>
 </listeners>
  
-<<<<<<< HEAD:FlipApp/TestSuite.xml
-  <test name="Fee" enabled="true">
-  		<classes>
-
-    		<class name="com.fliplearn.flipapp.testcases.PrimePurchaseFlow">
-=======
 
 	
 	<test name="TestCases" enabled="true">
   		<classes>
 
-    		<class name="com.fliplearn.flipapp.testcases.QuizDashboard">
->>>>>>> 0a1348f55919da49fa7734aab0ef4bd914d97931:FlipApp/xml/TestSuite.xml
+    		<class name="com.fliplearn.flipapp.testcases.Login">
         		<methods>
  
-        			<include name="verifyPrimePurchaseFlowWithoutCoupon"/>
+        			<include name="verifyLogin"/>
 
-<<<<<<< HEAD:FlipApp/TestSuite.xml
-        			
-
-=======
->>>>>>> 0a1348f55919da49fa7734aab0ef4bd914d97931:FlipApp/xml/TestSuite.xml
-        		</methods>
+        			</methods>
         	</class>
         </classes>
  </test>       	
