@@ -109,6 +109,7 @@ public class VideoUtil extends Base
 			    			for(int v = 0; v < 1; v++)
 			    			{	
 			    				System.out.println("Size of video list:"+videoList.size());
+			    				try {
 			    				videoList.get(v).click();
 				    		
 			    				System.out.println("Waiting for 10 seconds to play video");
@@ -116,7 +117,10 @@ public class VideoUtil extends Base
 				    		
 			    				driver.findElement(By.xpath("(//div[@class='modal-content']//button[@class='close'])[2]")).click();
 			    				System.out.println("Video Popup closed");	
-			    				
+			    				}
+			    				catch(Exception e) {
+			    					System.out.println("contet is not playing "+videoList.get(v).getText());
+			    				}
 						    	count = count + 1;
 						    	System.out.println("Total video played till now:"+count);
 						    	
