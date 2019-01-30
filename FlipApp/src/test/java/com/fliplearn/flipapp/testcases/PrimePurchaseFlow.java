@@ -2,6 +2,7 @@ package com.fliplearn.flipapp.testcases;
 
 import static org.testng.Assert.assertEquals;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -13,6 +14,7 @@ import com.fliplearn.flipapp.pagemodules.LearnModule;
 import com.fliplearn.flipapp.pagemodules.LoginModule;
 import com.fliplearn.flipapp.pagemodules.MenuModule;
 import com.fliplearn.flipapp.pagemodules.MobileNumberModule;
+import com.fliplearn.flipapp.pagemodules.OnboardingModule;
 import com.fliplearn.flipapp.pagemodules.PrimeChapterTopicModule;
 import com.fliplearn.flipapp.pagemodules.PrimeClassModule;
 import com.fliplearn.flipapp.pagemodules.PrimePurchaseFlowModule;
@@ -33,6 +35,7 @@ public class PrimePurchaseFlow extends Base{
 	PrimePurchaseFlowModule priPurFloMod;
 	GenericFunctions generic;
 	PrimeChapterTopicModule priChaTopMod;
+	 OnboardingModule onbMod;
 	
 	
 	@BeforeMethod
@@ -47,14 +50,21 @@ public class PrimePurchaseFlow extends Base{
 		priSubMod = new PrimeSubjectModule(driver); 
 		priPurFloMod= new PrimePurchaseFlowModule(driver);
 		 generic=new GenericFunctions();
+		 onbMod = new OnboardingModule(driver);;
 		 
 	}
-	@Test (dataProvider="group0")
+	@Test (dataProvider="allusers")
 	public void verifyPrimePurchaseFlowWithoutCoupon(String role) throws InterruptedException {
 		logMod.Login(role, "CBSE", "6", "Single", "None", "Yes");
+		if(role.equals("Admin")||role.equals("Teacher")||role.equals("Principal")||role.equals("Guest")) {
+			
+		onbMod.skipScreen();
+	
+		}
+		 Thread.sleep(2000);
+		 if(!(role.equals("Guest"))) {
+		leaMod.clickOnLearnImage();}
 		
-        Thread.sleep(2000);
-		leaMod.clickOnLearnImage();
 		leaMod.clickOnPrimeImage();
 		if(role.equals("Admin") || role.equals("Teacher") || role.equals("Principal")) {
 		priClaMod.selectUserClass("Class 6");}
@@ -62,6 +72,7 @@ public class PrimePurchaseFlow extends Base{
 		priSubMod.clickOnSubject(driver, role, "English");
 		assertEquals(generic.isElementDisplayed(driver, priPurFloMod.cliOnBuySubs), true);
 		priPurFloMod.clickOnBuySubs();
+		Thread.sleep(2000);
 		
 		if(role.equals("Parent")) {
 	    	Assert.assertEquals(priPurFloMod.Childmsgverify.getText(), "Please link your child to your account using the child's guardian code.");
@@ -81,16 +92,17 @@ public class PrimePurchaseFlow extends Base{
 		priPurFloMod.enterAddressLine();
 		Thread.sleep(5000);
 		priPurFloMod.clickOnProceednPay();
-		priPurFloMod.selectDebitCard();
-		Thread.sleep(5000);
-		//priPurFloMod.ClickOnPayNow();
+		JavascriptExecutor js= (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", priPurFloMod.selDebitCard); 
+		Thread.sleep(2000);
+		priPurFloMod.ClickOnPayNow();
 		//priPurFloMod.paymentDiscard();
 		
 		
-		}
 		
 		
 		
-	}}
+		
+	}}}
 
 
