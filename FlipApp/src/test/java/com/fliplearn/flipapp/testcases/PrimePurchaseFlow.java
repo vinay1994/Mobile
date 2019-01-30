@@ -92,6 +92,7 @@ public class PrimePurchaseFlow extends Base{
 		priPurFloMod.enterAddressLine();
 		Thread.sleep(5000);
 		priPurFloMod.clickOnProceednPay();
+		
 		JavascriptExecutor js= (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click();", priPurFloMod.selDebitCard); 
 		Thread.sleep(2000);
