@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="4" total="10" passed="6" failed="0" skipped="0">
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2018-12-31T21:17:37Z" name="Fliplearn Automation Suite" finished-at="2018-12-31T21:23:57Z" duration-ms="379673">
+  <suite started-at="2019-01-29T12:16:52Z" name="Fliplearn Automation Suite" finished-at="2019-01-29T12:20:16Z" duration-ms="203806">
     <groups>
     </groups>
-    <test started-at="2018-12-31T21:17:37Z" name="TestCases" finished-at="2018-12-31T21:23:57Z" duration-ms="379673">
-      <class name="com.fliplearn.flipapp.testcases.PrimeResources">
-        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeResources@6fdbe764]" started-at="2018-12-31T21:17:37Z" name="befo" finished-at="2018-12-31T21:17:53Z" duration-ms="16135" status="PASS">
+    <test started-at="2019-01-29T12:16:52Z" name="TestCases" finished-at="2019-01-29T12:20:16Z" duration-ms="203806">
+      <class name="com.fliplearn.flipapp.testcases.PrimePurchaseFlow">
+        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.PrimePurchaseFlow@8f2ef19]" started-at="2019-01-29T12:16:52Z" name="befo" finished-at="2019-01-29T12:16:56Z" duration-ms="4148" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@3635099]]>
+                <![CDATA[org.testng.TestRunner@44592c39]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- befo -->
-        <test-method is-config="true" signature="preVerifySynopsis()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeResources@6fdbe764]" started-at="2018-12-31T21:17:53Z" name="preVerifySynopsis" finished-at="2018-12-31T21:17:54Z" duration-ms="1069" status="PASS">
+        <test-method is-config="true" signature="preVerifyPrimePurchaseFlow()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimePurchaseFlow@8f2ef19]" started-at="2019-01-29T12:16:56Z" name="preVerifyPrimePurchaseFlow" finished-at="2019-01-29T12:16:57Z" duration-ms="359" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- preVerifySynopsis -->
-        <test-method signature="verifyMindMaps(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeResources@6fdbe764]" started-at="2018-12-31T21:17:54Z" name="verifyMindMaps" data-provider="allusers" finished-at="2018-12-31T21:18:36Z" duration-ms="41333" status="PASS">
+        </test-method> <!-- preVerifyPrimePurchaseFlow -->
+        <test-method signature="verifyPrimePurchaseFlowWithoutCoupon(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.PrimePurchaseFlow@8f2ef19]" started-at="2019-01-29T12:16:57Z" name="verifyPrimePurchaseFlowWithoutCoupon" data-provider="allusers" finished-at="2019-01-29T12:17:31Z" duration-ms="34088" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -32,27 +32,27 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyMindMaps -->
-        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeResources@6fdbe764]" started-at="2018-12-31T21:18:36Z" name="getResult" finished-at="2018-12-31T21:18:37Z" duration-ms="304" status="PASS">
+        </test-method> <!-- verifyPrimePurchaseFlowWithoutCoupon -->
+        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimePurchaseFlow@8f2ef19]" started-at="2019-01-29T12:17:31Z" name="getResult" finished-at="2019-01-29T12:17:31Z" duration-ms="76" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeResources@6fdbe764]" started-at="2018-12-31T21:18:37Z" name="befo" finished-at="2018-12-31T21:18:53Z" duration-ms="15957" status="PASS">
+        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.PrimePurchaseFlow@8f2ef19]" started-at="2019-01-29T12:17:31Z" name="befo" finished-at="2019-01-29T12:17:34Z" duration-ms="3136" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@3635099]]>
+                <![CDATA[org.testng.TestRunner@44592c39]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- befo -->
-        <test-method is-config="true" signature="preVerifySynopsis()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeResources@6fdbe764]" started-at="2018-12-31T21:18:53Z" name="preVerifySynopsis" finished-at="2018-12-31T21:18:54Z" duration-ms="994" status="PASS">
+        <test-method is-config="true" signature="preVerifyPrimePurchaseFlow()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimePurchaseFlow@8f2ef19]" started-at="2019-01-29T12:17:34Z" name="preVerifyPrimePurchaseFlow" finished-at="2019-01-29T12:17:34Z" duration-ms="30" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- preVerifySynopsis -->
-        <test-method signature="verifyMindMaps(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeResources@6fdbe764]" started-at="2018-12-31T21:18:54Z" name="verifyMindMaps" data-provider="allusers" finished-at="2018-12-31T21:19:36Z" duration-ms="42550" status="PASS">
+        </test-method> <!-- preVerifyPrimePurchaseFlow -->
+        <test-method signature="verifyPrimePurchaseFlowWithoutCoupon(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.PrimePurchaseFlow@8f2ef19]" started-at="2019-01-29T12:17:34Z" name="verifyPrimePurchaseFlowWithoutCoupon" data-provider="allusers" finished-at="2019-01-29T12:18:09Z" duration-ms="34491" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -62,27 +62,27 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyMindMaps -->
-        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeResources@6fdbe764]" started-at="2018-12-31T21:19:37Z" name="getResult" finished-at="2018-12-31T21:19:37Z" duration-ms="249" status="PASS">
+        </test-method> <!-- verifyPrimePurchaseFlowWithoutCoupon -->
+        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimePurchaseFlow@8f2ef19]" started-at="2019-01-29T12:18:09Z" name="getResult" finished-at="2019-01-29T12:18:09Z" duration-ms="82" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeResources@6fdbe764]" started-at="2018-12-31T21:19:37Z" name="befo" finished-at="2018-12-31T21:19:54Z" duration-ms="17384" status="PASS">
+        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.PrimePurchaseFlow@8f2ef19]" started-at="2019-01-29T12:18:09Z" name="befo" finished-at="2019-01-29T12:18:12Z" duration-ms="3421" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@3635099]]>
+                <![CDATA[org.testng.TestRunner@44592c39]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- befo -->
-        <test-method is-config="true" signature="preVerifySynopsis()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeResources@6fdbe764]" started-at="2018-12-31T21:19:54Z" name="preVerifySynopsis" finished-at="2018-12-31T21:19:55Z" duration-ms="761" status="PASS">
+        <test-method is-config="true" signature="preVerifyPrimePurchaseFlow()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimePurchaseFlow@8f2ef19]" started-at="2019-01-29T12:18:12Z" name="preVerifyPrimePurchaseFlow" finished-at="2019-01-29T12:18:12Z" duration-ms="22" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- preVerifySynopsis -->
-        <test-method signature="verifyMindMaps(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeResources@6fdbe764]" started-at="2018-12-31T21:19:55Z" name="verifyMindMaps" data-provider="allusers" finished-at="2018-12-31T21:20:39Z" duration-ms="43609" status="PASS">
+        </test-method> <!-- preVerifyPrimePurchaseFlow -->
+        <test-method signature="verifyPrimePurchaseFlowWithoutCoupon(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.PrimePurchaseFlow@8f2ef19]" started-at="2019-01-29T12:18:12Z" name="verifyPrimePurchaseFlowWithoutCoupon" data-provider="allusers" finished-at="2019-01-29T12:18:47Z" duration-ms="35246" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -92,27 +92,27 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyMindMaps -->
-        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeResources@6fdbe764]" started-at="2018-12-31T21:20:40Z" name="getResult" finished-at="2018-12-31T21:20:40Z" duration-ms="287" status="PASS">
+        </test-method> <!-- verifyPrimePurchaseFlowWithoutCoupon -->
+        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimePurchaseFlow@8f2ef19]" started-at="2019-01-29T12:18:48Z" name="getResult" finished-at="2019-01-29T12:18:48Z" duration-ms="87" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeResources@6fdbe764]" started-at="2018-12-31T21:20:40Z" name="befo" finished-at="2018-12-31T21:20:57Z" duration-ms="16940" status="PASS">
+        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.PrimePurchaseFlow@8f2ef19]" started-at="2019-01-29T12:18:48Z" name="befo" finished-at="2019-01-29T12:18:51Z" duration-ms="2874" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@3635099]]>
+                <![CDATA[org.testng.TestRunner@44592c39]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- befo -->
-        <test-method is-config="true" signature="preVerifySynopsis()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeResources@6fdbe764]" started-at="2018-12-31T21:20:57Z" name="preVerifySynopsis" finished-at="2018-12-31T21:20:58Z" duration-ms="799" status="PASS">
+        <test-method is-config="true" signature="preVerifyPrimePurchaseFlow()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimePurchaseFlow@8f2ef19]" started-at="2019-01-29T12:18:51Z" name="preVerifyPrimePurchaseFlow" finished-at="2019-01-29T12:18:51Z" duration-ms="22" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- preVerifySynopsis -->
-        <test-method signature="verifyMindMaps(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeResources@6fdbe764]" started-at="2018-12-31T21:20:58Z" name="verifyMindMaps" data-provider="allusers" finished-at="2018-12-31T21:22:06Z" duration-ms="68194" status="PASS">
+        </test-method> <!-- preVerifyPrimePurchaseFlow -->
+        <test-method signature="verifyPrimePurchaseFlowWithoutCoupon(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.PrimePurchaseFlow@8f2ef19]" started-at="2019-01-29T12:18:51Z" name="verifyPrimePurchaseFlowWithoutCoupon" data-provider="allusers" finished-at="2019-01-29T12:19:05Z" duration-ms="13973" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -122,27 +122,27 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyMindMaps -->
-        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeResources@6fdbe764]" started-at="2018-12-31T21:22:07Z" name="getResult" finished-at="2018-12-31T21:22:07Z" duration-ms="313" status="PASS">
+        </test-method> <!-- verifyPrimePurchaseFlowWithoutCoupon -->
+        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimePurchaseFlow@8f2ef19]" started-at="2019-01-29T12:19:05Z" name="getResult" finished-at="2019-01-29T12:19:05Z" duration-ms="78" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeResources@6fdbe764]" started-at="2018-12-31T21:22:07Z" name="befo" finished-at="2018-12-31T21:22:23Z" duration-ms="15516" status="PASS">
+        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.PrimePurchaseFlow@8f2ef19]" started-at="2019-01-29T12:19:05Z" name="befo" finished-at="2019-01-29T12:19:08Z" duration-ms="2762" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@3635099]]>
+                <![CDATA[org.testng.TestRunner@44592c39]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- befo -->
-        <test-method is-config="true" signature="preVerifySynopsis()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeResources@6fdbe764]" started-at="2018-12-31T21:22:23Z" name="preVerifySynopsis" finished-at="2018-12-31T21:22:24Z" duration-ms="963" status="PASS">
+        <test-method is-config="true" signature="preVerifyPrimePurchaseFlow()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimePurchaseFlow@8f2ef19]" started-at="2019-01-29T12:19:08Z" name="preVerifyPrimePurchaseFlow" finished-at="2019-01-29T12:19:08Z" duration-ms="20" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- preVerifySynopsis -->
-        <test-method signature="verifyMindMaps(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeResources@6fdbe764]" started-at="2018-12-31T21:22:24Z" name="verifyMindMaps" data-provider="allusers" finished-at="2018-12-31T21:23:03Z" duration-ms="39542" status="PASS">
+        </test-method> <!-- preVerifyPrimePurchaseFlow -->
+        <test-method signature="verifyPrimePurchaseFlowWithoutCoupon(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.PrimePurchaseFlow@8f2ef19]" started-at="2019-01-29T12:19:08Z" name="verifyPrimePurchaseFlowWithoutCoupon" data-provider="allusers" finished-at="2019-01-29T12:19:40Z" duration-ms="32639" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -152,27 +152,27 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyMindMaps -->
-        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeResources@6fdbe764]" started-at="2018-12-31T21:23:04Z" name="getResult" finished-at="2018-12-31T21:23:05Z" duration-ms="320" status="PASS">
+        </test-method> <!-- verifyPrimePurchaseFlowWithoutCoupon -->
+        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimePurchaseFlow@8f2ef19]" started-at="2019-01-29T12:19:40Z" name="getResult" finished-at="2019-01-29T12:19:40Z" duration-ms="86" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeResources@6fdbe764]" started-at="2018-12-31T21:23:05Z" name="befo" finished-at="2018-12-31T21:23:21Z" duration-ms="16231" status="PASS">
+        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.PrimePurchaseFlow@8f2ef19]" started-at="2019-01-29T12:19:40Z" name="befo" finished-at="2019-01-29T12:19:44Z" duration-ms="3255" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@3635099]]>
+                <![CDATA[org.testng.TestRunner@44592c39]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- befo -->
-        <test-method is-config="true" signature="preVerifySynopsis()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeResources@6fdbe764]" started-at="2018-12-31T21:23:21Z" name="preVerifySynopsis" finished-at="2018-12-31T21:23:22Z" duration-ms="760" status="PASS">
+        <test-method is-config="true" signature="preVerifyPrimePurchaseFlow()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimePurchaseFlow@8f2ef19]" started-at="2019-01-29T12:19:44Z" name="preVerifyPrimePurchaseFlow" finished-at="2019-01-29T12:19:44Z" duration-ms="8" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- preVerifySynopsis -->
-        <test-method signature="verifyMindMaps(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeResources@6fdbe764]" started-at="2018-12-31T21:23:22Z" name="verifyMindMaps" data-provider="allusers" finished-at="2018-12-31T21:23:55Z" duration-ms="33656" status="PASS">
+        </test-method> <!-- preVerifyPrimePurchaseFlow -->
+        <test-method signature="verifyPrimePurchaseFlowWithoutCoupon(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.PrimePurchaseFlow@8f2ef19]" started-at="2019-01-29T12:19:44Z" name="verifyPrimePurchaseFlowWithoutCoupon" data-provider="allusers" finished-at="2019-01-29T12:20:16Z" duration-ms="31888" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -182,16 +182,16 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyMindMaps -->
-        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeResources@6fdbe764]" started-at="2018-12-31T21:23:56Z" name="getResult" finished-at="2018-12-31T21:23:57Z" duration-ms="335" status="PASS">
+        </test-method> <!-- verifyPrimePurchaseFlowWithoutCoupon -->
+        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimePurchaseFlow@8f2ef19]" started-at="2019-01-29T12:20:16Z" name="getResult" finished-at="2019-01-29T12:20:16Z" duration-ms="78" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method is-config="true" signature="aftSuite()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeResources@6fdbe764]" started-at="2018-12-31T21:23:57Z" name="aftSuite" finished-at="2018-12-31T21:23:57Z" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="aftSuite()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimePurchaseFlow@8f2ef19]" started-at="2019-01-29T12:20:17Z" name="aftSuite" finished-at="2019-01-29T12:20:17Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- aftSuite -->
-      </class> <!-- com.fliplearn.flipapp.testcases.PrimeResources -->
+      </class> <!-- com.fliplearn.flipapp.testcases.PrimePurchaseFlow -->
     </test> <!-- TestCases -->
   </suite> <!-- Fliplearn Automation Suite -->
 </testng-results>

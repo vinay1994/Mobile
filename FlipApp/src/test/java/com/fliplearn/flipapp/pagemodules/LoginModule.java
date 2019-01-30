@@ -99,14 +99,20 @@ public class LoginModule extends Base
 				 driver.findElement(By.xpath("//*[@text='GOT IT']")).click();
 
 			 	extentTest.log(Status.PASS, "Tap on Got it.");
+			 
+		
+			 		 
 			 }
-		}
-				 
-	}		
-}			 
-//			 if(role.equals("Admin")||role.equals("Principal")||role.equals("Teacher")||role.equals("Guest"))
-//				 onbMod.skipScreen();
+			 
+		// if(username.contains("automationp")) {
+				// onbMod.skipScreen();
+			 
+			
 
+}
+		 }
+			 }
+		
 	
 
 		 

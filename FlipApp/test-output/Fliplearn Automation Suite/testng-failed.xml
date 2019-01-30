@@ -6,15 +6,15 @@
   </listeners>
   <test thread-count="5" name="TestCases(failed)">
     <classes>
-      <class name="com.fliplearn.flipapp.testcases.PrimeResources">
+      <class name="com.fliplearn.flipapp.testcases.PrimePurchaseFlow">
         <methods>
-          <include name="verifyRealLifeApplication" invocation-numbers="4"/>
+          <include name="preVerifyPrimePurchaseFlow"/>
+          <include name="verifyPrimePurchaseFlowWithoutCoupon" invocation-numbers="3 4"/>
           <include name="befo"/>
           <include name="aftSuite"/>
           <include name="getResult"/>
-          <include name="preVerifySynopsis"/>
         </methods>
-      </class> <!-- com.fliplearn.flipapp.testcases.PrimeResources -->
+      </class> <!-- com.fliplearn.flipapp.testcases.PrimePurchaseFlow -->
     </classes>
   </test> <!-- TestCases(failed) -->
 </suite> <!-- Failed suite [Fliplearn Automation Suite] -->
