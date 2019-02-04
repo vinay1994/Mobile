@@ -61,6 +61,12 @@ public class LoginModule extends Base
 		String username = aConfig.getProperty(role + "_Username"+"_"+board+"_"+className+"_"+profile+"_"+subscription+"_"+mobile);
 		String password =  aConfig.getProperty(role +"_Password"+"_"+board+"_"+className+"_"+profile+"_"+subscription+"_"+mobile);
 		
+		if(eConfig.getProperty("Platform").equals("Web")) 
+		{
+			onbMod.skipBtn.click();
+			 extentTest.log(Status.PASS, "Click on Skip Button");
+		}
+		
 		if(eConfig.getProperty("Platform").equals("Android")) 
 		{
 			onbMod.skipScreen();
@@ -75,16 +81,16 @@ public class LoginModule extends Base
 		passwordTxt.sendKeys((password));
 		extentTest.log(Status.PASS, "Enter Password");
       
-		if(eConfig.getProperty("Platform").equals("Android")) 
-		{
-			((AndroidDriver) driver).hideKeyboard();
-			extentTest.log(Status.PASS, "Hide Keyboard");
-		}
+//		if(eConfig.getProperty("Platform").equals("Android")) 
+//		{
+//			((AndroidDriver) driver).hideKeyboard();
+//			extentTest.log(Status.PASS, "Hide Keyboard");
+//		}
 		
 		loginBtn.click();
 		extentTest.log(Status.PASS, "Click on Login button");
 		
-		if(eConfig.getProperty("Platform").equals("Android")) 
+		if(eConfig.getProperty("Platform").equals("Android")&&role.equals("Guest")) 
 		{
 			 quiMod.skipBtn.click();
 			 extentTest.log(Status.PASS, "Click on Quiz Skip Button");
@@ -93,14 +99,21 @@ public class LoginModule extends Base
 			 driver.findElement(By.xpath("//*[@text='GOT IT']")).click();
 			 extentTest.log(Status.PASS, "Tap on Got it.");	
 			
-			 if(!role.equals("Guest"))
-			 { 	 
-				 Thread.sleep(3000);
-				 driver.findElement(By.xpath("//*[@text='GOT IT']")).click();
-
-			 	extentTest.log(Status.PASS, "Tap on Got it.");
-			 }
+//			 Thread.sleep(3000);
+//			 driver.findElement(By.xpath("//*[@text='GOT IT']")).click();
+//
+//     	 	extentTest.log(Status.PASS, "Tap on Got it.");
 		}
+//			 if(!role.equals("Guest"))
+//			 { 	 
+//				 Thread.sleep(3000);
+//				 driver.findElement(By.xpath("//*[@text='GOT IT']")).click();
+//
+//			 	extentTest.log(Status.PASS, "Tap on Got it.");
+//			 }
+//			 
+//			 
+//		}
 				 
 	}		
 }			 

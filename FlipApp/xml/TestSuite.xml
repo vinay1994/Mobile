@@ -6,16 +6,15 @@
 <listeners>
 	<listener class-name="com.fliplearn.flipapp.helper.Base"/>
 </listeners>
- 
-
 	
 	<test name="TestCases" enabled="true">
   		<classes>
 
-    		<class name="com.fliplearn.flipapp.testcases.Login">
-        		<methods>
+    		<class name="com.fliplearn.flipapp.testcases.Event">
+    		
+            		<methods>
  
-        			<include name="verifyLogin"/>
+        			<include name="createAnnouncement"/>
 
         			</methods>
         	</class>

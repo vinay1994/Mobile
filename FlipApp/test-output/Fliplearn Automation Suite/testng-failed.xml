@@ -4,17 +4,28 @@
   <listeners>
     <listener class-name="com.fliplearn.flipapp.helper.Base"/>
   </listeners>
-  <test thread-count="5" name="TestCases(failed)">
+  <test thread-count="5" name="Learning(failed)">
     <classes>
       <class name="com.fliplearn.flipapp.testcases.PrimeResources">
         <methods>
-          <include name="verifyRealLifeApplication" invocation-numbers="4"/>
+          <include name="verifyMindMaps" invocation-numbers="4"/>
           <include name="befo"/>
           <include name="aftSuite"/>
           <include name="getResult"/>
           <include name="preVerifySynopsis"/>
         </methods>
       </class> <!-- com.fliplearn.flipapp.testcases.PrimeResources -->
+      <class name="com.fliplearn.flipapp.testcases.PrimeContent">
+        <methods>
+          <include name="prePrime"/>
+          <include name="verifyPrimeTileDisplayed" invocation-numbers="4"/>
+          <include name="befo"/>
+          <include name="aftSuite"/>
+          <include name="verifyPrimeSubjects" invocation-numbers="5"/>
+          <include name="getResult"/>
+          <include name="verifyPrimeClasses" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.fliplearn.flipapp.testcases.PrimeContent -->
     </classes>
-  </test> <!-- TestCases(failed) -->
+  </test> <!-- Learning(failed) -->
 </suite> <!-- Failed suite [Fliplearn Automation Suite] -->

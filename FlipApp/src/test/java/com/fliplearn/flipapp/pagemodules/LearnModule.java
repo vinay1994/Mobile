@@ -56,7 +56,11 @@ public class LearnModule extends Base
 
 	@FindBy(xpath="//a[@id='learn-icon']")
 	@AndroidFindBy(xpath="(//*[@resource-id='com.elss.educomp:id/subject_text'])[1]") 
-	public RemoteWebElement resource;		
+	public RemoteWebElement resource;
+	
+	@FindBy(xpath="//a[@id='learn-icon']")
+	@AndroidFindBy(xpath="//*[@text='Noticeboard']") 
+	public RemoteWebElement noticeBoard;
 
 	public LearnModule(WebDriver driver) 
 	{
@@ -87,6 +91,11 @@ public class LearnModule extends Base
 	public void clickOnSubjectLink()
 	{
 		selectSubjectLnk.get(0).click();
+	}
+	
+	public void clicknoticeBoard()
+	{
+		noticeBoard.click();
 	}
 	
 	

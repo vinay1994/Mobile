@@ -13,6 +13,7 @@ import com.fliplearn.flipapp.pagemodules.LearnModule;
 import com.fliplearn.flipapp.pagemodules.LoginModule;
 import com.fliplearn.flipapp.pagemodules.MenuModule;
 import com.fliplearn.flipapp.pagemodules.MobileNumberModule;
+import com.fliplearn.flipapp.pagemodules.OnboardingModule;
 import com.fliplearn.flipapp.pagemodules.PrimeChapterTopicModule;
 import com.fliplearn.flipapp.pagemodules.PrimeClassModule;
 import com.fliplearn.flipapp.pagemodules.PrimePurchaseFlowModule;
@@ -33,7 +34,7 @@ public class PrimePurchaseFlow extends Base{
 	PrimePurchaseFlowModule priPurFloMod;
 	GenericFunctions generic;
 	PrimeChapterTopicModule priChaTopMod;
-	
+	OnboardingModule onbMod;
 	
 	@BeforeMethod
 	public void preVerifyPrimePurchaseFlow() {
@@ -46,6 +47,7 @@ public class PrimePurchaseFlow extends Base{
 		priClaMod =	new PrimeClassModule(driver);
 		priSubMod = new PrimeSubjectModule(driver); 
 		priPurFloMod= new PrimePurchaseFlowModule(driver);
+		onbMod = new OnboardingModule(driver);
 		 generic=new GenericFunctions();
 		 
 	}
@@ -54,6 +56,7 @@ public class PrimePurchaseFlow extends Base{
 		logMod.Login(role, "CBSE", "6", "Single", "None", "Yes");
 		
         Thread.sleep(2000);
+        onbMod.skipBtn.click();
 		leaMod.clickOnLearnImage();
 		leaMod.clickOnPrimeImage();
 		if(role.equals("Admin") || role.equals("Teacher") || role.equals("Principal")) {
@@ -89,8 +92,7 @@ public class PrimePurchaseFlow extends Base{
 		
 		}
 		
-		
-		
-	}}
+		}
+	}
 
 
