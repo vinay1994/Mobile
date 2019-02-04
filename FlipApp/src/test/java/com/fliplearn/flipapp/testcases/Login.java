@@ -71,6 +71,7 @@ public class Login extends Base
 	 * @version 1.2
 	 * @throws InterruptedException 
 	 */
+	
 	@Test(dataProvider = "allusers")
 	public void verifyLogout(String role) throws InterruptedException
 	{

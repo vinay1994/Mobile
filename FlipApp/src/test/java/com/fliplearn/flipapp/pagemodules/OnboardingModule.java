@@ -18,7 +18,7 @@ public class OnboardingModule
 	@FindBy(xpath="//button[text()='Skip']")
 	@AndroidFindBy(id="com.elss.educomp:id/btn_finish")
 	@iOSFindBy(xpath="//XCUIElementTypeButton[@name='SKIP']")
-	RemoteWebElement skipBtn;
+	public RemoteWebElement skipBtn;
 	
 	@AndroidFindBy(xpath="//*[@text='GOT IT']")
 	public RemoteWebElement gotItBtn;

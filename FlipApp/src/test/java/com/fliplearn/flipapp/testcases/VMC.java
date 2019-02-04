@@ -58,7 +58,7 @@ public class VMC extends Base
 		{			
 			logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 			
-			if(platform.equals("Web"))
+			if(platform.equals("Web")&& platform.equals("Android"))
 				leaMod.clickOnLearnImage();
 			
 			assertEquals(generic.isElementDisplayed(driver, leaMod.vmcImg), true);

@@ -8,6 +8,7 @@ import com.aventstack.extentreports.Status;
 import com.fliplearn.flipapp.helper.Base;
 import com.fliplearn.flipapp.pagemodules.EventModule;
 import com.fliplearn.flipapp.pagemodules.HeaderModule;
+import com.fliplearn.flipapp.pagemodules.LearnModule;
 import com.fliplearn.flipapp.pagemodules.LoginModule;
 import com.fliplearn.flipapp.pagemodules.MenuModule;
 import com.fliplearn.flipapp.pagemodules.MobileNumberModule;
@@ -27,6 +28,7 @@ public class Event extends Base
 	QuizModule quiMod;
 	YourProfileModule youProMod;
 	HeaderModule heaMod;
+	LearnModule learnMod;
 	
 	@BeforeMethod
 	public void beforeEvent()
