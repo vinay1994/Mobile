@@ -1,5 +1,6 @@
 package com.fliplearn.flipapp.pagemodules;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebElement;
@@ -126,6 +127,7 @@ public class PrimePurchaseFlowModule {
 	entemailid.sendKeys("automation@fliplearn.com");
 	}
 	public void enterMobileNo() {
+		entmobno.clear();
 	entmobno.sendKeys("9650423377");
     }
 	public void enterPinCode() {
@@ -138,9 +140,10 @@ public class PrimePurchaseFlowModule {
 		//clickOnProPay.sendKeys(Keys.ENTER);
 		clickOnProPay.click();
 	}
-	public void selectDebitCard() {
-		selDebitCard.click();
-	}
+	//public void selectDebitCard() {
+		
+		//selDebitCard.click();
+	//}
 	public void ClickOnPayNow() {
 		cliOnPayNow.click();
 	}
