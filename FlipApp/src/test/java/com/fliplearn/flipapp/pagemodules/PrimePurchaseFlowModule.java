@@ -23,7 +23,7 @@ public class PrimePurchaseFlowModule {
 	@iOSFindBy()
     public RemoteWebElement cliOnClose;	
 	
-	@FindBy(xpath="(//div[@class='border-blue-1 padding20 border-radius4 cursorPointer m-t-20 boxShadow ng-scope'])[1]")
+	@FindBy(xpath="(//*[@class='border-blue-1 padding20 border-radius4 cursorPointer m-t-20 boxShadow ng-scope'])[1]")
 	@AndroidFindBy()
 	@iOSFindBy()
 	public RemoteWebElement cliOnsubs;
@@ -93,10 +93,56 @@ public class PrimePurchaseFlowModule {
 	@iOSFindBy()
 	public RemoteWebElement payDiscard;
 	
+	@FindBy(xpath="//*[text()='1. The Basics']")
+	@AndroidFindBy()
+	@iOSFindBy()
+	public RemoteWebElement clickOnChap;
+	
+	@FindBy(xpath="//*[text()='Pronunciation']")
+	@AndroidFindBy()
+	@iOSFindBy()
+	public RemoteWebElement clickOnTop;
+	
+	@FindBy(xpath="//*[contains(text(),'Buy Fliplearn subscription and get World')]")
+	@AndroidFindBy()
+	@iOSFindBy()
+	public RemoteWebElement verBuySubsMess;
+	
+	@FindBy(xpath="//*[text()='Buy Fliplearn Subscription']")
+	@AndroidFindBy()
+	@iOSFindBy()
+	public RemoteWebElement cliOnBuyFliSub;
+	
+	@FindBy(xpath="//*[@placeholder='Promotion Code']")
+	@AndroidFindBy()
+    @iOSFindBy()
+	public RemoteWebElement entCoupCode;
+	
+	@FindBy(xpath="//*[text()='Apply']")
+	@AndroidFindBy()
+	@iOSFindBy()
+	public RemoteWebElement clicOnApply;	
+	
+	@FindBy(xpath="//*[text()='Remove']")
+	@AndroidFindBy()
+	@iOSFindBy()
+	public RemoteWebElement removeCoupon;
+	
+	
 	public PrimePurchaseFlowModule(WebDriver driver)
 	{
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
+	
+	public void clickOnChapter() {
+		clickOnChap.click();
+		
+	}
+	
+	public void clickOnTopic() {
+		clickOnTop.click();
+		
+	}
 	
 	public void clickOnBuySubs() {
 		cliOnBuySubs.click();
@@ -144,11 +190,31 @@ public class PrimePurchaseFlowModule {
 		
 		//selDebitCard.click();
 	//}
-	public void ClickOnPayNow() {
+	public void clickOnPayNow() {
 		cliOnPayNow.click();
 	}
 	public void paymentDiscard() {
 		payDiscard.click();
+	}
+	
+	public void clicOnSecBuySubs() {
+		cliOnBuyFliSub.click();
+	}
+	
+	public void enterCouponCode() throws InterruptedException {
+		Thread.sleep(3000);
+		entCoupCode.sendKeys("vinay-100");
+	
+	}
+	
+    public void cliOnAplButt() {
+    	clicOnApply.click();
+	}
+    
+    public void cliOnRemoveCoupon() {
+    	removeCoupon.click();
+    }
+		
 	}
 	
 	
@@ -169,4 +235,4 @@ public class PrimePurchaseFlowModule {
 	
 	
 
-}
+
