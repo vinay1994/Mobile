@@ -63,7 +63,7 @@ public class LoginModule extends Base
 		
 		if(eConfig.getProperty("Platform").equals("Web")) 
 		{
-			onbMod.skipBtn.click();
+			 //onbMod.skipBtn.click();
 			 extentTest.log(Status.PASS, "Click on Skip Button");
 		}
 		
@@ -121,28 +121,28 @@ public class LoginModule extends Base
 //			 if(role.equals("Admin")||role.equals("Principal")||role.equals("Teacher")||role.equals("Guest"))
 //				 onbMod.skipScreen();
 
-			 if(!role.equals("Guest"))
-			 { 	 
-				 Thread.sleep(3000);
-				 driver.findElement(By.xpath("//*[@text='GOT IT']")).click();
-
-			 	extentTest.log(Status.PASS, "Tap on Got it.");
-			 
-		
-			 		 
-			 }
+//			 if(!role.equals("Guest"))
+//			 { 	 
+//				 Thread.sleep(3000);
+//				 driver.findElement(By.xpath("//*[@text='GOT IT']")).click();
+//
+//			 	extentTest.log(Status.PASS, "Tap on Got it.");
+//			 
+//		
+//			 		 
+//			 }
 			 
 		// if(username.contains("automationp")) {
 				// onbMod.skipScreen();
 			 
 			
-
-
-}
-		 }
-			 }
-		
-	
+//
+//
+//}
+//		 }
+//			 }
+//		
+//	
 
 		 
 	 //Check for bug here why skip not showing for student

@@ -41,7 +41,7 @@ public class HeaderModule extends Base
 	@iOSXCUITFindBy(xpath="//XCUIElementTypeStaticText[@name='Settings']")
 	public RemoteWebElement userMenuSettings;
 	
-	@FindBy(css="button[class='dropbtn_nav btn-dd dropbtn dropdown-toggle']")
+	@FindBy(xpath="//button[@class='dropbtn_nav btn-dd dropbtn dropdown-toggle'] | //a[@class='wraptext ng-binding']")
 	public RemoteWebElement profileImg;	
 	
 	@FindBy(css="a[class='wraptext ng-binding']")

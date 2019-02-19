@@ -15,7 +15,7 @@ public class MyWallModule
 	@AndroidFindBy(xpath="//li[@id='wall-feed']")
 	public RemoteWebElement myWallTab;*/
 	
-	@FindBy(xpath="(//*[text()='My Wall'])[2]")
+	@FindBy(xpath="(//*[text()='My Wall '])[2]")
 	//@AndroidFindBy(id="com.elss.educomp:id/btn_finish")
 	//@AndroidFindBy(className="android.widget.ImageButton")
 	public static RemoteWebElement myWall;
