@@ -214,6 +214,13 @@ public class PrimePurchaseFlowModule {
     public void cliOnRemoveCoupon() {
     	removeCoupon.click();
     }
+    
+    public void entdisCoupCode() throws InterruptedException {
+    	Thread.sleep(3000);
+    	entCoupCode.sendKeys("FLPVIM30");
+    	
+    }
+    
 		
 	}
 	

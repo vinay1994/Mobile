@@ -1,4 +1,8 @@
 
+package com.fliplearn.flipapp.testcases;
+import static org.testng.Assert.assertEquals;
+
+
 
 package com.fliplearn.flipapp.testcases;
 
@@ -6,14 +10,13 @@ import static org.testng.Assert.assertEquals;
 
 import java.io.IOException;
 
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 import com.fliplearn.flipapp.helper.Base;
 import com.fliplearn.flipapp.helper.GenericFunctions;
-
 import com.fliplearn.flipapp.pagemodules.LearnModule;
 import com.fliplearn.flipapp.pagemodules.LoginModule;
 import com.fliplearn.flipapp.pagemodules.MenuModule;
@@ -123,10 +126,8 @@ public class PrimePurchaseFlow extends Base{
 		 if(!(role.equals("Guest"))) {
 		leaMod.clickOnLearnImage();
 		}
-	 
 		 
-		
-		leaMod.clickOnPrimeImage();
+	    leaMod.clickOnPrimeImage();
 		if(role.equals("Admin") || role.equals("Teacher") || role.equals("Principal")) {
 		Thread.sleep(2000);
 		priClaMod.selectUserClass("Class 6");
@@ -155,7 +156,61 @@ public class PrimePurchaseFlow extends Base{
 		priPurFloMod.cliOnAplButt();
 		priPurFloMod.cliOnRemoveCoupon();
 		
-		}}}
+		}}
+
+	/**
+	* verify PurchaseFlow on Web, Android, iOS  
+	* @author Jagrati
+	* @since 2019-02-19
+	* @throws InterruptedException 
+	* @version 1.0
+
+	*/
+
+       @Test (dataProvider="allusers")
+public void verifyPrimePurchaseFlowWithDiscountCoupon(String role) throws InterruptedException{
+    	   logMod.Login(role, "CBSE", "6", "Single", "None", "Yes");
+   		if(role.equals("Admin")||role.equals("Teacher")||role.equals("Principal")||role.equals("Guest")) {
+   			
+   		onbMod.skipScreen();}
+   		Thread.sleep(2000);
+		 if(!(role.equals("Guest"))) {
+		leaMod.clickOnLearnImage();
+		 }
+		 leaMod.clickOnPrimeImage();
+		 if(role.equals("Admin") || role.equals("Teacher") || role.equals("Principal")) {
+		 Thread.sleep(2000);
+		 priClaMod.selectUserClass("Class 6");
+		 }
+		 priSubMod.clickOnSubject(driver, role, "English");
+		 JavascriptExecutor js = (JavascriptExecutor) driver;
+		 js.executeScript("window.scrollBy(0,1000)");
+		 priPurFloMod.clickOnChapter();
+		 priPurFloMod.clickOnTopic();
+
+
+		 Thread.sleep(2000);
+			
+	     if(role.equals("Parent")) {
+		 Assert.assertEquals(priPurFloMod.Childmsgverify.getText(), "Please link your child to your account using the child's guardian code.");
+	     priPurFloMod.clickOnCloseButton();
+			}
+			
+		 else {
+		    
+		 assertEquals(priPurFloMod.verBuySubsMess.getText(),"Buy Fliplearn subscription and get World-class curated digital learning resources");
+		 Thread.sleep(2000);
+		 priPurFloMod.clicOnSecBuySubs();
+		 priPurFloMod.clickOnSubs();
+		 priPurFloMod.entdisCoupCode();
+		 priPurFloMod.cliOnAplButt();
+		 priPurFloMod.cliOnRemoveCoupon();
+   	
+    	   
+    	   
+	
+}}}
+
 
 
 
