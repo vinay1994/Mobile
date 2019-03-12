@@ -42,22 +42,20 @@ public class UserProfile extends Base
 	 * Verify User is not guest
 	 * @author Tarun Goswami
 	 * @since 2018-10-10
+	 * @modifiedBy Tarun Goswami on 2019-03-11
 	 * @version 1.1
 	 * @throws InterruptedException 
 	 */
-	@Test//(dataProvider = "allusers")
-	public void verifyUserRole() throws InterruptedException
-	{
-		String role = "Guest";
+	@Test(dataProvider = "allusers")
+	public void verifyUserRole(String role) throws InterruptedException
+	{		
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		
 		if(platform.equals("Web"))
 		{
-			
 			generic.mouseHoverAndClick(driver, heaMod.profileImg, heaMod.myProfileLnk);
 			Thread.sleep(3000);
 			Assert.assertEquals(youProMod.getUsernameLabel(), role+" Name");
-			
 		}
 	}
 }

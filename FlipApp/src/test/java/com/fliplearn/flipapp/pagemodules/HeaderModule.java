@@ -47,7 +47,7 @@ public class HeaderModule extends Base
 	@FindBy(css="a[class='wraptext ng-binding']")
 	public RemoteWebElement guestProfileImg;
 
-	@FindBy(xpath="(//ul[@class='b-t-1 header-dd']//a)[1]")
+	@FindBy(xpath="(//ul[@class='b-t-1 header-dd']//a)[1] | //a[@ui-sref='profile-view']")
 	public RemoteWebElement myProfileLnk;
 	
 	@FindBy(linkText="Logout")

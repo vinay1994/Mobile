@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 import com.fliplearn.flipapp.helper.Base;
 import com.fliplearn.flipapp.helper.GenericFunctions;
 import com.fliplearn.flipapp.pagemodules.HeaderModule;
+import com.fliplearn.flipapp.pagemodules.HomeModule;
 import com.fliplearn.flipapp.pagemodules.LoginModule;
 import com.fliplearn.flipapp.pagemodules.MobileNumberModule;
 import com.fliplearn.flipapp.pagemodules.MyWallModule;
@@ -26,6 +27,7 @@ public class Login extends Base
 	MyWallModule myWalMod;
 	HeaderModule heaMod;
 	YourProfileModule youProMod;
+	HomeModule homMod;
 	
 	@BeforeMethod
 	public void befMethod()
@@ -38,6 +40,7 @@ public class Login extends Base
 		myWalMod = new MyWallModule(driver);
 		heaMod = new HeaderModule(driver);
 		youProMod = new YourProfileModule(driver);
+		homMod = new HomeModule(driver);
 	}
 	
 	
@@ -46,6 +49,7 @@ public class Login extends Base
 	 * @author Vinay Yadav, Durga
 	 * @since 2018-10-20
 	 * @version 1.2
+	 * @modifiedBy Tarun Goswami on 2019-03-11
 	 * @throws InterruptedException 
 	 */
 	@Test(dataProvider = "allusers")
@@ -55,8 +59,10 @@ public class Login extends Base
 		
 		if(platform.equals("Web"))
 		{
-			if(!role.equals("Guest"))
+			if(!role.equals("Guest") && !role.equals("Student"))
 				Assert.assertEquals(generic.isElementDisplayed(driver, myWalMod.myWall), true);
+			else
+				Assert.assertEquals(generic.isElementDisplayed(driver, homMod.startLearning), true);
 		}	
 		else if(platform.equals("iOS"))
 		{

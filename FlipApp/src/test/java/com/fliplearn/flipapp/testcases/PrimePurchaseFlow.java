@@ -2,15 +2,6 @@
 package com.fliplearn.flipapp.testcases;
 import static org.testng.Assert.assertEquals;
 
-
-
-package com.fliplearn.flipapp.testcases;
-
-import static org.testng.Assert.assertEquals;
-
-import java.io.IOException;
-
-
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;

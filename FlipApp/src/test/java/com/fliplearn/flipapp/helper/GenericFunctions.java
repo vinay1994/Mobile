@@ -271,7 +271,7 @@ public class GenericFunctions extends Base
 
 	public boolean isElementDisplayed(WebDriver driver, RemoteWebElement element) throws InterruptedException 
 	{
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		Boolean found = true;
 		try 
 		{
