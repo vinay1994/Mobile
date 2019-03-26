@@ -47,7 +47,7 @@ public class HeaderModule extends Base
 	@FindBy(css="a[class='wraptext ng-binding']")
 	public RemoteWebElement guestProfileImg;
 
-	@FindBy(xpath="(//ul[@class='b-t-1 header-dd']//a)[1] | //a[@ui-sref='profile-view']")
+	@FindBy(xpath="(//ul/li/a[@class='b-t-1 header-dd']//a)[1] | //a[@ui-sref='profile-view']")
 	public RemoteWebElement myProfileLnk;
 	
 	@FindBy(linkText="Logout")
@@ -58,6 +58,9 @@ public class HeaderModule extends Base
 	@AndroidFindBy(id="android:id/button1")
 	@iOSFindBy(xpath="//XCUIElementTypeButton[@name='Yes']")
 	public RemoteWebElement yesLogoutLnk;	
+	
+	@FindBy(xpath="//li/a[text()='Buy Books'] | //a[@id='bookstore-icon']")
+	public RemoteWebElement buyBooksLnk;
 	
 	public void clickOnProfileImg() 
 	{

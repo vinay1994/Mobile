@@ -13,6 +13,12 @@
         			<include name="verifyUserRole" />  	
         		</methods>
         	</class>
+        	<class name="com.fliplearn.flipapp.testcases.Bookstore">
+    		<methods>
+        			<include name="verifyBookstoreHeading"/>
+        	</methods>		
+        	</class>
       	</classes> 
+      	
 	</test>  
 </suite>	
