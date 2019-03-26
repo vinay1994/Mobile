@@ -15,6 +15,7 @@ import com.fliplearn.flipapp.pagemodules.MobileNumberModule;
 import com.fliplearn.flipapp.pagemodules.PrimeClassModule;
 import com.fliplearn.flipapp.pagemodules.PrimeSubjectModule;
 import com.fliplearn.flipapp.pagemodules.SignInAsModule;
+import com.fliplearn.flipapp.pagemodules.VMCPurachaseFlow;
 import com.fliplearn.flipapp.pagemodules.YourProfileModule;
 
 public class VMC extends Base
@@ -29,6 +30,7 @@ public class VMC extends Base
 		GenericFunctions generic;
 		YourProfileModule youProMod;
 		HeaderModule heaMod;
+		VMCPurachaseFlow vmcPurFlo;
 		
 
 		@BeforeMethod
@@ -39,11 +41,12 @@ public class VMC extends Base
 			menMod = new MenuModule(driver);
 			signInMod = new SignInAsModule(driver);
 			leaMod = new LearnModule(driver);
-		    selClaMod=	new PrimeClassModule(driver);
-		    selSubMod= new PrimeSubjectModule(driver);   
-		    generic=new GenericFunctions();
-		    youProMod=new YourProfileModule(driver);
-		    heaMod=new HeaderModule(driver);
+		    selClaMod =	new PrimeClassModule(driver);
+		    selSubMod = new PrimeSubjectModule(driver);   
+		    generic = new GenericFunctions();
+		    youProMod = new YourProfileModule(driver);
+		    heaMod = new HeaderModule(driver);
+		    vmcPurFlo = new VMCPurachaseFlow(driver);
 		}
 		
 		/**
@@ -61,7 +64,8 @@ public class VMC extends Base
 			if(platform.equals("Web")&& platform.equals("Android"))
 				leaMod.clickOnLearnImage();
 			
-			assertEquals(generic.isElementDisplayed(driver, leaMod.vmcImg), true);
+			leaMod.vmcImg.click();
+			assertEquals(vmcPurFlo.vmcHeadline.isDisplayed(), true);
 		}	
 		
 		@Test(dataProvider = "nostaff")
@@ -69,16 +73,15 @@ public class VMC extends Base
 		{
 			
 			logMod.Login(role, "CBSE", "12", "Single", "None", "Yes");
-			assertEquals(generic.isElementDisplayed(driver, leaMod.vmcImg), true);
-			
+			leaMod.vmcImg.click();
+			assertEquals(vmcPurFlo.vmcHeadline.isDisplayed(), true);
+						
 		}
 
 		@Test(dataProvider = "nostaff")
 		public void doNotDisplayVMCStudent(String role) throws InterruptedException
 		{
 			logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
-		    if(!role.equals("Guest"))
-		    	leaMod.clickOnLearnImage();
 			assertEquals(generic.isElementDisplayed(driver, leaMod.vmcImg), false);			
 		}		
 }
