@@ -42,7 +42,7 @@ public class Bookstore extends Base
 	}
 	
 	@Test(dataProvider = "allusers")
-	public void verifyBookstoreHeading(String role) throws InterruptedException
+	public void verifyBookstore(String role) throws InterruptedException
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		heaMod.buyBooksLnk.click();

@@ -47,7 +47,7 @@ public class UserProfile extends Base
 	 * @throws InterruptedException 
 	 */
 	@Test(dataProvider = "allusers")
-	public void verifyUserRole(String role) throws InterruptedException
+	public void verifyUserNotGuest(String role) throws InterruptedException
 	{		
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		

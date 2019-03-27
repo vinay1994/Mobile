@@ -10,12 +10,12 @@
   		<classes>
     		<class name="com.fliplearn.flipapp.testcases.UserProfile">
         		<methods>
-        			<include name="verifyUserRole" />  	
+        			<include name="verifyUserNotGuest" />  	
         		</methods>
         	</class>
         	<class name="com.fliplearn.flipapp.testcases.Bookstore">
     		<methods>
-        			<include name="verifyBookstoreHeading"/>
+        			<include name="verifyBookstore"/>
         	</methods>		
         	</class>
       	</classes> 
