@@ -452,5 +452,14 @@ public class Base implements ITestListener
 			  { "Parent" }, { "Student" }, { "Guest" }
 		  }; 
 	}
+	
+	@DataProvider(name = "logout")
+	public static Object[] group4() 
+	{
+		  return new Object[][]
+		  { 
+			  { "Logout" }
+		  }; 
+	}
 
 }

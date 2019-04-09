@@ -140,6 +140,7 @@ public class GenericFunctions extends Base
 	{
 		generic.waitForElementVisibility(driver, element);
 		extentTest.log(Status.PASS, "Wait for element visibility.");
+		Thread.sleep(3000);
 		Actions act=new Actions(driver);
 		act.moveToElement(element).click(target).build().perform();
 	}

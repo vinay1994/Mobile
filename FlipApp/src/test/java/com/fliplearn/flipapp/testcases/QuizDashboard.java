@@ -76,11 +76,7 @@ public class QuizDashboard extends Base
 	
 		if(!role.equals("Guest"))
 		{	
-			if(platform.equals("Web"))
-			{	
-				leaMod.clickOnLearnImage();
-			}	  
-			else if(!platform.equals("Web"))
+			if(!platform.equals("Web"))
 			{	
 				//generic.scrollBy(driver, 50, 99);
 				TouchActions action = new TouchActions(driver);

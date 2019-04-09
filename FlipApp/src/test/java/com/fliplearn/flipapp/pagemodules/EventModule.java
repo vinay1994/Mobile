@@ -27,6 +27,9 @@ public class EventModule extends Base
 	@AndroidFindBy(id="com.elss.educomp:id/post_layout") 
 	@iOSFindBy(id="")
 	public  RemoteWebElement postBtn;
+	
+	@FindBy(xpath="(//li[@class='ng-scope']/a[text()='Noticeboard '])[2]")
+	public RemoteWebElement noticeboardTab;
 
 	@FindBy(xpath="(//button[@id='announcement'])[2]")
 	@AndroidFindBy(id="") 
@@ -89,6 +92,9 @@ public class EventModule extends Base
 	@AndroidFindBy(id="") 
 	@iOSFindBy(id="")
 	RemoteWebElement getTitle;
+	
+	@FindBy(xpath="(//div[@class='Exm_1text ng-scope']/p)[1]")
+	RemoteWebElement getRecentTitle;
 
 
 	@FindBy(xpath="//img[contains(@class,'profilePic ng-scope')]")
@@ -138,12 +144,14 @@ public class EventModule extends Base
 	}
 	
 	public void selectsubject() {
+		selectsubj.click();
 		generic.selectElementByIndex(selectsubj, 5);
 	}
 	
 	
 	public String fillTxt(String eventType) throws Throwable 
 	{
+		noticeboardTab.click();
 		Thread.sleep(3000);
 
 		mouseOverOnpostBtn(eventType);
@@ -161,8 +169,10 @@ public class EventModule extends Base
 		save.click();
 		
 		if(eventType.equals("Homework"))
+		{	
+			
 			selectsubject();
-
+		}	
 		generic.waitForElementVisibility(driver, addDescriptionTxt);
 		addDescriptionTxt.clear();
 		
@@ -177,6 +187,8 @@ public class EventModule extends Base
 		jse.executeScript("document.getElementById('btn-next').focus();");
 		jse.executeScript("arguments[0].click();", createBtn);
 		Thread.sleep(2000);
+		noticeboardTab.click();
+
 		
 		isTitleDisplayed("Testing automation Title_"+timeStamp);
 		return "Testing automation Title_"+timeStamp;
@@ -207,6 +219,17 @@ public class EventModule extends Base
 	{
 		generic.waitForElementVisibility(driver, getTitle);
 		return getTitle.getText();
+	}
+	
+	public void clickOnNoticeboard()
+	{
+		noticeboardTab.click();
+	}
+	
+	public String getRecentTitle() throws InterruptedException
+	{
+		generic.waitForElementVisibility(driver, getRecentTitle);
+		return getRecentTitle.getText();
 	}
 	
 	public boolean isPostBtndisplayed() throws InterruptedException 

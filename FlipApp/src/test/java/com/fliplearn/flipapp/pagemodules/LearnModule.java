@@ -31,7 +31,7 @@ public class LearnModule extends Base
 	@iOSXCUITFindBy(xpath="//XCUIElementTypeStaticText[@name='Fliplearn Prime']")
 	public RemoteWebElement primeImg;
 
-	@FindBy(xpath="//img[contains(@srcset,'Vidyamandir.jpg')] | (//a[@ng-click='vmcButtonClicked()'])[1]")
+	@FindBy(xpath="//img[contains(@ng-src,'Vidyamandir.jpg')] | (//a[@ng-click='vmcButtonClicked()'])[1]")
 	@AndroidFindBy(xpath="//*[@text='VMC Live @ Fliplearn']")
 	@iOSXCUITFindBy(xpath="//XCUIElementTypeStaticText[@name='VMC Live @ Fliplearn']")
 	public RemoteWebElement vmcImg;	
