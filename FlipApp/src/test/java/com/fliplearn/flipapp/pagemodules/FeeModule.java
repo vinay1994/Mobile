@@ -22,128 +22,82 @@ public class FeeModule extends Base {
 	GenericFunctions generic=new GenericFunctions();
 	
 	@FindBy(xpath="//li/a[text()='Pay Fee']")
-	@AndroidFindBy(id="") 
-	@iOSFindBy(id="")
 	public  RemoteWebElement feeModuleBtn; 
 	
 	
 	@FindBy(css="a[id='feePay_icon']")
-	@AndroidFindBy(id="") 
-	@iOSFindBy(id="")
 	public  RemoteWebElement feeModule1Btn;
 	
 	@FindBy(css="select[name='schoolName']")
-	@AndroidFindBy(id="") 
-	@iOSFindBy(id="")
 	public  RemoteWebElement selectSchooldropDwn;
 	
 	@FindBy(css="input[id='identifierName']")
-	@AndroidFindBy(id="") 
-	@iOSFindBy(id="")
 	public  RemoteWebElement admissionNum;    
 
 	
 	@FindBy(xpath="//button[text()='Proceed']")
-	@AndroidFindBy(id="") 
-	@iOSFindBy(id="")
 	public  RemoteWebElement proceedBtn; 
 	
 	@FindBy(xpath="//p[@class='ng-binding']")
-	@AndroidFindBy(id="") 
-	@iOSFindBy(id="")
 	public  List<RemoteWebElement> getFeeAmount; 
 	
 	
 	@FindBy(xpath="//button[text()='Confirm & Proceed']")
-	@AndroidFindBy(id="") 
-	@iOSFindBy(id="")
 	public  RemoteWebElement ConfAndProceedBtn;  
 			
 			
 	@FindBy(css="input[id='parentName']")
-	@AndroidFindBy(id="") 
-	@iOSFindBy(id="")
 	public  RemoteWebElement parentNameTxt;	
 	
 	@FindBy(css="input[id='parentMobile']")
-	@AndroidFindBy(id="") 
-	@iOSFindBy(id="")
 	public  RemoteWebElement parentMobNumTxt;
 	
 	@FindBy(css="input[id='parentEmail']")
-	@AndroidFindBy(id="") 
-	@iOSFindBy(id="")
 	public  RemoteWebElement parentEmailIdTxt;
 	
 	
 	@FindBy(css="input[id='parentAddress']")
-	@AndroidFindBy(id="") 
-	@iOSFindBy(id="")
 	public  RemoteWebElement addressTxt;
 	
 	
 	@FindBy(css="select[name='stateName']")
-	@AndroidFindBy(id="") 
-	@iOSFindBy(id="")
 	public  RemoteWebElement stateNameTxt;
 	
 	
 	@FindBy(xpath="//label[text()='Debit Card']")
-	@AndroidFindBy(id="") 
-	@iOSFindBy(id="")
 	public  RemoteWebElement debitcartRd;
 	
 	@FindBy(xpath="//label[text()='Net Banking']")
-	@AndroidFindBy(id="") 
-	@iOSFindBy(id="")
 	public  RemoteWebElement NetBnkingRd;
 	
 	@FindBy(xpath="//label[text()='UPI']")
-	@AndroidFindBy(id="") 
-	@iOSFindBy(id="")
 	public  RemoteWebElement upiRd;
 	
 	
 	@FindBy(xpath="//label[text()='Credit Card']")
-	@AndroidFindBy(id="") 
-	@iOSFindBy(id="")
 	public  RemoteWebElement creditCardRd;
 	
 	@FindBy(xpath="//label[text()='Visa/Master']")
-	@AndroidFindBy(id="") 
-	@iOSFindBy(id="")
 	public  RemoteWebElement visaRd;
 	
 	@FindBy(xpath="//label[text()='Amex']")
-	@AndroidFindBy(id="") 
-	@iOSFindBy(id="")
 	public  RemoteWebElement amexRd; 
 	
 	@FindBy(xpath="//strong[@class='ng-binding']")
-	@AndroidFindBy(id="") 
-	@iOSFindBy(id="")
 	public  RemoteWebElement getTotalPayableFee; 
 	
 	@FindBy(xpath="//p[@class='ng-binding']")
-	@AndroidFindBy(id="") 
-	@iOSFindBy(id="")
 	public  RemoteWebElement getTotalPayableFeeOnaddress; 
 	
 	
 	@FindBy(xpath="//button[@ng-click='payFee(feesForm)']")
-	@AndroidFindBy(id="") 
-	@iOSFindBy(id="")
 	public  RemoteWebElement payBtn;
 				
 	@FindBy(css="span[id='totalAmount']")
-	@AndroidFindBy(id="") 
-	@iOSFindBy(id="")
 	public  RemoteWebElement gettotalAmOnPaymentGat;	
 	
 	
 	@FindBy(xpath="//a[text()='www.fliplearn.com']")
-	@AndroidFindBy(id="") 
-	@iOSFindBy(id="")
 	public  RemoteWebElement cancelBtn;
 	
 	
@@ -163,7 +117,7 @@ public class FeeModule extends Base {
 			}
 
 
-	public void selectSchoolToPayFee(String schoolName) {
+	public void selectSchoolToPayFee(String schoolName) throws InterruptedException {
 		generic.waitForElementVisibility(driver, selectSchooldropDwn);
 		System.out.println(schoolName);
      generic.selectByVisibleText(selectSchooldropDwn, schoolName);

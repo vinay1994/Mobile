@@ -49,6 +49,10 @@ public class PrimeResourceViewModule  extends Base
 	@AndroidFindBy(xpath="//*[@text='Real Life Application']")
 	public RemoteWebElement realLifeApplicationTitle;
 	
+	@FindBy(xpath="//div[@class='container']/div[@class='header']")
+	@AndroidFindBy(xpath="//*[@text='Real Life Application']")
+	public RemoteWebElement interactiveWorksheetTitle;
+	
 	@FindBy(xpath="//div[@id='demo-html']//h3")
 	public RemoteWebElement synopsisHeadingStudent;
 

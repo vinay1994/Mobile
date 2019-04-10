@@ -17,7 +17,7 @@ import io.appium.java_client.pagefactory.iOSFindBy;
 public class PrimeSubjectModule extends Base
 {
 	
-	@FindBy(xpath="//div[@id='subjectsList3']//div[@class='col-sm-4 ng-scope']//h3")
+	@FindBy(xpath="//div[@id='subjectsList0']//div[@class='col-sm-4 ng-scope']//h3")
 	@AndroidFindBy(xpath="//android.widget.LinearLayout[1]/android.widget.RelativeLayout/android.widget.TextView")
 	public List<RemoteWebElement> subjectList;
 	

@@ -202,10 +202,12 @@ public class GenericFunctions extends Base
 	 * @since 2018-09-24
 	 * @version 1.0
 	 * @param driver 
+	 * @throws InterruptedException 
 	 */
 
-	public  void waitForElementVisibility(WebDriver driver, RemoteWebElement element) {
+	public  void waitForElementVisibility(WebDriver driver, RemoteWebElement element) throws InterruptedException {
 		(new WebDriverWait(driver, 60)).until(ExpectedConditions.visibilityOf(element));
+		Thread.sleep(3000);
 	}
 
 

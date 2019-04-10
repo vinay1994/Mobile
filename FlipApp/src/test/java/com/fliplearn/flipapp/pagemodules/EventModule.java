@@ -25,72 +25,47 @@ public class EventModule extends Base
 
 	@FindBy(xpath="//button[@class='btn btn-primary dropdown-toggle']")
 	@AndroidFindBy(id="com.elss.educomp:id/post_layout") 
-	@iOSFindBy(id="")
 	public  RemoteWebElement postBtn;
 	
 	@FindBy(xpath="(//li[@class='ng-scope']/a[text()='Noticeboard '])[2]")
 	public RemoteWebElement noticeboardTab;
 
 	@FindBy(xpath="(//button[@id='announcement'])[2]")
-	@AndroidFindBy(id="") 
-	@iOSFindBy(id="")
 	public RemoteWebElement annBtn;
 	
 	@FindBy(xpath="(//button[@id='homework'])[2]")
-	@AndroidFindBy(id="") 
-	@iOSFindBy(id="")
 	public RemoteWebElement homeWorkBtn;
 	
 	@FindBy(xpath="(//button[@id='album'])[2]")
-	@AndroidFindBy(id="") 
-	@iOSFindBy(id="")
 	public RemoteWebElement albBtn;
 
 	@FindBy(xpath="(//input[@id='title'])[2]")
-	@AndroidFindBy(id="") 
-	@iOSFindBy(id="")
 	RemoteWebElement titleTxt;
 
 	@FindBy(xpath="//span[contains(@class,'btn-co')]")
-	@AndroidFindBy(id="") 
-	@iOSFindBy(id="")
 	RemoteWebElement shareWithBtn;
 
 	@FindBy(xpath="//label[(text()='No')]")
-	@AndroidFindBy(id="") 
-	@iOSFindBy(id="")
 	RemoteWebElement noRdBtn;
 
 	@FindBy(xpath="(//textarea[@id='textboxIssuereport'])[2]")
-	@AndroidFindBy(id="") 
-	@iOSFindBy(id="")
 	RemoteWebElement addDescriptionTxt;
 
 
 	@FindBy(xpath="//input[contains(@ng-click,'createFile()')]")
-	@AndroidFindBy(id="") 
-	@iOSFindBy(id="")
 	RemoteWebElement uploadImageBtn;
 
 	@FindBy(xpath="//button[(text()='Create')]")
-	@AndroidFindBy(id="") 
-	@iOSFindBy(id="")
 	RemoteWebElement createBtn;
 
 	@FindBy(xpath="(//label[contains(@ng-class,'checkleft')])[2]")
-	@AndroidFindBy(id="") 
-	@iOSFindBy(id="")
 	RemoteWebElement select_class;   
 
 
 	@FindBy(xpath="//button[contains(@id,'close')]")
-	@AndroidFindBy(id="") 
-	@iOSFindBy(id="")
 	RemoteWebElement save;
 
 	@FindBy(xpath="//h4[@class='m-t-20 margin-bottom-0 ng-binding']")
-	@AndroidFindBy(id="") 
-	@iOSFindBy(id="")
 	RemoteWebElement getTitle;
 	
 	@FindBy(xpath="(//div[@class='Exm_1text ng-scope']/p)[1]")
@@ -98,19 +73,13 @@ public class EventModule extends Base
 
 
 	@FindBy(xpath="//img[contains(@class,'profilePic ng-scope')]")
-	@AndroidFindBy(id="") 
-	@iOSFindBy(id="")
 	RemoteWebElement profile;
 
 
 	@FindBy(xpath="//a[contains(@ng-click,'logout()')]")
-	@AndroidFindBy(id="") 
-	@iOSFindBy(id="")
 	RemoteWebElement logout;
 	
 	@FindBy(xpath="//select[@name='subject']")
-	@AndroidFindBy(id="") 
-	@iOSFindBy(id="")
 	RemoteWebElement selectsubj;
 
 	public EventModule(WebDriver driver)

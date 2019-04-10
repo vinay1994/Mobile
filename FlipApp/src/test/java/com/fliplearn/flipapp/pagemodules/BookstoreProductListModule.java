@@ -1,5 +1,7 @@
 package com.fliplearn.flipapp.pagemodules;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebElement;
@@ -29,5 +31,18 @@ public class BookstoreProductListModule extends Base
 	
 	@FindBy(css="input[type='submit'], [value='Proceed']")
 	public RemoteWebElement productList;
+	
+	@FindBy(xpath="//div[@class='databg']/h4/a")
+	public List<RemoteWebElement> ItemTitle;
+	
+	@FindBy(xpath="(//input[contains(@id,'student_')])[1]")
+	public RemoteWebElement studentName;
+	
+	@FindBy(xpath="(//input[contains(@id,'usn_')])[1]")
+	public RemoteWebElement admissionNo;
+	
+	@FindBy(xpath="(//button[@class='add_to_cart'])[1]")
+	public RemoteWebElement addToCart;
+	
 }
 

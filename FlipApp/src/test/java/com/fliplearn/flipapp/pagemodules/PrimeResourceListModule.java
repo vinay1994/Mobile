@@ -43,7 +43,7 @@ public class PrimeResourceListModule extends Base
 	@AndroidFindBy(xpath="//*[@text='Real Life Application']")
 	public RemoteWebElement realLife;
 	
-	@FindBy(xpath="//div[@class='row learnResourcesInner']//h6[text()='Topic Synopsis']")
+	@FindBy(xpath="//div[@class='row learnResourcesInner']//h6[text()='Topic Synopsis']/preceding-sibling::img")
 	@AndroidFindBy(xpath="//*[@text='Topic Synopsis']")
 	public RemoteWebElement topicSynopsis;
 	
@@ -51,6 +51,10 @@ public class PrimeResourceListModule extends Base
 	@AndroidFindBy(xpath="//*[@text='Mind Maps']")
 	public RemoteWebElement mindMaps;
 
+	@FindBy(xpath="//div[@class='row learnResourcesInner']//h6[text()='Interactive Worksheet']")
+	@AndroidFindBy(xpath="//*[@text='Mind Maps']")
+	public RemoteWebElement interactiveWorksheet;
+	
 	@FindBy(xpath="(//div[@class='modal-body head_bottom'])[4]//h4")
 	public RemoteWebElement childAccessMsg;
 	
@@ -91,6 +95,12 @@ public class PrimeResourceListModule extends Base
          public void clickOnRealLifeApplication() throws InterruptedException
          {
         	 realLife.click();
+        	 Thread.sleep(3000);
+         }
+         
+         public void clickOnInteractiveWorksheet() throws InterruptedException
+         {
+        	 interactiveWorksheet.click();
         	 Thread.sleep(3000);
          }
          

@@ -49,10 +49,11 @@ public class PrimeContent extends Base
 	 * @since 2018-10-20
 	 * @throws InterruptedException 
 	 * @version 1.1
+	 * @modifiedBy Tarun Goswami on 2019-04-10
 	 * @throws IOException 
 	 */
-     @Test(dataProvider = "allusers")
-     public void verifyPrimeTileDisplayed(String role) throws IOException, InterruptedException 
+     @Test(dataProvider = "allusers_old")
+     public void verifyPrimeTileDisplayed_Old(String role) throws IOException, InterruptedException 
      {
 		 logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
     	 
@@ -70,10 +71,11 @@ public class PrimeContent extends Base
 	 * @since 2018-09-25
 	 * @throws InterruptedException 
 	 * @version 1.3
+	 * @modifiedBy Tarun Goswami on 2019-04-10
 	 * @throws IOException 
 	 */
-	 @Test(dataProvider = "staff")
-     public void verifyPrimeClasses(String role) throws IOException, InterruptedException 
+     @Test(dataProvider = "staff")
+     public void verifyPrimeClasses_Old(String role) throws IOException, InterruptedException 
      {
 		 logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
     	   	 
@@ -97,10 +99,10 @@ public class PrimeContent extends Base
  	 * @throws IOException 
  	 */
  	 
-	@Test(dataProvider ="allusers")
-	public void verifyPrimeSubjects(String role) throws IOException, InterruptedException  
+	@Test(dataProvider ="allusers_old")
+	public void verifyPrimeSubjects_Old(String role) throws IOException, InterruptedException  
 	{ 
-		logMod.Login(role, "CBSE", "Pre", "Single", "None", "Yes");
+		logMod.Login(role, "CBSE", "Pre", "Single", "Prime", "Yes");
     	 
     	 if(platform.equals("Web"))
     	 {	 
