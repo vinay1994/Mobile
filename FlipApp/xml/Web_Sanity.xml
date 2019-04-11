@@ -44,6 +44,8 @@
   		<classes>
     		<class name="com.fliplearn.flipapp.testcases.Fee">
         	</class>
+        	<class name="com.fliplearn.flipapp.testcases.Bookstore">
+        	</class>
 	</classes>
 	</test>
 </suite>	
