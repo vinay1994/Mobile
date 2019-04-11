@@ -462,6 +462,15 @@ public class Base implements ITestListener
 		  }; 
 	}
 	
+	@DataProvider(name = "nostaff_new")
+	public static Object[] group3_new() 
+	{
+		  return new Object[][]
+		  { 
+			  { "Student" }, { "Guest" }
+		  }; 
+	}
+	
 	@DataProvider(name = "logout")
 	public static Object[] group4() 
 	{

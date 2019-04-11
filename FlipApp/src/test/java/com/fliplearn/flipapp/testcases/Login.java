@@ -52,7 +52,7 @@ public class Login extends Base
 	 * @modifiedBy Tarun Goswami on 2019-03-11
 	 * @throws InterruptedException 
 	 */
-	@Test(dataProvider = "allusers")
+	@Test(dataProvider = "nostaff_new")
 	public void verifyLogin(String role) throws InterruptedException
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");

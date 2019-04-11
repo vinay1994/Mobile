@@ -11,9 +11,11 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 public class MyWallModule 
 {
-	/*@FindBy(xpath="//li[@id='wall-feed']")
-	@AndroidFindBy(xpath="//li[@id='wall-feed']")
-	public RemoteWebElement myWallTab;*/
+	@FindBy(xpath="//div[contains(@class,'gallery-heading')]/h3[text()='My Wall']")
+	public static RemoteWebElement myWallHeading;
+	
+	@FindBy(xpath="(//div[@class='cursor ng-scope']//img)[1]")
+	public static RemoteWebElement myWallThumb;
 	
 	@FindBy(xpath="(//*[text()='My Wall '])[2]")
 	//@AndroidFindBy(id="com.elss.educomp:id/btn_finish")

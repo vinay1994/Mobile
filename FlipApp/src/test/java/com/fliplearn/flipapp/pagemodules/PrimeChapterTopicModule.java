@@ -29,6 +29,9 @@ public class PrimeChapterTopicModule extends Base
 	@FindBy(xpath="(//h4[contains(text(),'Please access the content from your child')])[2]")
 	public RemoteWebElement childAccessPopup;
 	
+	@FindBy(css="p[class='fontregular mobilefont12 m-t-12']")
+	public RemoteWebElement learnPracticeModeTxt;
+	
 	//Search for prime content
 	public void searchContent(String title)
 	{
