@@ -18,6 +18,8 @@
 	
 	<test name="Learning" enabled="true">
   		<classes>
+  		<class name="com.fliplearn.flipapp.testcases.Home">
+     	   	</class>
         		<class name="com.fliplearn.flipapp.testcases.VMC">
      	   	</class>
         	<class name="com.fliplearn.flipapp.testcases.QuizDashboard">        	

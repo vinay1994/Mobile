@@ -14,6 +14,7 @@ import com.fliplearn.flipapp.pagemodules.LoginModule;
 import com.fliplearn.flipapp.pagemodules.MenuModule;
 import com.fliplearn.flipapp.pagemodules.MobileNumberModule;
 import com.fliplearn.flipapp.pagemodules.MyWallModule;
+import com.fliplearn.flipapp.pagemodules.NoticeboardModule;
 import com.fliplearn.flipapp.pagemodules.OnboardingModule;
 import com.fliplearn.flipapp.pagemodules.PrimeChapterTopicModule;
 import com.fliplearn.flipapp.pagemodules.PrimeResourceViewModule;
@@ -38,6 +39,7 @@ public class Home extends Base
 	PrimeChapterTopicModule PriChaTopMod;
 	PrimeResourceViewModule priResVieMod;
 	MyWallModule myWalMod;
+	NoticeboardModule notMod;
 	
 	@BeforeMethod
 	public void beforeEvent()
@@ -55,6 +57,7 @@ public class Home extends Base
 	    PriChaTopMod = new PrimeChapterTopicModule(driver);
 	    priResVieMod = new PrimeResourceViewModule(driver);
 	    myWalMod = new MyWallModule(driver);
+	    notMod = new NoticeboardModule(driver);
 	}
 	
 	/**
@@ -258,6 +261,73 @@ public class Home extends Base
 		
 		generic.waitForElementVisibility(driver, myWalMod.myWallHeading);	
 		Assert.assertTrue( myWalMod.myWallThumb.isDisplayed());
+	}
+	
+	/**
+	 * Verify Fliplearn Noticeboard Content
+	 * @author Tarun Goswami
+	 * @since 2019-04-11
+	 * @version 1.1
+	 * @throws InterruptedException 
+	 */
+	@Test
+	public void noticeboardContent() throws InterruptedException
+	{
+		String role= "Student";
+		
+		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
+		
+		generic.waitForElementVisibility(driver, homMod.noticeboardHeading);
+		
+		Assert.assertTrue(homMod.noticeboardThumb.isDisplayed());
+		Assert.assertEquals(homMod.noticeboardThumbs.size(), 5);
+		Assert.assertTrue(homMod.noticeTitle.isDisplayed());
+		Assert.assertTrue(homMod.noticeboardEventType.isDisplayed());
+	}
+	
+	/**
+	 * Verify Noticeboard Thumbnail redirect to Noticeboard Page
+	 * @author Tarun Goswami
+	 * @since 2019-04-12
+	 * @version 1.1
+	 * @throws InterruptedException 
+	 */
+	@Test
+	public void noticeboardThumbnail() throws InterruptedException
+	{
+		String role = "Student";
+		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
+		
+		generic.waitForElementVisibility(driver, homMod.noticeboardHeading);
+		
+		String expectedTitle = homMod.noticeTitle.getText();
+		homMod.clickOnNoticeboardContent();
+		
+		generic.waitForElementVisibility(driver, notMod.noticeboardHeading);
+		
+		String actualTitle = notMod.noticeTitle.getText();
+	
+		Assert.assertEquals(expectedTitle, actualTitle);
+	}
+	
+	/**
+	 * Verify Noticeboard Content redirect to Noticeboard Page Content
+	 * @author Tarun Goswami
+	 * @since 2019-04-11
+	 * @version 1.1
+	 * @throws InterruptedException 
+	 */
+	@Test
+	public void noticeboardMore() throws InterruptedException
+	{
+		String role = "Student";
+		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
+		
+		generic.waitForElementVisibility(driver, homMod.noticeboardHeading);
+		homMod.clickOnNoticeboardMoreBtn();
+		
+		generic.waitForElementVisibility(driver, notMod.noticeboardHeading);	
+		Assert.assertTrue(notMod.noticeTitle.isDisplayed());
 	}
 }
 

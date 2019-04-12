@@ -79,8 +79,5 @@ public class MyWallModule
 		String z=classN.substring(0, classN.indexOf("fa-heart"));
 		
 		System.out.println("dttrttttttttt: "+z);
-	}
-	
-
-		
+	}	
 }

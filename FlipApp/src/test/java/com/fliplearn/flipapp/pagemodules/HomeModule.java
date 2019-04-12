@@ -138,7 +138,36 @@ public class HomeModule extends Base
 	
 	
 	/*** Noticeboard Section ***/
-
-
 	
+	
+	@FindBy(xpath="//h3[text()='School Noticeboard']")
+	public RemoteWebElement noticeboardHeading;
+	
+	@FindBy(xpath="(//div[@class='pos-relative m-t-10 border-blue-1 cursor equalHeightimg'])[1]")
+	public RemoteWebElement noticeboardThumb;
+	
+	@FindBy(xpath="//div[@class='pos-relative m-t-10 border-blue-1 cursor equalHeightimg']")
+	public List<RemoteWebElement> noticeboardThumbs;
+	
+	@FindBy(xpath="(//div[@class='col-sm-6 col-xs-4 text-right popularMore ng-scope'])[2]")
+	public RemoteWebElement noticeboardMoreBtn;
+	
+	@FindBy(xpath="//h4[@class='fontregular mobilefont16 ng-binding' and text()='Announcement'] | //h4[@class='fontregular mobilefont16 ng-binding' and text()='Album'] //h4[@class='fontregular mobilefont16 ng-binding' and text()='Homework']")
+	public RemoteWebElement noticeboardEventType;
+	
+	@FindBy(xpath="//p[@class='font18 mobilefont14 ng-binding'] | //ul/li[@class='assetNameOthers announceNew_2 font16 ng-binding']")
+	public RemoteWebElement noticeTitle;
+	
+	// Click on First Noticeboard Content
+	public void clickOnNoticeboardContent() throws InterruptedException
+	{
+		noticeboardThumb.click();
+	}
+	
+	// Click on First My Wall Content
+	public void clickOnNoticeboardMoreBtn() throws InterruptedException
+	{
+		noticeboardMoreBtn.click();
+	}
+			
 }
