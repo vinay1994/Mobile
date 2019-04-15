@@ -7,6 +7,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import com.fliplearn.flipapp.helper.Base;
 import com.fliplearn.flipapp.helper.GenericFunctions;
+import com.fliplearn.flipapp.pagemodules.HomeModule;
 import com.fliplearn.flipapp.pagemodules.LoginModule;
 import com.fliplearn.flipapp.pagemodules.MobileNumberModule;
 import com.fliplearn.flipapp.pagemodules.MyWallModule;
@@ -15,6 +16,7 @@ import com.fliplearn.flipapp.pagemodules.QuizModule;
 
 public class MyWall extends Base 
 {
+	HomeModule homMod;
 	LoginModule logMod;
 	MyWallModule mywallMod;
 	OnboardingModule onbMod;
@@ -27,6 +29,7 @@ public class MyWall extends Base
 	public void befMethod()
 	{
 		generic = new GenericFunctions();
+		homMod = new HomeModule(driver);
 		logMod = new LoginModule(driver);
 		onbMod = new OnboardingModule(driver);
 		mobNumMod = new MobileNumberModule(driver);
@@ -37,25 +40,21 @@ public class MyWall extends Base
 		
 	/**
 	 * Verify User User Login
-	 * @author Vinay Yadav, Durga
+	 * @author Durga
 	 * @since 2018-10-20
 	 * @version 1.2
 	 * @throws InterruptedException 
+	 * @modifiedBy Tarun Goswami on 13 April 2019
 	 */
-	@Test(dataProvider = "group0")
-	public void verifyMywall(String role) throws InterruptedException
+	@Test//(dataProvider = "group0")
+	public void verifyMywall() throws InterruptedException
 	{
+		String role = "Admin";
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		
-		if(platform.equals("Web"))
-		{
-			if(role.equals("Guest"))
-				MyWallModule.guestWall();
-				Assert.assertEquals(generic.isElementDisplayed(driver, myWalMod.myWall), true);
-		}
+		homMod.myWallSection.click();
+		String x = MyWallModule.likeComment.getText();
 		
-		MyWallModule.myWall.click();
-		String x= MyWallModule.likeComment.getText();
 		System.out.println(x);		
 		MyWallModule.comment.click();
 		MyWallModule.clickonLike();

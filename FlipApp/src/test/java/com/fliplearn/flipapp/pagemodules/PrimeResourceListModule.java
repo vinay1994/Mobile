@@ -9,6 +9,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.fliplearn.flipapp.helper.Base;
+import com.fliplearn.flipapp.helper.GenericFunctions;
 
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
@@ -16,19 +17,18 @@ import io.appium.java_client.pagefactory.iOSFindBy;
 
 public class PrimeResourceListModule extends Base
 {
+	GenericFunctions generic=new GenericFunctions();
+
 	@FindBy(xpath="//a[contains(text(),'Class 10')]")
 	@AndroidFindBy(xpath="//*[@text='Class 7']")
-	@iOSFindBy(id="")
 	public RemoteWebElement claConMod;
 	
 	@FindBy(xpath="(//div[@class='col-md-9 col-sm-8 col-xs-8']//h3[text()='Biology'])[2]")
 	@AndroidFindBy(xpath="//*[@text='Mathematics']")
-	@iOSFindBy(id="")
 	public RemoteWebElement cliOnSubCon;
 	
 	@FindBy(xpath="//a[text()='1. Life Processes']")
 	@AndroidFindBy(xpath="//*[@text='Integers']")
-	@iOSFindBy(id="")
 	public RemoteWebElement cliOnBook;
 	
 	@FindBy(xpath="//li[text()='Nutrition in Human Beings']")
@@ -87,31 +87,36 @@ public class PrimeResourceListModule extends Base
         		 driver.findElement(By.xpath("//*[@text='"+topicName+"']")).click();;
          }
 
-         public void clickOnVideoContent() 
+         public void clickOnVideoContent() throws InterruptedException 
          {
+        	 generic.waitForElementVisibility(driver, cliOnVidCon);
         	 cliOnVidCon.click();	 
          }
          
          public void clickOnRealLifeApplication() throws InterruptedException
          {
+        	 generic.waitForElementVisibility(driver, realLife);
         	 realLife.click();
         	 Thread.sleep(3000);
          }
          
          public void clickOnInteractiveWorksheet() throws InterruptedException
          {
+        	 generic.waitForElementVisibility(driver, interactiveWorksheet);
         	 interactiveWorksheet.click();
         	 Thread.sleep(3000);
          }
          
          public void clickOnTopicSynopsis() throws InterruptedException
          {
+        	 generic.waitForElementVisibility(driver, topicSynopsis);
         	 topicSynopsis.click();
         	 Thread.sleep(3000);
          }
        
          public void clickOnMindMaps() throws InterruptedException
          {
+        	 generic.waitForElementVisibility(driver, mindMaps);
         	 mindMaps.click();
         	 Thread.sleep(3000);
          }

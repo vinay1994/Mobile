@@ -42,6 +42,12 @@ public class BookstoreCartModule extends Base
 	@FindBy(xpath="//div[@class='page messages']/div[2]/div[2]/div")
 	public RemoteWebElement cartItemMessage;
 	
+	@FindBy(css="button[id='empty_cart_button']")
+	public RemoteWebElement clearShoppingCart;
+	
+	@FindBy(xpath="//a[contains(@href,'/books/') and text()='here']")
+	public RemoteWebElement continueShoppingLnk;
+	
 	//Remove cart item
 	public void removeCartItem(String noOfItem) throws InterruptedException
 	{
@@ -61,5 +67,4 @@ public class BookstoreCartModule extends Base
 		}
 		
 	}
-
 }

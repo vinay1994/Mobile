@@ -8,6 +8,7 @@ import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 
 import com.fliplearn.flipapp.helper.Base;
 import com.fliplearn.flipapp.helper.GenericFunctions;
@@ -44,5 +45,34 @@ public class BookstoreProductListModule extends Base
 	@FindBy(xpath="(//button[@class='add_to_cart'])[1]")
 	public RemoteWebElement addToCart;
 	
+	@FindBy(css="select[id='schoolinput']")
+	public RemoteWebElement selectSchool;
+	
+	@FindBy(css="select[id='classinput']")
+	public RemoteWebElement selectClass;
+	
+	@FindBy(xpath="(//div[@class='databg']/h4/a)[1]")
+	public RemoteWebElement firstProductListItem;
+	
+	//Get selected school
+	public String getSelectedSchool()
+	{
+		Select element = new Select(selectSchool);
+		return element.getFirstSelectedOption().getText();
+	}
+	
+	//Get selected school
+	public void selectClass(String className)
+	{
+		Select element = new Select(selectClass);
+		element.selectByVisibleText(className);
+	}
+	
+	//Verify Class Item
+	public void verifyClassItem(String className) throws InterruptedException
+	{
+		generic.waitForElementVisibility(driver, firstProductListItem);
+		Assert.assertTrue(firstProductListItem.getText().contains(className));
+	}
 }
 

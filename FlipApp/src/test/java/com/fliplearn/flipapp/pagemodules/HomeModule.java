@@ -27,6 +27,14 @@ public class HomeModule extends Base
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 	}
 	
+	/********** OLD UI ***********/
+	
+	@FindBy(xpath="(//*[text()='My Wall '])[2]")
+	public static RemoteWebElement myWallSection;
+	
+	
+	/********** New UI **********/
+	
 	/*** Start Learning Section ***/
 	@FindBy(xpath="//h3[text()='Start Learning']")
 	public  RemoteWebElement startLearning; 
@@ -64,6 +72,7 @@ public class HomeModule extends Base
 		boolean displayed = true;
 		try
 		{
+			Thread.sleep(5000);
 			WebElement element = driver.findElement(By.xpath("//div[@id='subjectTiles']/a/h4[text()='"+subjectName+"']"));
 		}
 		catch(Exception e) 
@@ -118,7 +127,7 @@ public class HomeModule extends Base
 	@FindBy(xpath="(//div[@class='owl-carousel owl-theme fliplearnWall-carousel owl-loaded owl-drag']//img)[1]")
 	public RemoteWebElement fliplearnWallThumb;
 	
-	@FindBy(xpath="//div[@class='owl-carousel owl-theme fliplearnWall-carousel owl-loaded owl-drag']//img")
+	@FindBy(xpath="//div[@class='owl-carousel owl-theme fliplearnWall-carousel owl-loaded owl-drag']//a[@class='equalHeightimg']")
 	public List<RemoteWebElement> fliplearnWallThumbs;
 	
 	@FindBy(xpath="(//div[@class='col-sm-6 col-xs-4 text-right popularMore ng-scope'])[1]")

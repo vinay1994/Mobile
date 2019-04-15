@@ -11,17 +11,11 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 public class MyWallModule 
 {
-	@FindBy(xpath="//div[contains(@class,'gallery-heading')]/h3[text()='My Wall']")
+	@FindBy(xpath="//div[contains(@class,'gallery-heading')]/h3[text()='Fliplearn Wall']")
 	public static RemoteWebElement myWallHeading;
 	
 	@FindBy(xpath="(//div[@class='cursor ng-scope']//img)[1]")
 	public static RemoteWebElement myWallThumb;
-	
-	@FindBy(xpath="(//*[text()='My Wall '])[2]")
-	//@AndroidFindBy(id="com.elss.educomp:id/btn_finish")
-	//@AndroidFindBy(className="android.widget.ImageButton")
-	public static RemoteWebElement myWall;
-	
 		
 	@FindBy(xpath="(//*[text()='My Wall'])[1]")
 	public static RemoteWebElement guestWall;
@@ -44,11 +38,6 @@ public class MyWallModule
     }
 	
 		
-	public void myWall()
-	{
-		myWall.click();
-	}
-	
 	public static void guestWall()
 	{
 		guestWall.click();

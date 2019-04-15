@@ -25,7 +25,7 @@ GenericFunctions generic=new GenericFunctions();
 	{
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 	}
-
+	
 	@FindBy(xpath="//div[@class='fullwidhtInner']/h2[text()='Fliplearn Book Store']")
 	public  RemoteWebElement bookstoreHeading; 
 

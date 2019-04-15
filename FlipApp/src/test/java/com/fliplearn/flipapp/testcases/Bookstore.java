@@ -47,7 +47,13 @@ public class Bookstore extends Base
 		bookCarMod = new BookstoreCartModule(driver);
 	}
 	
-	
+	/**
+	 * To Verify Bookstore Server is up and running
+	 * @author Tarun Goswami
+	 * @since 2019-04-11
+	 * @version 1.2
+	 * @throws InterruptedException 
+	 */
 	@Test(dataProvider = "allusers")
 	public void verifyBookstore(String role) throws InterruptedException
 	{
@@ -56,6 +62,13 @@ public class Bookstore extends Base
 		Assert.assertTrue(bookSchMod.bookstoreHeading.isDisplayed()) ;
 	}
 	
+	/**
+	 * To Verify Bookstore Server is up and running
+	 * @author Tarun Goswami
+	 * @since 2019-04-11
+	 * @version 1.2
+	 * @throws InterruptedException 
+	 */
 	@Test(dataProvider = "logout")
 	public void verifyBookstoreLogout(String role) throws InterruptedException
 	{
@@ -63,6 +76,14 @@ public class Bookstore extends Base
 		Assert.assertTrue(bookSchMod.bookstoreHeading.isDisplayed()) ;
 	}
 	
+	
+	/**
+	 * To Verify User can select school
+	 * @author Tarun Goswami
+	 * @since 2019-04-11
+	 * @version 1.2
+	 * @throws InterruptedException 
+	 */
 	@Test(dataProvider = "allusers")
 	public void verifySchoolSelection(String role) throws InterruptedException
 	{
@@ -74,6 +95,13 @@ public class Bookstore extends Base
 		Assert.assertTrue(bookProLisMod.productListLbl.isDisplayed());
 	}
 	
+	/**
+	 * To Verify User can select school
+	 * @author Tarun Goswami
+	 * @since 2019-04-11
+	 * @version 1.2
+	 * @throws InterruptedException 
+	 */
 	@Test(dataProvider = "logout")
 	public void verifySchoolSelectionLogout(String role) throws InterruptedException
 	{
@@ -83,11 +111,17 @@ public class Bookstore extends Base
 		Assert.assertTrue(bookProLisMod.productListLbl.isDisplayed());	
 	}
 	
+	/**
+	 * Add and remove cart item
+	 * @author Tarun Goswami
+	 * @since 2019-04-11
+	 * @version 1.2
+	 * @throws InterruptedException 
+	 */
 	@Test(dataProvider = "allusers")
 	public void addRemoveCartItem(String role) throws InterruptedException
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
-		Thread.sleep(5000);
 		heaMod.buyBooksLnk.click();
 		bookSchMod.selectSchool("Text", "The Shriram Millennium School, Gurgaon");
 		bookSchMod.proceedBtn.click();
@@ -104,6 +138,13 @@ public class Bookstore extends Base
 
 	}
 	
+	/**
+	 * Add and remove cart item
+	 * @author Tarun Goswami
+	 * @since 2019-04-11
+	 * @version 1.2
+	 * @throws InterruptedException 
+	 */
 	@Test(dataProvider = "logout")
 	public void addRemoveCartItemLogout(String role) throws InterruptedException
 	{
@@ -123,11 +164,17 @@ public class Bookstore extends Base
 
 	}
 	
+	/**
+	 * Verify Cart Item and Message
+	 * @author Tarun Goswami
+	 * @since 2019-04-11
+	 * @version 1.2
+	 * @throws InterruptedException 
+	 */
 	@Test(dataProvider = "allusers")
 	public void verifyCartItemAndMessage(String role) throws InterruptedException
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
-		Thread.sleep(5000);
 		
 		heaMod.buyBooksLnk.click();
 		bookSchMod.selectSchool("Text", "The Shriram Millennium School, Gurgaon");
@@ -157,6 +204,13 @@ public class Bookstore extends Base
 		bookCarMod.removeCartItem("All");
 	}
 	
+	/**
+	 * Verify Cart Item and Message
+	 * @author Tarun Goswami
+	 * @since 2019-04-11
+	 * @version 1.2
+	 * @throws InterruptedException 
+	 */
 	@Test(dataProvider = "logout")
 	public void verifyCartItemAndMessageLogout(String role) throws InterruptedException
 	{
@@ -188,5 +242,158 @@ public class Bookstore extends Base
 		bookCarMod.removeCartItem("All");
 	}
 	
+	/**
+	 * Clear shopping cart using clear shopping cart button
+	 * @author Tarun Goswami
+	 * @since 2019-04-11
+	 * @version 1.2
+	 * @throws InterruptedException 
+	 */
+	@Test(dataProvider = "allusers")
+	public void clearShoppingCart(String role) throws InterruptedException
+	{
+		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
+		heaMod.buyBooksLnk.click();
+		bookSchMod.selectSchool("Text", "The Shriram Millennium School, Gurgaon");
+		bookSchMod.proceedBtn.click();
+		
+		bookProLisMod.studentName.sendKeys("Fliplearn QA");
+		bookProLisMod.admissionNo.sendKeys("123456");
+		bookProLisMod.addToCart.click();
+
+		generic.waitForElementVisibility(driver, bookCarMod.cartItemCount);
+		bookCarMod.cartIcon.click();
+		
+		bookCarMod.clearShoppingCart.click();
+		Assert.assertEquals("You have no items in your shopping cart.", bookCarMod.noItemText.getText());
+
+	}
 	
+	/**
+	 * Clear shopping cart using clear shopping cart button
+	 * @author Tarun Goswami
+	 * @since 2019-04-11
+	 * @version 1.2
+	 * @throws InterruptedException 
+	 */
+	@Test(dataProvider = "logout")
+	public void clearShoppingCartLogout(String role) throws InterruptedException
+	{
+		heaMod.buyBooksLnk.click();
+		bookSchMod.selectSchool("Text", "The Shriram Millennium School, Gurgaon");
+		bookSchMod.proceedBtn.click();
+		
+		bookProLisMod.studentName.sendKeys("Fliplearn QA");
+		bookProLisMod.admissionNo.sendKeys("123456");
+		bookProLisMod.addToCart.click();
+
+		generic.waitForElementVisibility(driver, bookCarMod.cartItemCount);
+		bookCarMod.cartIcon.click();
+		
+		bookCarMod.clearShoppingCart.click();
+		Assert.assertEquals("You have no items in your shopping cart.", bookCarMod.noItemText.getText());
+	}
+	
+	/**
+	 * User can continue shopping after cart is cleared
+	 * @author Tarun Goswami
+	 * @since 2019-04-11
+	 * @version 1.2
+	 * @throws InterruptedException 
+	 */
+	@Test(dataProvider = "allusers")
+	public void continueShoppingClearCart(String role) throws InterruptedException
+	{
+		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
+		heaMod.buyBooksLnk.click();
+		String schoolName = "The Shriram Millennium School, Gurgaon";
+		bookSchMod.selectSchool("Text", schoolName);
+		bookSchMod.proceedBtn.click();
+		
+		bookProLisMod.studentName.sendKeys("Fliplearn QA");
+		bookProLisMod.admissionNo.sendKeys("123456");
+		bookProLisMod.addToCart.click();
+
+		generic.waitForElementVisibility(driver, bookCarMod.cartItemCount);
+		bookCarMod.cartIcon.click();
+		
+		bookCarMod.clearShoppingCart.click();
+		generic.waitForElementVisibility(driver, bookCarMod.noItemText);
+		bookCarMod.continueShoppingLnk.click();
+		generic.waitForElementVisibility(driver, bookProLisMod.productListLbl);
+		Assert.assertEquals(schoolName, bookProLisMod.getSelectedSchool());
+	}
+	
+	/**
+	 * User can continue shopping after cart is cleared
+	 * @author Tarun Goswami
+	 * @since 2019-04-11
+	 * @version 1.2
+	 * @throws InterruptedException 
+	 */
+	@Test(dataProvider = "logout")
+	public void continueShoppingClearCartLogout(String role) throws InterruptedException
+	{
+		heaMod.buyBooksLnk.click();
+		
+		String schoolName = "The Shriram Millennium School, Gurgaon";
+		bookSchMod.selectSchool("Text", schoolName);
+		bookSchMod.proceedBtn.click();
+		
+		bookProLisMod.studentName.sendKeys("Fliplearn QA");
+		bookProLisMod.admissionNo.sendKeys("123456");
+		bookProLisMod.addToCart.click();
+
+		generic.waitForElementVisibility(driver, bookCarMod.cartItemCount);
+		bookCarMod.cartIcon.click();
+		
+		bookCarMod.clearShoppingCart.click();
+		generic.waitForElementVisibility(driver, bookCarMod.noItemText);
+		bookCarMod.continueShoppingLnk.click();
+		generic.waitForElementVisibility(driver, bookProLisMod.productListLbl);
+		Assert.assertEquals(schoolName, bookProLisMod.getSelectedSchool());	
+	}
+	
+	/**
+	 * User can filter for class item
+	 * @author Tarun Goswami
+	 * @since 2019-04-11
+	 * @version 1.2
+	 * @throws InterruptedException 
+	 */
+	@Test(dataProvider = "allusers")
+	public void filterForClassItem(String role) throws InterruptedException
+	{
+		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
+		heaMod.buyBooksLnk.click();
+		
+		String schoolName = "The Shriram Millennium School, Gurgaon";
+		bookSchMod.selectSchool("Text", schoolName);
+		bookSchMod.proceedBtn.click();
+		
+		String className = "Class 4";
+		bookProLisMod.selectClass(className);
+		bookProLisMod.verifyClassItem(className);
+	}	
+	
+	/**
+	 * User can filter for class item
+	 * @author Tarun Goswami
+	 * @since 2019-04-11
+	 * @version 1.2
+	 * @throws InterruptedException 
+	 */
+	@Test(dataProvider = "logout")
+	public void filterForClassItemLogout(String role) throws InterruptedException
+	{
+		heaMod.buyBooksLnk.click();
+		
+		String schoolName = "The Shriram Millennium School, Gurgaon";
+		bookSchMod.selectSchool("Text", schoolName);
+		bookSchMod.proceedBtn.click();
+		
+		String className = "Class 4";
+		bookProLisMod.selectClass(className);
+		bookProLisMod.verifyClassItem(className);
+	}
 }

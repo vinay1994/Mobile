@@ -11,6 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 import com.fliplearn.flipapp.helper.Base;
+import com.fliplearn.flipapp.helper.GenericFunctions;
 
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
@@ -18,6 +19,8 @@ import io.appium.java_client.pagefactory.iOSFindBy;
 
 public class PrimeResourceViewModule  extends Base
 {
+	GenericFunctions generic=new GenericFunctions();
+
 	@FindBy(xpath="//a[contains(@class,'ng-binding collapsed')]")
 	public List<RemoteWebElement> cliOncla12;
 	
@@ -71,6 +74,9 @@ public class PrimeResourceViewModule  extends Base
 	
 	@FindBy(xpath="//button[@class='close']")
 	public RemoteWebElement closeWebLink;
+	
+	@FindBy(xpath="//h6[@class='ng-binding' and text()='Animation']")
+	public RemoteWebElement firstAnimatedVideo;
 	
 	
 	public void clickOnClass() {
@@ -147,7 +153,10 @@ public class PrimeResourceViewModule  extends Base
     {
     	Thread.sleep(2000);
     	if(platform.equals("Web"))
-    		driver.findElement(By.xpath("//h4[text()='"+videoContentName+"']")).click();
+    	{	
+    		generic.waitForElementVisibility(driver, firstAnimatedVideo);
+    		firstAnimatedVideo.click();
+    	}	
     	else
     		driver.findElement(By.xpath("//*[@text='Animation']")).click();
     }

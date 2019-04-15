@@ -6,12 +6,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import com.fliplearn.flipapp.helper.Base;
-
-import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
-import io.appium.java_client.pagefactory.iOSFindBy;
+
 
 public class PrimeChapterTopicModule extends Base
 {
@@ -19,6 +16,8 @@ public class PrimeChapterTopicModule extends Base
 	{
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
+	
+	/*** Old UI ***/
 	
 	@FindBy(css="input[name='schoolName']")
 	public RemoteWebElement searchTxt;
@@ -28,9 +27,6 @@ public class PrimeChapterTopicModule extends Base
 	
 	@FindBy(xpath="(//h4[contains(text(),'Please access the content from your child')])[2]")
 	public RemoteWebElement childAccessPopup;
-	
-	@FindBy(css="p[class='fontregular mobilefont12 m-t-12']")
-	public RemoteWebElement learnPracticeModeTxt;
 	
 	//Search for prime content
 	public void searchContent(String title)
@@ -44,4 +40,20 @@ public class PrimeChapterTopicModule extends Base
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("(//h4[text()='"+title+"'])[1]")).click();
 	}
+	
+	/*** New UI ***/
+	
+	@FindBy(css="span[id='learnPracticeModeSwitch'][class='checkbtnnewcheckleft']")
+	public RemoteWebElement learningModeBtn;
+	
+	@FindBy(css="span[id='learnPracticeModeSwitch'][class='checkbtnnewcheck']")
+	public RemoteWebElement practiceModeBtn;
+	
+	@FindBy(css="span[id='learnPracticeModeSwitch']")
+	public RemoteWebElement learnPracticeModeBtn;
+	
+	@FindBy(css="p[class='fontregular mobilefont12 m-t-12']")
+	public RemoteWebElement learnPracticeModeTxt;
+	
+	
 }

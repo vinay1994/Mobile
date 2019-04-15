@@ -52,7 +52,7 @@ public class Login extends Base
 	 * @modifiedBy Tarun Goswami on 2019-03-11
 	 * @throws InterruptedException 
 	 */
-	@Test(dataProvider = "nostaff_new")
+	@Test(dataProvider = "allusers")
 	public void verifyLogin(String role) throws InterruptedException
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
@@ -60,7 +60,7 @@ public class Login extends Base
 		if(platform.equals("Web"))
 		{
 			if(!role.equals("Guest") && !role.equals("Student"))
-				Assert.assertEquals(generic.isElementDisplayed(driver, myWalMod.myWall), true);
+				Assert.assertEquals(generic.isElementDisplayed(driver, homMod.myWallSection), true);
 			else
 				Assert.assertEquals(generic.isElementDisplayed(driver, homMod.startLearning), true);
 		}	
