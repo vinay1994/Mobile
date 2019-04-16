@@ -65,7 +65,9 @@ public class VMC extends Base
 				leaMod.clickOnLearnImage();
 			
 			leaMod.vmcImg.click();
-			assertEquals(vmcPurFlo.vmcHeadline.isDisplayed(), true);
+			
+			if(platform.equals("Web"))
+				assertEquals(vmcPurFlo.vmcHeadline.isDisplayed(), true);
 		}	
 		
 		@Test(dataProvider = "nostaff")
@@ -74,6 +76,8 @@ public class VMC extends Base
 			
 			logMod.Login(role, "CBSE", "12", "Single", "None", "Yes");
 			leaMod.vmcImg.click();
+			
+			if(platform.equals("Web"))
 			assertEquals(vmcPurFlo.vmcHeadline.isDisplayed(), true);
 						
 		}

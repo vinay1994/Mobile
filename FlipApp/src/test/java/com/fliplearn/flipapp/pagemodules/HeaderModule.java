@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 import com.fliplearn.flipapp.helper.Base;
 import com.fliplearn.flipapp.helper.GenericFunctions;
@@ -29,13 +30,12 @@ public class HeaderModule extends Base
 	@iOSXCUITFindBy(xpath="//XCUIElementTypeStaticText[@name='Fliplearn']")
 	public RemoteWebElement fliplearnText;
 	
-	@AndroidFindBy(xpath="//android.widget.ImageButton[@content-desc='Open navigation drawer']")
+	@AndroidFindBy(xpath="//android.widget.ImageButton[@content-desc='Open navigation drawer'] | //*[@class='android.widget.ImageButton']")
 	@iOSXCUITFindBy(xpath="//XCUIElementTypeButton[@name='MenuIcon']")
 	public RemoteWebElement burgerMenu;
 	
 	@AndroidFindBy(xpath="//*[@text='Quiz Games']")
 	public RemoteWebElement quizGamesMnu;
-	
 	
 	@AndroidFindBy(xpath="//*[@text='Settings']")
 	@iOSXCUITFindBy(xpath="//XCUIElementTypeStaticText[@name='Settings']")

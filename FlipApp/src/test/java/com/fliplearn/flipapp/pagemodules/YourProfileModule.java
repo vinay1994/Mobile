@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 import com.aventstack.extentreports.Status;
 import com.fliplearn.flipapp.helper.Base;
@@ -16,6 +17,7 @@ import io.appium.java_client.pagefactory.iOSFindBy;
 public class YourProfileModule extends Base
 {
 	GenericFunctions generic = new GenericFunctions();
+	HeaderModule heaMod = new HeaderModule(driver);
 	
 	public YourProfileModule(WebDriver driver) 
 	{
@@ -41,6 +43,7 @@ public class YourProfileModule extends Base
 	public RemoteWebElement changeBtn;		
 	
 	@FindBy(xpath="(//div[@class='col-sm-4 userInfo ng-scope'])[1]/p")
+	@AndroidFindBy(id="com.elss.educomp:id/role")
 	public RemoteWebElement usernameLbl;	
 	
 	public void updateClassAndSection(WebDriver driver, String className, String sectionName) throws InterruptedException
@@ -66,8 +69,11 @@ public class YourProfileModule extends Base
 	public String getUsernameLabel() throws InterruptedException
 	{
 		Thread.sleep(3000);
+		
+		if(!platform.equals("Web"))
+			heaMod.burgerMenu.click();
+		
 		String roleName = usernameLbl.getText();
-		System.out.println("Role Name is: "+roleName);
 		return roleName;
 	}
 	

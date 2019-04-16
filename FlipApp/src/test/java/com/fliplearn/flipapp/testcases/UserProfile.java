@@ -57,5 +57,9 @@ public class UserProfile extends Base
 			Thread.sleep(3000);
 			Assert.assertEquals(youProMod.getUsernameLabel(), role+" Name");
 		}
+		else
+		{
+			Assert.assertEquals(youProMod.getUsernameLabel(), role);
+		}
 	}
 }

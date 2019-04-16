@@ -30,6 +30,7 @@ public class HomeModule extends Base
 	/********** OLD UI ***********/
 	
 	@FindBy(xpath="(//*[text()='My Wall '])[2]")
+	@AndroidFindBy(xpath="//*[@text='My Wall']")
 	public static RemoteWebElement myWallSection;
 	
 	
@@ -37,6 +38,7 @@ public class HomeModule extends Base
 	
 	/*** Start Learning Section ***/
 	@FindBy(xpath="//h3[text()='Start Learning']")
+	@AndroidFindBy(xpath="//*[@text='Start Learning']")
 	public  RemoteWebElement startLearning; 
 	
 	@FindBy(css="span[id='learnPracticeModeSwitch'][class='checkbtnnewcheckleft']")

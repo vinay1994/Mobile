@@ -9,9 +9,9 @@
  
  <test name="Onboarding" enabled="true">
   		<classes>
-    		<class name="com.fliplearn.flipapp.testcases.Bookstore">
+    		<class name="com.fliplearn.flipapp.testcases.Home">
     		<methods>
-        			<include name="filterForClassItemLogout"/>
+        			<include name="verifyGlobalModeSelection"/>
         	</methods>		
         	</class>
 </classes>

@@ -63,7 +63,6 @@ public class LoginModule extends Base
 		
 		if(eConfig.getProperty("Platform").equals("Web")) 
 		{
-			 //onbMod.skipBtn.click();
 			 extentTest.log(Status.PASS, "Click on Skip Button");
 		}
 		
@@ -90,75 +89,24 @@ public class LoginModule extends Base
 		loginBtn.click();
 		extentTest.log(Status.PASS, "Click on Login button");
 		
-		if(eConfig.getProperty("Platform").equals("Android")&&role.equals("Guest")) 
+		if(eConfig.getProperty("Platform").equals("Android")) 
 		{
 			 quiMod.skipBtn.click();
 			 extentTest.log(Status.PASS, "Click on Quiz Skip Button");
 	 
-			 Thread.sleep(3000);
-			 driver.findElement(By.xpath("//*[@text='GOT IT']")).click();
-			 extentTest.log(Status.PASS, "Tap on Got it.");	
-			
-
-//			 Thread.sleep(3000);
-//			 driver.findElement(By.xpath("//*[@text='GOT IT']")).click();
-//
-//     	 	extentTest.log(Status.PASS, "Tap on Got it.");
+			 if(!role.equals("Student") && !role.equals("Guest"))
+			 {
+				 Thread.sleep(3000);
+				 driver.findElement(By.xpath("//*[@text='GOT IT']")).click();
+				 extentTest.log(Status.PASS, "Tap on Got it.");	
+				 driver.findElement(By.xpath("//*[@text='GOT IT']")).click();
+				 extentTest.log(Status.PASS, "Tap on Got it.");	
+			 } 
 		}
-//			 if(!role.equals("Guest"))
-//			 { 	 
-//				 Thread.sleep(3000);
-//				 driver.findElement(By.xpath("//*[@text='GOT IT']")).click();
-//
-//			 	extentTest.log(Status.PASS, "Tap on Got it.");
-//			 }
-//			 
-//			 
-//		}
+
 				 
 	}		
 }			 
-//			 if(role.equals("Admin")||role.equals("Principal")||role.equals("Teacher")||role.equals("Guest"))
-//				 onbMod.skipScreen();
 
-//			 if(!role.equals("Guest"))
-//			 { 	 
-//				 Thread.sleep(3000);
-//				 driver.findElement(By.xpath("//*[@text='GOT IT']")).click();
-//
-//			 	extentTest.log(Status.PASS, "Tap on Got it.");
-//			 
-//		
-//			 		 
-//			 }
-			 
-		// if(username.contains("automationp")) {
-				// onbMod.skipScreen();
-			 
-			
-//
-//
-//}
-//		 }
-//			 }
-//		
-//	
-
-		 
-	 //Check for bug here why skip not showing for student
-//	 if(!(role.equals("Student") && platform.equals("Web")))
-//	 {	
-//		mobNumMod.skipBtn.click();
-//		extentTest.log(Status.PASS, "Click on Skip Button");
-//	 }	
-	 
-//	 if(role.equals("Parent"))
-//	 { 
-//		 generic.waitForElementVisibility(driver, sigInMod.parentLnk);
-//		 sigInMod.parentLnk.click();
-//		 extentTest.log(Status.PASS, "Click on First Parent Link.");
-//		 sigInMod.proceedBtn.click();
-//	 }
-//
 
 

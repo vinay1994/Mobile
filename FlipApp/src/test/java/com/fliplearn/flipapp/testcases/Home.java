@@ -118,7 +118,7 @@ public class Home extends Base
 		Assert.assertEquals(homMod.learnPracticeModeTxt.getText(), "Switch to learning mode");
 
 		//Practice on Subject Page
-		homMod.selectSubject("Mathematics");
+		homMod.selectSubject("Chemistry");
 		generic.waitForElementVisibility(driver, homMod.practiceModeBtn);
 		Assert.assertTrue(homMod.practiceModeBtn.isDisplayed());
 		Assert.assertEquals(PriChaTopMod.learnPracticeModeTxt.getText(), "Switch to learning mode");
@@ -137,7 +137,7 @@ public class Home extends Base
 		Assert.assertTrue(homMod.learningModeBtn.isDisplayed());
 		
 		//Learning on Subject Page
-		homMod.selectSubject("Mathematics");
+		homMod.selectSubject("Chemistry");
 		generic.waitForElementVisibility(driver, homMod.learningModeBtn);
 		Assert.assertTrue(homMod.learningModeBtn.isDisplayed());
 		Assert.assertEquals(PriChaTopMod.learnPracticeModeTxt.getText(), "Switch to practice mode");

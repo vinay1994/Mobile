@@ -57,14 +57,18 @@ public class Login extends Base
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		
-		if(platform.equals("Web"))
-		{
-			if(!role.equals("Guest") && !role.equals("Student"))
-				Assert.assertEquals(generic.isElementDisplayed(driver, homMod.myWallSection), true);
-			else
-				Assert.assertEquals(generic.isElementDisplayed(driver, homMod.startLearning), true);
+		
+		if(!role.equals("Guest") && !role.equals("Student"))
+		{	
+			Assert.assertEquals(generic.isElementDisplayed(driver, homMod.myWallSection), true);
 		}	
-		else if(platform.equals("iOS"))
+		else
+		{	
+			Assert.assertEquals(generic.isElementDisplayed(driver, homMod.startLearning), true);
+		}	
+		
+		
+		if(platform.equals("iOS"))
 		{
 			heaMod.clickOnLogoutBtn();
 		}

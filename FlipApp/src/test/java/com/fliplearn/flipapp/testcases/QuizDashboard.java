@@ -78,9 +78,7 @@ public class QuizDashboard extends Base
 		{	
 			if(!platform.equals("Web"))
 			{	
-				//generic.scrollBy(driver, 50, 99);
-				TouchActions action = new TouchActions(driver);
-				action.scroll(50, 95);
+				generic.scrollBy(driver, 95, 50);
 				
 			}
 		}	
@@ -113,7 +111,7 @@ public class QuizDashboard extends Base
 		}  
 		else if(!platform.equals("Web"))
 		{	
-			generic.scrollBy(driver, 50, 95);
+			generic.scrollBy(driver, 95, 50);
 		}
 		
 		quiDasMod.clickOnQuizDashboardTile();
