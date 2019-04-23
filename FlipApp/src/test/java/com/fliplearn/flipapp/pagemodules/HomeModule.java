@@ -41,6 +41,11 @@ public class HomeModule extends Base
 	@AndroidFindBy(xpath="//*[@text='Start Learning']")
 	public  RemoteWebElement startLearning; 
 	
+	/*** Start Learning Section ***/
+	@FindBy(xpath="//h3[text()='Start Practicing']")
+	@AndroidFindBy(xpath="//*[@text='Start Practicing']")
+	public  RemoteWebElement startPracticing;
+	
 	@FindBy(css="span[id='learnPracticeModeSwitch'][class='checkbtnnewcheckleft']")
 	public RemoteWebElement learningModeBtn;
 	

@@ -64,7 +64,7 @@ public class Login extends Base
 		}	
 		else
 		{	
-			Assert.assertEquals(generic.isElementDisplayed(driver, homMod.startLearning), true);
+			Assert.assertEquals(generic.isElementDisplayed(driver, homMod.startPracticing), true);
 		}	
 		
 		
