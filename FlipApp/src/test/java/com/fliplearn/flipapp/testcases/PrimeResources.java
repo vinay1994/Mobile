@@ -126,7 +126,7 @@ public class PrimeResources extends Base
 	* @modifiedBy Tarun Goswami on 2019-04-10
 	*/
 	@Test(dataProvider="allusers_old")
-	public void verifyTopicSynopsis_Old(String role) throws InterruptedException
+	public void verifyTopicSynopsis_Old(String role) throws InterruptedException, IOException
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 	    
@@ -195,7 +195,7 @@ public class PrimeResources extends Base
 	* @modifiedBy Tarun Goswami on 2019-04-10
 	*/
 	@Test(dataProvider="allusers_old")
-	public void verifyMindMaps_Old(String role) throws InterruptedException
+	public void verifyMindMaps_Old(String role) throws InterruptedException, IOException
 	{
 	logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 	    
@@ -263,7 +263,7 @@ public class PrimeResources extends Base
 	* @modifiedBy Tarun Goswami on 2019-04-10
 	*/
 	@Test(dataProvider="allusers_old")
-	public void verifyRealLifeApplication_Old(String role) throws InterruptedException
+	public void verifyRealLifeApplication_Old(String role) throws InterruptedException, IOException
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 	    
@@ -330,7 +330,7 @@ public class PrimeResources extends Base
 	* @modifiedBy Tarun Goswami on 2019-04-10
 	*/
 	@Test(dataProvider="allusers_old")
-	public void verifyInteractiveWorksheet_Old(String role) throws InterruptedException
+	public void verifyInteractiveWorksheet_Old(String role) throws InterruptedException, IOException
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 	    
@@ -396,7 +396,7 @@ public class PrimeResources extends Base
 	* @throws IOException 
 	*/
 	@Test
-	public void verifyAccessFromChildMessage() throws InterruptedException
+	public void verifyAccessFromChildMessage() throws InterruptedException, IOException
 	{
 		String role = "Parent";
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");

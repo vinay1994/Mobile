@@ -11,7 +11,7 @@
   		<classes>
     		<class name="com.fliplearn.flipapp.testcases.Login">
     		<methods>
-        			<include name="verifyLogout"/>
+        			<include name="verifyLogin"/>
         	</methods>		
         	</class>
 </classes>

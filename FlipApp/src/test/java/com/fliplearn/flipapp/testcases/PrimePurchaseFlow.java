@@ -2,6 +2,8 @@
 package com.fliplearn.flipapp.testcases;
 import static org.testng.Assert.assertEquals;
 
+import java.io.IOException;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -48,7 +50,7 @@ public class PrimePurchaseFlow extends Base{
 		 
 	}
 	@Test (dataProvider="allusers")
-	public void verifyPrimePurchaseFlowWithoutCoupon(String role) throws InterruptedException {
+	public void verifyPrimePurchaseFlowWithoutCoupon(String role) throws InterruptedException, IOException {
 		logMod.Login(role, "CBSE", "6", "Single", "None", "Yes");
 		if(role.equals("Admin")||role.equals("Teacher")||role.equals("Principal")||role.equals("Guest")) {
 			
@@ -102,11 +104,12 @@ public class PrimePurchaseFlow extends Base{
 	* @since 2019-01-18
 	* @throws InterruptedException 
 	* @version 1.0
+	 * @throws IOException 
 	
 	*/
 	
 	@Test (dataProvider="allusers")
-	public void verifyPrimePurchaseFlowWithCoupon(String role) throws InterruptedException{
+	public void verifyPrimePurchaseFlowWithCoupon(String role) throws InterruptedException, IOException{
 		logMod.Login(role, "CBSE", "6", "Single", "None", "Yes");
 		if(role.equals("Admin")||role.equals("Teacher")||role.equals("Principal")||role.equals("Guest")) {
 			
@@ -155,11 +158,12 @@ public class PrimePurchaseFlow extends Base{
 	* @since 2019-02-19
 	* @throws InterruptedException 
 	* @version 1.0
+	 * @throws IOException 
 
 	*/
 
        @Test (dataProvider="allusers")
-public void verifyPrimePurchaseFlowWithDiscountCoupon(String role) throws InterruptedException{
+public void verifyPrimePurchaseFlowWithDiscountCoupon(String role) throws InterruptedException, IOException{
     	   logMod.Login(role, "CBSE", "6", "Single", "None", "Yes");
    		if(role.equals("Admin")||role.equals("Teacher")||role.equals("Principal")||role.equals("Guest")) {
    			

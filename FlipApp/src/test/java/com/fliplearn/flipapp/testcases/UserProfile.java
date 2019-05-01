@@ -1,5 +1,7 @@
 package com.fliplearn.flipapp.testcases;
 
+import java.io.IOException;
+
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -45,9 +47,10 @@ public class UserProfile extends Base
 	 * @modifiedBy Tarun Goswami on 2019-03-11
 	 * @version 1.1
 	 * @throws InterruptedException 
+	 * @throws IOException 
 	 */
 	@Test(dataProvider = "allusers")
-	public void verifyUserNotGuest(String role) throws InterruptedException
+	public void verifyUserNotGuest(String role) throws InterruptedException, IOException
 	{		
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		

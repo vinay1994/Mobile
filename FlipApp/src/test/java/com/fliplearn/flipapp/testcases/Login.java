@@ -1,5 +1,7 @@
 package com.fliplearn.flipapp.testcases;
 
+import java.io.IOException;
+
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
@@ -51,11 +53,13 @@ public class Login extends Base
 	 * @version 1.2
 	 * @modifiedBy Tarun Goswami on 2019-03-11
 	 * @throws InterruptedException 
+	 * @throws IOException 
 	 */
 	@Test(dataProvider = "allusers")
-	public void verifyLogin(String role) throws InterruptedException
+	public void verifyLogin(String role) throws InterruptedException, IOException
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
+		
 		
 		
 		if(!role.equals("Guest") && !role.equals("Student"))
@@ -80,12 +84,13 @@ public class Login extends Base
 	 * @since 2018-10-20
 	 * @version 1.2
 	 * @throws InterruptedException 
+	 * @throws IOException 
 	 */
 	
 	@Test(dataProvider = "allusers")
-	public void verifyLogout(String role) throws InterruptedException
+	public void verifyLogout(String role) throws InterruptedException, IOException
 	{
-		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
+		logMod.Login(role, "CBSE", "Pre", "Single", "Prime", "Yes");
 		
 		if(platform.equals("Web"))
 		{
