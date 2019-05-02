@@ -52,8 +52,8 @@ public class Bookstore extends Base
 	/**
 	 * To Verify Bookstore Server is up and running
 	 * @author Tarun Goswami
-	 * @since 2019-04-11
-	 * @version 1.2
+	 * @since 2019-05-01
+	 * @version 1.3
 	 * @throws InterruptedException 
 	 * @throws IOException 
 	 */
@@ -83,7 +83,7 @@ public class Bookstore extends Base
 	/**
 	 * To Verify User can select school
 	 * @author Tarun Goswami
-	 * @since 2019-04-11
+	 * @since 2019-05-01
 	 * @version 1.2
 	 * @throws InterruptedException 
 	 * @throws IOException 
@@ -94,7 +94,8 @@ public class Bookstore extends Base
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		Thread.sleep(5000);
 		heaMod.buyBooksLnk.click();
-		bookSchMod.selectSchool("Text", "The Shriram Millennium School, Gurgaon");
+		System.out.println("School Name is:"+bookstoreSchool);
+		bookSchMod.selectSchool("Text", bookstoreSchool.toString());
 		bookSchMod.proceedBtn.click();
 		Assert.assertTrue(bookProLisMod.productListLbl.isDisplayed());
 	}
@@ -102,7 +103,7 @@ public class Bookstore extends Base
 	/**
 	 * To Verify User can select school
 	 * @author Tarun Goswami
-	 * @since 2019-04-11
+	 * @since 2019-05-01
 	 * @version 1.2
 	 * @throws InterruptedException 
 	 */
@@ -110,7 +111,7 @@ public class Bookstore extends Base
 	public void verifySchoolSelectionLogout(String role) throws InterruptedException
 	{
 		heaMod.buyBooksLnk.click();
-		bookSchMod.selectSchool("Text", "The Shriram Millennium School, Gurgaon");
+		bookSchMod.selectSchool("Text", bookstoreSchool.toString());
 		bookSchMod.proceedBtn.click();
 		Assert.assertTrue(bookProLisMod.productListLbl.isDisplayed());	
 	}
@@ -118,7 +119,7 @@ public class Bookstore extends Base
 	/**
 	 * Add and remove cart item
 	 * @author Tarun Goswami
-	 * @since 2019-04-11
+	 * @since 2019-05-01
 	 * @version 1.2
 	 * @throws InterruptedException 
 	 * @throws IOException 
@@ -128,7 +129,7 @@ public class Bookstore extends Base
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		heaMod.buyBooksLnk.click();
-		bookSchMod.selectSchool("Text", "The Shriram Millennium School, Gurgaon");
+		bookSchMod.selectSchool("Text", bookstoreSchool.toString());
 		bookSchMod.proceedBtn.click();
 		
 		bookProLisMod.studentName.sendKeys("Fliplearn QA");
@@ -154,7 +155,7 @@ public class Bookstore extends Base
 	public void addRemoveCartItemLogout(String role) throws InterruptedException
 	{
 		heaMod.buyBooksLnk.click();
-		bookSchMod.selectSchool("Text", "The Shriram Millennium School, Gurgaon");
+		bookSchMod.selectSchool("Text", bookstoreSchool.toString());
 		bookSchMod.proceedBtn.click();
 		
 		bookProLisMod.studentName.sendKeys("Fliplearn QA");
@@ -183,13 +184,11 @@ public class Bookstore extends Base
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		
 		heaMod.buyBooksLnk.click();
-		bookSchMod.selectSchool("Text", "The Shriram Millennium School, Gurgaon");
+		bookSchMod.selectSchool("Text", bookstoreSchool.toString());
 		bookSchMod.proceedBtn.click();
 		
 		String itemTitle = bookProLisMod.ItemTitle.get(0).getText();
-		System.out.println("Item Title is:"+itemTitle);
 		String expectedTitle = "You have added " + itemTitle + " to your shopping cart.";
-		System.out.println("Expected Title is:"+expectedTitle);
 		
 		bookProLisMod.studentName.sendKeys("Fliplearn QA");
 		bookProLisMod.admissionNo.sendKeys("123456");
@@ -221,7 +220,7 @@ public class Bookstore extends Base
 	public void verifyCartItemAndMessageLogout(String role) throws InterruptedException
 	{
 		heaMod.buyBooksLnk.click();
-		bookSchMod.selectSchool("Text", "The Shriram Millennium School, Gurgaon");
+		bookSchMod.selectSchool("Text", bookstoreSchool.toString());
 		bookSchMod.proceedBtn.click();
 		
 		String itemTitle = bookProLisMod.ItemTitle.get(0).getText();
@@ -261,7 +260,7 @@ public class Bookstore extends Base
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		heaMod.buyBooksLnk.click();
-		bookSchMod.selectSchool("Text", "The Shriram Millennium School, Gurgaon");
+		bookSchMod.selectSchool("Text", bookstoreSchool.toString());
 		bookSchMod.proceedBtn.click();
 		
 		bookProLisMod.studentName.sendKeys("Fliplearn QA");
@@ -287,7 +286,7 @@ public class Bookstore extends Base
 	public void clearShoppingCartLogout(String role) throws InterruptedException
 	{
 		heaMod.buyBooksLnk.click();
-		bookSchMod.selectSchool("Text", "The Shriram Millennium School, Gurgaon");
+		bookSchMod.selectSchool("Text", bookstoreSchool.toString());
 		bookSchMod.proceedBtn.click();
 		
 		bookProLisMod.studentName.sendKeys("Fliplearn QA");
@@ -314,8 +313,7 @@ public class Bookstore extends Base
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		heaMod.buyBooksLnk.click();
-		String schoolName = "The Shriram Millennium School, Gurgaon";
-		bookSchMod.selectSchool("Text", schoolName);
+		bookSchMod.selectSchool("Text", bookstoreSchool.toString());
 		bookSchMod.proceedBtn.click();
 		
 		bookProLisMod.studentName.sendKeys("Fliplearn QA");
@@ -329,7 +327,7 @@ public class Bookstore extends Base
 		generic.waitForElementVisibility(driver, bookCarMod.noItemText);
 		bookCarMod.continueShoppingLnk.click();
 		generic.waitForElementVisibility(driver, bookProLisMod.productListLbl);
-		Assert.assertEquals(schoolName, bookProLisMod.getSelectedSchool());
+		Assert.assertEquals(bookstoreSchool.toString(), bookProLisMod.getSelectedSchool());
 	}
 	
 	/**
@@ -344,8 +342,7 @@ public class Bookstore extends Base
 	{
 		heaMod.buyBooksLnk.click();
 		
-		String schoolName = "The Shriram Millennium School, Gurgaon";
-		bookSchMod.selectSchool("Text", schoolName);
+		bookSchMod.selectSchool("Text", bookstoreSchool.toString());
 		bookSchMod.proceedBtn.click();
 		
 		bookProLisMod.studentName.sendKeys("Fliplearn QA");
@@ -359,7 +356,7 @@ public class Bookstore extends Base
 		generic.waitForElementVisibility(driver, bookCarMod.noItemText);
 		bookCarMod.continueShoppingLnk.click();
 		generic.waitForElementVisibility(driver, bookProLisMod.productListLbl);
-		Assert.assertEquals(schoolName, bookProLisMod.getSelectedSchool());	
+		Assert.assertEquals(bookstoreSchool.toString(), bookProLisMod.getSelectedSchool());	
 	}
 	
 	/**
@@ -376,11 +373,10 @@ public class Bookstore extends Base
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		heaMod.buyBooksLnk.click();
 		
-		String schoolName = "The Shriram Millennium School, Gurgaon";
-		bookSchMod.selectSchool("Text", schoolName);
+		bookSchMod.selectSchool("Text", bookstoreSchool.toString());
 		bookSchMod.proceedBtn.click();
 		
-		String className = "Class 4";
+		String className = "Class 7";
 		bookProLisMod.selectClass(className);
 		bookProLisMod.verifyClassItem(className);
 	}	
@@ -397,11 +393,10 @@ public class Bookstore extends Base
 	{
 		heaMod.buyBooksLnk.click();
 		
-		String schoolName = "The Shriram Millennium School, Gurgaon";
-		bookSchMod.selectSchool("Text", schoolName);
+		bookSchMod.selectSchool("Text", bookstoreSchool.toString());
 		bookSchMod.proceedBtn.click();
 		
-		String className = "Class 4";
+		String className = "Class 7";
 		bookProLisMod.selectClass(className);
 		bookProLisMod.verifyClassItem(className);
 	}

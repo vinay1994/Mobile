@@ -31,13 +31,12 @@ public class PrimePurchaseFlow extends Base{
 	PrimePurchaseFlowModule priPurFloMod;
 	GenericFunctions generic;
 	PrimeChapterTopicModule priChaTopMod;
-	 OnboardingModule onbMod;
+	OnboardingModule onbMod;
 	
 	
 	@BeforeMethod
-	public void preVerifyPrimePurchaseFlow() {
-		
-		
+	public void preVerifyPrimePurchaseFlow() 
+	{	
 		logMod = new LoginModule(driver);
 		mobNumMod = new MobileNumberModule(driver);
 		menMod = new MenuModule(driver);
@@ -46,13 +45,15 @@ public class PrimePurchaseFlow extends Base{
 		priSubMod = new PrimeSubjectModule(driver); 
 		priPurFloMod= new PrimePurchaseFlowModule(driver);
 		 generic=new GenericFunctions();
-		 onbMod = new OnboardingModule(driver);;
-		 
+		 onbMod = new OnboardingModule(driver);;	 
 	}
+	
 	@Test (dataProvider="allusers")
-	public void verifyPrimePurchaseFlowWithoutCoupon(String role) throws InterruptedException, IOException {
+	public void verifyPrimePurchaseFlowWithoutCoupon(String role) throws InterruptedException, IOException 
+	{
 		logMod.Login(role, "CBSE", "6", "Single", "None", "Yes");
-		if(role.equals("Admin")||role.equals("Teacher")||role.equals("Principal")||role.equals("Guest")) {
+		if(role.equals("Admin")||role.equals("Teacher")||role.equals("Principal")||role.equals("Guest")) 
+		{
 			
 		onbMod.skipScreen();
 	

@@ -63,6 +63,7 @@ public class Base implements ITestListener
 	public static String suiteType;
 	public static String sendReport;
 	public static String testName;
+	public static String bookstoreSchool;
 	public static DesiredCapabilities cap;
 	
 	static GenericFunctions generic=new GenericFunctions();
@@ -118,6 +119,7 @@ public class Base implements ITestListener
 		emailIds = eConfig.getProperty("Email");
 		suiteType = eConfig.getProperty("SuiteType");
 		sendReport = eConfig.getProperty("SendReport");
+		bookstoreSchool = aConfig.getProperty("Bookstore_School");
 		
 		url = aConfig.getProperty(platform+"_"+environment+"_Url");
 		

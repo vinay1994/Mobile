@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -35,8 +36,9 @@ GenericFunctions generic=new GenericFunctions();
 	public void selectSchool(String method, String value)
 	{
 	     Select schoolList = new Select(driver.findElement(By.xpath("//select[@name='school']")));
+
 	    
 	     if(method == "Text")
-	    	 schoolList.selectByVisibleText(value);
+	    	 schoolList.selectByVisibleText(value); 
 	}
 }
