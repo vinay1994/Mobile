@@ -15,7 +15,6 @@ import com.fliplearn.flipapp.pagemodules.PrimeClassModule;
 import com.fliplearn.flipapp.pagemodules.QuizDashBoardModule;
 import com.fliplearn.flipapp.pagemodules.SignInAsModule;
 
-
 public class QuizGames extends Base 
 {
 	LoginModule logMod;

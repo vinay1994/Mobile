@@ -53,7 +53,7 @@ public class Event extends Base
 	@Test(dataProvider = "staff")
 	public void createAnnouncement(String role) throws Throwable
 	{
-		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
+			logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		Assert.assertEquals(eveMod.fillTxt("Announcement"), eveMod.getTitle());
 	}
 

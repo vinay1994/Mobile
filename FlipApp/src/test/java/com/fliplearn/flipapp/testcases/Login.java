@@ -5,7 +5,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-
 import com.fliplearn.flipapp.helper.Base;
 import com.fliplearn.flipapp.helper.GenericFunctions;
 import com.fliplearn.flipapp.pagemodules.HeaderModule;
@@ -43,7 +42,6 @@ public class Login extends Base
 		homMod = new HomeModule(driver);
 	}
 	
-	
 	/**
 	 * Verify User User Login
 	 * @author Vinay Yadav, Durga
@@ -57,7 +55,6 @@ public class Login extends Base
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		
-		
 		if(!role.equals("Guest") && !role.equals("Student"))
 		{	
 			Assert.assertEquals(generic.isElementDisplayed(driver, homMod.myWallSection), true);
@@ -66,7 +63,6 @@ public class Login extends Base
 		{	
 			Assert.assertEquals(generic.isElementDisplayed(driver, homMod.startPracticing), true);
 		}	
-		
 		
 		if(platform.equals("iOS"))
 		{
