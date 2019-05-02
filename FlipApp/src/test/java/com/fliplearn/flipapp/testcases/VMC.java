@@ -2,6 +2,8 @@ package com.fliplearn.flipapp.testcases;
 
 import static org.testng.Assert.assertEquals;
 
+import java.io.IOException;
+
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -55,9 +57,10 @@ public class VMC extends Base
 		 * @since 2018-10-20
 		 * @version 1.2
 		 * @throws InterruptedException 
+		 * @throws IOException 
 		 */
 		@Test(dataProvider = "staff")
-		public void displayVMCSchool(String role) throws InterruptedException
+		public void displayVMCSchool(String role) throws InterruptedException, IOException
 		{			
 			logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 			
@@ -71,7 +74,7 @@ public class VMC extends Base
 		}	
 		
 		@Test(dataProvider = "nostaff")
-		public void displayVMCStudent(String role) throws InterruptedException
+		public void displayVMCStudent(String role) throws InterruptedException, IOException
 		{
 			
 			logMod.Login(role, "CBSE", "12", "Single", "None", "Yes");
@@ -83,7 +86,7 @@ public class VMC extends Base
 		}
 
 		@Test(dataProvider = "nostaff")
-		public void doNotDisplayVMCStudent(String role) throws InterruptedException
+		public void doNotDisplayVMCStudent(String role) throws InterruptedException, IOException
 		{
 			logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 			assertEquals(generic.isElementDisplayed(driver, leaMod.vmcImg), false);			

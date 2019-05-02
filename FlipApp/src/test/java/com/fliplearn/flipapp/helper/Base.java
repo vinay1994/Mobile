@@ -1,5 +1,6 @@
 package com.fliplearn.flipapp.helper;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -11,14 +12,12 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.IInvokedMethod;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -26,7 +25,6 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
-import org.testng.internal.IResultListener;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -38,18 +36,13 @@ import com.fliplearn.flipapp.util.ExcelUtil;
 import com.fliplearn.flipapp.util.Screenshots;
 import com.fliplearn.flipapp.util.SendReportUtil;
 
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.android.Activity;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
-import io.appium.java_client.android.StartsActivity;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 
-
 public class Base implements ITestListener
 {
-	   
 	public static Properties aConfig = null;
 	public static Properties eConfig = null;
 	public static Properties vConfig = null;
@@ -88,11 +81,27 @@ public class Base implements ITestListener
 
 	public static String reportPath()
 	{
-		if(System.getProperty("os.name").equals("Linux") || System.getProperty("os.name").equals("Mac") )
+		File file;
+		
+		if(System.getProperty("os.name").contains("Linux") || System.getProperty("os.name").contains("Mac") )
+		{	
+				file = new File(System.getProperty("user.dir") + "/reports/");
+				
+				if(!file.exists())
+		            file.mkdir();
+
 				return System.getProperty("user.dir") + "/reports/";
+		}
 		else
+		{		file = new File("C:\\tomcat\\webapps\\fliplearn\\latestreport\\");
+				
+				if(!file.exists())
+					file.mkdir();
+		
 				return "C:\\tomcat\\webapps\\fliplearn\\latestreport\\";
+		}		
 	}
+	
 	/**
 	 * This will set Driver based on capabilities and configuration
 	 * @author Tarun Goswami
@@ -134,11 +143,13 @@ public class Base implements ITestListener
 		{
 			
 			System.out.println("testing*********************");
+			System.getProperty("user.dir");
 			DesiredCapabilities cap = new DesiredCapabilities();
 //			cap.setCapability("platformVersion", "10.3");
 
-		    cap.setCapability("deviceName", "Fliplearn Iphone (12.1)");
+		    cap.setCapability("deviceName", "Fliplearn Iphone (12.2)");
 		    cap.setCapability("platformName", "iOS");
+		    cap.setCapability("platformVersion", "12.2");
 		    cap.setCapability("udid", "af9f8cec090145c64e092f3339fe2f59d832c722");
 		    cap.setCapability("bundleId", "com.educomp.smartclassonline");
 		   // cap.setCapability(MobileCapabilityType.APP, "/Users/tarungoswami/Downloads/testapp/Fliplearn.app");
@@ -162,7 +173,7 @@ public class Base implements ITestListener
 			
             System.setProperty("webdriver.chrome.driver", Constants.WINDOWS_CHROME_EXE);
             driver = new ChromeDriver();
-        
+           
             driver.get(url);
             
             driver.manage().window().maximize();
@@ -203,6 +214,8 @@ public class Base implements ITestListener
 			
 					System.setProperty("webdriver.chrome.driver", Constants.MAC_CHROME_EXE);
 					driver = new ChromeDriver();
+					 System.out.println("testing*********************");
+						System.out.println(System.getProperty("user.dir"));
 				}
 				else if(browser.equals("Firefox")) 
 				{

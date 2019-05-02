@@ -1,5 +1,7 @@
 package com.fliplearn.flipapp.testcases;
 
+import java.io.IOException;
+
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -91,10 +93,11 @@ public class Event extends Base
 	 * @author vinay kumar 
 	 * @since 2018-09-30
 	 * @version 1.2
+	 * @throws IOException 
 	 * @throws Throwable 
 	 */
 	@Test(dataProvider = "nostaff")
-	public void canNotCreateAnnouncement(String role) throws InterruptedException
+	public void canNotCreateAnnouncement(String role) throws InterruptedException, IOException
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		if(role.equals("Parent"))
@@ -107,10 +110,11 @@ public class Event extends Base
 	 * @author vinay kumar 
 	 * @since 2018-09-30
 	 * @version 1.2
+	 * @throws IOException 
 	 * @throws Throwable 
 	 */
 	@Test(dataProvider = "nostaff")
-	public void canNotCreateAlbum(String role) throws InterruptedException
+	public void canNotCreateAlbum(String role) throws InterruptedException, IOException
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		if(role.equals("Parent"))
@@ -123,10 +127,11 @@ public class Event extends Base
 	 * @author vinay kumar 
 	 * @since 2018-09-30
 	 * @version 1.2
+	 * @throws IOException 
 	 * @throws Throwable 
 	 */
 	@Test(dataProvider = "nostaff")
-	public void canNotCreateHomework(String role) throws InterruptedException
+	public void canNotCreateHomework(String role) throws InterruptedException, IOException
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		if(role.equals("Parent"))

@@ -1,8 +1,11 @@
 package com.fliplearn.flipapp.testcases;
 
+import java.io.IOException;
+
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
 import com.fliplearn.flipapp.helper.Base;
 import com.fliplearn.flipapp.helper.GenericFunctions;
 import com.fliplearn.flipapp.pagemodules.BookstoreCartModule;
@@ -52,9 +55,10 @@ public class Bookstore extends Base
 	 * @since 2019-04-11
 	 * @version 1.2
 	 * @throws InterruptedException 
+	 * @throws IOException 
 	 */
 	@Test(dataProvider = "allusers")
-	public void verifyBookstore(String role) throws InterruptedException
+	public void verifyBookstore(String role) throws InterruptedException, IOException
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		heaMod.buyBooksLnk.click();
@@ -82,9 +86,10 @@ public class Bookstore extends Base
 	 * @since 2019-04-11
 	 * @version 1.2
 	 * @throws InterruptedException 
+	 * @throws IOException 
 	 */
 	@Test(dataProvider = "allusers")
-	public void verifySchoolSelection(String role) throws InterruptedException
+	public void verifySchoolSelection(String role) throws InterruptedException, IOException
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		Thread.sleep(5000);
@@ -116,9 +121,10 @@ public class Bookstore extends Base
 	 * @since 2019-04-11
 	 * @version 1.2
 	 * @throws InterruptedException 
+	 * @throws IOException 
 	 */
 	@Test(dataProvider = "allusers")
-	public void addRemoveCartItem(String role) throws InterruptedException
+	public void addRemoveCartItem(String role) throws InterruptedException, IOException
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		heaMod.buyBooksLnk.click();
@@ -169,9 +175,10 @@ public class Bookstore extends Base
 	 * @since 2019-04-11
 	 * @version 1.2
 	 * @throws InterruptedException 
+	 * @throws IOException 
 	 */
 	@Test(dataProvider = "allusers")
-	public void verifyCartItemAndMessage(String role) throws InterruptedException
+	public void verifyCartItemAndMessage(String role) throws InterruptedException, IOException
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		
@@ -247,9 +254,10 @@ public class Bookstore extends Base
 	 * @since 2019-04-11
 	 * @version 1.2
 	 * @throws InterruptedException 
+	 * @throws IOException 
 	 */
 	@Test(dataProvider = "allusers")
-	public void clearShoppingCart(String role) throws InterruptedException
+	public void clearShoppingCart(String role) throws InterruptedException, IOException
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		heaMod.buyBooksLnk.click();
@@ -299,9 +307,10 @@ public class Bookstore extends Base
 	 * @since 2019-04-11
 	 * @version 1.2
 	 * @throws InterruptedException 
+	 * @throws IOException 
 	 */
 	@Test(dataProvider = "allusers")
-	public void continueShoppingClearCart(String role) throws InterruptedException
+	public void continueShoppingClearCart(String role) throws InterruptedException, IOException
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		heaMod.buyBooksLnk.click();
@@ -359,9 +368,10 @@ public class Bookstore extends Base
 	 * @since 2019-04-11
 	 * @version 1.2
 	 * @throws InterruptedException 
+	 * @throws IOException 
 	 */
 	@Test(dataProvider = "allusers")
-	public void filterForClassItem(String role) throws InterruptedException
+	public void filterForClassItem(String role) throws InterruptedException, IOException
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		heaMod.buyBooksLnk.click();

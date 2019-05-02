@@ -7,7 +7,7 @@
 	<listener class-name="com.fliplearn.flipapp.helper.Base"/>
 </listeners>
  
-<test name="Onboarding" enabled="true">
+ <test name="Onboarding" enabled="true">
   		<classes>
     		<class name="com.fliplearn.flipapp.testcases.Login">
     		<methods>
