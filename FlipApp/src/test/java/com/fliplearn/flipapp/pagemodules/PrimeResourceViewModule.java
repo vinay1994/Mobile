@@ -151,7 +151,7 @@ public class PrimeResourceViewModule  extends Base
     
     public void clickOnVideoContent(WebDriver driver, String videoContentName) throws InterruptedException
     {
-    	Thread.sleep(2000);
+    	Thread.sleep(4000);
     	if(platform.equals("Web"))
     	{	
     		generic.waitForElementVisibility(driver, firstAnimatedVideo);

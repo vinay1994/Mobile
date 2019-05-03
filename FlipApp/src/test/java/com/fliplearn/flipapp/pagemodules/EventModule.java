@@ -1,18 +1,16 @@
 package com.fliplearn.flipapp.pagemodules;
 
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 
+import java.util.Calendar;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import com.aventstack.extentreports.Status;
 import com.fliplearn.flipapp.helper.Base;
 import com.fliplearn.flipapp.helper.GenericFunctions;
-
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSFindBy;
@@ -24,69 +22,108 @@ public class EventModule extends Base
 	String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
 
 	@FindBy(xpath="//button[@class='btn btn-primary dropdown-toggle']")
-	@AndroidFindBy(id="com.elss.educomp:id/post_layout") 
+	@AndroidFindBy(xpath="//*[@text='POST']") 
 	public  RemoteWebElement postBtn;
 	
 	@FindBy(xpath="(//li[@class='ng-scope']/a[text()='Noticeboard '])[2]")
+	@AndroidFindBy(xpath="//*[@text='Noticeboard']") 
 	public RemoteWebElement noticeboardTab;
 
 	@FindBy(xpath="(//button[@id='announcement'])[2]")
+	@AndroidFindBy(xpath="//*[@text='Announcement']") 
 	public RemoteWebElement annBtn;
 	
 	@FindBy(xpath="(//button[@id='homework'])[2]")
+	@AndroidFindBy(xpath="//*[@text='Homework']")
 	public RemoteWebElement homeWorkBtn;
 	
 	@FindBy(xpath="(//button[@id='album'])[2]")
+ 	@AndroidFindBy(xpath="//*[@text='Album']") 
 	public RemoteWebElement albBtn;
 
 	@FindBy(xpath="(//input[@id='title'])[2]")
+	@AndroidFindBy(id="com.elss.educomp:id/title")
 	RemoteWebElement titleTxt;
 
 	@FindBy(xpath="//span[contains(@class,'btn-co')]")
+	@AndroidFindBy(xpath="//*[@text='+Add']")
 	RemoteWebElement shareWithBtn;
 
 	@FindBy(xpath="//label[(text()='No')]")
+	@AndroidFindBy(xpath="//*[@text='No']")
 	RemoteWebElement noRdBtn;
 
 	@FindBy(xpath="(//textarea[@id='textboxIssuereport'])[2]")
+	@AndroidFindBy(id="com.elss.educomp:id/description")
 	RemoteWebElement addDescriptionTxt;
 
-
+	//C:\Users\Batta K\git\flip-app\FlipApp\resources\images\vinay.png
 	@FindBy(xpath="//input[contains(@ng-click,'createFile()')]")
+	@AndroidFindBy(id="com.elss.educomp:id/add_icon")
 	RemoteWebElement uploadImageBtn;
 
 	@FindBy(xpath="//button[(text()='Create')]")
+	@AndroidFindBy(xpath="//*[@text='Create']")
 	RemoteWebElement createBtn;
 
 	@FindBy(xpath="(//label[contains(@ng-class,'checkleft')])[2]")
+	@AndroidFindBy(xpath="(//*[@resource-id='com.elss.educomp:id/expandable_group_list_checkbox_view'])[2]")
 	RemoteWebElement select_class;   
-
 
 	@FindBy(xpath="//button[contains(@id,'close')]")
 	RemoteWebElement save;
-
+	
+	@AndroidFindBy(xpath="//*[@text='Done']")
+	RemoteWebElement done;
+	
 	@FindBy(xpath="//h4[@class='m-t-20 margin-bottom-0 ng-binding']")
+	@AndroidFindBy(xpath="(//*[@resource-id='com.elss.educomp:id/title'])[1]")
 	RemoteWebElement getTitle;
 	
 	@FindBy(xpath="(//div[@class='Exm_1text ng-scope']/p)[1]")
 	RemoteWebElement getRecentTitle;
 
-
 	@FindBy(xpath="//img[contains(@class,'profilePic ng-scope')]")
 	RemoteWebElement profile;
-
 
 	@FindBy(xpath="//a[contains(@ng-click,'logout()')]")
 	RemoteWebElement logout;
 	
 	@FindBy(xpath="//select[@name='subject']")
 	RemoteWebElement selectsubj;
-
+	
+	@AndroidFindBy(id="com.elss.educomp:id/subject_spinner")
+	RemoteWebElement selectsub;
+	
+	@AndroidFindBy(xpath="//*[@text='Art']")
+	RemoteWebElement subj;
+	
+	@AndroidFindBy(xpath="//*[@text='Date']")
+	RemoteWebElement submissionDate;
+	
+	@AndroidFindBy(xpath="//android.view.View[@content-desc=\"30 May 2019\"]")
+	RemoteWebElement date;
+	
+	@AndroidFindBy(xpath="//*[@text='OK']")
+	RemoteWebElement dateOk;
+	
+	@AndroidFindBy(id="com.elss.educomp:id/add_from_gallery")
+	RemoteWebElement gallery;
+	
+	@AndroidFindBy(id="com.android.packageinstaller:id/permission_allow_button")
+	RemoteWebElement allowBtn;
+	
+	@AndroidFindBy(xpath="(//*[@class='android.widget.ImageView'])[1]")
+	RemoteWebElement imageClick;
+	
+	@AndroidFindBy(id="com.elss.educomp:id/btn_done")
+	RemoteWebElement imageDone;
+	
 	public EventModule(WebDriver driver)
 	{
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 	}
-
+	
 	public void mouseOverOnpostBtn(String eventType) throws InterruptedException 
 	{
 		Thread.sleep(2000);
@@ -120,23 +157,107 @@ public class EventModule extends Base
 	
 	public String fillTxt(String eventType) throws Throwable 
 	{
+		
 		noticeboardTab.click();
 		Thread.sleep(3000);
-
+		if(platform.equals("Android"))
+	  	 {	 
+	  		postBtn.click();
+	  		if(eventType.equals("Announcement"))
+	  		{
+	  		annBtn.click();
+	  		Thread.sleep(1000);
+			titleTxt.clear();
+			Thread.sleep(1000);
+			titleTxt.click();
+			Thread.sleep(1000);
+			titleTxt.sendKeys("Testing automation Title_"+timeStamp);
+			Thread.sleep(2000);
+			shareWithBtn.click();
+			Thread.sleep(2000);
+			select_class.click();
+			extentTest.log(Status.PASS, "Select Class");
+			done.click();
+			addDescriptionTxt.sendKeys("Qa add description for testing purpose on this time :\"+timeStamp");
+			save.click();
+			createBtn.click();
+			Thread.sleep(2000);
+	  		}
+	  		else if (eventType.equals("Album"))
+	  		{
+	  			albBtn.click();
+	  			Thread.sleep(1000);
+				titleTxt.clear();
+				Thread.sleep(1000);
+				titleTxt.click();
+				Thread.sleep(1000);
+				titleTxt.sendKeys("Testing automation Title_"+timeStamp);
+				Thread.sleep(2000);
+				shareWithBtn.click();
+				Thread.sleep(2000);
+				select_class.click();
+				extentTest.log(Status.PASS, "Select Class");
+				done.click();
+				addDescriptionTxt.sendKeys("Qa add description for testing purpose on this time :\"+timeStamp");
+				uploadImageBtn.click();
+				gallery.click();
+				allowBtn.click();
+				gallery.click();
+				imageClick.click();
+				imageDone.click();
+				Thread.sleep(2000);
+				generic.scrollBy(driver, 95, 50);
+				//done.click();
+				//save.click();
+				createBtn.click();
+				Thread.sleep(2000);
+	  		}
+	  		else 
+	  		{
+	  			homeWorkBtn.click();
+	  			Thread.sleep(1000);
+				titleTxt.clear();
+				Thread.sleep(1000);
+				titleTxt.click();
+				Thread.sleep(1000);
+				titleTxt.sendKeys("Testing automation Title_"+timeStamp);
+				Thread.sleep(2000);
+				shareWithBtn.click();
+				Thread.sleep(2000);
+				select_class.click();
+				extentTest.log(Status.PASS, "Select Class");
+				done.click();
+				selectsub.click();
+				subj.click();
+				Thread.sleep(1000);
+				submissionDate.click();
+				date.click();
+				dateOk.click();
+				addDescriptionTxt.sendKeys("Qa add description for testing purpose on this time :\"+timeStamp");
+				generic.scrollBy(driver, 95, 50);
+				createBtn.click();
+					  			
+	  		}
+	  		  		
+	  	 }
+		else
+		{
 		mouseOverOnpostBtn(eventType);
 		Thread.sleep(2000);
-
 		driver.switchTo().activeElement();
 		Thread.sleep(1000);
 		titleTxt.clear();
+		Thread.sleep(1000);
 		titleTxt.click();
+		Thread.sleep(1000);
 		titleTxt.sendKeys("Testing automation Title_"+timeStamp);
+		Thread.sleep(1000);
 		shareWithBtn.click();
 		Thread.sleep(2000);
 		select_class.click();
 		extentTest.log(Status.PASS, "Select Class");
 		save.click();
-		
+		}
 		if(eventType.equals("Homework"))
 		{	
 			
@@ -157,12 +278,10 @@ public class EventModule extends Base
 		jse.executeScript("arguments[0].click();", createBtn);
 		Thread.sleep(2000);
 		noticeboardTab.click();
-
-		
+	
 		isTitleDisplayed("Testing automation Title_"+timeStamp);
 		return "Testing automation Title_"+timeStamp;
 	}
-
 
 	public boolean isTitleDisplayed(String Title) throws InterruptedException
 	{
@@ -205,6 +324,4 @@ public class EventModule extends Base
 	{
 		return generic.isElementDisplayed(driver, postBtn);
 	}
-
-
 }

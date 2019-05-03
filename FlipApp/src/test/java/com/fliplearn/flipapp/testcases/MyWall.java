@@ -1,5 +1,7 @@
 package com.fliplearn.flipapp.testcases;
 
+import java.io.IOException;
+
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
@@ -44,10 +46,11 @@ public class MyWall extends Base
 	 * @since 2018-10-20
 	 * @version 1.2
 	 * @throws InterruptedException 
+	 * @throws IOException 
 	 * @modifiedBy Tarun Goswami on 13 April 2019
 	 */
 	@Test//(dataProvider = "group0")
-	public void verifyMywall() throws InterruptedException
+	public void verifyMywall() throws InterruptedException, IOException
 	{
 		String role = "Admin";
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");

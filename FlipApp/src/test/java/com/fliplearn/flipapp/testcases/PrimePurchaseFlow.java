@@ -3,6 +3,7 @@ package com.fliplearn.flipapp.testcases;
 import static org.testng.Assert.assertEquals;
 
 import org.openqa.selenium.By;
+import java.io.IOException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
@@ -32,13 +33,12 @@ public class PrimePurchaseFlow extends Base{
 	PrimePurchaseFlowModule priPurFloMod;
 	GenericFunctions generic;
 	PrimeChapterTopicModule priChaTopMod;
-	 OnboardingModule onbMod;
+	OnboardingModule onbMod;
 	
 	
 	@BeforeMethod
-	public void preVerifyPrimePurchaseFlow() {
-		
-		
+	public void preVerifyPrimePurchaseFlow() 
+	{	
 		logMod = new LoginModule(driver);
 		mobNumMod = new MobileNumberModule(driver);
 		menMod = new MenuModule(driver);
@@ -47,19 +47,23 @@ public class PrimePurchaseFlow extends Base{
 		priSubMod = new PrimeSubjectModule(driver); 
 		priPurFloMod= new PrimePurchaseFlowModule(driver);
 		 generic=new GenericFunctions();
-		 onbMod = new OnboardingModule(driver);;
-		 
+		 onbMod = new OnboardingModule(driver);;	 
 	}
+	
 	@Test (dataProvider="allusers_old")
-	public void verifyPrimePurchaseFlowWithoutCoupon(String role) throws InterruptedException {
-		logMod.Login(role, "CBSE", "12", "Single", "None", "Yes");
-//		if(role.equals("Admin")||role.equals("Teacher")||role.equals("Principal")) {
-//			
-//		onbMod.skipScreen();
-//	
-//		}
+	public void verifyPrimePurchaseFlowWithoutCoupon(String role) throws InterruptedException, IOException 
+	{
+		logMod.Login(role, "CBSE", "6", "Single", "None", "Yes");
+		if(role.equals("Admin")||role.equals("Teacher")||role.equals("Principal")||role.equals("Guest")) 
+		{
+			
+		onbMod.skipScreen();
+	
+		}
+		 Thread.sleep(2000);
+		 if(!(role.equals("Guest"))) {
+		leaMod.clickOnLearnImage();}
 		
-
 		 Thread.sleep(2000);
 		leaMod.clickOnPrimeImage();
 		
@@ -119,12 +123,14 @@ public class PrimePurchaseFlow extends Base{
 	* @since 2019-01-18
 	* @throws InterruptedException 
 	* @version 1.0
+	 * @throws IOException 
 	
 	*/
 	
 	@Test (dataProvider="allusers_old")
-	public void verifyPrimePurchaseFlowWithCoupon(String role) throws InterruptedException{
+	public void verifyPrimePurchaseFlowWithCoupon(String role) throws InterruptedException, IOException{
 		logMod.Login(role, "CBSE", "12", "Single", "None", "Yes");
+
 		if(role.equals("Admin")||role.equals("Teacher")||role.equals("Principal")||role.equals("Guest")) {
 			
 		//onbMod.skipScreen();
@@ -184,15 +190,16 @@ public class PrimePurchaseFlow extends Base{
 	* @since 2019-02-19
 	* @throws InterruptedException 
 	* @version 1.0
+	 * @throws IOException 
 
 	*/
 
-       @Test (dataProvider="allusers_old")
-public void verifyPrimePurchaseFlowWithDiscountCoupon(String role) throws InterruptedException{
-    	   logMod.Login(role, "CBSE", "12", "Single", "None", "Yes");
-//   		if(role.equals("Admin")||role.equals("Teacher")||role.equals("Principal")||role.equals("Guest")) {
-//   			
-//   		onbMod.skipScreen();}
+       @Test (dataProvider="allusers")
+public void verifyPrimePurchaseFlowWithDiscountCoupon(String role) throws InterruptedException, IOException{
+    	   logMod.Login(role, "CBSE", "6", "Single", "None", "Yes");
+   		if(role.equals("Admin")||role.equals("Teacher")||role.equals("Principal")||role.equals("Guest")) {
+   			
+   		onbMod.skipScreen();}
    		Thread.sleep(2000);
 //		 if(!(role.equals("Guest"))) {
 //		leaMod.clickOnLearnImage();
