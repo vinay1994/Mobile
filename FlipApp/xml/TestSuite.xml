@@ -9,9 +9,9 @@
  
  <test name="Onboarding" enabled="true">
   		<classes>
-    		<class name="com.fliplearn.flipapp.testcases.Home">
+    		<class name="com.fliplearn.flipapp.testcases.PrimePurchaseFlow">
     		<methods>
-        			<include name="verifyGlobalModeSelection"/>
+        			<include name="verifyPrimePurchaseFlowWithDiscountCoupon"/>
         	</methods>		
         	</class>
 </classes>
