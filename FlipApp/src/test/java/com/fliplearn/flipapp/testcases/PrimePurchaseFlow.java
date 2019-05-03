@@ -2,12 +2,8 @@
 package com.fliplearn.flipapp.testcases;
 import static org.testng.Assert.assertEquals;
 
-<<<<<<< HEAD
 import java.io.IOException;
-
-=======
 import org.openqa.selenium.By;
->>>>>>> a2b215247c6d5cf2917218e12910d77c9eb842d4
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
@@ -53,31 +49,15 @@ public class PrimePurchaseFlow extends Base{
 		 generic=new GenericFunctions();
 		 onbMod = new OnboardingModule(driver);;	 
 	}
-<<<<<<< HEAD
-	
-	@Test (dataProvider="allusers")
-	public void verifyPrimePurchaseFlowWithoutCoupon(String role) throws InterruptedException, IOException 
-	{
-		logMod.Login(role, "CBSE", "6", "Single", "None", "Yes");
-		if(role.equals("Admin")||role.equals("Teacher")||role.equals("Principal")||role.equals("Guest")) 
-		{
-			
-		onbMod.skipScreen();
-	
-		}
-		 Thread.sleep(2000);
-		 if(!(role.equals("Guest"))) {
-		leaMod.clickOnLearnImage();}
-=======
+
 	@Test (dataProvider="allusers_old")
-	public void verifyPrimePurchaseFlowWithoutCoupon(String role) throws InterruptedException {
+	public void verifyPrimePurchaseFlowWithoutCoupon(String role) throws InterruptedException, IOException {
 		logMod.Login(role, "CBSE", "12", "Single", "None", "Yes");
 //		if(role.equals("Admin")||role.equals("Teacher")||role.equals("Principal")) {
 //			
 //		onbMod.skipScreen();
 //	
 //		}
->>>>>>> a2b215247c6d5cf2917218e12910d77c9eb842d4
 		
 
 		 Thread.sleep(2000);
@@ -143,15 +123,9 @@ public class PrimePurchaseFlow extends Base{
 	
 	*/
 	
-<<<<<<< HEAD
-	@Test (dataProvider="allusers")
-	public void verifyPrimePurchaseFlowWithCoupon(String role) throws InterruptedException, IOException{
-		logMod.Login(role, "CBSE", "6", "Single", "None", "Yes");
-=======
 	@Test (dataProvider="allusers_old")
-	public void verifyPrimePurchaseFlowWithCoupon(String role) throws InterruptedException{
+	public void verifyPrimePurchaseFlowWithCoupon(String role) throws InterruptedException, IOException{
 		logMod.Login(role, "CBSE", "12", "Single", "None", "Yes");
->>>>>>> a2b215247c6d5cf2917218e12910d77c9eb842d4
 		if(role.equals("Admin")||role.equals("Teacher")||role.equals("Principal")||role.equals("Guest")) {
 			
 		//onbMod.skipScreen();
@@ -215,21 +189,13 @@ public class PrimePurchaseFlow extends Base{
 
 	*/
 
-<<<<<<< HEAD
        @Test (dataProvider="allusers")
 public void verifyPrimePurchaseFlowWithDiscountCoupon(String role) throws InterruptedException, IOException{
     	   logMod.Login(role, "CBSE", "6", "Single", "None", "Yes");
    		if(role.equals("Admin")||role.equals("Teacher")||role.equals("Principal")||role.equals("Guest")) {
    			
    		onbMod.skipScreen();}
-=======
-       @Test (dataProvider="allusers_old")
-public void verifyPrimePurchaseFlowWithDiscountCoupon(String role) throws InterruptedException{
-    	   logMod.Login(role, "CBSE", "12", "Single", "None", "Yes");
-//   		if(role.equals("Admin")||role.equals("Teacher")||role.equals("Principal")||role.equals("Guest")) {
-//   			
-//   		onbMod.skipScreen();}
->>>>>>> a2b215247c6d5cf2917218e12910d77c9eb842d4
+
    		Thread.sleep(2000);
 //		 if(!(role.equals("Guest"))) {
 //		leaMod.clickOnLearnImage();
