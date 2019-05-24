@@ -11,6 +11,8 @@ import org.openqa.selenium.support.PageFactory;
 import com.aventstack.extentreports.Status;
 import com.fliplearn.flipapp.helper.Base;
 import com.fliplearn.flipapp.helper.GenericFunctions;
+import com.fliplearn.flipapp.util.User;
+import com.fliplearn.flipapp.util.UserDetail;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -56,11 +58,17 @@ public class LoginModule extends Base
 	 * @version 1.5
 	 * @throws IOException 
 	 */
-	public  void Login(String role, String board, String className, String profile, String subscription, String mobile) throws InterruptedException
-	{   System.out.println("Login metthod excuted");
-		String username = aConfig.getProperty(role + "_Username"+"_"+board+"_"+className+"_"+profile+"_"+subscription+"_"+mobile);
-		String password =  aConfig.getProperty(role +"_Password"+"_"+board+"_"+className+"_"+profile+"_"+subscription+"_"+mobile);
+	public  void Login(String role, String board, String className, String profile, String subscription, String mobile) throws InterruptedException, IOException
+	{   
+		UserDetail detail = new UserDetail();
+    	detail.readData();
 
+		User user = detail.matchDetails(role, board, className, profile, subscription, mobile);
+		
+		String username = user.getuserName();
+		String password = user.getPassword();
+		
+	
 		if(eConfig.getProperty("Platform").equals("Web")) 
 		{
 			extentTest.log(Status.PASS, "Click on Skip Button");

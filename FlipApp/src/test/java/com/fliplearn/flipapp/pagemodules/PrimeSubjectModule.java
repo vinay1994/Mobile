@@ -26,6 +26,10 @@ public class PrimeSubjectModule extends Base
 	@AndroidFindBy(xpath="//android.widget.LinearLayout[1]/android.widget.RelativeLayout/android.widget.TextView")
 	@iOSXCUITFindBy(xpath="//XCUIElementTypeCell//XCUIElementTypeStaticText")
 	public List<RemoteWebElement> studentSubjectList;
+
+	@FindBy(xpath="//select[@id='selectTerm2']/option")
+	public List<RemoteWebElement> classList;
+	
 	public PrimeSubjectModule(WebDriver driver)
 	{
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);

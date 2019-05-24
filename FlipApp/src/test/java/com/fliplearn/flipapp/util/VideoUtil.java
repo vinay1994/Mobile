@@ -1,5 +1,6 @@
 package com.fliplearn.flipapp.util;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -28,7 +29,7 @@ public class VideoUtil extends Base
 	}
 	
 	@Test
-	public void playVideo() throws InterruptedException
+	public void playVideo() throws InterruptedException, IOException
 	{
 				
 		int maxCount = Integer.parseInt(vConfig.getProperty("Count")); 

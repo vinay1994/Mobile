@@ -45,7 +45,6 @@ public class LearnModule extends Base
 	@iOSFindBy(id="(//XCUIElementTypeButton[@name='Learn >'])[1]")
 	public List<RemoteWebElement> selectSubjectLnk;
 
-
 	@FindBy(xpath="//a[@id='learn-icon']")
 	@AndroidFindBy(id="com.elss.educomp:id/ll_mm") 
 	public List<RemoteWebElement> selectTopic;
@@ -97,7 +96,4 @@ public class LearnModule extends Base
 	{
 		noticeBoard.click();
 	}
-	
-	
-
 }

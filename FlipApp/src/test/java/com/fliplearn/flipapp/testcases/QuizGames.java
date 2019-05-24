@@ -1,5 +1,7 @@
 package com.fliplearn.flipapp.testcases;
 
+import java.io.IOException;
+
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -14,7 +16,6 @@ import com.fliplearn.flipapp.pagemodules.QuizModule;
 import com.fliplearn.flipapp.pagemodules.PrimeClassModule;
 import com.fliplearn.flipapp.pagemodules.QuizDashBoardModule;
 import com.fliplearn.flipapp.pagemodules.SignInAsModule;
-
 
 public class QuizGames extends Base 
 {
@@ -49,9 +50,10 @@ public class QuizGames extends Base
 	 * @since 2018-09-24
 	 * @version 1.0
 	 * @throws InterruptedException 
+	 * @throws IOException 
 	 */
 	@Test(dataProvider = "allusers")
-	public void verifyQuizGamesMenu(String role) throws InterruptedException
+	public void verifyQuizGamesMenu(String role) throws InterruptedException, IOException
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		

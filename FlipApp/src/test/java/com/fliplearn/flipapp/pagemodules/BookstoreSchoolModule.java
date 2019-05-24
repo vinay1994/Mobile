@@ -17,8 +17,7 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 public class BookstoreSchoolModule extends Base
-{
-	
+{	
 GenericFunctions generic=new GenericFunctions();
 	
 	public  BookstoreSchoolModule(WebDriver driver)

@@ -89,6 +89,23 @@ public class PrimeContent extends Base
     	 Assert.assertEquals(generic.compareList(priClaMod.classLst, expectedList), true);
      }
     
+     @Test
+     public void verifyPrimeClasses_Parent() throws IOException, InterruptedException 
+     {
+ 
+		 logMod.Login("Parent", "CBSE", "6", "Single", "Prime", "Yes");
+		 
+		 if(platform.equals("Web"))
+    		 leaMod.clickOnLearnImage();
+    	 
+    	 leaMod.clickOnPrimeImage();
+    	 
+    	 String expectedList = readData(platform, "Parent", "Prime Classes");
+    	 System.out.println("Expected List:"+expectedList);
+    	 
+    	 Assert.assertEquals(generic.compareList(priSubMod.classList, expectedList), true);
+		 
+     }	 
      
      /**
  	 * verify Prime classes on Web, Android, iOS when User click on fliplearn prime tile on learn page

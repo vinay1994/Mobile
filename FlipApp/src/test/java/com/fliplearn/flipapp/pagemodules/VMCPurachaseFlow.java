@@ -9,7 +9,7 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 public class VMCPurachaseFlow 
 {	
-	@FindBy(xpath="//h2[text()='Vidyamandir classes online classroom program']")
+	@FindBy(xpath="//h2[text()='Fliplearn Guru- Powered By Vidyamandir Classes']")
 	public RemoteWebElement vmcHeadline;
 	
 	public VMCPurachaseFlow(WebDriver driver)

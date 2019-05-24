@@ -12,6 +12,7 @@
     		<class name="com.fliplearn.flipapp.testcases.PrimeResources">
     		<methods>
         			<include name="playPrimeVideo_Old"/>
+
         	</methods>		
         	</class>
 </classes>

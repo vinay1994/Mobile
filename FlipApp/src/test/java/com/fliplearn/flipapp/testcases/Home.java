@@ -1,5 +1,7 @@
 package com.fliplearn.flipapp.testcases;
 
+import java.io.IOException;
+
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -66,9 +68,10 @@ public class Home extends Base
 	 * @since 2019-04-11
 	 * @version 1.2
 	 * @throws InterruptedException 
+	 * @throws IOException 
 	 */
 	@Test(dataProvider = "nostaff_new")
-	public void verifyDefaultMode(String role) throws InterruptedException
+	public void verifyDefaultMode(String role) throws InterruptedException, IOException
 	{
 		logMod.Login(role, "CBSE", "10", "Single", "Prime", "Yes");
 		
@@ -83,9 +86,10 @@ public class Home extends Base
 	 * @since 2019-04-11
 	 * @version 1.1
 	 * @throws InterruptedException 
+	 * @throws IOException 
 	 */
 	@Test(dataProvider = "nostaff_new")
-	public void verifyLearnPracticeMode(String role) throws InterruptedException
+	public void verifyLearnPracticeMode(String role) throws InterruptedException, IOException
 	{
 		logMod.Login(role, "CBSE", "10", "Single", "Prime", "Yes");
 		
@@ -108,9 +112,10 @@ public class Home extends Base
 	 * @since 2019-04-11
 	 * @version 1.1
 	 * @throws InterruptedException 
+	 * @throws IOException 
 	 */
 	@Test(dataProvider = "nostaff_new")
-	public void verifyGlobalModeSelection(String role) throws InterruptedException
+	public void verifyGlobalModeSelection(String role) throws InterruptedException, IOException
 	{
 		logMod.Login(role, "CBSE", "10", "Single", "Prime", "Yes");
 		
@@ -149,9 +154,10 @@ public class Home extends Base
 	 * @since 2019-04-11
 	 * @version 1.1
 	 * @throws InterruptedException 
+	 * @throws IOException 
 	 */
 	@Test(dataProvider = "nostaff_new")
-	public void verifySwitchClass(String role) throws InterruptedException
+	public void verifySwitchClass(String role) throws InterruptedException, IOException
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		
@@ -168,9 +174,10 @@ public class Home extends Base
 	 * @since 2019-04-11
 	 * @version 1.1
 	 * @throws InterruptedException 
+	 * @throws IOException 
 	 */
 	@Test(dataProvider = "nostaff_new")
-	public void popularVideoContent(String role) throws InterruptedException
+	public void popularVideoContent(String role) throws InterruptedException, IOException
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		
@@ -187,9 +194,10 @@ public class Home extends Base
 	 * @since 2019-04-11
 	 * @version 1.1
 	 * @throws InterruptedException 
+	 * @throws IOException 
 	 */
 	@Test(dataProvider = "nostaff_new")
-	public void playPopularVideos(String role) throws InterruptedException
+	public void playPopularVideos(String role) throws InterruptedException, IOException
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		
@@ -209,9 +217,10 @@ public class Home extends Base
 	 * @since 2019-04-11
 	 * @version 1.1
 	 * @throws InterruptedException 
+	 * @throws IOException 
 	 */
 	@Test(dataProvider = "nostaff_new")
-	public void fliplearnWallContent(String role) throws InterruptedException
+	public void fliplearnWallContent(String role) throws InterruptedException, IOException
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		
@@ -227,9 +236,10 @@ public class Home extends Base
 	 * @since 2019-04-11
 	 * @version 1.1
 	 * @throws InterruptedException 
+	 * @throws IOException 
 	 */
 	@Test(dataProvider = "nostaff_new")
-	public void fliplearnWallThumbnail(String role) throws InterruptedException
+	public void fliplearnWallThumbnail(String role) throws InterruptedException, IOException
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		
@@ -250,9 +260,10 @@ public class Home extends Base
 	 * @since 2019-04-11
 	 * @version 1.1
 	 * @throws InterruptedException 
+	 * @throws IOException 
 	 */
 	@Test(dataProvider = "nostaff_new")
-	public void fliplearnWallMore(String role) throws InterruptedException
+	public void fliplearnWallMore(String role) throws InterruptedException, IOException
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		
@@ -269,9 +280,10 @@ public class Home extends Base
 	 * @since 2019-04-11
 	 * @version 1.1
 	 * @throws InterruptedException 
+	 * @throws IOException 
 	 */
 	@Test
-	public void noticeboardContent() throws InterruptedException
+	public void noticeboardContent() throws InterruptedException, IOException
 	{
 		String role= "Student";
 		
@@ -291,9 +303,10 @@ public class Home extends Base
 	 * @since 2019-04-12
 	 * @version 1.1
 	 * @throws InterruptedException 
+	 * @throws IOException 
 	 */
 	@Test
-	public void noticeboardThumbnail() throws InterruptedException
+	public void noticeboardThumbnail() throws InterruptedException, IOException
 	{
 		String role = "Student";
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
@@ -316,9 +329,10 @@ public class Home extends Base
 	 * @since 2019-04-11
 	 * @version 1.1
 	 * @throws InterruptedException 
+	 * @throws IOException 
 	 */
 	@Test
-	public void noticeboardMore() throws InterruptedException
+	public void noticeboardMore() throws InterruptedException, IOException
 	{
 		String role = "Student";
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
