@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Fliplearn Automation Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="com.fliplearn.flipapp.helper.Base"/>
+  </listeners>
+  <test thread-count="5" name="Onboarding(failed)">
+    <classes>
+      <class name="com.fliplearn.flipapp.testcases.PrimeResources">
+        <methods>
+          <include name="playPrimeVideo_Old" invocation-numbers="0 1 2"/>
+          <include name="befo"/>
+          <include name="aftSuite"/>
+          <include name="getResult"/>
+          <include name="preVerifySynopsis"/>
+        </methods>
+      </class> <!-- com.fliplearn.flipapp.testcases.PrimeResources -->
+    </classes>
+  </test> <!-- Onboarding(failed) -->
+</suite> <!-- Failed suite [Fliplearn Automation Suite] -->

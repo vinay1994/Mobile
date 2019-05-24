@@ -16,6 +16,7 @@ import com.fliplearn.flipapp.helper.GenericFunctions;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSFindBy;
+import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 
 public class PrimeResourceViewModule  extends Base
 {
@@ -76,6 +77,10 @@ public class PrimeResourceViewModule  extends Base
 	public RemoteWebElement closeWebLink;
 	
 	@FindBy(xpath="//h6[@class='ng-binding' and text()='Animation']")
+	
+//	@iOSXCUITFindBy(xpath="//XCUIElementTypeOther[@name='"+videoTitle+"']")
+//	public RemoteWebElement title;
+	
 	public RemoteWebElement firstAnimatedVideo;
 	
 	
@@ -144,6 +149,8 @@ public class PrimeResourceViewModule  extends Base
 
 	public RemoteWebElement studentVideoContent;
 	
+	
+	
 	public PrimeResourceViewModule(WebDriver driver)
 	{
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
@@ -157,6 +164,10 @@ public class PrimeResourceViewModule  extends Base
     		generic.waitForElementVisibility(driver, firstAnimatedVideo);
     		firstAnimatedVideo.click();
     	}	
+    	else if(platform.equals("iOS")) {
+    		driver.findElement(By.xpath("(//XCUIElementTypeStaticText[@name='Animation'])[1]")).click();
+    		
+    	}
     	else
     		driver.findElement(By.xpath("//*[@text='Animation']")).click();
     }
@@ -193,10 +204,17 @@ public class PrimeResourceViewModule  extends Base
     		jse.executeScript("jwplayer().stop()");
     		Thread.sleep(2000);
     	}
+    	
+    	else if(platform.equals("iOS")) {
+    		
+    	//	generic.waitForElementVisibility(driver, By.xpath("//XCUIElementTypeOther[@name='"+videoTitle+"']"));
+    		Assert.assertTrue(driver.findElement(By.xpath("//XCUIElementTypeOther[@name='"+videoTitle+"']")).isDisplayed());
+    	}
     	else
     	{
     		Thread.sleep(6000);
     		Assert.assertTrue(driver.findElement(By.xpath("//*[@text='"+videoTitle+"']")).isDisplayed());
-    	}	
+    	}
+    	
     }
 }

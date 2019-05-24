@@ -164,7 +164,7 @@ public class EventModule extends Base
 	}
 
 
-	public boolean isTitleDisplayed(String Title) throws InterruptedException
+	public Boolean isTitleDisplayed(String Title) throws InterruptedException
 	{
 		int i=0;
 		String ActualTitle=getTitle();
@@ -175,7 +175,7 @@ public class EventModule extends Base
 			i++;
 		}
 
-		if(!(ActualTitle.equalsIgnoreCase(Title)))
+	if(!(ActualTitle.equalsIgnoreCase(Title)))
 		{
 			return false;
 		}

@@ -13,12 +13,14 @@ import com.fliplearn.flipapp.helper.Base;
 
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 
 public class PrimeClassModule extends Base
 {
     //Class List
 	@FindBy(xpath="//div[@class='panel-heading']/h4/a")
 	@AndroidFindBy(id="com.elss.educomp:id/tv_content_class_model")
+	@iOSXCUITFindBy(xpath="//XCUIElementTypeStaticText")
 	public List<RemoteWebElement> classLst;
 	
 	public PrimeClassModule(WebDriver driver)
@@ -33,7 +35,8 @@ public class PrimeClassModule extends Base
 		else if(platform.equals("Android"))
 			driver.findElement(By.xpath("//*[@text='"+className+"']")).click();
 		else if(platform.equals("iOS"))
-			driver.findElement(By.xpath("//*[@text='"+className+"']")).click();		
+			driver.findElement(By.xpath("//XCUIElementTypeStaticText[@name='"+className+"']")).click();	
+			
 	}
 	
 }

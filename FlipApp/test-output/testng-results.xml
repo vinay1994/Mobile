@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="5" total="9" passed="1" failed="3" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2019-05-13T08:54:16Z" name="Fliplearn Automation Suite" finished-at="2019-05-13T09:04:21Z" duration-ms="605118">
+    <groups>
+    </groups>
+    <test started-at="2019-05-13T08:54:16Z" name="Onboarding" finished-at="2019-05-13T09:04:21Z" duration-ms="605118">
+      <class name="com.fliplearn.flipapp.testcases.PrimeResources">
+        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeResources@1ffaf86]" started-at="2019-05-13T08:54:16Z" name="befo" finished-at="2019-05-13T08:54:27Z" duration-ms="10872" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@ceddaf8]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- befo -->
+        <test-method is-config="true" signature="preVerifySynopsis()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeResources@1ffaf86]" started-at="2019-05-13T08:54:27Z" name="preVerifySynopsis" finished-at="2019-05-13T08:54:28Z" duration-ms="669" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- preVerifySynopsis -->
+        <test-method signature="playPrimeVideo_Old(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeResources@1ffaf86]" started-at="2019-05-13T08:54:28Z" name="playPrimeVideo_Old" data-provider="allusers_old" finished-at="2019-05-13T08:56:29Z" duration-ms="121781" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Admin]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+at com.fliplearn.flipapp.testcases.PrimeResources.playPrimeVideo_Old(PrimeResources.java:118)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- playPrimeVideo_Old -->
+        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeResources@1ffaf86]" started-at="2019-05-13T08:56:30Z" name="getResult" finished-at="2019-05-13T08:56:31Z" duration-ms="1199" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeResources@1ffaf86]" started-at="2019-05-13T08:56:31Z" name="befo" finished-at="2019-05-13T08:56:40Z" duration-ms="9139" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@ceddaf8]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- befo -->
+        <test-method is-config="true" signature="preVerifySynopsis()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeResources@1ffaf86]" started-at="2019-05-13T08:56:40Z" name="preVerifySynopsis" finished-at="2019-05-13T08:56:40Z" duration-ms="328" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- preVerifySynopsis -->
+        <test-method signature="playPrimeVideo_Old(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeResources@1ffaf86]" started-at="2019-05-13T08:56:40Z" name="playPrimeVideo_Old" data-provider="allusers_old" finished-at="2019-05-13T08:58:47Z" duration-ms="126925" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Principal]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+at com.fliplearn.flipapp.testcases.PrimeResources.playPrimeVideo_Old(PrimeResources.java:118)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- playPrimeVideo_Old -->
+        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeResources@1ffaf86]" started-at="2019-05-13T08:58:48Z" name="getResult" finished-at="2019-05-13T08:58:49Z" duration-ms="1207" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeResources@1ffaf86]" started-at="2019-05-13T08:58:49Z" name="befo" finished-at="2019-05-13T08:58:59Z" duration-ms="9917" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@ceddaf8]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- befo -->
+        <test-method is-config="true" signature="preVerifySynopsis()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeResources@1ffaf86]" started-at="2019-05-13T08:58:59Z" name="preVerifySynopsis" finished-at="2019-05-13T08:58:59Z" duration-ms="349" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- preVerifySynopsis -->
+        <test-method signature="playPrimeVideo_Old(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeResources@1ffaf86]" started-at="2019-05-13T08:58:59Z" name="playPrimeVideo_Old" data-provider="allusers_old" finished-at="2019-05-13T09:01:07Z" duration-ms="127948" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Teacher]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+at com.fliplearn.flipapp.testcases.PrimeResources.playPrimeVideo_Old(PrimeResources.java:118)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- playPrimeVideo_Old -->
+        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeResources@1ffaf86]" started-at="2019-05-13T09:01:08Z" name="getResult" finished-at="2019-05-13T09:01:09Z" duration-ms="1171" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeResources@1ffaf86]" started-at="2019-05-13T09:01:09Z" name="befo" finished-at="2019-05-13T09:01:19Z" duration-ms="10059" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@ceddaf8]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- befo -->
+        <test-method is-config="true" signature="preVerifySynopsis()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeResources@1ffaf86]" started-at="2019-05-13T09:01:19Z" name="preVerifySynopsis" finished-at="2019-05-13T09:01:19Z" duration-ms="571" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- preVerifySynopsis -->
+        <test-method signature="playPrimeVideo_Old(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeResources@1ffaf86]" started-at="2019-05-13T09:01:19Z" name="playPrimeVideo_Old" data-provider="allusers_old" finished-at="2019-05-13T09:04:20Z" duration-ms="180366" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Parent]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- playPrimeVideo_Old -->
+        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeResources@1ffaf86]" started-at="2019-05-13T09:04:20Z" name="getResult" finished-at="2019-05-13T09:04:21Z" duration-ms="1077" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method is-config="true" signature="aftSuite()[pri:0, instance:com.fliplearn.flipapp.testcases.PrimeResources@1ffaf86]" started-at="2019-05-13T09:04:22Z" name="aftSuite" finished-at="2019-05-13T09:04:22Z" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- aftSuite -->
+      </class> <!-- com.fliplearn.flipapp.testcases.PrimeResources -->
+    </test> <!-- Onboarding -->
+  </suite> <!-- Fliplearn Automation Suite -->
+</testng-results>

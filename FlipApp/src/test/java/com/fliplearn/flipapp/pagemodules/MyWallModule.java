@@ -8,6 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 
 public class MyWallModule 
 {
@@ -21,6 +22,7 @@ public class MyWallModule
 	public static RemoteWebElement guestWall;
 	
 	@FindBy(xpath="(//*[@class='likeComment ng-binding ng-scope'])[1]")
+	@iOSXCUITFindBy(xpath="//XCUIElementTypeTextField")
 	public static RemoteWebElement likeComment;
 	
 	@FindBy(xpath="(//*[@placeholder='Add a comment...'])[1]")

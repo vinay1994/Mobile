@@ -9,9 +9,9 @@
  
  <test name="Onboarding" enabled="true">
   		<classes>
-    		<class name="com.fliplearn.flipapp.testcases.Login">
+    		<class name="com.fliplearn.flipapp.testcases.PrimeResources">
     		<methods>
-        			<include name="verifyLogout"/>
+        			<include name="playPrimeVideo_Old"/>
         	</methods>		
         	</class>
 </classes>

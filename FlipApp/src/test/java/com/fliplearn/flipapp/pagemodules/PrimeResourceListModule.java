@@ -73,8 +73,12 @@ public class PrimeResourceListModule extends Base
          }
          public void clickOnBookChapter(WebDriver driver, String chapterName) throws InterruptedException 
          {	 
-        	 if(platform.equals("Web"))
+        	 if(platform.equals("Web")) 
         		 driver.findElement(By.partialLinkText(chapterName)).click();  
+        	 
+        	 else if(platform.equals("iOS"))
+        	 driver.findElement(By.xpath("//XCUIElementTypeStaticText[@name='"+chapterName+"']")).click();
+        	
         	 else
         		 driver.findElement(By.xpath("//*[@text='"+chapterName+"']")).click();;
          }
@@ -83,10 +87,21 @@ public class PrimeResourceListModule extends Base
          {
         	 if(platform.equals("Web"))
         		 driver.findElement(By.xpath("//li[text()='"+topicName+"']")).click(); 
+        	 else if(platform.equals("iOS"))
+        		 driver.findElement(By.xpath("//XCUIElementTypeStaticText[@name='"+topicName+"']")).click();
         	 else
         		 driver.findElement(By.xpath("//*[@text='"+topicName+"']")).click();;
-         }
+         }	
 
+         public void clickOnTopicResource(WebDriver driver, String resource) 
+         {
+        	 if(platform.equals("Web"))
+        		 driver.findElement(By.xpath("//li[text()='"+resource+"']")).click(); 
+        	 else if(platform.equals("iOS"))
+        		 driver.findElement(By.xpath("//XCUIElementTypeStaticText[@name='"+resource+"']")).click();
+        	 else
+        		 driver.findElement(By.xpath("//*[@text='"+resource+"']")).click();;
+         }
          public void clickOnVideoContent() throws InterruptedException 
          {
         	 generic.waitForElementVisibility(driver, cliOnVidCon);
