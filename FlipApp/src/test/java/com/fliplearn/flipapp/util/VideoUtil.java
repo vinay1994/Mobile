@@ -107,17 +107,29 @@ public class VideoUtil extends Base
 			    			
 			    		if(videoList.size() > 0)
 			    		{	
-			    			for(int v = 0; v < 1; v++)
+			    			for(int v = 0; v <videoList.size() ; v++)
 			    			{	
 			    				System.out.println("Size of video list:"+videoList.size());
 			    				try {
 			    				videoList.get(v).click();
-				    		
-			    				System.out.println("Waiting for 10 seconds to play video");
+			    				List<WebElement> resources = driver.findElements(By.xpath("//div[@class='row learnResourcesInner']//h4[@class='ng-binding']"));
+			    				System.out.println(resources.size());
+				    		for(int r=0; r<resources.size(); r++) {
+				    			Thread.sleep(30000);
+			    				resources.get(r).click();
+			    				System.out.println("Waiting for 20 seconds to play video");
 			    				Thread.sleep(10000);
-				    		
-			    				driver.findElement(By.xpath("(//div[@class='modal-content']//button[@class='close'])[2]")).click();
-			    				System.out.println("Video Popup closed");	
+			    		try {
+			    			driver.findElement(By.xpath("(//div[@class='modal-content']//button[@class='close'])[2]")).click();
+			    				System.out.println("Video Popup closed");
+			    		}
+			    		catch(Exception e) {
+			    			driver.findElement(By.xpath("(//div[@class='modal-content']//button[@class='close'])[3]")).click();
+		    				System.out.println("Synopsis Popup closed");
+			    		}
+				    		}
+				    		driver.navigate().back();
+				    		driver.navigate().back();
 			    				}
 			    				catch(Exception e) {
 			    					System.out.println("contet is not playing "+videoList.get(v).getText());

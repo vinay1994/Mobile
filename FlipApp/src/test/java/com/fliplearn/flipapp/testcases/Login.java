@@ -71,6 +71,7 @@ public class Login extends Base
 		{
 			heaMod.clickOnLogoutBtn();
 		}
+		Assert.assertTrue(logMod.usernameTxt.isDisplayed());
 	}
 	
 	/**

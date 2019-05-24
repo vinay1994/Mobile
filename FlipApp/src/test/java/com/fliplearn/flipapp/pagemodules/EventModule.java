@@ -271,12 +271,8 @@ public class EventModule extends Base
 
 		Thread.sleep(3000);
 		
-
-
-		
-		System.out.println("title is:"+getTitle());
-		Assert.assertEquals(getTitle(), "Testing automation Title_"+timeStamp);		
 	}
+
 
 	public boolean isTitleDisplayed(String Title) throws InterruptedException
 	{		
@@ -300,7 +296,7 @@ public class EventModule extends Base
 			}
 		}	
 
-		if(!(ActualTitle.equalsIgnoreCase(Title)))
+	if(!(ActualTitle.equalsIgnoreCase(Title)))
 		{
 			return false;
 		}

@@ -17,6 +17,7 @@ import com.fliplearn.flipapp.helper.GenericFunctions;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSFindBy;
+import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 
 public class HomeModule extends Base
 {
@@ -31,8 +32,8 @@ public class HomeModule extends Base
 	
 	@FindBy(xpath="(//*[text()='My Wall '])[2]")
 	@AndroidFindBy(xpath="//*[@text='My Wall']")
+	@iOSXCUITFindBy(xpath="//XCUIElementTypeStaticText[@name='My Wall']")
 	public static RemoteWebElement myWallSection;
-	
 	
 	/********** New UI **********/
 	

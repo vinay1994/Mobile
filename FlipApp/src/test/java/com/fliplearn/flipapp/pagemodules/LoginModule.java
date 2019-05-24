@@ -27,9 +27,9 @@ public class LoginModule extends Base
 	MobileNumberModule mobNumMod = new MobileNumberModule(driver);
 	SignInAsModule sigInMod = new SignInAsModule(driver);
 	QuizModule quiMod = new QuizModule(driver);
-	
 
-	
+
+
 	@FindBy(id="Fname")
 	@AndroidFindBy(id="com.elss.educomp:id/userId") 
 	@iOSXCUITFindBy(xpath="//XCUIElementTypeTextField")
@@ -71,37 +71,45 @@ public class LoginModule extends Base
 	
 		if(eConfig.getProperty("Platform").equals("Web")) 
 		{
-			 extentTest.log(Status.PASS, "Click on Skip Button");
+			extentTest.log(Status.PASS, "Click on Skip Button");
 		}
-		
+
 		if(eConfig.getProperty("Platform").equals("Android")) 
 		{
 			onbMod.skipScreen();
 			extentTest.log(Status.PASS, "Click on Skip button.");
 		}
 
-		usernameTxt.clear();
-		usernameTxt.sendKeys(username);
-		extentTest.log(Status.PASS, "Enter Username: "+username);
+/*
+			if(eConfig.getProperty("Platform").equals("iOS")) 
+		{ 
+			//onbMod.skipScreen();
+			//extentTest.log(Status.PASS, "Click on Skip button.");
 		
-		passwordTxt.clear();
-		passwordTxt.sendKeys((password));
-		extentTest.log(Status.PASS, "Enter Password");
-      
-//		if(eConfig.getProperty("Platform").equals("Android")) 
-//		{
-//			((AndroidDriver) driver).hideKeyboard();
-//			extentTest.log(Status.PASS, "Hide Keyboard");
-//		}
+		}*/
+				
+		 usernameTxt.clear();
+		 usernameTxt.sendKeys(username);
+		 extentTest.log(Status.PASS, "Enter Username: "+username);
+		 passwordTxt.clear();
+		 passwordTxt.sendKeys((password));
+		 extentTest.log(Status.PASS, "Enter Password");
 		
-		loginBtn.click();
-		extentTest.log(Status.PASS, "Click on Login button");
-		
-		if(eConfig.getProperty("Platform").equals("Android")) 
-		{
+
+		 //		if(eConfig.getProperty("Platform").equals("Android")) 
+		 //		{
+		 //			((AndroidDriver) driver).hideKeyboard();
+		 //			extentTest.log(Status.PASS, "Hide Keyboard");
+		 //		}
+
+		 loginBtn.click();
+		 extentTest.log(Status.PASS, "Click on Login button");
+
+		 if(eConfig.getProperty("Platform").equals("Android")) 
+		 {
 			 quiMod.skipBtn.click();
 			 extentTest.log(Status.PASS, "Click on Quiz Skip Button");
-	 
+
 			 if(!role.equals("Student") && !role.equals("Guest"))
 			 {
 				 Thread.sleep(3000);
@@ -110,9 +118,23 @@ public class LoginModule extends Base
 				 driver.findElement(By.xpath("//*[@text='GOT IT']")).click();
 				 extentTest.log(Status.PASS, "Tap on Got it.");	
 			 } 
-		}
+		 }
 
-				 
+		 if(eConfig.getProperty("Platform").equals("iOS")) 
+		 {
+			// quiMod.skipBtn.click();
+			// extentTest.log(Status.PASS, "Click on Quiz Skip Button");
+
+		/*	 if(!role.equals("Student") && !role.equals("Guest"))
+			 {
+				 Thread.sleep(3000);
+				 driver.findElement(By.xpath("//*[@text='GOT IT']")).click();
+				 extentTest.log(Status.PASS, "Tap on Got it.");	
+				 driver.findElement(By.xpath("//*[@text='GOT IT']")).click();
+				 extentTest.log(Status.PASS, "Tap on Got it.");	
+			 }*/ 
+		 }
+
 	}		
 }			 
 

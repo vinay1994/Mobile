@@ -1,8 +1,14 @@
 package com.fliplearn.flipapp.pagemodules;
 
 
+import java.time.Duration;
+import java.util.NoSuchElementException;
+
+import javax.management.relation.Role;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.touch.TouchActions;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -15,6 +21,8 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
+import io.appium.java_client.touch.WaitOptions;
+import io.appium.java_client.touch.offset.PointOption;
 public class HeaderModule extends Base
 {
 	GenericFunctions generic = new GenericFunctions();
@@ -32,8 +40,8 @@ public class HeaderModule extends Base
 	
 	@AndroidFindBy(xpath="//android.widget.ImageButton[@content-desc='Open navigation drawer'] | //*[@class='android.widget.ImageButton']")
 	@iOSXCUITFindBy(xpath="//XCUIElementTypeButton[@name='MenuIcon']")
-	public RemoteWebElement burgerMenu;
-	
+	public static RemoteWebElement burgerMenu;
+    	
 	@AndroidFindBy(xpath="//*[@text='Quiz Games']")
 	public RemoteWebElement quizGamesMnu;
 	
@@ -85,14 +93,30 @@ public class HeaderModule extends Base
 	
 	public void clickOnLogoutBtn() throws InterruptedException
 	{
-		burgerMenu.click();
-		Thread.sleep(3000);
-	
-		userMenuSettings.click();
+		try {
+		 //if(!role.equals("Student") && !role.equals("Guest"))
+		    burgerMenu.click();
+		//	generic.touchCordinates(driver, 0, 0);
+			Thread.sleep(3000);
+		//	if(platform.equals("iOS")) {
+				
+		//	TouchActions action = new TouchActions(driver);
+		//	Thread.sleep(3000);
+		//	new TouchAction(driver).press(PointOption.point(500, 596)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1000))).
+		//	moveTo(PointOption.point(518, 478)).release().perform();
 			
-		logoutLnk.click();
-		yesLogoutLnk.click();
-		Thread.sleep(3000);
+	//		action.press(94,442).moveTo(85,141).release().perform();
+		//	action.scroll(userMenuSettings, 90, 497);
+		//	action.perform();
+			//}
+			userMenuSettings.click();
+			logoutLnk.click();
+			yesLogoutLnk.click();
+			Thread.sleep(3000);
+		
+		}
+		catch(NoSuchElementException e) {}
+		
 	}
 	
 	public void clickOnQuizGamesMnu() throws InterruptedException

@@ -27,7 +27,7 @@ public class OnboardingModule
 	{
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
-	
+	//test
 	public void skipScreen()
 	{
 		skipBtn.click();

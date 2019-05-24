@@ -57,12 +57,10 @@ public class MyWall extends Base
 		
 		homMod.myWallSection.click();
 		String x = MyWallModule.likeComment.getText();
-		
 		System.out.println(x);		
 		MyWallModule.comment.click();
 		MyWallModule.clickonLike();
 		System.out.println("Post was liked");
-		
 		String y=MyWallModule.clickonLike.getAttribute("class");
 		System.out.println(y);
 		

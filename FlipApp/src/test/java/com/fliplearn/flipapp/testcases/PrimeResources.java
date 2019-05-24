@@ -45,7 +45,7 @@ public class PrimeResources extends Base
 		logMod = new LoginModule(driver);
 		mobNumMod = new MobileNumberModule(driver);
 		menMod = new MenuModule(driver);
-		priResVieMod = new PrimeResourceViewModule(driver);
+	//	priResVieMod = new PrimeResourceViewModule(driver);
 		signInMod = new SignInAsModule(driver);
 		leaMod = new LearnModule(driver);
 		priClaMod =	new PrimeClassModule(driver);
@@ -85,16 +85,20 @@ public class PrimeResources extends Base
 			priClaMod.selectUserClass("Class 6");
 	   
 		priSubMod.clickOnSubject(driver, role, "Mathematics");
+		
+
 	    
 		if(role.equals("Parent"))
 		{
 			priResLisMod.clickOnBookChapter(driver, "Whole numbers");
 			priResLisMod.clickOnChapterTopic(driver, "Predecessor and Successor");	
+			priResLisMod.clickOnTopicResource(driver, "Predecessor and Successor");
 		}
 		else
 		{
 			priResLisMod.clickOnBookChapter(driver, "Knowing Our Numbers");
-			priResLisMod.clickOnChapterTopic(driver, "Roman Numerals");
+			priResLisMod.clickOnChapterTopic(driver, "Comparing Numbers");
+			priResLisMod.clickOnTopicResource(driver, "Numeral System");
 		}   
 		
 	    if(role.equals("Parent"))
@@ -111,8 +115,9 @@ public class PrimeResources extends Base
 	    }
 	    else
 	    {
-		    priResVieMod.clickOnVideoContent(driver, "Roman Numerals");
-	    	priResVieMod.verifyVideoContent(driver, "Roman Numerals");
+		    priResVieMod.clickOnVideoContent(driver, "Numeral System");
+		    Thread.sleep(3000);
+	    	priResVieMod.verifyVideoContent(driver, "Numeral System");
 	    }
 	}
 	
