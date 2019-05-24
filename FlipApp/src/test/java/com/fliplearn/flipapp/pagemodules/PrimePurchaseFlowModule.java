@@ -3,15 +3,20 @@ package com.fliplearn.flipapp.pagemodules;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import com.fliplearn.flipapp.helper.Base;
+import com.fliplearn.flipapp.helper.GenericFunctions;
 
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSFindBy;
 
-public class PrimePurchaseFlowModule {
+public class PrimePurchaseFlowModule extends Base{
+	GenericFunctions generic = new GenericFunctions();
 	
 	@FindBy(xpath="//a[text()='Buy Subscription']")
 	@AndroidFindBy()
@@ -23,12 +28,27 @@ public class PrimePurchaseFlowModule {
 	@iOSFindBy()
     public RemoteWebElement cliOnClose;	
 	
+	@FindBy(xpath="//*[text()='Fliplearn Prime Subscription']")
+	@AndroidFindBy()
+	@iOSFindBy()
+	public RemoteWebElement verFlipPriSubs;
+	
+	@FindBy(xpath="//h1[@class='ng-binding' and text()='1 Year Subscription ']")
+	@AndroidFindBy()
+	@iOSFindBy()
+	public RemoteWebElement compSubs;
+	
+	@FindBy(xpath=" //div[@class='border-blue-1 border-radius4 padding20']/h3[text()='1 Year Subscription']")
+	@AndroidFindBy()
+	@iOSFindBy()
+	public RemoteWebElement compProducts;
+	
 	@FindBy(xpath="(//*[@class='border-blue-1 padding20 border-radius4 cursorPointer m-t-20 boxShadow ng-scope'])[1]")
 	@AndroidFindBy()
 	@iOSFindBy()
 	public RemoteWebElement cliOnsubs;
 	
-	@FindBy(xpath="//h4[contains(text(),'Please link your child')]")
+	@FindBy(xpath="//*[contains(text(),'Please link your child to your account ')]")
 	@AndroidFindBy()
 	@iOSFindBy()
 	public RemoteWebElement Childmsgverify;
@@ -93,12 +113,12 @@ public class PrimePurchaseFlowModule {
 	@iOSFindBy()
 	public RemoteWebElement payDiscard;
 	
-	@FindBy(xpath="//*[text()='1. The Basics']")
+	@FindBy(xpath="//*[text()='2. Sexual Reproduction in Flowering Plants']")
 	@AndroidFindBy()
 	@iOSFindBy()
 	public RemoteWebElement clickOnChap;
 	
-	@FindBy(xpath="//*[text()='Pronunciation']")
+	@FindBy(xpath="//*[text()='Flower: A Fascinating Organ of Angiosperms']")
 	@AndroidFindBy()
 	@iOSFindBy()
 	public RemoteWebElement clickOnTop;
@@ -134,8 +154,11 @@ public class PrimePurchaseFlowModule {
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 	
-	public void clickOnChapter() {
-		clickOnChap.click();
+	public void clickOnChapter() throws InterruptedException {
+		generic.waitForElementVisibility(driver, clickOnChap);
+		Actions action = new Actions(driver);
+		action.moveToElement(clickOnChap).click().perform();
+		
 		
 	}
 	
@@ -217,7 +240,7 @@ public class PrimePurchaseFlowModule {
     
     public void entdisCoupCode() throws InterruptedException {
     	Thread.sleep(3000);
-    	entCoupCode.sendKeys("FLPVIM30");
+    	entCoupCode.sendKeys("vinay30");
     	
     }
     
