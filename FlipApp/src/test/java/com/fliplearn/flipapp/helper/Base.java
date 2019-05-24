@@ -12,6 +12,7 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -36,6 +37,7 @@ import com.fliplearn.flipapp.util.ExcelUtil;
 import com.fliplearn.flipapp.util.Screenshots;
 import com.fliplearn.flipapp.util.SendReportUtil;
 
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.ios.IOSDriver;
@@ -134,9 +136,9 @@ public class Base implements ITestListener
 			cap.setCapability("appPackage", "com.elss.educomp"); 
 		    cap.setCapability("appActivity","com.elss.educomp.prelogin.ui.SplashActivity"); 
 		    cap.setCapability("noSign", true);
+
 		    
-		    
-			driver = new AndroidDriver<AndroidElement>(new URL("http://0.0.0.0:4723/wd/hub"), cap);
+		    driver = new AndroidDriver<AndroidElement>(new URL("http://0.0.0.0:4723/wd/hub"), cap);
 			 
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		}

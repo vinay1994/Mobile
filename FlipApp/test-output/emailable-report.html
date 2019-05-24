@@ -9,51 +9,53 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="7">Fliplearn Automation Suite</th></tr>
-<tr><td><a href="#t0">Onboarding</a></td><td class="num">3</td><td class="num">0</td><td class="num attn">3</td><td class="num">304,699</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Onboarding</a></td><td class="num">2</td><td class="num">0</td><td class="num attn">1</td><td class="num">77,801</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Fliplearn Automation Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Onboarding &#8212; failed</th></tr><tr class="failedeven"><td rowspan="3">com.fliplearn.flipapp.testcases.Login</td><td><a href="#m0">verifyLogin</a></td><td rowspan="3">1556795491525</td><td rowspan="3">36339</td></tr><tr class="failedeven"><td><a href="#m1">verifyLogin</a></td></tr><tr class="failedeven"><td><a href="#m2">verifyLogin</a></td></tr><tr><th colspan="4">Onboarding &#8212; passed</th></tr><tr class="passedeven"><td rowspan="3">com.fliplearn.flipapp.testcases.Login</td><td><a href="#m3">verifyLogin</a></td><td rowspan="3">1556795412889</td><td rowspan="3">20483</td></tr><tr class="passedeven"><td><a href="#m4">verifyLogin</a></td></tr><tr class="passedeven"><td><a href="#m5">verifyLogin</a></td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Fliplearn Automation Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Onboarding &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.fliplearn.flipapp.testcases.VMC</td><td><a href="#m0">displayVMCSchool</a></td><td rowspan="1">1558611430487</td><td rowspan="1">34109</td></tr><tr><th colspan="4">Onboarding &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">com.fliplearn.flipapp.testcases.VMC</td><td><a href="#m1">displayVMCSchool</a></td><td rowspan="2">1558611473682</td><td rowspan="2">8041</td></tr><tr class="passedeven"><td><a href="#m2">displayVMCSchool</a></td></tr></tbody>
 </table>
-<h2>Onboarding</h2><h3 id="m0">com.fliplearn.flipapp.testcases.Login#verifyLogin</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>Parent</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: Can&apos;t locate an element by this strategy: By.chained({By.id: com.elss.educomp:id/skip_button})
+<h2>Onboarding</h2><h3 id="m0">com.fliplearn.flipapp.testcases.VMC#displayVMCSchool</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>Principal</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: Can&apos;t locate an element by this strategy: By.xpath: //img[contains(@ng-src,&apos;Vidyamandir.jpg&apos;)] | (//a[@ng-click=&apos;vmcButtonClicked()&apos;])[1]
 	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:126)
 	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:59)
-	at io.appium.java_client.android.AndroidElement$$EnhancerByCGLIB$$b598166c.click(&lt;generated&gt;)
-	at com.fliplearn.flipapp.pagemodules.LoginModule.Login(LoginModule.java:94)
-	at com.fliplearn.flipapp.testcases.Login.verifyLogin(Login.java:56)
-Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@71466383 (tried for 1 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.remote.RemoteWebElement$$EnhancerByCGLIB$$d27c0df4.click(&lt;generated&gt;)
+	at com.fliplearn.flipapp.testcases.VMC.displayVMCSchool(VMC.java:70)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@1640190a (tried for 1 second(s) with 500 milliseconds interval)
 	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:304)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
 	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:99)
 	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:119)
-	... 29 more
-Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({By.id: com.elss.educomp:id/skip_button})
+	... 28 more
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//img[contains(@ng-src,&apos;Vidyamandir.jpg&apos;)] | (//a[@ng-click=&apos;vmcButtonClicked()&apos;])[1]&quot;}
+  (Session info: chrome=74.0.3729.169)
+  (Driver info: chromedriver=74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}),platform=Mac OS X 10.14.4 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;SURESHS&apos;, ip: &apos;10.0.22.64&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;10.0.2&apos;
-Driver info: driver.version: AndroidDriver
-	at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:74)
+System info: host: &apos;ip-10-0-22-18.ap-south-1.compute.internal&apos;, ip: &apos;fe80:0:0:0:c3d:3cd5:9146:673f%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.14.4&apos;, java.version: &apos;11.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 74.0.3729.6 (255758eccf3d24..., userDataDir: /var/folders/gl/sxfvlyrd7g9...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:64143}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 74.0.3729.169, webStorageEnabled: true}
+Session ID: 2f26e6f3c7eaabb7896c56a978e1fd56
+*** Element info: {Using=xpath, value=//img[contains(@ng-src,&apos;Vidyamandir.jpg&apos;)] | (//a[@ng-click=&apos;vmcButtonClicked()&apos;])[1]}
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
 	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:50)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
 	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$0(AppiumElementLocator.java:120)
 	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:172)
 	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:1)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-	... 31 more
-... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">com.fliplearn.flipapp.testcases.Login#verifyLogin</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>Guest</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [true] but found [false]
-	at com.fliplearn.flipapp.testcases.Login.verifyLogin(Login.java:64)
-... Removed 31 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">com.fliplearn.flipapp.testcases.Login#verifyLogin</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>Student</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [true] but found [false]
-	at com.fliplearn.flipapp.testcases.Login.verifyLogin(Login.java:64)
-... Removed 31 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">com.fliplearn.flipapp.testcases.Login#verifyLogin</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>Principal</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m4">com.fliplearn.flipapp.testcases.Login#verifyLogin</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>Teacher</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m5">com.fliplearn.flipapp.testcases.Login#verifyLogin</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>Admin</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+	... 30 more
+... Removed 29 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.fliplearn.flipapp.testcases.VMC#displayVMCSchool</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>Teacher</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">com.fliplearn.flipapp.testcases.VMC#displayVMCSchool</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>Admin</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

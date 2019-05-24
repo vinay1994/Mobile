@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 3 failed tests</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Fliplearn_Automation_Suite" class="navigator-link ">
-                    <span>C:\Users\Batta K\git\flip-app\FlipApp\xml\TestSuite.xml</span>
+                    <span>TestSuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">6 methods, 3 failed,   3 passed</span>
+                    <span class="method-stats">3 methods, 1 failed,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -102,17 +102,7 @@
                     <div class="method-list-content failed suite-Fliplearn_Automation_Suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Fliplearn_Automation_Suite" title="com.fliplearn.flipapp.testcases.Login" class="method navigator-link" hash-for-method="verifyLogin(Parent)">verifyLogin(Parent)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Fliplearn_Automation_Suite" title="com.fliplearn.flipapp.testcases.Login" class="method navigator-link" hash-for-method="verifyLogin(Guest)">verifyLogin(Guest)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Fliplearn_Automation_Suite" title="com.fliplearn.flipapp.testcases.Login" class="method navigator-link" hash-for-method="verifyLogin(Student)">verifyLogin(Student)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Fliplearn_Automation_Suite" title="com.fliplearn.flipapp.testcases.VMC" class="method navigator-link" hash-for-method="displayVMCSchool(Principal)">displayVMCSchool(Principal)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Fliplearn_Automation_Suite -->
@@ -126,17 +116,12 @@
                     <div class="method-list-content passed suite-Fliplearn_Automation_Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Fliplearn_Automation_Suite" title="com.fliplearn.flipapp.testcases.Login" class="method navigator-link" hash-for-method="verifyLogin(Principal)">verifyLogin(Principal)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Fliplearn_Automation_Suite" title="com.fliplearn.flipapp.testcases.VMC" class="method navigator-link" hash-for-method="displayVMCSchool(Teacher)">displayVMCSchool(Teacher)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Fliplearn_Automation_Suite" title="com.fliplearn.flipapp.testcases.Login" class="method navigator-link" hash-for-method="verifyLogin(Teacher)">verifyLogin(Teacher)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Fliplearn_Automation_Suite" title="com.fliplearn.flipapp.testcases.Login" class="method navigator-link" hash-for-method="verifyLogin(Admin)">verifyLogin(Admin)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Fliplearn_Automation_Suite" title="com.fliplearn.flipapp.testcases.VMC" class="method navigator-link" hash-for-method="displayVMCSchool(Admin)">displayVMCSchool(Admin)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Fliplearn_Automation_Suite -->
@@ -154,72 +139,57 @@
           <div class="suite-Fliplearn_Automation_Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">com.fliplearn.flipapp.testcases.Login</span>
+              <span class="class-name">com.fliplearn.flipapp.testcases.VMC</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyLogin(Parent)">
-                  </a> <!-- verifyLogin(Parent) -->
-                  <span class="method-name">verifyLogin</span>
-                  <span class="parameters">(Parent)</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: Can&apos;t locate an element by this strategy: By.chained({By.id: com.elss.educomp:id/skip_button})
+                  <a name="displayVMCSchool(Principal)">
+                  </a> <!-- displayVMCSchool(Principal) -->
+                  <span class="method-name">displayVMCSchool</span>
+                  <span class="parameters">(Principal)</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: Can&apos;t locate an element by this strategy: By.xpath: //img[contains(@ng-src,&apos;Vidyamandir.jpg&apos;)] | (//a[@ng-click=&apos;vmcButtonClicked()&apos;])[1]
 	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:126)
 	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:59)
-	at io.appium.java_client.android.AndroidElement$$EnhancerByCGLIB$$b598166c.click(&lt;generated&gt;)
-	at com.fliplearn.flipapp.pagemodules.LoginModule.Login(LoginModule.java:94)
-	at com.fliplearn.flipapp.testcases.Login.verifyLogin(Login.java:56)
-Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@71466383 (tried for 1 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.remote.RemoteWebElement$$EnhancerByCGLIB$$d27c0df4.click(&lt;generated&gt;)
+	at com.fliplearn.flipapp.testcases.VMC.displayVMCSchool(VMC.java:70)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@1640190a (tried for 1 second(s) with 500 milliseconds interval)
 	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:304)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
 	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:99)
 	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:119)
-	... 29 more
-Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({By.id: com.elss.educomp:id/skip_button})
+	... 28 more
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//img[contains(@ng-src,&apos;Vidyamandir.jpg&apos;)] | (//a[@ng-click=&apos;vmcButtonClicked()&apos;])[1]&quot;}
+  (Session info: chrome=74.0.3729.169)
+  (Driver info: chromedriver=74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}),platform=Mac OS X 10.14.4 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;SURESHS&apos;, ip: &apos;10.0.22.64&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;10.0.2&apos;
-Driver info: driver.version: AndroidDriver
-	at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:74)
+System info: host: &apos;ip-10-0-22-18.ap-south-1.compute.internal&apos;, ip: &apos;fe80:0:0:0:c3d:3cd5:9146:673f%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.14.4&apos;, java.version: &apos;11.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 74.0.3729.6 (255758eccf3d24..., userDataDir: /var/folders/gl/sxfvlyrd7g9...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:64143}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 74.0.3729.169, webStorageEnabled: true}
+Session ID: 2f26e6f3c7eaabb7896c56a978e1fd56
+*** Element info: {Using=xpath, value=//img[contains(@ng-src,&apos;Vidyamandir.jpg&apos;)] | (//a[@ng-click=&apos;vmcButtonClicked()&apos;])[1]}
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
 	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:50)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
 	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$0(AppiumElementLocator.java:120)
 	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:172)
 	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:1)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-	... 31 more
-... Removed 25 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifyLogin(Guest)">
-                  </a> <!-- verifyLogin(Guest) -->
-                  <span class="method-name">verifyLogin</span>
-                  <span class="parameters">(Guest)</span>
-                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
-	at com.fliplearn.flipapp.testcases.Login.verifyLogin(Login.java:64)
-... Removed 31 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifyLogin(Student)">
-                  </a> <!-- verifyLogin(Student) -->
-                  <span class="method-name">verifyLogin</span>
-                  <span class="parameters">(Student)</span>
-                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
-	at com.fliplearn.flipapp.testcases.Login.verifyLogin(Login.java:64)
-... Removed 31 stack frames
+	... 30 more
+... Removed 29 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -228,30 +198,22 @@ Driver info: driver.version: AndroidDriver
           <div class="suite-Fliplearn_Automation_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.fliplearn.flipapp.testcases.Login</span>
+              <span class="class-name">com.fliplearn.flipapp.testcases.VMC</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyLogin(Principal)">
-                  </a> <!-- verifyLogin(Principal) -->
-                  <span class="method-name">verifyLogin</span>
-                  <span class="parameters">(Principal)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifyLogin(Teacher)">
-                  </a> <!-- verifyLogin(Teacher) -->
-                  <span class="method-name">verifyLogin</span>
+                  <a name="displayVMCSchool(Teacher)">
+                  </a> <!-- displayVMCSchool(Teacher) -->
+                  <span class="method-name">displayVMCSchool</span>
                   <span class="parameters">(Teacher)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyLogin(Admin)">
-                  </a> <!-- verifyLogin(Admin) -->
-                  <span class="method-name">verifyLogin</span>
+                  <a name="displayVMCSchool(Admin)">
+                  </a> <!-- displayVMCSchool(Admin) -->
+                  <span class="method-name">displayVMCSchool</span>
                   <span class="parameters">(Admin)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -260,7 +222,7 @@ Driver info: driver.version: AndroidDriver
         </div> <!-- panel Fliplearn_Automation_Suite -->
         <div panel-name="test-xml-Fliplearn_Automation_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Batta K\git\flip-app\FlipApp\xml\TestSuite.xml</span>
+            <span class="header-content">/Users/tarungoswami/git/flip-app/FlipApp/xml/TestSuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -272,11 +234,11 @@ Driver info: driver.version: AndroidDriver
   &lt;/listeners&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Onboarding&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.fliplearn.flipapp.testcases.Login&quot;&gt;
+      &lt;class name=&quot;com.fliplearn.flipapp.testcases.VMC&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;verifyLogin&quot;/&gt;
+          &lt;include name=&quot;displayVMCSchool&quot;/&gt;
         &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- com.fliplearn.flipapp.testcases.Login --&gt;
+      &lt;/class&gt; &lt;!-- com.fliplearn.flipapp.testcases.VMC --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Onboarding --&gt;
 &lt;/suite&gt; &lt;!-- Fliplearn Automation Suite --&gt;
@@ -316,36 +278,24 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(6);
+data.addRows(3);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'verifyLogin')
-data.setCell(0, 2, 'com.fliplearn.flipapp.testcases.Login')
-data.setCell(0, 3, 45929);
+data.setCell(0, 1, 'displayVMCSchool')
+data.setCell(0, 2, 'com.fliplearn.flipapp.testcases.VMC')
+data.setCell(0, 3, 34109);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'verifyLogin')
-data.setCell(1, 2, 'com.fliplearn.flipapp.testcases.Login')
-data.setCell(1, 3, 45637);
+data.setCell(1, 1, 'displayVMCSchool')
+data.setCell(1, 2, 'com.fliplearn.flipapp.testcases.VMC')
+data.setCell(1, 3, 8041);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'verifyLogin')
-data.setCell(2, 2, 'com.fliplearn.flipapp.testcases.Login')
-data.setCell(2, 3, 36339);
-data.setCell(3, 0, 3)
-data.setCell(3, 1, 'verifyLogin')
-data.setCell(3, 2, 'com.fliplearn.flipapp.testcases.Login')
-data.setCell(3, 3, 20483);
-data.setCell(4, 0, 4)
-data.setCell(4, 1, 'verifyLogin')
-data.setCell(4, 2, 'com.fliplearn.flipapp.testcases.Login')
-data.setCell(4, 3, 20305);
-data.setCell(5, 0, 5)
-data.setCell(5, 1, 'verifyLogin')
-data.setCell(5, 2, 'com.fliplearn.flipapp.testcases.Login')
-data.setCell(5, 3, 19558);
+data.setCell(2, 1, 'displayVMCSchool')
+data.setCell(2, 2, 'com.fliplearn.flipapp.testcases.VMC')
+data.setCell(2, 3, 7641);
 window.suiteTableData['Fliplearn_Automation_Suite']= { tableData: data, tableDiv: 'times-div-Fliplearn_Automation_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 3 minutes</span>
+              <span class="suite-total-time">Total running time: 49 seconds</span>
               <div id="times-div-Fliplearn_Automation_Suite">
               </div> <!-- times-div-Fliplearn_Automation_Suite -->
             </div> <!-- times-div -->
@@ -360,13 +310,15 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Fliplearn_Automation_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">1 ignored method</span>
+            <span class="header-content">2 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
-              <span class="ignored-class-name">com.fliplearn.flipapp.testcases.Login</span>
+              <span class="ignored-class-name">com.fliplearn.flipapp.testcases.VMC</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">verifyLogout</span>
+                <span class="ignored-method-name">displayVMCStudent</span>
+                <br/>
+                <span class="ignored-method-name">doNotDisplayVMCStudent</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -378,112 +330,60 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.fliplearn.flipapp.testcases.Login</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.fliplearn.flipapp.testcases.VMC</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
-                <span class="method-name">befo(org.testng.TestRunner@79aee22a)</span>
+                <span class="method-name">befo(org.testng.TestRunner@40f35e52)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
-                <span class="method-name">befMethod</span>
-                <span class="method-start">15908 ms</span>
+                <span class="method-name">prePrime</span>
+                <span class="method-start">8591 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">verifyLogin(Admin)</span>
-                <span class="method-start">16627 ms</span>
+                <span class="method-name">displayVMCSchool(Admin)</span>
+                <span class="method-start">8865 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">getResult</span>
-                <span class="method-start">38278 ms</span>
+                <span class="method-start">18198 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
-                <span class="method-name">befo(org.testng.TestRunner@79aee22a)</span>
-                <span class="method-start">39550 ms</span>
+                <span class="method-name">befo(org.testng.TestRunner@40f35e52)</span>
+                <span class="method-start">18361 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
-                <span class="method-name">befMethod</span>
-                <span class="method-start">54922 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">verifyLogin(Principal)</span>
-                <span class="method-start">55339 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">getResult</span>
-                <span class="method-start">77856 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">befo(org.testng.TestRunner@79aee22a)</span>
-                <span class="method-start">79074 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="configuration-method before">
-                <span class="method-name">befMethod</span>
-                <span class="method-start">93954 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">verifyLogin(Teacher)</span>
-                <span class="method-start">94372 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">getResult</span>
-                <span class="method-start">116841 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">befo(org.testng.TestRunner@79aee22a)</span>
-                <span class="method-start">118201 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="configuration-method before">
-                <span class="method-name">befMethod</span>
-                <span class="method-start">133588 ms</span>
+                <span class="method-name">prePrime</span>
+                <span class="method-start">25734 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">verifyLogin(Parent)</span>
-                <span class="method-start">133975 ms</span>
+                <span class="method-name">displayVMCSchool(Principal)</span>
+                <span class="method-start">25746 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">getResult</span>
-                <span class="method-start">172074 ms</span>
+                <span class="method-start">60299 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
-                <span class="method-name">befo(org.testng.TestRunner@79aee22a)</span>
-                <span class="method-start">173363 ms</span>
+                <span class="method-name">befo(org.testng.TestRunner@40f35e52)</span>
+                <span class="method-start">60444 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
-                <span class="method-name">befMethod</span>
-                <span class="method-start">189217 ms</span>
+                <span class="method-name">prePrime</span>
+                <span class="method-start">68932 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">verifyLogin(Student)</span>
-                <span class="method-start">189688 ms</span>
+                <span class="method-name">displayVMCSchool(Teacher)</span>
+                <span class="method-start">68941 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">getResult</span>
-                <span class="method-start">237758 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">befo(org.testng.TestRunner@79aee22a)</span>
-                <span class="method-start">239010 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="configuration-method before">
-                <span class="method-name">befMethod</span>
-                <span class="method-start">254950 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">verifyLogin(Guest)</span>
-                <span class="method-start">255361 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">getResult</span>
-                <span class="method-start">303400 ms</span>
+                <span class="method-start">77602 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-suite after">
                 <span class="method-name">aftSuite</span>
-                <span class="method-start">305704 ms</span>
+                <span class="method-start">78229 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

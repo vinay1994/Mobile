@@ -9,9 +9,9 @@
  
  <test name="Onboarding" enabled="true">
   		<classes>
-    		<class name="com.fliplearn.flipapp.testcases.PrimeResources">
+    		<class name="com.fliplearn.flipapp.testcases.VMC">
     		<methods>
-        			<include name="verifyTopicSynopsis_Old"/>
+        			<include name="displayVMCSchool"/>
         	</methods>		
         	</class>
 </classes>

@@ -3,23 +3,37 @@ package com.fliplearn.flipapp.pagemodules;
 import java.text.SimpleDateFormat;
 
 import java.util.Calendar;
+import java.util.HashMap;
+
+import org.openqa.selenium.Capabilities;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriver.Navigation;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
+
 import com.aventstack.extentreports.Status;
 import com.fliplearn.flipapp.helper.Base;
 import com.fliplearn.flipapp.helper.GenericFunctions;
+
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.TouchAction;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidKeyCode;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSFindBy;
+import io.appium.java_client.touch.offset.PointOption;
 
 public class EventModule extends Base 
 {
     GenericFunctions generic=new GenericFunctions();
+    HomeModule homMod = new HomeModule(driver);
 	
-	String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
+	public static String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
 
 	@FindBy(xpath="//button[@class='btn btn-primary dropdown-toggle']")
 	@AndroidFindBy(xpath="//*[@text='POST']") 
@@ -155,109 +169,72 @@ public class EventModule extends Base
 	}
 	
 	
-	public String fillTxt(String eventType) throws Throwable 
+	public void fillTxt(String eventType) throws Throwable 
 	{
 		
 		noticeboardTab.click();
 		Thread.sleep(3000);
-		if(platform.equals("Android"))
+	/*	if(platform.equals("Android"))
 	  	 {	 
 	  		postBtn.click();
+	  		
 	  		if(eventType.equals("Announcement"))
-	  		{
-	  		annBtn.click();
-	  		Thread.sleep(1000);
-			titleTxt.clear();
-			Thread.sleep(1000);
+	  			annBtn.click();
+	  		else if (eventType.equals("Album"))			
+	  			albBtn.click();
+	  		else  			
+	  			homeWorkBtn.click();
+
+	  		titleTxt.clear();
 			titleTxt.click();
-			Thread.sleep(1000);
 			titleTxt.sendKeys("Testing automation Title_"+timeStamp);
-			Thread.sleep(2000);
 			shareWithBtn.click();
-			Thread.sleep(2000);
 			select_class.click();
 			extentTest.log(Status.PASS, "Select Class");
 			done.click();
-			addDescriptionTxt.sendKeys("Qa add description for testing purpose on this time :\"+timeStamp");
-			save.click();
+			addDescriptionTxt.sendKeys("Qa add description for testing purpose on this time :"+timeStamp);
+			//save.click();
 			createBtn.click();
-			Thread.sleep(2000);
-	  		}
-	  		else if (eventType.equals("Album"))
-	  		{
-	  			albBtn.click();
-	  			Thread.sleep(1000);
-				titleTxt.clear();
-				Thread.sleep(1000);
-				titleTxt.click();
-				Thread.sleep(1000);
-				titleTxt.sendKeys("Testing automation Title_"+timeStamp);
-				Thread.sleep(2000);
-				shareWithBtn.click();
-				Thread.sleep(2000);
-				select_class.click();
-				extentTest.log(Status.PASS, "Select Class");
-				done.click();
-				addDescriptionTxt.sendKeys("Qa add description for testing purpose on this time :\"+timeStamp");
-				uploadImageBtn.click();
-				gallery.click();
-				allowBtn.click();
-				gallery.click();
-				imageClick.click();
-				imageDone.click();
-				Thread.sleep(2000);
-				generic.scrollBy(driver, 95, 50);
+	  		
+	  	
+	  			
+				//uploadImageBtn.click();
+				//gallery.click();
+				//allowBtn.click();
+				//gallery.click();
+				//imageClick.click();
+				//imageDone.click();
+				//Thread.sleep(2000);
+				//generic.scrollBy(driver, 95, 50);
 				//done.click();
 				//save.click();
-				createBtn.click();
-				Thread.sleep(2000);
-	  		}
-	  		else 
-	  		{
-	  			homeWorkBtn.click();
-	  			Thread.sleep(1000);
-				titleTxt.clear();
-				Thread.sleep(1000);
-				titleTxt.click();
-				Thread.sleep(1000);
-				titleTxt.sendKeys("Testing automation Title_"+timeStamp);
-				Thread.sleep(2000);
-				shareWithBtn.click();
-				Thread.sleep(2000);
-				select_class.click();
-				extentTest.log(Status.PASS, "Select Class");
-				done.click();
-				selectsub.click();
-				subj.click();
-				Thread.sleep(1000);
-				submissionDate.click();
-				date.click();
-				dateOk.click();
-				addDescriptionTxt.sendKeys("Qa add description for testing purpose on this time :\"+timeStamp");
-				generic.scrollBy(driver, 95, 50);
-				createBtn.click();
+				//createBtn.click();
+				//Thread.sleep(2000);
+	  			//selectsub.click();
+				//subj.click();
+				//Thread.sleep(1000);
+				//submissionDate.click();
+				//date.click();
+				//dateOk.click();
+				//addDescriptionTxt.sendKeys("Qa add description for testing purpose on this time :\"+timeStamp");
+				//generic.scrollBy(driver, 95, 50);
+				//createBtn.click();
 					  			
-	  		}
+	  		
 	  		  		
 	  	 }
 		else
 		{
 		mouseOverOnpostBtn(eventType);
-		Thread.sleep(2000);
 		driver.switchTo().activeElement();
-		Thread.sleep(1000);
 		titleTxt.clear();
-		Thread.sleep(1000);
 		titleTxt.click();
-		Thread.sleep(1000);
 		titleTxt.sendKeys("Testing automation Title_"+timeStamp);
-		Thread.sleep(1000);
 		shareWithBtn.click();
-		Thread.sleep(2000);
 		select_class.click();
 		extentTest.log(Status.PASS, "Select Class");
 		save.click();
-		}
+		
 		if(eventType.equals("Homework"))
 		{	
 			
@@ -278,21 +255,50 @@ public class EventModule extends Base
 		jse.executeScript("arguments[0].click();", createBtn);
 		Thread.sleep(2000);
 		noticeboardTab.click();
-	
-		isTitleDisplayed("Testing automation Title_"+timeStamp);
-		return "Testing automation Title_"+timeStamp;
+		}
+		isTitleDisplayed("Testing automation Title_"+timeStamp); */
+		
+		TouchAction action = new TouchAction((AndroidDriver)driver);
+		
+		Dimension size = driver.manage().window().getSize();
+		
+		
+		//System.out.println("Coordinate value to move:"+endX+"..........."+endY);
+		action.press(PointOption.point(500, 500));
+		action.moveTo(PointOption.point(300, 300));
+		action.release().perform();
+		
+
+		Thread.sleep(3000);
+		
+
+
+		
+		System.out.println("title is:"+getTitle());
+		Assert.assertEquals(getTitle(), "Testing automation Title_"+timeStamp);		
 	}
 
 	public boolean isTitleDisplayed(String Title) throws InterruptedException
-	{
-		int i=0;
-		String ActualTitle=getTitle();
-		while(!(ActualTitle.equalsIgnoreCase(Title)) && i<10)
-		{
-			driver.navigate().refresh();
+	{		
+
+		homMod.myWallSection.click();	
+		noticeboardTab.click();	
+		Thread.sleep(3000);
+		
+		String ActualTitle = getTitle();
+		
+		if(platform.equals("Web"))
+		{	
+			int i = 0;
 			ActualTitle=getTitle();
-			i++;
-		}
+			
+			while(!(ActualTitle.equalsIgnoreCase(Title)) && i < 10)
+			{
+				driver.navigate().refresh();
+				ActualTitle=getTitle();
+				i++;
+			}
+		}	
 
 		if(!(ActualTitle.equalsIgnoreCase(Title)))
 		{
@@ -305,6 +311,7 @@ public class EventModule extends Base
 	}
 	public String getTitle() throws InterruptedException
 	{
+		Thread.sleep(5000);
 		generic.waitForElementVisibility(driver, getTitle);
 		return getTitle.getText();
 	}

@@ -6,15 +6,15 @@
   </listeners>
   <test thread-count="5" name="Onboarding(failed)">
     <classes>
-      <class name="com.fliplearn.flipapp.testcases.Login">
+      <class name="com.fliplearn.flipapp.testcases.VMC">
         <methods>
-          <include name="verifyLogin" invocation-numbers="3 4 5"/>
+          <include name="displayVMCSchool" invocation-numbers="1"/>
+          <include name="prePrime"/>
           <include name="befo"/>
           <include name="aftSuite"/>
-          <include name="befMethod"/>
           <include name="getResult"/>
         </methods>
-      </class> <!-- com.fliplearn.flipapp.testcases.Login -->
+      </class> <!-- com.fliplearn.flipapp.testcases.VMC -->
     </classes>
   </test> <!-- Onboarding(failed) -->
 </suite> <!-- Failed suite [Fliplearn Automation Suite] -->

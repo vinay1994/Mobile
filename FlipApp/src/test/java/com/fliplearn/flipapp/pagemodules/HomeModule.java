@@ -55,7 +55,7 @@ public class HomeModule extends Base
 	@FindBy(css="span[id='learnPracticeModeSwitch']")
 	public RemoteWebElement learnPracticeModeBtn;
 	
-	@FindBy(css="p[class='font18 fontregular mobilefont12']")
+	@FindBy(css="p[class='font18 fontregular switchFontStyle']")
 	public RemoteWebElement learnPracticeModeTxt;
 	
 	@FindBy(xpath="//select[@id='selectTerm2']")
