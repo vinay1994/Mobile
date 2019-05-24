@@ -121,7 +121,7 @@ public class Base implements ITestListener
 		emailIds = eConfig.getProperty("Email");
 		suiteType = eConfig.getProperty("SuiteType");
 		sendReport = eConfig.getProperty("SendReport");
-		bookstoreSchool = aConfig.getProperty("Bookstore_School");
+		bookstoreSchool = aConfig.getProperty(environment+"_Bookstore_School");
 		
 		url = aConfig.getProperty(platform+"_"+environment+"_Url");
 		

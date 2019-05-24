@@ -167,11 +167,11 @@ public class FeeModule extends Base {
 	public void fillAddress() throws InterruptedException {
 		Thread.sleep(3000);
 		parentNameTxt.clear();
-		parentNameTxt.sendKeys("vinay");
+		parentNameTxt.sendKeys("Fliplearn QA");
 		parentMobNumTxt.clear();
-		parentMobNumTxt.sendKeys("9713370507");
-		parentEmailIdTxt.sendKeys("vinay.yadav@fliplearn.com");
-		addressTxt.sendKeys("Udyog vihar");
+		parentMobNumTxt.sendKeys("9650423377");
+		parentEmailIdTxt.sendKeys("qa@fliplearn.com");
+		addressTxt.sendKeys("Dynamic House");
 		generic.selectByVisibleText(stateNameTxt, "Delhi");
 	}
 	public void selectDebitCard() {
