@@ -66,9 +66,10 @@ public class PrimeResources extends Base
 	* @modifiedBy Tarun Goswami on 2019-04-10
 	*/
 
-	@Test(dataProvider ="allusers_old")
-	public void playPrimeVideo_Old(String role) throws IOException, InterruptedException
+	@Test//(dataProvider ="allusers_old")
+	public void playPrimeVideo_Old() throws IOException, InterruptedException
 	{
+		String role="Admin";
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 	    
 		if(platform.equals("Web"))
@@ -101,25 +102,8 @@ public class PrimeResources extends Base
 			priResLisMod.clickOnTopicResource(driver, "Numeral System");
 		}   
 		
-	    if(role.equals("Parent"))
-	    {	
-	    	if(platform.equals("Web"))
-	    	{
-	    		Thread.sleep(3000);
-	    		Assert.assertEquals(priResLisMod.childAccessMsg.getText(), "Please access the content from your child's account.");
-	    	}
-	    	else
-	    	{
-	    		Assert.assertEquals(0, driver.findElements(By.xpath("//*[@text='Animation']")).size());
-	    	}
-	    }
-	    else
-	    {
-		    priResVieMod.clickOnVideoContent(driver, "Numeral System");
-		    Thread.sleep(3000);
-	    	priResVieMod.verifyVideoContent(driver, "Numeral System");
-	    }
-	}
+
+}
 	
 	/**
 	* verify Topic Synopsis on Web, Android, iOS for Admin, Principal, Teacher
