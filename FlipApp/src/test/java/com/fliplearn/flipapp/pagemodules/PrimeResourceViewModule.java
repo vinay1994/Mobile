@@ -169,6 +169,7 @@ public class PrimeResourceViewModule  extends Base
     		
     	}
     	else
+    	
     		driver.findElement(By.xpath("//*[@text='Animation']")).click();
     }
     

@@ -96,7 +96,7 @@ public class PrimeResourceListModule extends Base
          public void clickOnTopicResource(WebDriver driver, String resource) 
          {
         	 if(platform.equals("Web"))
-        		 driver.findElement(By.xpath("//li[text()='"+resource+"']")).click(); 
+        		 driver.findElement(By.xpath("//h4[text()='"+resource+"']")).click(); 
         	 else if(platform.equals("iOS"))
         		 driver.findElement(By.xpath("//XCUIElementTypeStaticText[@name='"+resource+"']")).click();
         	 else
