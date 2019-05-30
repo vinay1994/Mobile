@@ -130,7 +130,7 @@ public class PrimeResources extends Base
 	* @throws IOException 
 	* @modifiedBy Tarun Goswami on 2019-04-10
 	*/
-	@Test(dataProvider="allusers_old")
+	/*@Test(dataProvider="allusers_old")
 	public void verifyTopicSynopsis_Old(String role) throws InterruptedException, IOException
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
@@ -189,7 +189,7 @@ public class PrimeResources extends Base
 	    	}	
 	    }	
 	}
-	
+	*/
 	/**
 	* verify Mind Maps on Web, Android, iOS for Admin, Principal, Teacher
 	* @author Jagrati
@@ -267,7 +267,7 @@ public class PrimeResources extends Base
 	* @throws IOException 
 	* @modifiedBy Tarun Goswami on 2019-04-10
 	*/
-	@Test(dataProvider="allusers_old")
+	/*@Test(dataProvider="allusers_old")
 	public void verifyRealLifeApplication_Old(String role) throws InterruptedException, IOException
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
@@ -323,7 +323,7 @@ public class PrimeResources extends Base
 	    		Assert.assertTrue(priResVieMod.realLifeApplicationTitle.isDisplayed());
 	    	}	
 	    }
-	}
+	}*/
 	 
 	/**
 	* verify Interactive Worksheet on Web, Android, iOS for Admin, Principal, Teacher
