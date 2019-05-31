@@ -9,9 +9,9 @@
  
  <test name="Onboarding" enabled="true">
   		<classes>
-    		<class name="com.fliplearn.flipapp.testcases.Fee">
+    		<class name="com.fliplearn.flipapp.testcases.PrimeResources">
     		<methods>
-        			<include name="payFeeLoginDebitCard"/>
+        			<include name="verifyMindMaps_Old"/>
 
         	</methods>		
         	</class>

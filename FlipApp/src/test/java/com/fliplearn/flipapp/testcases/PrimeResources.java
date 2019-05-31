@@ -186,6 +186,7 @@ public class PrimeResources extends Base
 	@Test(dataProvider="allusers_old")
 	public void verifyMindMaps_Old(String role) throws InterruptedException, IOException
 	{  
+		//testing
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 
 		if(platform.equals("Web"))
