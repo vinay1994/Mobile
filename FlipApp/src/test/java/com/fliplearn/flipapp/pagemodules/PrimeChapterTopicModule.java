@@ -22,6 +22,13 @@ public class PrimeChapterTopicModule extends Base
 	@FindBy(css="input[name='schoolName']")
 	public RemoteWebElement searchTxt;
 	
+	@FindBy(xpath="(//h4[@class='panel-title'])[3]")
+	public RemoteWebElement clickOnTopics;
+	
+	@FindBy(xpath="(//li[@class='col-xs-10 col-sm-11 col-md-11 ng-binding'])[1]")
+	public RemoteWebElement clickOnresource;
+
+	
 	@FindBy(xpath="(//h4[contains(text(),'Please access the content from your child')])[1]")
 	public RemoteWebElement childAccessTxt;
 	

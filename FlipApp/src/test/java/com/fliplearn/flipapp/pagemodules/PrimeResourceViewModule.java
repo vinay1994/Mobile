@@ -77,11 +77,34 @@ public class PrimeResourceViewModule  extends Base
 	public RemoteWebElement closeWebLink;
 	
 	@FindBy(xpath="//h6[@class='ng-binding' and text()='Animation']")
-	
-//	@iOSXCUITFindBy(xpath="//XCUIElementTypeOther[@name='"+videoTitle+"']")
-//	public RemoteWebElement title;
-	
 	public RemoteWebElement firstAnimatedVideo;
+	
+	@FindBy(xpath="//a[contains(text(),'Class 10')]")
+	@AndroidFindBy(xpath="//*[@text='Class 10']")
+	public RemoteWebElement claConMod;
+	
+	@FindBy(xpath="(//div[@class='col-md-9 col-sm-8 col-xs-8']//h3[text()='Biology'])[2]")
+	@AndroidFindBy(xpath="//*[@text='Biology']")
+	public RemoteWebElement schoolSubName;
+	
+	@FindBy(xpath="//div[@class='col-md-9 col-sm-8 col-xs-9']//h3[text()='English']")
+	@AndroidFindBy(xpath="//*[@text='Life Processes']")
+	public RemoteWebElement studentSubName;
+ 	
+	@FindBy(xpath="//a[text()='1. Life Processes']")
+	@AndroidFindBy(xpath="//*[@text='Life Processes']")
+	public RemoteWebElement cliOnBook;
+	
+	@FindBy(xpath="//li[text()='Nutrition in Human Beings']")
+	@AndroidFindBy(id="//*[@text='Nutrition in Human Beings']")
+	public RemoteWebElement cliOnBookTopCon;
+	
+	@FindBy(xpath="//h4[text()='Digestion']")
+	@AndroidFindBy(id="//*[@text='Biology']")
+	public RemoteWebElement schoolVideoContent;
+	
+	@FindBy(xpath="//h4[text()='Countable and Uncountable Nouns']")
+	public RemoteWebElement studentVideoContent;
 	
 	
 	public void clickOnClass() {
@@ -119,43 +142,6 @@ public class PrimeResourceViewModule  extends Base
 			
 		}
 		
-		
-	@FindBy(xpath="//a[contains(text(),'Class 10')]")
-	@AndroidFindBy(xpath="//*[@text='Class 10']")
-	public RemoteWebElement claConMod;
-	
-	@FindBy(xpath="(//div[@class='col-md-9 col-sm-8 col-xs-8']//h3[text()='Biology'])[2]")
-	@AndroidFindBy(xpath="//*[@text='Biology']")
-	public RemoteWebElement schoolSubName;
-	
-	@FindBy(xpath="//div[@class='col-md-9 col-sm-8 col-xs-9']//h3[text()='English']")
-	@AndroidFindBy(xpath="//*[@text='Life Processes']")
-	public RemoteWebElement studentSubName;
- 	
-	@FindBy(xpath="//a[text()='1. Life Processes']")
-	@AndroidFindBy(xpath="//*[@text='Life Processes']")
-	@iOSFindBy(id="")
-	public RemoteWebElement cliOnBook;
-	
-	@FindBy(xpath="//li[text()='Nutrition in Human Beings']")
-	@AndroidFindBy(id="//*[@text='Nutrition in Human Beings']")
-	public RemoteWebElement cliOnBookTopCon;
-	
-	@FindBy(xpath="//h4[text()='Digestion']")
-	@AndroidFindBy(id="//*[@text='Biology']")
-	public RemoteWebElement schoolVideoContent;
-	
-	@FindBy(xpath="//h4[text()='Countable and Uncountable Nouns']")
-
-	public RemoteWebElement studentVideoContent;
-	
-	
-	
-	public PrimeResourceViewModule(WebDriver driver)
-	{
-        PageFactory.initElements(new AppiumFieldDecorator(driver), this);
-    }
-    
     public void clickOnVideoContent(WebDriver driver, String videoContentName) throws InterruptedException
     {
     	Thread.sleep(4000);
@@ -217,5 +203,9 @@ public class PrimeResourceViewModule  extends Base
     		Assert.assertTrue(driver.findElement(By.xpath("//*[@text='"+videoTitle+"']")).isDisplayed());
     	}
     	
+    }
+	public PrimeResourceViewModule(WebDriver driver)
+	{
+        PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 }

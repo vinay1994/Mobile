@@ -69,7 +69,7 @@ public class Event extends Base
 	 */
 	@Test(dataProvider = "staff")
 	public void createAlbum(String role) throws Throwable
-	{
+	{  
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		eveMod.fillTxt("Album");
 	}
@@ -82,9 +82,9 @@ public class Event extends Base
 	 * @modifiedBy Tarun Goswami on 2019-04-09
 	 * @throws Throwable 
 	 */
-	@Test(dataProvider = "staff")
-	public void createHomework(String role) throws Throwable
-	{
+	@Test//(dataProvider = "staff")
+	public void createHomework() throws Throwable
+	{  String role="Teacher";
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		eveMod.fillTxt("Homework");
 	}
