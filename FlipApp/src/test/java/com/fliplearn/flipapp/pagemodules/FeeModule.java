@@ -4,6 +4,7 @@ package com.fliplearn.flipapp.pagemodules;
 import java.text.DecimalFormat;
 import java.util.List;
 
+import org.apache.xmlbeans.impl.xb.ltgfmt.FileDesc.Role;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebElement;
@@ -164,8 +165,10 @@ public class FeeModule extends Base {
 		return getTotalPayableFee.getText().substring(1);
 		
 	}
-	public void fillAddress() throws InterruptedException {
+	public void fillAddress(String role) throws InterruptedException {
 		Thread.sleep(3000);
+		if(!role.equals("Logout"))
+		driver.navigate().refresh();
 		parentNameTxt.clear();
 		parentNameTxt.sendKeys("Fliplearn QA");
 		parentMobNumTxt.clear();
@@ -249,7 +252,7 @@ public class FeeModule extends Base {
 		enterAdmission("1994");
 		clickOnProceedbtn();
 		Assert.assertEquals(getTotalFeeOnPopUp(),getActualFeeOnPopUp());
-		fillAddress();
+		fillAddress(role);
 		selectCardType(cardType);
 		Assert.assertEquals(getInternetPlusTotalOnAddressPage(), gettotalFeeOnAddressPage());
 		Assert.assertEquals(gettotalFeeOnAddressPage(),getTotalFeeOnPayBtn());
