@@ -6,15 +6,15 @@
   </listeners>
   <test thread-count="5" name="Onboarding(failed)">
     <classes>
-      <class name="com.fliplearn.flipapp.testcases.Fee">
+      <class name="com.fliplearn.flipapp.testcases.PrimeResources">
         <methods>
-          <include name="payFeeLoginAmex" invocation-numbers="2"/>
+          <include name="verifyMindMaps_Old" invocation-numbers="1 2 3"/>
           <include name="befo"/>
-          <include name="beforMethodFee"/>
           <include name="aftSuite"/>
           <include name="getResult"/>
+          <include name="preVerifySynopsis"/>
         </methods>
-      </class> <!-- com.fliplearn.flipapp.testcases.Fee -->
+      </class> <!-- com.fliplearn.flipapp.testcases.PrimeResources -->
     </classes>
   </test> <!-- Onboarding(failed) -->
 </suite> <!-- Failed suite [Fliplearn Automation Suite] -->
