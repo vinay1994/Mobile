@@ -57,8 +57,12 @@ public class PrimePurchaseFlow extends Base{
 	@Test (dataProvider="allusers_old")
 	public void verifyPrimePurchaseFlowWithoutCoupon(String role) throws InterruptedException, IOException {
 		logMod.Login(role, "CBSE", "12", "Single", "None", "Yes");
-
-
+		if(role.equals("Admin" )|| role.equals("Principal")||role.equals("Teacher")) {
+			
+         priPurFloMod.clickOnSkip();
+		}
+		Thread.sleep(2000);
+		
 		leaMod.clickOnPrimeImage();
 		Thread.sleep(2000);
 		
@@ -92,10 +96,10 @@ public class PrimePurchaseFlow extends Base{
 			
        assertEquals(priPurFloMod.verFlipPriSubs.getText(),"Fliplearn Prime Subscription");
 		
-		priPurFloMod.clickOnSubs();
+		//priPurFloMod.clickOnSubs();
 		//assertEquals(priPurFloMod.compSubs.getText().trim(),priPurFloMod.compProducts.getText());
 		priPurFloMod.clickOnConPay();
-		priPurFloMod.clickOnCheckOut();
+		//priPurFloMod.clickOnCheckOut();
 		priPurFloMod.enterFirstName();
 		priPurFloMod.enterLastName();
 		
@@ -128,10 +132,13 @@ public class PrimePurchaseFlow extends Base{
 	@Test (dataProvider="allusers_old")
 	public void verifyPrimePurchaseFlowWithCoupon(String role) throws InterruptedException, IOException{
 		logMod.Login(role, "CBSE", "12", "Single", "None", "Yes");
-
+		
+		if(role.equals("Admin" )|| role.equals("Principal")||role.equals("Teacher")) {
+			priPurFloMod.clickOnSkip();
+		}
      	 Thread.sleep(2000);
 
-		 
+     	
 	    leaMod.clickOnPrimeImage();
 	    
 	    JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -168,7 +175,7 @@ public class PrimePurchaseFlow extends Base{
 		assertEquals(priPurFloMod.verBuySubsMess.getText(),"Buy Fliplearn subscription and get World-class curated digital learning resources");
 		Thread.sleep(2000);
 		priPurFloMod.clicOnSecBuySubs();
-		priPurFloMod.clickOnSubs();
+		//priPurFloMod.clickOnSubs();
 		priPurFloMod.enterCouponCode();
 		priPurFloMod.cliOnAplButt();
 		priPurFloMod.cliOnRemoveCoupon();
@@ -189,11 +196,15 @@ public class PrimePurchaseFlow extends Base{
 public void verifyPrimePurchaseFlowWithDiscountCoupon(String role) throws InterruptedException, IOException{
     	   logMod.Login(role, "CBSE", "12", "Single", "None", "Yes");
    		
-
+    	   if(role.equals("Admin" )|| role.equals("Principal")||role.equals("Teacher")) {
+   			priPurFloMod.clickOnSkip();
+   		}
        	 Thread.sleep(2000);
+       	 
 
   		 
   	    leaMod.clickOnPrimeImage();
+  	    
   	    
   	    JavascriptExecutor js = (JavascriptExecutor) driver;
   		js.executeScript("window.scrollBy(0,1000)");
@@ -229,7 +240,7 @@ public void verifyPrimePurchaseFlowWithDiscountCoupon(String role) throws Interr
   		assertEquals(priPurFloMod.verBuySubsMess.getText(),"Buy Fliplearn subscription and get World-class curated digital learning resources");
   		Thread.sleep(2000);
 		 priPurFloMod.clicOnSecBuySubs();
-		 priPurFloMod.clickOnSubs();
+		// priPurFloMod.clickOnSubs();
 		 priPurFloMod.entdisCoupCode();
 		 priPurFloMod.cliOnAplButt();
 		 priPurFloMod.cliOnRemoveCoupon();

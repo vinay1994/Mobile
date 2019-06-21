@@ -9,9 +9,9 @@
  
  <test name="Onboarding" enabled="true">
   		<classes>
-    		<class name="com.fliplearn.flipapp.testcases.PrimeResources">
+    		<class name="com.fliplearn.flipapp.testcases.Login">
     		<methods>
-        			<include name="verifyMindMaps_Old"/>
+        			<include name="verifyLogin"/>
 
         	</methods>		
         	</class>

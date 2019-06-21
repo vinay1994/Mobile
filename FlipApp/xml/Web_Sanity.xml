@@ -32,6 +32,10 @@
         	
         	<class name="com.fliplearn.flipapp.testcases.PrimeSearch">
         	</class>
+        	<class name="com.fliplearn.flipapp.testcases.PrimePractice">
+        	</class>
+        	<class name="com.fliplearn.flipapp.testcases.PrimePurchaseFlow">
+        	</class>
       	</classes> 
 	</test> 
 	

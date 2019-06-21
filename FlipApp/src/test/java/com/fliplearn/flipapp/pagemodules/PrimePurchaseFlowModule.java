@@ -18,6 +18,9 @@ import io.appium.java_client.pagefactory.iOSFindBy;
 public class PrimePurchaseFlowModule extends Base{
 	GenericFunctions generic = new GenericFunctions();
 	
+	@FindBy(xpath="//*[text()='Skip']")
+	public RemoteWebElement cliOnSkiButt;
+	
 	@FindBy(xpath="//a[text()='Buy Subscription']")
 	@AndroidFindBy()
 	@iOSFindBy()
@@ -167,6 +170,7 @@ public class PrimePurchaseFlowModule extends Base{
 		
 	}
 	
+	
 	public void clickOnBuySubs() {
 		cliOnBuySubs.click();
 		}
@@ -243,6 +247,12 @@ public class PrimePurchaseFlowModule extends Base{
     	entCoupCode.sendKeys("vinay30");
     	
     }
+
+	public void clickOnSkip() {
+		cliOnSkiButt.click();
+		
+		
+	}
     
 		
 	}

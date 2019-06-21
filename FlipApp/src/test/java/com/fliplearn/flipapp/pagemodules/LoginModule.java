@@ -29,7 +29,9 @@ public class LoginModule extends Base
 	QuizModule quiMod = new QuizModule(driver);
 
 
-
+    @FindBy(xpath="//*[text()='Use your login ID/Password']")
+    public RemoteWebElement useLoginID;
+    
 	@FindBy(id="Fname")
 	@AndroidFindBy(id="com.elss.educomp:id/userId") 
 	@iOSXCUITFindBy(xpath="//XCUIElementTypeTextField")
@@ -40,7 +42,7 @@ public class LoginModule extends Base
 	@iOSXCUITFindBy(xpath="//XCUIElementTypeSecureTextField")
 	public RemoteWebElement passwordTxt;
 
-	@FindBy(xpath="//button[text()='Login']")
+	@FindBy(xpath="(//*[text()='Login'])[2]")
 	@AndroidFindBy(id="com.elss.educomp:id/login")
 	@iOSXCUITFindBy(xpath="//XCUIElementTypeButton[@name='Login']")
 	public RemoteWebElement loginBtn;
@@ -87,7 +89,7 @@ public class LoginModule extends Base
 			//extentTest.log(Status.PASS, "Click on Skip button.");
 		
 		}*/
-				
+		useLoginID.click();		
 		 usernameTxt.clear();
 		 usernameTxt.sendKeys(username);
 		 extentTest.log(Status.PASS, "Enter Username: "+username);
