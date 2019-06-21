@@ -32,7 +32,7 @@ public class PrimeChapterTopicModule extends Base
 	@FindBy(xpath="(//h4[contains(text(),'Please access the content from your child')])[1]")
 	public RemoteWebElement childAccessTxt;
 	
-	@FindBy(xpath="(//h4[contains(text(),'Please access the content from your child')])[2]")
+	@FindBy(xpath="(//h4[contains(text(),'Please access the content from your child')]")
 	public RemoteWebElement childAccessPopup;
 	
 	//Search for prime content

@@ -45,7 +45,7 @@ public class PrimeSubjectModule extends Base
 		if(platform.equals("Web"))
 		{	
 			if(role.equals("Student")||role.equals("Parent")||role.equals("Guest"))
-				driver.findElement(By.xpath("//h3[text()='"+subjectName+"']")).click();
+				driver.findElement(By.xpath("//*[text()='"+subjectName+"']")).click();
 			else
 				driver.findElement(By.xpath("//div[@class='panel-collapse collapse in']//h3[text()='"+subjectName+"']")).click();
 		}
