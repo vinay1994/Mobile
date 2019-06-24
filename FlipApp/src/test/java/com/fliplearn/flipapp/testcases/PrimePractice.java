@@ -109,7 +109,7 @@ public class PrimePractice extends Base{
 		  logMod.Login(role, "CBSE", "10", "Single", "Prime", "Yes");
 		  Thread.sleep(6000);
 			priSubMod.clickOnSubject(driver, role, "Biology");
-			praChaTopMod.clickOnTopic2();
+			praChaTopMod.clickOnFirstTopic();
 			Thread.sleep(3000);
 		    praChaTopMod.clickOnLaunchTest();
 		    Thread.sleep(6000);
@@ -128,6 +128,7 @@ public class PrimePractice extends Base{
 		    Assert.assertTrue(praChaTopMod.verRecommImg.isDisplayed());
 		    Assert.assertTrue(praChaTopMod.verRecTopTil.isDisplayed());
 		    Thread.sleep(2000);
+		   
 		    Assert.assertEquals(praChaTopMod.verTextTakeTest.getText(), "Take basic test to reach Earth orbit");
 		    Thread.sleep(2000);
 	        Assert.assertEquals(praChaTopMod.verFliText.getText(), "You have to start your flight");
