@@ -3,17 +3,76 @@
 
 <suite name="suite of suites">
 
-<listeners>
-	<listener class-name="com.fliplearn.flipapp.helper.Base"/>
-</listeners>
+	<listeners>
+		<listener class-name="com.fliplearn.flipapp.helper.Base"/>
+	</listeners>
 	
-		<test name="Registration and Login" enabled="true">
+	<!-- 	
+	<test name="Bookstore" enabled="true">
   		<classes>
-    		<class name="com.fliplearn.flipapp.testcases.Login">
-        	
+        	<class name="com.fliplearn.flipapp.testcases.Bookstore">
+    		<methods>
+        			<include name="verifyBookstore"/>
+        	</methods>		
         	</class>
-	</classes>
+      	</classes> 
+	</test>   
+	-->
+
+	<test name="Event" enabled="true">
+  		<classes>
+    		<class name="com.fliplearn.flipapp.testcases.Event">
+        	</class>
+         </classes> 
 	</test>
+	
+	<test name="Fee" enabled="true">
+  		<classes>
+    		<class name="com.fliplearn.flipapp.testcases.Fee">
+    	   	</class>
+		</classes>
+	</test>
+	
+	<test name="Home Screen" enabled="true">
+  		<classes>
+    		<class name="com.fliplearn.flipapp.testcases.Home">
+    	   	</class>
+		</classes>
+	</test>
+	
+	<test name="Registration and Login" enabled="true">
+		<classes>
+    		<class name="com.fliplearn.flipapp.testcases.Login">	
+        	</class>
+		</classes>
+	</test>
+	
+	<test name="PrimePurchaseFlow" enabled="true">
+	    <classes>
+	    	<class name="com.fliplearn.flipapp.testcases.PrimeContent">
+        	</class>
+        	<class name="com.fliplearn.flipapp.testcases.PrimePurchaseFlow">
+        	</class>
+        	<class name="com.fliplearn.flipapp.testcases.PrimeResources">
+        	</class>
+	    	<class name="com.fliplearn.flipapp.testcases.PrimeSearch">
+        	</class>	        
+        </classes>
+    </test>
+    
+	<test name="Prime Practice" enabled="true">
+  		<classes>
+        	<class name="com.fliplearn.flipapp.testcases.PrimePractice">
+        	</class>
+        </classes> 
+	</test> 
+	
+	<test name="Quiz" enabled="true">
+  		<classes>
+        	<class name="com.fliplearn.flipapp.testcases.QuizDashboard">
+        	</class>
+        </classes> 
+	</test> 
 	
 	<test name="User Profile" enabled="true">
   		<classes>
@@ -25,56 +84,11 @@
 	</classes>
 	</test>
 	
-		
-	<test name="PrimePurchaseFlow" enabled="true">
-	    <classes>
-	    	<class name="com.fliplearn.flipapp.testcases.PrimeSearch">
-        	</class>
-	        <class name="com.fliplearn.flipapp.testcases.PrimePurchaseFlow">
-        	</class>
-        </classes>
-    </test>
-    
-	<test name="Prime Practice" enabled="true">
-  		<classes>
-        	<class name="com.fliplearn.flipapp.testcases.PrimePractice">
-        	</class>
-        </classes> 
-	</test> 
-
-	
 	<test name="VMC" enabled="true">
 		<classes>
         		<class name="com.fliplearn.flipapp.testcases.VMC">
         		</class>
       	</classes> 
 	</test>
-	
-	<test name="Event" enabled="true">
-  		<classes>
-    		<class name="com.fliplearn.flipapp.testcases.Event">
-        	</class>
-         </classes> 
-	</test>  
-	
-	
-	<test name="Fee" enabled="true">
-  		<classes>
-    		<class name="com.fliplearn.flipapp.testcases.Fee">
-    	   	</class>
-		</classes>
-	</test>
-	
-<!-- 	
-<test name="Bookstore" enabled="true">
-  		<classes>
-        	<class name="com.fliplearn.flipapp.testcases.Bookstore">
-    		<methods>
-        			<include name="verifyBookstore"/>
-        	</methods>		
-        	</class>
-      	</classes> 
-      	
-	</test>   
--->
+
 </suite>	
