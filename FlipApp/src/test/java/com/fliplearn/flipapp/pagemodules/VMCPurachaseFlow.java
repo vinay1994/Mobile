@@ -9,8 +9,8 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 public class VMCPurachaseFlow 
 {	
-	@FindBy(xpath="//h2[text()='Fliplearn Guru- Powered By Vidyamandir Classes']")
-	public RemoteWebElement vmcHeadline;
+	@FindBy(xpath="//img[contains(@src,'/images/vmc_flow_icons/vmc_astronaut.png')]")
+	public RemoteWebElement vmcAstronautImg;
 	
 	public VMCPurachaseFlow(WebDriver driver)
 	{

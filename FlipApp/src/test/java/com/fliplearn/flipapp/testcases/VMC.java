@@ -68,9 +68,10 @@ public class VMC extends Base
 				leaMod.clickOnLearnImage();
 			
 			leaMod.vmcImg.click();
+			generic.waitForElementVisibility(driver, vmcPurFlo.vmcAstronautImg);
 			
 			if(platform.equals("Web"))
-				assertEquals(vmcPurFlo.vmcHeadline.isDisplayed(), true);
+				assertEquals(vmcPurFlo.vmcAstronautImg.isDisplayed(), true);
 		}	
 		
 		@Test(dataProvider = "nostaff")
@@ -79,9 +80,11 @@ public class VMC extends Base
 			
 			logMod.Login(role, "CBSE", "12", "Single", "None", "Yes");
 			leaMod.vmcImg.click();
+			generic.waitForElementVisibility(driver, vmcPurFlo.vmcAstronautImg);
+
 			
 			if(platform.equals("Web"))
-			assertEquals(vmcPurFlo.vmcHeadline.isDisplayed(), true);
+			assertEquals(vmcPurFlo.vmcAstronautImg.isDisplayed(), true);
 						
 		}
 

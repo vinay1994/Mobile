@@ -6,6 +6,15 @@
 <listeners>
 	<listener class-name="com.fliplearn.flipapp.helper.Base"/>
 </listeners>
+	
+		<test name="Registration and Login" enabled="true">
+  		<classes>
+    		<class name="com.fliplearn.flipapp.testcases.Login">
+        	
+        	</class>
+	</classes>
+	</test>
+	
 	<test name="User Profile" enabled="true">
   		<classes>
     		<class name="com.fliplearn.flipapp.testcases.UserProfile">
@@ -13,21 +22,26 @@
         			<include name="verifyUserNotGuest" />  	
         		</methods>
         	</class>
-
-        	
-        	<class name="com.fliplearn.flipapp.testcases.PrimeSearch">
-        	</class>
-        	<class name="com.fliplearn.flipapp.testcases.PrimePractice">
-        	</class>
-        	</classes> 
-	</test> 
+	</classes>
+	</test>
 	
+		
 	<test name="PrimePurchaseFlow" enabled="true">
 	    <classes>
+	    	<class name="com.fliplearn.flipapp.testcases.PrimeSearch">
+        	</class>
 	        <class name="com.fliplearn.flipapp.testcases.PrimePurchaseFlow">
         	</class>
         </classes>
     </test>
+    
+	<test name="Prime Practice" enabled="true">
+  		<classes>
+        	<class name="com.fliplearn.flipapp.testcases.PrimePractice">
+        	</class>
+        </classes> 
+	</test> 
+
 	
 	<test name="VMC" enabled="true">
 		<classes>
@@ -51,7 +65,8 @@
 		</classes>
 	</test>
 	
-	<test name="Bookstore" enabled="true">
+<!-- 	
+<test name="Bookstore" enabled="true">
   		<classes>
         	<class name="com.fliplearn.flipapp.testcases.Bookstore">
     		<methods>
@@ -60,5 +75,6 @@
         	</class>
       	</classes> 
       	
-	</test>  
+	</test>   
+-->
 </suite>	

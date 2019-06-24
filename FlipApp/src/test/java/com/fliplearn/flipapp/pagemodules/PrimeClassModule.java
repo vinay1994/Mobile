@@ -31,7 +31,7 @@ public class PrimeClassModule extends Base
 	public void selectUserClass(String className)
 	{
 		if(platform.equals("Web"))
-			driver.findElement(By.xpath("//a[text()='"+className+"']")).click();
+			driver.findElement(By.xpath("//a[@role='button'][text()='"+className+"']")).click();
 		else if(platform.equals("Android"))
 			driver.findElement(By.xpath("//*[@text='"+className+"']")).click();
 		else if(platform.equals("iOS"))

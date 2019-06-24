@@ -152,12 +152,12 @@ public class Event extends Base
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		Thread.sleep(3000);
-		//String exepected = eveMod.fillTxt("Announcement");
+		String exepected = eveMod.fillTxt("Announcement");
 		youProMod.mouseOverOnProfileLogout();
 		logMod.Login("Parent", "CBSE", "Pre", "Single", "Prime", "Yes");
 		eveMod.clickOnNoticeboard();	
 		String actual = eveMod.getTitle();
-		//Assert.assertEquals(exepected, actual);
+		Assert.assertEquals(exepected, actual);
 	}
 	
 	/**
@@ -172,12 +172,12 @@ public class Event extends Base
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		Thread.sleep(3000);
-		//String exepected = eveMod.fillTxt("Announcement");
+		String exepected = eveMod.fillTxt("Announcement");
 		youProMod.mouseOverOnProfileLogout();
 		logMod.Login("Student", "CBSE", "Pre", "Single", "Prime", "Yes");
 		heaMod.clickonHomeBtn();	
 		String actual = eveMod.getRecentTitle();
-		//Assert.assertEquals(exepected, actual);
+		Assert.assertEquals(exepected, actual);
 	}
 	
 	/**
@@ -192,12 +192,12 @@ public class Event extends Base
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		Thread.sleep(3000);
-		//String exepected = eveMod.fillTxt("Album");
+		String exepected = eveMod.fillTxt("Album");
 		youProMod.mouseOverOnProfileLogout();
 		logMod.Login("Parent", "CBSE", "Pre", "Single", "Prime", "Yes");
 		eveMod.clickOnNoticeboard();	
 		String actual = eveMod.getTitle();
-		//Assert.assertEquals(exepected, actual);
+		Assert.assertEquals(exepected, actual);
 	}
 	
 	/**
@@ -212,12 +212,12 @@ public class Event extends Base
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		Thread.sleep(3000);
-		//String exepected = eveMod.fillTxt("Album");
+		String exepected = eveMod.fillTxt("Album");
 		youProMod.mouseOverOnProfileLogout();
 		logMod.Login("Student", "CBSE", "Pre", "Single", "Prime", "Yes");
 		heaMod.clickonHomeBtn();	
 		String actual = eveMod.getRecentTitle();
-		//Assert.assertEquals(exepected, actual);
+		Assert.assertEquals(exepected, actual);
 	}
 	
 	/**
@@ -232,12 +232,12 @@ public class Event extends Base
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		Thread.sleep(3000);
-		//String exepected = eveMod.fillTxt("Homework");
+		String exepected = eveMod.fillTxt("Homework");
 		youProMod.mouseOverOnProfileLogout();
 		logMod.Login("Parent", "CBSE", "Pre", "Single", "Prime", "Yes");
 		eveMod.clickOnNoticeboard();	
 		String actual = eveMod.getTitle();
-		//Assert.assertEquals(exepected, actual);
+		Assert.assertEquals(exepected, actual);
 	}
 	
 	/**
@@ -252,12 +252,12 @@ public class Event extends Base
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		Thread.sleep(3000);
-		//String exepected = eveMod.fillTxt("Homework");
+		String exepected = eveMod.fillTxt("Homework");
 		youProMod.mouseOverOnProfileLogout();
 		logMod.Login("Student", "CBSE", "Pre", "Single", "Prime", "Yes");
 		heaMod.clickonHomeBtn();	
 		String actual = eveMod.getRecentTitle();
-		//Assert.assertEquals(exepected, actual);
+		Assert.assertEquals(exepected, actual);
 	}
 	
 }
