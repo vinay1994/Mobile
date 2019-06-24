@@ -66,14 +66,8 @@
 		</classes>
 	</test>
 	
-	<test name="Bookstore" enabled="true">
-  		<classes>
-        	<class name="com.fliplearn.flipapp.testcases.Bookstore">
-        	</class>
-	</classes>
-	</test>
 	
-		<test name="Quiz" enabled="true">
+	<test name="Quiz" enabled="true">
 	 	<classes>
         	<class name="com.fliplearn.flipapp.testcases.QuizDashboard">        	
         	</class>

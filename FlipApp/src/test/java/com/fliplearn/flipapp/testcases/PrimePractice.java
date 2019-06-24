@@ -105,7 +105,7 @@ public class PrimePractice extends Base{
 }	    
 	   
 	  @Test(dataProvider = "nostaff_new")
-	  public void verifyBackwardFlowOfSubjScreen(String role) throws InterruptedException, IOException {
+	  public void verifyBackwardFlowWithFirstTopic(String role) throws InterruptedException, IOException {
 		  logMod.Login(role, "CBSE", "10", "Single", "Prime", "Yes");
 		  Thread.sleep(6000);
 			priSubMod.clickOnSubject(driver, role, "Biology");
@@ -183,11 +183,72 @@ public class PrimePractice extends Base{
 		    			Assert.assertEquals(praChaTopMod.verDiffLevText.getText(),"Score 60% marks in difficult level test to reach Mars orbit");
 		    			Assert.assertTrue(praChaTopMod.verThiSteImg.isDisplayed());
 		    			Assert.assertTrue(praChaTopMod.cliOnLauTest.isDisplayed());
-		    			
-		    			
-	            	
-	            	
+		    			 }
+	            
+	            @Test(dataProvider="nostaff_new")
+	            public void verifybackFlowWithSecLevel(String role) throws InterruptedException, IOException {
+	            	 logMod.Login(role, "CBSE", "10", "Single", "Prime", "Yes");
+	       		  Thread.sleep(6000);
+	       			priSubMod.clickOnSubject(driver, role, "Biology");
+	       			praChaTopMod.clickOnSecTopic();;
+	       			Thread.sleep(3000);
+	       		    praChaTopMod.clickOnLaunchTest();
+	       		    Thread.sleep(6000);
+	       		    generic.waitForElementVisibility(driver, praChaTopMod.closeLauTest);
+	       		    Assert.assertTrue(praChaTopMod.verPracAssessText.isDisplayed());
+	       		    praChaTopMod.clickOnCloseLaunchTest();
+	       		    Thread.sleep(2000);
+	       		    
+	       		   String expectedTitle1=praChaTopMod.verTopOnLauScreen.getText();
+	       		    System.out.println(expectedTitle1);
+	       		 
+	       		    praChaTopMod.clickOnBackButton();
+	       		    Thread.sleep(2000);
+	       		  
+	       		    Assert.assertTrue(expectedTitle1.contains(praChaTopMod.verrecomTopText.getText()));
+	       		    
+	       		    Assert.assertTrue(praChaTopMod.verRecommImg.isDisplayed());
+	       		    Assert.assertTrue(praChaTopMod.verRecTopTil.isDisplayed());
+	       		    Thread.sleep(2000);
+	    			    Assert.assertEquals(praChaTopMod.verSecLevelText.getText(),"Take intermediate test to reach Moon orbit");
+	    			    Assert.assertTrue(praChaTopMod.verReaEarText.isDisplayed());
+	    			    Assert.assertTrue(praChaTopMod.verSecLevImg.isDisplayed());
 	            }
+	            
+	    			    @Test(dataProvider="nostaff_new")
+	    	            public void verifybackFlowWithThirdLevel(String role) throws InterruptedException, IOException {
+	    	            	 logMod.Login(role, "CBSE", "10", "Single", "Prime", "Yes");
+	    	       		  Thread.sleep(6000);
+	    	       			priSubMod.clickOnSubject(driver, role, "Biology");
+	    	       			Thread.sleep(2000);
+	    	       			
+	    	       			praChaTopMod.clickOnThirTopic();
+	    	       			Thread.sleep(3000);
+	    	       		    praChaTopMod.clickOnLaunchTest();
+	    	       		    Thread.sleep(6000);
+	    	       		    generic.waitForElementVisibility(driver, praChaTopMod.closeLauTest);
+	    	       		    Assert.assertTrue(praChaTopMod.verPracAssessText.isDisplayed());
+	    	       		    praChaTopMod.clickOnCloseLaunchTest();
+	    	       		    Thread.sleep(2000);
+	    	       		    
+	    	       		   String expectedTitle1=praChaTopMod.verTopOnLauScreen.getText();
+	    	       		    System.out.println(expectedTitle1);
+	    	       		 
+	    	       		    praChaTopMod.clickOnBackButton();
+	    	       		    Thread.sleep(2000);
+	    	       		  
+	    	       		    Assert.assertTrue(expectedTitle1.contains(praChaTopMod.verrecomTopText.getText()));
+	    	       		    
+	    	       		    Assert.assertTrue(praChaTopMod.verRecommImg.isDisplayed());
+	    	       		    Assert.assertTrue(praChaTopMod.verRecTopTil.isDisplayed());
+	    	       		    Thread.sleep(2000);
+	    	       		    Assert.assertEquals(praChaTopMod.verThirdLevelText.getText(),"Take difficult test to reach Mars orbit");
+	    	       		    Assert.assertTrue(praChaTopMod.verMoonOrbText.isDisplayed());
+	    	       		    Assert.assertTrue(praChaTopMod.verThiSteImg.isDisplayed());
+	    			       
+	    			
+	    			
+	            
 	          
 	          
 	          
@@ -196,7 +257,7 @@ public class PrimePractice extends Base{
 			  
 			  
 	    	  
-	      }
+	      }}
 	  
 	        
 		    
