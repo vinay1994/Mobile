@@ -34,10 +34,15 @@
         	</class>
         	<class name="com.fliplearn.flipapp.testcases.PrimePractice">
         	</class>
-        	<class name="com.fliplearn.flipapp.testcases.PrimePurchaseFlow">
-        	</class>
-      	</classes> 
+        	</classes> 
 	</test> 
+	
+	<test name="PrimePurchaseFlow" enabled="true">
+	    <classes>
+	        <class name="com.fliplearn.flipapp.testcases.PrimePurchaseFlow">
+        	</class>
+        </classes>
+    </test>
 	
 	<test name="VMC" enabled="true">
 		<classes>
