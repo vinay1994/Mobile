@@ -80,7 +80,7 @@ public class PracticeChapterTopicModule extends Base{
     @FindBy(xpath="//*[contains(@src,'step_1')]")
     public RemoteWebElement verFirSteImg;
     
-    @FindBy(xpath="//h4[text()='You have reached Earth orbit']")
+    @FindBy(xpath="//*[text()='You have reached Earth orbit']")
     public RemoteWebElement verReaEarText;
     
     @FindBy(xpath="//*[contains(text(),'Score 60% marks in intermediate')]")
@@ -98,7 +98,7 @@ public class PracticeChapterTopicModule extends Base{
     @FindBy(xpath="//*[text()='Instructions']")
     public RemoteWebElement verInsText;
     
-    @FindBy(xpath="(//*[text()='Heterotrophic nutrition'])[2]")
+    @FindBy(xpath="(//*[@class='item border-blue-1 border-radius3 padd10 pos-relative cursor practicetopicContent'])[3]")
     public RemoteWebElement clicOnThiTopic;
       
     @FindBy(xpath="//*[text()='1.3 Heterotrophic nutrition']")
@@ -112,6 +112,16 @@ public class PracticeChapterTopicModule extends Base{
     
     @FindBy(xpath="//*[contains(@src,'icons/step_3.png')]")
     public RemoteWebElement verThiSteImg;
+    
+    @FindBy(xpath="//*[text()='Practice Assessment']")
+    public RemoteWebElement verPracAssessText;
+    
+    @FindBy(xpath="//*[contains(text(),'Take difficult test ')]")
+    public RemoteWebElement verThirdLevelText;
+    
+   @FindBy(xpath="//*[contains(text(),'Take intermediate test')]")
+   public RemoteWebElement verSecLevelText;
+   
     
    public void clickOnFirstTopic() {
 	   verFirstChapter.click();
