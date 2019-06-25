@@ -29,8 +29,8 @@ public class LoginModule extends Base
 	QuizModule quiMod = new QuizModule(driver);
 
 
-    @FindBy(xpath="//*[text()='Use your login ID/Password']")
-    public RemoteWebElement useLoginID;
+    @FindBy(xpath="//button[text()='Use your login ID/Password']")
+    public RemoteWebElement useLoginIDPassBtn;
     
 	@FindBy(id="Fname")
 	@AndroidFindBy(id="com.elss.educomp:id/userId") 
@@ -69,27 +69,16 @@ public class LoginModule extends Base
 		
 		String username = user.getuserName();
 		String password = user.getPassword();
-		
 	
-		if(eConfig.getProperty("Platform").equals("Web")) 
-		{
-			extentTest.log(Status.PASS, "Click on Skip Button");
-		}
 
 		if(eConfig.getProperty("Platform").equals("Android")) 
 		{
 			onbMod.skipScreen();
 			extentTest.log(Status.PASS, "Click on Skip button.");
 		}
+		 useLoginIDPassBtn.click();		
+		 generic.waitForElementVisibility(driver, usernameTxt);	
 
-/*
-			if(eConfig.getProperty("Platform").equals("iOS")) 
-		{ 
-			//onbMod.skipScreen();
-			//extentTest.log(Status.PASS, "Click on Skip button.");
-		
-		}*/
-		useLoginID.click();		
 		 usernameTxt.clear();
 		 usernameTxt.sendKeys(username);
 		 extentTest.log(Status.PASS, "Enter Username: "+username);

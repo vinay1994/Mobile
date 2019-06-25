@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Fliplearn Automation Suite">
+	<listeners>
+		<listener class-name="com.fliplearn.flipapp.helper.Base"/>
+	</listeners>
+ 
+ 	<test name="Login and My Profile" enabled="true">
+  		<classes>
+    		<class name="com.fliplearn.flipapp.testcases.Login">
+        	</class>
+        	<class name="com.fliplearn.flipapp.testcases.UserProfile">
+        	</class>
+      	</classes> 
+	</test> 
+
+	 <test name="Home Screen" enabled="true">
+	 	<classes>
+  			<class name="com.fliplearn.flipapp.testcases.Home">
+        	</class>
+      	</classes> 
+	</test>
+	
+	<test name="Prime" enabled="true">
+  		<classes>
+        	<class name="com.fliplearn.flipapp.testcases.PrimeContent">        	
+        	</class>
+        	
+    		<class name="com.fliplearn.flipapp.testcases.PrimeResources">
+        	</class>
+        	
+        	<class name="com.fliplearn.flipapp.testcases.PrimeSearch">
+        	</class>
+      	</classes> 
+	</test> 
+	
+	<test name="VMC" enabled="true">
+		<classes>
+        		<class name="com.fliplearn.flipapp.testcases.VMC">
+        		</class>
+      	</classes> 
+	</test>
+	
+	<test name="Event" enabled="true">
+  		<classes>
+    		<class name="com.fliplearn.flipapp.testcases.Event">
+        	</class>
+         </classes> 
+	</test>  
+	
+	
+	<test name="Fee" enabled="true">
+  		<classes>
+    		<class name="com.fliplearn.flipapp.testcases.Fee">
+    	   	</class>
+		</classes>
+	</test>
+	
+	<test name="Bookstore" enabled="true">
+  		<classes>
+        	<class name="com.fliplearn.flipapp.testcases.Bookstore">
+        	</class>
+	</classes>
+	</test>
+	
+		<test name="Quiz" enabled="true">
+	 	<classes>
+        	<class name="com.fliplearn.flipapp.testcases.QuizDashboard">        	
+        	</class>
+      	</classes> 
+	</test>
+</suite>	

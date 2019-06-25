@@ -169,7 +169,7 @@ public class EventModule extends Base
 	}
 
 
-	public void fillTxt(String eventType) throws Throwable 
+	public String fillTxt(String eventType) throws Throwable 
 	{
 
 		noticeboardTab.click();
@@ -264,7 +264,8 @@ public class EventModule extends Base
 			noticeboardTab.click();
 		}
 		isTitleDisplayed("Testing automation Title_"+timeStamp); 	
-		Thread.sleep(2000);	
+		Thread.sleep(2000);
+		return "Testing automation Title_"+timeStamp;
 	}
 
 

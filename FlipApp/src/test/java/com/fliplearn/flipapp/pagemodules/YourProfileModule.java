@@ -80,5 +80,6 @@ public class YourProfileModule extends Base
 	public void mouseOverOnProfileLogout() throws InterruptedException 
 	{
 		generic.mouseHoverAndClick(driver, profile, logout);
+		driver.navigate().refresh();
 	}
 }
