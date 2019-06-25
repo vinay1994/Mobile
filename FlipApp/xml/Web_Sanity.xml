@@ -7,17 +7,7 @@
 		<listener class-name="com.fliplearn.flipapp.helper.Base"/>
 	</listeners>
 	
-	<!-- 	
-	<test name="Bookstore" enabled="true">
-  		<classes>
-        	<class name="com.fliplearn.flipapp.testcases.Bookstore">
-    		<methods>
-        			<include name="verifyBookstore"/>
-        	</methods>		
-        	</class>
-      	</classes> 
-	</test>   
-	-->
+
 
 	<test name="Event" enabled="true">
   		<classes>
