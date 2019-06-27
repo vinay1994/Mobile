@@ -198,11 +198,7 @@ public class Base implements ITestListener
 					System.setProperty("webdriver.gecko.driver", Constants.LINUX_FIREFOX_EXE);
 					driver = new FirefoxDriver();
 				}	
-				
 
-				driver.get(url);
-			
-        driver.manage().window().maximize();
 		}	
 		
 		else if(server.equals("Mac") & platform.equals("Web"))
@@ -224,14 +220,12 @@ public class Base implements ITestListener
 					System.setProperty("webdriver.gecko.driver", Constants.MAC_FIREFOX_EXE);
 					driver = new FirefoxDriver();
 				}	
-				
-
-				driver.get(url);
 			
-        driver.manage().window().maximize();
+		}
 
-
-		}		
+			driver.get(url);
+	
+			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
 	
