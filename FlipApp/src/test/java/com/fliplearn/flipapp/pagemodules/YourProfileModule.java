@@ -1,5 +1,7 @@
 package com.fliplearn.flipapp.pagemodules;
 
+import java.lang.reflect.InvocationTargetException;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
@@ -46,7 +48,7 @@ public class YourProfileModule extends Base
 	@AndroidFindBy(id="com.elss.educomp:id/role")
 	public RemoteWebElement usernameLbl;	
 	
-	public void updateClassAndSection(WebDriver driver, String className, String sectionName) throws InterruptedException
+	public void updateClassAndSection(WebDriver driver, String className, String sectionName) throws InvocationTargetException, InterruptedException
 	{
 		Thread.sleep(3000);
 		HeaderModule heaMod = new HeaderModule(driver);
@@ -77,9 +79,8 @@ public class YourProfileModule extends Base
 		return roleName;
 	}
 	
-	public void mouseOverOnProfileLogout() throws InterruptedException 
+	public void mouseOverOnProfileLogout() throws InterruptedException, InvocationTargetException 
 	{
 		generic.mouseHoverAndClick(driver, profile, logout);
-		driver.navigate().refresh();
 	}
 }

@@ -1,6 +1,7 @@
 package com.fliplearn.flipapp.testcases;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -83,7 +84,7 @@ public class Login extends Base
 	 */
 	
 	@Test(dataProvider = "allusers")
-	public void verifyLogout(String role) throws InterruptedException, IOException
+	public void verifyLogout(String role) throws InterruptedException, IOException, InvocationTargetException
 	{
 		logMod.Login(role, "CBSE", "Pre", "Single", "Prime", "Yes");
 		

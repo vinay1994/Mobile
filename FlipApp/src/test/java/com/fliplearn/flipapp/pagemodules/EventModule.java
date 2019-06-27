@@ -141,14 +141,16 @@ public class EventModule extends Base
 	public void mouseOverOnpostBtn(String eventType) throws InterruptedException 
 	{
 		Thread.sleep(2000);
-
+		try {
 		switch(eventType)
 		{
 		case "Announcement":
 			generic.mouseHoverAndClick(driver,postBtn, annBtn);
 			break;
 		case "Album":
-			generic.mouseHoverAndClick(driver,postBtn, albBtn);
+		
+				generic.mouseHoverAndClick(driver,postBtn, albBtn);
+			
 			break;	
 		case "Homework":
 			generic.mouseHoverAndClick(driver,postBtn, homeWorkBtn);
@@ -157,10 +159,20 @@ public class EventModule extends Base
 			break;
 		}	
 	}
+		catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
 	public void mouseOverOnProfileLogout() throws InterruptedException 
 	{
-		generic.mouseHoverAndClick(driver,profile, logout);
+		try {
+			generic.mouseHoverAndClick(driver,profile, logout);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public void selectsubject() {
@@ -252,10 +264,10 @@ public class EventModule extends Base
 
 			addDescriptionTxt.sendKeys("Qa add description for testing purpose on this time :"+timeStamp);
 			generic.scrollPage(createBtn);
-			uploadImageBtn.click();
+			//uploadImageBtn.click();
 
-			String Filepath = System.getProperty("user.dir")+"\\resources\\images\\vinay.png";
-			generic.UploadFile(Filepath);
+			//String Filepath = System.getProperty("user.dir")+"\\resources\\images\\vinay.png";
+			//generic.UploadFile(Filepath);
 
 			JavascriptExecutor jse = (JavascriptExecutor) driver;
 			jse.executeScript("document.getElementById('btn-next').focus();");
