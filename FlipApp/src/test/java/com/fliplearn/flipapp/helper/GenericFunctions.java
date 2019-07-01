@@ -19,6 +19,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -141,7 +142,8 @@ public class GenericFunctions extends Base
 	
 	public void mouseHoverAndClick(WebDriver driver, RemoteWebElement element, RemoteWebElement target) throws InterruptedException 
 	{
-		element.click();
+
+		element.sendKeys(Keys.ENTER);;
 		generic.waitForElementVisibility(driver, element);
 		extentTest.log(Status.PASS, "Wait for element visibility.");
 		Thread.sleep(3000);

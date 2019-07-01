@@ -169,30 +169,26 @@ public class Base implements ITestListener
 
 		}
 		
-		else if(server.equals("Windows") &
-				platform.equals("Web") & browser.equals("Chrome"))
+		else if(server.equals("Windows") & platform.equals("Web") & browser.equals("Chrome"))
 		{
-			ChromeOptions options = new ChromeOptions();
-			options.addArguments("start-maximized");
-			
             System.setProperty("webdriver.chrome.driver", Constants.WINDOWS_CHROME_EXE);
-            driver = new ChromeDriver();
-           
-            driver.get(url);
-            
-            driver.manage().window().maximize();
-			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+            Map<String, Object> prefs = new HashMap<String, Object>();
+	        prefs.put("profile.default_content_setting_values.notifications", 2);
+	        ChromeOptions options = new ChromeOptions();
+	        options.setExperimentalOption("prefs", prefs);
+	        driver = new ChromeDriver(options);
 		}
 		
 		else if(server.equals("Linux") & platform.equals("Web"))
 	    {
 				if(browser.equals("Chrome"))
-				{
-					ChromeOptions options = new ChromeOptions();
-					options.addArguments("start-maximized");
-			
+				{	
 					System.setProperty("webdriver.chrome.driver", Constants.LINUX_CHROME_EXE);
-					driver = new ChromeDriver();
+					Map<String, Object> prefs = new HashMap<String, Object>();
+			        prefs.put("profile.default_content_setting_values.notifications", 2);
+			        ChromeOptions options = new ChromeOptions();
+			        options.setExperimentalOption("prefs", prefs);
+			        driver = new ChromeDriver(options);
 				}
 				else if(browser.equals("Firefox")) 
 				{
@@ -202,24 +198,19 @@ public class Base implements ITestListener
 					System.setProperty("webdriver.gecko.driver", Constants.LINUX_FIREFOX_EXE);
 					driver = new FirefoxDriver();
 				}	
-				
 
-				driver.get(url);
-			
-        driver.manage().window().maximize();
 		}	
 		
 		else if(server.equals("Mac") & platform.equals("Web"))
 	    {
 				if(browser.equals("Chrome"))
-				{
-					ChromeOptions options = new ChromeOptions();
-					options.addArguments("start-maximized");
-			
+				{	
 					System.setProperty("webdriver.chrome.driver", Constants.MAC_CHROME_EXE);
-					driver = new ChromeDriver();
-					 System.out.println("testing*********************");
-						System.out.println(System.getProperty("user.dir"));
+					Map<String, Object> prefs = new HashMap<String, Object>();
+			        prefs.put("profile.default_content_setting_values.notifications", 2);
+			        ChromeOptions options = new ChromeOptions();
+			        options.setExperimentalOption("prefs", prefs);
+			        driver = new ChromeDriver(options);
 				}
 				else if(browser.equals("Firefox")) 
 				{
@@ -229,12 +220,12 @@ public class Base implements ITestListener
 					System.setProperty("webdriver.gecko.driver", Constants.MAC_FIREFOX_EXE);
 					driver = new FirefoxDriver();
 				}	
-				
-
-				driver.get(url);
 			
-        driver.manage().window().maximize();
-		}		
+		}
+
+			driver.get(url);
+	
+			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
 	

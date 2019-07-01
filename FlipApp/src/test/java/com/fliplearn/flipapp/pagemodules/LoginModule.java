@@ -3,7 +3,9 @@ package com.fliplearn.flipapp.pagemodules;
 import java.io.IOException;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -29,7 +31,7 @@ public class LoginModule extends Base
 	QuizModule quiMod = new QuizModule(driver);
 
 
-    @FindBy(xpath="//button[text()='Use your login ID/Password']")
+    @FindBy(xpath="//button[@class='themeOutlineButton padding-10-60 mobilebtnBlock mobilemargin0']")
     public RemoteWebElement useLoginIDPassBtn;
     
 	@FindBy(id="Fname")
@@ -76,7 +78,10 @@ public class LoginModule extends Base
 			onbMod.skipScreen();
 			extentTest.log(Status.PASS, "Click on Skip button.");
 		}
-		 useLoginIDPassBtn.click();		
+		 generic.waitForElementVisibility(driver, useLoginIDPassBtn);
+		 Actions actions = new Actions(driver);
+		 actions.doubleClick(useLoginIDPassBtn).perform();
+		 
 		 generic.waitForElementVisibility(driver, usernameTxt);	
 
 		 usernameTxt.clear();
