@@ -154,7 +154,9 @@ public class Event extends Base
 		Thread.sleep(3000);
 		String exepected = eveMod.fillTxt("Announcement");
 		youProMod.mouseOverOnProfileLogout();
+		Thread.sleep(4000);
 		logMod.Login("Parent", "CBSE", "Pre", "Single", "Prime", "Yes");
+	
 		eveMod.clickOnNoticeboard();	
 		String actual = eveMod.getTitle();
 		Assert.assertEquals(exepected, actual);
