@@ -91,7 +91,7 @@ public class Login extends Base
 		if(platform.equals("Web"))
 		{
 			if(!role.equals("Guest"))
-				generic.mouseHoverAndClick(driver, heaMod.profileImg, heaMod.logoutLnk);
+			    generic.mouseHoverAndClick(driver, heaMod.profileImg, heaMod.logoutLnk);
 			else
 				generic.mouseHoverAndClick(driver, heaMod.guestProfileImg, heaMod.logoutLnk);				
 		}

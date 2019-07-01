@@ -58,6 +58,9 @@ public class HeaderModule extends Base
 	@FindBy(xpath="(//ul/li/a[@class='b-t-1 header-dd']//a)[1] | //a[@ui-sref='profile-view']")
 	public RemoteWebElement myProfileLnk;
 	
+	@FindBy(xpath="//*[@class='profilePic ng-scope']")
+	public RemoteWebElement cliOnHamMen;
+	
 	@FindBy(linkText="Logout")
 	@AndroidFindBy(id="com.elss.educomp:id/logout")
 	@iOSXCUITFindBy(xpath="//XCUIElementTypeStaticText[@name='Logout']")
@@ -79,6 +82,8 @@ public class HeaderModule extends Base
 	{
 		myProfileLnk.click();	
 	}	
+	
+	
 	
 	public void clickonHomeBtn() throws InterruptedException
 	{
@@ -109,6 +114,7 @@ public class HeaderModule extends Base
 		//	action.scroll(userMenuSettings, 90, 497);
 		//	action.perform();
 			//}
+			
 			userMenuSettings.click();
 			logoutLnk.click();
 			yesLogoutLnk.click();

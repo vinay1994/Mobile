@@ -226,6 +226,10 @@ public class GenericFunctions extends Base
 	public boolean compareList(List<RemoteWebElement> webList, String expectedString) throws InterruptedException
 	{
 		Thread.sleep(2000);
+		
+		
+		//System.out.println(expectedString);
+		//List<String> expectedList =  Arrays.asList(expectedString);
 		List<String> expectedList =  Arrays.asList(expectedString.split("\\s*,\\s*"));
 		List<String> actualList = new ArrayList<String>();
 
