@@ -5,13 +5,15 @@
 
 <listeners>
 	<listener class-name="com.fliplearn.flipapp.helper.Base"/>
+	<listener class-name="com.fliplearn.flipapp.helper.RetryListener"/>
+	
 </listeners>
  
  <test name="Onboarding" enabled="true">
   		<classes>
-    		<class name="com.fliplearn.flipapp.testcases.PrimePractice">
+    		<class name="com.fliplearn.flipapp.testcases.UserProfile">
     		<methods>
-        			<include name="verPracticeModeTopScreen"/>
+        			<include name="verifyUserNotGuest"/>
 
         	</methods>		
         	</class>

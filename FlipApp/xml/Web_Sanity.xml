@@ -5,6 +5,7 @@
 
 	<listeners>
 		<listener class-name="com.fliplearn.flipapp.helper.Base"/>
+		<listener class-name="com.fliplearn.flipapp.helper.RetryListener"/>
 	</listeners>
 	
 

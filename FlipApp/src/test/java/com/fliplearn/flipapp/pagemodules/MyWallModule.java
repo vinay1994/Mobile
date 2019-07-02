@@ -17,7 +17,10 @@ public class MyWallModule
 	
 	@FindBy(xpath="(//div[@class='cursor ng-scope']//img)[1]")
 	public static RemoteWebElement myWallThumb;
-		
+	
+	@FindBy(xpath="(//div[@class='cursor ng-binding ng-scope'])[1]/iframe")
+	public static RemoteWebElement myWallVideoThumb;
+	
 	@FindBy(xpath="(//*[text()='My Wall'])[1]")
 	public static RemoteWebElement guestWall;
 	

@@ -241,17 +241,27 @@ public class Home extends Base
 	@Test(dataProvider = "nostaff_new")
 	public void fliplearnWallThumbnail(String role) throws InterruptedException, IOException
 	{
+		boolean myFlag = false;
+		
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		
 		generic.waitForElementVisibility(driver, homMod.fliplearnWallHeading);
 		
-		String expectedImg = homMod.fliplearnWallThumb.getAttribute("src");
+		String expectedImg = homMod.fliplearnWallVideoThumb.getAttribute("src");
+		
+		String[] hello = expectedImg.split("/");
+		expectedImg = hello[hello.length - 2];
+		
+		System.out.println("Expected Image:"+expectedImg);
+	
 		homMod.clickOnMyWallContent();
 		
 		generic.waitForElementVisibility(driver, myWalMod.myWallHeading);
-		String actualImg = myWalMod.myWallThumb.getAttribute("src");
+		String actualImg = myWalMod.myWallVideoThumb.getAttribute("src");
+		System.out.println("Expected Image:"+expectedImg);
+		System.out.println("Actual Image:"+actualImg);
 	
-		Assert.assertEquals(expectedImg, actualImg);
+		Assert.assertTrue(actualImg.contains(expectedImg));
 	}
 	
 	/**

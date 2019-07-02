@@ -3,6 +3,7 @@ package com.fliplearn.flipapp.testcases;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -52,12 +53,20 @@ public class UserProfile extends Base
 	 */
 	@Test(dataProvider = "allusers")
 	public void verifyUserNotGuest(String role) throws InterruptedException, IOException, InvocationTargetException
-	{		
+	{	
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		
 		if(platform.equals("Web"))
 		{
-			generic.mouseHoverAndClick(driver, heaMod.profileImg, heaMod.myProfileLnk);
+			if(role=="Guest")
+			{
+				Actions act = new Actions(driver);
+				act.moveToElement(heaMod.guestProfileImg).build().perform();
+				generic.mouseHoverAndClick(driver, heaMod.guestProfileImg, heaMod.myProfileLnk);
+
+			}
+			else
+				generic.mouseHoverAndClick(driver, heaMod.profileImg, heaMod.myProfileLnk);
 			Thread.sleep(3000);
 			Assert.assertEquals(youProMod.getUsernameLabel(), role+" Name");
 		}
