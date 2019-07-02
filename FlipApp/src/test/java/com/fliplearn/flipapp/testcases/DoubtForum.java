@@ -79,7 +79,30 @@ public class DoubtForum extends Base{
 		    jse.executeScript("window.scrollBy(0,250)", "");
             Thread.sleep(2000);
             douForMod.clickOnDoubtForumTab();
-            douForMod.verifyNumOfDoubtForuTab(role);
+          
+            String expectedList = readData(platform, role, "DoubtForum Tabs");
+       	 System.out.println("Expected List:"+expectedList);
+       	 
+       	 Assert.assertEquals(generic.compareList(douForMod.verNoOfTab, expectedList), true);
+	}
+          
+       	 @Test(dataProvider="doubt_staff")
+       	 public void createDoubtWithoutSearchTextWithoutImg(String role) throws InterruptedException, IOException {
+       		 logMod.Login(role, "CBSE", "10", "Single", "Prime", "Yes");
+ 	        Thread.sleep(6000);
+ 	        JavascriptExecutor jse = (JavascriptExecutor)driver;
+ 		    jse.executeScript("window.scrollBy(0,250)", "");
+             Thread.sleep(2000);
+             douForMod.clickOnDoubtForumTab();
+             douForMod.clickOnAskYourDoubt();
+             douForMod.enterAskYourDoubtText();
+             douForMod.clickOnSearchButtn();
+             douForMod.selectSubjectFromDropDwn();
+             generic.waitForElementVisibility(driver, douForMod.slectChap);
+             douForMod.selectChapFromDropdwn();
+             douForMod.clickOnCreateButton();
+             
+             }
 
             }
 		
@@ -90,7 +113,7 @@ public class DoubtForum extends Base{
 		
 		
 		
-	}
+	
 	
 
 

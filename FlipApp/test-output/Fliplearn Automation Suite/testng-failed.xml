@@ -6,15 +6,15 @@
   </listeners>
   <test thread-count="5" name="Onboarding(failed)">
     <classes>
-      <class name="com.fliplearn.flipapp.testcases.Bookstore">
+      <class name="com.fliplearn.flipapp.testcases.PrimePractice">
         <methods>
+          <include name="preVerifyPrimePurchaseFlow"/>
+          <include name="verPracticeModeTopScreen" invocation-numbers="0"/>
           <include name="befo"/>
-          <include name="addRemoveCartItemLogout" invocation-numbers="0"/>
-          <include name="befMethod"/>
           <include name="aftSuite"/>
           <include name="getResult"/>
         </methods>
-      </class> <!-- com.fliplearn.flipapp.testcases.Bookstore -->
+      </class> <!-- com.fliplearn.flipapp.testcases.PrimePractice -->
     </classes>
   </test> <!-- Onboarding(failed) -->
 </suite> <!-- Failed suite [Fliplearn Automation Suite] -->
