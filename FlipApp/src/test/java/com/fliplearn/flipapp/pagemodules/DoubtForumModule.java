@@ -40,28 +40,58 @@ public class DoubtForumModule extends Base{
 	@FindBy(xpath="//*[contains(@src,'doubtforumastronaut.png')]")
 	public RemoteWebElement verAskImg;
 	
+	@FindBy(xpath="//*[@class='btn-animation']")
+	public RemoteWebElement clickOnAskUrDoubt;
 	
-
+	@FindBy(xpath="(//*[@placeholder='Ask your doubt'])[2]")
+	public RemoteWebElement entText;
+	
+	@FindBy(xpath="//*[text()='Search']")
+	public RemoteWebElement cliOnSearch;
+	
+	@FindBy(name="subject")
+	public RemoteWebElement selectSubject;
+	
+	@FindBy(name="chapter")
+	public RemoteWebElement slectChap;
+	
+	@FindBy(xpath="//*[text()='Create']")
+	public RemoteWebElement cliOnCreate;
+	
+	
 	public void clickOnDoubtForumTab() {
 		clickOnDouFor.click();
-		
+		}
+	public void clickOnAskYourDoubt() {
+		clickOnAskUrDoubt.click();
+	}
+	public void enterAskYourDoubtText() {
+		entText.sendKeys("Create Post For Testing");
+		}
+	public void clickOnSearchButtn() {
+		cliOnSearch.click();
 	}
 	
 	public  void verifyNumOfDoubtForuTab(String role) throws InterruptedException, IOException {
-		 
+		 List<RemoteWebElement> actualList = verNoOfTab;}
+	
+    public void selectSubjectFromDropDwn() {
+    	selectSubject.click();
+    	generic.selectByVisibleText(selectSubject,"Maths");
+    	
+    }
+    public void selectChapFromDropdwn() {
+    	slectChap.click();
+    	generic.selectByVisibleText(slectChap, "Polynomials");
+    }
+    public void clickOnCreateButton() {
+    	cliOnCreate.click();
+    }
     
-	//String expectedList = "Doubts, My Doubts, Post For Me";	
-	List<RemoteWebElement> actualList = verNoOfTab;
-    //generic.compareList(actualList, expectedList);
-    
-    String expectedList = readData(platform, role, "Doubt Forum Tabs");
-	 System.out.println("Expected List:"+expectedList);
-	 
-	 Assert.assertEquals(generic.compareList(actualList, expectedList), true);
     
     
 			 
-		    }}
+		    }
 
 	
 

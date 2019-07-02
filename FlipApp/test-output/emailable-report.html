@@ -9,21 +9,47 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="7">Fliplearn Automation Suite</th></tr>
-<tr><td><a href="#t0">Onboarding</a></td><td class="num">0</td><td class="num">0</td><td class="num attn">3</td><td class="num">56,669</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Onboarding</a></td><td class="num">1</td><td class="num">0</td><td class="num attn">1</td><td class="num">113,657</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Fliplearn Automation Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Onboarding &#8212; failed</th></tr><tr class="failedeven"><td rowspan="3">com.fliplearn.flipapp.testcases.DoubtForum</td><td><a href="#m0">verifyCountOfDoubtTabs</a></td><td rowspan="3">1561965426030</td><td rowspan="3">15462</td></tr><tr class="failedeven"><td><a href="#m1">verifyCountOfDoubtTabs</a></td></tr><tr class="failedeven"><td><a href="#m2">verifyCountOfDoubtTabs</a></td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Fliplearn Automation Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Onboarding &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.fliplearn.flipapp.testcases.PrimePractice</td><td><a href="#m0">verPracticeModeTopScreen</a></td><td rowspan="1">1561986027522</td><td rowspan="1">53124</td></tr><tr><th colspan="4">Onboarding &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.fliplearn.flipapp.testcases.PrimePractice</td><td><a href="#m1">verPracticeModeTopScreen</a></td><td rowspan="1">1561986091888</td><td rowspan="1">28163</td></tr></tbody>
 </table>
-<h2>Onboarding</h2><h3 id="m0">com.fliplearn.flipapp.testcases.DoubtForum#verifyCountOfDoubtTabs</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>Teacher</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [true] but found [false]
-	at com.fliplearn.flipapp.pagemodules.DoubtForumModule.verifyNumOfDoubtForuTab(DoubtForumModule.java:60)
-	at com.fliplearn.flipapp.testcases.DoubtForum.verifyCountOfDoubtTabs(DoubtForum.java:82)
-... Removed 31 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">com.fliplearn.flipapp.testcases.DoubtForum#verifyCountOfDoubtTabs</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>Student</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [true] but found [false]
-	at com.fliplearn.flipapp.pagemodules.DoubtForumModule.verifyNumOfDoubtForuTab(DoubtForumModule.java:60)
-	at com.fliplearn.flipapp.testcases.DoubtForum.verifyCountOfDoubtTabs(DoubtForum.java:82)
-... Removed 31 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">com.fliplearn.flipapp.testcases.DoubtForum#verifyCountOfDoubtTabs</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>Guest</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [true] but found [false]
-	at com.fliplearn.flipapp.pagemodules.DoubtForumModule.verifyNumOfDoubtForuTab(DoubtForumModule.java:60)
-	at com.fliplearn.flipapp.testcases.DoubtForum.verifyCountOfDoubtTabs(DoubtForum.java:82)
-... Removed 31 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Onboarding</h2><h3 id="m0">com.fliplearn.flipapp.testcases.PrimePractice#verPracticeModeTopScreen</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>Student</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: Can&apos;t locate an element by this strategy: By.xpath: //*[text()=&apos;What are Life Processes?&apos;]
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:126)
+	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:59)
+	at org.openqa.selenium.remote.RemoteWebElement$$EnhancerByCGLIB$$d27c0df4.isDisplayed(&lt;generated&gt;)
+	at com.fliplearn.flipapp.testcases.PrimePractice.verPracticeModeTopScreen(PrimePractice.java:152)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@29eda4f8 (tried for 1 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:304)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:99)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:119)
+	... 28 more
+Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: //*[text()=&apos;What are Life Processes?&apos;]
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;linuxize&apos;, ip: &apos;127.0.0.1&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;4.4.0-151-generic&apos;, java.version: &apos;10.0.2&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 67.0.3, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190618082158, moz:geckodriverVersion: 0.23.0, moz:headless: false, moz:processID: 10923, moz:profile: /tmp/rust_mozprofile.k5hyR4..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, platformVersion: 4.4.0-151-generic, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: a1ac7131-0748-4c46-9e34-4787564f6e33
+*** Element info: {Using=xpath, value=//*[text()=&apos;What are Life Processes?&apos;]}
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:50)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$0(AppiumElementLocator.java:120)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:172)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:1)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 30 more
+... Removed 29 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.fliplearn.flipapp.testcases.PrimePractice#verPracticeModeTopScreen</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>Guest</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
