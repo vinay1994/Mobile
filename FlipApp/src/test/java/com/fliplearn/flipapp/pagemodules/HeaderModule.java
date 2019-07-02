@@ -52,7 +52,7 @@ public class HeaderModule extends Base
 	@FindBy(xpath="//button[@class='dropbtn_nav btn-dd dropbtn dropdown-toggle'] | //a[@class='wraptext ng-binding']/img")
 	public RemoteWebElement profileImg;	
 	
-	@FindBy(css="a[class='wraptext ng-binding']")
+	@FindBy(css="a[class='wraptext ng-binding'][type='button']")
 	public RemoteWebElement guestProfileImg;
 
 	@FindBy(xpath="(//ul/li/a[@class='b-t-1 header-dd']//a)[1] | //a[@ui-sref='profile-view']")

@@ -3,6 +3,8 @@ package com.fliplearn.flipapp.testcases;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
@@ -91,9 +93,16 @@ public class Login extends Base
 		if(platform.equals("Web"))
 		{
 			if(!role.equals("Guest"))
+			{	
+				heaMod.profileImg.sendKeys(Keys.ENTER);
 				generic.mouseHoverAndClick(driver, heaMod.profileImg, heaMod.logoutLnk);
+			}	
 			else
-				generic.mouseHoverAndClick(driver, heaMod.guestProfileImg, heaMod.logoutLnk);				
+			{	
+				Actions act = new Actions(driver);
+				act.moveToElement(heaMod.guestProfileImg).build().perform();
+				generic.mouseHoverAndClick(driver, heaMod.guestProfileImg, heaMod.logoutLnk);	
+			}	
 		}
 		else
 		{

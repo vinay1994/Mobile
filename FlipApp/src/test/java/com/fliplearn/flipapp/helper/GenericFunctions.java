@@ -142,8 +142,6 @@ public class GenericFunctions extends Base
 	
 	public void mouseHoverAndClick(WebDriver driver, RemoteWebElement element, RemoteWebElement target) throws InterruptedException 
 	{
-
-		element.sendKeys(Keys.ENTER);;
 		generic.waitForElementVisibility(driver, element);
 		extentTest.log(Status.PASS, "Wait for element visibility.");
 		Thread.sleep(3000);
