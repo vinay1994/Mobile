@@ -65,19 +65,17 @@ public class PrimePurchaseFlow extends Base{
 		
 		leaMod.clickOnPrimeImage();
 		Thread.sleep(2000);
-		
-		    JavascriptExecutor js = (JavascriptExecutor) driver;
+		if(role.equals("Admin" )|| role.equals("Principal")||role.equals("Teacher")) {
+			JavascriptExecutor js = (JavascriptExecutor) driver;
 			js.executeScript("window.scrollBy(0,1000)");
-		
-		if(role.equals("Admin") || role.equals("Teacher") || role.equals("Principal")) {
-			priClaMod.selectUserClass("Class 12");}
-		
-		Thread.sleep(2000);
-		 if(role.equals("Parent")) {
-			 JavascriptExecutor js1 = (JavascriptExecutor) driver;
-				js1.executeScript("window.scrollBy(0,1000)");
-				}
-		
+		//if(role.equals("Admin") || role.equals("Teacher") || role.equals("Principal")) {
+			priClaMod.selectUserClass("Class 12");
+	        Thread.sleep(2000);}
+//		 if(role.equals("Parent")) {
+//			 JavascriptExecutor js1 = (JavascriptExecutor) driver;
+//				js1.executeScript("window.scrollBy(0,1000)");
+//				}
+//		
 		priSubMod.clickOnSubject(driver, role, "Biology");
 		
 		
@@ -111,7 +109,7 @@ public class PrimePurchaseFlow extends Base{
 		priPurFloMod.clickOnProceednPay();
 		
 		JavascriptExecutor js2= (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].click();", priPurFloMod.selDebitCard); 
+		js2.executeScript("arguments[0].click();", priPurFloMod.selDebitCard); 
 		Thread.sleep(2000);
 		priPurFloMod.clickOnPayNow();
 		//priPurFloMod.paymentDiscard();

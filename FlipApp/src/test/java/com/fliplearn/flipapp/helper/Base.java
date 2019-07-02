@@ -479,6 +479,16 @@ public class Base implements ITestListener
 		  }; 
 	}
 	
+	@DataProvider(name="doubt_staff")
+	public static Object[] group4_new()
+	{
+		return new Object[][]
+				{
+			{ "Teacher" }, { "Student" }, { "Guest" }
+				
+				};
+	}
+	
 	@DataProvider(name = "logout")
 	public static Object[] group4() 
 	{

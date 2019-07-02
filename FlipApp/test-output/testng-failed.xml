@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Default test(failed)">
+<suite name="Failed suite [Fliplearn Automation Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="com.fliplearn.flipapp.helper.Base"/>
+  </listeners>
+  <test thread-count="5" name="Onboarding(failed)">
     <classes>
-      <class name="com.fliplearn.flipapp.testcases.Login">
+      <class name="com.fliplearn.flipapp.testcases.PrimePractice">
         <methods>
-          <include name="registration"/>
-          <include name="verifyLogin"/>
+          <include name="preVerifyPrimePurchaseFlow"/>
+          <include name="verPracticeModeTopScreen" invocation-numbers="0"/>
           <include name="befo"/>
           <include name="aftSuite"/>
-          <include name="befMethod"/>
           <include name="getResult"/>
-          <include name="verifyLogout"/>
         </methods>
-      </class> <!-- com.fliplearn.flipapp.testcases.Login -->
+      </class> <!-- com.fliplearn.flipapp.testcases.PrimePractice -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Onboarding(failed) -->
+</suite> <!-- Failed suite [Fliplearn Automation Suite] -->
