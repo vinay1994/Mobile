@@ -1,11 +1,15 @@
 package com.fliplearn.flipapp.pagemodules;
-
+import java.text.SimpleDateFormat;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Iterator;
 import java.util.List;
 
 import org.apache.poi.util.SystemOutLogger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
@@ -25,14 +29,23 @@ public class DoubtForumModule extends Base{
 	{
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 	}
-	@FindBy(xpath="//*[text()='Doubt Forum']")
+	
+	public static String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
+
+	@FindBy(xpath="(//*[text()='Doubt Forum'])[1]")
 	public RemoteWebElement clickOnDouFor;
 	
 	@FindBy(xpath="//*[@class='hidden-xs ng-binding']")    
 	public List<RemoteWebElement >verNoOfTab;
 	
+	@FindBy(xpath="(//*[text()='My Doubts'])[2]")
+	public RemoteWebElement cliOnMyDoubtTab;
+	
 	@FindBy(xpath="//*[contains(@src,'doubt.png')]")
 	public RemoteWebElement verDouFormImg;
+	
+	@FindBy(xpath="//*[text()='Search Doubt']")
+	public RemoteWebElement vercreateDoubtFrame;
 	
 	@FindBy(xpath="//*[text()='Fliplearn Guru']")
 	public RemoteWebElement verFlipGuruTxt;
@@ -58,15 +71,60 @@ public class DoubtForumModule extends Base{
 	@FindBy(xpath="//*[text()='Create']")
 	public RemoteWebElement cliOnCreate;
 	
+	@FindBy(xpath="(//*[text()='Create Post For Testing'])[1]")
+	public RemoteWebElement verPostAftCreat;
 	
-	public void clickOnDoubtForumTab() {
+	@FindBy(xpath="(//*[@class='font16 m-b-15 ng-binding'])[1]")
+	public RemoteWebElement verExpDouPost;
+	
+	@FindBy(xpath="(//*[text()='1 Followers'])[1]")
+	public RemoteWebElement verFollCount;
+	
+	@FindBy(xpath="(//*[@ng-click='openMessageDetailPage(gallery)'])[1]")
+	public RemoteWebElement cliOnDetailsLnk;
+	
+	@FindBy(xpath="//*[@class='btn-animation']")
+	public RemoteWebElement cliOnPostYouAns;
+	
+	@FindBy(xpath="(//*[text()='Post Answer'])[1]")
+	public RemoteWebElement verPostAnsTxt;
+	
+	@FindBy(name="comment")
+	public RemoteWebElement enterAnswer;
+	
+	@FindBy(xpath="(//*[text()='Add Image'])[1]")
+	public RemoteWebElement addImg;
+	
+	@FindBy(xpath="//a[text()='Post']")
+	public RemoteWebElement cliOnPost;
+	
+	@FindBy(xpath="(//*[@class='font16 m-b-15 doubtforumDetailTitle ng-binding'])[2]")
+	public RemoteWebElement verAns;
+	
+	public void clickOnPostButtn() {
+		cliOnPost.click();
+		
+	}
+	public void cliOnAddImg() {
+		addImg.click();
+	}
+	public void clickOnMyDoubt() {
+		cliOnMyDoubtTab.click();
+	}
+	
+	public void clickOnDoubtForumBtn() {
 		clickOnDouFor.click();
 		}
 	public void clickOnAskYourDoubt() {
 		clickOnAskUrDoubt.click();
 	}
-	public void enterAskYourDoubtText() {
-		entText.sendKeys("Create Post For Testing");
+	
+	public String enterAskYourDoubtText() {
+		
+		String postTitle = "Testing doubtforum Post_"+timeStamp;
+		entText.sendKeys(postTitle);
+		
+		return postTitle;
 		}
 	public void clickOnSearchButtn() {
 		cliOnSearch.click();
@@ -87,16 +145,73 @@ public class DoubtForumModule extends Base{
     public void clickOnCreateButton() {
     	cliOnCreate.click();
     }
+    public void clickOnDetailsLink() {
+    	cliOnDetailsLnk.click();
+    }
+ 
+    public String enterPostAnsText() {
+		
+		String ExpectedAns = "Testing doubtforum PostAns_"+timeStamp;
+		enterAnswer.sendKeys(ExpectedAns);
+		
+		return ExpectedAns;}
     
+    public void clickOnPostYourAns() throws InterruptedException {
+    	String mainHandle = driver.getWindowHandle();
+    	cliOnDetailsLnk.click();
+    	
+    	//String newHandle=driver.getWindowHandle();
+    	ArrayList<String> tabs = new ArrayList(driver.getWindowHandles());
+        driver.switchTo().window(tabs.get(1));
+      	Thread.sleep(2000);
+    	cliOnPostYouAns.click();
+    	
+    	String ExpectedAns=enterPostAnsText();
+    	generic.waitForElementVisibility(driver, cliOnPost);
+    	clickOnPostButtn();
+    	Thread.sleep(6000);
+    	JavascriptExecutor jse1 = (JavascriptExecutor)driver;
+ 		jse1.executeScript("window.scrollBy(0,250)", "");
+ 		
+       // String ActualAns=verAns.getText();
+		if(platform.equals("Web"))
+     	{	
+    		int i = 0;
+    			
+    		String ActualAns=verAns.getText();
+    		
+     		while(!(ActualAns.equalsIgnoreCase(ActualAns)) && i < 2)
+    		{
+     			driver.navigate().refresh();
+    			i++;
+    		}
+    		Assert.assertEquals(ActualAns,ExpectedAns);
+    		Thread.sleep(3000);
+		
+    	}}}
+    
+    	
+    	
+    	
+    	
+        
+        
+			
+			
+	       
+	     
+
+
+		
+	       
     
     
 			 
-		    }
-
+		    
 	
 
 	
-
+		    
 			
 			
 		
