@@ -11,9 +11,9 @@
  
  <test name="Onboarding" enabled="true">
   		<classes>
-    		<class name="com.fliplearn.flipapp.testcases.UserProfile">
+    		<class name="com.fliplearn.flipapp.testcases.Login">
     		<methods>
-        			<include name="verifyUserNotGuest"/>
+        			<include name="verifyLogin"/>
 
         	</methods>		
         	</class>

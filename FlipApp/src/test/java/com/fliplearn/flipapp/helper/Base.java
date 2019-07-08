@@ -151,8 +151,8 @@ public class Base implements ITestListener
 			System.getProperty("user.dir");
 			DesiredCapabilities cap = new DesiredCapabilities();
 //			cap.setCapability("platformVersion", "10.3");
-
-		    cap.setCapability("deviceName", "Fliplearn Iphone (12.2)");
+//			FlipLearn QC (12.1.4) [33cb75afe59ac83184dbf15a4eb9ed858d7a678e]
+		    cap.setCapability("deviceName", "Fliplearn Iphone");
 		    cap.setCapability("platformName", "iOS");
 		    cap.setCapability("platformVersion", "12.2");
 		    cap.setCapability("udid", "af9f8cec090145c64e092f3339fe2f59d832c722");
@@ -224,10 +224,10 @@ public class Base implements ITestListener
 			
 		}
 
-			driver.get(url);
-	
-			driver.manage().window().maximize();
-			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+//			driver.get(url);
+//	
+//			driver.manage().window().maximize();
+//			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
 	
 	
