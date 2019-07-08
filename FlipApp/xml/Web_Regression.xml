@@ -8,6 +8,20 @@
 		<listener class-name="com.fliplearn.flipapp.helper.RetryListener"/>
 	</listeners>
 	
+	<test name="Bookstore" enabled="true">
+  		<classes>
+        	<class name="com.fliplearn.flipapp.testcases.Bookstore">
+        	</class>
+	</classes>
+	</test>
+	
+	
+	<test name="DoubtForum" enabled="true">
+  		<classes>
+        	<class name="com.fliplearn.flipapp.testcases.DoubtForum">
+        	</class>
+	</classes>
+	</test>
 
 
 	<test name="Event" enabled="true">
@@ -38,46 +52,46 @@
 		</classes>
 	</test>
 	
-	<test name="PrimePurchaseFlow" enabled="true">
+	<test name="My Wall" enabled="true">
+		<classes>
+    		<class name="com.fliplearn.flipapp.testcases.MyWall">	
+        	</class>
+		</classes>
+	</test>
+	
+	<test name="Fliplearn Prime" enabled="true">
 	    <classes>
 	    	<class name="com.fliplearn.flipapp.testcases.PrimeContent">
         	</class>
         	<class name="com.fliplearn.flipapp.testcases.PrimePurchaseFlow">
         	</class>
         	<class name="com.fliplearn.flipapp.testcases.PrimeResources">
-        	</class>
-	    	<class name="com.fliplearn.flipapp.testcases.PrimeSearch">
-        	</class>	        
+        	</class>      
+        	<class name="com.fliplearn.flipapp.testcases.PrimeSearch">
+        	</class>   
         </classes>
     </test>
     
-	<test name="Prime Practice" enabled="true">
+   	<test name="Prime Practice" enabled="true">
   		<classes>
         	<class name="com.fliplearn.flipapp.testcases.PrimePractice">
         	</class>
         </classes> 
 	</test> 
-	
-	<test name="Quiz" enabled="true">
+    
+    <test name="Quiz" enabled="true">
   		<classes>
         	<class name="com.fliplearn.flipapp.testcases.QuizDashboard">
         	</class>
         </classes> 
 	</test> 
-	
+		
 	<test name="User Profile" enabled="true">
   		<classes>
     		<class name="com.fliplearn.flipapp.testcases.UserProfile">
         		<methods>
         			<include name="verifyUserNotGuest" />  	
         		</methods>
-        	</class>
-	</classes>
-	</test>
-	
-	<test name="Bookstore" enabled="true">
-  		<classes>
-        	<class name="com.fliplearn.flipapp.testcases.Bookstore">
         	</class>
 	</classes>
 	</test>
@@ -89,11 +103,5 @@
       	</classes> 
 	</test>
 	
-	<test name="DoubtForum" enabled="true">
-  		<classes>
-        	<class name="com.fliplearn.flipapp.testcases.DoubtForum">
-        	</class>
-	</classes>
-	</test>
 
 </suite>	
