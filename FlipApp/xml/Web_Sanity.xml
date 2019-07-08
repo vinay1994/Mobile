@@ -81,5 +81,17 @@
         		</class>
       	</classes> 
 	</test>
+	
+	<test name="DoubtForum" enabled="true">
+  		<classes>
+    		<class name="com.fliplearn.flipapp.testcases.DoubtForum">
+        		<methods>
+        			<include name="verifyDoubtForumTab" /> 
+        			<include name="verifyCountOfDoubtTabs" />  
+        				
+        		</methods>
+        	</class>
+	</classes>
+	</test>
 
 </suite>	
