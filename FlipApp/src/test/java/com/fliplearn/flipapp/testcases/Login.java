@@ -56,9 +56,10 @@ public class Login extends Base
 	 * @throws InterruptedException 
 	 * @throws IOException 
 	 */
-	@Test(dataProvider = "allusers")
-	public void verifyLogin(String role) throws InterruptedException, IOException
+	@Test//(dataProvider = "allusers")
+	public void verifyLogin() throws InterruptedException, IOException
 	{
+		String role = "Admin";
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		
 		if(!role.equals("Guest") && !role.equals("Student"))
