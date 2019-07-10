@@ -414,5 +414,6 @@ public class PrimeResources extends Base
 		priChaTopMod.clickOnresource.click();
 		Thread.sleep(3000);
 		Assert.assertEquals(priChaTopMod.childAccessTxt.getText(), "Please access the content from your child's account.");
+		System.out.println(priChaTopMod.childAccessTxt);
 	}		
 }

@@ -80,6 +80,9 @@ public class DoubtForumModule extends Base{
 	@FindBy(xpath="(//*[text()='1 Followers'])[1]")
 	public RemoteWebElement verFollCount;
 	
+	@FindBy(xpath="//*[text()='2 Followers']")
+	public RemoteWebElement verTwoFollCount;
+	
 	@FindBy(xpath="(//*[@ng-click='openMessageDetailPage(gallery)'])[1]")
 	public RemoteWebElement cliOnDetailsLnk;
 	
@@ -100,6 +103,12 @@ public class DoubtForumModule extends Base{
 	
 	@FindBy(xpath="(//*[@class='font16 m-b-15 doubtforumDetailTitle ng-binding'])[2]")
 	public RemoteWebElement verAns;
+	
+	@FindBy(xpath="(//*[@class='fa fa-ellipsis-v'])[1]")
+	public RemoteWebElement unfollPost;
+	
+	@FindBy(xpath="//*[text()='Unfollow']")
+	public RemoteWebElement clickOnUnfollow;
 	
 	public void clickOnPostButtn() {
 		cliOnPost.click();
@@ -187,8 +196,27 @@ public class DoubtForumModule extends Base{
     		}
     		Assert.assertEquals(ActualAns,ExpectedAns);
     		Thread.sleep(3000);
-		
-    	}}}
+        }}
+		public void unfollowPost() throws InterruptedException {
+			try {
+			generic.mouseHoverAndClick(driver, unfollPost, clickOnUnfollow);
+			}
+			catch(Exception e) 
+     	    {
+     	    }}
+          public void verifyFollowPost() throws InterruptedException {
+        	  String mainHandle = driver.getWindowHandle();
+          	cliOnDetailsLnk.click();
+          	
+          	//String newHandle=driver.getWindowHandle();
+          	ArrayList<String> tabs = new ArrayList(driver.getWindowHandles());
+              driver.switchTo().window(tabs.get(1));
+              generic.waitForElementVisibility(driver, unfollPost);
+              unfollowPost();
+              driver.switchTo().window(tabs.get(1));
+              
+        	  }
+          }
     
     	
     	

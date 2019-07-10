@@ -11,6 +11,9 @@
 	<test name="Bookstore" enabled="true">
   		<classes>
         	<class name="com.fliplearn.flipapp.testcases.Bookstore">
+        	<methods>
+        	<exclude name="filterForClassItem"/>
+        	</methods>
         	</class>
 	</classes>
 	</test>

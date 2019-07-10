@@ -3,11 +3,10 @@ package com.fliplearn.flipapp.testcases;
 import java.io.IOException;
 
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.remote.RemoteWebElement;
+
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
+
 import org.testng.annotations.Test;
 
 import com.fliplearn.flipapp.helper.Base;
@@ -24,8 +23,7 @@ import com.fliplearn.flipapp.pagemodules.PrimeChapterTopicModule;
 import com.fliplearn.flipapp.pagemodules.PrimeClassModule;
 import com.fliplearn.flipapp.pagemodules.PrimePurchaseFlowModule;
 import com.fliplearn.flipapp.pagemodules.PrimeSubjectModule;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
+
 
 public class DoubtForum extends Base
 {
@@ -185,13 +183,29 @@ public class DoubtForum extends Base
      	    JavascriptExecutor jse1 = (JavascriptExecutor)driver;
      		jse1.executeScript("window.scrollBy(0,250)", "");
             douForMod.clickOnDoubtForumBtn();
+            douForMod.clickOnMyDoubt();
             
             douForMod.clickOnPostYourAns();
-
-            
-            
-            
-            
+            }
+        @Test(dataProvider="doubt_staff")
+        public void verifyFollowAndUnFollowPost(String role) throws InterruptedException, IOException {
+        	logMod.Login(role, "CBSE", "10", "Single", "Prime", "Yes");
+     	    Thread.sleep(6000);
+     	    try 
+     	    {
+     	        if(( priPurFloMod.cliOnSkiButt).isDisplayed()) 
+     	        	priPurFloMod.clickOnSkip();	
+     	    }
+     	    catch(Exception e) 
+     	    {
+     	    }
+     	    
+     	    JavascriptExecutor jse1 = (JavascriptExecutor)driver;
+     		jse1.executeScript("window.scrollBy(0,250)", "");
+            douForMod.clickOnDoubtForumBtn();
+            Thread.sleep(2000);
+            douForMod.clickOnMyDoubt();
+            douForMod.verifyFollowPost();
         	
         }
    }

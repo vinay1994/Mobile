@@ -29,7 +29,7 @@ public class PrimeChapterTopicModule extends Base
 	public RemoteWebElement clickOnresource;
 
 	
-	@FindBy(xpath="(//h4[contains(text(),'Please access the content from your child')])[1]")
+	@FindBy(xpath="(//h4[contains(text(),'Please access the content from your child')])[2]")
 	public RemoteWebElement childAccessTxt;
 	
 	@FindBy(xpath="//div/h4[contains(text(),'Please access the content from your child')]")
