@@ -66,14 +66,20 @@
 	    <classes>
 	    	<class name="com.fliplearn.flipapp.testcases.PrimeContent">
         	</class>
-        	<class name="com.fliplearn.flipapp.testcases.PrimePurchaseFlow">
-        	</class>
+        	
         	<class name="com.fliplearn.flipapp.testcases.PrimeResources">
         	</class>      
         	<class name="com.fliplearn.flipapp.testcases.PrimeSearch">
         	</class>   
         </classes>
     </test>
+    
+    	<test name="PrimePurchaseFlow" enabled="true">
+  		<classes>
+        	<class name="com.fliplearn.flipapp.testcases.PrimePurchaseFlow">
+        	</class>
+        </classes> 
+	</test> 
     
    	<test name="Prime Practice" enabled="true">
   		<classes>

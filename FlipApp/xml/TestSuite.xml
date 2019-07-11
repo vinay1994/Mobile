@@ -5,15 +5,16 @@
 
 <listeners>
 	<listener class-name="com.fliplearn.flipapp.helper.Base"/>
-	<listener class-name="com.fliplearn.flipapp.helper.RetryListener"/>
+	
 	
 </listeners>
  
  <test name="Onboarding" enabled="true">
   		<classes>
-    		<class name="com.fliplearn.flipapp.testcases.Login">
+    		<class name="com.fliplearn.flipapp.testcases.DoubtForum">
     		<methods>
-        			<include name="verifyLogin"/>
+        			<include name="verifyUnFollowPost"/>
+        		
 
         	</methods>		
         	</class>
