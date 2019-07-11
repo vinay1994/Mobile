@@ -188,7 +188,7 @@ public class DoubtForum extends Base
             douForMod.clickOnPostYourAns();
             }
         @Test(dataProvider="doubt_staff")
-        public void verifyFollowAndUnFollowPost(String role) throws InterruptedException, IOException {
+        public void verifyUnFollowPost(String role) throws InterruptedException, IOException {
         	logMod.Login(role, "CBSE", "10", "Single", "Prime", "Yes");
      	    Thread.sleep(6000);
      	    try 
@@ -205,10 +205,30 @@ public class DoubtForum extends Base
             douForMod.clickOnDoubtForumBtn();
             Thread.sleep(2000);
             douForMod.clickOnMyDoubt();
-            douForMod.verifyFollowPost();
-        	
-        }
-   }
+            douForMod.verifyUnFollPost();
+            
+//          String  ExpectedPost =douForMod.verifyUnFollPost();
+//            
+//            driver.navigate().refresh();
+//            douForMod.clickOnMyDoubt();
+//            Thread.sleep(2000);
+//            if(platform.equals("Web"))
+//         	{	
+//        		int i = 0;
+//        			
+//        		 String ActualPost=douForMod.FirMyDoubtPost.getText();
+//        		
+//         		while(!(ActualPost.equalsIgnoreCase(ActualPost)) && i < 2)
+//        		{
+//         			driver.navigate().refresh();
+//        			i++;
+//        		}
+//           
+//            
+//            
+//            System.out.println(ActualPost);
+//            System.out.println(ExpectedPost);
+        }}
    
 
             

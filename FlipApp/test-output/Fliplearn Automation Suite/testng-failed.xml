@@ -3,19 +3,18 @@
 <suite name="Failed suite [Fliplearn Automation Suite]" guice-stage="DEVELOPMENT">
   <listeners>
     <listener class-name="com.fliplearn.flipapp.helper.Base"/>
-    <listener class-name="com.fliplearn.flipapp.helper.RetryListener"/>
   </listeners>
   <test thread-count="5" name="Onboarding(failed)">
     <classes>
-      <class name="com.fliplearn.flipapp.testcases.UserProfile">
+      <class name="com.fliplearn.flipapp.testcases.DoubtForum">
         <methods>
-          <include name="verifyUserNotGuest" invocation-numbers="0"/>
-          <include name="befMethod"/>
+          <include name="verifyUnFollowPost" invocation-numbers="2"/>
+          <include name="preVerifyDoubtForum"/>
           <include name="befo"/>
           <include name="aftSuite"/>
           <include name="getResult"/>
         </methods>
-      </class> <!-- com.fliplearn.flipapp.testcases.UserProfile -->
+      </class> <!-- com.fliplearn.flipapp.testcases.DoubtForum -->
     </classes>
   </test> <!-- Onboarding(failed) -->
 </suite> <!-- Failed suite [Fliplearn Automation Suite] -->
