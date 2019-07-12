@@ -9,6 +9,7 @@
       <class name="com.fliplearn.flipapp.testcases.DoubtForum">
         <methods>
           <include name="verifyUnFollowPost" invocation-numbers="2"/>
+          <include name="verifyUserCanPostAnswer" invocation-numbers="2"/>
           <include name="preVerifyDoubtForum"/>
           <include name="befo"/>
           <include name="aftSuite"/>

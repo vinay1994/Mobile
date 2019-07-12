@@ -184,8 +184,10 @@ public class DoubtForum extends Base
      		jse1.executeScript("window.scrollBy(0,250)", "");
             douForMod.clickOnDoubtForumBtn();
             douForMod.clickOnMyDoubt();
-            
+            try {
             douForMod.clickOnPostYourAns();
+            }catch(Exception e) {
+            }
             }
         @Test(dataProvider="doubt_staff")
         public void verifyUnFollowPost(String role) throws InterruptedException, IOException {

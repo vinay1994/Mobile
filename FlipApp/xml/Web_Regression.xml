@@ -13,6 +13,7 @@
         	<class name="com.fliplearn.flipapp.testcases.Bookstore">
         	<methods>
         	<exclude name="filterForClassItem"/>
+        	<exclude name="filterForClassItemLogout"/>
         	</methods>
         	</class>
 	</classes>

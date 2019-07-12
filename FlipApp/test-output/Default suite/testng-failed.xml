@@ -3,17 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.fliplearn.flipapp.testcases.Login">
+      <class name="com.fliplearn.flipapp.testcases.QuizDashboard">
         <methods>
-          <include name="registration"/>
-          <include name="verifyLogin"/>
+          <include name="verifyQuizDashboardTileDisplayed"/>
           <include name="befo"/>
+          <include name="befQuiz"/>
           <include name="aftSuite"/>
-          <include name="befMethod"/>
+          <include name="verifyQuizDashboardClasses" invocation-numbers="0"/>
           <include name="getResult"/>
-          <include name="verifyLogout"/>
         </methods>
-      </class> <!-- com.fliplearn.flipapp.testcases.Login -->
+      </class> <!-- com.fliplearn.flipapp.testcases.QuizDashboard -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

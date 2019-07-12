@@ -184,6 +184,7 @@ public class DoubtForumModule extends Base{
     	
     	//String newHandle=driver.getWindowHandle();
     	ArrayList<String> tabs = new ArrayList(driver.getWindowHandles());
+    	Thread.sleep(4000);
         driver.switchTo().window(tabs.get(1));
       	Thread.sleep(2000);
     	cliOnPostYouAns.click();
@@ -247,6 +248,7 @@ public class DoubtForumModule extends Base{
               driver.switchTo().window(tabs.get(1));
               generic.waitForElementVisibility(driver, unfollPost);
               String MyDoubtPost=MyDoubtDetailPost.getText();
+              
               unfollowPost();
               
              
