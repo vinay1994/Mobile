@@ -62,6 +62,9 @@ public class HomeModule extends Base
 	@FindBy(xpath="//select[@id='selectTerm2']")
     public RemoteWebElement classDrp;
 	
+	@FindBy(xpath="//a[text()='Buy Subscription ']")
+	public RemoteWebElement vmcBuySubscription;
+	
 	// Click on Practice Mode Button
 	public void clickOnlearnPracticeModeBtn()
 	{

@@ -6,16 +6,15 @@
   </listeners>
   <test thread-count="5" name="Onboarding(failed)">
     <classes>
-      <class name="com.fliplearn.flipapp.testcases.DoubtForum">
+      <class name="com.fliplearn.flipapp.testcases.VMC">
         <methods>
-          <include name="verifyUnFollowPost" invocation-numbers="2"/>
-          <include name="verifyUserCanPostAnswer" invocation-numbers="2"/>
-          <include name="preVerifyDoubtForum"/>
+          <include name="displayVMCStudent"/>
+          <include name="prePrime"/>
           <include name="befo"/>
           <include name="aftSuite"/>
           <include name="getResult"/>
         </methods>
-      </class> <!-- com.fliplearn.flipapp.testcases.DoubtForum -->
+      </class> <!-- com.fliplearn.flipapp.testcases.VMC -->
     </classes>
   </test> <!-- Onboarding(failed) -->
 </suite> <!-- Failed suite [Fliplearn Automation Suite] -->
