@@ -304,7 +304,8 @@ public class Base implements ITestListener
 	{
 		extentTest = extentReports.createTest(result.getMethod().getMethodName(), "Some Description");
 		
-		extentTest.log(Status.INFO, "Platform is:"+platform);
+		extentTest.log(Status.INFO, "*******Platform is:"+platform+"*******");
+		extentTest.log(Status.INFO, "*******Environment is:"+environment+"*******");
 		
 		if(platform.equals("WEB"))
 		{	

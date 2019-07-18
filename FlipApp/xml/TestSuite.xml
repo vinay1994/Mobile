@@ -11,10 +11,10 @@
  
  <test name="Onboarding" enabled="true">
   		<classes>
-    		<class name="com.fliplearn.flipapp.testcases.VMC">
+    		<class name="com.fliplearn.flipapp.testcases.Fee">
     		<methods>
         			
-        			<include name="displayVMCStudent"/>
+        			<include name="payFeeLogoutNetBanking"/>
         		
 
         	</methods>		
