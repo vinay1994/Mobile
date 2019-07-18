@@ -11,10 +11,10 @@
  
  <test name="Onboarding" enabled="true">
   		<classes>
-    		<class name="com.fliplearn.flipapp.testcases.Fee">
+    		<class name="com.fliplearn.flipapp.testcases.QuizDashboard">
     		<methods>
         			
-        			<include name="payFeeLogoutNetBanking"/>
+        			<include name="verifyQuizDashboardClasses"/>
         		
 
         	</methods>		
