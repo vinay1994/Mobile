@@ -5,8 +5,10 @@
 
 <listeners>
 	<listener class-name="com.fliplearn.flipapp.helper.Base"/>
+	<listener class-name="com.fliplearn.flipapp.helper.RetryListener"/>	
+	<listener class-name="com.fliplearn.flipapp.report.CustomTestNGReporter" />
 </listeners>
- 
+
  <test name="Onboarding" enabled="true">
   		<classes>
     		<class name="com.fliplearn.flipapp.testcases.Login">

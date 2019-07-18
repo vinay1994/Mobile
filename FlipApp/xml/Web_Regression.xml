@@ -4,9 +4,10 @@
 <suite name="suite of suites">
 
 	<listeners>
-		<listener class-name="com.fliplearn.flipapp.helper.Base"/>
-		<listener class-name="com.fliplearn.flipapp.helper.RetryListener"/>
-	</listeners>
+	<listener class-name="com.fliplearn.flipapp.helper.Base"/>
+	<listener class-name="com.fliplearn.flipapp.helper.RetryListener"/>	
+	<listener class-name="com.fliplearn.flipapp.report.CustomTestNGReporter" />
+</listeners>
 	
 	<test name="Bookstore" enabled="true">
   		<classes>
