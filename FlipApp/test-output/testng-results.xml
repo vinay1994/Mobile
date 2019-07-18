@@ -1,103 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="1" total="4" passed="3" failed="0" skipped="0">
+<testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2019-07-18T12:05:01Z" name="Fliplearn Automation Suite" finished-at="2019-07-18T12:06:51Z" duration-ms="110152">
+  <suite started-at="2019-07-18T17:41:44Z" name="Fliplearn Automation Suite" finished-at="2019-07-18T17:42:36Z" duration-ms="51489">
     <groups>
     </groups>
-    <test started-at="2019-07-18T12:05:01Z" name="Onboarding" finished-at="2019-07-18T12:06:51Z" duration-ms="110152">
+    <test started-at="2019-07-18T17:41:44Z" name="Onboarding" finished-at="2019-07-18T17:42:36Z" duration-ms="51489">
       <class name="com.fliplearn.flipapp.testcases.QuizDashboard">
-        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@2e6a8155]" started-at="2019-07-18T12:05:01Z" name="befo" finished-at="2019-07-18T12:05:13Z" duration-ms="11624" status="PASS">
+        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@a38c7fe]" started-at="2019-07-18T17:41:45Z" name="befo" finished-at="2019-07-18T17:42:05Z" duration-ms="20934" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@f25f48a]]>
+                <![CDATA[org.testng.TestRunner@24841372]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- befo -->
-        <test-method is-config="true" signature="befQuiz()[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@2e6a8155]" started-at="2019-07-18T12:05:13Z" name="befQuiz" finished-at="2019-07-18T12:05:13Z" duration-ms="331" status="PASS">
+        <test-method is-config="true" signature="befQuiz()[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@a38c7fe]" started-at="2019-07-18T17:42:05Z" name="befQuiz" finished-at="2019-07-18T17:42:06Z" duration-ms="179" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- befQuiz -->
-        <test-method signature="verifyQuizDashboardClasses(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@2e6a8155]" started-at="2019-07-18T12:05:13Z" name="verifyQuizDashboardClasses" data-provider="staff" finished-at="2019-07-18T12:05:39Z" duration-ms="26393" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Admin]]>
-              </value>
-            </param>
-          </params>
+        <test-method signature="verifyQuizDashboardClasses()[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@a38c7fe]" started-at="2019-07-18T17:42:06Z" name="verifyQuizDashboardClasses" finished-at="2019-07-18T17:42:30Z" duration-ms="24742" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyQuizDashboardClasses -->
-        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@2e6a8155]" started-at="2019-07-18T12:05:40Z" name="getResult" finished-at="2019-07-18T12:05:40Z" duration-ms="126" status="PASS">
+        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@a38c7fe]" started-at="2019-07-18T17:42:36Z" name="getResult" finished-at="2019-07-18T17:42:36Z" duration-ms="148" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@2e6a8155]" started-at="2019-07-18T12:05:40Z" name="befo" finished-at="2019-07-18T12:05:51Z" duration-ms="11207" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@f25f48a]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- befo -->
-        <test-method is-config="true" signature="befQuiz()[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@2e6a8155]" started-at="2019-07-18T12:05:51Z" name="befQuiz" finished-at="2019-07-18T12:05:51Z" duration-ms="9" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- befQuiz -->
-        <test-method signature="verifyQuizDashboardClasses(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@2e6a8155]" started-at="2019-07-18T12:05:51Z" name="verifyQuizDashboardClasses" data-provider="staff" finished-at="2019-07-18T12:06:18Z" duration-ms="26338" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Principal]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyQuizDashboardClasses -->
-        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@2e6a8155]" started-at="2019-07-18T12:06:18Z" name="getResult" finished-at="2019-07-18T12:06:18Z" duration-ms="115" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getResult -->
-        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@2e6a8155]" started-at="2019-07-18T12:06:18Z" name="befo" finished-at="2019-07-18T12:06:29Z" duration-ms="10845" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@f25f48a]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- befo -->
-        <test-method is-config="true" signature="befQuiz()[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@2e6a8155]" started-at="2019-07-18T12:06:29Z" name="befQuiz" finished-at="2019-07-18T12:06:29Z" duration-ms="9" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- befQuiz -->
-        <test-method signature="verifyQuizDashboardClasses(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@2e6a8155]" started-at="2019-07-18T12:06:29Z" name="verifyQuizDashboardClasses" data-provider="staff" finished-at="2019-07-18T12:06:51Z" duration-ms="21490" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Teacher]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyQuizDashboardClasses -->
-        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@2e6a8155]" started-at="2019-07-18T12:06:51Z" name="getResult" finished-at="2019-07-18T12:06:51Z" duration-ms="115" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getResult -->
-        <test-method is-config="true" signature="aftSuite()[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@2e6a8155]" started-at="2019-07-18T12:06:52Z" name="aftSuite" finished-at="2019-07-18T12:06:52Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="aftSuite()[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@a38c7fe]" started-at="2019-07-18T17:42:36Z" name="aftSuite" finished-at="2019-07-18T17:42:36Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- aftSuite -->

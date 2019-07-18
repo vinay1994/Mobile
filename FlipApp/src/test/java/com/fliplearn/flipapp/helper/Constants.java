@@ -19,6 +19,7 @@ public class Constants
 	public final static String MAC_CHROME_EXE = System.getProperty("user.dir")+"//drivers//chromedriverm";
 	public final static String MAC_FIREFOX_EXE = System.getProperty("user.dir")+"//drivers//firefoxdriverm";
 
+	public final static String EMAILABLE_REPORT_TEMPLATE_FILE = System.getProperty("user.dir")+"//src//test//java//com//fliplearn//flipapp//report//customize-emailable-report-template.html";
 	
 	public final static String EXTENT_REPORT = System.getProperty("user.dir")+"//src//test//java//com//fliplearn//flipapp//resources//FinalReport.html";
 }

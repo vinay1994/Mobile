@@ -102,7 +102,7 @@ public class QuizDashboard extends Base
 
 	@Test(dataProvider = "staff")
 	public void verifyQuizDashboardClasses(String role) throws InterruptedException, IOException
-	{	
+	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 	
 		if(platform.equals("Web"))
