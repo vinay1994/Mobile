@@ -13,7 +13,7 @@
           <include name="befo"/>
           <include name="befQuiz"/>
           <include name="aftSuite"/>
-          <include name="verifyQuizDashboardClasses"/>
+          <include name="verifyQuizDashboardClasses" invocation-numbers="2 2 2"/>
           <include name="getResult"/>
         </methods>
       </class> <!-- com.fliplearn.flipapp.testcases.QuizDashboard -->

@@ -60,8 +60,6 @@ public class CustomTestNGReporter implements IReporter {
 			//System.out.println(customTestMethodSummary);
 			customReportTemplateStr = customReportTemplateStr.replace("$Test_Case_Detail$", customTestMethodSummary);
 			
-		
-			
 			// Write replaced test report content to custom-emailable-report.html.
 			File targetFile = new File(outputDirectory + "/custom-emailable-report.html");
 			FileWriter fw = new FileWriter(targetFile);
@@ -120,6 +118,7 @@ public class CustomTestNGReporter implements IReporter {
 			int totalTestPassed = 0;
 			int totalTestFailed = 0;
 			int totalTestSkipped = 0;
+			int totalTestCases = 0;
 			
 			for(ISuite tempSuite: suites)
 			{
@@ -133,9 +132,13 @@ public class CustomTestNGReporter implements IReporter {
 					
 					ITestContext testObj = result.getTestContext();
 					
+					
+					
 					totalTestPassed = testObj.getPassedTests().getAllMethods().size();
 					totalTestSkipped = testObj.getSkippedTests().getAllMethods().size();
 					totalTestFailed = testObj.getFailedTests().getAllMethods().size();
+					
+					totalTestCases = totalTestPassed + totalTestFailed;
 					
 					totalTestCount = totalTestPassed + totalTestSkipped + totalTestFailed;
 					
@@ -206,6 +209,8 @@ public class CustomTestNGReporter implements IReporter {
 //					retBuf.append("</td>");
 					
 					retBuf.append("</tr>");
+					
+					retBuf.append("<font color='blue'>Total Test Cases: </font>"+totalTestCases+"<br/>");
 				}
 			}
 		}catch(Exception ex)

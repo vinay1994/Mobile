@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Fliplearn_Automation_Suite" class="navigator-link">
-              <span class="suite-name border-passed">Fliplearn Automation Suite</span>
+              <span class="suite-name border-failed">Fliplearn Automation Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,7 +91,40 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">5 methods, 1 failed,  2 skipped,  2 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Fliplearn_Automation_Suite" class="hide-methods failed suite-Fliplearn_Automation_Suite"> (hide)</a> <!-- hide-methods failed suite-Fliplearn_Automation_Suite -->
+                      <a href="#" panel-name="suite-Fliplearn_Automation_Suite" class="show-methods failed suite-Fliplearn_Automation_Suite"> (show)</a> <!-- show-methods failed suite-Fliplearn_Automation_Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Fliplearn_Automation_Suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Fliplearn_Automation_Suite" title="com.fliplearn.flipapp.testcases.QuizDashboard" class="method navigator-link" hash-for-method="verifyQuizDashboardClasses(Teacher)">verifyQuizDashboardClasses(Teacher)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Fliplearn_Automation_Suite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-Fliplearn_Automation_Suite" class="hide-methods skipped suite-Fliplearn_Automation_Suite"> (hide)</a> <!-- hide-methods skipped suite-Fliplearn_Automation_Suite -->
+                      <a href="#" panel-name="suite-Fliplearn_Automation_Suite" class="show-methods skipped suite-Fliplearn_Automation_Suite"> (show)</a> <!-- show-methods skipped suite-Fliplearn_Automation_Suite -->
+                    </span>
+                    <div class="method-list-content skipped suite-Fliplearn_Automation_Suite">
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Fliplearn_Automation_Suite" title="com.fliplearn.flipapp.testcases.QuizDashboard" class="method navigator-link" hash-for-method="verifyQuizDashboardClasses(Teacher)">verifyQuizDashboardClasses(Teacher)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Fliplearn_Automation_Suite" title="com.fliplearn.flipapp.testcases.QuizDashboard" class="method navigator-link" hash-for-method="verifyQuizDashboardClasses(Teacher)">verifyQuizDashboardClasses(Teacher)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content skipped suite-Fliplearn_Automation_Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,7 +135,12 @@
                     <div class="method-list-content passed suite-Fliplearn_Automation_Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Fliplearn_Automation_Suite" title="com.fliplearn.flipapp.testcases.QuizDashboard" class="method navigator-link" hash-for-method="verifyQuizDashboardClasses">verifyQuizDashboardClasses</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Fliplearn_Automation_Suite" title="com.fliplearn.flipapp.testcases.QuizDashboard" class="method navigator-link" hash-for-method="verifyQuizDashboardClasses(Admin)">verifyQuizDashboardClasses(Admin)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Fliplearn_Automation_Suite" title="com.fliplearn.flipapp.testcases.QuizDashboard" class="method navigator-link" hash-for-method="verifyQuizDashboardClasses(Principal)">verifyQuizDashboardClasses(Principal)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Fliplearn_Automation_Suite -->
@@ -117,6 +155,58 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Fliplearn_Automation_Suite" class="panel Fliplearn_Automation_Suite">
+          <div class="suite-Fliplearn_Automation_Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.fliplearn.flipapp.testcases.QuizDashboard</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyQuizDashboardClasses(Teacher)">
+                  </a> <!-- verifyQuizDashboardClasses(Teacher) -->
+                  <span class="method-name">verifyQuizDashboardClasses</span>
+                  <span class="parameters">(Teacher)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
+	at com.fliplearn.flipapp.testcases.QuizDashboard.verifyQuizDashboardClasses(QuizDashboard.java:123)
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Fliplearn_Automation_Suite-class-failed -->
+          <div class="suite-Fliplearn_Automation_Suite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">com.fliplearn.flipapp.testcases.QuizDashboard</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyQuizDashboardClasses(Teacher)">
+                  </a> <!-- verifyQuizDashboardClasses(Teacher) -->
+                  <span class="method-name">verifyQuizDashboardClasses</span>
+                  <span class="parameters">(Teacher)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
+	at com.fliplearn.flipapp.testcases.QuizDashboard.verifyQuizDashboardClasses(QuizDashboard.java:123)
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyQuizDashboardClasses(Teacher)">
+                  </a> <!-- verifyQuizDashboardClasses(Teacher) -->
+                  <span class="method-name">verifyQuizDashboardClasses</span>
+                  <span class="parameters">(Teacher)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
+	at com.fliplearn.flipapp.testcases.QuizDashboard.verifyQuizDashboardClasses(QuizDashboard.java:123)
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Fliplearn_Automation_Suite-class-skipped -->
           <div class="suite-Fliplearn_Automation_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -125,9 +215,18 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyQuizDashboardClasses">
-                  </a> <!-- verifyQuizDashboardClasses -->
+                  <a name="verifyQuizDashboardClasses(Admin)">
+                  </a> <!-- verifyQuizDashboardClasses(Admin) -->
                   <span class="method-name">verifyQuizDashboardClasses</span>
+                  <span class="parameters">(Admin)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyQuizDashboardClasses(Principal)">
+                  </a> <!-- verifyQuizDashboardClasses(Principal) -->
+                  <span class="method-name">verifyQuizDashboardClasses</span>
+                  <span class="parameters">(Principal)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -193,16 +292,32 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(5);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'verifyQuizDashboardClasses')
 data.setCell(0, 2, 'com.fliplearn.flipapp.testcases.QuizDashboard')
-data.setCell(0, 3, 24742);
+data.setCell(0, 3, 22544);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'verifyQuizDashboardClasses')
+data.setCell(1, 2, 'com.fliplearn.flipapp.testcases.QuizDashboard')
+data.setCell(1, 3, 22274);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'verifyQuizDashboardClasses')
+data.setCell(2, 2, 'com.fliplearn.flipapp.testcases.QuizDashboard')
+data.setCell(2, 3, 22010);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'verifyQuizDashboardClasses')
+data.setCell(3, 2, 'com.fliplearn.flipapp.testcases.QuizDashboard')
+data.setCell(3, 3, 21541);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'verifyQuizDashboardClasses')
+data.setCell(4, 2, 'com.fliplearn.flipapp.testcases.QuizDashboard')
+data.setCell(4, 3, 21378);
 window.suiteTableData['Fliplearn_Automation_Suite']= { tableData: data, tableDiv: 'times-div-Fliplearn_Automation_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 24 seconds</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Fliplearn_Automation_Suite">
               </div> <!-- times-div-Fliplearn_Automation_Suite -->
             </div> <!-- times-div -->
@@ -237,24 +352,90 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">com.fliplearn.flipapp.testcases.QuizDashboard</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
-                <span class="method-name">befo(org.testng.TestRunner@24841372)</span>
+                <span class="method-name">befo(org.testng.TestRunner@31834a2b)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
                 <span class="method-name">befQuiz</span>
-                <span class="method-start">20934 ms</span>
+                <span class="method-start">10670 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">verifyQuizDashboardClasses</span>
-                <span class="method-start">21114 ms</span>
+                <span class="method-name">verifyQuizDashboardClasses(Admin)</span>
+                <span class="method-start">10948 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">getResult</span>
-                <span class="method-start">51324 ms</span>
+                <span class="method-start">33964 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">befo(org.testng.TestRunner@31834a2b)</span>
+                <span class="method-start">34095 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">befQuiz</span>
+                <span class="method-start">44265 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyQuizDashboardClasses(Principal)</span>
+                <span class="method-start">44272 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult</span>
+                <span class="method-start">66981 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">befo(org.testng.TestRunner@31834a2b)</span>
+                <span class="method-start">67108 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">befQuiz</span>
+                <span class="method-start">77514 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyQuizDashboardClasses(Teacher)</span>
+                <span class="method-start">77523 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult</span>
+                <span class="method-start">99534 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">befo(org.testng.TestRunner@31834a2b)</span>
+                <span class="method-start">99674 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">befQuiz</span>
+                <span class="method-start">110053 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyQuizDashboardClasses(Teacher)</span>
+                <span class="method-start">110060 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult</span>
+                <span class="method-start">131439 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">befo(org.testng.TestRunner@31834a2b)</span>
+                <span class="method-start">131587 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">befQuiz</span>
+                <span class="method-start">141708 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifyQuizDashboardClasses(Teacher)</span>
+                <span class="method-start">141714 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult</span>
+                <span class="method-start">163799 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-suite after">
                 <span class="method-name">aftSuite</span>
-                <span class="method-start">51694 ms</span>
+                <span class="method-start">164455 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
