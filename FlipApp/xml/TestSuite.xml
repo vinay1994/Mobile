@@ -19,6 +19,8 @@
 
         	</methods>		
         	</class>
+        
+        	
         	
  	
         	
@@ -26,4 +28,25 @@
         	
 </classes>
 </test>        	
+
+ <test name="Login" enabled="true">
+  		<classes>
+    	
+        	
+        	<class name="com.fliplearn.flipapp.testcases.Login">
+    		<methods>
+        			
+        			<include name="verifyLogin"/>
+        		
+
+        	</methods>		
+        	</class>
+        	
+        	
+ 	
+        	
+        	
+        	
+</classes>
+</test>    
 </suite>

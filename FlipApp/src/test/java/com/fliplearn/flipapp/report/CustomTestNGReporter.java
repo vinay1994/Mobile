@@ -107,6 +107,8 @@ public class CustomTestNGReporter implements IReporter {
 		return retBuf.toString();
 	}
 	
+	public static int totalTestCases = 0, totalPassTestCases = 0, totalFailedTestCases = 0;
+	
 	/* Build test suite summary data. */
 	private String getTestSuiteSummary(List<ISuite> suites)
 	{
@@ -118,7 +120,7 @@ public class CustomTestNGReporter implements IReporter {
 			int totalTestPassed = 0;
 			int totalTestFailed = 0;
 			int totalTestSkipped = 0;
-			int totalTestCases = 0;
+			
 			
 			for(ISuite tempSuite: suites)
 			{
@@ -138,7 +140,6 @@ public class CustomTestNGReporter implements IReporter {
 					totalTestSkipped = testObj.getSkippedTests().getAllMethods().size();
 					totalTestFailed = testObj.getFailedTests().getAllMethods().size();
 					
-					totalTestCases = totalTestPassed + totalTestFailed;
 					
 					totalTestCount = totalTestPassed + totalTestSkipped + totalTestFailed;
 					
@@ -209,9 +210,14 @@ public class CustomTestNGReporter implements IReporter {
 //					retBuf.append("</td>");
 					
 					retBuf.append("</tr>");
+					totalTestCases = totalTestCases + totalTestPassed + totalTestFailed;
+					totalPassTestCases = totalPassTestCases + totalTestPassed;
+					totalFailedTestCases = totalFailedTestCases + totalTestFailed;
+
 					
-					retBuf.append("<font color='blue'>Total Test Cases: </font>"+totalTestCases+"<br/>");
 				}
+
+				retBuf.append("<font color='blue'>Total Test Cases: </font>"+totalTestCases+" [Pass: "+totalPassTestCases+", Fail: "+totalFailedTestCases+"]<br/><br/>");
 			}
 		}catch(Exception ex)
 		{
