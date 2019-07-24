@@ -107,7 +107,8 @@ public class CustomTestNGReporter implements IReporter {
 		return retBuf.toString();
 	}
 	
-	public static int totalTestCases = 0, totalPassTestCases = 0, totalFailedTestCases = 0;
+	public static int totalTestCases = 0, totalPassTestCases = 0, totalFailedTestCases = 0, totalReExecutedTestCases=0;
+	long totalTime;
 	
 	/* Build test suite summary data. */
 	private String getTestSuiteSummary(List<ISuite> suites)
@@ -142,6 +143,10 @@ public class CustomTestNGReporter implements IReporter {
 					
 					
 					totalTestCount = totalTestPassed + totalTestSkipped + totalTestFailed;
+					totalPassTestCases = totalPassTestCases + totalTestPassed;
+					totalFailedTestCases = totalFailedTestCases + totalTestFailed;
+					totalReExecutedTestCases = totalReExecutedTestCases + totalTestSkipped;
+
 					
 					/* Test name. */
 					retBuf.append("<td>");
@@ -217,7 +222,19 @@ public class CustomTestNGReporter implements IReporter {
 					
 				}
 
-				retBuf.append("<font color='blue'>Total Test Cases: </font>"+totalTestCases+" [Pass: "+totalPassTestCases+", Fail: "+totalFailedTestCases+"]<br/><br/>");
+				retBuf.append("<td><font color='blue'>Total Test Cases: </font>"+totalTestCases+"</td>");
+				retBuf.append("<td>-</td>");
+				retBuf.append("<td>"+totalFailedTestCases+"</td>");
+				retBuf.append("<td>"+totalReExecutedTestCases+"</td>");
+				retBuf.append("<td>-</td>");
+				retBuf.append("<td>-</td>");
+				retBuf.append("<td>-</td>");
+				retBuf.append("<td>"+String.format("%02d:%02d:%02d", 
+						TimeUnit.MILLISECONDS.toHours(totalTime),
+						TimeUnit.MILLISECONDS.toMinutes(totalTime) -  
+						TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(totalTime)), // The change is in this line
+						TimeUnit.MILLISECONDS.toSeconds(totalTime) - 
+						TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(totalTime)))+"</td>"); 
 			}
 		}catch(Exception ex)
 		{
@@ -247,7 +264,7 @@ public class CustomTestNGReporter implements IReporter {
 		StringBuffer retBuf = new StringBuffer();
 				
 		long millis = deltaTime;
-		
+		totalTime = totalTime + millis;
 		
 		
 		retBuf.append(String.format("%02d:%02d:%02d", 
