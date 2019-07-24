@@ -142,9 +142,7 @@ public class CustomTestNGReporter implements IReporter {
 					totalTestFailed = testObj.getFailedTests().getAllMethods().size();
 					
 					
-					totalTestCount = totalTestPassed + totalTestSkipped + totalTestFailed;
-					totalPassTestCases = totalPassTestCases + totalTestPassed;
-					totalFailedTestCases = totalFailedTestCases + totalTestFailed;
+//					totalTestCount = totalTestPassed + totalTestSkipped + totalTestFailed;
 					totalReExecutedTestCases = totalReExecutedTestCases + totalTestSkipped;
 
 					
@@ -223,9 +221,9 @@ public class CustomTestNGReporter implements IReporter {
 				}
 
 				retBuf.append("<td><font color='blue'>Total Test Cases: </font>"+totalTestCases+"</td>");
-				retBuf.append("<td>-</td>");
-				retBuf.append("<td>"+totalFailedTestCases+"</td>");
+				retBuf.append("<td>"+totalPassTestCases+"</td>");
 				retBuf.append("<td>"+totalReExecutedTestCases+"</td>");
+				retBuf.append("<td>"+totalFailedTestCases+"</td>");
 				retBuf.append("<td>-</td>");
 				retBuf.append("<td>-</td>");
 				retBuf.append("<td>-</td>");

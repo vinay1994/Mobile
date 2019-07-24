@@ -30,13 +30,16 @@ public class DoubtForumModule extends Base{
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 	}
 	
-	public static String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
+	public String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
 
-	@FindBy(xpath="(//*[text()='Doubt Forum'])[1]")
-	public RemoteWebElement clickOnDouFor;
+	@FindBy(xpath="//p[text()='Doubt Forum'] | //div[@class='col-sm-8 col-xs-7 mobilepaddingZero vmcmobileView']/h2[text()='Doubt Forum']")
+	public RemoteWebElement doubtForumTileTxt;
+	
+	@FindBy(xpath="//h3[text()='Fliplearn Guru']")
+	public RemoteWebElement doubtForumHeading;
 	
 	@FindBy(xpath="//*[@class='hidden-xs ng-binding']")    
-	public List<RemoteWebElement >verNoOfTab;
+	public List<RemoteWebElement >doubtForumTabs;
 	
 	@FindBy(xpath="(//*[text()='My Doubts'])[2]")
 	public RemoteWebElement cliOnMyDoubtTab;
@@ -54,22 +57,72 @@ public class DoubtForumModule extends Base{
 	public RemoteWebElement verAskImg;
 	
 	@FindBy(xpath="//*[@class='btn-animation']")
-	public RemoteWebElement clickOnAskUrDoubt;
+	public RemoteWebElement askYourDoubtBtn;
 	
-	@FindBy(xpath="(//*[@placeholder='Ask your doubt'])[2]")
-	public RemoteWebElement entText;
 	
-	@FindBy(xpath="//*[text()='Search']")
-	public RemoteWebElement cliOnSearch;
+	// *** Search Doubt Pop-up Elements & Methods *** //
+	
+	@FindBy(xpath="(//textarea[@placeholder='Ask your doubt'][@id='comment'])[2]")
+	public RemoteWebElement askYourDoubtTxt;
+	
+	@FindBy(xpath="//a[text()='Search']")
+	public RemoteWebElement searchBtn;
+	
+	public String enterAskYourDoubtText() throws InterruptedException 
+	{
+		generic.waitForElementVisibility(driver, askYourDoubtTxt);
+		String postTitle = "Testing doubtforum Post_"+timeStamp;
+		askYourDoubtTxt.sendKeys(postTitle);
+		
+		return postTitle;
+	}
+	
+	public void clickOnSearchBtn() throws InterruptedException 
+	{
+		generic.waitForElementVisibility(driver, searchBtn);
+		searchBtn.click();
+	}
+	
+	// *** Tips to Ask Doubt *** //
+	
+	@FindBy(xpath="//h3[@class='modal-title text-center'][text()='Tips to Ask Doubt']")
+	public RemoteWebElement tipsToAskDoubtHeading;
+	
+	@FindBy(xpath="//div[@id='help-popup']/div/div/div/button")
+	public RemoteWebElement tipsToAskDoubtCloseBtn;
+	
+	public void closeTipsToAskDoubtPopUp()
+	{
+		tipsToAskDoubtCloseBtn.click();
+	}	
+	
+	// *** Create Doubt Pop-up Elements *** //
 	
 	@FindBy(name="subject")
-	public RemoteWebElement selectSubject;
+	public RemoteWebElement selectSubjectDrp;
 	
 	@FindBy(name="chapter")
-	public RemoteWebElement slectChap;
+	public RemoteWebElement selectChapterDrp;
 	
 	@FindBy(xpath="//*[text()='Create']")
-	public RemoteWebElement cliOnCreate;
+	public RemoteWebElement createBtn;
+	
+    public void selectSubjectFromDrp() 
+    {
+    	selectSubjectDrp.click();
+    	generic.selectByVisibleText(selectSubjectDrp, "Maths");  	
+    }
+    
+    public void selectChapFromDrp() 
+    {
+    	selectChapterDrp.click();
+    	generic.selectByVisibleText(selectChapterDrp, "Polynomials");
+    }
+    
+    public void clickOnCreateBtn() 
+    {
+    	createBtn.click();
+    }
 	
 	@FindBy(xpath="(//*[text()='Create Post For Testing'])[1]")
 	public RemoteWebElement verPostAftCreat;
@@ -130,39 +183,19 @@ public class DoubtForumModule extends Base{
 		cliOnMyDoubtTab.click();
 	}
 	
-	public void clickOnDoubtForumBtn() {
-		clickOnDouFor.click();
-		}
-	public void clickOnAskYourDoubt() {
-		clickOnAskUrDoubt.click();
+	// Click on Doubt Forum Tile on Home Page
+	public void clickOnDoubtForumTile()
+	{
+		doubtForumTileTxt.click();
 	}
 	
-	public String enterAskYourDoubtText() {
-		
-		String postTitle = "Testing doubtforum Post_"+timeStamp;
-		entText.sendKeys(postTitle);
-		
-		return postTitle;
-		}
-	public void clickOnSearchButtn() {
-		cliOnSearch.click();
+	// Click on Ask Your Doubt Button
+	public void clickOnAskYourDoubtBtn() throws InterruptedException 
+	{
+		generic.waitForElementVisibility(driver, askYourDoubtBtn);
+		askYourDoubtBtn.click();
 	}
-	
-	public  void verifyNumOfDoubtForuTab(String role) throws InterruptedException, IOException {
-		 List<RemoteWebElement> actualList = verNoOfTab;}
-	
-    public void selectSubjectFromDropDwn() {
-    	selectSubject.click();
-    	generic.selectByVisibleText(selectSubject,"Maths");
-    	
-    }
-    public void selectChapFromDropdwn() {
-    	slectChap.click();
-    	generic.selectByVisibleText(slectChap, "Polynomials");
-    }
-    public void clickOnCreateButton() {
-    	cliOnCreate.click();
-    }
+
     public void clickOnDetailsLink() {
     	cliOnDetailsLnk.click();
     }

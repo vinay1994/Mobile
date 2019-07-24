@@ -1,88 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="2" total="8" passed="3" failed="1" skipped="2">
+<testng-results ignored="4" total="9" passed="4" failed="0" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2019-07-24T05:21:20Z" name="Fliplearn Automation Suite" finished-at="2019-07-24T05:24:29Z" duration-ms="188918">
+  <suite started-at="2019-07-24T12:50:48Z" name="Fliplearn Automation Suite" finished-at="2019-07-24T12:54:52Z" duration-ms="244283">
     <groups>
     </groups>
-    <test started-at="2019-07-24T05:21:20Z" name="Onboarding" finished-at="2019-07-24T05:24:04Z" duration-ms="163567">
-      <class name="com.fliplearn.flipapp.testcases.QuizDashboard">
-        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@a38c7fe]" started-at="2019-07-24T05:21:20Z" name="befo" finished-at="2019-07-24T05:21:32Z" duration-ms="11151" status="PASS">
+    <test started-at="2019-07-24T12:50:48Z" name="Onboarding" finished-at="2019-07-24T12:54:25Z" duration-ms="217428">
+      <class name="com.fliplearn.flipapp.testcases.DoubtForum">
+        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.DoubtForum@6fdbe764]" started-at="2019-07-24T12:50:48Z" name="befo" finished-at="2019-07-24T12:51:00Z" duration-ms="11529" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@3457cc8d]]>
+                <![CDATA[org.testng.TestRunner@16681017]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- befo -->
-        <test-method is-config="true" signature="befQuiz()[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@a38c7fe]" started-at="2019-07-24T05:21:32Z" name="befQuiz" finished-at="2019-07-24T05:21:32Z" duration-ms="271" status="PASS">
+        <test-method is-config="true" signature="preVerifyDoubtForum()[pri:0, instance:com.fliplearn.flipapp.testcases.DoubtForum@6fdbe764]" started-at="2019-07-24T12:51:00Z" name="preVerifyDoubtForum" finished-at="2019-07-24T12:51:00Z" duration-ms="300" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- befQuiz -->
-        <test-method signature="verifyQuizDashboardClasses(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@a38c7fe]" started-at="2019-07-24T05:21:32Z" name="verifyQuizDashboardClasses" data-provider="staff" finished-at="2019-07-24T05:21:55Z" duration-ms="22760" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Admin]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyQuizDashboardClasses -->
-        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@a38c7fe]" started-at="2019-07-24T05:21:55Z" name="getResult" finished-at="2019-07-24T05:21:55Z" duration-ms="131" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getResult -->
-        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@a38c7fe]" started-at="2019-07-24T05:21:55Z" name="befo" finished-at="2019-07-24T05:22:04Z" duration-ms="9236" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@3457cc8d]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- befo -->
-        <test-method is-config="true" signature="befQuiz()[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@a38c7fe]" started-at="2019-07-24T05:22:04Z" name="befQuiz" finished-at="2019-07-24T05:22:04Z" duration-ms="9" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- befQuiz -->
-        <test-method signature="verifyQuizDashboardClasses(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@a38c7fe]" started-at="2019-07-24T05:22:04Z" name="verifyQuizDashboardClasses" data-provider="staff" finished-at="2019-07-24T05:22:26Z" duration-ms="21700" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Principal]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyQuizDashboardClasses -->
-        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@a38c7fe]" started-at="2019-07-24T05:22:27Z" name="getResult" finished-at="2019-07-24T05:22:27Z" duration-ms="133" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getResult -->
-        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@a38c7fe]" started-at="2019-07-24T05:22:27Z" name="befo" finished-at="2019-07-24T05:22:37Z" duration-ms="10461" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@3457cc8d]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- befo -->
-        <test-method is-config="true" signature="befQuiz()[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@a38c7fe]" started-at="2019-07-24T05:22:37Z" name="befQuiz" finished-at="2019-07-24T05:22:37Z" duration-ms="6" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- befQuiz -->
-        <test-method signature="verifyQuizDashboardClasses(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@a38c7fe]" started-at="2019-07-24T05:22:37Z" name="verifyQuizDashboardClasses" data-provider="staff" finished-at="2019-07-24T05:22:59Z" duration-ms="21448" status="SKIP">
+        </test-method> <!-- preVerifyDoubtForum -->
+        <test-method signature="createDoubtWhenTextAndImageNotFoundMandatory(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.DoubtForum@6fdbe764]" started-at="2019-07-24T12:51:00Z" name="createDoubtWhenTextAndImageNotFoundMandatory" data-provider="doubt_staff" finished-at="2019-07-24T12:51:36Z" duration-ms="36150" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -90,19 +30,77 @@
               </value>
             </param>
           </params>
-          <exception class="java.lang.AssertionError">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createDoubtWhenTextAndImageNotFoundMandatory -->
+        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.DoubtForum@6fdbe764]" started-at="2019-07-24T12:51:37Z" name="getResult" finished-at="2019-07-24T12:51:37Z" duration-ms="181" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.DoubtForum@6fdbe764]" started-at="2019-07-24T12:51:37Z" name="befo" finished-at="2019-07-24T12:51:48Z" duration-ms="11228" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@16681017]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- befo -->
+        <test-method is-config="true" signature="preVerifyDoubtForum()[pri:0, instance:com.fliplearn.flipapp.testcases.DoubtForum@6fdbe764]" started-at="2019-07-24T12:51:48Z" name="preVerifyDoubtForum" finished-at="2019-07-24T12:51:48Z" duration-ms="15" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- preVerifyDoubtForum -->
+        <test-method signature="createDoubtWhenTextAndImageNotFoundMandatory(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.DoubtForum@6fdbe764]" started-at="2019-07-24T12:51:48Z" name="createDoubtWhenTextAndImageNotFoundMandatory" data-provider="doubt_staff" finished-at="2019-07-24T12:52:25Z" duration-ms="37509" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Student]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createDoubtWhenTextAndImageNotFoundMandatory -->
+        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.DoubtForum@6fdbe764]" started-at="2019-07-24T12:52:26Z" name="getResult" finished-at="2019-07-24T12:52:26Z" duration-ms="155" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.DoubtForum@6fdbe764]" started-at="2019-07-24T12:52:26Z" name="befo" finished-at="2019-07-24T12:52:38Z" duration-ms="11585" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@16681017]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- befo -->
+        <test-method is-config="true" signature="preVerifyDoubtForum()[pri:0, instance:com.fliplearn.flipapp.testcases.DoubtForum@6fdbe764]" started-at="2019-07-24T12:52:38Z" name="preVerifyDoubtForum" finished-at="2019-07-24T12:52:38Z" duration-ms="15" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- preVerifyDoubtForum -->
+        <test-method signature="createDoubtWhenTextAndImageNotFoundMandatory(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.DoubtForum@6fdbe764]" started-at="2019-07-24T12:52:38Z" name="createDoubtWhenTextAndImageNotFoundMandatory" data-provider="doubt_staff" finished-at="2019-07-24T12:53:38Z" duration-ms="60629" status="SKIP">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Guest]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[expected [true] but found [false]]]>
+              <![CDATA[Expected condition failed: waiting for visibility of Located by By.xpath: //button[@class='themeOutlineButton padding-10-60 mobilebtnBlock mobilemargin0'] (tried for 60 second(s) with 500 milliseconds interval)]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
-at org.testng.Assert.fail(Assert.java:96)
-at org.testng.Assert.failNotEquals(Assert.java:776)
-at org.testng.Assert.assertEqualsImpl(Assert.java:137)
-at org.testng.Assert.assertEquals(Assert.java:118)
-at org.testng.Assert.assertEquals(Assert.java:568)
-at org.testng.Assert.assertEquals(Assert.java:578)
-at com.fliplearn.flipapp.testcases.QuizDashboard.verifyQuizDashboardClasses(QuizDashboard.java:123)
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Located by By.xpath: //button[@class='themeOutlineButton padding-10-60 mobilebtnBlock mobilemargin0'] (tried for 60 second(s) with 500 milliseconds interval)
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+at com.fliplearn.flipapp.helper.GenericFunctions.waitForElementVisibility(GenericFunctions.java:213)
+at com.fliplearn.flipapp.pagemodules.LoginModule.Login(LoginModule.java:81)
+at com.fliplearn.flipapp.testcases.DoubtForum.createDoubtWhenTextAndImageNotFoundMandatory(DoubtForum.java:79)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -128,186 +126,120 @@ at org.testng.TestNG.run(TestNG.java:1017)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.NoSuchElementException: Can't locate an element by this strategy: By.xpath: //button[@class='themeOutlineButton padding-10-60 mobilebtnBlock mobilemargin0']
+at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:126)
+at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:59)
+at org.openqa.selenium.remote.RemoteWebElement$$EnhancerByCGLIB$$d27c0df4.isDisplayed(<generated>)
+at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:314)
+at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:300)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+... 28 more
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@4bcaa195 (tried for 1 second(s) with 500 milliseconds interval)
+at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:304)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:99)
+at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:119)
+... 35 more
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[@class='themeOutlineButton padding-10-60 mobilebtnBlock mobilemargin0']"}
+  (Session info: chrome=75.0.3770.142)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ip-192-168-10-84.ap-south-1.compute.internal', ip: 'fe80:0:0:0:8e4:ed81:7a76:a8fc%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.14.5', java.version: '11.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 75.0.3770.142, chrome: {chromedriverVersion: 75.0.3770.90 (a6dcaf7e3ec6f..., userDataDir: /var/folders/gl/sxfvlyrd7g9...}, goog:chromeOptions: {debuggerAddress: localhost:55999}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: a584eb0976ade59fd3c87600d581548e
+*** Element info: {Using=xpath, value=//button[@class='themeOutlineButton padding-10-60 mobilebtnBlock mobilemargin0']}
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:50)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$0(AppiumElementLocator.java:120)
+at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:172)
+at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:1)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+... 37 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyQuizDashboardClasses -->
-        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@a38c7fe]" started-at="2019-07-24T05:22:59Z" name="getResult" finished-at="2019-07-24T05:22:59Z" duration-ms="156" status="PASS">
+        </test-method> <!-- createDoubtWhenTextAndImageNotFoundMandatory -->
+        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.DoubtForum@6fdbe764]" started-at="2019-07-24T12:53:38Z" name="getResult" finished-at="2019-07-24T12:53:38Z" duration-ms="103" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@a38c7fe]" started-at="2019-07-24T05:22:59Z" name="befo" finished-at="2019-07-24T05:23:10Z" duration-ms="11643" status="PASS">
+        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.DoubtForum@6fdbe764]" started-at="2019-07-24T12:53:38Z" name="befo" finished-at="2019-07-24T12:53:49Z" duration-ms="10484" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@3457cc8d]]>
+                <![CDATA[org.testng.TestRunner@16681017]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- befo -->
-        <test-method is-config="true" signature="befQuiz()[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@a38c7fe]" started-at="2019-07-24T05:23:10Z" name="befQuiz" finished-at="2019-07-24T05:23:10Z" duration-ms="7" status="PASS">
+        <test-method is-config="true" signature="preVerifyDoubtForum()[pri:0, instance:com.fliplearn.flipapp.testcases.DoubtForum@6fdbe764]" started-at="2019-07-24T12:53:49Z" name="preVerifyDoubtForum" finished-at="2019-07-24T12:53:49Z" duration-ms="13" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- befQuiz -->
-        <test-method signature="verifyQuizDashboardClasses(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@a38c7fe]" started-at="2019-07-24T05:23:10Z" name="verifyQuizDashboardClasses" data-provider="staff" finished-at="2019-07-24T05:23:31Z" duration-ms="20855" status="SKIP">
+        </test-method> <!-- preVerifyDoubtForum -->
+        <test-method signature="createDoubtWhenTextAndImageNotFoundMandatory(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.DoubtForum@6fdbe764]" started-at="2019-07-24T12:53:49Z" name="createDoubtWhenTextAndImageNotFoundMandatory" data-provider="doubt_staff" finished-at="2019-07-24T12:54:25Z" duration-ms="35798" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Teacher]]>
+                <![CDATA[Guest]]>
               </value>
             </param>
           </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
-at org.testng.Assert.fail(Assert.java:96)
-at org.testng.Assert.failNotEquals(Assert.java:776)
-at org.testng.Assert.assertEqualsImpl(Assert.java:137)
-at org.testng.Assert.assertEquals(Assert.java:118)
-at org.testng.Assert.assertEquals(Assert.java:568)
-at org.testng.Assert.assertEquals(Assert.java:578)
-at com.fliplearn.flipapp.testcases.QuizDashboard.verifyQuizDashboardClasses(QuizDashboard.java:123)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.retryFailed(Invoker.java:839)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1010)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyQuizDashboardClasses -->
-        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@a38c7fe]" started-at="2019-07-24T05:23:31Z" name="getResult" finished-at="2019-07-24T05:23:31Z" duration-ms="137" status="PASS">
+        </test-method> <!-- createDoubtWhenTextAndImageNotFoundMandatory -->
+        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.DoubtForum@6fdbe764]" started-at="2019-07-24T12:54:25Z" name="getResult" finished-at="2019-07-24T12:54:25Z" duration-ms="161" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@a38c7fe]" started-at="2019-07-24T05:23:31Z" name="befo" finished-at="2019-07-24T05:23:42Z" duration-ms="10484" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@3457cc8d]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- befo -->
-        <test-method is-config="true" signature="befQuiz()[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@a38c7fe]" started-at="2019-07-24T05:23:42Z" name="befQuiz" finished-at="2019-07-24T05:23:42Z" duration-ms="5" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- befQuiz -->
-        <test-method signature="verifyQuizDashboardClasses(java.lang.String)[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@a38c7fe]" started-at="2019-07-24T05:23:42Z" name="verifyQuizDashboardClasses" data-provider="staff" finished-at="2019-07-24T05:24:03Z" duration-ms="21393" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Teacher]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
-at org.testng.Assert.fail(Assert.java:96)
-at org.testng.Assert.failNotEquals(Assert.java:776)
-at org.testng.Assert.assertEqualsImpl(Assert.java:137)
-at org.testng.Assert.assertEquals(Assert.java:118)
-at org.testng.Assert.assertEquals(Assert.java:568)
-at org.testng.Assert.assertEquals(Assert.java:578)
-at com.fliplearn.flipapp.testcases.QuizDashboard.verifyQuizDashboardClasses(QuizDashboard.java:123)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.retryFailed(Invoker.java:839)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1010)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyQuizDashboardClasses -->
-        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.QuizDashboard@a38c7fe]" started-at="2019-07-24T05:24:04Z" name="getResult" finished-at="2019-07-24T05:24:04Z" duration-ms="134" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getResult -->
-      </class> <!-- com.fliplearn.flipapp.testcases.QuizDashboard -->
+      </class> <!-- com.fliplearn.flipapp.testcases.DoubtForum -->
     </test> <!-- Onboarding -->
-    <test started-at="2019-07-24T05:24:04Z" name="Login" finished-at="2019-07-24T05:24:29Z" duration-ms="24933">
+    <test started-at="2019-07-24T12:54:26Z" name="Login" finished-at="2019-07-24T12:54:52Z" duration-ms="26447">
       <class name="com.fliplearn.flipapp.testcases.Login">
-        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.Login@f0c8a99]" started-at="2019-07-24T05:24:04Z" name="befo" finished-at="2019-07-24T05:24:14Z" duration-ms="9746" status="PASS">
+        <test-method is-config="true" signature="befo(org.testng.ITestContext)[pri:0, instance:com.fliplearn.flipapp.testcases.Login@740cae06]" started-at="2019-07-24T12:54:26Z" name="befo" finished-at="2019-07-24T12:54:36Z" duration-ms="10180" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@7a66c35a]]>
+                <![CDATA[org.testng.TestRunner@6aae0e6f]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- befo -->
-        <test-method is-config="true" signature="befMethod()[pri:0, instance:com.fliplearn.flipapp.testcases.Login@f0c8a99]" started-at="2019-07-24T05:24:14Z" name="befMethod" finished-at="2019-07-24T05:24:14Z" duration-ms="16" status="PASS">
+        <test-method is-config="true" signature="befMethod()[pri:0, instance:com.fliplearn.flipapp.testcases.Login@740cae06]" started-at="2019-07-24T12:54:36Z" name="befMethod" finished-at="2019-07-24T12:54:36Z" duration-ms="33" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- befMethod -->
-        <test-method signature="verifyLogin()[pri:0, instance:com.fliplearn.flipapp.testcases.Login@f0c8a99]" started-at="2019-07-24T05:24:14Z" name="verifyLogin" finished-at="2019-07-24T05:24:28Z" duration-ms="14248" status="PASS">
+        <test-method signature="verifyLogin()[pri:0, instance:com.fliplearn.flipapp.testcases.Login@740cae06]" started-at="2019-07-24T12:54:36Z" name="verifyLogin" finished-at="2019-07-24T12:54:51Z" duration-ms="15259" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyLogin -->
-        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.Login@f0c8a99]" started-at="2019-07-24T05:24:29Z" name="getResult" finished-at="2019-07-24T05:24:29Z" duration-ms="129" status="PASS">
+        <test-method is-config="true" signature="getResult()[pri:0, instance:com.fliplearn.flipapp.testcases.Login@740cae06]" started-at="2019-07-24T12:54:52Z" name="getResult" finished-at="2019-07-24T12:54:52Z" duration-ms="134" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method is-config="true" signature="aftSuite()[pri:0, instance:com.fliplearn.flipapp.testcases.Login@f0c8a99]" started-at="2019-07-24T05:24:30Z" name="aftSuite" finished-at="2019-07-24T05:24:30Z" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="aftSuite()[pri:0, instance:com.fliplearn.flipapp.testcases.Login@740cae06]" started-at="2019-07-24T12:54:52Z" name="aftSuite" finished-at="2019-07-24T12:54:52Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- aftSuite -->

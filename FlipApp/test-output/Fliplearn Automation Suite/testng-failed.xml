@@ -8,15 +8,15 @@
   </listeners>
   <test thread-count="5" name="Onboarding(failed)">
     <classes>
-      <class name="com.fliplearn.flipapp.testcases.QuizDashboard">
+      <class name="com.fliplearn.flipapp.testcases.DoubtForum">
         <methods>
+          <include name="preVerifyDoubtForum"/>
+          <include name="createDoubtWhenTextAndImageNotFoundMandatory" invocation-numbers="2"/>
           <include name="befo"/>
-          <include name="befQuiz"/>
           <include name="aftSuite"/>
-          <include name="verifyQuizDashboardClasses" invocation-numbers="2 2 2"/>
           <include name="getResult"/>
         </methods>
-      </class> <!-- com.fliplearn.flipapp.testcases.QuizDashboard -->
+      </class> <!-- com.fliplearn.flipapp.testcases.DoubtForum -->
     </classes>
   </test> <!-- Onboarding(failed) -->
 </suite> <!-- Failed suite [Fliplearn Automation Suite] -->

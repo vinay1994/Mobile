@@ -11,10 +11,10 @@
  
  <test name="Onboarding" enabled="true">
   		<classes>
-    		<class name="com.fliplearn.flipapp.testcases.QuizDashboard">
+    		<class name="com.fliplearn.flipapp.testcases.DoubtForum">
     		<methods>
         			
-        			<include name="verifyQuizDashboardClasses"/>
+        			<include name="createDoubtWhenTextAndImageNotFoundMandatory"/>
         		
 
         	</methods>		
@@ -29,11 +29,10 @@
 </classes>
 </test>        	
 
+        	
  <test name="Login" enabled="true">
   		<classes>
-    	
-        	
-        	<class name="com.fliplearn.flipapp.testcases.Login">
+    		<class name="com.fliplearn.flipapp.testcases.Login">
     		<methods>
         			
         			<include name="verifyLogin"/>
@@ -41,6 +40,7 @@
 
         	</methods>		
         	</class>
+        
         	
         	
  	
@@ -48,5 +48,6 @@
         	
         	
 </classes>
-</test>    
+</test>      
+   
 </suite>
