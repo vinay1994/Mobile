@@ -14,7 +14,7 @@
     		<class name="com.fliplearn.flipapp.testcases.DoubtForum">
     		<methods>
         			
-        			<include name="createDoubtWhenTextAndImageNotFoundMandatory"/>
+        			<include name="verifyDoubtForumTabs"/>
         		
 
         	</methods>		
