@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">3 methods,   3 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,7 +102,21 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
+<<<<<<< HEAD
                         <a href="#" panel-name="suite-Default_suite" title="com.fliplearn.flipapp.api.PquizApi" class="method navigator-link" hash-for-method="quizChallengeDetails">quizChallengeDetails</a> <!-- method navigator-link -->
+=======
+                        <a href="#" panel-name="suite-Fliplearn_Automation_Suite" title="com.fliplearn.flipapp.testcases.QuizDashboard" class="method navigator-link" hash-for-method="verifyQuizDashboardClasses(Principal)">verifyQuizDashboardClasses(Principal)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Fliplearn_Automation_Suite" title="com.fliplearn.flipapp.testcases.QuizDashboard" class="method navigator-link" hash-for-method="verifyQuizDashboardClasses(Teacher)">verifyQuizDashboardClasses(Teacher)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Fliplearn_Automation_Suite" title="com.fliplearn.flipapp.testcases.QuizDashboard" class="method navigator-link" hash-for-method="verifyQuizDashboardClasses(Admin)">verifyQuizDashboardClasses(Admin)</a> <!-- method navigator-link -->
+>>>>>>> dd821cbf024f6747b50d3e7e39fcacabadf34713
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -125,9 +139,32 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
+<<<<<<< HEAD
                   <a name="quizChallengeDetails">
                   </a> <!-- quizChallengeDetails -->
                   <span class="method-name">quizChallengeDetails</span>
+=======
+                  <a name="verifyQuizDashboardClasses(Principal)">
+                  </a> <!-- verifyQuizDashboardClasses(Principal) -->
+                  <span class="method-name">verifyQuizDashboardClasses</span>
+                  <span class="parameters">(Principal)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyQuizDashboardClasses(Teacher)">
+                  </a> <!-- verifyQuizDashboardClasses(Teacher) -->
+                  <span class="method-name">verifyQuizDashboardClasses</span>
+                  <span class="parameters">(Teacher)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyQuizDashboardClasses(Admin)">
+                  </a> <!-- verifyQuizDashboardClasses(Admin) -->
+                  <span class="method-name">verifyQuizDashboardClasses</span>
+                  <span class="parameters">(Admin)</span>
+>>>>>>> dd821cbf024f6747b50d3e7e39fcacabadf34713
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -141,8 +178,17 @@
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
+<<<<<<< HEAD
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
+=======
+&lt;suite name=&quot;Fliplearn Automation Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;com.fliplearn.flipapp.helper.Base&quot;/&gt;
+    &lt;listener class-name=&quot;com.fliplearn.flipapp.helper.RetryListener&quot;/&gt;
+  &lt;/listeners&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Onboarding&quot;&gt;
+>>>>>>> dd821cbf024f6747b50d3e7e39fcacabadf34713
     &lt;classes&gt;
       &lt;class name=&quot;com.fliplearn.flipapp.api.PquizApi&quot;/&gt;
     &lt;/classes&gt;
@@ -184,8 +230,9 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(3);
 data.setCell(0, 0, 0)
+<<<<<<< HEAD
 data.setCell(0, 1, 'quizChallengeDetails')
 data.setCell(0, 2, 'com.fliplearn.flipapp.api.PquizApi')
 data.setCell(0, 3, 3014);
@@ -196,6 +243,26 @@ return data;
               <span class="suite-total-time">Total running time: 3 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
+=======
+data.setCell(0, 1, 'verifyQuizDashboardClasses')
+data.setCell(0, 2, 'com.fliplearn.flipapp.testcases.QuizDashboard')
+data.setCell(0, 3, 22594);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'verifyQuizDashboardClasses')
+data.setCell(1, 2, 'com.fliplearn.flipapp.testcases.QuizDashboard')
+data.setCell(1, 3, 22397);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'verifyQuizDashboardClasses')
+data.setCell(2, 2, 'com.fliplearn.flipapp.testcases.QuizDashboard')
+data.setCell(2, 3, 21468);
+window.suiteTableData['Fliplearn_Automation_Suite']= { tableData: data, tableDiv: 'times-div-Fliplearn_Automation_Suite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <div id="times-div-Fliplearn_Automation_Suite">
+              </div> <!-- times-div-Fliplearn_Automation_Suite -->
+>>>>>>> dd821cbf024f6747b50d3e7e39fcacabadf34713
             </div> <!-- times-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
@@ -219,11 +286,67 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
+<<<<<<< HEAD
               <div class="chronological-class-name">com.fliplearn.flipapp.api.PquizApi</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">quizChallengeDetails</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- test-method -->
+=======
+              <div class="chronological-class-name">com.fliplearn.flipapp.testcases.QuizDashboard</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">befo(org.testng.TestRunner@69aa7d76)</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">befQuiz</span>
+                <span class="method-start">12165 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyQuizDashboardClasses(Admin)</span>
+                <span class="method-start">12427 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult</span>
+                <span class="method-start">35530 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">befo(org.testng.TestRunner@69aa7d76)</span>
+                <span class="method-start">35655 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">befQuiz</span>
+                <span class="method-start">46741 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyQuizDashboardClasses(Principal)</span>
+                <span class="method-start">46752 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult</span>
+                <span class="method-start">69596 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">befo(org.testng.TestRunner@69aa7d76)</span>
+                <span class="method-start">69731 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">befQuiz</span>
+                <span class="method-start">80610 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyQuizDashboardClasses(Teacher)</span>
+                <span class="method-start">80618 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult</span>
+                <span class="method-start">102573 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-suite after">
+                <span class="method-name">aftSuite</span>
+                <span class="method-start">103122 ms</span>
+              </div> <!-- configuration-suite after -->
+>>>>>>> dd821cbf024f6747b50d3e7e39fcacabadf34713
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

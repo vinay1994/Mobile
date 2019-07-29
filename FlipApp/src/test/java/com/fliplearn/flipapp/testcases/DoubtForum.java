@@ -52,120 +52,62 @@ public class DoubtForum extends Base
 		priClaMod =	new PrimeClassModule(driver);
 		priSubMod = new PrimeSubjectModule(driver); 
 		priPurFloMod= new PrimePurchaseFlowModule(driver);
-		 generic=new GenericFunctions();
-		 onbMod = new OnboardingModule(driver);
-		 praChaTopMod=new PracticeChapterTopicModule(driver);
-		 homMod=new HomeModule(driver);
-		 douForMod=new DoubtForumModule();
+		generic=new GenericFunctions();
+		onbMod = new OnboardingModule(driver);
+		praChaTopMod=new PracticeChapterTopicModule(driver);
+		homMod=new HomeModule(driver);
+		douForMod=new DoubtForumModule();
 	}
 
 	@Test(dataProvider="doubt_staff")
-	public void verifyDoubtForumTab(String role) throws InterruptedException, IOException  
+	public void verifyDoubtForumTabs(String role) throws InterruptedException, IOException  
 	{	
 		logMod.Login(role, "CBSE", "10", "Single", "Prime", "Yes");
-		    Thread.sleep(6000);
-		    try 
-	 	    {
-	 	        if(priPurFloMod.cliOnSkiButt.isDisplayed()) 
-	 	        	priPurFloMod.clickOnSkip();	
-	 	    }
-	 	    catch(Exception e) 
-	 	    {
-	 	    }
-		    
-		    JavascriptExecutor jse = (JavascriptExecutor)driver;
-		    jse.executeScript("window.scrollBy(0,250)", "");
-		   
-		   
-			Assert.assertTrue(douForMod.clickOnDouFor.isDisplayed());
-			Assert.assertTrue(douForMod.verDouFormImg.isDisplayed());
-			douForMod.clickOnDoubtForumBtn();
-			
-			Assert.assertTrue(douForMod.verFlipGuruTxt.isDisplayed());
-			//Assert.assertTrue(douForMod.verAskImg.isDisplayed());
-
+		
+		generic.waitForElementVisibility(driver, douForMod.doubtForumTileTxt);
+		douForMod.clickOnDoubtForumTile();
+		
+		generic.waitForElementVisibility(driver, douForMod.doubtForumHeading);
+		String expectedList = readData(platform, role, "DoubtForum Tabs");
+				
+		Assert.assertEquals(generic.compareList(douForMod.doubtForumTabs, expectedList), true);
 	}
-	
-	@Test(dataProvider="doubt_staff")
-	public void verifyCountOfDoubtTabs(String role) throws InterruptedException, IOException 
-	{
-	        logMod.Login(role, "CBSE", "10", "Single", "Prime", "Yes");
-	        Thread.sleep(6000);
-	        try 
-	 	    {
-	 	        if(priPurFloMod.cliOnSkiButt.isDisplayed()) 
-	 	        	priPurFloMod.clickOnSkip();	
-	 	    }
-	 	    catch(Exception e) 
-	 	    {
-	 	    }
-//	        if (priPurFloMod.cliOnSkiButt.size() != 0) return true;
-//	        return false;
-	        
-	        Thread.sleep(2000);
-	        JavascriptExecutor jse = (JavascriptExecutor)driver;
-		    jse.executeScript("window.scrollBy(0,250)", "");
-            Thread.sleep(2000);
-            douForMod.clickOnDoubtForumBtn();
-          
-            String expectedList = readData(platform, role, "DoubtForum Tabs");
-       	 System.out.println("Expected List:"+expectedList);
-       	 
-       	 Assert.assertEquals(generic.compareList(douForMod.verNoOfTab, expectedList), true);
-	}
-          
+	      
     @Test(dataProvider="doubt_staff")
-    public void createDoubtWithoutSearchTextWithoutImg(String role) throws InterruptedException, IOException 
+    public void createDoubtWhenTextAndImageNotFoundMandatory(String role) throws InterruptedException, IOException 
     {
     	logMod.Login(role, "CBSE", "10", "Single", "Prime", "Yes");
- 	    Thread.sleep(6000);
- 	    try 
- 	    {
- 	        if(( priPurFloMod.cliOnSkiButt).isDisplayed()) 
- 	        	priPurFloMod.clickOnSkip();	
- 	    }
- 	    catch(Exception e) 
- 	    {
- 	    }
  	    
- 	    JavascriptExecutor jse = (JavascriptExecutor)driver;
- 		jse.executeScript("window.scrollBy(0,250)", "");
-        Thread.sleep(2000);
-        douForMod.clickOnDoubtForumBtn();
-        Assert.assertTrue(douForMod.verFlipGuruTxt.isDisplayed());
-        douForMod.clickOnAskYourDoubt();
-        Thread.sleep(2000);
-        Assert.assertTrue(douForMod.vercreateDoubtFrame.isDisplayed());
-        String expectedTitle = douForMod.enterAskYourDoubtText();
-        douForMod.clickOnSearchButtn();
-        douForMod.selectSubjectFromDropDwn();
-        generic.waitForElementVisibility(driver, douForMod.slectChap);
-        douForMod.selectChapFromDropdwn();
-        douForMod.clickOnCreateButton();
-        Thread.sleep(4000);
-        generic.waitForElementVisibility(driver, douForMod.verExpDouPost);
+    	generic.waitForElementVisibility(driver, douForMod.doubtForumTileTxt);
+		douForMod.clickOnDoubtForumTile();    
+		douForMod.clickOnAskYourDoubtBtn();
+
+		String expectedTitle = douForMod.enterAskYourDoubtText();
+		douForMod.closeTipsToAskDoubtPopUp();
+        douForMod.clickOnSearchBtn();     
+        douForMod.selectSubjectFromDrp();
         
-             
-        if(platform.equals("Web"))
-     	{	
-     		int i = 0;
-     			
-     		String  ActualTitle=douForMod.verExpDouPost.getText();
+        generic.waitForElementVisibility(driver, douForMod.selectChapterDrp);
+        douForMod.selectChapFromDrp();
+        
+        douForMod.clickOnCreateBtn();
+        generic.waitForElementVisibility(driver, douForMod.verExpDouPost);
+                    
+        int i = 0;
      		
-     		while(!(ActualTitle.equalsIgnoreCase(ActualTitle)) && i < 2)
-     		{
-     			driver.navigate().refresh();
-     			i++;
-     		}
-     		
-     		System.out.println(ActualTitle);
-     		System.out.println(expectedTitle);
-            Assert.assertEquals(ActualTitle, expectedTitle);
-            Assert.assertTrue(douForMod.verFollCount.isDisplayed());
-            douForMod.clickOnMyDoubt();
-            Assert.assertTrue(douForMod.verFollCount.isDisplayed());
-            douForMod.clickOnMyDoubt();
-            }}
+     	while(!(douForMod.verExpDouPost.getText().equalsIgnoreCase(expectedTitle)) && i < 3)
+     	{
+     		driver.navigate().refresh();
+     		i++;
+     	}
+     	
+     	String ActualTitle = douForMod.verExpDouPost.getText();
+     	
+     	System.out.println(ActualTitle);
+     	System.out.println(expectedTitle);
+     	
+     	Assert.assertEquals(ActualTitle, expectedTitle);
+    }
         
         @Test(dataProvider="doubt_staff")
         public void verifyUserCanPostAnswer(String role) throws InterruptedException, IOException {
@@ -182,7 +124,7 @@ public class DoubtForum extends Base
      	    
      	    JavascriptExecutor jse1 = (JavascriptExecutor)driver;
      		jse1.executeScript("window.scrollBy(0,250)", "");
-            douForMod.clickOnDoubtForumBtn();
+            douForMod.clickOnDoubtForumTile();
             douForMod.clickOnMyDoubt();
             try {
             douForMod.clickOnPostYourAns();
@@ -204,7 +146,7 @@ public class DoubtForum extends Base
      	    
      	    JavascriptExecutor jse1 = (JavascriptExecutor)driver;
      		jse1.executeScript("window.scrollBy(0,250)", "");
-            douForMod.clickOnDoubtForumBtn();
+            douForMod.clickOnDoubtForumTile();
             Thread.sleep(2000);
             douForMod.clickOnMyDoubt();
             

@@ -87,8 +87,7 @@
   		<classes>
     		<class name="com.fliplearn.flipapp.testcases.DoubtForum">
         		<methods>
-        			<include name="verifyDoubtForumTab" /> 
-        			<include name="verifyCountOfDoubtTabs" />  
+        			<include name="verifyDoubtForumTabs" />  
         				
         		</methods>
         	</class>

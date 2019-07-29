@@ -60,8 +60,6 @@ public class CustomTestNGReporter implements IReporter {
 			//System.out.println(customTestMethodSummary);
 			customReportTemplateStr = customReportTemplateStr.replace("$Test_Case_Detail$", customTestMethodSummary);
 			
-		
-			
 			// Write replaced test report content to custom-emailable-report.html.
 			File targetFile = new File(outputDirectory + "/custom-emailable-report.html");
 			FileWriter fw = new FileWriter(targetFile);
@@ -109,6 +107,9 @@ public class CustomTestNGReporter implements IReporter {
 		return retBuf.toString();
 	}
 	
+	public static int totalTestCases = 0, totalPassTestCases = 0, totalFailedTestCases = 0, totalReExecutedTestCases=0;
+	long totalTime;
+	
 	/* Build test suite summary data. */
 	private String getTestSuiteSummary(List<ISuite> suites)
 	{
@@ -120,6 +121,7 @@ public class CustomTestNGReporter implements IReporter {
 			int totalTestPassed = 0;
 			int totalTestFailed = 0;
 			int totalTestSkipped = 0;
+			
 			
 			for(ISuite tempSuite: suites)
 			{
@@ -133,11 +135,16 @@ public class CustomTestNGReporter implements IReporter {
 					
 					ITestContext testObj = result.getTestContext();
 					
+					
+					
 					totalTestPassed = testObj.getPassedTests().getAllMethods().size();
 					totalTestSkipped = testObj.getSkippedTests().getAllMethods().size();
 					totalTestFailed = testObj.getFailedTests().getAllMethods().size();
 					
-					totalTestCount = totalTestPassed + totalTestSkipped + totalTestFailed;
+					
+//					totalTestCount = totalTestPassed + totalTestSkipped + totalTestFailed;
+					totalReExecutedTestCases = totalReExecutedTestCases + totalTestSkipped;
+
 					
 					/* Test name. */
 					retBuf.append("<td>");
@@ -206,7 +213,26 @@ public class CustomTestNGReporter implements IReporter {
 //					retBuf.append("</td>");
 					
 					retBuf.append("</tr>");
+					totalTestCases = totalTestCases + totalTestPassed + totalTestFailed;
+					totalPassTestCases = totalPassTestCases + totalTestPassed;
+					totalFailedTestCases = totalFailedTestCases + totalTestFailed;
+
+					
 				}
+
+				retBuf.append("<td><font color='blue'>Total Test Cases: </font>"+totalTestCases+"</td>");
+				retBuf.append("<td>"+totalPassTestCases+"</td>");
+				retBuf.append("<td>"+totalReExecutedTestCases+"</td>");
+				retBuf.append("<td>"+totalFailedTestCases+"</td>");
+				retBuf.append("<td>-</td>");
+				retBuf.append("<td>-</td>");
+				retBuf.append("<td>-</td>");
+				retBuf.append("<td>"+String.format("%02d:%02d:%02d", 
+						TimeUnit.MILLISECONDS.toHours(totalTime),
+						TimeUnit.MILLISECONDS.toMinutes(totalTime) -  
+						TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(totalTime)), // The change is in this line
+						TimeUnit.MILLISECONDS.toSeconds(totalTime) - 
+						TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(totalTime)))+"</td>"); 
 			}
 		}catch(Exception ex)
 		{
@@ -236,7 +262,7 @@ public class CustomTestNGReporter implements IReporter {
 		StringBuffer retBuf = new StringBuffer();
 				
 		long millis = deltaTime;
-		
+		totalTime = totalTime + millis;
 		
 		
 		retBuf.append(String.format("%02d:%02d:%02d", 
