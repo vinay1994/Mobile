@@ -207,30 +207,25 @@ public class DoubtForum extends Base
             douForMod.clickOnDoubtForumBtn();
             Thread.sleep(2000);
             douForMod.clickOnMyDoubt();
-            douForMod.verifyUnFollPost();
             
-//          String  ExpectedPost =douForMod.verifyUnFollPost();
-//            
-//            driver.navigate().refresh();
-//            douForMod.clickOnMyDoubt();
-//            Thread.sleep(2000);
-//            if(platform.equals("Web"))
-//         	{	
-//        		int i = 0;
-//        			
-//        		 String ActualPost=douForMod.FirMyDoubtPost.getText();
-//        		
-//         		while(!(ActualPost.equalsIgnoreCase(ActualPost)) && i < 2)
-//        		{
-//         			driver.navigate().refresh();
-//        			i++;
-//        		}
-//           
-//            
-//            
-//            System.out.println(ActualPost);
-//            System.out.println(ExpectedPost);
-        }}
+            String verPost=douForMod.FirMyDoubtPost.getText();
+            System.out.println(verPost);
+            
+            douForMod.verifyUnFollPost();
+            douForMod.clickOnMyDoubt();
+            driver.navigate().refresh();
+            douForMod.clickOnMyDoubt();
+           
+            
+            Thread.sleep(2000);
+            Assert.assertNotSame(verPost,false);
+            System.out.println(douForMod.FirMyDoubtPost.getText());
+            Thread.sleep(2000);
+          }
+            
+            }
+            
+
    
 
             

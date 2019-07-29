@@ -65,7 +65,7 @@ public class PracticeChapterTopicModule extends Base{
     @FindBy(xpath="//*[@class='slider round sliderbground']")
     public RemoteWebElement swiToPraMod;
     
-    @FindBy(xpath="//*[text()='What are Life Processes?']")
+    @FindBy(xpath="(//*[@class='item border-blue-1 border-radius3 padd10 pos-relative cursor practicetopicContent'])[1]")
     public RemoteWebElement verFirstChapter;
     
     @FindBy(xpath="(//*[text()='Autotrophic Nutrition'])")

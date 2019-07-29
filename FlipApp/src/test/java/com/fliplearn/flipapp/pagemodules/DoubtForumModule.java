@@ -116,8 +116,6 @@ public class DoubtForumModule extends Base{
 	@FindBy(xpath="(//*[@class='font16 m-b-15 ng-binding'])[1]")
 	public RemoteWebElement FirMyDoubtPost;
 	
-	@FindBy(xpath="//*[@class='font16 m-b-15 doubtforumDetailTitle ng-binding']")
-	public RemoteWebElement MyDoubtDetailPost;
 	
 	public void clickOnPostButtn() {
 		cliOnPost.click();
@@ -136,6 +134,7 @@ public class DoubtForumModule extends Base{
 	public void clickOnAskYourDoubt() {
 		clickOnAskUrDoubt.click();
 	}
+	
 	
 	public String enterAskYourDoubtText() {
 		
@@ -173,10 +172,7 @@ public class DoubtForumModule extends Base{
 		enterAnswer.sendKeys(ExpectedAns);
 		
 		return ExpectedAns;}
-    public String verMyDoubtDtailPost() {
-    	String MyDoubtPost=MyDoubtDetailPost.getText();
-    	return MyDoubtPost;
-    }
+    
     
     public void clickOnPostYourAns() throws InterruptedException {
     	String mainHandle = driver.getWindowHandle();
@@ -219,27 +215,8 @@ public class DoubtForumModule extends Base{
 			catch(Exception e) 
      	    {
      	    }}
-		
-		public void verUnfPostNotDisplayed() {
-			
-//			try {
-//			if(cliOnDetailsLnk.isDisplayed())
-//			    return false;
-//            else
-//          {
-//              System.out.println("element not displayed");
-//           return true;
-//          }
-//     }
-//     catch(Exception e)
-//     {
-//         return false;
-//     }
-
-				
-			
-		}
-          public String verifyUnFollPost() throws InterruptedException {
+	
+          public void verifyUnFollPost() throws InterruptedException {
         	  String mainHandle = driver.getWindowHandle();
           	cliOnDetailsLnk.click();
           	
@@ -247,20 +224,14 @@ public class DoubtForumModule extends Base{
           	ArrayList<String> tabs = new ArrayList(driver.getWindowHandles());
               driver.switchTo().window(tabs.get(1));
               generic.waitForElementVisibility(driver, unfollPost);
-              String MyDoubtPost=MyDoubtDetailPost.getText();
-              
               unfollowPost();
-              
-             
               driver.close();
               driver.switchTo().window(mainHandle);
               Thread.sleep(2000);
-              return MyDoubtPost;
-              
-              
-              
-        	  }
+              }
+          
           }
+          
     
     	
     	
