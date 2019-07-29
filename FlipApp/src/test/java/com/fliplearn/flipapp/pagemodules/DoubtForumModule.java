@@ -189,15 +189,15 @@ public class DoubtForumModule extends Base{
 	
 
 	
-	public String enterAskYourDoubtText1() {
-		
-		String postTitle = "Testing doubtforum Post_"+timeStamp;
-		entText.sendKeys(postTitle);
-		
-		return postTitle;
-		}
-	public void clickOnSearchButtn() {
-		cliOnSearch.click();}
+	//public String enterAskYourDoubtText1() {
+//		
+//		String postTitle = "Testing doubtforum Post_"+timeStamp;
+//		entText.sendKeys(postTitle);
+//		
+//		return postTitle;
+//		}
+//	public void clickOnSearchButtn() {
+//		cliOnSearch.click();}
 
 	// Click on Ask Your Doubt Button
 	public void clickOnAskYourDoubtBtn() throws InterruptedException 
