@@ -73,6 +73,15 @@ public class HeaderModule extends Base
 	@FindBy(xpath="//li/a[text()='Buy Books'] | //a[@id='bookstore-icon']")
 	public RemoteWebElement buyBooksLnk;
 	
+	
+	// Admin Headers
+	
+	@FindBy(xpath="//a[@id='manage-icon']")
+	public RemoteWebElement manageIcon;
+	
+	@FindBy(xpath="//li/a[@href='/home/manage/user']")
+	public RemoteWebElement mangaerUser;
+	
 	public void clickOnProfileImg() 
 	{
 		profileImg.click();
