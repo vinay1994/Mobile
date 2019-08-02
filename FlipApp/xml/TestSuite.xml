@@ -5,12 +5,12 @@
 
 <listeners>
 	<listener class-name="com.fliplearn.flipapp.helper.Base"/>
-<<<<<<< HEAD
+
 	
-=======
+=
 	<listener class-name="com.fliplearn.flipapp.helper.RetryListener"/>	
 <!--  	<listener class-name="com.fliplearn.flipapp.report.CustomTestNGReporter" /> -->
->>>>>>> dd821cbf024f6747b50d3e7e39fcacabadf34713
+
 </listeners>
  
  <test name="Onboarding" enabled="true">
@@ -21,9 +21,7 @@
     		</methods>
     			
         	</class>
-<<<<<<< HEAD
-        	</classes>
-=======
+
         
         	
         	
@@ -32,7 +30,7 @@
         	
         	
 </classes>
->>>>>>> dd821cbf024f6747b50d3e7e39fcacabadf34713
+
 </test>        	
 
 
