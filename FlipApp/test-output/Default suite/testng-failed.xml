@@ -3,11 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.fliplearn.flipapp.api.PquizApi">
+      <class name="com.fliplearn.flipapp.testcases.Login">
         <methods>
-          <include name="quizChallengeDetails"/>
+          <include name="verifyLogin"/>
+          <include name="befo"/>
+          <include name="aftSuite"/>
+          <include name="befMethod"/>
+          <include name="getResult"/>
         </methods>
-      </class> <!-- com.fliplearn.flipapp.api.PquizApi -->
+      </class> <!-- com.fliplearn.flipapp.testcases.Login -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
