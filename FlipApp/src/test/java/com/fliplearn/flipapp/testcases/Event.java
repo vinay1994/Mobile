@@ -53,7 +53,7 @@ public class Event extends Base
 	 * @version 1.2
 	 * @throws Throwable 
 	 */
-	@Test(dataProvider = "staff")
+	@Test(dataProvider = "staff",invocationCount=50 ) 
 	public void createAnnouncement(String role) throws Throwable
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
@@ -67,7 +67,7 @@ public class Event extends Base
 	 * @version 1.2
 	 * @throws Throwable 
 	 */
-	@Test(dataProvider = "staff")
+	@Test(dataProvider = "staff",invocationCount=50)
 	public void createAlbum(String role) throws Throwable
 	{  
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
@@ -82,7 +82,7 @@ public class Event extends Base
 	 * @modifiedBy Tarun Goswami on 2019-04-09
 	 * @throws Throwable 
 	 */
-	@Test//(dataProvider = "staff")
+	@Test(dataProvider = "staff" ,invocationCount=50)
 	public void createHomework() throws Throwable
 	{  String role="Teacher";
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
