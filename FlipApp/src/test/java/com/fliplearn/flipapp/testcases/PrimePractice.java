@@ -45,27 +45,30 @@ public class PrimePractice extends Base{
 		priClaMod =	new PrimeClassModule(driver);
 		priSubMod = new PrimeSubjectModule(driver); 
 		priPurFloMod= new PrimePurchaseFlowModule(driver);
-		 generic=new GenericFunctions();
-		 onbMod = new OnboardingModule(driver);
-		 praChaTopMod=new PracticeChapterTopicModule(driver);
-		 homMod=new HomeModule(driver);
+		generic=new GenericFunctions();
+		onbMod = new OnboardingModule(driver);
+		praChaTopMod=new PracticeChapterTopicModule(driver);
+		homMod=new HomeModule(driver);
 	}
+	
 	@Test(dataProvider = "nostaff_new")
-	public void verifyRecommendedTopic(String role) throws InterruptedException, IOException {
+	public void verifyRecommendedTopic(String role) throws InterruptedException, IOException 
+	{
 		logMod.Login(role, "CBSE", "10", "Single", "Prime", "Yes");
 		Thread.sleep(6000);
 		priSubMod.clickOnSubject(driver, role, "Biology");
 		Assert.assertTrue(praChaTopMod.verSubPage.isDisplayed());
-		Assert.assertTrue(praChaTopMod.verrecomTopText.isDisplayed());
-		
-		}
+		Assert.assertTrue(praChaTopMod.verrecomTopText.isDisplayed());	
+	}
+	
 	@Test(dataProvider = "nostaff_new")
-	public void verifyPracticeSubjectTopicScreen(String role) throws InterruptedException, IOException {
-	logMod.Login(role, "CBSE", "10", "Single", "Prime", "Yes");
-	Thread.sleep(6000);
-	priSubMod.clickOnSubject(driver, role, "Biology");
+	public void verifyPracticeSubjectTopicScreen(String role) throws InterruptedException, IOException
+	{
+		logMod.Login(role, "CBSE", "10", "Single", "Prime", "Yes");
+		Thread.sleep(6000);
+		priSubMod.clickOnSubject(driver, role, "Biology");
     
-	Boolean ImagePresent = (Boolean) ((JavascriptExecutor)driver).executeScript("return arguments[0].complete && typeof arguments[0].naturalWidth != \"undefined\" && arguments[0].naturalWidth > 0", praChaTopMod.verRecommImg);  
+		Boolean ImagePresent = (Boolean) ((JavascriptExecutor)driver).executeScript("return arguments[0].complete && typeof arguments[0].naturalWidth != \"undefined\" && arguments[0].naturalWidth > 0", praChaTopMod.verRecommImg);  
 	    if (!ImagePresent)
 	    {
 	         System.out.println("Image not displayed.");
@@ -105,7 +108,8 @@ public class PrimePractice extends Base{
 }	    
 	   
 	  @Test(dataProvider = "nostaff_new")
-	  public void verifyBackwardFlowWithFirstTopic(String role) throws InterruptedException, IOException {
+	  public void verifyBackwardFlowWithFirstTopic(String role) throws InterruptedException, IOException 
+	  {
 		  logMod.Login(role, "CBSE", "10", "Single", "Prime", "Yes");
 		  Thread.sleep(6000);
 			priSubMod.clickOnSubject(driver, role, "Biology");
@@ -136,7 +140,8 @@ public class PrimePractice extends Base{
 	  	  
 		    praChaTopMod.clickOnRecommTopic();
 		    
-		    Assert.assertTrue(  praChaTopMod.verTopOnLauScreen.getText().contains(expectedTitle2));}
+		    Assert.assertTrue(  praChaTopMod.verTopOnLauScreen.getText().contains(expectedTitle2));
+	}
 	  
 	      @Test(dataProvider = "nostaff_new")
 	      public void verPracticeModeTopScreen(String role) throws InterruptedException, IOException {
@@ -157,7 +162,7 @@ public class PrimePractice extends Base{
 	          Assert.assertTrue(praChaTopMod.verFirSteImg.isDisplayed());
 	      }
 	      
-	          @Test(dataProvider="nostaff_new")
+	  @Test(dataProvider="nostaff_new")
 	          public void verifyLaunchTestScrwithEarthLev(String role) throws InterruptedException, IOException{
 	        	  logMod.Login(role, "CBSE", "10", "Single", "Prime", "Yes");
 	    		  Thread.sleep(6000);
@@ -172,8 +177,10 @@ public class PrimePractice extends Base{
 	                Assert.assertTrue(praChaTopMod.cliOnLauTest.isDisplayed());
 	    			 }
 	          
-	            @Test(dataProvider="nostaff_new")
-	            public void verifyLauScrWithMoonLev(String role) throws InterruptedException, IOException {
+	          
+	  @Test(dataProvider="nostaff_new")
+	            public void verifyLauScrWithMoonLev(String role) throws InterruptedException, IOException 
+	            {
 	            	logMod.Login(role, "CBSE", "10", "Single", "Prime", "Yes");
 		    		  Thread.sleep(6000);
 		    			priSubMod.clickOnSubject(driver, role, "Biology");
