@@ -13,7 +13,9 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -347,6 +349,40 @@ public class GenericFunctions extends Base
 	}
 	public void scrollPage(RemoteWebElement element){
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+	}
+	
+	/**
+	 * Handle multiple windows
+	 * @author Bhupesh Kumar
+	 * @since 2019-09-17
+	 * @version 1.0
+	 * @return 
+	 * @throws InterruptedException 
+	 */
+	public void handelingMultipleWindows() {
+		
+		String MainWindow=driver.getWindowHandle();		
+		
+	    // To handle all new opened window.				
+	        Set<String> s1=driver.getWindowHandles();		
+	    Iterator<String> i1=s1.iterator();		
+	    		
+	    while(i1.hasNext())			
+	    {		
+	        String ChildWindow=i1.next();		
+	        		
+	        if(!MainWindow.equalsIgnoreCase(ChildWindow))			
+	        {    		
+	             
+	                // Switching to Child window
+	                driver.switchTo().window(ChildWindow);	
+	  System.out.println(driver.switchTo().window(ChildWindow).getTitle());
+	                               			}
+	        }
+		
+		
+		
+		
 	}
 }
 
