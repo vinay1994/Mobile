@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.fliplearn.flipapp.testcases.Login">
+      <class name="com.fliplearn.flipapp.testcases.GuruPageTest">
         <methods>
-          <include name="verifyLogin"/>
+          <include name="validatePageTitle"/>
           <include name="befo"/>
           <include name="aftSuite"/>
-          <include name="befMethod"/>
           <include name="getResult"/>
+          <include name="bef3"/>
         </methods>
-      </class> <!-- com.fliplearn.flipapp.testcases.Login -->
+      </class> <!-- com.fliplearn.flipapp.testcases.GuruPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

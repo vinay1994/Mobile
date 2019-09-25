@@ -18,7 +18,7 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 public class Guru extends Base {
 
 	GenericFunctions generic = new GenericFunctions();
-	@FindBy(xpath = "//a[contains(text(),'Go to Course Page')]")
+	@FindBy(xpath = "//a[contains(text(),'Go to Course Page')]  |  //a[contains(text(),'Go To Trial Course')]")
 	public RemoteWebElement courseBtn;
 
 	@FindBy(xpath = "//a[contains(text(),'My Courses')]")
@@ -37,7 +37,7 @@ public class Guru extends Base {
 
 	public void clickOnCoursePageBtn() throws InterruptedException {
 
-		Thread.sleep(2000);
+		generic.waitForElementVisibility(driver, courseBtn);
 		courseBtn.click();
 		String MainWindow = driver.getWindowHandle();
 
@@ -57,11 +57,9 @@ public class Guru extends Base {
 		}
 	}
 
-	public void clickOnVideos() {
+	public void clickOnVideos() throws InterruptedException {
 
-		Actions actions = new Actions(driver);
-		actions.moveToElement(mycoursesBtn).build().perform();
-		actions.moveToElement(mathsubject).click().build().perform();
-        videoLink.click();
+		generic.mouseHoverAndClick(driver, mycoursesBtn, mathsubject);
+		
 	}
 }
