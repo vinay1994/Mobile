@@ -46,7 +46,7 @@ import io.appium.java_client.remote.MobileCapabilityType;
 
 public class Base implements ITestListener
 {
-	public static Properties aConfig = null;
+	public static Properties aConfig;
 	public static Properties eConfig = null;
 	public static Properties vConfig = null;
 	public static FileInputStream input = null;
@@ -303,7 +303,7 @@ public class Base implements ITestListener
 	public void onTestStart(ITestResult result) 
 	{
 		extentTest = extentReports.createTest(result.getMethod().getMethodName(), "Some Description");
-		
+
 		extentTest.log(Status.INFO, "*******Platform is:"+platform+"*******");
 		extentTest.log(Status.INFO, "*******Environment is:"+environment+"*******");
 		
@@ -336,7 +336,7 @@ public class Base implements ITestListener
 	public void getResult() throws IOException
 	{
 		driver.quit();
-		extentTest.log(Status.INFO, "Browser/Application Closed.");
+	//	extentTest.log(Status.INFO, "Browser/Application Closed.");
 	}
 	
 	/**

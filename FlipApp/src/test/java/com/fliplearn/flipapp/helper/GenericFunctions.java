@@ -359,30 +359,32 @@ public class GenericFunctions extends Base
 	 * @return 
 	 * @throws InterruptedException 
 	 */
-	public void handelingMultipleWindows() {
-		
-		String MainWindow=driver.getWindowHandle();		
-		
-	    // To handle all new opened window.				
-	        Set<String> s1=driver.getWindowHandles();		
+	public void handelingMultipleWindows(WebDriver driver) 
+	{	
+		String MainWindow = driver.getWindowHandle();
+		System.out.println("current window"+MainWindow);
+		// To handle all new opened window.				
+	    Set<String> s1 = driver.getWindowHandles();	
+	    System.out.println("size of iterator:"+s1.size());
 	    Iterator<String> i1=s1.iterator();		
-	    		
+	    
 	    while(i1.hasNext())			
 	    {		
-	        String ChildWindow=i1.next();		
-	        		
+	    	String ChildWindow = i1.next();
+			System.out.println("current window:"+ChildWindow);
+
+	    	
 	        if(!MainWindow.equalsIgnoreCase(ChildWindow))			
-	        {    		
-	             
-	                // Switching to Child window
-	                driver.switchTo().window(ChildWindow);	
-	  System.out.println(driver.switchTo().window(ChildWindow).getTitle());
-	                               			}
+	        {    			             
+	        	// Switching to Child window
+	            driver.get	
+	            System.out.println("Title of current window: "+driver.switchTo().window(ChildWindow).getTitle());
 	        }
-		
-		
-		
-		
+	        else
+	        {
+	        System.out.println("Unexpected conditions");
+	        }
+	   }
 	}
 }
 
