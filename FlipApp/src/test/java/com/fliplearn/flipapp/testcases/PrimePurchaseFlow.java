@@ -95,7 +95,6 @@ public class PrimePurchaseFlow extends Base{
 			else 
 			{
 				assertEquals(priPurFloMod.verFlipPriSubs.getText(),"Fliplearn Prime Subscription");
-				priPurFlowMod.
 				priPurFloMod.clickOnConPay();
 				priPurFloMod.enterFirstName();
 				priPurFloMod.enterLastName();

@@ -60,6 +60,9 @@ public class LearnModule extends Base
 	@FindBy(xpath="//a[@id='learn-icon']")
 	@AndroidFindBy(xpath="//*[@text='Noticeboard']") 
 	public RemoteWebElement noticeBoard;
+	
+	@FindBy(xpath="(//div[@class='owl-stage'])[2]/div[1]")
+	public RemoteWebElement firstTopicSecondChapter;
 
 	public LearnModule(WebDriver driver) 
 	{

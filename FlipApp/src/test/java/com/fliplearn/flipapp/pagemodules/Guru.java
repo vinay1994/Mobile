@@ -27,39 +27,25 @@ public class Guru extends Base {
 	@FindBy(xpath = "//a[contains(text(),'Foundation-X-Mathematics')]")
 	public RemoteWebElement mathsubject;
 
-	@FindBy(xpath = "//*[contains(text(),'Live Class Recording - Linear Equations - 18 May')]")
-	public RemoteWebElement videoLink;
+	@FindBy(xpath = "(//div[@class='activityinstance'])[1]")
+	public RemoteWebElement videoLnk;
 
 	public Guru(WebDriver driver) {
 
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 	}
 
-	public void clickOnCoursePageBtn() throws InterruptedException {
-
+	public void clickOnCoursePageBtn() throws InterruptedException 
+	{
 		generic.waitForElementVisibility(driver, courseBtn);
 		courseBtn.click();
-		String MainWindow = driver.getWindowHandle();
-
-		// To handle all new opened window.
-		Set<String> s1 = driver.getWindowHandles();
-		Iterator<String> i1 = s1.iterator();
-
-		while (i1.hasNext()) {
-			String ChildWindow = i1.next();
-
-			if (!MainWindow.equalsIgnoreCase(ChildWindow)) {
-
-				// Switching to Child window
-				driver.switchTo().window(ChildWindow);
-				System.out.println(driver.switchTo().window(ChildWindow).getTitle());
-			}
-		}
 	}
 
 	public void clickOnVideos() throws InterruptedException {
 
 		generic.mouseHoverAndClick(driver, mycoursesBtn, mathsubject);
+		videoLnk.click();
+		generic.verifyVideoContent(driver);
 		
 	}
 }

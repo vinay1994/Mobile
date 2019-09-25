@@ -69,6 +69,9 @@ public class HomeModule extends Base
 	@FindBy(xpath="//img[contains(@src,'fliplearn_guru_logo.jpg')]")
 	public RemoteWebElement selectClassLogoImg;
 	
+	//First Subject
+	@FindBy(xpath="(//div[@id='subjectTiles'][@class='item text-center ng-scope'])[1]")
+	public RemoteWebElement firstSubject;
 	
 	// Click on Practice Mode Button
 	public void clickOnlearnPracticeModeBtn()

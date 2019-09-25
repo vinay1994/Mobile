@@ -159,51 +159,7 @@ public class PrimeResourceViewModule  extends Base
     		driver.findElement(By.xpath("//*[@text='Animation']")).click();
     }
     
-    public void verifyVideoContent(WebDriver driver, String videoTitle) throws InterruptedException 
-    {
-    	if(platform.equals("Web"))
-    	{	
-    		Thread.sleep(5000);
-    		JavascriptExecutor jse = (JavascriptExecutor) driver;
-     
-    		jse.executeScript("jwplayer().pause()");
-    		Thread.sleep(2000);
-        
-    		//Play
-    		jse.executeScript("jwplayer().play();");
-    		Thread.sleep(2000);
-        
-    		// Set Volume
-    		Thread.sleep(2000);
-        
-    		jse.executeScript("jwplayer().setVolume(50);");
-    		Thread.sleep(2000);
-        
-    		//Mute Player
-    		jse.executeScript("jwplayer().setMute(true);");
-    		Thread.sleep(2000);
-        
-    		//UnMute Player
-    		jse.executeScript("jwplayer().setMute(false);");
-        
-    		Thread.sleep(2000);
-    		//Stop the player
-    		jse.executeScript("jwplayer().stop()");
-    		Thread.sleep(2000);
-    	}
-    	
-    	else if(platform.equals("iOS")) {
-    		
-    	//	generic.waitForElementVisibility(driver, By.xpath("//XCUIElementTypeOther[@name='"+videoTitle+"']"));
-    		Assert.assertTrue(driver.findElement(By.xpath("//XCUIElementTypeOther[@name='"+videoTitle+"']")).isDisplayed());
-    	}
-    	else
-    	{
-    		Thread.sleep(6000);
-    		Assert.assertTrue(driver.findElement(By.xpath("//*[@text='"+videoTitle+"']")).isDisplayed());
-    	}
-    	
-    }
+
 	public PrimeResourceViewModule(WebDriver driver)
 	{
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);

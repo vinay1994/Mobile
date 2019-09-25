@@ -208,7 +208,7 @@ public class Home extends Base
 		String firstPopularVideoModalHeading = homMod.popularVideoModalHeading.getText();
 		
 		Assert.assertEquals(firstPopularVideoName, firstPopularVideoModalHeading);	
-		priResVieMod.verifyVideoContent(driver, "firstPopularVideoName");
+		generic.verifyVideoContent(driver);
 	}
 	
 	/**

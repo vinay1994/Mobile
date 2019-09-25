@@ -10,6 +10,7 @@ import org.testng.annotations.Test;
 import com.fliplearn.flipapp.helper.Base;
 import com.fliplearn.flipapp.helper.GenericFunctions;
 import com.fliplearn.flipapp.pagemodules.HeaderModule;
+import com.fliplearn.flipapp.pagemodules.HomeModule;
 import com.fliplearn.flipapp.pagemodules.LearnModule;
 import com.fliplearn.flipapp.pagemodules.LoginModule;
 import com.fliplearn.flipapp.pagemodules.MenuModule;
@@ -25,6 +26,7 @@ import com.fliplearn.flipapp.pagemodules.YourProfileModule;
 public class PrimeResources extends Base
 {	
 	GenericFunctions generic;
+	HomeModule homMod;
 	LoginModule logMod;
 	MobileNumberModule mobNumMod;
 	MenuModule menMod;
@@ -42,6 +44,7 @@ public class PrimeResources extends Base
 	public void preVerifySynopsis()
 	{
 		generic = new GenericFunctions();
+		homMod = new HomeModule(driver);
 		logMod = new LoginModule(driver);
 		mobNumMod = new MobileNumberModule(driver);
 		menMod = new MenuModule(driver);
@@ -56,6 +59,20 @@ public class PrimeResources extends Base
 		heaMod=new HeaderModule(driver);
 	}
 
+	
+	@Test
+	public void playPrimeVideo_New() throws InterruptedException, IOException
+	{
+		String role = "Student";
+		logMod.Login(role, "CBSE", "12", "Single", "Prime", "Yes");
+		generic.waitForElementVisibility(driver, homMod.firstSubject);
+		homMod.firstSubject.click();
+		generic.waitForElementVisibility(driver, leaMod.firstTopicSecondChapter);
+		leaMod.firstTopicSecondChapter.click(); 
+		Thread.sleep(5000);
+		generic.verifyVideoContent(driver);
+	}
+	
 	/**
 	 * verify PrimeVideo on Web, Android, iOS when Admin, Principal, Teacher, Parent, Student and Guest click on Video Content
 	 * @author Jagrati

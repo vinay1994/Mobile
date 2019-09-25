@@ -30,6 +30,7 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import com.aventstack.extentreports.Status;
 import org.openqa.selenium.remote.RemoteWebElement;
@@ -361,30 +362,52 @@ public class GenericFunctions extends Base
 	 */
 	public void handelingMultipleWindows(WebDriver driver) 
 	{	
-		String MainWindow = driver.getWindowHandle();
-		System.out.println("current window"+MainWindow);
-		// To handle all new opened window.				
-	    Set<String> s1 = driver.getWindowHandles();	
-	    System.out.println("size of iterator:"+s1.size());
-	    Iterator<String> i1=s1.iterator();		
-	    
-	    while(i1.hasNext())			
-	    {		
-	    	String ChildWindow = i1.next();
-			System.out.println("current window:"+ChildWindow);
+		// Store the current window handle
+		String winHandleBefore = driver.getWindowHandle();
 
-	    	
-	        if(!MainWindow.equalsIgnoreCase(ChildWindow))			
-	        {    			             
-	        	// Switching to Child window
-	            driver.get	
-	            System.out.println("Title of current window: "+driver.switchTo().window(ChildWindow).getTitle());
-	        }
-	        else
-	        {
-	        System.out.println("Unexpected conditions");
-	        }
-	   }
+		// Switch to new window opened
+		for(String winHandle : driver.getWindowHandles()){
+		    driver.switchTo().window(winHandle);
+		}
+		
+//		driver.close();
+//		driver.switchTo().window(winHandleBefore);
 	}
+	
+    public void verifyVideoContent(WebDriver driver) throws InterruptedException 
+    {
+    	if(platform.equals("Web"))
+    	{	
+    		Thread.sleep(5000);
+    		JavascriptExecutor jse = (JavascriptExecutor) driver;
+     
+    		jse.executeScript("jwplayer().pause()");
+    		Thread.sleep(2000);
+        
+    		//Play
+    		jse.executeScript("jwplayer().play();");
+    		Thread.sleep(2000);
+        
+    		// Set Volume
+    		Thread.sleep(2000);
+        
+    		jse.executeScript("jwplayer().setVolume(50);");
+    		Thread.sleep(2000);
+        
+    		//Mute Player
+    		jse.executeScript("jwplayer().setMute(true);");
+    		Thread.sleep(2000);
+        
+    		//UnMute Player
+    		jse.executeScript("jwplayer().setMute(false);");
+        
+    		Thread.sleep(2000);
+    		//Stop the player
+    		jse.executeScript("jwplayer().stop()");
+    		Thread.sleep(2000);
+    	}
+  
+    	
+    }
 }
 

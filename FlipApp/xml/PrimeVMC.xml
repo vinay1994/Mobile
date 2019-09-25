@@ -20,6 +20,14 @@
 
         		</methods>
         	</class>
+        		<class name="com.fliplearn.flipapp.testcases.VMCGuru">
+    		<methods>
+ 
+        			<include name="validateGuruVideo" /> 
+
+        		</methods>
+        	</class>
          </classes> 
+        
 	</test>
 </suite>	
