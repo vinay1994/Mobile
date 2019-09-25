@@ -13,10 +13,10 @@
 
 	<test name="Event" enabled="true">
   		<classes>
-    		<class name="com.fliplearn.flipapp.testcases.PrimePractice">
+    		<class name="com.fliplearn.flipapp.testcases.GuruPageTest">
     		<methods>
  
-        			<include name="verifybackFlowWithThirdLevel" />  
+        			<include name="validatePageTitle" /> 
 
         		</methods>
         	</class>
