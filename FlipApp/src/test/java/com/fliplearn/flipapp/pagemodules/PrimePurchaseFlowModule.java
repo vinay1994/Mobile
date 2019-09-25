@@ -1,6 +1,5 @@
 package com.fliplearn.flipapp.pagemodules;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -10,146 +9,95 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.fliplearn.flipapp.helper.Base;
 import com.fliplearn.flipapp.helper.GenericFunctions;
-
-import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
-import io.appium.java_client.pagefactory.iOSFindBy;
 
-public class PrimePurchaseFlowModule extends Base{
+public class PrimePurchaseFlowModule extends Base
+{
 	GenericFunctions generic = new GenericFunctions();
 	
 	@FindBy(xpath="//*[text()='Skip']")
 	public RemoteWebElement cliOnSkiButt;
 	
 	@FindBy(xpath="//a[text()='Buy Subscription']")
-	@AndroidFindBy()
-	@iOSFindBy()
 	public RemoteWebElement cliOnBuySubs;
 	
 	@FindBy(xpath="//div[text()='Close']")
-	@AndroidFindBy()
-	@iOSFindBy()
     public RemoteWebElement cliOnClose;	
 	
 	@FindBy(xpath="//*[text()='Fliplearn Prime Subscription']")
-	@AndroidFindBy()
-	@iOSFindBy()
 	public RemoteWebElement verFlipPriSubs;
 	
 	@FindBy(xpath="//h1[@class='ng-binding' and text()='1 Year Subscription ']")
-	@AndroidFindBy()
-	@iOSFindBy()
 	public RemoteWebElement compSubs;
 	
 	@FindBy(xpath=" //div[@class='border-blue-1 border-radius4 padding20']/h3[text()='1 Year Subscription']")
-	@AndroidFindBy()
-	@iOSFindBy()
 	public RemoteWebElement compProducts;
 	
 	@FindBy(xpath="(//*[@class='border-blue-1 padding20 border-radius4 cursorPointer m-t-20 boxShadow ng-scope'])[1]")
-	@AndroidFindBy()
-	@iOSFindBy()
 	public RemoteWebElement cliOnsubs;
 	
 	@FindBy(xpath="//*[contains(text(),'Please link your child to your account ')]")
-	@AndroidFindBy()
-	@iOSFindBy()
 	public RemoteWebElement Childmsgverify;
 	
 	@FindBy(xpath="//button[text()='Confirm & Pay']")
-	@AndroidFindBy()
-	@iOSFindBy()
 	public RemoteWebElement cliOnConPay;
 	
 	@FindBy(xpath="//button[contains(text(),'Checkout')]")
-	@AndroidFindBy()
-	@iOSFindBy()
 	public RemoteWebElement cliOnCheOut;
 	
     @FindBy(id="firstname")
-	@AndroidFindBy()
-	@iOSFindBy()
     public RemoteWebElement entfirname;
 	
 	@FindBy(id="lastname")
-	@AndroidFindBy()
-	@iOSFindBy()
 	public RemoteWebElement entlasnam;
 	
 	@FindBy(id="email")
-	@AndroidFindBy()
-	@iOSFindBy()
 	public RemoteWebElement entemailid;
 	
 	@FindBy(id="mobile")
-	@AndroidFindBy()
-	@iOSFindBy()
 	public RemoteWebElement entmobno;
 	
 	@FindBy(id="pincode")
-	@AndroidFindBy()
-	@iOSFindBy()
 	public RemoteWebElement entpincod;
 	
 	@FindBy(id="addressline1")
-	@AndroidFindBy()
-	@iOSFindBy()
 	public RemoteWebElement entaddlin1;
 	
 	@FindBy(xpath="//button[contains(text(),'Proceed to Pay ')]")
-	@AndroidFindBy()
-	@iOSFindBy()
 	public RemoteWebElement clickOnProPay;
 	
 	@FindBy(xpath="//label[text()='Debit Card']")
-	@AndroidFindBy()
-	@iOSFindBy()
 	public RemoteWebElement selDebitCard;
 	
 	@FindBy(xpath="//*[text()='Pay Now']")
-	@AndroidFindBy()
-	@iOSFindBy()
 	public RemoteWebElement cliOnPayNow;
 	
 	@FindBy(xpath="//*[text()='www.fliplearn.com']")
-	@AndroidFindBy()
-	@iOSFindBy()
 	public RemoteWebElement payDiscard;
 	
 	@FindBy(xpath="//*[text()='2. Sexual Reproduction in Flowering Plants']")
-	@AndroidFindBy()
-	@iOSFindBy()
 	public RemoteWebElement clickOnChap;
 	
 	@FindBy(xpath="//*[text()='Flower: A Fascinating Organ of Angiosperms']")
-	@AndroidFindBy()
-	@iOSFindBy()
 	public RemoteWebElement clickOnTop;
 	
 	@FindBy(xpath="//*[contains(text(),'Buy Fliplearn subscription and get World')]")
-	@AndroidFindBy()
-	@iOSFindBy()
 	public RemoteWebElement verBuySubsMess;
 	
 	@FindBy(xpath="//*[text()='Buy Fliplearn Subscription']")
-	@AndroidFindBy()
-	@iOSFindBy()
 	public RemoteWebElement cliOnBuyFliSub;
 	
 	@FindBy(xpath="//*[@placeholder='Promotion Code']")
-	@AndroidFindBy()
-    @iOSFindBy()
 	public RemoteWebElement entCoupCode;
 	
 	@FindBy(xpath="//*[text()='Apply']")
-	@AndroidFindBy()
-	@iOSFindBy()
 	public RemoteWebElement clicOnApply;	
 	
 	@FindBy(xpath="//*[text()='Remove']")
-	@AndroidFindBy()
-	@iOSFindBy()
 	public RemoteWebElement removeCoupon;
+	
+	@FindBy(xpath="(//h1[@class='ng-binding'])[1]")
+	public RemoteWebElement firstProductInList;
 	
 	
 	public PrimePurchaseFlowModule(WebDriver driver)
@@ -184,6 +132,11 @@ public class PrimePurchaseFlowModule extends Base{
 	public void clickOnConPay() throws InterruptedException {
 		Thread.sleep(2000);
 		cliOnConPay.sendKeys(Keys.ENTER);
+	}
+	
+	public void clickFirstSubscription()
+	{
+		firstProductInList.click();
 	}
 	public void clickOnCheckOut() {
 		cliOnCheOut.click();

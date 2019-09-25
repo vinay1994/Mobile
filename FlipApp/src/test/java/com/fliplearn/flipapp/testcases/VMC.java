@@ -70,11 +70,12 @@ public class VMC extends Base
 			if(platform.equals("Web")&& platform.equals("Android"))
 				leaMod.clickOnLearnImage();
 			
-			leaMod.vmcImg.click();
-			generic.waitForElementVisibility(driver, vmcPurFlo.vmcAstronautImg);
-			
+			leaMod.vmcImg.click();			
 			if(platform.equals("Web"))
-				assertEquals(vmcPurFlo.vmcAstronautImg.isDisplayed(), true);
+			{	
+				generic.waitForElementVisibility(driver, vmcPurFlo.programComponent);
+				assertEquals(vmcPurFlo.programComponent.isDisplayed(), true);
+			}	
 		}	
 		
 		@Test(dataProvider = "nostaff")
@@ -90,11 +91,9 @@ public class VMC extends Base
 			}	
 			else	
 				leaMod.vmcImg.click();
-			generic.waitForElementVisibility(driver, vmcPurFlo.vmcAstronautImg);
-
 			
 			if(platform.equals("Web"))
-			assertEquals(vmcPurFlo.vmcAstronautImg.isDisplayed(), true);
+				assertEquals(vmcPurFlo.programComponent.isDisplayed(), true);
 						
 		}
 

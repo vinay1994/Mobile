@@ -55,66 +55,62 @@ public class PrimePurchaseFlow extends Base{
 	
 
 	@Test (dataProvider="allusers_old")
-	public void verifyPrimePurchaseFlowWithoutCouponWithFirTab(String role) throws InterruptedException, IOException {
+	public void verifyPrimePurchaseFlowWithoutCouponWithFirTab(String role) throws InterruptedException, IOException 
+	{
 		logMod.Login(role, "CBSE", "12", "Single", "None", "Yes");
 		Thread.sleep(2000);
-		    try 
-	 	    {
-	 	        if(priPurFloMod.cliOnSkiButt.isDisplayed()) 
-	 	        	priPurFloMod.clickOnSkip();	
-	 	    }
-	 	    catch(Exception e) 
-	 	    {
-	 	    }
+		
+		try 
+	 	{
+			if(priPurFloMod.cliOnSkiButt.isDisplayed()) 
+				priPurFloMod.clickOnSkip();	
+	 	}
+	 	catch(Exception e) 
+	 	{
+	 	}
+		
 		leaMod.clickOnPrimeImage();
 		Thread.sleep(2000);
-		if(role.equals("Admin" )|| role.equals("Principal")||role.equals("Teacher")) {
+		
+		if(role.equals("Admin" )|| role.equals("Principal")||role.equals("Teacher")) 
+		{
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 			js.executeScript("window.scrollBy(0,1000)");
-		//if(role.equals("Admin") || role.equals("Teacher") || role.equals("Principal")) {
 			priClaMod.selectUserClass("Class 12");
 	        Thread.sleep(2000);}
-//		 if(role.equals("Parent")) {
-//			 JavascriptExecutor js1 = (JavascriptExecutor) driver;
-//				js1.executeScript("window.scrollBy(0,1000)");
-//				}
-//		
-		priSubMod.clickOnSubject(driver, role, "Biology");
-		
-		
-		assertEquals(generic.isElementDisplayed(driver, priPurFloMod.cliOnBuySubs), true);
-		priPurFloMod.clickOnBuySubs();
-		
-		
-		Thread.sleep(2000);
-		
-		if(role.equals("Parent")) {
-	    	Assert.assertEquals(priPurFloMod.Childmsgverify.getText(), "Please link your child to your account using the child's guardian code.");
-            priPurFloMod.clickOnCloseButton();
-		}
-		
-		else {
+
+			priSubMod.clickOnSubject(driver, role, "Biology");
 			
-       assertEquals(priPurFloMod.verFlipPriSubs.getText(),"Fliplearn Prime Subscription");
+			assertEquals(generic.isElementDisplayed(driver, priPurFloMod.cliOnBuySubs), true);
+			priPurFloMod.clickOnBuySubs();
+			
+			Thread.sleep(2000);
 		
-		//priPurFloMod.clickOnSubs();
-		//assertEquals(priPurFloMod.compSubs.getText().trim(),priPurFloMod.compProducts.getText());
-		priPurFloMod.clickOnConPay();
-		//priPurFloMod.clickOnCheckOut();
-		priPurFloMod.enterFirstName();
-		priPurFloMod.enterLastName();
+			if(role.equals("Parent")) 
+			{
+				Assert.assertEquals(priPurFloMod.Childmsgverify.getText(), "Please link your child to your account using the child's guardian code.");
+				priPurFloMod.clickOnCloseButton();
+			}
+			
+			else 
+			{
+				assertEquals(priPurFloMod.verFlipPriSubs.getText(),"Fliplearn Prime Subscription");
+				priPurFlowMod.
+				priPurFloMod.clickOnConPay();
+				priPurFloMod.enterFirstName();
+				priPurFloMod.enterLastName();
 		
-		priPurFloMod.enteremailId();
-		priPurFloMod.enterMobileNo();
-		priPurFloMod.enterPinCode();
-		priPurFloMod.enterAddressLine();
-		Thread.sleep(5000);
-		priPurFloMod.clickOnProceednPay();
+				priPurFloMod.enteremailId();
+				priPurFloMod.enterMobileNo();
+				priPurFloMod.enterPinCode();
+				priPurFloMod.enterAddressLine();
+				Thread.sleep(5000);
+				priPurFloMod.clickOnProceednPay();
 		
-		JavascriptExecutor js2= (JavascriptExecutor) driver;
-		js2.executeScript("arguments[0].click();", priPurFloMod.selDebitCard); 
-		Thread.sleep(2000);
-		priPurFloMod.clickOnPayNow();
+				JavascriptExecutor js2= (JavascriptExecutor) driver;
+				js2.executeScript("arguments[0].click();", priPurFloMod.selDebitCard); 
+				Thread.sleep(2000);
+				priPurFloMod.clickOnPayNow();
 		//priPurFloMod.paymentDiscard();
 		
 		}

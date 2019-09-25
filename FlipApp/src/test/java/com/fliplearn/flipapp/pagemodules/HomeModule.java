@@ -65,6 +65,11 @@ public class HomeModule extends Base
 	@FindBy(xpath="//a[text()='Buy Subscription ']")
 	public RemoteWebElement vmcBuySubscription;
 	
+	//VMC Select Class Popup
+	@FindBy(xpath="//img[contains(@src,'fliplearn_guru_logo.jpg')]")
+	public RemoteWebElement selectClassLogoImg;
+	
+	
 	// Click on Practice Mode Button
 	public void clickOnlearnPracticeModeBtn()
 	{

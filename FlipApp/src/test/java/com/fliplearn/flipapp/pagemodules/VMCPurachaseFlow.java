@@ -12,6 +12,9 @@ public class VMCPurachaseFlow
 	@FindBy(xpath="//img[contains(@src,'/images/vmc_flow_icons/vmc_astronaut.png')]")
 	public RemoteWebElement vmcAstronautImg;
 	
+	@FindBy(xpath="//h4[text()='Program Components']")
+	public RemoteWebElement programComponent;
+	
 	public VMCPurachaseFlow(WebDriver driver)
 	{
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
