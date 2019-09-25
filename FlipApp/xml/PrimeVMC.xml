@@ -11,7 +11,7 @@
 	
 
 
-	<test name="Event" enabled="true">
+	<test name="Prime Smoke Test" enabled="true">
   		<classes>
     		<class name="com.fliplearn.flipapp.testcases.PrimeResources">
     		<methods>
@@ -20,6 +20,14 @@
 
         		</methods>
         	</class>
+        	
+         </classes> 
+        
+	</test>
+	
+	<test name="VMC Smoke Test" enabled="true">
+  		<classes>
+    	
         		<class name="com.fliplearn.flipapp.testcases.VMCGuru">
     		<methods>
  
