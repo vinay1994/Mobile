@@ -83,6 +83,7 @@ public class Base implements ITestListener
 	ITestResult result;
 	ITestContext iTestContext;
 
+	//This will configure report path
 	public static String reportPath()
 	{
 		File file;
