@@ -49,12 +49,12 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-suite_of_suites" class="navigator-link ">
-                    <span>PrimeVMC.xml</span>
+                    <span>C:\Users\Bhupesh\git\flip-app\FlipApp\xml\PrimeVMC.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
                   <a href="#" panel-name="testlist-suite_of_suites" class="navigator-link ">
-                    <span class="test-stats">1 test</span>
+                    <span class="test-stats">2 tests</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -125,21 +125,6 @@
           <div class="suite-suite_of_suites-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.fliplearn.flipapp.testcases.VMCGuru</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="validateGuruVideo">
-                  </a> <!-- validateGuruVideo -->
-                  <span class="method-name">validateGuruVideo</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-suite_of_suites-class-passed -->
-          <div class="suite-suite_of_suites-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
               <span class="class-name">com.fliplearn.flipapp.testcases.PrimeResources</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -152,10 +137,25 @@
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-suite_of_suites-class-passed -->
+          <div class="suite-suite_of_suites-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.fliplearn.flipapp.testcases.VMCGuru</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="validateGuruVideo">
+                  </a> <!-- validateGuruVideo -->
+                  <span class="method-name">validateGuruVideo</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-suite_of_suites-class-passed -->
         </div> <!-- panel suite_of_suites -->
         <div panel-name="test-xml-suite_of_suites" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/Users/tarungoswami/git/flip-app/FlipApp/xml/PrimeVMC.xml</span>
+            <span class="header-content">C:\Users\Bhupesh\git\flip-app\FlipApp\xml\PrimeVMC.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -167,20 +167,24 @@
     &lt;listener class-name=&quot;com.fliplearn.flipapp.helper.RetryListener&quot;/&gt;
     &lt;listener class-name=&quot;com.fliplearn.flipapp.report.CustomTestNGReporter&quot;/&gt;
   &lt;/listeners&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;Event&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Prime Smoke Test&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.fliplearn.flipapp.testcases.PrimeResources&quot;&gt;
         &lt;methods&gt;
           &lt;include name=&quot;playPrimeVideo_New&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- com.fliplearn.flipapp.testcases.PrimeResources --&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Prime Smoke Test --&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;VMC Smoke Test&quot;&gt;
+    &lt;classes&gt;
       &lt;class name=&quot;com.fliplearn.flipapp.testcases.VMCGuru&quot;&gt;
         &lt;methods&gt;
           &lt;include name=&quot;validateGuruVideo&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- com.fliplearn.flipapp.testcases.VMCGuru --&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Event --&gt;
+  &lt;/test&gt; &lt;!-- VMC Smoke Test --&gt;
 &lt;/suite&gt; &lt;!-- suite of suites --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -192,7 +196,10 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Event (2 classes)</span>
+                <span class="test-name">Prime Smoke Test (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">VMC Smoke Test (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -222,11 +229,11 @@ data.addRows(2);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'validateGuruVideo')
 data.setCell(0, 2, 'com.fliplearn.flipapp.testcases.VMCGuru')
-data.setCell(0, 3, 53952);
+data.setCell(0, 3, 49986);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'playPrimeVideo_New')
 data.setCell(1, 2, 'com.fliplearn.flipapp.testcases.PrimeResources')
-data.setCell(1, 3, 47146);
+data.setCell(1, 3, 44940);
 window.suiteTableData['suite_of_suites']= { tableData: data, tableDiv: 'times-div-suite_of_suites'}
 return data;
 }
@@ -246,16 +253,9 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-suite_of_suites" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">5 ignored methods</span>
+            <span class="header-content">4 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">com.fliplearn.flipapp.testcases.VMCGuru</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">aftSuite</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
             <div class="ignored-class-div">
               <span class="ignored-class-name">com.fliplearn.flipapp.testcases.PrimeResources</span>
               <div class="ignored-methods-div">
@@ -279,46 +279,43 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">com.fliplearn.flipapp.testcases.PrimeResources</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
-                <span class="method-name">befo(org.testng.TestRunner@7ed3df3b)</span>
+                <span class="method-name">befo(org.testng.TestRunner@7affc159)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
                 <span class="method-name">preVerifySynopsis</span>
-                <span class="method-start">16714 ms</span>
+                <span class="method-start">11939 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">playPrimeVideo_New</span>
-                <span class="method-start">16919 ms</span>
+                <span class="method-start">12383 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">getResult</span>
-                <span class="method-start">64503 ms</span>
+                <span class="method-start">57905 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.fliplearn.flipapp.testcases.VMCGuru</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
-                <span class="method-name">befo(org.testng.TestRunner@7ed3df3b)</span>
-                <span class="method-start">64505 ms</span>
+                <span class="method-name">befo(org.testng.TestRunner@4eb9f2af)</span>
+                <span class="method-start">59440 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
                 <span class="method-name">bef3</span>
-                <span class="method-start">77967 ms</span>
+                <span class="method-start">70389 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">validateGuruVideo</span>
-                <span class="method-start">77971 ms</span>
+                <span class="method-start">70402 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">getResult</span>
-                <span class="method-start">132533 ms</span>
+                <span class="method-start">120817 ms</span>
               </div> <!-- configuration-method after -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.fliplearn.flipapp.testcases.PrimeResources</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
                 <span class="method-name">aftSuite</span>
-                <span class="method-start">132923 ms</span>
+                <span class="method-start">121899 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
