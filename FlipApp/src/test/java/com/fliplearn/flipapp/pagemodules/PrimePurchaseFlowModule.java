@@ -87,6 +87,9 @@ public class PrimePurchaseFlowModule extends Base
 	@FindBy(xpath="//*[text()='Buy Fliplearn Subscription']")
 	public RemoteWebElement cliOnBuyFliSub;
 	
+	@FindBy(xpath="//*[contains(text(),'Get 1 Year of Fliplearn Prime Subscription')]")
+	public RemoteWebElement Oneyearsubscriptionlink;
+	
 	@FindBy(xpath="//*[@placeholder='Promotion Code']")
 	public RemoteWebElement entCoupCode;
 	
@@ -181,7 +184,11 @@ public class PrimePurchaseFlowModule extends Base
 		cliOnBuyFliSub.click();
 	}
 	
+	
+	
+	
 	public void enterCouponCode() throws InterruptedException {
+		Oneyearsubscriptionlink.click();
 		Thread.sleep(3000);
 		entCoupCode.sendKeys("vinay-100");
 	
