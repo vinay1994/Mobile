@@ -33,6 +33,24 @@ public class VMCGuru extends Base
 
 		guru.clickOnCoursePageBtn();
 		generic.handelingMultipleWindows(driver);
-		guru.clickOnVideos();		
+		
+		try
+		{
+			int skipSize = guru.skipPopup.size();
+			
+			for(int i = 0; i < skipSize; i++)
+			{
+				guru.skipPopup.get(i).click();
+				Thread.sleep(3000);
+			}
+		}
+		catch(Exception e)
+		{
+			
+		}
+		
+		guru.clickOnVideos();
+		
+		
 	}
 }

@@ -13,10 +13,10 @@
 
 	<test name="Event" enabled="true">
   		<classes>
-    		<class name="com.fliplearn.flipapp.testcases.PrimeResources">
+    		<class name="com.fliplearn.flipapp.testcases.VMCGuru">
     		<methods>
  
-        			<include name="playPrimeVideo_New" /> 
+        			<include name="validateGuruVideo" /> 
 
         		</methods>
         	</class>

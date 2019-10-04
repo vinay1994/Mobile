@@ -1,6 +1,7 @@
 package com.fliplearn.flipapp.pagemodules;
 
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 
 import org.openqa.selenium.WebDriver;
@@ -29,6 +30,9 @@ public class Guru extends Base {
 
 	@FindBy(xpath = "(//div[@class='activityinstance'])[1]")
 	public RemoteWebElement videoLnk;
+	
+	@FindBy(css="input[type='button'][value='Skip']")
+	public List<RemoteWebElement> skipPopup;
 
 	public Guru(WebDriver driver) {
 
