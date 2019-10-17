@@ -147,7 +147,7 @@ public class PrimePurchaseFlow extends Base{
 	  ); Thread.sleep(2000); priPurFloMod.clicOnSecBuySubs();
 	  //priPurFloMod.clickOnSubs();
 	  //assertEquals(priPurFloMod.compSubs.getText().trim(),priPurFloMod.
-	  compProducts.getText()); priPurFloMod.clickOnConPay();
+	  //compProducts.getText()); priPurFloMod.clickOnConPay();
 	  //priPurFloMod.clickOnCheckOut(); priPurFloMod.enterFirstName();
 	  priPurFloMod.enterLastName();
 	  
@@ -173,43 +173,24 @@ public class PrimePurchaseFlow extends Base{
 	
 	*/
 	
-	@Test (dataProvider="allusers_old")
-	public void verifyPrimePurchaseFlowWithCouponSecTab(String role) throws InterruptedException, IOException{
-		logMod.Login(role, "CBSE", "12", "Single", "None", "Yes");
-		
-		 Thread.sleep(6000);
-		    try 
-	 	    {
-	 	        if(priPurFloMod.cliOnSkiButt.isDisplayed()) 
-	 	        	priPurFloMod.clickOnSkip();	
-	 	    }
-	 	    catch(Exception e) 
-	 	    {
-	 	    }
-     	 Thread.sleep(2000);
-
-     	
-	    leaMod.clickOnPrimeImage();
-	    
-	    JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,1000)");
-	    
-	    
-			
-		if(role.equals("Admin") || role.equals("Teacher") || role.equals("Principal")) {
-		Thread.sleep(2000);
-		priClaMod.selectUserClass("Class 12");
+	@Test (dataProvider="allusers")
+	public void verifyPrimePurchaseFlowWithCouponSecTab(String role) throws InterruptedException, IOException
+	{
+		//String role = "Student";
+		logMod.Login(role, "CBSE", "12", "Single", "None", "Yes");	
+		    		
+		if(role.equals("Admin") || role.equals("Teacher") || role.equals("Principal")) 
+		{
+			leaMod.clickOnPrimeImage();
+			Thread.sleep(2000);
+			priClaMod.selectUserClass("Class 12");
 		}
 		Thread.sleep(2000);
 		 
 		
 		priSubMod.clickOnSubject(driver, role, "Biology");
 		Thread.sleep(2000);
-		
-		
-		js.executeScript("window.scrollBy(0,500)");
-		
-	
+			
 		priPurFloMod.clickOnChapter();
 		priPurFloMod.clickOnTopic();
 

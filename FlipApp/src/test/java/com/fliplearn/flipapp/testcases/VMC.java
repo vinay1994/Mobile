@@ -78,17 +78,26 @@ public class VMC extends Base
 			}	
 		}	
 		
-		@Test(dataProvider = "nostaff")
+		@Test(dataProvider ="nostaff")
 		public void displayVMCStudent(String role) throws InterruptedException, IOException
 		{
+			//String role="Parent";
 			logMod.Login(role, "CBSE", "12", "Single", "None", "Yes");
 			
-			if(role.equals("Student") || role.equals("Guest"))
-			{	
-				generic.waitForElementVisibility(driver, homMod.vmcBuySubscription);
+			if(role.equals("Student"))
+			{
+				Thread.sleep(5000);
+			        generic.waitForElementVisibility(driver, homMod.vmcBuySubscription);
 				homMod.vmcBuySubscription.click();
 
 			}	
+			else if(role.equals("Guest")) {
+				Thread.sleep(5000);
+				    homMod.emailPopUp.click();
+					generic.waitForElementVisibility(driver, homMod.vmcBuySubscription);
+					homMod.vmcBuySubscription.click();
+				
+			}
 			else	
 				leaMod.vmcImg.click();
 			
