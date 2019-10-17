@@ -75,7 +75,7 @@ public class PrimePurchaseFlowModule extends Base
 	@FindBy(xpath="//*[text()='www.fliplearn.com']")
 	public RemoteWebElement payDiscard;
 	
-	@FindBy(xpath="//*[text()='2. Sexual Reproduction in Flowering Plants']")
+	@FindBy(xpath="//*[text()='3D Animations'] [1]")
 	public RemoteWebElement clickOnChap;
 	
 	@FindBy(xpath="//*[text()='Flower: A Fascinating Organ of Angiosperms']")
