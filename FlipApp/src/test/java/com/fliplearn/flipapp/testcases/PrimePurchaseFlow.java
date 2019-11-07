@@ -221,10 +221,9 @@ public class PrimePurchaseFlow extends Base
 	* @throws IOException 
 	*/
 	
-	@Test //(dataProvider="allusers_old")
-	public void verifyCouponApplyAndRemove() throws InterruptedException, IOException 
+	@Test(dataProvider="allusers_old")
+	public void verifyCouponApplyAndRemove(String role) throws InterruptedException, IOException 
 	{
-		String role = "Teacher";
 		logMod.Login(role, "CBSE", "12", "Single", "None", "Yes");
 		leaMod.clickOnPrimeImage();
 		
