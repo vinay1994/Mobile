@@ -75,7 +75,7 @@ public class PrimePurchaseFlowModule extends Base
 	@FindBy(xpath="//*[text()='www.fliplearn.com']")
 	public RemoteWebElement payDiscard;
 	
-	@FindBy(xpath="//*[text()='3D Animations'] [1]")
+	@FindBy(xpath="(//h4[@class='panel-title'])[2]")
 	public RemoteWebElement clickOnChap;
 	
 	@FindBy(xpath="//*[text()='Flower: A Fascinating Organ of Angiosperms']")
@@ -93,8 +93,8 @@ public class PrimePurchaseFlowModule extends Base
 	@FindBy(xpath="//*[@placeholder='Promotion Code']")
 	public RemoteWebElement entCoupCode;
 	
-	@FindBy(xpath="//*[text()='Apply']")
-	public RemoteWebElement clicOnApply;	
+	@FindBy(css="button[class='btn btn-primary'][type='button']")
+	public RemoteWebElement applyBtn;	
 	
 	@FindBy(xpath="//*[text()='Remove']")
 	public RemoteWebElement removeCoupon;
@@ -190,12 +190,14 @@ public class PrimePurchaseFlowModule extends Base
 	public void enterCouponCode() throws InterruptedException {
 		Oneyearsubscriptionlink.click();
 		Thread.sleep(3000);
-		entCoupCode.sendKeys("vinay-100");
+		entCoupCode.sendKeys("prime100");
 	
 	}
 	
-    public void cliOnAplButt() {
-    	clicOnApply.click();
+    public void clickOnApplyBtn() throws InterruptedException 
+    {
+    	Thread.sleep(3000);
+    	applyBtn.click();
 	}
     
     public void cliOnRemoveCoupon() {

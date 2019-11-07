@@ -53,10 +53,9 @@ public class PrimeSubjectModule extends Base
 		{
 			Thread.sleep(2000);
 			driver.findElement(By.xpath("(//XCUIElementTypeButton[@name='Learn'])[1]")).click();
-
-			//driver.findElement(By.xpath("(//XCUIElementTypeStaticText[@name='"+subjectName+"'])//XCUIElementTypeButton[@name='Learn'])")).click();
 		}
-		else {
+		else 
+		{
 			driver.findElement(By.xpath("(//*[@text='Learn'])[3]")).click();
 		}
 		Thread.sleep(2000);

@@ -31,12 +31,11 @@ public class PrimeClassModule extends Base
 	public void selectUserClass(String className)
 	{
 		if(platform.equals("Web"))
-			driver.findElement(By.xpath("//a[@role='button'][text()='"+className+"']")).click();
+			driver.findElement(By.xpath("//h4[@class='panel-title learnPanelTitle']/a[@role='button'][text()='"+className+"']")).click();
 		else if(platform.equals("Android"))
 			driver.findElement(By.xpath("//*[@text='"+className+"']")).click();
 		else if(platform.equals("iOS"))
-			driver.findElement(By.xpath("//XCUIElementTypeStaticText[@name='"+className+"']")).click();	
-			
+			driver.findElement(By.xpath("//XCUIElementTypeStaticText[@name='"+className+"']")).click();			
 	}
 	
 }
