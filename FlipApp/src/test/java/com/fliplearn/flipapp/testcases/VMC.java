@@ -73,8 +73,8 @@ public class VMC extends Base
 			leaMod.vmcImg.click();			
 			if(platform.equals("Web"))
 			{	
-				generic.waitForElementVisibility(driver, vmcPurFlo.programComponent);
-				assertEquals(vmcPurFlo.programComponent.isDisplayed(), true);
+				generic.waitForElementVisibility(driver, vmcPurFlo.selectClass);
+				assertEquals(vmcPurFlo.selectClass.isDisplayed(), true);
 			}	
 		}	
 		
@@ -102,7 +102,7 @@ public class VMC extends Base
 				leaMod.vmcImg.click();
 			
 			if(platform.equals("Web"))
-				assertEquals(vmcPurFlo.programComponent.isDisplayed(), true);
+				assertEquals(vmcPurFlo.selectClass.isDisplayed(), true);
 						
 		}
 

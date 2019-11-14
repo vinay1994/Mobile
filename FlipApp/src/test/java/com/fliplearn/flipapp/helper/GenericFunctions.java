@@ -405,9 +405,13 @@ public class GenericFunctions extends Base
     		//Stop the player
     		jse.executeScript("jwplayer().stop()");
     		Thread.sleep(2000);
-    	}
-  
-    	
+    	}	
+    }
+    
+    public void clickUsingJSE(WebElement element)
+    {
+    	JavascriptExecutor executor = (JavascriptExecutor)driver;
+    	executor.executeScript("arguments[0].click();", element);
     }
 }
 

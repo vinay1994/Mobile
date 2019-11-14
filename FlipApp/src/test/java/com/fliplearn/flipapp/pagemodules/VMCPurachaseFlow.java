@@ -12,8 +12,8 @@ public class VMCPurachaseFlow
 	@FindBy(xpath="//img[contains(@src,'/images/vmc_flow_icons/vmc_astronaut.png')]")
 	public RemoteWebElement vmcAstronautImg;
 	
-	@FindBy(xpath="//h4[text()='Program Components']")
-	public RemoteWebElement programComponent;
+	@FindBy(xpath="//h3[text()='Select Class']")
+	public RemoteWebElement selectClass;
 	
 	public VMCPurachaseFlow(WebDriver driver)
 	{

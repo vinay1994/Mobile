@@ -15,7 +15,6 @@
   		<classes>
     		<class name="com.fliplearn.flipapp.testcases.PrimePurchaseFlow">
     		
-    		
     		<methods>
  
         			<include name="verifyCouponApplyAndRemove" /> 

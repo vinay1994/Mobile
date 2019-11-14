@@ -235,18 +235,22 @@ public class PrimePurchaseFlow extends Base
 	        Thread.sleep(2000);
 	        
 	        priSubMod.clickOnSubject(driver, role, "Biology");
+	        priPurFloMod.clickOnBuySubs();
+			Thread.sleep(2000);
+			priPurFloMod.enterCouponCode();
+			priPurFloMod.clickOnApplyBtn();
+			priPurFloMod.cliOnRemoveCoupon();
 		}	
 		else if(role.equals("Parent")) 
 		{
 			 priSubMod.clickOnSubject(driver, role, "English");
+			 priPurFloMod.clickOnBuySubs();
+			 Thread.sleep(5000);
+			 Assert.assertEquals(priPurFloMod.Childmsgverify.getText(), "Please link your child to your account using the child's guardian code.");
+	    	 priPurFloMod.clickOnCloseButton();
+			 Thread.sleep(5000);
+
 		}
-		
-		priPurFloMod.clickOnBuySubs();
-		Thread.sleep(2000);
-		priPurFloMod.enterCouponCode();
-		priPurFloMod.clickOnApplyBtn();
-		priPurFloMod.cliOnRemoveCoupon();
-	
 	}
 	
 	@Test (dataProvider="allusers_old")

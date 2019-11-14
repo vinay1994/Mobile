@@ -32,7 +32,7 @@ public class DoubtForumModule extends Base{
 	
 	public String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
 
-	@FindBy(xpath="//p[text()='Ask and Solve Doubts'] | //div[@class='col-sm-8 col-xs-7 mobilepaddingZero vmcmobileView']/h4[text()='Ask and Solve Doubts']")
+	@FindBy(xpath="//p[text()='Ask and Solve Doubts'] |//h4[text()='Ask and Solve Doubts']")
 	public RemoteWebElement doubtForumTileTxt;
 	
 	@FindBy(xpath="//h3[text()='Fliplearn Guru']")

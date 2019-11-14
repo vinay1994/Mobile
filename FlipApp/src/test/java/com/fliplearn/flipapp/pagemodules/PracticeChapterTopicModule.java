@@ -1,5 +1,6 @@
 package com.fliplearn.flipapp.pagemodules;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
@@ -62,7 +63,7 @@ public class PracticeChapterTopicModule extends Base{
     @FindBy(xpath="//*[text()='Continue your Learning Flight']")
     public RemoteWebElement verLearnText;
     
-    @FindBy(xpath="//*[@class='slider round sliderbground']")
+    @FindBy(xpath="(//span[@id='learnPracticeModeSwitchBg'][@class='slider round sliderbground'])[1]")
     public RemoteWebElement swiToPraMod;
     
     @FindBy(xpath="(//*[@class='item border-blue-1 border-radius3 padd10 pos-relative cursor practicetopicContent'])[1]")
@@ -154,8 +155,9 @@ public class PracticeChapterTopicModule extends Base{
     	closeLauTest.click();
     	
     }
-    public void switchToPractMod() {
-    	swiToPraMod.click();
+    public void switchToPractMod() 
+    {
+    	generic.clickUsingJSE(swiToPraMod);
     }
     
     
