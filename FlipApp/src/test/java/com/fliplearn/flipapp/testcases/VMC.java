@@ -4,6 +4,8 @@ import static org.testng.Assert.assertEquals;
 
 import java.io.IOException;
 
+import org.openqa.selenium.By;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -81,29 +83,31 @@ public class VMC extends Base
 		@Test(dataProvider ="nostaff")
 		public void displayVMCStudent(String role) throws InterruptedException, IOException
 		{
-			//String role="Parent";
 			logMod.Login(role, "CBSE", "12", "Single", "None", "Yes");
 			
 			if(role.equals("Student"))
 			{
 				Thread.sleep(5000);
-			        generic.waitForElementVisibility(driver, homMod.vmcBuySubscription);
+			    generic.waitForElementVisibility(driver, homMod.vmcBuySubscription);
 				homMod.vmcBuySubscription.click();
 
 			}	
-			else if(role.equals("Guest")) {
+			else if(role.equals("Guest")) 
+			{
 				Thread.sleep(5000);
-				    homMod.emailPopUp.click();
-					generic.waitForElementVisibility(driver, homMod.vmcBuySubscription);
-					homMod.vmcBuySubscription.click();
+				homMod.emailPopUp.click();
+				generic.waitForElementVisibility(driver, homMod.vmcBuySubscription);
+				homMod.vmcBuySubscription.click();
 				
 			}
 			else	
 				leaMod.vmcImg.click();
 			
 			if(platform.equals("Web"))
-				assertEquals(vmcPurFlo.selectClass.isDisplayed(), true);
-						
+			{
+				Thread.sleep(2000);
+				Assert.assertTrue(driver.findElement(By.xpath("//div[@class='radiobutton']/label[text()='IIT-JEE']")).isDisplayed());
+			}			
 		}
 
 		@Test(dataProvider = "nostaff")

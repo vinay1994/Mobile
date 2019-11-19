@@ -8,15 +8,15 @@
   </listeners>
   <test thread-count="5" name="Event(failed)">
     <classes>
-      <class name="com.fliplearn.flipapp.testcases.PrimePurchaseFlow">
+      <class name="com.fliplearn.flipapp.testcases.VMC">
         <methods>
-          <include name="preVerifyPrimePurchaseFlow"/>
-          <include name="verifyCouponApplyAndRemove"/>
+          <include name="displayVMCStudent"/>
+          <include name="prePrime"/>
           <include name="befo"/>
           <include name="aftSuite"/>
           <include name="getResult"/>
         </methods>
-      </class> <!-- com.fliplearn.flipapp.testcases.PrimePurchaseFlow -->
+      </class> <!-- com.fliplearn.flipapp.testcases.VMC -->
     </classes>
   </test> <!-- Event(failed) -->
 </suite> <!-- Failed suite [suite of suites] -->
