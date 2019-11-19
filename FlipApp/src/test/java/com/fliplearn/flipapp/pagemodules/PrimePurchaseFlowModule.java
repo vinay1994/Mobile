@@ -6,6 +6,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
 import com.fliplearn.flipapp.helper.Base;
 import com.fliplearn.flipapp.helper.GenericFunctions;
@@ -18,8 +19,16 @@ public class PrimePurchaseFlowModule extends Base
 	@FindBy(xpath="//*[text()='Skip']")
 	public RemoteWebElement cliOnSkiButt;
 	
-	@FindBy(xpath="//a[text()='Buy Subscription']")
+	@FindBy(xpath="//*[text()='Buy Subscription']")
 	public RemoteWebElement cliOnBuySubs;
+	
+	@FindBy(xpath="//*[text()='1 Year Subscription ']")
+	public RemoteWebElement clickOnSub;
+	
+	
+	@FindBy(name="state")
+	public RemoteWebElement stateSelection;
+	
 	
 	@FindBy(xpath="//div[text()='Close']")
     public RemoteWebElement cliOnClose;	
@@ -38,6 +47,16 @@ public class PrimePurchaseFlowModule extends Base
 	
 	@FindBy(xpath="//*[contains(text(),'Please link your child to your account ')]")
 	public RemoteWebElement Childmsgverify;
+	
+	
+	@FindBy(xpath="//*[contains(text(),'Transaction ID')]")
+	public RemoteWebElement transActionText;
+	
+	@FindBy(xpath="(//div[@class='payment-buttons append-bottom']/span/a)[5]")
+	public RemoteWebElement cancelOrdr;
+	
+	@FindBy(xpath="//*[contains(text(),'Sorry, your payment could not be processed.')]")
+	public RemoteWebElement cancelordrtxt;
 	
 	@FindBy(xpath="//button[text()='Confirm & Pay']")
 	public RemoteWebElement cliOnConPay;
@@ -121,10 +140,29 @@ public class PrimePurchaseFlowModule extends Base
 		
 	}
 	
-	
-	public void clickOnBuySubs() {
-		cliOnBuySubs.click();
+	public void cancelingOrder() {
+		cancelOrdr.click();
+		
 		}
+	
+	
+	
+	  public void clickOnBuySubs()
+	  { 
+		  cliOnBuySubs.click(); 
+	  }
+	 
+	
+	public void clickOnSubsription() {
+		
+		clickOnSub.click();
+		
+	}
+	public void selectingState() {
+		Select drpState = new Select(stateSelection);
+		drpState.selectByVisibleText("Andaman Nicobar");
+		
+	}
 	
 	public void clickOnCloseButton() {
 		cliOnClose.click();
