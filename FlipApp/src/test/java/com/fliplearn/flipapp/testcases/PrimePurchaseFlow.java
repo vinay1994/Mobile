@@ -100,7 +100,8 @@ public class PrimePurchaseFlow extends Base
 	  //priPurFloMod.clickOnCheckOut(); priPurFloMod.enterFirstName();
 	  priPurFloMod.enterLastName();
 	  
-	  priPurFloMod.enteremailId(); priPurFloMod.enterMobileNo();
+	  priPurFloMod.enteremailId(); 
+	  priPurFloMod.enterMobileNo();
 	  //priPurFloMod.enterPinCode(); 
 	  //priPurFloMod.enterAddressLine();
 	  priPurFloMod.selectingState();

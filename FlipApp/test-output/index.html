@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <br/>
+      <span class="top-banner-font-1">1 suite</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" panel-name="suite-Failed_suite_[Failed_suite_[Failed_suite_[suite_of_suites]]]" class="navigator-link">
+              <span class="suite-name border-passed">Failed suite [Failed suite [Failed suite [suite of suites]]]</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" panel-name="test-xml-Failed_suite_[Failed_suite_[Failed_suite_[suite_of_suites]]]" class="navigator-link ">
+                    <span>C:\Users\Bhupesh\git\flip-app\FlipApp\test-output\Failed suite [Failed suite [suite of suites]]\testng-failed.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="testlist-Failed_suite_[Failed_suite_[Failed_suite_[suite_of_suites]]]" class="navigator-link ">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="group-Failed_suite_[Failed_suite_[Failed_suite_[suite_of_suites]]]" class="navigator-link ">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="times-Failed_suite_[Failed_suite_[Failed_suite_[suite_of_suites]]]" class="navigator-link ">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="reporter-Failed_suite_[Failed_suite_[Failed_suite_[suite_of_suites]]]" class="navigator-link ">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="ignored-methods-Failed_suite_[Failed_suite_[Failed_suite_[suite_of_suites]]]" class="navigator-link ">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="chronological-Failed_suite_[Failed_suite_[Failed_suite_[suite_of_suites]]]" class="navigator-link ">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">1 method,   1 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Failed_suite_[Failed_suite_[Failed_suite_[suite_of_suites]]]" class="hide-methods passed suite-Failed_suite_[Failed_suite_[Failed_suite_[suite_of_suites]]]"> (hide)</a> <!-- hide-methods passed suite-Failed_suite_[Failed_suite_[Failed_suite_[suite_of_suites]]] -->
+                      <a href="#" panel-name="suite-Failed_suite_[Failed_suite_[Failed_suite_[suite_of_suites]]]" class="show-methods passed suite-Failed_suite_[Failed_suite_[Failed_suite_[suite_of_suites]]]"> (show)</a> <!-- show-methods passed suite-Failed_suite_[Failed_suite_[Failed_suite_[suite_of_suites]]] -->
+                    </span>
+                    <div class="method-list-content passed suite-Failed_suite_[Failed_suite_[Failed_suite_[suite_of_suites]]]">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Failed_suite_[Failed_suite_[Failed_suite_[suite_of_suites]]]" title="com.fliplearn.flipapp.testcases.DemoPrimeVideos" class="method navigator-link" hash-for-method="verifyParentAbleToPlayDemoVideo">verifyParentAbleToPlayDemoVideo</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Failed_suite_[Failed_suite_[Failed_suite_[suite_of_suites]]] -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-Failed_suite_[Failed_suite_[Failed_suite_[suite_of_suites]]]" class="panel Failed_suite_[Failed_suite_[Failed_suite_[suite_of_suites]]]">
+          <div class="suite-Failed_suite_[Failed_suite_[Failed_suite_[suite_of_suites]]]-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.fliplearn.flipapp.testcases.DemoPrimeVideos</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyParentAbleToPlayDemoVideo">
+                  </a> <!-- verifyParentAbleToPlayDemoVideo -->
+                  <span class="method-name">verifyParentAbleToPlayDemoVideo</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Failed_suite_[Failed_suite_[Failed_suite_[suite_of_suites]]]-class-passed -->
+        </div> <!-- panel Failed_suite_[Failed_suite_[Failed_suite_[suite_of_suites]]] -->
+        <div panel-name="test-xml-Failed_suite_[Failed_suite_[Failed_suite_[suite_of_suites]]]" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">C:\Users\Bhupesh\git\flip-app\FlipApp\test-output\Failed suite [Failed suite [suite of suites]]\testng-failed.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite name=&quot;Failed suite [Failed suite [Failed suite [suite of suites]]]&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;com.fliplearn.flipapp.helper.Base&quot;/&gt;
+    &lt;listener class-name=&quot;com.fliplearn.flipapp.helper.RetryListener&quot;/&gt;
+    &lt;listener class-name=&quot;com.fliplearn.flipapp.report.CustomTestNGReporter&quot;/&gt;
+  &lt;/listeners&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Event(failed)(failed)(failed)&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.fliplearn.flipapp.testcases.DemoPrimeVideos&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;verifyParentAbleToPlayDemoVideo&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- com.fliplearn.flipapp.testcases.DemoPrimeVideos --&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Event(failed)(failed)(failed) --&gt;
+&lt;/suite&gt; &lt;!-- Failed suite [Failed suite [Failed suite [suite of suites]]] --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-Failed_suite_[Failed_suite_[Failed_suite_[suite_of_suites]]]" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for Failed suite [Failed suite [Failed suite [suite of suites]]]</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Event(failed)(failed)(failed) (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-Failed_suite_[Failed_suite_[Failed_suite_[suite_of_suites]]]" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for Failed suite [Failed suite [Failed suite [suite of suites]]]</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-Failed_suite_[Failed_suite_[Failed_suite_[suite_of_suites]]]" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for Failed suite [Failed suite [Failed suite [suite of suites]]]</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_Failed_suite_[Failed_suite_[Failed_suite_[suite_of_suites]]]');
+function tableData_Failed_suite_[Failed_suite_[Failed_suite_[suite_of_suites]]]() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(1);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'verifyParentAbleToPlayDemoVideo')
+data.setCell(0, 2, 'com.fliplearn.flipapp.testcases.DemoPrimeVideos')
+data.setCell(0, 3, 34446);
+window.suiteTableData['Failed_suite_[Failed_suite_[Failed_suite_[suite_of_suites]]]']= { tableData: data, tableDiv: 'times-div-Failed_suite_[Failed_suite_[Failed_suite_[suite_of_suites]]]'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 34 seconds</span>
+              <div id="times-div-Failed_suite_[Failed_suite_[Failed_suite_[suite_of_suites]]]">
+              </div> <!-- times-div-Failed_suite_[Failed_suite_[Failed_suite_[suite_of_suites]]] -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-Failed_suite_[Failed_suite_[Failed_suite_[suite_of_suites]]]" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for Failed suite [Failed suite [Failed suite [suite of suites]]]</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-Failed_suite_[Failed_suite_[Failed_suite_[suite_of_suites]]]" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-Failed_suite_[Failed_suite_[Failed_suite_[suite_of_suites]]]" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.fliplearn.flipapp.testcases.DemoPrimeVideos</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">befo(org.testng.TestRunner@650ae78c)</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">befMethod</span>
+                <span class="method-start">15956 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyParentAbleToPlayDemoVideo</span>
+                <span class="method-start">16273 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult</span>
+                <span class="method-start">51416 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-suite after">
+                <span class="method-name">aftSuite</span>
+                <span class="method-start">52687 ms</span>
+              </div> <!-- configuration-suite after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+</html>
