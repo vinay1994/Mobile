@@ -108,6 +108,7 @@ public class PrimePurchaseFlow extends Base
 	  //Thread.sleep(5000); 
 	  priPurFloMod.clickOnProceednPay();
 	  Assert.assertTrue(priPurFloMod.transActionText.getText().contains("Transaction ID:"));
+	  Thread.sleep(3000);
 	  priPurFloMod.cancelingOrder();
 	Thread.sleep(3000);
 	Assert.assertTrue(priPurFloMod.cancelordrtxt.getText().contains("Sorry, your payment could not be processed"));
