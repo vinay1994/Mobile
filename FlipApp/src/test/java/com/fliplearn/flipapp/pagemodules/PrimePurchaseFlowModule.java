@@ -52,7 +52,7 @@ public class PrimePurchaseFlowModule extends Base
 	@FindBy(xpath="//*[contains(text(),'Transaction ID')]")
 	public RemoteWebElement transActionText;
 	
-	@FindBy(xpath="(//div[@class='payment-buttons append-bottom']/span/a)[5]")
+	@FindBy(xpath="//div[@id='cashcard']//a[contains(text(),'www.fliplearn.com')]")
 	public RemoteWebElement cancelOrdr;
 	
 	@FindBy(xpath="//*[contains(text(),'Sorry, your payment could not be processed.')]")

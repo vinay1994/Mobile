@@ -59,6 +59,28 @@ public class PrimeResources extends Base
 		heaMod=new HeaderModule(driver);
 	}
 
+	/*
+	 * Verifying Parent is able to play demo prime videos
+	 * @author Bhupesh Kumar
+	 * @since 2019-11-25
+	 * @throws InterruptedException
+	 * @version 1.2 
+	 * @throws IOException
+	 */
+	 
+      @Test
+	public void verifyParentAbleToPlayDemoVideo() throws InterruptedException, IOException {
+		String role = "Parent";
+		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
+		Assert.assertTrue(priResLisMod.flipLearnPrimeTile.isDisplayed());
+		priResLisMod.clickOnPrimeTile();
+		Assert.assertEquals(priResLisMod.textToIdentifyParent.getText(),
+				"Please access the content from your child's account.");
+      
+		priResLisMod.playingDemoVideos();
+	
+	}
+
 	
 	@Test
 	public void playPrimeVideo_New() throws InterruptedException, IOException
@@ -73,15 +95,18 @@ public class PrimeResources extends Base
 		generic.verifyVideoContent(driver);
 	}
 	
+	
+	
+	
 	/**
-	 * verify PrimeVideo on Web, Android, iOS when Admin, Principal, Teacher, Parent, Student and Guest click on Video Content
-	 * @author Jagrati
-	 * @since 2018-10-14
-	 * @throws InterruptedException 
-	 * @version 1.2
-	 * @throws IOException 
-	 * @modifiedBy Tarun Goswami on 2019-04-10
-	 */
+	  verify PrimeVideo on Web, Android, iOS when Admin, Principal, Teacher, Parent, Student and Guest click on Video Content
+	  @author Jagrati
+	  @since 2018-10-14
+	  @throws InterruptedException 
+	  @version 1.2
+	  @throws IOException 
+	  @modifiedBy Tarun Goswami on 2019-04-10
+	 
 
 	@Test//(dataProvider ="allusers_old")
 	public void playPrimeVideo_Old() throws IOException, InterruptedException

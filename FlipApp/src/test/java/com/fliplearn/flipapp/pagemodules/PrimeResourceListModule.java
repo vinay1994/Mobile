@@ -18,6 +18,18 @@ import io.appium.java_client.pagefactory.iOSFindBy;
 public class PrimeResourceListModule extends Base
 {
 	GenericFunctions generic=new GenericFunctions();
+	@FindBy(xpath = "//*[text()='Fliplearn Prime']")
+	public RemoteWebElement flipLearnPrimeTile;
+
+	@FindBy(xpath = "//*[text()='Mathematics']")
+	public RemoteWebElement primeSubject;
+
+	
+	@FindBy(xpath = "//h4[@class='ng-scope']")
+	public RemoteWebElement textToIdentifyParent;
+	
+	@FindBy(xpath = "//*[text()='Basic concept of Decimal']")
+	public RemoteWebElement demoVideo;
 
 	@FindBy(xpath="//a[contains(text(),'Class 10')]")
 	@AndroidFindBy(xpath="//*[@text='Class 7']")
@@ -139,6 +151,20 @@ public class PrimeResourceListModule extends Base
          public void clickOnViewAllSample(WebDriver driver)
          {
         	 driver.findElement(By.linkText("View all sample content")).click();
-         }           
+         } 
+         public void clickOnPrimeTile(){
+
+     		flipLearnPrimeTile.click();
+     		primeSubject.click();
+     		
+     	}
+     	
+     	public void playingDemoVideos() throws InterruptedException {
+     		
+     		demoVideo.click();
+     		generic.verifyVideoContent(driver);
+     		
+     	}
+
 }
 
