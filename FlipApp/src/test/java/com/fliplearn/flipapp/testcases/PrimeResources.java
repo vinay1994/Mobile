@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.fliplearn.flipapp.helper.Base;
@@ -23,8 +24,7 @@ import com.fliplearn.flipapp.pagemodules.PrimeResourceListModule;
 import com.fliplearn.flipapp.pagemodules.PrimeResourceViewModule;
 import com.fliplearn.flipapp.pagemodules.YourProfileModule;
 
-public class PrimeResources extends Base
-{	
+public class PrimeResources extends Base {
 	GenericFunctions generic;
 	HomeModule homMod;
 	LoginModule logMod;
@@ -41,8 +41,7 @@ public class PrimeResources extends Base
 	PrimeResourceListModule priResLisMod;
 
 	@BeforeMethod
-	public void preVerifySynopsis()
-	{
+	public void preVerifySynopsis() {
 		generic = new GenericFunctions();
 		homMod = new HomeModule(driver);
 		logMod = new LoginModule(driver);
@@ -51,24 +50,74 @@ public class PrimeResources extends Base
 		priResVieMod = new PrimeResourceViewModule(driver);
 		signInMod = new SignInAsModule(driver);
 		leaMod = new LearnModule(driver);
-		priClaMod =	new PrimeClassModule(driver);
-		priSubMod = new PrimeSubjectModule(driver);  
+		priClaMod = new PrimeClassModule(driver);
+		priSubMod = new PrimeSubjectModule(driver);
 		priResLisMod = new PrimeResourceListModule(driver);
 		priChaTopMod = new PrimeChapterTopicModule(driver);
-		youProMod=new YourProfileModule(driver);
-		heaMod=new HeaderModule(driver);
+		youProMod = new YourProfileModule(driver);
+		heaMod = new HeaderModule(driver);
 	}
 
 	/*
-	 * Verifying Parent is able to play demo prime videos
+	 * Verifying View all sample content option is available for Parent
+	 * 
 	 * @author Bhupesh Kumar
-	 * @since 2019-11-25
+	 * 
+	 * @since 2019-11-27
+	 * 
 	 * @throws InterruptedException
-	 * @version 1.2 
+	 * 
+	 * @version 1.2
+	 * 
 	 * @throws IOException
 	 */
-	 
-      @Test
+
+	@Test
+	public void verifyParentAbleToViewAllSampleOption() throws InterruptedException, IOException {
+		String role = "Parent";
+		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
+		Assert.assertTrue(priResLisMod.flipLearnPrimeTile.isDisplayed());
+		priResLisMod.clickOnPrimeTile();
+		Assert.assertTrue(priResLisMod.viewAllSampleTxt.isDisplayed());
+	}
+
+	/*
+	 * Verifying if we get validation message when user enters incorrect coupon on Book Page
+	 *@author Bhupesh Kumar
+	 *@since 2019-11-27
+	 * @throws InterruptedException
+	 *@version 1.2
+	 * @throws IOException
+	 */
+	
+	
+	@Test	
+	public void verifyGettingValidationMsgWithIncorrctCoupn() throws InterruptedException, IOException {
+	    String role = "Admin";
+		logMod.Login(role, "CBSE", "12", "Single", "None", "Yes");
+		priResLisMod.clickingOnBuyBookOption();
+		Assert.assertEquals(priResLisMod.textOnBuyBookPage.getText(),
+				"Fliplearn Book Store");
+		priResLisMod.clickingOnCartMenu();
+		priResLisMod.enterIncorrectCouponCode();
+		Assert.assertTrue(priResLisMod.invalidCouponMsg.isDisplayed());
+		}
+
+	/*
+	 * Verifying Parent is able to play demo prime videos
+	 * 
+	 * @author Bhupesh Kumar
+	 * 
+	 * @since 2019-11-25
+	 * 
+	 * @throws InterruptedException
+	 * 
+	 * @version 1.2
+	 * 
+	 * @throws IOException
+	 */
+
+	@Test
 	public void verifyParentAbleToPlayDemoVideo() throws InterruptedException, IOException {
 		String role = "Parent";
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
@@ -76,374 +125,297 @@ public class PrimeResources extends Base
 		priResLisMod.clickOnPrimeTile();
 		Assert.assertEquals(priResLisMod.textToIdentifyParent.getText(),
 				"Please access the content from your child's account.");
-      
+
 		priResLisMod.playingDemoVideos();
-	
+
 	}
 
-	
 	@Test
-	public void playPrimeVideo_New() throws InterruptedException, IOException
-	{
+	public void playPrimeVideo_New() throws InterruptedException, IOException {
 		String role = "Student";
 		logMod.Login(role, "CBSE", "12", "Single", "Prime", "Yes");
 		generic.waitForElementVisibility(driver, homMod.firstSubject);
 		homMod.firstSubject.click();
 		generic.waitForElementVisibility(driver, leaMod.firstTopicSecondChapter);
-		leaMod.firstTopicSecondChapter.click(); 
+		leaMod.firstTopicSecondChapter.click();
 		Thread.sleep(5000);
 		generic.verifyVideoContent(driver);
 	}
-	
-	
-	
-	
-	/**
-	  verify PrimeVideo on Web, Android, iOS when Admin, Principal, Teacher, Parent, Student and Guest click on Video Content
-	  @author Jagrati
-	  @since 2018-10-14
-	  @throws InterruptedException 
-	  @version 1.2
-	  @throws IOException 
-	  @modifiedBy Tarun Goswami on 2019-04-10
-	 
-
-	@Test//(dataProvider ="allusers_old")
-	public void playPrimeVideo_Old() throws IOException, InterruptedException
-	{
-		String role="Admin";
-		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
-
-		if(platform.equals("Web"))
-		{	
-			if(!role.equals("Guest"))
-				leaMod.clickOnLearnImage();
-		}	
-
-		leaMod.clickOnPrimeImage();
-
-		Thread.sleep(3000);
-
-		if(role.equals("Admin") || role.equals("Principal") || role.equals("Teacher"))
-			priClaMod.selectUserClass("Class 6");
-
-		priSubMod.clickOnSubject(driver, role, "Mathematics");
-
-
-
-		if(role.equals("Parent"))
-		{
-			priResLisMod.clickOnBookChapter(driver, "Whole numbers");
-			priResLisMod.clickOnChapterTopic(driver, "Predecessor and Successor");	
-			priResLisMod.clickOnTopicResource(driver, "Predecessor and Successor");
-		}
-		else
-		{
-			priResLisMod.clickOnBookChapter(driver, "Knowing Our Numbers");
-			priResLisMod.clickOnChapterTopic(driver, "Comparing Numbers");
-			priResLisMod.clickOnTopicResource(driver, "Numeral System");
-		}   
-
-
-	}
 
 	/**
-	 * verify Topic Synopsis on Web, Android, iOS for Admin, Principal, Teacher
+	 * verify PrimeVideo on Web, Android, iOS when Admin, Principal, Teacher,
+	 * Parent, Student and Guest click on Video Content
+	 * 
 	 * @author Jagrati
 	 * @since 2018-10-14
-	 * @throws InterruptedException 
+	 * @throws InterruptedException
+	 * @version 1.2
+	 * @throws IOException
+	 * @modifiedBy Tarun Goswami on 2019-04-10
+	 * 
+	 * 
+	 *             @Test//(dataProvider ="allusers_old") public void
+	 *             playPrimeVideo_Old() throws IOException, InterruptedException {
+	 *             String role="Admin"; logMod.Login(role, "CBSE", "6", "Single",
+	 *             "Prime", "Yes");
+	 * 
+	 *             if(platform.equals("Web")) { if(!role.equals("Guest"))
+	 *             leaMod.clickOnLearnImage(); }
+	 * 
+	 *             leaMod.clickOnPrimeImage();
+	 * 
+	 *             Thread.sleep(3000);
+	 * 
+	 *             if(role.equals("Admin") || role.equals("Principal") ||
+	 *             role.equals("Teacher")) priClaMod.selectUserClass("Class 6");
+	 * 
+	 *             priSubMod.clickOnSubject(driver, role, "Mathematics");
+	 * 
+	 * 
+	 * 
+	 *             if(role.equals("Parent")) {
+	 *             priResLisMod.clickOnBookChapter(driver, "Whole numbers");
+	 *             priResLisMod.clickOnChapterTopic(driver, "Predecessor and
+	 *             Successor"); priResLisMod.clickOnTopicResource(driver,
+	 *             "Predecessor and Successor"); } else {
+	 *             priResLisMod.clickOnBookChapter(driver, "Knowing Our Numbers");
+	 *             priResLisMod.clickOnChapterTopic(driver, "Comparing Numbers");
+	 *             priResLisMod.clickOnTopicResource(driver, "Numeral System"); }
+	 * 
+	 * 
+	 *             }
+	 * 
+	 *             /** verify Topic Synopsis on Web, Android, iOS for Admin,
+	 *             Principal, Teacher
+	 * @author Jagrati
+	 * @since 2018-10-14
+	 * @throws InterruptedException
 	 * @version 1.1
-	 * @throws IOException 
+	 * @throws IOException
 	 * @modifiedBy Tarun Goswami on 2019-04-10
 	 */
-	/* @Test(dataProvider="allusers_old")
-	public void verifyTopicSynopsis_Old(String role) throws InterruptedException, IOException
-	{
-		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
-
-		if(platform.equals("Web"))
-		{	
-			if(!role.equals("Guest"))
-				leaMod.clickOnLearnImage();
-		}	
-
-		leaMod.clickOnPrimeImage();
-
-		Thread.sleep(3000);
-
-		if(role.equals("Admin") || role.equals("Principal") || role.equals("Teacher"))
-			priClaMod.selectUserClass("Class 6");
-
-		priSubMod.clickOnSubject(driver, role, "Mathematics");
-
-		if(role.equals("Parent"))
-		{
-			priResLisMod.clickOnBookChapter(driver, "Whole numbers");
-			priResLisMod.clickOnChapterTopic(driver, "Predecessor and Successor");	
-		}
-		else
-		{
-			priResLisMod.clickOnBookChapter(driver, "Knowing Our Numbers");
-			priResLisMod.clickOnChapterTopic(driver, "Roman Numerals");
-		}  
-
-		if(role.equals("Parent"))
-		{	
-			if(platform.equals("Web"))
-			{
-				Thread.sleep(3000);
-				Assert.assertEquals(priResLisMod.childAccessMsg.getText(), "Please access the content from your child's account.");
-			}
-			else
-			{
-				Assert.assertEquals(0, driver.findElements(By.xpath("//*[@text='Topic Synopsis']")).size());
-			}
-		}
-		else
-		{
-			generic.waitForElementVisibility(driver, priResLisMod.topicSynopsis);
-			priResLisMod.clickOnTopicSynopsis();
-			Thread.sleep(5000);
-			Assert.assertEquals(priResVieMod.synopsisHeading.getText(), "Roman Numerals");
-
-
-			if(platform.equals("Web"))
-			{
-				driver.switchTo().frame("myFrame");
-
-				Assert.assertTrue(priResVieMod.synopsisTitle.isDisplayed());
-			}	
-		}	
-	} */
+	/*
+	 * @Test(dataProvider="allusers_old") public void verifyTopicSynopsis_Old(String
+	 * role) throws InterruptedException, IOException { logMod.Login(role, "CBSE",
+	 * "6", "Single", "Prime", "Yes");
+	 * 
+	 * if(platform.equals("Web")) { if(!role.equals("Guest"))
+	 * leaMod.clickOnLearnImage(); }
+	 * 
+	 * leaMod.clickOnPrimeImage();
+	 * 
+	 * Thread.sleep(3000);
+	 * 
+	 * if(role.equals("Admin") || role.equals("Principal") ||
+	 * role.equals("Teacher")) priClaMod.selectUserClass("Class 6");
+	 * 
+	 * priSubMod.clickOnSubject(driver, role, "Mathematics");
+	 * 
+	 * if(role.equals("Parent")) { priResLisMod.clickOnBookChapter(driver,
+	 * "Whole numbers"); priResLisMod.clickOnChapterTopic(driver,
+	 * "Predecessor and Successor"); } else {
+	 * priResLisMod.clickOnBookChapter(driver, "Knowing Our Numbers");
+	 * priResLisMod.clickOnChapterTopic(driver, "Roman Numerals"); }
+	 * 
+	 * if(role.equals("Parent")) { if(platform.equals("Web")) { Thread.sleep(3000);
+	 * Assert.assertEquals(priResLisMod.childAccessMsg.getText(),
+	 * "Please access the content from your child's account."); } else {
+	 * Assert.assertEquals(0,
+	 * driver.findElements(By.xpath("//*[@text='Topic Synopsis']")).size()); } }
+	 * else { generic.waitForElementVisibility(driver, priResLisMod.topicSynopsis);
+	 * priResLisMod.clickOnTopicSynopsis(); Thread.sleep(5000);
+	 * Assert.assertEquals(priResVieMod.synopsisHeading.getText(),
+	 * "Roman Numerals");
+	 * 
+	 * 
+	 * if(platform.equals("Web")) { driver.switchTo().frame("myFrame");
+	 * 
+	 * Assert.assertTrue(priResVieMod.synopsisTitle.isDisplayed()); } } }
+	 */
 
 	/**
 	 * verify Mind Maps on Web, Android, iOS for Admin, Principal, Teacher
+	 * 
 	 * @author Jagrati
 	 * @since 2018-10-14
-	 * @throws InterruptedException 
+	 * @throws InterruptedException
 	 * @version 1.1
-	 * @throws IOException 
+	 * @throws IOException
 	 * @modifiedBy Tarun Goswami on 2019-04-10
 	 */
-	@Test(dataProvider="allusers_old")
-	public void verifyMindMaps_Old(String role) throws InterruptedException, IOException
-	{  
-		//testing
+	@Test(dataProvider = "allusers_old")
+	public void verifyMindMaps_Old(String role) throws InterruptedException, IOException {
+		// testing
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 
-		if(platform.equals("Web"))
-		{	
-			if(!role.equals("Guest"))
+		if (platform.equals("Web")) {
+			if (!role.equals("Guest"))
 				leaMod.clickOnLearnImage();
-		}	
+		}
 
 		leaMod.clickOnPrimeImage();
 
 		Thread.sleep(3000);
 
-		if(role.equals("Admin") || role.equals("Principal") || role.equals("Teacher"))
+		if (role.equals("Admin") || role.equals("Principal") || role.equals("Teacher"))
 			priClaMod.selectUserClass("Class 6");
 
 		priSubMod.clickOnSubject(driver, role, "Mathematics");
 
-		if(role.equals("Parent"))
-		{
+		if (role.equals("Parent")) {
 			priResLisMod.clickOnBookChapter(driver, "Whole numbers");
-			priResLisMod.clickOnChapterTopic(driver, "Predecessor and Successor");	
-		}
-		else
-		{
+			priResLisMod.clickOnChapterTopic(driver, "Predecessor and Successor");
+		} else {
 			priResLisMod.clickOnBookChapter(driver, "Knowing Our Numbers");
 			priResLisMod.clickOnChapterTopic(driver, "Roman Numerals");
-		} 
+		}
 
-		if(role.equals("Parent"))
-		{	
-			if(platform.equals("Web"))
-			{
+		if (role.equals("Parent")) {
+			if (platform.equals("Web")) {
 				Thread.sleep(3000);
-				Assert.assertEquals(priResLisMod.childAccessMsg.getText(), "Please access the content from your child's account.");
-			}
-			else
-			{
+				Assert.assertEquals(priResLisMod.childAccessMsg.getText(),
+						"Please access the content from your child's account.");
+			} else {
 				Assert.assertEquals(0, driver.findElements(By.xpath("//*[@text='Mind Maps']")).size());
 			}
-		}
-		else
-		{
+		} else {
 			generic.waitForElementVisibility(driver, priResLisMod.mindMaps);
-			priResLisMod.clickOnMindMaps();	
+			priResLisMod.clickOnMindMaps();
 			Thread.sleep(5000);
 			Assert.assertEquals(priResVieMod.synopsisHeading.getText(), "Roman Numerals");
 
-			if(platform.equals("Web"))
-			{
+			if (platform.equals("Web")) {
 				driver.switchTo().frame("myFrame");
 				Assert.assertTrue(priResVieMod.mindMapsTitle.isDisplayed());
-			}	
+			}
 		}
 	}
 
-
 	/**
-<<<<<<< HEAD
-	* verify Real Life Cotent on Web, Android, iOS for Admin, Principal, Teacher
-	* @author Jagrati
-	* @since 2018-10-14
-	* @throws InterruptedException 
-	* @version 1.1
-	* @throws IOException 
-	* @modifiedBy Tarun Goswami on 2019-04-10
-	*/
-
-/*	@Test(dataProvider="allusers_old")
-	public void verifyRealLifeApplication_Old(String role) throws InterruptedException, IOException
-	{
-		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
-
-		if(platform.equals("Web"))
-		{	
-			if(!role.equals("Guest"))
-				leaMod.clickOnLearnImage();
-		}	
-
-		leaMod.clickOnPrimeImage();
-
-		Thread.sleep(3000);
-
-		if(role.equals("Admin") || role.equals("Principal") || role.equals("Teacher"))
-			priClaMod.selectUserClass("Class 6");
-
-		priSubMod.clickOnSubject(driver, role, "Mathematics");
-
-		if(role.equals("Parent"))
-		{
-			priResLisMod.clickOnBookChapter(driver, "Whole numbers");
-			priResLisMod.clickOnChapterTopic(driver, "Predecessor and Successor");	
-		}
-		else
-		{
-			priResLisMod.clickOnBookChapter(driver, "Knowing Our Numbers");
-			priResLisMod.clickOnChapterTopic(driver, "Roman Numerals");
-		} 
-
-		if(role.equals("Parent"))
-		{	
-			if(platform.equals("Web"))
-			{
-				Thread.sleep(3000);
-				Assert.assertEquals(priResLisMod.childAccessMsg.getText(), "Please access the content from your child's account.");
-			}
-			else
-			{
-				Assert.assertEquals(0, driver.findElements(By.xpath("//*[@text='Real Life Application']")).size());
-			}
-		}
-		else
-		{
-			generic.waitForElementVisibility(driver, priResLisMod.realLife);
-			priResLisMod.clickOnRealLifeApplication();	
-			Thread.sleep(5000);
-<<<<<<< HEAD
-	    	Assert.assertEquals(priResVieMod.synopsisHeading.getText(), "Roman Numerals");
-	    	
-	    	if(platform.equals("Web"))
-	    	{
-	    		driver.switchTo().frame("myFrame");
-	    		Assert.assertTrue(priResVieMod.realLifeApplicationTitle.isDisplayed());
-	    	}	
-	    }
-	}
-	 
-			Assert.assertEquals(priResVieMod.synopsisHeading.getText(), "Roman Numerals");
-
-			if(platform.equals("Web"))
-			{
-				driver.switchTo().frame("myFrame");
-				Assert.assertTrue(priResVieMod.realLifeApplicationTitle.isDisplayed());
-			}	
-		}
-	}*/
-
-	/**
-	 * verify Interactive Worksheet on Web, Android, iOS for Admin, Principal, Teacher
+	 * <<<<<<< HEAD verify Real Life Cotent on Web, Android, iOS for Admin,
+	 * Principal, Teacher
+	 * 
 	 * @author Jagrati
 	 * @since 2018-10-14
-	 * @throws InterruptedException 
+	 * @throws InterruptedException
 	 * @version 1.1
-	 * @throws IOException 
+	 * @throws IOException
 	 * @modifiedBy Tarun Goswami on 2019-04-10
 	 */
-	@Test(dataProvider="allusers_old")
-	public void verifyInteractiveWorksheet_Old(String role) throws InterruptedException, IOException
-	{
+
+	/*
+	 * @Test(dataProvider="allusers_old") public void
+	 * verifyRealLifeApplication_Old(String role) throws InterruptedException,
+	 * IOException { logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
+	 * 
+	 * if(platform.equals("Web")) { if(!role.equals("Guest"))
+	 * leaMod.clickOnLearnImage(); }
+	 * 
+	 * leaMod.clickOnPrimeImage();
+	 * 
+	 * Thread.sleep(3000);
+	 * 
+	 * if(role.equals("Admin") || role.equals("Principal") ||
+	 * role.equals("Teacher")) priClaMod.selectUserClass("Class 6");
+	 * 
+	 * priSubMod.clickOnSubject(driver, role, "Mathematics");
+	 * 
+	 * if(role.equals("Parent")) { priResLisMod.clickOnBookChapter(driver,
+	 * "Whole numbers"); priResLisMod.clickOnChapterTopic(driver,
+	 * "Predecessor and Successor"); } else {
+	 * priResLisMod.clickOnBookChapter(driver, "Knowing Our Numbers");
+	 * priResLisMod.clickOnChapterTopic(driver, "Roman Numerals"); }
+	 * 
+	 * if(role.equals("Parent")) { if(platform.equals("Web")) { Thread.sleep(3000);
+	 * Assert.assertEquals(priResLisMod.childAccessMsg.getText(),
+	 * "Please access the content from your child's account."); } else {
+	 * Assert.assertEquals(0,
+	 * driver.findElements(By.xpath("//*[@text='Real Life Application']")).size());
+	 * } } else { generic.waitForElementVisibility(driver, priResLisMod.realLife);
+	 * priResLisMod.clickOnRealLifeApplication(); Thread.sleep(5000); <<<<<<< HEAD
+	 * Assert.assertEquals(priResVieMod.synopsisHeading.getText(),
+	 * "Roman Numerals");
+	 * 
+	 * if(platform.equals("Web")) { driver.switchTo().frame("myFrame");
+	 * Assert.assertTrue(priResVieMod.realLifeApplicationTitle.isDisplayed()); } } }
+	 * 
+	 * Assert.assertEquals(priResVieMod.synopsisHeading.getText(),
+	 * "Roman Numerals");
+	 * 
+	 * if(platform.equals("Web")) { driver.switchTo().frame("myFrame");
+	 * Assert.assertTrue(priResVieMod.realLifeApplicationTitle.isDisplayed()); } } }
+	 */
+
+	/**
+	 * verify Interactive Worksheet on Web, Android, iOS for Admin, Principal,
+	 * Teacher
+	 * 
+	 * @author Jagrati
+	 * @since 2018-10-14
+	 * @throws InterruptedException
+	 * @version 1.1
+	 * @throws IOException
+	 * @modifiedBy Tarun Goswami on 2019-04-10
+	 */
+	@Test(dataProvider = "allusers_old")
+	public void verifyInteractiveWorksheet_Old(String role) throws InterruptedException, IOException {
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 
-		if(platform.equals("Web"))
-		{	
-			if(!role.equals("Guest"))
+		if (platform.equals("Web")) {
+			if (!role.equals("Guest"))
 				leaMod.clickOnLearnImage();
-		}	
+		}
 
 		leaMod.clickOnPrimeImage();
 
 		Thread.sleep(3000);
 
-		if(role.equals("Admin") || role.equals("Principal") || role.equals("Teacher"))
+		if (role.equals("Admin") || role.equals("Principal") || role.equals("Teacher"))
 			priClaMod.selectUserClass("Class 6");
 
 		priSubMod.clickOnSubject(driver, role, "Mathematics");
 
-		if(role.equals("Parent"))
-		{
+		if (role.equals("Parent")) {
 			priResLisMod.clickOnBookChapter(driver, "Whole numbers");
-			priResLisMod.clickOnChapterTopic(driver, "Predecessor and Successor");	
-		}
-		else
-		{
+			priResLisMod.clickOnChapterTopic(driver, "Predecessor and Successor");
+		} else {
 			priResLisMod.clickOnBookChapter(driver, "Knowing Our Numbers");
 			priResLisMod.clickOnChapterTopic(driver, "Roman Numerals");
-		} 
+		}
 
-		if(role.equals("Parent"))
-		{	
-			if(platform.equals("Web"))
-			{
+		if (role.equals("Parent")) {
+			if (platform.equals("Web")) {
 				Thread.sleep(3000);
-				Assert.assertEquals(priResLisMod.childAccessMsg.getText(), "Please access the content from your child's account.");
-			}
-			else
-			{
+				Assert.assertEquals(priResLisMod.childAccessMsg.getText(),
+						"Please access the content from your child's account.");
+			} else {
 				Assert.assertEquals(0, driver.findElements(By.xpath("//*[@text='Interactive Worksheet']")).size());
 			}
-		}
-		else
-		{
+		} else {
 			generic.waitForElementVisibility(driver, priResLisMod.interactiveWorksheet);
 			priResLisMod.clickOnInteractiveWorksheet();
 			Thread.sleep(3000);
 
 			Assert.assertEquals(priResVieMod.synopsisHeading.getText(), "Roman Numerals-Drag and Drop");
 
-			if(platform.equals("Web"))
-			{
-				//driver.switchTo().frame("myFrame");
+			if (platform.equals("Web")) {
+				// driver.switchTo().frame("myFrame");
 //				Assert.assertTrue(priResVieMod.interactiveWorksheetTitle.isDisplayed());
-			}	
+			}
 		}
 	}
 
 	/**
 	 * verify Content Access message displayed to parent on Web, Android, iOS
+	 * 
 	 * @author Jagrati Mishra
 	 * @since 2018-12-14
-	 * @throws InterruptedException 
+	 * @throws InterruptedException
 	 * @version 1.1
-	 * @throws IOException 
+	 * @throws IOException
 	 */
 	@Test
-	public void verifyAccessFromChildMessage() throws InterruptedException, IOException
-	{
+	public void verifyAccessFromChildMessage() throws InterruptedException, IOException {
 		String role = "Parent";
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 
@@ -455,7 +427,8 @@ public class PrimeResources extends Base
 		priChaTopMod.clickOnTopics.click();
 		priChaTopMod.clickOnresource.click();
 		Thread.sleep(3000);
-		Assert.assertEquals(priChaTopMod.childAccessTxt.getText(), "Please access the content from your child's account.");
+		Assert.assertEquals(priChaTopMod.childAccessTxt.getText(),
+				"Please access the content from your child's account.");
 		System.out.println(priChaTopMod.childAccessTxt);
-	}		
+	}
 }

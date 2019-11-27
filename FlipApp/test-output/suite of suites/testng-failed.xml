@@ -11,7 +11,7 @@
       <class name="com.fliplearn.flipapp.testcases.PrimeResources">
         <methods>
           
-          <include name="verifyParentAbleToPlayDemoVideo"/>
+          <include name="verifyGettingValidationMsgWithIncorrctCoupn"/>
         </methods>
       </class> <!-- com.fliplearn.flipapp.testcases.VMC -->
     </classes>
