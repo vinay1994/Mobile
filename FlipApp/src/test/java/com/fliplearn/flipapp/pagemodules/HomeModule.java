@@ -31,8 +31,8 @@ public class HomeModule extends Base {
 
 	/********** OLD UI ***********/
 
-	@FindBy(xpath = "(//*[text()='My Wall '])[2]")
-	@AndroidFindBy(xpath = "//*[@text='My Wall']")
+	@FindBy(xpath = "(//*[text()='Fliplearn Wall '])[2]")
+	@AndroidFindBy(xpath = "//*[@text='Fliplearn Wall']")
 	@iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name='My Wall']")
 	public static RemoteWebElement myWallSection;
 

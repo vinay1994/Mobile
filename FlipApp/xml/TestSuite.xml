@@ -13,11 +13,11 @@
 
 	<test name="Event" enabled="true">
   		<classes>
-    		<class name="com.fliplearn.flipapp.testcases.PrimePurchaseFlow">
+    		<class name="com.fliplearn.flipapp.testcases.Event">
     		
     		<methods>
  
-        			<include name="verifyPrimePurchaseFlowWithCouponSecTab" /> 
+        			<include name="createAlbum" /> 
     		 
           </methods>
         	</class>
