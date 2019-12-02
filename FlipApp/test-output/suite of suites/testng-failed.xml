@@ -8,13 +8,10 @@
   </listeners>
   <test thread-count="5" name="Event(failed)">
     <classes>
-      <class name="com.fliplearn.flipapp.testcases.VMC">
+      <class name="com.fliplearn.flipapp.testcases.PrimeResources">
         <methods>
-          <include name="displayVMCStudent"/>
-          <include name="prePrime"/>
-          <include name="befo"/>
-          <include name="aftSuite"/>
-          <include name="getResult"/>
+          
+          <include name="verifyGettingValidationMsgWithIncorrctCoupn"/>
         </methods>
       </class> <!-- com.fliplearn.flipapp.testcases.VMC -->
     </classes>
