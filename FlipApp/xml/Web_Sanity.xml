@@ -75,23 +75,5 @@
         	</class>
 	</classes>
 	</test>
-	
-	<test name="VMC" enabled="true">
-		<classes>
-        		<class name="com.fliplearn.flipapp.testcases.VMC">
-        		</class>
-      	</classes> 
-	</test>
-	
-	<test name="DoubtForum" enabled="true">
-  		<classes>
-    		<class name="com.fliplearn.flipapp.testcases.DoubtForum">
-        		<methods>
-        			<include name="verifyDoubtForumTabs" />  
-        				
-        		</methods>
-        	</class>
-	</classes>
-	</test>
 
 </suite>	
