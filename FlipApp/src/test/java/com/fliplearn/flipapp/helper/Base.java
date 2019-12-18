@@ -400,7 +400,7 @@ public class Base implements ITestListener
 	@Override
 	public void onTestSuccess(ITestResult result) 
 	{
-		extentTest.log(Status.PASS, "Test Failed");	
+		extentTest.log(Status.PASS, "Test Pass");	
 		String captureScreenshot;
      	
         try 

@@ -31,7 +31,6 @@ public class UserDetail
 			String className = row.getCell(2).toString(); 
 			if(className.contains("."))
 				className = className.substring( 0, className.indexOf("."));
-			System.out.println(className);
 			userList.add(new User(row.getCell(0).toString(), row.getCell(1).toString(), className, row.getCell(3).toString(), row.getCell(4).toString(), row.getCell(5).toString(),   row.getCell(6).toString(), "123456")); 
 		 }
 		 
