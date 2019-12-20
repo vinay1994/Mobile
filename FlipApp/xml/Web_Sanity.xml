@@ -43,8 +43,6 @@
 	    <classes>
 	    	<class name="com.fliplearn.flipapp.testcases.PrimeContent">
         	</class>
-        	<class name="com.fliplearn.flipapp.testcases.PrimePurchaseFlow">
-        	</class>
         	<class name="com.fliplearn.flipapp.testcases.PrimeResources">
         	</class>
 	    	<class name="com.fliplearn.flipapp.testcases.PrimeSearch">
