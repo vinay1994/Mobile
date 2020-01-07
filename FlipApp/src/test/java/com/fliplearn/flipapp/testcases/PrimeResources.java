@@ -24,6 +24,7 @@ import com.fliplearn.flipapp.pagemodules.PrimeResourceListModule;
 import com.fliplearn.flipapp.pagemodules.PrimeResourceViewModule;
 import com.fliplearn.flipapp.pagemodules.YourProfileModule;
 
+
 public class PrimeResources extends Base {
 	GenericFunctions generic;
 	HomeModule homMod;
@@ -58,30 +59,53 @@ public class PrimeResources extends Base {
 		heaMod = new HeaderModule(driver);
 	}
 
-	/*
+	
+	
+	/**
 	 * Verifying View all sample content option is available for Parent
-	 * 
 	 * @author Bhupesh Kumar
-	 * 
 	 * @since 2019-11-27
-	 * 
 	 * @throws InterruptedException
-	 * 
-	 * @version 1.2
-	 * 
+	 * @version 1.3
 	 * @throws IOException
+	 * @updatedBy Tarun Goswami on 2020-01-06
 	 */
 
 	@Test
-	public void verifyParentAbleToViewAllSampleOption() throws InterruptedException, IOException {
+	public void verifyParentAbleToViewDemoContent() throws InterruptedException, IOException {
 		String role = "Parent";
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		Assert.assertTrue(priResLisMod.flipLearnPrimeTile.isDisplayed());
 		priResLisMod.clickOnPrimeTile();
-		Assert.assertTrue(priResLisMod.viewAllSampleTxt.isDisplayed());
+		Assert.assertEquals(priResLisMod.demoContent.size(), 6);
+		priResLisMod.viewAllSampleTxt.click();
+		Assert.assertTrue(priResLisMod.demoContent.size() > 6);
+	}
+	
+	/**
+	 * Verifying Parent is able to play demo prime videos
+	 * @author Bhupesh Kumar
+	 * @since 2019-11-25
+	 * @throws InterruptedException
+	 * @version 1.2
+	 * @throws IOException
+	 */
+
+	@Test
+	public void verifyParentAbleToPlayDemoVideo() throws InterruptedException, IOException {
+		String role = "Parent";
+		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
+		Assert.assertTrue(priResLisMod.flipLearnPrimeTile.isDisplayed());
+		priResLisMod.clickOnPrimeTile();
+		Assert.assertEquals(priResLisMod.textToIdentifyParent.getText(),
+				"Please access the content from your child's account.");
+
+		priResLisMod.playingDemoVideos();
+
 	}
 
-	/*
+
+	/**
 	 * Verifying if we get validation message when user enters incorrect coupon on Book Page
 	 *@author Bhupesh Kumar
 	 *@since 2019-11-27
@@ -103,33 +127,7 @@ public class PrimeResources extends Base {
 		Assert.assertTrue(priResLisMod.invalidCouponMsg.isDisplayed());
 		}
 
-	/*
-	 * Verifying Parent is able to play demo prime videos
-	 * 
-	 * @author Bhupesh Kumar
-	 * 
-	 * @since 2019-11-25
-	 * 
-	 * @throws InterruptedException
-	 * 
-	 * @version 1.2
-	 * 
-	 * @throws IOException
-	 */
-
-	@Test
-	public void verifyParentAbleToPlayDemoVideo() throws InterruptedException, IOException {
-		String role = "Parent";
-		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
-		Assert.assertTrue(priResLisMod.flipLearnPrimeTile.isDisplayed());
-		priResLisMod.clickOnPrimeTile();
-		Assert.assertEquals(priResLisMod.textToIdentifyParent.getText(),
-				"Please access the content from your child's account.");
-
-		priResLisMod.playingDemoVideos();
-
-	}
-
+	
 	@Test
 	public void playPrimeVideo_New() throws InterruptedException, IOException {
 		String role = "Student";
@@ -138,6 +136,7 @@ public class PrimeResources extends Base {
 		homMod.firstSubject.click();
 		generic.waitForElementVisibility(driver, leaMod.firstTopicSecondChapter);
 		leaMod.firstTopicSecondChapter.click();
+		
 		Thread.sleep(5000);
 		generic.verifyVideoContent(driver);
 	}

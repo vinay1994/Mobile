@@ -1,6 +1,8 @@
 
 package com.fliplearn.flipapp.pagemodules;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -97,7 +99,10 @@ public class PrimeResourceListModule extends Base {
 
 	@FindBy(xpath = "(//div[@class='modal-body head_bottom'])[4]//h4")
 	public RemoteWebElement childAccessMsg;
-
+	
+	@FindBy(css="a[class='learnResourceslink']")
+	public List<RemoteWebElement> demoContent;
+	
 	public PrimeResourceListModule(WebDriver driver) {
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 	}

@@ -113,7 +113,7 @@ public class PrimeSearch extends Base
 			 
 		if(role.equals("Parent"))
 		{	
-			Thread.sleep(3000);
+			Thread.sleep(7000);
 			Assert.assertEquals(priChaTopMod.childAccessPopup.getText(), "Please access the content from your child's account.");
 		}
 		else
