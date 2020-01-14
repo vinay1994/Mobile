@@ -13,11 +13,11 @@
 
 	<test name="Event" enabled="true">
   		<classes>
-    		<class name="com.fliplearn.flipapp.testcases.PrimeResources">
+    		<class name="com.fliplearn.flipapp.testcases.Event">
     		
     		<methods>
  
-        			<include name="verifyParentAbleToViewDemoContent" />     		 
+        			<include name="parentCanViewAlbum" />     		 
           </methods>
         	</class>
          </classes> 

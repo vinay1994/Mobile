@@ -17,5 +17,4 @@ public class RetryFailedTestCases implements IRetryAnalyzer {
         }
         return false;
     }
-   
 }
