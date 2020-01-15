@@ -98,7 +98,7 @@ public class FeeModule extends Base {
 	public  RemoteWebElement gettotalAmOnPaymentGat;	
 	
 	
-	@FindBy(xpath="//a[text()='www.fliplearn.com']")
+	@FindBy(xpath="//a[text()='http://www.fliplearn.com']")
 	public  RemoteWebElement cancelBtn;
 	
 	

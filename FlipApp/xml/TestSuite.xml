@@ -13,11 +13,11 @@
 
 	<test name="Event" enabled="true">
   		<classes>
-    		<class name="com.fliplearn.flipapp.testcases.Event">
+    		<class name="com.fliplearn.flipapp.testcases.Fee">
     		
     		<methods>
  
-        			<include name="parentCanViewAlbum" />     		 
+        			<include name="payFeeLoginDebitCard" />     		 
           </methods>
         	</class>
          </classes> 
