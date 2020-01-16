@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods,   3 passed</span>
+                    <span class="method-stats">1 method,   1 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,17 +102,7 @@
                     <div class="method-list-content passed suite-suite_of_suites">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-suite_of_suites" title="com.fliplearn.flipapp.testcases.Fee" class="method navigator-link" hash-for-method="payFeeLoginDebitCard(Parent)">payFeeLoginDebitCard(Parent)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-suite_of_suites" title="com.fliplearn.flipapp.testcases.Fee" class="method navigator-link" hash-for-method="payFeeLoginDebitCard(Guest)">payFeeLoginDebitCard(Guest)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-suite_of_suites" title="com.fliplearn.flipapp.testcases.Fee" class="method navigator-link" hash-for-method="payFeeLoginDebitCard(Student)">payFeeLoginDebitCard(Student)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-suite_of_suites" title="com.fliplearn.flipapp.testcases.Home" class="method navigator-link" hash-for-method="noticeboardMore">noticeboardMore</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-suite_of_suites -->
@@ -130,31 +120,14 @@
           <div class="suite-suite_of_suites-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.fliplearn.flipapp.testcases.Fee</span>
+              <span class="class-name">com.fliplearn.flipapp.testcases.Home</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="payFeeLoginDebitCard(Parent)">
-                  </a> <!-- payFeeLoginDebitCard(Parent) -->
-                  <span class="method-name">payFeeLoginDebitCard</span>
-                  <span class="parameters">(Parent)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="payFeeLoginDebitCard(Guest)">
-                  </a> <!-- payFeeLoginDebitCard(Guest) -->
-                  <span class="method-name">payFeeLoginDebitCard</span>
-                  <span class="parameters">(Guest)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="payFeeLoginDebitCard(Student)">
-                  </a> <!-- payFeeLoginDebitCard(Student) -->
-                  <span class="method-name">payFeeLoginDebitCard</span>
-                  <span class="parameters">(Student)</span>
+                  <a name="noticeboardMore">
+                  </a> <!-- noticeboardMore -->
+                  <span class="method-name">noticeboardMore</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -176,11 +149,11 @@
   &lt;/listeners&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Event&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.fliplearn.flipapp.testcases.Fee&quot;&gt;
+      &lt;class name=&quot;com.fliplearn.flipapp.testcases.Home&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;payFeeLoginDebitCard&quot;/&gt;
+          &lt;include name=&quot;noticeboardMore&quot;/&gt;
         &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- com.fliplearn.flipapp.testcases.Fee --&gt;
+      &lt;/class&gt; &lt;!-- com.fliplearn.flipapp.testcases.Home --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Event --&gt;
 &lt;/suite&gt; &lt;!-- suite of suites --&gt;
@@ -220,24 +193,16 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(3);
+data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'payFeeLoginDebitCard')
-data.setCell(0, 2, 'com.fliplearn.flipapp.testcases.Fee')
-data.setCell(0, 3, 26959);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 'payFeeLoginDebitCard')
-data.setCell(1, 2, 'com.fliplearn.flipapp.testcases.Fee')
-data.setCell(1, 3, 26493);
-data.setCell(2, 0, 2)
-data.setCell(2, 1, 'payFeeLoginDebitCard')
-data.setCell(2, 2, 'com.fliplearn.flipapp.testcases.Fee')
-data.setCell(2, 3, 25899);
+data.setCell(0, 1, 'noticeboardMore')
+data.setCell(0, 2, 'com.fliplearn.flipapp.testcases.Home')
+data.setCell(0, 3, 17143);
 window.suiteTableData['suite_of_suites']= { tableData: data, tableDiv: 'times-div-suite_of_suites'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 17 seconds</span>
               <div id="times-div-suite_of_suites">
               </div> <!-- times-div-suite_of_suites -->
             </div> <!-- times-div -->
@@ -252,29 +217,33 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-suite_of_suites" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">9 ignored methods</span>
+            <span class="header-content">11 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
-              <span class="ignored-class-name">com.fliplearn.flipapp.testcases.Fee</span>
+              <span class="ignored-class-name">com.fliplearn.flipapp.testcases.Home</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">payFeeLogoutNetBanking</span>
+                <span class="ignored-method-name">verifyGlobalModeSelection</span>
                 <br/>
-                <span class="ignored-method-name">payFeeLoginNetBanking</span>
+                <span class="ignored-method-name">playPopularVideos</span>
                 <br/>
-                <span class="ignored-method-name">payFeeLogoutUPI</span>
+                <span class="ignored-method-name">fliplearnWallThumbnail</span>
                 <br/>
-                <span class="ignored-method-name">payFeeLoginVISA</span>
+                <span class="ignored-method-name">noticeboardContent</span>
                 <br/>
-                <span class="ignored-method-name">payFeeLoginAmex</span>
+                <span class="ignored-method-name">verifyLearnPracticeMode</span>
                 <br/>
-                <span class="ignored-method-name">payFeeLogoutDebitCard</span>
+                <span class="ignored-method-name">popularVideoContent</span>
                 <br/>
-                <span class="ignored-method-name">payFeeLoginUPI</span>
+                <span class="ignored-method-name">fliplearnWallMore</span>
                 <br/>
-                <span class="ignored-method-name">payFeeLogoutVISA</span>
+                <span class="ignored-method-name">verifySwitchClass</span>
                 <br/>
-                <span class="ignored-method-name">payFeeLogoutAmex</span>
+                <span class="ignored-method-name">noticeboardThumbnail</span>
+                <br/>
+                <span class="ignored-method-name">fliplearnWallContent</span>
+                <br/>
+                <span class="ignored-method-name">verifyDefaultMode</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -286,58 +255,26 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.fliplearn.flipapp.testcases.Fee</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.fliplearn.flipapp.testcases.Home</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
-                <span class="method-name">befo(org.testng.TestRunner@58a84a12)</span>
+                <span class="method-name">befo(org.testng.TestRunner@7c8d5312)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
-                <span class="method-name">beforMethodFee</span>
-                <span class="method-start">3827 ms</span>
+                <span class="method-name">beforeEvent</span>
+                <span class="method-start">3413 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">payFeeLoginDebitCard(Parent)</span>
-                <span class="method-start">3997 ms</span>
+                <span class="method-name">noticeboardMore</span>
+                <span class="method-start">3606 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">getResult</span>
-                <span class="method-start">31556 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">befo(org.testng.TestRunner@58a84a12)</span>
-                <span class="method-start">31743 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="configuration-method before">
-                <span class="method-name">beforMethodFee</span>
-                <span class="method-start">34480 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">payFeeLoginDebitCard(Student)</span>
-                <span class="method-start">34488 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">getResult</span>
-                <span class="method-start">61505 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">befo(org.testng.TestRunner@58a84a12)</span>
-                <span class="method-start">61696 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="configuration-method before">
-                <span class="method-name">beforMethodFee</span>
-                <span class="method-start">64621 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">payFeeLoginDebitCard(Guest)</span>
-                <span class="method-start">64632 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">getResult</span>
-                <span class="method-start">91124 ms</span>
+                <span class="method-start">21297 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-suite after">
                 <span class="method-name">aftSuite</span>
-                <span class="method-start">91741 ms</span>
+                <span class="method-start">21680 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

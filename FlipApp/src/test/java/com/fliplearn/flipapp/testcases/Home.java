@@ -227,7 +227,8 @@ public class Home extends Base
 		generic.waitForElementVisibility(driver, homMod.fliplearnWallHeading);
 		
 		Assert.assertTrue(homMod.fliplearnWallThumb.isDisplayed());
-		Assert.assertEquals(homMod.fliplearnWallThumbs.size(), 5);
+		Thread.sleep(5000);
+		Assert.assertTrue(homMod.fliplearnWallThumbs.size() > 0);
 	}
 
 	/**
@@ -302,7 +303,7 @@ public class Home extends Base
 		generic.waitForElementVisibility(driver, homMod.noticeboardHeading);
 		
 		Assert.assertTrue(homMod.noticeboardThumb.isDisplayed());
-		Assert.assertEquals(homMod.noticeboardThumbs.size(), 5);
+		Assert.assertTrue(homMod.noticeboardThumbs.size() > 1);
 		Assert.assertTrue(homMod.noticeTitle.isDisplayed());
 		Assert.assertTrue(homMod.noticeboardEventType.isDisplayed());
 	}

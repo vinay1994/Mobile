@@ -170,10 +170,8 @@ public class HomeModule extends Base {
 	@FindBy(xpath = "(//div[@class='owl-carousel owl-theme fliplearnWall-carousel owl-loaded owl-drag']//img)[1]")
 	public RemoteWebElement fliplearnWallThumb;
 
-	@FindBy(xpath = "(//div[@class='owl-carousel owl-theme fliplearnWall-carousel owl-loaded owl-drag']//img)[2]")
+	@FindBy(xpath = "(//div[@class='owl-carousel owl-theme fliplearnWall-carousel owl-loaded owl-drag']//img)[1]")
 	public RemoteWebElement fliplearnWallVideoThumb;
-
-	// div[@class='ytp-cued-thumbnail-overlay-image']
 
 	@FindBy(xpath = "//div[@class='owl-carousel owl-theme fliplearnWall-carousel owl-loaded owl-drag']//a[@class='equalHeightimg']")
 	public List<RemoteWebElement> fliplearnWallThumbs;
