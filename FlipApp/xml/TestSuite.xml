@@ -17,7 +17,7 @@
     		
     		<methods>
  
-        			<include name="noticeboardMore" />     		 
+        			<include name="verifyTabSwitch" />     		 
           </methods>
         	</class>
          </classes> 

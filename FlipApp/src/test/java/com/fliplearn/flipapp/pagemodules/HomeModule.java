@@ -69,6 +69,8 @@ public class HomeModule extends Base {
 	@FindBy(xpath = "//*[contains(text(),'Later')]")
 	public RemoteWebElement emailPopUp;
 	
+	@FindBy(xpath="//ul[contains(@class,'dashboardInnerView')]/li")
+	public List<RemoteWebElement> homeTabs;
 	
 	
 	// VMC Select Class Popup

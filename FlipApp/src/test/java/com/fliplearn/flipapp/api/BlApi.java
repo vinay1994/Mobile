@@ -19,6 +19,7 @@ public class BlApi {
 	
 	@Test
 	public void getUserByUuid() {
+		
 		// Specify the base URL to the RESTful web service
 				RestAssured.baseURI = "https://bl.fliplearn.com/user/getUserByUuid/";
 

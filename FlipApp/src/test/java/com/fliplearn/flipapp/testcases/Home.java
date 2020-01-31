@@ -1,7 +1,18 @@
 package com.fliplearn.flipapp.testcases;
 
 import java.io.IOException;
+import java.time.Duration;
+import java.util.Iterator;
+import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.remote.RemoteWebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -353,6 +364,21 @@ public class Home extends Base
 		
 		generic.waitForElementVisibility(driver, notMod.noticeboardHeading);	
 		Assert.assertTrue(notMod.noticeTitle.isDisplayed());
+	}
+	
+	@Test(dataProvider = "staff")
+	public void verifyTabSwitch(String role) throws InterruptedException, IOException
+	{
+		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
+		System.out.println(homMod.homeTabs.size());	
+		
+		for(int i = 0; i <homMod.homeTabs.size(); i++) 
+		{	
+			homMod.homeTabs.get(i).click();
+			String classTxt= homMod.homeTabs.get(i).getAttribute("class");
+			Assert.assertTrue(classTxt.contains("active"));
+		}	
+	
 	}
 }
 
