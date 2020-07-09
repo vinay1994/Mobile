@@ -287,6 +287,7 @@ public class Base implements ITestListener
 		Base.Initialize();
 		base.setDriver();
 		extentReports.attachReporter(htmlReporter);	
+		onTestStart(result);
 		if(eConfig.getProperty("Platform").equals("iOS"))
 		{	
 			((IOSDriver) driver).resetApp();
@@ -303,12 +304,14 @@ public class Base implements ITestListener
 	 */
 	public void onTestStart(ITestResult result) 
 	{
-		extentTest = extentReports.createTest(result.getMethod().getMethodName(), "Some Description");
+	String methodName = new Exception().getStackTrace()[1].getMethodName();
+	extentTest = extentReports.createTest(methodName, "Some Description");
+		//extentTest = extentReports.createTest(result.getMethod().getMethodName(), "Some Description");
 
 		extentTest.log(Status.INFO, "*******Platform is:"+platform+"*******");
 		extentTest.log(Status.INFO, "*******Environment is:"+environment+"*******");
 		
-		if(platform.equals("WEB"))
+		if(platform.equals("WEb"))
 		{	
 			extentTest.log(Status.INFO, "Browser is:"+browser);
 			extentTest.log(Status.INFO, "URL is:"+url);
