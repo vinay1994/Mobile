@@ -173,8 +173,8 @@ public class Base implements ITestListener
 		
 		else if(server.equals("Windows") & platform.equals("Web") & browser.equals("Chrome"))
 		{
-		System.out.println("Vinay");
             System.setProperty("webdriver.chrome.driver", Constants.WINDOWS_CHROME_EXE);
+	    System.out.println("Vinay");
             Map<String, Object> prefs = new HashMap<String, Object>();
 	        prefs.put("profile.default_content_setting_values.notifications", 2);
 	        ChromeOptions options = new ChromeOptions();
