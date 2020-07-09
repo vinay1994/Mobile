@@ -12,8 +12,8 @@ import com.fliplearn.flipapp.pagemodules.LearnModule;
 import com.fliplearn.flipapp.pagemodules.LoginModule;
 import com.fliplearn.flipapp.pagemodules.MenuModule;
 import com.fliplearn.flipapp.pagemodules.MobileNumberModule;
-import com.fliplearn.flipapp.pagemodules.SelectClassModule;
-import com.fliplearn.flipapp.pagemodules.SelectSubjectModule;
+import com.fliplearn.flipapp.pagemodules.PrimeClassModule;
+import com.fliplearn.flipapp.pagemodules.PrimeSubjectModule;
 import com.fliplearn.flipapp.pagemodules.SignInAsModule;
 import com.fliplearn.flipapp.pagemodules.YourProfileModule;
 
@@ -24,12 +24,11 @@ public class PrimeContent extends Base
 	MenuModule menMod;
 	LearnModule leaMod;
 	SignInAsModule signInMod;
-	SelectClassModule selClaMod;
-	SelectSubjectModule selSubMod;
+	PrimeClassModule priClaMod;
+	PrimeSubjectModule priSubMod;
 	GenericFunctions generic;
-	YourProfileModule youProMod;
 	HeaderModule heaMod;
-	
+	// this is my changes
 	@BeforeMethod
 	public void prePrime()
 	{
@@ -39,9 +38,8 @@ public class PrimeContent extends Base
 		menMod = new MenuModule(driver);
 		signInMod = new SignInAsModule(driver);
 		leaMod = new LearnModule(driver);
-	    selClaMod=	new SelectClassModule(driver);
-	    selSubMod= new SelectSubjectModule(driver);   
-	    youProMod = new YourProfileModule(driver);
+	    priClaMod =	new PrimeClassModule(driver);
+	    priSubMod = new PrimeSubjectModule(driver);   
 	    heaMod = new HeaderModule(driver);
 	}
 
@@ -51,10 +49,11 @@ public class PrimeContent extends Base
 	 * @since 2018-10-20
 	 * @throws InterruptedException 
 	 * @version 1.1
+	 * @modifiedBy Tarun Goswami on 2019-04-10
 	 * @throws IOException 
 	 */
-	 @Test( priority=1,dataProvider = "group0")
-     public void verifyPrimeTileDisplayed(String role) throws IOException, InterruptedException 
+     @Test(dataProvider = "allusers_old")
+     public void verifyPrimeTileDisplayed_Old(String role) throws IOException, InterruptedException 
      {
 		 logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
     	 
@@ -72,10 +71,11 @@ public class PrimeContent extends Base
 	 * @since 2018-09-25
 	 * @throws InterruptedException 
 	 * @version 1.3
+	 * @modifiedBy Tarun Goswami on 2019-04-10
 	 * @throws IOException 
 	 */
-	 @Test( priority=1,dataProvider = "group2")
-     public void verifyPrimeClasses(String role) throws IOException, InterruptedException 
+     @Test(dataProvider = "staff")
+     public void verifyPrimeClasses_Old(String role) throws IOException, InterruptedException 
      {
 		 logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
     	   	 
@@ -86,9 +86,26 @@ public class PrimeContent extends Base
  
     	 String expectedList = readData(platform, role, "Prime Classes");
 
-    	 Assert.assertEquals(generic.compareList(selClaMod.classLst, expectedList), true);
+    	 Assert.assertEquals(generic.compareList(priClaMod.classLst, expectedList), true);
      }
     
+     @Test
+     public void verifyPrimeClasses_Parent() throws IOException, InterruptedException 
+     {
+ 
+		 logMod.Login("Parent", "CBSE", "6", "Single", "Prime", "Yes");
+		 
+		 if(platform.equals("Web"))
+    		 leaMod.clickOnLearnImage();
+    	 
+    	 leaMod.clickOnPrimeImage();
+    	 
+    	 String expectedList = readData(platform, "Parent", "Prime Classes");
+    	 System.out.println("Expected List:"+expectedList);
+    	 
+    	 Assert.assertEquals(generic.compareList(priSubMod.classList, expectedList), true);
+		 
+     }	 
      
      /**
  	 * verify Prime classes on Web, Android, iOS when User click on fliplearn prime tile on learn page
@@ -99,10 +116,10 @@ public class PrimeContent extends Base
  	 * @throws IOException 
  	 */
  	 
-	@Test(priority=2,dataProvider ="group0")
-	public void verifyPrimeSubjects(String role) throws IOException, InterruptedException  
+	@Test(dataProvider ="allusers_old")
+	public void verifyPrimeSubjects_Old(String role) throws IOException, InterruptedException  
 	{ 
-		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
+		logMod.Login(role, "CBSE", "Pre", "Single", "Prime", "Yes");
     	 
     	 if(platform.equals("Web"))
     	 {	 
@@ -116,12 +133,14 @@ public class PrimeContent extends Base
 
 		if(role.equals("Parent") || role.equals("Student") || role.equals("Guest"))
 		{	
-	    	Assert.assertEquals(generic.compareList(selSubMod.studentSubjectList, expectedList), true);
+	    	Assert.assertEquals(generic.compareList(priSubMod.studentSubjectList, expectedList), true);
 		}
 		else
 		{
-		   leaMod.clickOnSubjectLink();
-	    	Assert.assertEquals(generic.compareList(selSubMod.subjectList, expectedList), true);
+		   priClaMod.selectUserClass("Pre Nursery");
+		   Thread.sleep(3000);
+		   Assert.assertEquals(generic.compareList(priSubMod.subjectList, expectedList), true);
 		}
      }
+
  }

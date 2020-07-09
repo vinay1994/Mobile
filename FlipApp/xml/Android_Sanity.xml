@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Fliplearn Automation Suite">
+
+<listeners>
+	<listener class-name="com.fliplearn.flipapp.helper.Base"/>
+	<listener class-name="com.fliplearn.flipapp.helper.RetryListener"/>	
+	<listener class-name="com.fliplearn.flipapp.report.CustomTestNGReporter" />
+</listeners>
+
+ <test name="Onboarding" enabled="true">
+  		<classes>
+    		<class name="com.fliplearn.flipapp.testcases.Login">
+        		<methods>
+        			<include name="verifyLogin"/>
+        			<include name="verifyLogout"/>
+        		</methods>
+        	</class>
+      	</classes> 
+	</test> 
+	
+	<test name="Learning" enabled="true">
+  		<classes>
+    		<class name="com.fliplearn.flipapp.testcases.PrimeResources">
+        		<methods>
+        			<include name="playPrimeVideo"/>
+        			<include name="verifyTopicSynopsis"/>
+        			<include name="verifyMindMaps"/>
+        			<include name="verifyRealLifeApplication"/>
+        		</methods>
+        	</class>
+        	
+    		<class name="com.fliplearn.flipapp.testcases.PrimeContent">
+        		<methods>
+        			<include name="verifyPrimeTileDisplayed"/>
+        			<include name="verifyPrimeClasses"/>
+        			<include name="verifyPrimeSubjects"/>
+        		</methods>
+        	</class>
+        	
+        	<class name="com.fliplearn.flipapp.testcases.VMC">
+        		<methods>
+        			<include name="displayVMCSchool" />
+        			<include name="doNotDisplayVMCStudent" />
+        			<include name="displayVMCStudent" />
+        		</methods>
+        	</class>
+        	
+        	<class name="com.fliplearn.flipapp.testcases.QuizGames">
+        		<methods>
+        			<include name="verifyQuizGamesMenu"/>
+        		</methods>
+        	</class>
+        	
+        	<class name="com.fliplearn.flipapp.testcases.QuizDashboard">
+        		<methods>
+        			<include name="verifyQuizDashboardTileDisplayed"/>
+        			<include name="verifyQuizDashboardClasses"/>
+        		</methods>
+        	</class>
+      	</classes> 
+	</test> 
+		
+</suite>	

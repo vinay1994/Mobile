@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="FailedTestCase(failed)">
+    <classes>
+      <class name="com.fliplearn.flipapp.testcases.Login">
+        <methods>
+          <include name="verifyLogin" invocation-numbers="0 1 2 3 4 5"/>
+          <include name="befo"/>
+          <include name="aftSuite"/>
+          <include name="befMethod"/>
+          <include name="getResult"/>
+        </methods>
+      </class> <!-- com.fliplearn.flipapp.testcases.Login -->
+    </classes>
+  </test> <!-- FailedTestCase(failed) -->
+</suite> <!-- Failed suite [Suite] -->

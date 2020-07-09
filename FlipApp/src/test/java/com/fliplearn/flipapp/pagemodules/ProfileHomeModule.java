@@ -21,7 +21,5 @@ GenericFunctions generic = new GenericFunctions();
 	}
 	
 	@FindBy(xpath="//ul[@class='nav nav-tabs invite_video dashboardInnerView ng-scope']/li/a[text()='Noticeboard']")
-	@AndroidFindBy(xpath="") 
-	@iOSFindBy(id="")
 	public RemoteWebElement noticeboardTab;
 }

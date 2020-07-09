@@ -2,6 +2,7 @@ package com.fliplearn.flipapp.pagemodules;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,53 +15,54 @@ import com.fliplearn.flipapp.helper.GenericFunctions;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSFindBy;
+import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 
 public class LearnModule extends Base
 {
 	GenericFunctions generic = new GenericFunctions();
 
-	@FindBy(xpath="//a[@id='learn-icon']")
+	@FindBy(xpath="(//*[text()='Learn'])[1]")
 	@AndroidFindBy(xpath="//*[@text='Learn']") 
-	//	@iOSFindBy(id="")
+	@iOSXCUITFindBy(id="Learn")
 	public RemoteWebElement learnImg;	
 
 	@FindBy(xpath="//strong[text()='Fliplearn Prime']")
 	@AndroidFindBy(xpath="//*[@text='Fliplearn Prime']")
-	//	@iOSFindBy(id="")
+	@iOSXCUITFindBy(xpath="//XCUIElementTypeStaticText[@name='Fliplearn Prime']")
 	public RemoteWebElement primeImg;
 
-	@FindBy(xpath="//h4/strong[contains(text(),'VMC Live')]")
-	@AndroidFindBy(xpath="//*[@text='VMC Live @ Fliplearn']")
-	//	@iOSFindBy(id="")
-	public RemoteWebElement vmcImg;
+	@FindBy(xpath="//img[contains(@ng-src,'Vidyamandir.jpg')] | //div[@class='home_Vmc border-blue-1 border-radius10']//h2[text()='Fliplearn Guru - Powered by VMC']")
+	@AndroidFindBy(xpath="//*[@text='Fliplearn Guru - Powered by VMC']")
+	@iOSXCUITFindBy(xpath="//XCUIElementTypeStaticText[@name='VMC Live @ Fliplearn']")
+	public RemoteWebElement vmcImg;	
 
 	@FindBy(xpath="//a[text()='Pre Nursery']")
-	@AndroidFindBy(xpath="//a[text()='Pre Nursery']")
-	//	@iOSFindBy(id="")
+	@AndroidFindBy(xpath="//*[@text='Pre Nursery']")
 	public RemoteWebElement selectClassLnk;
 
 	@FindBy(xpath="//a[text()='Class 1']")
-	@AndroidFindBy(xpath="//*[@text='Biology']")
-	//	@iOSFindBy(id="")
-	public RemoteWebElement selectSubjectLnk;
-
+	@AndroidFindBy(xpath="//*[@resource-id='com.elss.educomp:id/tv_learn']")
+	@iOSFindBy(id="(//XCUIElementTypeButton[@name='Learn >'])[1]")
+	public List<RemoteWebElement> selectSubjectLnk;
 
 	@FindBy(xpath="//a[@id='learn-icon']")
 	@AndroidFindBy(id="com.elss.educomp:id/ll_mm") 
-	//	@iOSFindBy(id="")
-	public List<RemoteWebElement> selectTOpic;
+	public List<RemoteWebElement> selectTopic;
 
 	@FindBy(xpath="//a[@id='learn-icon']")
 	@AndroidFindBy(id="com.elss.educomp:id/rowThirdText") 
-	//	@iOSFindBy(id="")
 	public List<RemoteWebElement> Selectresource;
-
-
 
 	@FindBy(xpath="//a[@id='learn-icon']")
 	@AndroidFindBy(xpath="(//*[@resource-id='com.elss.educomp:id/subject_text'])[1]") 
-	//			@iOSFindBy(id="")
-	public RemoteWebElement resource;		
+	public RemoteWebElement resource;
+	
+	@FindBy(xpath="//a[@id='learn-icon']")
+	@AndroidFindBy(xpath="//*[@text='Noticeboard']") 
+	public RemoteWebElement noticeBoard;
+	
+	@FindBy(xpath="(//div[@class='owl-stage'])[2]/div[1]")
+	public RemoteWebElement firstTopicSecondChapter;
 
 	public LearnModule(WebDriver driver) 
 	{
@@ -70,7 +72,13 @@ public class LearnModule extends Base
 	public void clickOnLearnImage() throws InterruptedException
 	{
 		Thread.sleep(2000);
-		learnImg.click();
+		if(platform.equals("iOS"))
+		{
+			generic.touchCordinates(driver, 80, 15);
+		}
+		else
+			learnImg.click();
+		System.out.println("Clicked on learn");
 	}
 
 	public void clickOnPrimeImage() throws InterruptedException
@@ -84,7 +92,11 @@ public class LearnModule extends Base
 
 	public void clickOnSubjectLink()
 	{
-		selectSubjectLnk.click();
+		selectSubjectLnk.get(0).click();
 	}
-
+	
+	public void clicknoticeBoard()
+	{
+		noticeBoard.click();
+	}
 }

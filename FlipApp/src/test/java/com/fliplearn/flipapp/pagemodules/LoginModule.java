@@ -2,7 +2,10 @@ package com.fliplearn.flipapp.pagemodules;
 
 import java.io.IOException;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -10,36 +13,40 @@ import org.openqa.selenium.support.PageFactory;
 import com.aventstack.extentreports.Status;
 import com.fliplearn.flipapp.helper.Base;
 import com.fliplearn.flipapp.helper.GenericFunctions;
+import com.fliplearn.flipapp.util.User;
+import com.fliplearn.flipapp.util.UserDetail;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSFindBy;
+import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 
 public class LoginModule extends Base
 {	
-	GenericFunctions generic=new GenericFunctions();
-	OnboardingModule onbMod= new OnboardingModule(driver);
-	MobileNumberModule mobNumMod= new MobileNumberModule(driver);
+	GenericFunctions generic = new GenericFunctions();
+	OnboardingModule onbMod = new OnboardingModule(driver);
+	MobileNumberModule mobNumMod = new MobileNumberModule(driver);
 	SignInAsModule sigInMod = new SignInAsModule(driver);
 	QuizModule quiMod = new QuizModule(driver);
 
-	
+
+    @FindBy(xpath="//button[@class='themeOutlineButton padding-10-60 mobilebtnBlock mobilemargin0']")
+    public RemoteWebElement useLoginIDPassBtn;
+    
 	@FindBy(id="Fname")
-	@AndroidFindBy(id="com.elss.educomp:id/user_id_til") 
-	@iOSFindBy(id="")
-	public
-	RemoteWebElement usernameTxt;
+	@AndroidFindBy(id="com.elss.educomp:id/userId") 
+	@iOSXCUITFindBy(xpath="//XCUIElementTypeTextField")
+	public RemoteWebElement usernameTxt;
 
 	@FindBy(id="password-lg1")
 	@AndroidFindBy(id="com.elss.educomp:id/password_edit")
-	@iOSFindBy(id="")
-	public
-	RemoteWebElement passwordTxt;
+	@iOSXCUITFindBy(xpath="//XCUIElementTypeSecureTextField")
+	public RemoteWebElement passwordTxt;
 
-	@FindBy(xpath="//button[text()='Login']")
+	@FindBy(xpath="(//*[text()='Login'])[2]")
 	@AndroidFindBy(id="com.elss.educomp:id/login")
-	@iOSFindBy(id="")
+	@iOSXCUITFindBy(xpath="//XCUIElementTypeButton[@name='Login']")
 	public RemoteWebElement loginBtn;
 
 	public LoginModule(WebDriver driver)
@@ -55,62 +62,77 @@ public class LoginModule extends Base
 	 * @version 1.5
 	 * @throws IOException 
 	 */
-	public  void Login(String role, String board, String className, String profile, String subscription, String mobile) throws InterruptedException
+	public  void Login(String role, String board, String className, String profile, String subscription, String mobile) throws InterruptedException, IOException
 	{   
-		if(role!=null) 
-		{
-			String username = aConfig.getProperty(role + "_Username"+"_"+board+"_"+className+"_"+profile+"_"+subscription+"_"+mobile);
-			String password =  aConfig.getProperty(role +"_Password"+"_"+board+"_"+className+"_"+profile+"_"+subscription+"_"+mobile);
-		
-			if(eConfig.getProperty("Platform").equals("Android")) 
-			{
-				onbMod.skipScreen();
-				extentTest.log(Status.PASS, "Click on Skip button.");
-			}
+		UserDetail detail = new UserDetail();
+    	detail.readData();
 
-			usernameTxt.sendKeys(username);
-			extentTest.log(Status.PASS, "Enter Username: "+username);
-			passwordTxt.sendKeys((password));
-			extentTest.log(Status.PASS, "Enter Password");
-      
-			if(eConfig.getProperty("Platform").equals("Android")) 
-			{
-				((AndroidDriver) driver).hideKeyboard();
-				extentTest.log(Status.PASS, "Hide Keyboard");
-			}
-			loginBtn.click();
-			extentTest.log(Status.PASS, "Click on Login button");
-				 
-			 if(!platform.equals("Web"))
-			 {
-				 quiMod.skipBtn.click();
-				 
-				 extentTest.log(Status.PASS, "Click on Quiz Skip Button");
-				
-				 generic.touchCordinates(driver, 10, 95);
-				 extentTest.log(Status.PASS, "Tap on Got it.");
-				 generic.touchCordinates(driver, 10, 95);
-				 extentTest.log(Status.PASS, "Tap on Got it.");
-			 }		
-		}
-	}
+		User user = detail.matchDetails(role, board, className, profile, subscription, mobile);
+		
+		String username = user.getuserName();
+		String password = user.getPassword();
 	
 
+		if(eConfig.getProperty("Platform").equals("Android")) 
+		{
+			onbMod.skipScreen();
+			extentTest.log(Status.PASS, "Click on Skip button.");
+		}
+		 generic.waitForElementVisibility(driver, useLoginIDPassBtn);
+		 Actions actions = new Actions(driver);
+		 actions.doubleClick(useLoginIDPassBtn).perform();
 		 
-	 //Check for bug here why skip not showing for student
-//	 if(!(role.equals("Student") && platform.equals("Web")))
-//	 {	
-//		mobNumMod.skipBtn.click();
-//		extentTest.log(Status.PASS, "Click on Skip Button");
-//	 }	
-	 
-//	 if(role.equals("Parent"))
-//	 { 
-//		 generic.waitForElementVisibility(driver, sigInMod.parentLnk);
-//		 sigInMod.parentLnk.click();
-//		 extentTest.log(Status.PASS, "Click on First Parent Link.");
-//		 sigInMod.proceedBtn.click();
-//	 }
-//
+		 generic.waitForElementVisibility(driver, usernameTxt);	
 
- }
+		 usernameTxt.clear();
+		 usernameTxt.sendKeys(username);
+		 extentTest.log(Status.PASS, "Enter Username: "+username);
+		 passwordTxt.clear();
+		 passwordTxt.sendKeys((password));
+		 extentTest.log(Status.PASS, "Enter Password");
+		
+
+		 //		if(eConfig.getProperty("Platform").equals("Android")) 
+		 //		{
+		 //			((AndroidDriver) driver).hideKeyboard();
+		 //			extentTest.log(Status.PASS, "Hide Keyboard");
+		 //		}
+
+		 loginBtn.click();
+		 extentTest.log(Status.PASS, "Click on Login button");
+
+		 if(eConfig.getProperty("Platform").equals("Android")) 
+		 {
+			 quiMod.skipBtn.click();
+			 extentTest.log(Status.PASS, "Click on Quiz Skip Button");
+
+			 if(!role.equals("Student") && !role.equals("Guest"))
+			 {
+				 Thread.sleep(3000);
+				 driver.findElement(By.xpath("//*[@text='GOT IT']")).click();
+				 extentTest.log(Status.PASS, "Tap on Got it.");	
+				 driver.findElement(By.xpath("//*[@text='GOT IT']")).click();
+				 extentTest.log(Status.PASS, "Tap on Got it.");	
+			 } 
+		 }
+
+		 if(eConfig.getProperty("Platform").equals("iOS")) 
+		 {
+			// quiMod.skipBtn.click();
+			// extentTest.log(Status.PASS, "Click on Quiz Skip Button");
+
+		/*	 if(!role.equals("Student") && !role.equals("Guest"))
+			 {
+				 Thread.sleep(3000);
+				 driver.findElement(By.xpath("//*[@text='GOT IT']")).click();
+				 extentTest.log(Status.PASS, "Tap on Got it.");	
+				 driver.findElement(By.xpath("//*[@text='GOT IT']")).click();
+				 extentTest.log(Status.PASS, "Tap on Got it.");	
+			 }*/ 
+		 }
+
+	}		
+}			 
+
+
+

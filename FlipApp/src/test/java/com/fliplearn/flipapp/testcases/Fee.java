@@ -31,7 +31,7 @@ public class Fee extends Base
 	 * @throws Throwable 
 	 */
 	
-	@Test(dataProvider="group3")
+	@Test(dataProvider="nostaff")
 	public void payFeeLoginDebitCard(String role) throws IOException, InterruptedException 
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
@@ -62,7 +62,7 @@ public class Fee extends Base
 	 * @throws Throwable 
 	 */
 	
-	@Test(dataProvider="group3")
+	@Test(dataProvider="nostaff")
 	public void payFeeLoginNetBanking(String role) throws IOException, InterruptedException 
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
@@ -91,7 +91,7 @@ public class Fee extends Base
 	 * @version 1.3
 	 * @throws Throwable 
 	 */
-	@Test(dataProvider="group3")
+	@Test(dataProvider="nostaff")
 	public void payFeeLoginUPI(String role) throws IOException, InterruptedException
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
@@ -120,7 +120,7 @@ public class Fee extends Base
 	 * @throws Throwable 
 	 */
 	
-	@Test(dataProvider="group3")
+	@Test(dataProvider="nostaff")
 	public void payFeeLoginVISA(String role) throws IOException, InterruptedException 
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
@@ -151,7 +151,7 @@ public class Fee extends Base
 	 * @throws Throwable 
 	 */
 	
-	@Test(dataProvider = "group3")
+	@Test(dataProvider = "nostaff")
 	public void payFeeLoginAmex(String role) throws IOException, InterruptedException 
 	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");

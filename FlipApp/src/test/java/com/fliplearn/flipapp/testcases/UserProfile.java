@@ -1,5 +1,9 @@
 package com.fliplearn.flipapp.testcases;
 
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -42,24 +46,33 @@ public class UserProfile extends Base
 	 * Verify User is not guest
 	 * @author Tarun Goswami
 	 * @since 2018-10-10
+	 * @modifiedBy Tarun Goswami on 2019-03-11
 	 * @version 1.1
 	 * @throws InterruptedException 
+	 * @throws IOException 
 	 */
-	@Test(dataProvider = "group0")
-	public void verifyUserRole(String role) throws InterruptedException
-	{
+	@Test(dataProvider = "allusers")
+	public void verifyUserNotGuest(String role) throws InterruptedException, IOException, InvocationTargetException
+	{	
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 		
 		if(platform.equals("Web"))
 		{
-			if(!role.equals("Guest"))
+			if(role=="Guest")
 			{
+				Actions act = new Actions(driver);
+				act.moveToElement(heaMod.guestProfileImg).build().perform();
+				generic.mouseHoverAndClick(driver, heaMod.guestProfileImg, heaMod.myProfileLnk);
+
+			}
+			else
 				generic.mouseHoverAndClick(driver, heaMod.profileImg, heaMod.myProfileLnk);
-				Assert.assertEquals(youProMod.getUsernameLabel(), role+" Name");
-				heaMod.clickonHomeBtn();
-				Thread.sleep(3000);
-				Assert.assertEquals(generic.isElementDisplayed(driver, proHomMod.noticeboardTab), true);
-			}	
+			Thread.sleep(3000);
+			Assert.assertEquals(youProMod.getUsernameLabel(), role+" Name");
+		}
+		else
+		{
+			Assert.assertEquals(youProMod.getUsernameLabel(), role);
 		}
 	}
 }

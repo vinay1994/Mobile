@@ -15,6 +15,9 @@ public class QuizModule
 	
 	@AndroidFindBy(xpath="//*[@text='Test and Improve your learning']")
 	public RemoteWebElement quizGamesTile;
+	
+	@AndroidFindBy(id="com.elss.educomp:id/first_splash_nanja")
+	public RemoteWebElement firstSplashNinjaImg;
 		
 	public QuizModule(WebDriver driver)
 	{

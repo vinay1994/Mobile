@@ -10,6 +10,7 @@ import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver.Window;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.touch.TouchActions;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -24,7 +25,7 @@ import com.fliplearn.flipapp.pagemodules.MobileNumberModule;
 import com.fliplearn.flipapp.pagemodules.OnboardingModule;
 import com.fliplearn.flipapp.pagemodules.QuizDashBoardModule;
 import com.fliplearn.flipapp.pagemodules.QuizModule;
-import com.fliplearn.flipapp.pagemodules.SelectClassModule;
+import com.fliplearn.flipapp.pagemodules.PrimeClassModule;
 import com.fliplearn.flipapp.pagemodules.SignInAsModule;
 
 import io.appium.java_client.AppiumDriver;
@@ -41,7 +42,7 @@ public class QuizDashboard extends Base
 	MobileNumberModule mobNumMod;
 	QuizModule quiMod;
 	SignInAsModule sigInMod;
-	SelectClassModule selClaMod;
+	PrimeClassModule selClaMod;
 	QuizDashBoardModule quiDasMod;
 	GenericFunctions generic;
 	
@@ -53,7 +54,7 @@ public class QuizDashboard extends Base
 		sigInMod = new SignInAsModule(driver);
 		mobNumMod = new MobileNumberModule(driver);
 		quiMod = new QuizModule(driver);
-		selClaMod = new SelectClassModule(driver);
+		selClaMod = new PrimeClassModule(driver);
 		leaMod = new LearnModule(driver);
 		quiDasMod = new QuizDashBoardModule(driver); 
 		generic=new GenericFunctions();	
@@ -68,20 +69,17 @@ public class QuizDashboard extends Base
 	 * @throws IOException 
 	 */
 
-	@Test(dataProvider = "group0")
+	@Test(dataProvider = "allusers")
 	public void verifyQuizDashboardTileDisplayed(String role) throws InterruptedException, IOException
 	{	
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 	
 		if(!role.equals("Guest"))
 		{	
-			if(platform.equals("Web"))
+			if(!platform.equals("Web"))
 			{	
-				leaMod.clickOnLearnImage();
-			}	  
-			else if(!platform.equals("Web"))
-			{	
-				generic.scrollBy(driver, 50, 95);
+				generic.scrollBy(driver, 95, 50);
+				
 			}
 		}	
 		
@@ -96,14 +94,15 @@ public class QuizDashboard extends Base
 	 * Verify Quiz Dashboard Classes for Admin, Principal and Teacher on Web, Android and iOS
 	 * @author Durga
 	 * @since 2018-09-21
-	 * @version 1.4
+	 * Modified By: Tarun Goswami Date: 15 Dec 2018
+	 * @version 1.5
 	 * @throws InterruptedException 
 	 * @throws IOException 
 	 */
 
-	@Test(dataProvider = "group2")
+	@Test(dataProvider = "staff")
 	public void verifyQuizDashboardClasses(String role) throws InterruptedException, IOException
-	{	
+	{
 		logMod.Login(role, "CBSE", "6", "Single", "Prime", "Yes");
 	
 		if(platform.equals("Web"))
@@ -112,29 +111,15 @@ public class QuizDashboard extends Base
 		}  
 		else if(!platform.equals("Web"))
 		{	
-			leaMod.clickOnLearnImage();
-			generic.scrollBy(driver, 50, 95);
+			generic.scrollBy(driver, 95, 50);
 		}
 		
 		quiDasMod.clickOnQuizDashboardTile();
-		
-		generic.touchCordinates(driver, 10, 95);
-		 extentTest.log(Status.PASS, "Tap on Got it.");
-		 generic.touchCordinates(driver, 10, 95);
-		 extentTest.log(Status.PASS, "Tap on Got it.");
-							
+								
 		generic.waitForElementVisibility(driver, quiDasMod.classListBtn);
-		//quiDasMod.clickOnClassLst();
-    
-		//String expectedList = readData(platform, role, "Quiz Dashboard Classes");
-    	//Assert.assertEquals(generic.compareList(quiDasMod.quizDashboardClassLst, expectedList), true);	
-    	
-    	quiDasMod.playQuizBtn1.click();
-    	quiDasMod.playQuizBtn1.click();
-    	quiDasMod.Next.click();
-    	quiDasMod.Next1.click();
-    	quiDasMod.ok.click();
-    	quiDasMod.Maths.click();
-    	
+		quiDasMod.clickOnClassLst();	
+
+		String expectedList = readData(platform, role, "Quiz Dashboard Classes");
+		Assert.assertEquals(generic.compareList(quiDasMod.quizDashboardClassLst, expectedList), true);	
 	}
 }

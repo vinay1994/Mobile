@@ -12,20 +12,25 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-
+import org.openqa.selenium.interactions.touch.TouchActions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import com.aventstack.extentreports.Status;
 import org.openqa.selenium.remote.RemoteWebElement;
@@ -109,6 +114,7 @@ public class GenericFunctions extends Base
 
 	public void scrollBy(WebDriver driver, int x, int y) throws InterruptedException
 	{
+		Thread.sleep(3000);
 		TouchAction action = new TouchAction((AndroidDriver)driver);
 		
 		Dimension size = driver.manage().window().getSize();
@@ -123,6 +129,11 @@ public class GenericFunctions extends Base
 		action.release();
 		action.perform();
 		Thread.sleep(3000);
+		
+
+		
+		
+		
 	}
 	/**
 	 * This will mouse hove and click on given element
@@ -136,6 +147,7 @@ public class GenericFunctions extends Base
 	{
 		generic.waitForElementVisibility(driver, element);
 		extentTest.log(Status.PASS, "Wait for element visibility.");
+		Thread.sleep(3000);
 		Actions act=new Actions(driver);
 		act.moveToElement(element).click(target).build().perform();
 	}
@@ -197,10 +209,12 @@ public class GenericFunctions extends Base
 	 * @since 2018-09-24
 	 * @version 1.0
 	 * @param driver 
+	 * @throws InterruptedException 
 	 */
 
-	public  void waitForElementVisibility(WebDriver driver, RemoteWebElement element) {
+	public  void waitForElementVisibility(WebDriver driver, RemoteWebElement element) throws InterruptedException {
 		(new WebDriverWait(driver, 60)).until(ExpectedConditions.visibilityOf(element));
+		Thread.sleep(3000);
 	}
 
 
@@ -213,6 +227,7 @@ public class GenericFunctions extends Base
 	public boolean compareList(List<RemoteWebElement> webList, String expectedString) throws InterruptedException
 	{
 		Thread.sleep(2000);
+	
 		List<String> expectedList =  Arrays.asList(expectedString.split("\\s*,\\s*"));
 		List<String> actualList = new ArrayList<String>();
 
@@ -267,7 +282,7 @@ public class GenericFunctions extends Base
 
 	public boolean isElementDisplayed(WebDriver driver, RemoteWebElement element) throws InterruptedException 
 	{
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		Boolean found = true;
 		try 
 		{
@@ -336,5 +351,67 @@ public class GenericFunctions extends Base
 	public void scrollPage(RemoteWebElement element){
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 	}
+	
+	/**
+	 * Handle multiple windows
+	 * @author Bhupesh Kumar
+	 * @since 2019-09-17
+	 * @version 1.0
+	 * @return 
+	 * @throws InterruptedException 
+	 */
+	public void handelingMultipleWindows(WebDriver driver) 
+	{	
+		// Store the current window handle
+		String winHandleBefore = driver.getWindowHandle();
+
+		// Switch to new window opened
+		for(String winHandle : driver.getWindowHandles()){
+		    driver.switchTo().window(winHandle);
+		}
+		
+//		driver.close();
+//		driver.switchTo().window(winHandleBefore);
+	}
+	
+    public void verifyVideoContent(WebDriver driver) throws InterruptedException 
+    {
+    	if(platform.equals("Web"))
+    	{	
+    		Thread.sleep(5000);
+    		JavascriptExecutor jse = (JavascriptExecutor) driver;
+     
+    		jse.executeScript("jwplayer().pause()");
+    		Thread.sleep(2000);
+        
+    		//Play
+    		jse.executeScript("jwplayer().play();");
+    		Thread.sleep(2000);
+        
+    		// Set Volume
+    		Thread.sleep(2000);
+        
+    		jse.executeScript("jwplayer().setVolume(50);");
+    		Thread.sleep(2000);
+        
+    		//Mute Player
+    		jse.executeScript("jwplayer().setMute(true);");
+    		Thread.sleep(2000);
+        
+    		//UnMute Player
+    		jse.executeScript("jwplayer().setMute(false);");
+        
+    		Thread.sleep(2000);
+    		//Stop the player
+    		jse.executeScript("jwplayer().stop()");
+    		Thread.sleep(2000);
+    	}	
+    }
+    
+    public void clickUsingJSE(WebElement element)
+    {
+    	JavascriptExecutor executor = (JavascriptExecutor)driver;
+    	executor.executeScript("arguments[0].click();", element);
+    }
 }
 
