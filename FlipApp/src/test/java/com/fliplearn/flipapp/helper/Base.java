@@ -174,12 +174,14 @@ public class Base implements ITestListener
 		else if(server.equals("Windows") & platform.equals("Web") & browser.equals("Chrome"))
 		{
             System.setProperty("webdriver.chrome.driver", Constants.WINDOWS_CHROME_EXE);
-	    System.out.println("Vinay");
             Map<String, Object> prefs = new HashMap<String, Object>();
 	        prefs.put("profile.default_content_setting_values.notifications", 2);
 	        ChromeOptions options = new ChromeOptions();
+		System.out.println("Vinay1");
 	        options.setExperimentalOption("prefs", prefs);
+		System.out.println("Vinay2");
 	        driver = new ChromeDriver(options);
+		System.out.println("Vinay3");
 		}
 		
 		else if(server.equals("Linux") & platform.equals("Web"))
