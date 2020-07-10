@@ -1,3 +1,4 @@
+
 package com.fliplearn.flipapp.helper;
 
 import java.io.File;
@@ -12,7 +13,6 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -22,6 +22,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
+import org.testng.ITestNGMethod;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
@@ -50,10 +51,10 @@ public class Base implements ITestListener
 	public static Properties eConfig = null;
 	public static Properties vConfig = null;
 	public static FileInputStream input = null;
-		
+
 	public static boolean isInitialized = false;
 	public static boolean isBrowserOpened = false;
-			
+
 	String server;
 	public static String platform;
 	String deviceName;
@@ -68,12 +69,12 @@ public class Base implements ITestListener
 	public static String testName;
 	public static String bookstoreSchool;
 	public static DesiredCapabilities cap;
-	
+
 	static GenericFunctions generic=new GenericFunctions();
-	
+
 	static String fileExtension = generic.formatDateToString();
 	static String reportFileName = "AutomationReport" + "_" + fileExtension + ".html";
-	static String reportPath = generic.reportPath();
+	static String reportPath = reportPath();
 	// initialize the HtmlReporter
 	ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(reportPath() + reportFileName);
 
@@ -87,26 +88,26 @@ public class Base implements ITestListener
 	public static String reportPath()
 	{
 		File file;
-		
+
 		if(System.getProperty("os.name").contains("Linux") || System.getProperty("os.name").contains("Mac") )
 		{	
-				file = new File(System.getProperty("user.dir") + "/reports/");
-				
-				if(!file.exists())
-		            file.mkdir();
+			file = new File(System.getProperty("user.dir") + "/reports/");
 
-				return System.getProperty("user.dir") + "/reports/";
+			if(!file.exists())
+				file.mkdir();
+
+			return System.getProperty("user.dir") + "/reports/";
 		}
 		else
 		{		file = new File("C:\\tomcat\\webapps\\fliplearn\\latestreport\\");
-				
-				if(!file.exists())
-					file.mkdir();
-		
-				return "C:\\tomcat\\webapps\\fliplearn\\latestreport\\";
+
+		if(!file.exists())
+			file.mkdir();
+
+		return "C:\\tomcat\\webapps\\fliplearn\\latestreport\\";
 		}		
 	}
-	
+
 	/**
 	 * This will set Driver based on capabilities and configuration
 	 * @author Tarun Goswami
@@ -124,11 +125,11 @@ public class Base implements ITestListener
 		suiteType = eConfig.getProperty("SuiteType");
 		sendReport = eConfig.getProperty("SendReport");
 		bookstoreSchool = aConfig.getProperty(environment+"_Bookstore_School");
-		
+
 		url = aConfig.getProperty(platform+"_"+environment+"_Url");
-		
+
 		appPath = System.getProperty("user.dir") + "\\apps\\"+platform.toLowerCase()+"_"+environment.toLowerCase()+".apk";
-			
+
 		if(platform.equals("Android"))
 		{
 			cap = new DesiredCapabilities();
@@ -136,105 +137,104 @@ public class Base implements ITestListener
 
 			cap.setCapability(MobileCapabilityType.DEVICE_NAME, deviceName);
 			cap.setCapability("appPackage", "com.elss.educomp"); 
-		    cap.setCapability("appActivity","com.elss.educomp.prelogin.ui.SplashActivity"); 
-		    cap.setCapability("noSign", true);
+			cap.setCapability("appActivity","com.elss.educomp.prelogin.ui.SplashActivity"); 
+			cap.setCapability("noSign", true);
 
-		    
-		    driver = new AndroidDriver<AndroidElement>(new URL("http://0.0.0.0:4723/wd/hub"), cap);
-			 
+
+			driver = new AndroidDriver<AndroidElement>(new URL("http://0.0.0.0:4723/wd/hub"), cap);
+
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		}
-		
+
 		else if(platform.equals("iOS"))
 		{
-			
+
 			System.out.println("testing*********************");
 			System.getProperty("user.dir");
 			DesiredCapabilities cap = new DesiredCapabilities();
-//			cap.setCapability("platformVersion", "10.3");
-//			FlipLearn QC (12.1.4) [33cb75afe59ac83184dbf15a4eb9ed858d7a678e]
-		    cap.setCapability("deviceName", "Fliplearn Iphone");
-		    cap.setCapability("platformName", "iOS");
-		    cap.setCapability("platformVersion", "12.2");
-		    cap.setCapability("udid", "af9f8cec090145c64e092f3339fe2f59d832c722");
-		    cap.setCapability("bundleId", "com.educomp.smartclassonline");
-		   // cap.setCapability(MobileCapabilityType.APP, "/Users/tarungoswami/Downloads/testapp/Fliplearn.app");
+			//			cap.setCapability("platformVersion", "10.3");
+			//			FlipLearn QC (12.1.4) [33cb75afe59ac83184dbf15a4eb9ed858d7a678e]
+			cap.setCapability("deviceName", "Fliplearn Iphone");
+			cap.setCapability("platformName", "iOS");
+			cap.setCapability("platformVersion", "12.2");
+			cap.setCapability("udid", "af9f8cec090145c64e092f3339fe2f59d832c722");
+			cap.setCapability("bundleId", "com.educomp.smartclassonline");
+			// cap.setCapability(MobileCapabilityType.APP, "/Users/tarungoswami/Downloads/testapp/Fliplearn.app");
 
-		    cap.setCapability("automationName", "XCUITest");
-		    cap.setCapability("xcodeOrgId","47M3CKSC66");	
-		    cap.setCapability("xcodeSigningId","iPhone Developer");
-		    cap.setCapability("noReset", false);
+			cap.setCapability("automationName", "XCUITest");
+			cap.setCapability("xcodeOrgId","47M3CKSC66");	
+			cap.setCapability("xcodeSigningId","iPhone Developer");
+			cap.setCapability("noReset", false);
 
 			driver = new IOSDriver(new URL("http://127.0.0.1:4723/wd/hub"), cap);
 
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
 		}
-		
+
 		else if(server.equals("Windows") & platform.equals("Web") & browser.equals("Chrome"))
 		{
-            System.setProperty("webdriver.chrome.driver", Constants.WINDOWS_CHROME_EXE);
-            Map<String, Object> prefs = new HashMap<String, Object>();
-	        prefs.put("profile.default_content_setting_values.notifications", 2);
-	        ChromeOptions options = new ChromeOptions();
-	        options.setExperimentalOption("prefs", prefs);
-	        driver = new ChromeDriver(options);
-		System.out.println("Vinay3");
+			System.setProperty("webdriver.chrome.driver", Constants.WINDOWS_CHROME_EXE);
+			Map<String, Object> prefs = new HashMap<String, Object>();
+			prefs.put("profile.default_content_setting_values.notifications", 2);
+			ChromeOptions options = new ChromeOptions();
+			options.setExperimentalOption("prefs", prefs);
+			driver = new ChromeDriver(options);
 		}
-		
+
 		else if(server.equals("Linux") & platform.equals("Web"))
-	    {
-				if(browser.equals("Chrome"))
-				{	
-					System.setProperty("webdriver.chrome.driver", Constants.LINUX_CHROME_EXE);
-					Map<String, Object> prefs = new HashMap<String, Object>();
-			        prefs.put("profile.default_content_setting_values.notifications", 2);
-			        ChromeOptions options = new ChromeOptions();
-			        options.setExperimentalOption("prefs", prefs);
-			        driver = new ChromeDriver(options);
-				}
-				else if(browser.equals("Firefox")) 
-				{
-					FirefoxOptions options = new FirefoxOptions();
-					options.addArguments("start-maximized");
-			
-					System.setProperty("webdriver.gecko.driver", Constants.LINUX_FIREFOX_EXE);
-					driver = new FirefoxDriver();
-				}	
+		{
+			if(browser.equals("Chrome"))
+			{	
+				System.setProperty("webdriver.chrome.driver", Constants.LINUX_CHROME_EXE);
+				Map<String, Object> prefs = new HashMap<String, Object>();
+				prefs.put("profile.default_content_setting_values.notifications", 2);
+				ChromeOptions options = new ChromeOptions();
+				options.setExperimentalOption("prefs", prefs);
+				driver = new ChromeDriver(options);
+			}
+			else if(browser.equals("Firefox")) 
+			{
+				FirefoxOptions options = new FirefoxOptions();
+				options.addArguments("start-maximized");
+
+				System.setProperty("webdriver.gecko.driver", Constants.LINUX_FIREFOX_EXE);
+				driver = new FirefoxDriver();
+			}	
 
 		}	
-		
+
 		else if(server.equals("Mac") & platform.equals("Web"))
-	    {
-				if(browser.equals("Chrome"))
-				{	
-					System.setProperty("webdriver.chrome.driver", Constants.MAC_CHROME_EXE);
-					Map<String, Object> prefs = new HashMap<String, Object>();
-			        prefs.put("profile.default_content_setting_values.notifications", 2);
-			        ChromeOptions options = new ChromeOptions();
-			        options.setExperimentalOption("prefs", prefs);
-			        driver = new ChromeDriver(options);
-				}
-				else if(browser.equals("Firefox")) 
-				{
-					FirefoxOptions options = new FirefoxOptions();
-					options.addArguments("start-maximized");
-			
-					System.setProperty("webdriver.gecko.driver", Constants.MAC_FIREFOX_EXE);
-					driver = new FirefoxDriver();
-				}	
-			
+		{
+			if(browser.equals("Chrome"))
+			{	
+				System.setProperty("webdriver.chrome.driver", Constants.MAC_CHROME_EXE);
+				Map<String, Object> prefs = new HashMap<String, Object>();
+				prefs.put("profile.default_content_setting_values.notifications", 2);
+				ChromeOptions options = new ChromeOptions();
+				options.setExperimentalOption("prefs", prefs);
+				driver = new ChromeDriver(options);
+			}
+			else if(browser.equals("Firefox")) 
+			{
+				FirefoxOptions options = new FirefoxOptions();
+				options.addArguments("start-maximized");
+
+				System.setProperty("webdriver.gecko.driver", Constants.MAC_FIREFOX_EXE);
+				driver = new FirefoxDriver();
+			}	
+
 		}
 
-			driver.get(url);
-	
-			driver.manage().window().maximize();
-			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		driver.get(url);
+
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 	}
-	
-	
-	
-	
+
+
+
+
 	/**
 	 * This will intialize config file
 	 * @author Tarun Goswami
@@ -255,7 +255,7 @@ public class Base implements ITestListener
 			}
 		}	
 	}
-	
+
 	/**
 	 * This read excel data
 	 * @author Tarun Goswami
@@ -266,12 +266,12 @@ public class Base implements ITestListener
 	{
 		String methodName = new Exception().getStackTrace()[1].getMethodName();
 		System.out.println("Calling method name:"+methodName);
-		
-	 	 Map<String, String> testMap = new HashMap<String, String>();
-    	 ExcelUtil excUti = new ExcelUtil();
-    	 testMap = excUti.readKeyValue(platform, role, methodName);
-    	 
-    	 return testMap.get(key);
+
+		Map<String, String> testMap = new HashMap<String, String>();
+		ExcelUtil excUti = new ExcelUtil();
+		testMap = excUti.readKeyValue(platform, role, methodName);
+
+		return testMap.get(key);
 	}
 	/**
 	 * Execute before any test method
@@ -305,32 +305,35 @@ public class Base implements ITestListener
 	 */
 	public void onTestStart(ITestResult result) 
 	{
-	String methodName = new Exception().getStackTrace()[1].getMethodName();
-	extentTest = extentReports.createTest(methodName, "Some Description");
+
 		//extentTest = extentReports.createTest(result.getMethod().getMethodName(), "Some Description");
+		String methodName = new Exception().getStackTrace()[1].getMethodName();
+		System.out.println(methodName);
+		extentTest = extentReports.createTest(methodName, "Some Description");
+
 
 		extentTest.log(Status.INFO, "*******Platform is:"+platform+"*******");
 		extentTest.log(Status.INFO, "*******Environment is:"+environment+"*******");
-		
-		if(platform.equals("WEb"))
+
+		if(platform.equals("Web"))
 		{	
 			extentTest.log(Status.INFO, "Browser is:"+browser);
 			extentTest.log(Status.INFO, "URL is:"+url);
 		}
-		
+
 		if(platform.equals("iOS"))
 		{	
-		HeaderModule heaMod = new HeaderModule(driver);
-		try {
-			heaMod.clickOnLogoutBtn();
-		} catch (InterruptedException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+			HeaderModule heaMod = new HeaderModule(driver);
+			try {
+				heaMod.clickOnLogoutBtn();
+			} catch (InterruptedException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		}
 	}
 
-	
+
 	/**
 	 * After any test method
 	 * @author Tarun Goswami
@@ -341,9 +344,10 @@ public class Base implements ITestListener
 	public void getResult() throws IOException
 	{
 		driver.quit();
-	//	extentTest.log(Status.INFO, "Browser/Application Closed.");
+		extentTest.log(Status.INFO, "Browser/Application Closed.");
+
 	}
-	
+
 	/**
 	 * After Test Suite
 	 * @author Tarun Goswami
@@ -367,20 +371,20 @@ public class Base implements ITestListener
 	@Override
 	public void onTestFailure(ITestResult result) 
 	{
-	
-		
+
+
 		extentTest.log(Status.FAIL, "Test Failed");	
-        String captureScreenshot;
-     	
-        try 
-        {
-        	String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
+		String captureScreenshot;
+
+		try 
+		{
+			String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
 			captureScreenshot = Screenshots.captureScreenshot(driver,result.getName() + timeStamp);
 			extentTest.log(Status.FAIL, result.getThrowable());
 			extentTest.log(Status.FAIL, "Snapshot"+extentTest.addScreenCaptureFromPath(captureScreenshot));
 		} 
-        catch (IOException e) 
-        {
+		catch (IOException e) 
+		{
 			e.printStackTrace();
 		}
 
@@ -397,24 +401,24 @@ public class Base implements ITestListener
 	@Override
 	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	
+
 	@Override
 	public void onTestSuccess(ITestResult result) 
 	{
 		extentTest.log(Status.PASS, "Test Pass");	
 		String captureScreenshot;
-     	
-        try 
-        {
-        	String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
-        	captureScreenshot = Screenshots.captureScreenshot(driver,result.getName() + timeStamp);
+
+		try 
+		{
+			String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
+			captureScreenshot = Screenshots.captureScreenshot(driver,result.getName() + timeStamp);
 			extentTest.log(Status.PASS, "Snapshot"+extentTest.addScreenCaptureFromPath(captureScreenshot));
 		} 
-        catch (IOException e) 
-        {
+		catch (IOException e) 
+		{
 			e.printStackTrace();
 		}
 	}
@@ -439,70 +443,79 @@ public class Base implements ITestListener
 
 		extentReports.flush();		
 	}
-	
+
 
 	@DataProvider(name = "allusers_old")
 	public static Object[] group0_old() 
 	{
-		  return new Object[][]
-		  { 
-			  { "Admin" }, { "Principal" }, { "Teacher" }, { "Parent" }
-		  }; 
+		return new Object[][]
+				{ 
+			{ "Admin" }, { "Principal" }, { "Teacher" }, { "Parent" }
+				}; 
 	}
-	
+
 	@DataProvider(name = "allusers")
 	public static Object[] group0() 
 	{
-		  return new Object[][]
-		  { 
-			  { "Admin" }, { "Principal" }, { "Teacher" }, { "Parent" }, { "Student" }, { "Guest" }
-		  }; 
+		return new Object[][]
+				{ 
+			{ "Admin" }, { "Principal" }, { "Teacher" }, { "Parent" }, { "Student" }, { "Guest" }
+				}; 
 	}
-		
+
 	@DataProvider(name = "staff")
 	public static Object[] group2() 
 	{
-		  return new Object[][]
-		  { 
-			  { "Admin" }, { "Principal" }, { "Teacher" }
-		  }; 
+		return new Object[][]
+				{ 
+			{ "Admin" }, { "Principal" }, { "Teacher" }
+				}; 
 	}
-	
+
 	@DataProvider(name = "nostaff")
 	public static Object[] group3() 
 	{
-		  return new Object[][]
-		  { 
-			  { "Parent" }, { "Student" }, { "Guest" }
-		  }; 
+		return new Object[][]
+				{ 
+			{ "Parent" }, { "Student" }, { "Guest" }
+				}; 
 	}
-	
+
 	@DataProvider(name = "nostaff_new")
 	public static Object[] group3_new() 
 	{
-		  return new Object[][]
-		  { 
-			  { "Student" }, { "Guest" }
-		  }; 
+		return new Object[][]
+				{ 
+			{ "Student" }, { "Guest" }
+				}; 
 	}
-	
+
 	@DataProvider(name="doubt_staff")
 	public static Object[] group4_new()
 	{
 		return new Object[][]
 				{
 			{ "Teacher" }, { "Student" }, { "Guest" }
-				
+
 				};
 	}
-	
+
+	@DataProvider(name="moodle_staff")
+	public static Object[] moodle_users()
+	{
+		return new Object[][]
+				{
+			{ "Teacher" }
+
+				};
+	}
 	@DataProvider(name = "logout")
 	public static Object[] group4() 
 	{
-		  return new Object[][]
-		  { 
-			  { "Logout" }
-		  }; 
+		return new Object[][]
+				{ 
+			{ "Logout" }
+				}; 
 	}
 
 

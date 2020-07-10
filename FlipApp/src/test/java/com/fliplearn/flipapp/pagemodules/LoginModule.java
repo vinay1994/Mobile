@@ -29,11 +29,12 @@ public class LoginModule extends Base
 	MobileNumberModule mobNumMod = new MobileNumberModule(driver);
 	SignInAsModule sigInMod = new SignInAsModule(driver);
 	QuizModule quiMod = new QuizModule(driver);
+	Base base = new Base();
 
 
-    @FindBy(xpath="//button[@class='themeOutlineButton padding-10-60 mobilebtnBlock mobilemargin0']")
-    public RemoteWebElement useLoginIDPassBtn;
-    
+	@FindBy(xpath="//button[@class='themeOutlineButton padding-10-60 mobilebtnBlock mobilemargin0']")
+	public RemoteWebElement useLoginIDPassBtn;
+
 	@FindBy(id="Fname")
 	@AndroidFindBy(id="com.elss.educomp:id/userId") 
 	@iOSXCUITFindBy(xpath="//XCUIElementTypeTextField")
@@ -65,63 +66,63 @@ public class LoginModule extends Base
 	public  void Login(String role, String board, String className, String profile, String subscription, String mobile) throws InterruptedException, IOException
 	{   
 		UserDetail detail = new UserDetail();
-    	detail.readData();
+		detail.readData();
 
 		User user = detail.matchDetails(role, board, className, profile, subscription, mobile);
-		
+
 		String username = user.getuserName();
 		String password = user.getPassword();
-	
+		System.out.println(username);
 
 		if(eConfig.getProperty("Platform").equals("Android")) 
 		{
 			onbMod.skipScreen();
 			extentTest.log(Status.PASS, "Click on Skip button.");
 		}
-		 generic.waitForElementVisibility(driver, useLoginIDPassBtn);
-		 Actions actions = new Actions(driver);
-		 actions.doubleClick(useLoginIDPassBtn).perform();
-		 
-		 generic.waitForElementVisibility(driver, usernameTxt);	
+		generic.waitForElementVisibility(driver, useLoginIDPassBtn);
+		Actions actions = new Actions(driver);
+		actions.doubleClick(useLoginIDPassBtn).perform();
 
-		 usernameTxt.clear();
-		 usernameTxt.sendKeys(username);
-		 extentTest.log(Status.PASS, "Enter Username: "+username);
-		 passwordTxt.clear();
-		 passwordTxt.sendKeys((password));
-		 extentTest.log(Status.PASS, "Enter Password");
-		
+		generic.waitForElementVisibility(driver, usernameTxt);	
 
-		 //		if(eConfig.getProperty("Platform").equals("Android")) 
-		 //		{
-		 //			((AndroidDriver) driver).hideKeyboard();
-		 //			extentTest.log(Status.PASS, "Hide Keyboard");
-		 //		}
+		usernameTxt.clear();
+		usernameTxt.sendKeys(username);
+		extentTest.log(Status.PASS, "Enter Username: "+username);
+		passwordTxt.clear();
+		passwordTxt.sendKeys((password));
+		extentTest.log(Status.PASS, "Enter Password");
 
-		 loginBtn.click();
-		 extentTest.log(Status.PASS, "Click on Login button");
 
-		 if(eConfig.getProperty("Platform").equals("Android")) 
-		 {
-			 quiMod.skipBtn.click();
-			 extentTest.log(Status.PASS, "Click on Quiz Skip Button");
+		//		if(eConfig.getProperty("Platform").equals("Android")) 
+		//		{
+		//			((AndroidDriver) driver).hideKeyboard();
+		//			extentTest.log(Status.PASS, "Hide Keyboard");
+		//		}
 
-			 if(!role.equals("Student") && !role.equals("Guest"))
-			 {
-				 Thread.sleep(3000);
-				 driver.findElement(By.xpath("//*[@text='GOT IT']")).click();
-				 extentTest.log(Status.PASS, "Tap on Got it.");	
-				 driver.findElement(By.xpath("//*[@text='GOT IT']")).click();
-				 extentTest.log(Status.PASS, "Tap on Got it.");	
-			 } 
-		 }
+		loginBtn.click();
+		extentTest.log(Status.PASS, "Click on Login button");
 
-		 if(eConfig.getProperty("Platform").equals("iOS")) 
-		 {
+		if(eConfig.getProperty("Platform").equals("Android")) 
+		{
+			quiMod.skipBtn.click();
+			extentTest.log(Status.PASS, "Click on Quiz Skip Button");
+
+			if(!role.equals("Student") && !role.equals("Guest"))
+			{
+				Thread.sleep(3000);
+				driver.findElement(By.xpath("//*[@text='GOT IT']")).click();
+				extentTest.log(Status.PASS, "Tap on Got it.");	
+				driver.findElement(By.xpath("//*[@text='GOT IT']")).click();
+				extentTest.log(Status.PASS, "Tap on Got it.");	
+			} 
+		}
+
+		if(eConfig.getProperty("Platform").equals("iOS")) 
+		{
 			// quiMod.skipBtn.click();
 			// extentTest.log(Status.PASS, "Click on Quiz Skip Button");
 
-		/*	 if(!role.equals("Student") && !role.equals("Guest"))
+			/*	 if(!role.equals("Student") && !role.equals("Guest"))
 			 {
 				 Thread.sleep(3000);
 				 driver.findElement(By.xpath("//*[@text='GOT IT']")).click();
@@ -129,7 +130,7 @@ public class LoginModule extends Base
 				 driver.findElement(By.xpath("//*[@text='GOT IT']")).click();
 				 extentTest.log(Status.PASS, "Tap on Got it.");	
 			 }*/ 
-		 }
+		}
 
 	}		
 }			 
